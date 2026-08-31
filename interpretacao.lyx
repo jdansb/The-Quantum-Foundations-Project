@@ -127,12 +127,30 @@ literal "false"
  
 \end_layout
 
+\begin_layout Quotation
+
+\series bold
+Note
+\series default
+ If Portuguese is not your native language,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Firefox"
+target "https://www.firefox.com/"
+literal "false"
+
+\end_inset
+
+'s automatic translation works well.
+\end_layout
+
 \begin_layout Section
-Analogy with Classical Mechanics
+Analogia com a Mecânica Clássica
 \end_layout
 
 \begin_layout Subsection
-Newton's Second Law
+Segunda Lei de Newton
 \end_layout
 
 \begin_layout Standard

@@ -103,7 +103,7 @@
 \begin_body
 
 \begin_layout Title
-What Is (Not) the Interpretation of Quantum Mechanics?
+Qual (não) é a interpretação da Mecânica Quântica
 \end_layout
 
 \begin_layout Author
@@ -128,11 +128,11 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-Analogy with Classical Mechanics
+Analogia com a Mecânica Clássica
 \end_layout
 
 \begin_layout Subsection
-Newton's Second Law
+Segunda Lei de Newton
 \end_layout
 
 \begin_layout Standard
@@ -532,7 +532,7 @@ Um postulado é uma proposição assumida como verdadeira dentro de uma teoria,
 
  da mecânica quântica.
  O primeiro ponto a observar é que eles podem ser formulados de maneiras diferentes de um livro para outro.
- Vamos utilizar o material do professor Jonas Maziero[
+ Vamos utilizar o material do professor Jonas Maziero [
 \begin_inset CommandInset citation
 LatexCommand cite
 key "maziero"
