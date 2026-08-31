@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{luainputenc}
 \usepackage{babel}
+\usepackage{mathtools}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
@@ -86,7 +87,7 @@ O equivalente agora para uma partícula livre ($V\left(x,t\right)=0$) é:
 i\hbar\frac{\partial\Psi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}
 \end{align}
 
-Usando então o método de separação de variáveis, isto é, considerando que a solução pode ser separada em uma parte expacial $\Phi\left(x\right)$ e outra temporal $\Pi\left(t\right)$ então:
+Usando então o método de separação de variáveis, isto é, considerando que a solução pode ser separada em uma parte expacial $\Phi\left(x\right)$ e outra temporal $\Pi\left(t\right)$ , isto é $\Psi\left(x,t\right)=\Phi\left(x\right)\Pi\left(t\right)$. Então:
 
 \begin{align}
 i\hbar\frac{\partial}{\partial t}\left(\Phi\left(x\right)\Pi\left(t\right)\right) & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left(\Phi\left(x\right)\Pi\left(t\right)\right)\\
@@ -226,14 +227,56 @@ E, por fim, ainda relacionado à natureza probabilística das medições, interp
 
 \subsubsection*{Incompatibilidade quântica}
 
-Se temos dois operadores Hermitianos, escrito na sua representação matricial como:
+Sejam $A$ e $B$ dois operadores Hermitianos definidos em um espaço de Hilbert de dimensão finita $d$. Pelo teorema espectral, podemos escrevê-los em suas respectivas decomposições espectrais como
 
-\begin{align*}
-A= & \sum^{d}_{j=1}a\left|a_{j}\right\rangle \left\langle a_{j}\right|\\
-\end{align*}
-Incerteza: questão se é uma questão natureza, ou uma questão de médias.
+\begin{align}
+A= & \sum^{d}_{j=1}a_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right| & B= & \sum^{d}_{j=1}b_{j}\left|b_{j}\right\rangle \left\langle b_{j}\right|
+\end{align}
+
+Os números $a_{j}$ e $b_{j}$ são os respectivos autovalores, e os conjuntos $\left\{ \left|a_{j}\right\rangle \right\} ^{d}_{j=1}$e $\left\{ \left|b_{j}\right\rangle \right\} ^{d}_{j=1}$ formam bases ortonormais de autovetores de $A$ e $B$, respectivamente, isto é, diagonalizam esses operadores, de modo que:
+
+\begin{align}
+A\left|a_{j}\right\rangle  & =a_{j}\left|a_{j}\right\rangle  & B\left|b_{j}\right\rangle = & b_{j}\left|b_{j}\right\rangle 
+\end{align}
+
+Assumindo que os dois operadores compartilham a mesma base $\left|a_{j}\right\rangle =\left|b_{j}\right\rangle \coloneqq\left|j\right\rangle $, então, sendo o comutador definido como $\left[A,B\right]=AB-BA$, temos:
+
+\begin{align}
+\left[A,B\right] & =\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)-\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
+ & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle j|k\right\rangle \left\langle k\right|-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle k|j\right\rangle \left\langle j\right|\\
+ & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle k\right|\delta_{jk}-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle j\right|\delta_{jk}\\
+ & =\sum^{d}_{j=1}\left(a_{j}b_{j}\left|j\right\rangle \left\langle j\right|-b_{j}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
+ & =0
+\end{align}
+
+Então:
+
+\begin{equation}
+0=\left[A,B\right]=AB-BA\Longrightarrow AB=BA
+\end{equation}
+
+Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam. Podemos agora provar o contrário:
+
+\begin{align}
+A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
+ & =B\left(A\left|a_{j}\right\rangle \right)\\
+ & =B\left(a_{j}\left|a_{j}\right\rangle \right)\\
+ & =a_{j}B\left|a_{j}\right\rangle 
+\end{align}
+
+Ou seja, nesse caso devemos ter que $B\left|a_{j}\right\rangle $ e $\left|a_{j}\right\rangle $ pertence ao autoespaço de $A$ correspondente ao autovalor $a_{j}$. Se $a_{j}$ não é degenerado, seu autoespaço possui dimensão 1. Portanto, qualquer autovetor de $A$ associado a $a_{j}$ é linearmente dependente de $\left|a_{j}\right\rangle $. Como $B$ em $\left|a_{j}\right\rangle $ também pertence a esse autoespaço, necessariamente $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle .$
+
+Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linearmente independentes correspondentes ao mesmo autovalor $a_{j}$, então existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes a $a_{j}$. É um pouco mais complexo, mas é a mesma ideia aplicada a um subespaço de dimensão maior que 1. Para entender isso, vamos olhar especificamente para uma outra fonte {[}\cite{MIT804_CommonEigenbases}{]}.
+
+Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, entao $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora ainda temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Portanto cada $B\left|a^{k}_{j}\right\rangle $ é uma combinação linear dos vetores da base de $\mathcal{H}_{j}$
+
+$B\left|a^{k}_{j}\right\rangle =\sum^{d_{j}}_{l=1}b_{l}\left|a^{l}_{j}\right\rangle $.
+
+Como $B$ é um operador Hermitiano\footnote{Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.}, existe então uma base de $\mathcal{H}_{j}$ que o diagonaliza. Assumindo que a base é $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, temos $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Ou seja, se os operadores $A$ e $B$ comutam, então compartilham da mesma base de autovetores.
 
 \subsection{Relação de Incerteza}
+
+Incerteza: questão se é uma questão natureza, ou uma questão de médias.
 
 https://qm1.quantumtinkerer.tudelft.nl/6\_the\_free\_particle/
 
@@ -253,7 +296,7 @@ Achar o texto, mas o ponto é: o comportamento ondulatório aparece qauandos se 
 
 \section{Curiosidade: problema da decoerencia}
 \begin{quotation}
- \bibliographystyle{plain}
+\bibliographystyle{plain}
 \bibliography{ref}
  
 \end{quotation}

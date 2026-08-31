@@ -364,7 +364,13 @@ Usando então o método de separação de variáveis,
 \begin_inset Formula $\Pi\left(t\right)$
 \end_inset
 
- então:
+ ,
+ isto é 
+\begin_inset Formula $\Psi\left(x,t\right)=\Phi\left(x\right)\Pi\left(t\right)$
+\end_inset
+
+.
+ Então:
 \end_layout
 
 \begin_layout Standard
@@ -1062,25 +1068,357 @@ Incompatibilidade quântica
 \end_layout
 
 \begin_layout Standard
-Se temos dois operadores Hermitianos,
- escrito na sua representação matricial como:
+Sejam 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ dois operadores Hermitianos definidos em um espaço de Hilbert de dimensão finita 
+\begin_inset Formula $d$
+\end_inset
+
+.
+ Pelo teorema espectral,
+ podemos escrevê-los em suas respectivas decomposições espectrais como
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{align*}
-A= & \sum^{d}_{j=1}a\left|a_{j}\right\rangle \left\langle a_{j}\right|\\
-\end{align*}
+\begin{align}
+A= & \sum^{d}_{j=1}a_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right| & B= & \sum^{d}_{j=1}b_{j}\left|b_{j}\right\rangle \left\langle b_{j}\right|
+\end{align}
 
 \end_inset
 
-Incerteza:
- questão se é uma questão natureza,
- ou uma questão de médias.
+
+\end_layout
+
+\begin_layout Standard
+Os números 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ e 
+\begin_inset Formula $b_{j}$
+\end_inset
+
+ são os respectivos autovalores,
+ e os conjuntos 
+\begin_inset Formula $\left\{ \left|a_{j}\right\rangle \right\} ^{d}_{j=1}$
+\end_inset
+
+e 
+\begin_inset Formula $\left\{ \left|b_{j}\right\rangle \right\} ^{d}_{j=1}$
+\end_inset
+
+ formam bases ortonormais de autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ respectivamente,
+ isto é,
+ diagonalizam esses operadores,
+ de modo que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A\left|a_{j}\right\rangle  & =a_{j}\left|a_{j}\right\rangle  & B\left|b_{j}\right\rangle = & b_{j}\left|b_{j}\right\rangle 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assumindo que os dois operadores compartilham a mesma base 
+\begin_inset Formula $\left|a_{j}\right\rangle =\left|b_{j}\right\rangle \coloneqq\left|j\right\rangle $
+\end_inset
+
+,
+ então,
+ sendo o comutador definido como 
+\begin_inset Formula $\left[A,B\right]=AB-BA$
+\end_inset
+
+,
+ temos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left[A,B\right] & =\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)-\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
+ & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle j|k\right\rangle \left\langle k\right|-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle k|j\right\rangle \left\langle j\right|\\
+ & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle k\right|\delta_{jk}-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle j\right|\delta_{jk}\\
+ & =\sum^{d}_{j=1}\left(a_{j}b_{j}\left|j\right\rangle \left\langle j\right|-b_{j}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
+ & =0
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+0=\left[A,B\right]=AB-BA\Longrightarrow AB=BA
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam.
+ Podemos agora provar o contrário:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
+ & =B\left(A\left|a_{j}\right\rangle \right)\\
+ & =B\left(a_{j}\left|a_{j}\right\rangle \right)\\
+ & =a_{j}B\left|a_{j}\right\rangle 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou seja,
+ nesse caso devemos ter que 
+\begin_inset Formula $B\left|a_{j}\right\rangle $
+\end_inset
+
+ e 
+\begin_inset Formula $\left|a_{j}\right\rangle $
+\end_inset
+
+pertence ao autoespaço de 
+\begin_inset Formula $A$
+\end_inset
+
+ correspondente ao autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Se 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é degenerado,
+ isto é,
+ existe mais de um autovetor linearmente independente correspondente ao mesmo autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+,
+ então existe um subespaço de 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ gerado pelos autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ correspondentes ao autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vamos chamar esse subespaço de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ e sendo 
+\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$
+\end_inset
+
+ uma base qualquer de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+,
+ entao 
+\begin_inset Formula $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $
+\end_inset
+
+.
+ Além disso,
+ como 
+\begin_inset Formula $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$
+\end_inset
+
+,
+ isto é,
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ transforma vetores de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ em vetores que também pertencem a 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Ou seja,
+ para qualquer 
+\begin_inset Formula $j$
+\end_inset
+
+,
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ a aplicação de 
+\begin_inset Formula $B$
+\end_inset
+
+ sobre um autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+ se leva a um novo autovetor no mesmo subspaço 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Isso significa,
+ que também para qualquer 
+\begin_inset Formula $j$
+\end_inset
+
+,
+ quando aplicamos 
+\begin_inset Formula $B$
+\end_inset
+
+ a um autovetor do próprio 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ 
+\begin_inset Formula $B\left|b^{k}_{j}\right\rangle =b_{j}\left|b^{k}_{j}\right\rangle $
+\end_inset
+
+,
+ se 
+\begin_inset Formula $\left|b^{k}_{j}\right\rangle \in\mathcal{H}_{j}$
+\end_inset
+
+.
+ Ou seja,
+ se 
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+é um operador Hermitiano
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.
+\end_layout
+
+\end_inset
+
+,
+ existe então uma base de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ que o diagonaliza.
+ Assumindo que a base é 
+\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} $
+\end_inset
+
+,
+ temos 
+\begin_inset Formula $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $
+\end_inset
+
+.
+ Ou seja,
+ se os operadores 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ comutam,
+ então compartilham da mesma base de autovetores.
 \end_layout
 
 \begin_layout Subsection
 Relação de Incerteza
+\end_layout
+
+\begin_layout Standard
+Incerteza:
+ questão se é uma questão natureza,
+ ou uma questão de médias.
 \end_layout
 
 \begin_layout Standard

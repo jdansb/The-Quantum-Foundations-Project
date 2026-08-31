@@ -1,0 +1,4 @@
+Como já estudei o básico das ferramentas matemáticas necessárias, por enquanto quero priorizar a compreensão física. Assim, aprofundarei a matemática até o nível necessário para compreender, aplicar e questionar criticamente a estrutura física em estudo. Demonstrações e desenvolvimentos puramente matemáticos podem ser deixados para quando se tornarem necessários ou quando eu decidir aprofundar os fundamentos.
+
+Por exemplo, não é necessário, neste momento, aprofundar a demonstração do teorema espectral para matrizes Hermitianas, pois sua prova é predominantemente matemática e não acrescenta, por si só, uma nova interpretação física ao problema. Em contrapartida, vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física, como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam, pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
+
