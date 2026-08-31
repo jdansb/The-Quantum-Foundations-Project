@@ -7,20 +7,28 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+
+
+\makeatother
+
 \usepackage{babel}
 \begin{document}
-\title{What Is (Not) the Interpretation of Quantum Mechanics?}
+\title{Qual (não) é a interpretação da Mecânica Quântica}
 \author{Jhordan Silveira de Borba}
 \maketitle
 \begin{quote}
-There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible [\cite{griffiths2017introduction}].
+There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible {[}\cite{griffiths2017introduction}{]}. 
 \end{quote}
 
 \section{Analogy with Classical Mechanics}
 
 \subsection{Newton's Second Law}
 
-A law of physics can be understood as a rule that describes, usually through a mathematical formulation, how certain physical systems behave\cite{Siddiqui2014}. Newton's second law, for example, can be expressed by the equation
+Uma lei da física pode ser entendida como uma regra que descreve, usualmente por meio de uma formulação matemática, como determinados sistemas físicos se comportam {[}\cite{Siddiqui2014}{]}. A segunda lei de Newton, por exemplo, pode ser expressa pela equação
 
 \begin{equation}
 F\left(x,t\right)=m\frac{d^{2}}{dt^{2}}x\left(t\right)
@@ -34,7 +42,7 @@ Por exemplo, para uma partícula livre ($F=0$), podemos obter sua equação de m
 0=m\frac{d^{2}x}{dt^{2}}
 \end{equation}
 
-Definindo a velocidade como $v\left(t\right)\equiv\frac{dx}{dt}$ , temos:
+Definindo a velocidade como $v\left(t\right)\equiv\frac{dx}{dt}$ , temos: 
 \begin{align}
 0 & =\frac{d^{2}x}{dt^{2}}\\
 0 & =\frac{dv}{dt}\\
@@ -50,7 +58,6 @@ v\left(t\right) & =v\left(t_{0}\right)\\
 \int^{t}_{t_{0}}\frac{dx}{dt'}dt' & =v\int^{t}_{t_{0}}dt'\\
 x\left(t\right)-x\left(t_{0}\right) & =v\left(t-t_{0}\right)
 \end{align}
-
 
 Se $x\left(t_{0}\right)=x_{0}$ e $t_{0}=0$ ficamos com:
 
@@ -113,7 +120,7 @@ Onde $K_{1}$ e $K_{2}$ são constantes determinadas pelas condições impostas �
 
 \subsection{Notação}
 
-Para avançarmos, precisamos conhecer os postulados\footnote{Um postulado é uma proposição assumida como verdadeira dentro de uma teoria, servindo como ponto de partida para a construção de seus conceitos e resultados.} da mecânica quântica. O primeiro ponto a observar é que eles podem ser formulados de maneiras diferentes de um livro para outro. Vamos utilizar o material do professor Jonas Maziero\cite{maziero}. Precisamos começar, então, com alguns comentários sobre a notação de Dirac.
+Para avançarmos, precisamos conhecer os postulados\footnote{Um postulado é uma proposição assumida como verdadeira dentro de uma teoria, servindo como ponto de partida para a construção de seus conceitos e resultados.} da mecânica quântica. O primeiro ponto a observar é que eles podem ser formulados de maneiras diferentes de um livro para outro. Vamos utilizar o material do professor Jonas Maziero {[}\cite{maziero}{]}. Precisamos começar, então, com alguns comentários sobre a notação de Dirac.
 
 Nessa notação, escrevemos um vetor como $\left|v\right\rangle $, chamado ket. Tomando o transposto conjugado desse vetor (ou adjunto), obtemos $\left\langle v\right|=\left|v\right\rangle ^{\dag}=\left(\left|v\right\rangle ^{T}\right)^{*}$ , que é chamado bra. Se representamos o vetor $\left|v\right\rangle $em uma base ortonormal $\left\{ \left|b_{j}\right\rangle \right\} $ , podemos escrevê-lo como uma combinação linear dos vetores da base: $\left|v\right\rangle =\sum_{i}\left\langle b_{i}|v\right\rangle \left|b_{i}\right\rangle $. Na representação matricial, temos
 
@@ -155,7 +162,7 @@ Com esses conceitos em mente, podemos agora avançar para os postulados da mecâ
 
 \subsection{Postulado dos estados}
 \begin{quote}
-Em toda teoria física, buscamos descrever os estados possíveis do sistema de interesse, as mudanças desses estados (evolução temporal) e as quantidades observáveis e suas medidas. Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo. Na sequência veremos os postulados da MQ para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo\cite{maziero}.
+Em toda teoria física, buscamos descrever os estados possíveis do sistema de interesse, as mudanças desses estados (evolução temporal) e as quantidades observáveis e suas medidas. Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo. Na sequência veremos os postulados da MQ para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo {[}\cite{maziero}{]}. 
 \end{quote}
 O estado de um sistema quântico é descrito por um vetor normalizado em um espaço de Hilbert $\mathcal{H}$. Por simplicidade, consideraremos $\mathcal{H}$ como sendo um espaço vetorial munido de uma função produto interno $\left\langle \cdot|\cdot\right\rangle :\mathcal{H}\rightarrow\mathbb{C}$.
 
@@ -174,23 +181,11 @@ Quantidades observáveis (mensuráveis) são representadas por operadores linear
 
 Diferentemente da mecânica clássica (MC), a mecânica quântica (MQ), em geral, não nos permite prever com certeza o resultado de uma medida. O que a MQ nos fornece são as probabilidades de obtenção dos diferentes resultados, calculadas por meio da regra de Born:
 
-\texttt{
 \begin{equation}
 P\left(o|\psi\right)=\left|\left\langle \psi|o\right\rangle \right|^{2}=\left|\left\langle o|\psi\right\rangle \right|^{2}
 \end{equation}
-}
 
 Essa é a probabilidade de obtermos o valor $o$ ao medirmos o observável $O$ de um sistema que está no estado $\left|\psi\right\rangle $ imediatamente antes da medida, e $\left|o\right\rangle $ é o autovetor de $O$ correspondente ao autovalor $o$. $O=O^{\dagger}$ definidos em $\mathcal{H}$. Ao medirmos um observável obteremos um dos seus possíveis valores, que são representados pelos autovalores do operador Hermitiano.
-
-Diferentemente da MC, a MQ, em geral, não nos possibilita prever com certeza os resultados de medidas futuras. O que a MQ nos fornece são as frequências relativas (probabilidades) com que esses resultados são obtidos, que são calculadas via a regra de Born: 
-
-
-\begin{equation}
-P\left(o|\psi\right)=\left|\left\langle \psi|o\right\rangle \right|^{2}=\left|\left\langle o|\psi\right\rangle \right|^{2}
-\end{equation}
-
-
-Essa é a probabilidade de obtermos o valor ($o$) ao medirmos o observável ($O$) de um sistema que se encontra no estado $\left|\psi\right\rangle $ imediatamente antes da medida, sendo ($\left|o\right\rangle $) o autovetor de ($O$) correspondente ao autovalor ($o$).
 
 Antes de avançarmos, podemos parar para refletir um pouco. Quando estávamos trabalhando com a mecânica clássica e a lei de Newton, um dos observáveis de uma partícula era sua posição, e a lei de Newton descrevia diretamente como essa grandeza variava no tempo.
 
@@ -218,7 +213,7 @@ P\left(o|\psi\right)=1,\quad\rightarrow\left|\psi\right\rangle =e^{i\phi}\left|o
 
 Uma segunda medida imediatamente subsequente do mesmo observável produzirá, portanto, novamente o resultado ($o$) .
 
-Observe que, teoricamente, antes da realização da medida, a mecânica quântica nos fornece apenas as probabilidades associadas aos possíveis resultados. No laboratório, entretanto, uma realização individual da medida produz necessariamente um resultado definido. Isso nos conduz a outra questão fundamental: a natureza probabilística da mecânica quântica. Suas previsões probabilísticas dizem respeito às frequências e distribuições de resultados obtidas em conjuntos de sistemas preparados de maneira equivalente e submetidos ao mesmo procedimento experimental, e não determinam, em geral, qual resultado específico será obtido em uma realização individual. 
+Observe que, teoricamente, antes da realização da medida, a mecânica quântica nos fornece apenas as probabilidades associadas aos possíveis resultados. No laboratório, entretanto, uma realização individual da medida produz necessariamente um resultado definido. Isso nos conduz a outra questão fundamental: a natureza probabilística da mecânica quântica. Suas previsões probabilísticas dizem respeito às frequências e distribuições de resultados obtidas em conjuntos de sistemas preparados de maneira equivalente e submetidos ao mesmo procedimento experimental, e não determinam, em geral, qual resultado específico será obtido em uma realização individual.
 
 Porém, neste instante, antes de a medida ser realizada, temos apenas as probabilidades associadas aos diferentes valores que podemos obter. Nesse caso, em que estado o sistema se encontra? Quando estamos lidando com a mecânica clássica, a dinâmica determinística permite, em princípio, que, conhecendo o estado do sistema em um instante $t$, possamos determinar seu estado em um instante anterior $t'<t$. Podemos estender essa linha de raciocínio para a mecânica quântica? O caráter probabilístico da teoria é uma característica fundamental da natureza ou apenas uma expressão da nossa ignorância sobre o estado do sistema? Novamente, não temos respostas conclusivas para essa questão, e diferentes interpretações da mecânica quântica oferecem respostas distintas.
 
@@ -253,8 +248,9 @@ Achar o texto, mas o ponto é: o comportamento ondulatório aparece qauandos se 
 
 \section{Curiosidade: problema da decoerencia}
 \begin{quotation}
-\bibliographystyle{plain}
+ \bibliographystyle{plain}
 \bibliography{ref}
+ 
 \end{quotation}
 
 \end{document}

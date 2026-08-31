@@ -1,0 +1,1121 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{babel}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children no
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding T1
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Qual (não) é a interpretação da Mecânica Quântica
+\end_layout
+
+\begin_layout Author
+Jhordan Silveira de Borba
+\end_layout
+
+\begin_layout Quote
+There is no general consensus as to what its fundamental principles are,
+ how it should be taught,
+ or what it really “means.” Every competent physicist can “do” quantum mechanics,
+ but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade,
+ and almost as implausible [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "griffiths2017introduction"
+literal "false"
+
+\end_inset
+
+].
+ 
+\end_layout
+
+\begin_layout Section
+Analogy with Classical Mechanics
+\end_layout
+
+\begin_layout Subsection
+Newton's Second Law
+\end_layout
+
+\begin_layout Standard
+Uma lei da física pode ser entendida como uma regra que descreve,
+ usualmente por meio de uma formulação matemática,
+ como determinados sistemas físicos se comportam [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Siddiqui2014"
+literal "false"
+
+\end_inset
+
+].
+ A segunda lei de Newton,
+ por exemplo,
+ pode ser expressa pela equação
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+F\left(x,t\right)=m\frac{d^{2}}{dt^{2}}x\left(t\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+onde 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ representa a posição de uma partícula de massa 
+\begin_inset Formula $m$
+\end_inset
+
+ em relação à origem no instante 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ Quando resolvemos esta equação diferencial sob determinadas condições iniciais,
+ obtemos como solução uma função 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+.
+ Assim,
+ uma vez especificadas as forças que atuam sobre a partícula e suas condições iniciais,
+ a segunda lei de Newton determina sua evolução temporal:
+ resolver a equação nos fornece a equação de movimento da partícula.
+\end_layout
+
+\begin_layout Standard
+Por exemplo,
+ para uma partícula livre (
+\begin_inset Formula $F=0$
+\end_inset
+
+),
+ podemos obter sua equação de movimento a partir da segunda lei de Newton:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+0=m\frac{d^{2}x}{dt^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Definindo a velocidade como 
+\begin_inset Formula $v\left(t\right)\equiv\frac{dx}{dt}$
+\end_inset
+
+ ,
+ temos:
+ 
+\begin_inset Formula 
+\begin{align}
+0 & =\frac{d^{2}x}{dt^{2}}\\
+0 & =\frac{dv}{dt}\\
+0\cdot\int^{t}_{t_{0}}dt' & =\int^{t}_{t_{0}}\frac{dv}{dt'}dt'\\
+0 & =v\left(t\right)-v\left(t_{0}\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Portanto 
+\begin_inset Formula $v\left(t\right)=v\left(t_{0}\right)$
+\end_inset
+
+,ou seja,
+ a velocidade da partícula é constante.
+ Denotando essa velocidade constante por 
+\begin_inset Formula $v$
+\end_inset
+
+,
+ temos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+v\left(t\right) & =v\left(t_{0}\right)\\
+\frac{dx}{dt} & =v\\
+\int^{t}_{t_{0}}\frac{dx}{dt'}dt' & =v\int^{t}_{t_{0}}dt'\\
+x\left(t\right)-x\left(t_{0}\right) & =v\left(t-t_{0}\right)
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Se 
+\begin_inset Formula $x\left(t_{0}\right)=x_{0}$
+\end_inset
+
+ e 
+\begin_inset Formula $t_{0}=0$
+\end_inset
+
+ ficamos com:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+x\left(t\right)=x_{0}+vt
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste caso 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ é facilmente interpretável como a posição da partícula no instante 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Equação de Schroedinger
+\end_layout
+
+\begin_layout Standard
+O análogo na mecânica quântica para a segunda lei de Newton é a equação de Schroedinger.
+ Em uma dimensão e não relativísitca,
+ a equação de Schroedinger é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+i\hbar\frac{\partial}{\partial t}\Psi\left(x,t\right)=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\Psi\left(x,t\right)+V\left(x,t\right)\Psi\left(x,t\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O equivalente agora para uma partícula livre (
+\begin_inset Formula $V\left(x,t\right)=0$
+\end_inset
+
+) é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+i\hbar\frac{\partial\Psi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usando então o método de separação de variáveis,
+ isto é,
+ considerando que a solução pode ser separada em uma parte expacial 
+\begin_inset Formula $\Phi\left(x\right)$
+\end_inset
+
+ e outra temporal 
+\begin_inset Formula $\Pi\left(t\right)$
+\end_inset
+
+ então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+i\hbar\frac{\partial}{\partial t}\left(\Phi\left(x\right)\Pi\left(t\right)\right) & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left(\Phi\left(x\right)\Pi\left(t\right)\right)\\
+i\hbar\frac{1}{\Pi}\frac{\partial\Pi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{1}{\Phi}\frac{\partial^{2}\Phi}{\partial x^{2}}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como um lado depende apenas da dimensao espacial (
+\begin_inset Formula $x$
+\end_inset
+
+) e o outro apena da dimensão temporal (
+\begin_inset Formula $t$
+\end_inset
+
+) a única forma de ser verdade é se os dois lados são igual a uma constante 
+\begin_inset Formula $E$
+\end_inset
+
+:
+ Resolvendo então pra parte temporal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{i\hbar}{\Pi}\frac{\partial\Pi}{\partial t} & =E\\
+\frac{d\Pi}{dt} & =-\frac{iE}{\hbar}\Pi
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como temos que a derivada da função 
+\begin_inset Formula $\Pi\left(t\right)$
+\end_inset
+
+ é igual ela mesmo mutiplicada por uma constante,
+ temos uma solução exponencial 
+\begin_inset Formula $\Pi\left(t\right)=A\exp\left(-\frac{iE}{\hbar}t\right)$
+\end_inset
+
+.
+ Para a parte espacial:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\frac{1}{\Phi}\frac{\partial^{2}\Phi}{\partial x^{2}} & =-\frac{2mE}{\hbar^{2}}\\
+\frac{\partial^{2}\Phi}{\partial x^{2}} & =-\frac{2mE}{\hbar^{2}}\Phi
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como essa é uma equação diferencial linear homogênea de segunda ordem com coeficientes constantes,
+ podemos procurar soluções na forma exponencial 
+\begin_inset Formula $\Phi\left(x\right)=e^{\pm ikx}$
+\end_inset
+
+.
+ Nesse caso,
+ de modo que 
+\begin_inset Formula $e^{ikx}$
+\end_inset
+
+ e 
+\begin_inset Formula $e^{-ikx}$
+\end_inset
+
+ são duas soluções linearmente independentes para 
+\begin_inset Formula $\frac{d^{2}\Phi}{dx^{2}}=-k^{2}\Phi$
+\end_inset
+
+.
+ Pela linearidade da equação,
+ sua solução geral é uma combinação linear dessas soluções:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Psi\left(x,t\right)=\Pi\left(t\right)\Phi\left(x\right)=A\exp\left(-\frac{iE}{\hbar}t\right)\left(B\exp\left(-i\sqrt{\frac{2mE}{\hbar^{2}}}x\right)+C\exp\left(i\sqrt{\frac{2mE}{\hbar^{2}}}x\right)\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou escrevendo 
+\begin_inset Formula $k^{2}=2mE/\hbar^{2}$
+\end_inset
+
+ e 
+\begin_inset Formula $\omega=\frac{E}{\hbar}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $K_{1}$
+\end_inset
+
+ e 
+\begin_inset Formula $K_{2}$
+\end_inset
+
+ são constantes determinadas pelas condições impostas à solução.
+ Aqui já surgem algumas questões.
+ Quando resolvemos a segunda lei de Newton,
+ obtivemos 
+\begin_inset Formula $x\left(t\right)$
+\end_inset
+
+ que descria a posição da partícula.
+ Quando resolvemos a equação de Schroedinger obtivemos 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+,
+ mas o que é 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+?
+ O que 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ descreve?
+\end_layout
+
+\begin_layout Section
+Postulados da mecânica quântica
+\end_layout
+
+\begin_layout Subsection
+Notação
+\end_layout
+
+\begin_layout Standard
+Para avançarmos,
+ precisamos conhecer os postulados
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Um postulado é uma proposição assumida como verdadeira dentro de uma teoria,
+ servindo como ponto de partida para a construção de seus conceitos e resultados.
+\end_layout
+
+\end_inset
+
+ da mecânica quântica.
+ O primeiro ponto a observar é que eles podem ser formulados de maneiras diferentes de um livro para outro.
+ Vamos utilizar o material do professor Jonas Maziero [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maziero"
+literal "false"
+
+\end_inset
+
+].
+ Precisamos começar,
+ então,
+ com alguns comentários sobre a notação de Dirac.
+\end_layout
+
+\begin_layout Standard
+Nessa notação,
+ escrevemos um vetor como 
+\begin_inset Formula $\left|v\right\rangle $
+\end_inset
+
+,
+ chamado ket.
+ Tomando o transposto conjugado desse vetor (ou adjunto),
+ obtemos 
+\begin_inset Formula $\left\langle v\right|=\left|v\right\rangle ^{\dag}=\left(\left|v\right\rangle ^{T}\right)^{*}$
+\end_inset
+
+ ,
+ que é chamado bra.
+ Se representamos o vetor 
+\begin_inset Formula $\left|v\right\rangle $
+\end_inset
+
+em uma base ortonormal 
+\begin_inset Formula $\left\{ \left|b_{j}\right\rangle \right\} $
+\end_inset
+
+ ,
+ podemos escrevê-lo como uma combinação linear dos vetores da base:
+ 
+\begin_inset Formula $\left|v\right\rangle =\sum_{i}\left\langle b_{i}|v\right\rangle \left|b_{i}\right\rangle $
+\end_inset
+
+.
+ Na representação matricial,
+ temos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left|v\right\rangle =\left[\begin{array}{c}
+\left\langle b_{1}|v\right\rangle \\
+\vdots\\
+\left\langle b_{n}|v\right\rangle 
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O produto de um bra por um ket é chamado produto interno e resulta em um escalar:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\langle w|v\right\rangle =\left|w\right\rangle ^{\dag}\left|v\right\rangle =\left[\begin{array}{ccc}
+\left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|w\right\rangle ^{*}\end{array}\right]\left[\begin{array}{c}
+\left\langle b_{1}|v\right\rangle \\
+\vdots\\
+\left\langle b_{n}|v\right\rangle 
+\end{array}\right]=\sum^{n}_{j=1}\left\langle b_{j}|w\right\rangle ^{*}\left\langle b_{j}|v\right\rangle 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por outro lado,
+ o produto de um ket por um bra,
+ é chamado produto externo e resulta em um operador,
+ cuja representação matricial é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left|v\right\rangle \left\langle w\right|=\left|v\right\rangle \left|w\right\rangle ^{\dag}=\left[\begin{array}{c}
+\left\langle b_{1}|v\right\rangle \\
+\vdots\\
+\left\langle b_{n}|v\right\rangle 
+\end{array}\right]\left[\begin{array}{ccc}
+\left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|w\right\rangle ^{*}\end{array}\right]=\left[\begin{array}{ccc}
+\left\langle b_{1}|v\right\rangle \left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{1}|v\right\rangle \left\langle b_{n}|w\right\rangle ^{*}\\
+\vdots & \vdots & \vdots\\
+\left\langle b_{n}|v\right\rangle \left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|v\right\rangle \left\langle b_{n}|w\right\rangle ^{*}
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Com esses conceitos em mente,
+ podemos agora avançar para os postulados da mecânica quântica propriamente ditos.
+\end_layout
+
+\begin_layout Subsection
+Postulado dos estados
+\end_layout
+
+\begin_layout Quote
+Em toda teoria física,
+ buscamos descrever os estados possíveis do sistema de interesse,
+ as mudanças desses estados (evolução temporal) e as quantidades observáveis e suas medidas.
+ Por exemplo,
+ em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial,
+ e a evolução temporal é dada pela segunda lei de Newton.
+ Os observáveis são essencialmente as posições,
+ das quais obtemos as velocidades usando o parâmetro tempo.
+ Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos,
+ e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo.
+ Na sequência veremos os postulados da MQ para descrever estados,
+ mudanças desses estados,
+ observáveis e suas medidas.
+ Veremos que a parte da medida difere muito daquela da MN,
+ principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "maziero"
+literal "false"
+
+\end_inset
+
+].
+ 
+\end_layout
+
+\begin_layout Standard
+O estado de um sistema quântico é descrito por um vetor normalizado em um espaço de Hilbert 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ Por simplicidade,
+ consideraremos 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ como sendo um espaço vetorial munido de uma função produto interno 
+\begin_inset Formula $\left\langle \cdot|\cdot\right\rangle :\mathcal{H}\rightarrow\mathbb{C}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ um espaço de Hilbert é um espaço vetorial complexo completo.
+ Para entendermos o que significa ser completo,
+ precisamos primeiro compreender o conceito de sequência de Cauchy.
+ Uma sequência de Cauchy é uma sequência cujos elementos se tornam arbitrariamente próximos uns dos outros à medida que avançamos na sequência.
+ Já um espaço métrico
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Um espaço métrico é,
+ essencialmente,
+ um conjunto de objetos no qual definimos uma maneira de medir a distância entre dois objetos.
+ No caso de um espaço vetorial com produto interno,
+ a distância pode ser definida a partir da norma induzida pelo produto interno.
+\end_layout
+
+\end_inset
+
+ completo é aquele em que toda sequência de Cauchy converge para um limite que também pertence ao próprio espaço.
+\end_layout
+
+\begin_layout Standard
+Por sistema nos referimos a um grau de liberdade
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Um grau de liberdade corresponde a uma variável física independente que pode variar e que pode ser utilizada para caracterizar o estado de um sistema.
+ Por exemplo,
+ a posição e o spin de uma partícula correspondem a diferentes graus de liberdade.
+\end_layout
+
+\end_inset
+
+.
+ Por exemplo,
+ o spin do elétron é um sistema,
+ outro sistema seria sua posição,
+ e assim por diante.
+ Quando consideramos dois ou mais graus de liberdade como uma única entidade,
+ a chamamos de sistema composto,
+ e se dividirmos o sistema composto em subsistemas,
+ seu estado é descrito por um vetor normalizado em um espaço de Hilbert obtido tomando-se o produto tensorial dos espaços individuais:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\mathcal{H}=\mathcal{H}_{a}\otimes\mathcal{H}_{b}\otimes\dots
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Postulado das medidas
+\end_layout
+
+\begin_layout Standard
+Quantidades observáveis (mensuráveis) são representadas por operadores lineares Hermitianos,
+ 
+\begin_inset Formula $O=O^{\dagger}$
+\end_inset
+
+ definidos em 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ Ao medirmos um observável,
+ obteremos um de seus possíveis valores,
+ que são dados pelos autovalores do operador hermitiano.
+\end_layout
+
+\begin_layout Standard
+Diferentemente da mecânica clássica (MC),
+ a mecânica quântica (MQ),
+ em geral,
+ não nos permite prever com certeza o resultado de uma medida.
+ O que a MQ nos fornece são as probabilidades de obtenção dos diferentes resultados,
+ calculadas por meio da regra de Born:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P\left(o|\psi\right)=\left|\left\langle \psi|o\right\rangle \right|^{2}=\left|\left\langle o|\psi\right\rangle \right|^{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Essa é a probabilidade de obtermos o valor 
+\begin_inset Formula $o$
+\end_inset
+
+ ao medirmos o observável 
+\begin_inset Formula $O$
+\end_inset
+
+ de um sistema que está no estado 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ imediatamente antes da medida,
+ e 
+\begin_inset Formula $\left|o\right\rangle $
+\end_inset
+
+ é o autovetor de 
+\begin_inset Formula $O$
+\end_inset
+
+ correspondente ao autovalor 
+\begin_inset Formula $o$
+\end_inset
+
+.
+ 
+\begin_inset Formula $O=O^{\dagger}$
+\end_inset
+
+ definidos em 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ Ao medirmos um observável obteremos um dos seus possíveis valores,
+ que são representados pelos autovalores do operador Hermitiano.
+\end_layout
+
+\begin_layout Standard
+Antes de avançarmos,
+ podemos parar para refletir um pouco.
+ Quando estávamos trabalhando com a mecânica clássica e a lei de Newton,
+ um dos observáveis de uma partícula era sua posição,
+ e a lei de Newton descrevia diretamente como essa grandeza variava no tempo.
+\end_layout
+
+\begin_layout Standard
+Porém,
+ quando abordamos a mecânica quântica,
+ a equação de Schrödinger descreve como a função de onda varia no tempo (e no espaço).
+ Com a notação de Dirac,
+ como veremos ao estudarmos o postulado da dinâmica,
+ temos uma descrição matemática de como o vetor de estado do sistema varia no tempo.
+ Porém,
+ o vetor de estado não é,
+ ele próprio,
+ um observável.
+\end_layout
+
+\begin_layout Standard
+Mesmo ignorando momentaneamente o aspecto probabilístico,
+ utilizamos o vetor de estado para calcular grandezas associadas aos observáveis.
+ Isso já constitui uma diferença fundamental entre a descrição clássica e a quântica dos sistemas.
+ Mas,
+ se calculamos grandezas escalares associadas aos observáveis a partir do vetor de estado (ou da função de onda) do sistema,
+ qual é o significado físico do próprio vetor de estado?
+ Ele sequer possui um significado físico direto?
+\end_layout
+
+\begin_layout Standard
+Este é um dos pontos em que diferentes interpretações da mecânica quântica divergem.
+ Ainda não há consenso sobre qual interpretação fornece a descrição correta da realidade física,
+ embora algumas interpretações possam ser descartadas ou consideradas problemáticas diante de determinados argumentos teóricos e resultados experimentais.
+\end_layout
+
+\begin_layout Standard
+Da mesma forma,
+ diferentes interpretações divergem quanto à questão de saber se todas as informações físicas relevantes sobre um sistema estão necessariamente contidas em seu vetor de estado.
+ Exploraremos diferentes interpretações mais adiante.
+ Por enquanto,
+ basta destacar que o significado físico do vetor de estado e o estatuto da informação que ele contém são questões interpretativas profundas sobre as quais não há consenso.
+\end_layout
+
+\begin_layout Subsubsection*
+Repetibilidade das medidas
+\end_layout
+
+\begin_layout Standard
+Porém,
+ existe mais um detalhe que,
+ embora não esteja explicitamente contido nos postulados que apresentamos até aqui,
+ é significativamente diferente quando estamos no domínio quântico:
+ a realização de uma medida afeta o sistema.
+\end_layout
+
+\begin_layout Standard
+Quando observamos a posição de uma bola de futebol que se move de acordo com a mecânica clássica,
+ podemos,
+ em princípio,
+ realizar essa observação sem alterar significativamente o estado da bola.
+ Podemos,
+ portanto,
+ considerar que a observação foi realizada de forma aproximadamente “externa” ao próprio sistema,
+ mantendo-o praticamente inalterado.
+\end_layout
+
+\begin_layout Standard
+No domínio quântico,
+ porém,
+ a situação é diferente.
+ Quando realizamos uma medida,
+ o sistema interage com o aparato de medição e,
+ em geral,
+ seu estado é alterado de maneira significativa.
+ Uma consequência disso é que,
+ se medirmos um mesmo observável duas vezes imediatamente em sequência,
+ o resultado da segunda medida será necessariamente igual ao obtido na primeira.
+\end_layout
+
+\begin_layout Standard
+De fato,
+ suponha que a primeira medida do observável (
+\begin_inset Formula $O$
+\end_inset
+
+) tenha produzido o resultado (
+\begin_inset Formula $o$
+\end_inset
+
+).
+ Após essa medida,
+ o estado do sistema passa a ser um estado associado ao resultado (
+\begin_inset Formula $o$
+\end_inset
+
+).
+ No caso em que o autovalor (
+\begin_inset Formula $o$
+\end_inset
+
+) não é degenerado
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Um autovalor não degenerado é aquele ao qual corresponde um único autovetor,
+ à parte de uma fase global,
+ isto é,
+ um fator de fase complexo 
+\begin_inset Formula $e^{i\phi}$
+\end_inset
+
+ que acompanha o vetor de estado e não afeta os resultados das medidas,
+ pois 
+\begin_inset Formula $e^{i\phi}\left(e^{i\phi}\right)^{*}=1$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+,
+ podemos escrever
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P\left(o|\psi\right)=1,\quad\rightarrow\left|\psi\right\rangle =e^{i\phi}\left|o\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Uma segunda medida imediatamente subsequente do mesmo observável produzirá,
+ portanto,
+ novamente o resultado (
+\begin_inset Formula $o$
+\end_inset
+
+) .
+\end_layout
+
+\begin_layout Standard
+Observe que,
+ teoricamente,
+ antes da realização da medida,
+ a mecânica quântica nos fornece apenas as probabilidades associadas aos possíveis resultados.
+ No laboratório,
+ entretanto,
+ uma realização individual da medida produz necessariamente um resultado definido.
+ Isso nos conduz a outra questão fundamental:
+ a natureza probabilística da mecânica quântica.
+ Suas previsões probabilísticas dizem respeito às frequências e distribuições de resultados obtidas em conjuntos de sistemas preparados de maneira equivalente e submetidos ao mesmo procedimento experimental,
+ e não determinam,
+ em geral,
+ qual resultado específico será obtido em uma realização individual.
+\end_layout
+
+\begin_layout Standard
+Porém,
+ neste instante,
+ antes de a medida ser realizada,
+ temos apenas as probabilidades associadas aos diferentes valores que podemos obter.
+ Nesse caso,
+ em que estado o sistema se encontra?
+ Quando estamos lidando com a mecânica clássica,
+ a dinâmica determinística permite,
+ em princípio,
+ que,
+ conhecendo o estado do sistema em um instante 
+\begin_inset Formula $t$
+\end_inset
+
+,
+ possamos determinar seu estado em um instante anterior 
+\begin_inset Formula $t'<t$
+\end_inset
+
+.
+ Podemos estender essa linha de raciocínio para a mecânica quântica?
+ O caráter probabilístico da teoria é uma característica fundamental da natureza ou apenas uma expressão da nossa ignorância sobre o estado do sistema?
+ Novamente,
+ não temos respostas conclusivas para essa questão,
+ e diferentes interpretações da mecânica quântica oferecem respostas distintas.
+\end_layout
+
+\begin_layout Standard
+E,
+ por fim,
+ ainda relacionado à natureza probabilística das medições,
+ interpretações equivocadas frequentemente sustentam a ideia de que a mecânica quântica é uma formulação científica que naturalmente incorpora a possibilidade do livre-arbítrio.
+ Entretanto,
+ o caráter probabilístico da teoria,
+ por si só,
+ não fornece suporte a essa conclusão e não torna a mecânica quântica compatível com o livre-arbítrio.
+ Poderemos discutir melhor esse equívoco quando abordarmos o postulado da dinâmica.
+\end_layout
+
+\begin_layout Subsubsection*
+Incompatibilidade quântica
+\end_layout
+
+\begin_layout Standard
+Se temos dois operadores Hermitianos,
+ escrito na sua representação matricial como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+A= & \sum^{d}_{j=1}a\left|a_{j}\right\rangle \left\langle a_{j}\right|\\
+\end{align*}
+
+\end_inset
+
+Incerteza:
+ questão se é uma questão natureza,
+ ou uma questão de médias.
+\end_layout
+
+\begin_layout Subsection
+Relação de Incerteza
+\end_layout
+
+\begin_layout Standard
+https://qm1.quantumtinkerer.tudelft.nl/6_the_free_particle/
+\end_layout
+
+\begin_layout Standard
+Não podemos saber com precisão a posição e energia da particula.
+\end_layout
+
+\begin_layout Subsection
+Postulado da dinâmica
+\end_layout
+
+\begin_layout Standard
+não há espaço para determinismo.
+\end_layout
+
+\begin_layout Section
+Experimento dupla fenda
+\end_layout
+
+\begin_layout Standard
+Achar o texto,
+ mas o ponto é:
+ o comportamento ondulatório aparece qauandos se vê coletivamente.
+\end_layout
+
+\begin_layout Section
+Desigualdade de bell
+\end_layout
+
+\begin_layout Section
+Interpertaçoes:
+ 
+\end_layout
+
+\begin_layout Section
+Curiosidade:
+ problema da decoerencia
+\end_layout
+
+\begin_layout Quotation
+ 
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "ref"
+options "plain"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
