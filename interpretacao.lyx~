@@ -1124,6 +1124,8 @@ e
 
 ,
  respectivamente,
+ isto é,
+ diagonalizam esses operadores,
  de modo que:
 \end_layout
 
@@ -1184,13 +1186,641 @@ Então:
 \end_layout
 
 \begin_layout Standard
-Então nós temos que se ops operadores compartilham do mesmo conjunto de autovetores eles comutam.
- Podemos agora provar o contrário,
- se comutam:
+Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam.
+ E para provar que se comutam compartilham da mesma base de autovetores:
 \end_layout
 
 \begin_layout Standard
-Então compartilham da mesma base de autovetores.
+\begin_inset Formula 
+\begin{align}
+A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
+ & =B\left(A\left|a_{j}\right\rangle \right)\\
+ & =B\left(a_{j}\left|a_{j}\right\rangle \right)\\
+ & =a_{j}B\left|a_{j}\right\rangle 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou seja,
+ nesse caso devemos ter que 
+\begin_inset Formula $B\left|a_{j}\right\rangle $
+\end_inset
+
+ e 
+\begin_inset Formula $\left|a_{j}\right\rangle $
+\end_inset
+
+ pertence ao autoespaço de 
+\begin_inset Formula $A$
+\end_inset
+
+ correspondente ao autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Se 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ não é degenerado,
+ seu autoespaço possui dimensão 1.
+ Portanto,
+ qualquer autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+ associado a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é linearmente dependente de 
+\begin_inset Formula $\left|a_{j}\right\rangle $
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $B$
+\end_inset
+
+ em 
+\begin_inset Formula $\left|a_{j}\right\rangle $
+\end_inset
+
+ também pertence a esse autoespaço,
+ necessariamente 
+\begin_inset Formula $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle .$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agora se 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é degenerado,
+ isto é,
+ existem dois ou mais autovetores linearmente independentes correspondentes ao mesmo autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+,
+ então existe um subespaço de 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ gerado pelos autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ correspondentes a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ É um pouco mais complexo,
+ mas é a mesma ideia aplicada a um subespaço de dimensão maior que 1.
+ Para entender isso,
+ vamos nos basear em outra fonte [
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MIT804_CommonEigenbases"
+literal "false"
+
+\end_inset
+
+].
+\end_layout
+
+\begin_layout Standard
+Para o caso degenerado,
+ então temos mais vetores associados a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Vamos chamar esse subespaço de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ e,
+ sendo 
+\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$
+\end_inset
+
+ uma base qualquer de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+,
+ então 
+\begin_inset Formula $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $
+\end_inset
+
+.
+ Agora,
+ como 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ comutam,
+ temos que 
+\begin_inset Formula $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$
+\end_inset
+
+,
+ isto é,
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ transforma vetores de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ em vetores que também pertencem a 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Em particular,
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ transforma um autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+ associado a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ em um vetor permanece no mesmo autoespaço de 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ se 
+\begin_inset Formula $B\left|a^{k}_{j}\right\rangle \neq0$
+\end_inset
+
+,
+ essevetor também é um autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+ associado a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Portanto,
+ cada 
+\begin_inset Formula $B\left|a^{k}_{j}\right\rangle $
+\end_inset
+
+ pode ser escritor como uma combinação linear dos vetores da base de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ Assim podemos considerar a ação de 
+\begin_inset Formula $B$
+\end_inset
+
+ 
+\begin_inset Quotes eld
+\end_inset
+
+internamente
+\begin_inset Quotes erd
+\end_inset
+
+ no subespaço 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $B$
+\end_inset
+
+ é hermitiano,sua restrição a 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ também é.
+ E como 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ possui dimensão finita
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.
+\end_layout
+
+\end_inset
+
+,
+ podemos diagonalizar essa restrição de 
+\begin_inset Formula $B$
+\end_inset
+
+ em uma base ortonormal de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Portanto existe uma base de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ ,
+ que podemos denotar novamente por 
+\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} $
+\end_inset
+
+,
+ tal que 
+\begin_inset Formula $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $
+\end_inset
+
+.
+ Como essa nova base continua sendo uma base de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+,
+ seus vetores continuam sendo autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ associados a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assim,
+ os autovetores são simultanemanete autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Repetindo esse procedimento para cada autoespaço de 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ obtemos uma base ortonormal de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ formada por autovetores comuns aos dois operadores.
+\end_layout
+
+\begin_layout Standard
+Ou seja,
+ se os operadores Hermitianos 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ comutam,
+ então compartilham uma mesma base ortonormal de autovetores.
+ Para entender melhor essa prova,
+ podemos representar o operador 
+\begin_inset Formula $B$
+\end_inset
+
+ como uma matriz na base de autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ Usando a relação de completude,
+ 
+\begin_inset Formula $\mathbb{I}=\sum_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right|$
+\end_inset
+
+ temos que 
+\begin_inset Formula $B=\mathbb{I}B\mathbb{I}=\sum_{j,k}\left(\left\langle a_{j}\left|B\right|a_{k}\right\rangle \right)\left(\left|a_{j}\right\rangle \left\langle a_{k}\right|\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Assim,
+ os elementos da matriz que representa 
+\begin_inset Formula $B$
+\end_inset
+
+ nessa base são 
+\begin_inset Formula $B_{a_{j},a_{k}}=\left\langle a_{j}\left|B\right|a_{k}\right\rangle $
+\end_inset
+
+,
+ ou em forma matricial:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+B=\left[\begin{array}{ccc}
+\left\langle a_{1}\left|B\right|a_{1}\right\rangle  & \left\langle a_{1}\left|B\right|a_{2}\right\rangle  & \dots\\
+\left\langle a_{2}\left|B\right|a_{1}\right\rangle  & \left\langle a_{2}\left|B\right|a_{2}\right\rangle  & \dots\\
+\vdots & \vdots & \ddots
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Então podemos pensar em 
+\begin_inset Formula $B$
+\end_inset
+
+ como uma matriz bloco-diagonal:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\left[\begin{array}{ccc}
+B_{1} & 0 & 0\\
+0 & B_{2} & 0\\
+0 & 0 & \ddots
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde cada 
+\begin_inset Formula $B_{j}$
+\end_inset
+
+ é uma submatriz representando a ação interna de 
+\begin_inset Formula $B$
+\end_inset
+
+ atuando no subespaço 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Se o autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é não degenerado,
+ então o bloco 
+\begin_inset Formula $B_{j}$
+\end_inset
+
+é apenas uma matriz 
+\begin_inset Formula $1\times1$
+\end_inset
+
+.
+ Se 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é degenerado,
+ então o bloco 
+\begin_inset Formula $B_{j}$
+\end_inset
+
+possui dimensão 
+\begin_inset Formula $d_{j}\times d_{j}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $B$
+\end_inset
+
+ é Hermitiano,
+ cada bloco 
+\begin_inset Formula $B_{j}$
+\end_inset
+
+ também é uma matriz Hermitiana e,
+ portanto,
+ pode ser diagonalizado.
+ Assim,
+ podemos diagonalizar 
+\begin_inset Formula $B$
+\end_inset
+
+ dentro de cada subespaço 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+,
+ obtendo uma base de autovetores de 
+\begin_inset Formula $B$
+\end_inset
+
+ que também são autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Exemplo"
+target "interpretacao"
+type "mailto:"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Exemplo"
+target "interpretacao"
+type "file:"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Exemplo"
+target "interpretacao"
+type "other"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Exemplo"
+target "interpretacao"
+type "other"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1244,11 +1874,12 @@ Curiosidade:
 \end_layout
 
 \begin_layout Quotation
- 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "ref"
 options "plain"
+encoding "default"
 
 \end_inset
 

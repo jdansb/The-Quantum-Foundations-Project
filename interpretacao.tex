@@ -255,7 +255,7 @@ Então:
 0=\left[A,B\right]=AB-BA\Longrightarrow AB=BA
 \end{equation}
 
-Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam. Podemos agora provar o contrário:
+Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam. E para provar que se comutam compartilham da mesma base de autovetores:
 
 \begin{align}
 A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
@@ -266,13 +266,41 @@ A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\ran
 
 Ou seja, nesse caso devemos ter que $B\left|a_{j}\right\rangle $ e $\left|a_{j}\right\rangle $ pertence ao autoespaço de $A$ correspondente ao autovalor $a_{j}$. Se $a_{j}$ não é degenerado, seu autoespaço possui dimensão 1. Portanto, qualquer autovetor de $A$ associado a $a_{j}$ é linearmente dependente de $\left|a_{j}\right\rangle $. Como $B$ em $\left|a_{j}\right\rangle $ também pertence a esse autoespaço, necessariamente $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle .$
 
-Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linearmente independentes correspondentes ao mesmo autovalor $a_{j}$, então existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes a $a_{j}$. É um pouco mais complexo, mas é a mesma ideia aplicada a um subespaço de dimensão maior que 1. Para entender isso, vamos olhar especificamente para uma outra fonte {[}\cite{MIT804_CommonEigenbases}{]}.
+Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linearmente independentes correspondentes ao mesmo autovalor $a_{j}$, então existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes a $a_{j}$. É um pouco mais complexo, mas é a mesma ideia aplicada a um subespaço de dimensão maior que 1. Para entender isso, vamos nos basear em outra fonte {[}\cite{MIT804_CommonEigenbases}{]}.
 
-Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, entao $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora ainda temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Portanto cada $B\left|a^{k}_{j}\right\rangle $ é uma combinação linear dos vetores da base de $\mathcal{H}_{j}$
+Para o caso degenerado, então temos mais vetores associados a $a_{j}$. Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e, sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, então $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora, como $A$ e $B$ comutam, temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Em particular, $B$ transforma um autovetor de $A$ associado a $a_{j}$ em um vetor permanece no mesmo autoespaço de $A$, se $B\left|a^{k}_{j}\right\rangle \neq0$, essevetor também é um autovetor de $A$ associado a $a_{j}$.
 
-$B\left|a^{k}_{j}\right\rangle =\sum^{d_{j}}_{l=1}b_{l}\left|a^{l}_{j}\right\rangle $.
+Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano,sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita\footnote{Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.}, podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar novamente por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
 
-Como $B$ é um operador Hermitiano\footnote{Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.}, existe então uma base de $\mathcal{H}_{j}$ que o diagonaliza. Assumindo que a base é $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, temos $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Ou seja, se os operadores $A$ e $B$ comutam, então compartilham da mesma base de autovetores.
+Assim, os autovetores são simultanemanete autovetores de $A$ e $B$. Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores comuns aos dois operadores.
+
+Ou seja, se os operadores Hermitianos $A$ e $B$ comutam, então compartilham uma mesma base ortonormal de autovetores. Para entender melhor essa prova, podemos representar o operador $B$ como uma matriz na base de autovetores de $A$. Usando a relação de completude, $\mathbb{I}=\sum_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right|$ temos que $B=\mathbb{I}B\mathbb{I}=\sum_{j,k}\left(\left\langle a_{j}\left|B\right|a_{k}\right\rangle \right)\left(\left|a_{j}\right\rangle \left\langle a_{k}\right|\right)$.
+
+Assim, os elementos da matriz que representa $B$ nessa base são $B_{a_{j},a_{k}}=\left\langle a_{j}\left|B\right|a_{k}\right\rangle $, ou em forma matricial:
+
+\begin{equation}
+B=\left[\begin{array}{ccc}
+\left\langle a_{1}\left|B\right|a_{1}\right\rangle  & \left\langle a_{1}\left|B\right|a_{2}\right\rangle  & \dots\\
+\left\langle a_{2}\left|B\right|a_{1}\right\rangle  & \left\langle a_{2}\left|B\right|a_{2}\right\rangle  & \dots\\
+\vdots & \vdots & \ddots
+\end{array}\right]
+\end{equation}
+
+Então podemos pensar em $B$ como uma matriz bloco-diagonal:
+
+\[
+B=\left[\begin{array}{ccc}
+B_{1} & 0 & 0\\
+0 & B_{2} & 0\\
+0 & 0 & \ddots
+\end{array}\right]
+\]
+
+Onde cada $B_{j}$ é uma submatriz representando a ação interna de $B$ atuando no subespaço $\mathcal{H}_{j}$. Se o autovalor $a_{j}$ é não degenerado, então o bloco $B_{j}$é apenas uma matriz $1\times1$. Se $a_{j}$ é degenerado, então o bloco $B_{j}$possui dimensão $d_{j}\times d_{j}$. 
+
+Como $B$ é Hermitiano, cada bloco $B_{j}$ também é uma matriz Hermitiana e, portanto, pode ser diagonalizado. Assim, podemos diagonalizar $B$ dentro de cada subespaço $\mathcal{H}_{j}$, obtendo uma base de autovetores de $B$ que também são autovetores de $A$. 
+
+\href{exemplo-incompatibilidade}{Exemplo}.
 
 \subsection{Relação de Incerteza}
 
