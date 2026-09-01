@@ -1498,16 +1498,6 @@ internamente
 \uwave default
 \noun default
 \color inherit
-
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.
-\end_layout
-
-\end_inset
-
 ,
  podemos diagonalizar essa restrição de 
 \begin_inset Formula $B$
@@ -1909,7 +1899,17 @@ literal "false"
 
 \end_inset
 
-].
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "nesta página"
+target "https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html"
+literal "false"
+
+\end_inset
+
+.].
 \end_layout
 
 \end_inset

@@ -1909,7 +1909,17 @@ literal "false"
 
 \end_inset
 
-].
+,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "nesta página"
+target "https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html"
+literal "false"
+
+\end_inset
+
+.].
 \end_layout
 
 \end_inset

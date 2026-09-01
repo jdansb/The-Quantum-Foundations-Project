@@ -299,16 +299,15 @@ B_{1} & 0 & 0\\
 Onde cada $B_{j}$ é uma submatriz representando a ação interna de $B$ atuando no subespaço $\mathcal{H}_{j}$. Se o autovalor $a_{j}$ é não degenerado, então o bloco $B_{j}$é apenas uma matriz $1\times1$. Se $a_{j}$ é degenerado, então o bloco $B_{j}$possui dimensão $d_{j}\times d_{j}$. 
 
 Como $B$ é Hermitiano, cada bloco $B_{j}$ também é uma matriz Hermitiana e, portanto, pode ser diagonalizado. Assim, podemos diagonalizar $B$ dentro de cada subespaço $\mathcal{H}_{j}$, obtendo uma base de autovetores de $B$ que também são autovetores de $A$. Assim provamos que se e semente se, dois operadores $A$ e $B$ comutam, então compartilham de uma base de autovetores em comum.
-
 \begin{center}
 \href{/exemplo-incompatibilidade}{Exemplo}.
-\end{center}
+\par\end{center}
 
 Em resumo, quando temos um autovalor $a_{j}$ não degenerado, a situação é muito simples, pois nesse caso, o único autovetor de $A$, a menos de um fator multiplicativo, é automaticamente também um autovetor de $B$.
 
 Quando $a_{j}$ é degenerado, seus autovetores formam um subespaço $\mathcal{H}_{j}$, correspondente ao autovalor $a_{j}$, no qual todo vetor não nulo também é um autovetor de $A$ associado a $a_{j}$. Como $A$ e $B$ comutam, a aplicação de $B$ sobre qualquer vetor de $\mathcal{H}_{j}$ resulta em outro vetor pertencente a $\mathcal{H}_{j}$. Assim, basta encontrar, dentro desse subespaço, os vetores que também sejam autovetores de $B$.
 
-Essa possibilidade é garantida pelo fato de $B$ ser Hermitiano: sua atuação restrita a $\mathcal{H}_{j}$ pode ser representada por uma submatriz Hermitiana, que pode ser diagonalizada por uma base ortonormal de autovetores\footnote{O fato de uma matriz ser Hermitiana garante que podemos escolher, no espaço em que ela atua, uma base ortonormal formada por seus autovetores{[}\cite{DelftSpectralTheorem}{]}.}. Portanto, podemos escolher uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores de $B$. Como todos os vetores de $\mathcal{H}_{j}$ são também autovetores de $A$ associados a $a_{j}$, esses vetores são autovetores comuns de $A$ e $B$.
+Essa possibilidade é garantida pelo fato de $B$ ser Hermitiano: sua atuação restrita a $\mathcal{H}_{j}$ pode ser representada por uma submatriz Hermitiana, que pode ser diagonalizada por uma base ortonormal de autovetores\footnote{O fato de uma matriz ser Hermitiana garante que podemos escolher, no espaço em que ela atua, uma base ortonormal formada por seus autovetores{[}\cite{DelftSpectralTheorem}, \href{https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html}{nesta página}.{]}.}. Portanto, podemos escolher uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores de $B$. Como todos os vetores de $\mathcal{H}_{j}$ são também autovetores de $A$ associados a $a_{j}$, esses vetores são autovetores comuns de $A$ e $B$.
 
 Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}$ formada por autovetores comuns de $A$ e $B$.
 
