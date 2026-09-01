@@ -1785,7 +1785,7 @@ Como
 \begin_inset CommandInset href
 LatexCommand href
 name "Exemplo"
-target "/exemplo-incompatibilidade.ipynb"
+target "/exemplo-incompatibilidade"
 type "other"
 literal "false"
 

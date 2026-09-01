@@ -11,6 +11,9 @@ project:
   toc:
     - file: interpretacao.tex
     - file: mat.tex
+    - file: exemplo_incompatibilidade.ipynb
+      hidden: true
+
 
     
 site:
