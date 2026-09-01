@@ -16,7 +16,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{babel}
 
-
 \makeatother
 
 \begin{document}
@@ -270,7 +269,7 @@ Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linear
 
 Para o caso degenerado, então temos mais vetores associados a $a_{j}$. Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e, sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, então $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora, como $A$ e $B$ comutam, temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Em particular, $B$ transforma um autovetor de $A$ associado a $a_{j}$ em um vetor permanece no mesmo autoespaço de $A$, se $B\left|a^{k}_{j}\right\rangle \neq0$, essevetor também é um autovetor de $A$ associado a $a_{j}$.
 
-Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano,sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita\footnote{Ser diagonalizável por uma base ortonormal é uma propriedade dos operadores Hermitianos em dimensão finita.}, podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar novamente por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
+Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano,sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita, podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar novamente por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
 
 Assim, os autovetores são simultanemanete autovetores de $A$ e $B$. Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores comuns aos dois operadores.
 
@@ -300,7 +299,7 @@ Onde cada $B_{j}$ é uma submatriz representando a ação interna de $B$ atuando
 
 Como $B$ é Hermitiano, cada bloco $B_{j}$ também é uma matriz Hermitiana e, portanto, pode ser diagonalizado. Assim, podemos diagonalizar $B$ dentro de cada subespaço $\mathcal{H}_{j}$, obtendo uma base de autovetores de $B$ que também são autovetores de $A$. Assim provamos que se e semente se, dois operadores $A$ e $B$ comutam, então compartilham de uma base de autovetores em comum.
 \begin{center}
-\href{/exemplo-incompatibilidade}{Exemplo}.
+\href{/exemplo-incompatibilidade.ipynb}{Exemplo}.
 \par\end{center}
 
 Em resumo, quando temos um autovalor $a_{j}$ não degenerado, a situação é muito simples, pois nesse caso, o único autovetor de $A$, a menos de um fator multiplicativo, é automaticamente também um autovetor de $B$.

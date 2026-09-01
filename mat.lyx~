@@ -333,6 +333,68 @@ e
 
 \end_layout
 
+\begin_layout Quotation
+
+\series bold
+Definição
+\series default
+:
+ A transposa de uma matriz 
+\begin_inset Formula $A$
+\end_inset
+
+ de dimensão 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ é a matriz 
+\begin_inset Formula $A^{T}$
+\end_inset
+
+ de dimensão 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ definido por 
+\begin_inset Formula $\left(A^{T}\right)_{i,j}=A_{j,i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definiçã
+\series default
+o
+\series bold
+:
+
+\series default
+ A transposa de uma matriz 
+\begin_inset Formula $A$
+\end_inset
+
+ de dimensão 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ é a matriz 
+\begin_inset Formula $A^{T}$
+\end_inset
+
+ de dimensão 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ definido por 
+\begin_inset Formula $\left(A^{T}\right)_{i,j}=A_{j,i}$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Probabilidade e estatística
 \end_layout

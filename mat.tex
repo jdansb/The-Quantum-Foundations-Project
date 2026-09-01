@@ -3,13 +3,59 @@
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{luainputenc}
+\usepackage{amsbsy}
+\usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
 \usepackage{babel}
 \begin{document}
 \title{Matemática para Mecânia Quântica}
 \author{Jhordan Silveira de Borba}
+
 \maketitle
+Como já estudei o básico das ferramentas matemáticas necessárias, por enquanto quero priorizar a compreensão física. Assim, aprofundarei a matemática até o nível necessário para compreender, aplicar e questionar criticamente a estrutura física em estudo. Demonstrações e desenvolvimentos puramente matemáticos podem ser deixados para quando se tornarem necessários ou quando eu decidir aprofundar os fundamentos.
+
+Por exemplo, não é necessário, neste momento, aprofundar a demonstração do teorema espectral para matrizes Hermitianas, pois sua prova é predominantemente matemática e não acrescenta, por si só, uma nova interpretação física ao problema. Em contrapartida, vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física, como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam, pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
+
+Porém estarei compartilhando aqui uma revisão puramente matemática, baseada principalmente neste material {[}\cite{DelftSpectralTheorem}{]}.
+
+\section{Análise}
 
 \section{Álgebra Linear}
+
+\subsection{Operação de Matrizes}
+
+Frequentemente, uma matriz $A$ de dimensão $m\times n$ , com entradas reais, representa uma transformação linear do espaço $\mathbb{R}^{n}$, formado por vetores de comprimento $n$, para o espaço $\mathbb{R}^{m}$, formado por vetores de comprimento $m$. 
+
+Analogamente, uma matriz com entradas complexas representa uma transforação linear de $\mathbb{C}^{n}$ para $\mathbb{C}^{m}$. Essa aplicação é definida pelo produto entre a matriz e o vetor.
+\begin{quotation}
+\textbf{Definição}: Dada uma matriz $A$ real (complexa) de dimensão $m\times n$, a transformação linear associada a $A$ é a transformação que leva cada vetor $\boldsymbol{v}\in\mathbb{R}^{n}$ ao vetor $A\boldsymbol{v}\in\mathbb{R}^{m}$ ( cada vetor $\boldsymbol{v}\in\mathbb{C}^{n}$ ao vetor $A\boldsymbol{v}\in\mathbb{C}^{m}$
+\end{quotation}
+A multiplicação de matrizes é definida de modo que o produto $AB$ represente a transformação linear obtida aplicando primeiro $B$ e depois $A$. Em outras palavras, temos
+
+\begin{equation}
+\left(AB\right)\boldsymbol{v}=A\left(B\boldsymbol{v}\right)
+\end{equation}
+
+Observe que, no lado esquerdo, temos uma multiplicação de matrizes e uma multiplicação matriz-vetor, enquanto, no lado direito, temos apenas duas multiplicações matriz-vetor.
+
+Na física quântica, as matrizes são frequentemente quadradas e possuem algumas propriedades adicionais que as tornam adequadas para atuar como operadores sobre um sistema físico ou como observáveis de tal sistema. 
+
+Muitas das definições a seguir são especificamente para matrizes quadradas. Um primeiro exemplo é o dos comutadores, que desempenham um papel extremamente importante na física quântica.
+\begin{quotation}
+\textbf{Definição}: Dada duas matrizes $A$ e $B$ de dimensões $n\times n$, o comutador de $A$e $B$ é a matriz $n\times n$: $\left[A,B\right]=AB-BA$
+
+\textbf{Definição}: A transposta de uma matriz $A$ de dimensão $m\times n$ é a matriz $A^{T}$ de dimensão $n\times m$ definido por $\left(A^{T}\right)_{i,j}=A_{j,i}$
+
+\textbf{Definiçã}o\textbf{:} A transposa de uma matriz $A$ de dimensão $m\times n$ é a matriz $A^{T}$ de dimensão $n\times m$ definido por $\left(A^{T}\right)_{i,j}=A_{j,i}$
+\end{quotation}
+
+\section{Probabilidade e estatística}
+
+\section{Apêndice}
+\begin{quotation}
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{quotation}
+
 \end{document}
