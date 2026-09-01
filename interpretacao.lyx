@@ -1777,17 +1777,194 @@ Como
 \end_inset
 
 .
- 
+ Assim provamos que se e semente se,
+ dois operadores 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ comutam,
+ então compartilham de uma base de autovetores em comum.
 \end_layout
 
 \begin_layout Standard
+\align center
 \begin_inset CommandInset href
 LatexCommand href
 name "Exemplo"
-target "exemplo-incompatibilidade"
+target "/exemplo-incompatibilidade"
 type "other"
 literal "false"
 
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Em resumo,
+ quando temos um autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ não degenerado,
+ a situação é muito simples,
+ pois nesse caso,
+ o único autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ a menos de um fator multiplicativo,
+ é automaticamente também um autovetor de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Quando 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+ é degenerado,
+ seus autovetores formam um subespaço 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+,
+ correspondente ao autovalor 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+,
+ no qual todo vetor não nulo também é um autovetor de 
+\begin_inset Formula $A$
+\end_inset
+
+ associado a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ comutam,
+ a aplicação de 
+\begin_inset Formula $B$
+\end_inset
+
+ sobre qualquer vetor de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ resulta em outro vetor pertencente a 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+.
+ Assim,
+ basta encontrar,
+ dentro desse subespaço,
+ os vetores que também sejam autovetores de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Essa possibilidade é garantida pelo fato de 
+\begin_inset Formula $B$
+\end_inset
+
+ ser Hermitiano:
+ sua atuação restrita a 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ pode ser representada por uma submatriz Hermitiana,
+ que pode ser diagonalizada por uma base ortonormal de autovetores
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O fato de uma matriz ser Hermitiana garante que podemos escolher,
+ no espaço em que ela atua,
+ uma base ortonormal formada por seus autovetores[
+\begin_inset CommandInset citation
+LatexCommand cite
+key "DelftSpectralTheorem"
+literal "false"
+
+\end_inset
+
+].
+\end_layout
+
+\end_inset
+
+.
+ Portanto,
+ podemos escolher uma base ortonormal de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ formada por autovetores de 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ Como todos os vetores de 
+\begin_inset Formula $\mathcal{H}_{j}$
+\end_inset
+
+ são também autovetores de 
+\begin_inset Formula $A$
+\end_inset
+
+ associados a 
+\begin_inset Formula $a_{j}$
+\end_inset
+
+,
+ esses vetores são autovetores comuns de 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Repetindo esse procedimento para cada autoespaço de 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ obtemos uma base ortonormal de 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ formada por autovetores comuns de 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
 \end_inset
 
 .
