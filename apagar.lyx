@@ -1,0 +1,915 @@
+#LyX file created by tex2lyx 2.5
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin D:/Github/The-Quantum-Foundations-Project/
+\textclass article
+\use_default_options false
+\maintain_unincluded_children no
+\language english
+\language_package none
+\inputencoding auto-legacy
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\crossref_package prettyref
+\use_minted 0
+\use_lineno false
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+— jupytext: formats: md:myst textrepresentation: extension: .md formatname: myst kernelspec: displayname: Python 3 language: python name: python3 —
+\end_layout
+
+\begin_layout Standard
+# Basis transformations
+\end_layout
+
+\begin_layout Standard
+## Bases
+\end_layout
+
+\begin_layout Standard
+Until now, we have been working with one specific coordinate system in which vectors are identified with their coordinate vectors with respect to the *standard basis vectors*
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\ve_1=\begin{pmatrix}1\\ 0\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
+\ve_2=\begin{pmatrix}0\\ 1\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
+\ldots,\quad
+\ve_n=\begin{pmatrix}0\\ 0\\ 0\\ \vdots\\ 1\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words, a vector 
+\begin_inset Formula $\vv=\begin{pmatrix}v_1\\ v_2\\ \vdots\\
+v_n\end{pmatrix}$
+\end_inset
+
+ means the same as the corresponding linear combination of the standard basis vectors:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\vv = v_1 \ve_1 + \cdots + v_n \ve_n.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In many situations, it is useful to express vectors in a different coordinate system. For this we need the general concept of a *basis*.
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+prf:definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Basis A *basis* of 
+\begin_inset Formula $\RR^n$
+\end_inset
+
+ consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors 
+\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
+\end_inset
+
+ such that every vector 
+\begin_inset Formula $\vv\in\RR^n$
+\end_inset
+
+ can be written in exactly one way as a *linear combination*
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\vv=c_1\vb_1+\cdots+c_n\vb_n
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+of 
+\begin_inset Formula $\vb_1,\ldots,\vb_n$
+\end_inset
+
+ with scalars 
+\begin_inset Formula $c_1,\ldots,c_n$
+\end_inset
+
+. These scalars are called the *coordinates* of 
+\begin_inset Formula $\vv$
+\end_inset
+
+ relative to 
+\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
+\end_inset
+
+. The vector 
+\begin_inset Formula $\begin{pmatrix}c_1\\ \vdots\\
+c_n\end{pmatrix}$
+\end_inset
+
+ is called the *coordinate vector* of 
+\begin_inset Formula $\vv$
+\end_inset
+
+ relative to 
+\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+:::
+\end_layout
+
+\begin_layout Standard
+Alternatively, a basis consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors 
+\begin_inset Formula $\vb_1,\ldots,\vb_n$
+\end_inset
+
+ with the following two properties:
+\end_layout
+
+\begin_layout Standard
+- they *span* the space 
+\begin_inset Formula $\RR^n$
+\end_inset
+
+, i.e. every vector is a linear combination of 
+\begin_inset Formula $\vb_1,\ldots,\vb_n$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Standard
+- they are *linearly independent*, i.e. the only way to write the zero vector as a linear combination of 
+\begin_inset Formula $\vb_1,\ldots,\vb_n$
+\end_inset
+
+ is as 
+\begin_inset Formula $0\vb_1+\cdots+0\vb_n$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+note
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ A priori, we could have defined a basis as a collection of *some* number (say 
+\begin_inset Formula $m$
+\end_inset
+
+) of vectors that span the space and are linearly independent. However, it can be shown that in fact any two bases contain the same number of vectors. Since the standard basis of 
+\begin_inset Formula $\RR^n$
+\end_inset
+
+ consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors, the same therefore holds for *any* basis. :::
+\end_layout
+
+\begin_layout Standard
+## Basis transformation matrices
+\end_layout
+
+\begin_layout Standard
+Suppose we have two bases of 
+\begin_inset Formula $\RR^n$
+\end_inset
+
+, say
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B=(\vb_1, \ldots, \vb_n)\quad\text{and}\quad
+C=(\vc_1, \ldots, \vc_n).
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+prf:definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Basis transformation matrix
+\end_layout
+
+\begin_layout Standard
+The *basis transformation matrix* (or *change-of-basis matrix*) from 
+\begin_inset Formula $B$
+\end_inset
+
+ to 
+\begin_inset Formula $C$
+\end_inset
+
+ is the matrix 
+\begin_inset Formula $P=P_{B\to C}$
+\end_inset
+
+ such that the 
+\begin_inset Formula $j$
+\end_inset
+
+-th column of 
+\begin_inset Formula $P$
+\end_inset
+
+ contains the coordinates of 
+\begin_inset Formula $\vb_j$
+\end_inset
+
+ relative to the basis 
+\begin_inset Formula $(\vc_1,\ldots,\vc_n)$
+\end_inset
+
+. :::
+\end_layout
+
+\begin_layout Standard
+The definition of 
+\begin_inset Formula $P$
+\end_inset
+
+ means (note the difference with the formula 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+eq
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`matrix-vector` for matrix-vector multiplication)
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\vb_j = \sum_{i=1}^n P_{i,j}\vc_i.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given a vector 
+\begin_inset Formula $\vx$
+\end_inset
+
+, we write 
+\begin_inset Formula $\vx^{(B)}=(x_1^{(B)},\ldots,x_n^{(B)})$
+\end_inset
+
+ for the coordinate vector of 
+\begin_inset Formula $\vx$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $B=(\vb_1,\ldots,\vb_n)$
+\end_inset
+
+, and we define 
+\begin_inset Formula $\vx^{(C)}$
+\end_inset
+
+ similarly. Then we calculate
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\begin{aligned}
+\vx &= \sum_{j=1}^n x_j^{(B)} \vb_j\\
+&= \sum_{j=1}^n x_j^{(B)}\sum_{i=1}^n P_{i,j}\vc_i\\
+&= \sum_{i=1}^n\left(\sum_{j=1}^n P_{i,j} x_j^{(B)}\right) \vc_i\\
+&= \sum_{i=1}^n\bigl(P \vx^{(B)}\bigr)_i \vc_i,
+\end{aligned}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which shows that
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\vx^{(C)} = P_{B\to C}\vx^{(B)}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly, given a linear map 
+\begin_inset Formula $A$
+\end_inset
+
+, we write 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ for the matrix of 
+\begin_inset Formula $A$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $B=(\vb_1,\ldots,\vb_n)$
+\end_inset
+
+, and likewise for 
+\begin_inset Formula $A^{(C)}$
+\end_inset
+
+. Then 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ and 
+\begin_inset Formula $A^{(C)}$
+\end_inset
+
+ are related by
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A^{(C)} = PA^{(B)}P^{-1}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Namely, consider what happens when we multiply this matrix to a coordinate vector of the form 
+\begin_inset Formula $\vx^{\vw}$
+\end_inset
+
+. First, applying 
+\begin_inset Formula $P^{-1}$
+\end_inset
+
+ to 
+\begin_inset Formula $\vx^{\vw}$
+\end_inset
+
+ gives 
+\begin_inset Formula $\vx^{\vv}$
+\end_inset
+
+. Next, applying 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ gives 
+\begin_inset Formula $(A\vx)^{(B)}$
+\end_inset
+
+. Finally, applying 
+\begin_inset Formula $P$
+\end_inset
+
+ gives 
+\begin_inset Formula $(A\vx)^{(C)}$
+\end_inset
+
+, which is what we wanted to show.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Quotes eld
+\end_inset
+
+`
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+code-cell
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ ipython3 :tags: [remove-input] from jupyterquiz import displayquiz displayquiz(
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"_
+\end_layout
+
+\end_inset
+
+static/quizzes/basistrans.json
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+) 
+\begin_inset Quotes eld
+\end_inset
+
+`
+\end_layout
+
+\begin_layout Standard
+## Invariance under basis transformations
+\end_layout
+
+\begin_layout Standard
+In [](matrix-operations) we attached several quantities to a square matrix: the trace, the determinant and the characteristic polynomial. In 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ref
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`trace-det-basis-invariant`, you will check that the trace and the determinant are invariant under basis transformation: if 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $P$
+\end_inset
+
+ are square matrices of the same size with 
+\begin_inset Formula $P$
+\end_inset
+
+ invertible, then we have
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\tr(PAP^{-1})=\tr A
+\quad\text{and}\quad
+\det(PAP^{-1})=\det A.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
+\end_layout
+
+\begin_layout Standard
+***
+\end_layout
+
+\begin_layout Standard
+## Exercises
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+exercise
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Which of the following collections of vectors are bases for 
+\begin_inset Formula $\RR^2$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+1. 
+\begin_inset Formula $\begin{pmatrix}1\\ 2\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $\begin{pmatrix}3\\ 4\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $\begin{pmatrix}5\\ 6\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2. 
+\begin_inset Formula $\begin{pmatrix}0\\ 0\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $\begin{pmatrix}1\\ 1\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3. 
+\begin_inset Formula $\begin{pmatrix}1\\ 2\end{pmatrix}$
+\end_inset
+
+, 
+\begin_inset Formula $\begin{pmatrix}-3\\ 4\end{pmatrix}$
+\end_inset
+
+ :::
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+exercise
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Given the two bases
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B=(\vb_1,\vb_2)=\biggl(\begin{pmatrix}1\\ 2\end{pmatrix},
+\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
+\quad\text{and}\quad
+C=(\vc_1,\vc_2)=\biggl(\begin{pmatrix}0\\ 1\end{pmatrix},
+\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+determine the basis transformation matrix 
+\begin_inset Formula $P_{B\to C}$
+\end_inset
+
+. :::
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+exercise
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ :label: trace-det-basis-invariant
+\end_layout
+
+\begin_layout Standard
+Suppose 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ are two 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrices and 
+\begin_inset Formula $P$
+\end_inset
+
+ is an invertible 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix such that 
+\begin_inset Formula $B=PAP^{-1}$
+\end_inset
+
+. Show that
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\tr B = \tr A\quad\text{and}\quad \det B = \det A.
+\]
+\end_inset
+
+:::
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+exercise
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Consider two 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+1. Suppose there exists an invertible 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $P$
+\end_inset
+
+ satisfying 
+\begin_inset Formula $B=PAP^{-1}$
+\end_inset
+
+. Show that 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ have the same characteristic polynomial.
+\end_layout
+
+\begin_layout Standard
+2. Give an example where 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ have the same characteristic polynomial but a matrix 
+\begin_inset Formula $P$
+\end_inset
+
+ as above does not exist. ::: 
+\end_layout
+
+\end_body
+\end_document

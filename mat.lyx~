@@ -158,6 +158,494 @@ Operação de Matrizes
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+Very often,
+ an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ with real entries represents a linear map from the space 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ of vectors of length 
+\begin_inset Formula $n$
+\end_inset
+
+ to the space 
+\begin_inset Formula $\mathbb{R}^{m}$
+\end_inset
+
+ of vectors of length 
+\begin_inset Formula $m$
+\end_inset
+
+.
+ Similarly,
+ a matrix with complex entries represents a linear map from 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+ to 
+\begin_inset Formula $\mathbb{C}^{m}$
+\end_inset
+
+.
+ This map is defined by the matrix-vector product.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ Given a real (resp.
+ complex) 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ the linear map associated with 
+\begin_inset Formula $A$
+\end_inset
+
+ is the map that sends each vector 
+\begin_inset Formula $\boldsymbol{v}\in\mathbb{R}^{n}$
+\end_inset
+
+ to the vector 
+\begin_inset Formula $A\boldsymbol{v}\in\mathbb{R}^{m}$
+\end_inset
+
+ (resp.
+ each vector 
+\begin_inset Formula $\boldsymbol{v}\in\mathbb{C}^{n}$
+\end_inset
+
+ to the vector 
+\begin_inset Formula $A\boldsymbol{v}\in\mathbb{C}^{m}$
+\end_inset
+
+).
+ :::
+\end_layout
+
+\begin_layout Standard
+Matrix multiplication is defined so that the product 
+\begin_inset Formula $AB$
+\end_inset
+
+ represents the linear map gotten by first applying 
+\begin_inset Formula $B$
+\end_inset
+
+ and then 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ In other words,
+ we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(AB)\boldsymbol{v}=A(B\boldsymbol{v})
+\end{equation}
+
+\end_inset
+
+Note that on the left we have one matrix multiplication and one matrix-vector multiplication,
+ while on the right we just have two matrix-vector multiplications.
+ Commutators play an extremely important role in quantum physics.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ Given two 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ the commutator of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $[A,B]=AB-BA.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ The transpose of an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is the 
+\begin_inset Formula $n\times m$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A^{\top}$
+\end_inset
+
+ defined by 
+\begin_inset Formula $(A^{\top})_{i,j}=A_{j,i}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ The adjoint (conjugate transpose or Hermitian transpose) of an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is the 
+\begin_inset Formula $n\times m$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A^{\dagger}$
+\end_inset
+
+ obtained by applying the complex conjugate and the transpose operation:
+ 
+\begin_inset Formula $(A^{\dagger})_{i,j}=\overline{A_{j,i}}.$
+\end_inset
+
+ The adjoint of 
+\begin_inset Formula $A$
+\end_inset
+
+ is also known as the ** or ** of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ The trace of an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is the sum of the diagonal entries of 
+\begin_inset Formula $A$
+\end_inset
+
+:
+ 
+\begin_inset Formula $\text{Tr}\left(A\right)=\sum^{n}_{i=1}A_{i,i}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The determinant of an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ can be defined in various ways.
+ We will make use of permutations.
+ Using the Einstein summation convention
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Einstein notation is a notational convention that implies summation over a set of indexed terms in a formula,
+ thus achieving brevity.
+ There are essentially three rules of Einstein summation notation,
+ namely:
+ 1) Repeated indices are implicitly summed over.
+ 2) Each index can appear at most twice in any term.
+ 3) Each term must contain identical non-repeated indices (
+\begin_inset CommandInset href
+LatexCommand href
+name "Wolfram MathWorld"
+target "https://mathworld.wolfram.com/EinsteinSummation.html"
+literal "false"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\end_inset
+
+ and the Levi-Civita symbol
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+More generally,
+ in 
+\begin_inset Formula $n$
+\end_inset
+
+ dimensions,
+ the Levi-Civita symbol is defined by:
+ +1 if 
+\begin_inset Formula $\left(a_{1},\dots,a_{n}\right)$
+\end_inset
+
+is an even permutation from 
+\begin_inset Formula $\left(1,2,\dots,n\right)$
+\end_inset
+
+,
+ -1 if is an odd permutation and 0 otherwhise.
+\end_layout
+
+\end_inset
+
+ commonly used in physics,
+ we can also write this as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\det A=\epsilon_{a_{1}\dots a_{n}}A_{1,a_{1}}\dots A_{n,a_{n}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Properties of the determinant :
+\end_layout
+
+\begin_layout Enumerate
+A square matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is invertible if and only if 
+\begin_inset Formula $\det(A)$
+\end_inset
+
+ is non-zero.
+\end_layout
+
+\begin_layout Enumerate
+Given two 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ we have 
+\begin_inset Formula $\det(AB)=(\det A)(\det B).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+The determinant of a diagonal matrix (and more generally of an upper or lower triangular matrix) is the product of the diagonal entries.
+\end_layout
+
+\begin_layout Enumerate
+4.
+ If 
+\begin_inset Formula $B$
+\end_inset
+
+ is obtained from 
+\begin_inset Formula $A$
+\end_inset
+
+ by scaling a row by a scalar 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\det B=c\det A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+5.
+ If 
+\begin_inset Formula $B$
+\end_inset
+
+ is obtained from 
+\begin_inset Formula $A$
+\end_inset
+
+ by swapping two rows,
+ then 
+\begin_inset Formula $\det B=-\det A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+6.
+ If 
+\begin_inset Formula $B$
+\end_inset
+
+ is obtained from 
+\begin_inset Formula $A$
+\end_inset
+
+ by adding a multiple of a row to another row,
+ then 
+\begin_inset Formula $\det B=\det A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Properties 4-6 also hold for columns instead of rows.
+\end_layout
+
+\begin_layout Standard
+Finally,
+ we define the characteristic polynomial of a square matrix;
+ this will be used in diagonalisation.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ The characteristic polynomial of an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is the polynomial of degree 
+\begin_inset Formula $n$
+\end_inset
+
+ in a variable 
+\begin_inset Formula $t$
+\end_inset
+
+ defined by 
+\begin_inset Formula $\chi_{A}(t)=\det(x\mathbb{I}-A).$
+\end_inset
+
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+An alternative definition of the characteristic polynomial,
+ which agrees with the one above up to a factor 
+\begin_inset Formula $(-1)^{n}$
+\end_inset
+
+,
+ is 
+\begin_inset Formula $\chi_{A}(t)=\det(A-x\mathbb{I}).$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 Frequentemente,
  uma matriz 
 \begin_inset Formula $A$
@@ -192,7 +680,7 @@ Frequentemente,
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Analogamente,
  uma matriz com entradas complexas representa uma transforação linear de 
 \begin_inset Formula $\mathbb{C}^{n}$
@@ -244,7 +732,7 @@ Definição
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 A multiplicação de matrizes é definida de modo que o produto 
 \begin_inset Formula $AB$
 \end_inset
@@ -262,7 +750,7 @@ A multiplicação de matrizes é definida de modo que o produto
  temos
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Formula 
 \begin{equation}
 \left(AB\right)\boldsymbol{v}=A\left(B\boldsymbol{v}\right)
@@ -273,7 +761,7 @@ A multiplicação de matrizes é definida de modo que o produto
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Observe que,
  no lado esquerdo,
  temos uma multiplicação de matrizes e uma multiplicação matriz-vetor,
@@ -282,13 +770,13 @@ Observe que,
  temos apenas duas multiplicações matriz-vetor.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Na física quântica,
  as matrizes são frequentemente quadradas e possuem algumas propriedades adicionais que as tornam adequadas para atuar como operadores sobre um sistema físico ou como observáveis de tal sistema.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Muitas das definições a seguir são especificamente para matrizes quadradas.
  Um primeiro exemplo é o dos comutadores,
  que desempenham um papel extremamente importante na física quântica.
@@ -339,7 +827,7 @@ e
 Definição
 \series default
 :
- A transposa de uma matriz 
+ A transposta de uma matriz 
 \begin_inset Formula $A$
 \end_inset
 
@@ -393,6 +881,506 @@ o
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Basis transformations
+\end_layout
+
+\begin_layout Standard
+Until now,
+ we have been working with one specific coordinate system in which vectors are identified with their coordinate vectors with respect to the standard basis vectors:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{e}_{1}=\begin{pmatrix}1\\
+0\\
+0\\
+\vdots\\
+0
+\end{pmatrix},\quad\boldsymbol{e}_{2}=\begin{pmatrix}0\\
+1\\
+0\\
+\vdots\\
+0
+\end{pmatrix},\quad\ldots,\quad\boldsymbol{e}_{n}=\begin{pmatrix}0\\
+0\\
+0\\
+\vdots\\
+1
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In other words,
+ a vector 
+\begin_inset Formula $\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+v_{2}\\
+\vdots\\
+v_{n}
+\end{pmatrix}$
+\end_inset
+
+ means the same as the corresponding linear combination of the standard basis vectors:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\boldsymbol{v}=v_{1}\boldsymbol{e}_{1}+\cdots+v_{n}\boldsymbol{e}_{n}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In many situations,
+ it is useful to express vectors in a different coordinate system.
+ For this we need the general concept of a basis.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ A basis of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors 
+\begin_inset Formula $(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})$
+\end_inset
+
+ (or 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+) such that every vector 
+\begin_inset Formula $\boldsymbol{v}\in\mathbb{R}^{n}$
+\end_inset
+
+ can be written in exactly one way as a linear combination:
+\begin_inset Formula $\boldsymbol{v}=c_{1}\boldsymbol{b}_{1}+\cdots+c_{n}\boldsymbol{b}_{n}$
+\end_inset
+
+,
+ with scalars 
+\begin_inset Formula $c_{1},\ldots,c_{n}$
+\end_inset
+
+.
+ These scalars are called the coordinates of 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ relative to 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+.
+ The vector 
+\begin_inset Formula $\left(\begin{array}{ccc}
+c_{1} & \dots & c_{n}\end{array}\right)^{T}$
+\end_inset
+
+ is called the coordinate vector of 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ relative to 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Alternatively,
+ a basis consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+ with the following two properties:
+\end_layout
+
+\begin_layout Itemize
+they span the space 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+,
+ i.e.
+ every vector is a linear combination of 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Itemize
+they are linearly independent,
+ i.e.
+ the only way to write the zero vector as a linear combination of 
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
+\end_inset
+
+is as 
+\begin_inset Formula $0\boldsymbol{b}_{1}+\cdots+0\boldsymbol{b}_{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A priori,
+ we could have defined a basis as a collection of some number (say 
+\begin_inset Formula $m$
+\end_inset
+
+) of vectors that span the space and are linearly independent.
+ However,
+ it can be shown that in fact any two bases contain the same number of vectors.
+ Since the standard basis of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+ consists of 
+\begin_inset Formula $n$
+\end_inset
+
+ vectors,
+ the same therefore holds for any basis.
+\end_layout
+
+\begin_layout Standard
+Suppose we have two bases of 
+\begin_inset Formula $\mathbb{R}^{n}$
+\end_inset
+
+,
+ say
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})\quad\text{and}\quad C=(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ The *basis transformation matrix* (or *change-of-basis matrix*) from 
+\begin_inset Formula $B$
+\end_inset
+
+ to 
+\begin_inset Formula $C$
+\end_inset
+
+ is the matrix 
+\begin_inset Formula $P=P_{B\to C}$
+\end_inset
+
+ such that the 
+\begin_inset Formula $j$
+\end_inset
+
+-th column of 
+\begin_inset Formula $P$
+\end_inset
+
+ contains the coordinates of 
+\begin_inset Formula $\vb_{j}$
+\end_inset
+
+ relative to the basis 
+\begin_inset Formula $(\vc_{1},\ldots,\vc_{n})$
+\end_inset
+
+.
+ :::
+\end_layout
+
+\begin_layout Standard
+The definition of 
+\begin_inset Formula $P$
+\end_inset
+
+ means (note the difference with the formula 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+eq
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`matrix-vector` for matrix-vector multiplication)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vb_{j}=\sum^{n}_{i=1}P_{i,j}\vc_{i}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given a vector 
+\begin_inset Formula $\vx$
+\end_inset
+
+,
+ we write 
+\begin_inset Formula $\vx^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$
+\end_inset
+
+ for the coordinate vector of 
+\begin_inset Formula $\vx$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $B=(\vb_{1},\ldots,\vb_{n})$
+\end_inset
+
+,
+ and we define 
+\begin_inset Formula $\vx^{(C)}$
+\end_inset
+
+ similarly.
+ Then we calculate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{aligned}\vx & =\sum^{n}_{j=1}x^{(B)}_{j}\vb_{j}\\
+ & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\vc_{i}\\
+ & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\vc_{i}\\
+ & =\sum^{n}_{i=1}\bigl(P\vx^{(B)}\bigr)_{i}\vc_{i},
+\end{aligned}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+which shows that
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\vx^{(C)}=P_{B\to C}\vx^{(B)}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Similarly,
+ given a linear map 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ we write 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ for the matrix of 
+\begin_inset Formula $A$
+\end_inset
+
+ with respect to the basis 
+\begin_inset Formula $B=(\vb_{1},\ldots,\vb_{n})$
+\end_inset
+
+,
+ and likewise for 
+\begin_inset Formula $A^{(C)}$
+\end_inset
+
+.
+ Then 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ and 
+\begin_inset Formula $A^{(C)}$
+\end_inset
+
+ are related by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A^{(C)}=PA^{(B)}P^{-1}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Namely,
+ consider what happens when we multiply this matrix to a coordinate vector of the form 
+\begin_inset Formula $\vx^{\vw}$
+\end_inset
+
+.
+ First,
+ applying 
+\begin_inset Formula $P^{-1}$
+\end_inset
+
+ to 
+\begin_inset Formula $\vx^{\vw}$
+\end_inset
+
+ gives 
+\begin_inset Formula $\vx^{\vv}$
+\end_inset
+
+.
+ Next,
+ applying 
+\begin_inset Formula $A^{(B)}$
+\end_inset
+
+ gives 
+\begin_inset Formula $(A\vx)^{(B)}$
+\end_inset
+
+.
+ Finally,
+ applying 
+\begin_inset Formula $P$
+\end_inset
+
+ gives 
+\begin_inset Formula $(A\vx)^{(C)}$
+\end_inset
+
+,
+ which is what we wanted to show.
+\end_layout
+
+\begin_layout Standard
+## Invariance under basis transformations
+\end_layout
+
+\begin_layout Standard
+In [](matrix-operations) we attached several quantities to a square matrix:
+ the trace,
+ the determinant and the characteristic polynomial.
+ In 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+ref
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`trace-det-basis-invariant`,
+ you will check that the trace and the determinant are invariant under basis transformation:
+ if 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $P$
+\end_inset
+
+ are square matrices of the same size with 
+\begin_inset Formula $P$
+\end_inset
+
+ invertible,
+ then we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\tr(PAP^{-1})=\tr A\quad\text{and}\quad\det(PAP^{-1})=\det A.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Because the characteristic polynomial is also defined as a determinant,
+ it too is invariant under basis transformation.
 \end_layout
 
 \begin_layout Section

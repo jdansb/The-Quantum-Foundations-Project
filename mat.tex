@@ -3,11 +3,13 @@
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{luainputenc}
-\usepackage{amsbsy}
+\usepackage{babel}
+\usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
-\usepackage{babel}
+\usepackage[]
+ {hyperref}
 \begin{document}
 \title{Matemática para Mecânia Quântica}
 \author{Jhordan Silveira de Borba}
@@ -25,30 +27,200 @@ Porém estarei compartilhando aqui uma revisão puramente matemática, baseada p
 
 \subsection{Operação de Matrizes}
 
-Frequentemente, uma matriz $A$ de dimensão $m\times n$ , com entradas reais, representa uma transformação linear do espaço $\mathbb{R}^{n}$, formado por vetores de comprimento $n$, para o espaço $\mathbb{R}^{m}$, formado por vetores de comprimento $m$. 
-
-Analogamente, uma matriz com entradas complexas representa uma transforação linear de $\mathbb{C}^{n}$ para $\mathbb{C}^{m}$. Essa aplicação é definida pelo produto entre a matriz e o vetor.
+Very often, an $m\times n$-matrix $A$ with real entries represents a linear map from the space $\mathbb{R}^{n}$ of vectors of length $n$ to the space $\mathbb{R}^{m}$ of vectors of length $m$. Similarly, a matrix with complex entries represents a linear map from $\mathbb{C}^{n}$ to $\mathbb{C}^{m}$. This map is defined by the matrix-vector product.
 \begin{quotation}
-\textbf{Definição}: Dada uma matriz $A$ real (complexa) de dimensão $m\times n$, a transformação linear associada a $A$ é a transformação que leva cada vetor $\boldsymbol{v}\in\mathbb{R}^{n}$ ao vetor $A\boldsymbol{v}\in\mathbb{R}^{m}$ ( cada vetor $\boldsymbol{v}\in\mathbb{C}^{n}$ ao vetor $A\boldsymbol{v}\in\mathbb{C}^{m}$
+\textbf{Definition:} Given a real (resp. complex) $m\times n$-matrix $A$, the linear map associated with $A$ is the map that sends each vector $\boldsymbol{v}\in\mathbb{R}^{n}$ to the vector $A\boldsymbol{v}\in\mathbb{R}^{m}$ (resp. each vector $\boldsymbol{v}\in\mathbb{C}^{n}$ to the vector $A\boldsymbol{v}\in\mathbb{C}^{m}$). :::
 \end{quotation}
-A multiplicação de matrizes é definida de modo que o produto $AB$ represente a transformação linear obtida aplicando primeiro $B$ e depois $A$. Em outras palavras, temos
+Matrix multiplication is defined so that the product $AB$ represents the linear map gotten by first applying $B$ and then $A$. In other words, we have
 
 \begin{equation}
-\left(AB\right)\boldsymbol{v}=A\left(B\boldsymbol{v}\right)
+(AB)\boldsymbol{v}=A(B\boldsymbol{v})
+\end{equation}
+Note that on the left we have one matrix multiplication and one matrix-vector multiplication, while on the right we just have two matrix-vector multiplications. Commutators play an extremely important role in quantum physics.
+\begin{quotation}
+\textbf{Definition}: Given two $n\times n$-matrices $A$ and $B$, the commutator of $A$ and $B$ is the $n\times n$-matrix $[A,B]=AB-BA.$
+
+\textbf{Definition:} The transpose of an $m\times n$-matrix $A$ is the $n\times m$-matrix $A^{\top}$ defined by $(A^{\top})_{i,j}=A_{j,i}.$
+
+\textbf{Definition:} The adjoint (conjugate transpose or Hermitian transpose) of an $m\times n$-matrix $A$ is the $n\times m$-matrix $A^{\dagger}$ obtained by applying the complex conjugate and the transpose operation: $(A^{\dagger})_{i,j}=\overline{A_{j,i}}.$ The adjoint of $A$ is also known as the {*}{*} or {*}{*} of $A$. 
+
+\textbf{Definition}: The trace of an $n\times n$-matrix $A$ is the sum of the diagonal entries of $A$: $\text{Tr}\left(A\right)=\sum^{n}_{i=1}A_{i,i}.$
+\end{quotation}
+The determinant of an $n\times n$-matrix $A$ can be defined in various ways. We will make use of permutations. Using the Einstein summation convention\footnote{Einstein notation is a notational convention that implies summation over a set of indexed terms in a formula, thus achieving brevity. There are essentially three rules of Einstein summation notation, namely: 1) Repeated indices are implicitly summed over. 2) Each index can appear at most twice in any term. 3) Each term must contain identical non-repeated indices (\href{https://mathworld.wolfram.com/EinsteinSummation.html}{Wolfram MathWorld}). } and the Levi-Civita symbol\footnote{More generally, in $n$ dimensions, the Levi-Civita symbol is defined by: +1 if $\left(a_{1},\dots,a_{n}\right)$is an even permutation from $\left(1,2,\dots,n\right)$, -1 if is an odd permutation and 0 otherwhise.} commonly used in physics, we can also write this as
+
+\begin{equation}
+\det A=\epsilon_{a_{1}\dots a_{n}}A_{1,a_{1}}\dots A_{n,a_{n}}
 \end{equation}
 
-Observe que, no lado esquerdo, temos uma multiplicação de matrizes e uma multiplicação matriz-vetor, enquanto, no lado direito, temos apenas duas multiplicações matriz-vetor.
+Properties of the determinant :
+\begin{enumerate}
+\item A square matrix $A$ is invertible if and only if $\det(A)$ is non-zero.
+\item Given two $n\times n$-matrices $A$ and $B$, we have $\det(AB)=(\det A)(\det B).$
+\item The determinant of a diagonal matrix (and more generally of an upper or lower triangular matrix) is the product of the diagonal entries.
+\item 4. If $B$ is obtained from $A$ by scaling a row by a scalar $c$, then $\det B=c\det A$.
+\item 5. If $B$ is obtained from $A$ by swapping two rows, then $\det B=-\det A$.
+\item 6. If $B$ is obtained from $A$ by adding a multiple of a row to another row, then $\det B=\det A$.
+\end{enumerate}
+Properties 4-6 also hold for columns instead of rows.
 
-Na física quântica, as matrizes são frequentemente quadradas e possuem algumas propriedades adicionais que as tornam adequadas para atuar como operadores sobre um sistema físico ou como observáveis de tal sistema. 
-
-Muitas das definições a seguir são especificamente para matrizes quadradas. Um primeiro exemplo é o dos comutadores, que desempenham um papel extremamente importante na física quântica.
+Finally, we define the characteristic polynomial of a square matrix; this will be used in diagonalisation.
 \begin{quotation}
-\textbf{Definição}: Dada duas matrizes $A$ e $B$ de dimensões $n\times n$, o comutador de $A$e $B$ é a matriz $n\times n$: $\left[A,B\right]=AB-BA$
-
-\textbf{Definição}: A transposta de uma matriz $A$ de dimensão $m\times n$ é a matriz $A^{T}$ de dimensão $n\times m$ definido por $\left(A^{T}\right)_{i,j}=A_{j,i}$
-
-\textbf{Definiçã}o\textbf{:} A transposa de uma matriz $A$ de dimensão $m\times n$ é a matriz $A^{T}$ de dimensão $n\times m$ definido por $\left(A^{T}\right)_{i,j}=A_{j,i}$
+\textbf{Definition}: The characteristic polynomial of an $n\times n$-matrix $A$ is the polynomial of degree $n$ in a variable $t$ defined by $\chi_{A}(t)=\det(x\mathbb{I}-A).$\footnote{An alternative definition of the characteristic polynomial, which agrees with the one above up to a factor $(-1)^{n}$, is $\chi_{A}(t)=\det(A-x\mathbb{I}).$}
 \end{quotation}
+
+
+\subsection{Basis transformations}
+
+Until now, we have been working with one specific coordinate system in which vectors are identified with their coordinate vectors with respect to the standard basis vectors:
+
+\begin{equation}
+\boldsymbol{e}_{1}=\begin{pmatrix}1\\
+0\\
+0\\
+\vdots\\
+0
+\end{pmatrix},\quad\boldsymbol{e}_{2}=\begin{pmatrix}0\\
+1\\
+0\\
+\vdots\\
+0
+\end{pmatrix},\quad\ldots,\quad\boldsymbol{e}_{n}=\begin{pmatrix}0\\
+0\\
+0\\
+\vdots\\
+1
+\end{pmatrix}
+\end{equation}
+
+In other words, a vector $\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+v_{2}\\
+\vdots\\
+v_{n}
+\end{pmatrix}$ means the same as the corresponding linear combination of the standard basis vectors:
+
+\begin{equation}
+\boldsymbol{v}=v_{1}\boldsymbol{e}_{1}+\cdots+v_{n}\boldsymbol{e}_{n}
+\end{equation}
+
+In many situations, it is useful to express vectors in a different coordinate system. For this we need the general concept of a basis.
+\begin{quotation}
+\textbf{Definition}: A basis of $\mathbb{R}^{n}$ consists of $n$ vectors $(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})$ (or $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$) such that every vector $\boldsymbol{v}\in\mathbb{R}^{n}$ can be written in exactly one way as a linear combination:$\boldsymbol{v}=c_{1}\boldsymbol{b}_{1}+\cdots+c_{n}\boldsymbol{b}_{n}$, with scalars $c_{1},\ldots,c_{n}$. These scalars are called the coordinates of $\boldsymbol{v}$ relative to $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$. The vector $\left(\begin{array}{ccc}
+c_{1} & \dots & c_{n}\end{array}\right)^{T}$ is called the coordinate vector of $\boldsymbol{v}$ relative to $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$.
+\end{quotation}
+Alternatively, a basis consists of $n$ vectors $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$ with the following two properties:
+\begin{itemize}
+\item they span the space $\mathbb{R}^{n}$, i.e. every vector is a linear combination of $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$;
+\item they are linearly independent, i.e. the only way to write the zero vector as a linear combination of $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$is as $0\boldsymbol{b}_{1}+\cdots+0\boldsymbol{b}_{n}$.
+\end{itemize}
+A priori, we could have defined a basis as a collection of some number (say $m$) of vectors that span the space and are linearly independent. However, it can be shown that in fact any two bases contain the same number of vectors. Since the standard basis of $\mathbb{R}^{n}$ consists of $n$ vectors, the same therefore holds for any basis.
+
+Suppose we have two bases of $\mathbb{R}^{n}$, say
+
+\[
+B=(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})\quad\text{and}\quad C=(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n}).
+\]
+
+\begin{quotation}
+\textbf{Definition:} The {*}basis transformation matrix{*} (or {*}change-of-basis matrix{*}) from $B$ to $C$ is the matrix $P=P_{B\to C}$ such that the $j$-th column of $P$ contains the coordinates of $\vb_{j}$ relative to the basis $(\vc_{1},\ldots,\vc_{n})$. :::
+\end{quotation}
+The definition of $P$ means (note the difference with the formula {eq}`matrix-vector` for matrix-vector multiplication)
+
+\[
+\vb_{j}=\sum^{n}_{i=1}P_{i,j}\vc_{i}.
+\]
+
+Given a vector $\vx$, we write $\vx^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$ for the coordinate vector of $\vx$ with respect to the basis $B=(\vb_{1},\ldots,\vb_{n})$, and we define $\vx^{(C)}$ similarly. Then we calculate
+
+\[
+\begin{aligned}\vx & =\sum^{n}_{j=1}x^{(B)}_{j}\vb_{j}\\
+ & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\vc_{i}\\
+ & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\vc_{i}\\
+ & =\sum^{n}_{i=1}\bigl(P\vx^{(B)}\bigr)_{i}\vc_{i},
+\end{aligned}
+\]
+
+which shows that
+
+\[
+\vx^{(C)}=P_{B\to C}\vx^{(B)}.
+\]
+
+Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix of $A$ with respect to the basis $B=(\vb_{1},\ldots,\vb_{n})$, and likewise for $A^{(C)}$. Then $A^{(B)}$ and $A^{(C)}$ are related by
+
+\[
+A^{(C)}=PA^{(B)}P^{-1}.
+\]
+
+Namely, consider what happens when we multiply this matrix to a coordinate vector of the form $\vx^{\vw}$. First, applying $P^{-1}$ to $\vx^{\vw}$ gives $\vx^{\vv}$. Next, applying $A^{(B)}$ gives $(A\vx)^{(B)}$. Finally, applying $P$ gives $(A\vx)^{(C)}$, which is what we wanted to show.
+
+```{code-cell} ipython3 :tags: {[}remove-input{]} from jupyterquiz import displayquiz displayquiz("_static/quizzes/basistrans.json") ```
+
+\#\# Invariance under basis transformations
+
+In {[}{]}(matrix-operations) we attached several quantities to a square matrix: the trace, the determinant and the characteristic polynomial. In {ref}`trace-det-basis-invariant`, you will check that the trace and the determinant are invariant under basis transformation: if $A$ and $P$ are square matrices of the same size with $P$ invertible, then we have
+
+\[
+\tr(PAP^{-1})=\tr A\quad\text{and}\quad\det(PAP^{-1})=\det A.
+\]
+
+Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
+
+{*}{*}{*}
+
+\#\# Exercises
+
+:::{exercise} Which of the following collections of vectors are bases for $\RR^{2}$?
+
+1. $\begin{pmatrix}1\\
+2
+\end{pmatrix}$, $\begin{pmatrix}3\\
+4
+\end{pmatrix}$, $\begin{pmatrix}5\\
+6
+\end{pmatrix}$
+
+2. $\begin{pmatrix}0\\
+0
+\end{pmatrix}$, $\begin{pmatrix}1\\
+1
+\end{pmatrix}$
+
+3. $\begin{pmatrix}1\\
+2
+\end{pmatrix}$, $\begin{pmatrix}-3\\
+4
+\end{pmatrix}$ :::
+
+:::{exercise} Given the two bases
+
+\[
+B=(\vb_{1},\vb_{2})=\biggl(\begin{pmatrix}1\\
+2
+\end{pmatrix},\begin{pmatrix}2\\
+1
+\end{pmatrix}\biggr)\quad\text{and}\quad C=(\vc_{1},\vc_{2})=\biggl(\begin{pmatrix}0\\
+1
+\end{pmatrix},\begin{pmatrix}2\\
+1
+\end{pmatrix}\biggr)
+\]
+
+determine the basis transformation matrix $P_{B\to C}$. :::
+
+:::{exercise} :label: trace-det-basis-invariant
+
+Suppose $A$ and $B$ are two $n\times n$-matrices and $P$ is an invertible $n\times n$-matrix such that $B=PAP^{-1}$. Show that
+
+\[
+\tr B=\tr A\quad\text{and}\quad\det B=\det A.
+\]
+:::
+
+:::{exercise} Consider two $n\times n$-matrices $A$ and $B$.
+
+1. Suppose there exists an invertible $n\times n$-matrix $P$ satisfying $B=PAP^{-1}$. Show that $A$ and $B$ have the same characteristic polynomial.
+
+2. Give an example where $A$ and $B$ have the same characteristic polynomial but a matrix $P$ as above does not exist. ::: 
 
 \section{Probabilidade e estatística}
 
