@@ -1249,7 +1249,7 @@ Similarly,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A^{(C)}=PA^{(B)}P^{-1}.
+A^{(C)}=PA^{(B)}P^{-1}
 \]
 
 \end_inset
@@ -1260,13 +1260,27 @@ A^{(C)}=PA^{(B)}P^{-1}.
 \begin_layout Standard
 Namely,
  consider what happens when we multiply this matrix to a coordinate vector of the form 
-\begin_inset Formula $\boldsymbol{x}^{\boldsymbol{w}}$
+\begin_inset Formula $\boldsymbol{x}^{\left(C\right)}$
 \end_inset
 
 .
  First,
  applying 
 \begin_inset Formula $P^{-1}$
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Note que se 
+\begin_inset Formula $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
  to 

@@ -11,7 +11,7 @@
 \usepackage[]
  {hyperref}
 \begin{document}
-\title{Matemática para Mecânia Quântica}
+\title{Matemática para Mecânica Quântica}
 \author{Jhordan Silveira de Borba}
 
 \maketitle
@@ -19,11 +19,11 @@ Como já estudei o básico das ferramentas matemáticas necessárias, por enquan
 
 Por exemplo, não é necessário, neste momento, aprofundar a demonstração do teorema espectral para matrizes Hermitianas, pois sua prova é predominantemente matemática e não acrescenta, por si só, uma nova interpretação física ao problema. Em contrapartida, vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física, como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam, pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
 
-Porém estarei compartilhando aqui uma revisão puramente matemática, baseada principalmente neste material {[}\cite{DelftSpectralTheorem}{]}.
-
-\section{Análise}
+Porém estarei compartilhando aqui uma revisão puramente matemática, uma reprodução quase na íntegra deste material: \cite{DelftSpectralTheorem}.
 
 \section{Álgebra Linear}
+
+\subsection{Aritmética Matricial Básica}
 
 \subsection{Operação de Matrizes}
 
@@ -121,110 +121,53 @@ B=(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})\quad\text{and}\quad C=(\boldsym
 \]
 
 \begin{quotation}
-\textbf{Definition:} The {*}basis transformation matrix{*} (or {*}change-of-basis matrix{*}) from $B$ to $C$ is the matrix $P=P_{B\to C}$ such that the $j$-th column of $P$ contains the coordinates of $\vb_{j}$ relative to the basis $(\vc_{1},\ldots,\vc_{n})$. :::
+\textbf{Definition:} The basis transformation matrix (or change-of-basis matrix) from $B$ to $C$ is the matrix $P=P_{B\to C}$ such that the $j$-th column of $P$ contains the coordinates of $\boldsymbol{b}_{j}$ relative to the basis $(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n})$.
 \end{quotation}
-The definition of $P$ means (note the difference with the formula {eq}`matrix-vector` for matrix-vector multiplication)
+The definition of $P$ means:
 
 \[
-\vb_{j}=\sum^{n}_{i=1}P_{i,j}\vc_{i}.
+\boldsymbol{b}_{j}=\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}.
 \]
 
-Given a vector $\vx$, we write $\vx^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$ for the coordinate vector of $\vx$ with respect to the basis $B=(\vb_{1},\ldots,\vb_{n})$, and we define $\vx^{(C)}$ similarly. Then we calculate
+Given a vector $\boldsymbol{x}$, we write $\boldsymbol{x}^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$ for the coordinate vector of $\boldsymbol{x}$ with respect to the basis $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$, and we define $\boldsymbol{x}^{(C)}$ similarly. Then we calculate
 
 \[
-\begin{aligned}\vx & =\sum^{n}_{j=1}x^{(B)}_{j}\vb_{j}\\
- & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\vc_{i}\\
- & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\vc_{i}\\
- & =\sum^{n}_{i=1}\bigl(P\vx^{(B)}\bigr)_{i}\vc_{i},
+\begin{aligned}\boldsymbol{x} & =\sum^{n}_{j=1}x^{(B)}_{j}\boldsymbol{b}_{j}\\
+ & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}\\
+ & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\boldsymbol{c}_{i}\\
+ & =\sum^{n}_{i=1}\bigl(P\boldsymbol{x}^{(B)}\bigr)_{i}\boldsymbol{c}_{i},
 \end{aligned}
 \]
 
 which shows that
 
 \[
-\vx^{(C)}=P_{B\to C}\vx^{(B)}.
+\boldsymbol{x}^{(C)}=P_{B\to C}\boldsymbol{x}^{(B)}.
 \]
 
-Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix of $A$ with respect to the basis $B=(\vb_{1},\ldots,\vb_{n})$, and likewise for $A^{(C)}$. Then $A^{(B)}$ and $A^{(C)}$ are related by
+Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix of $A$ with respect to the basis $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$, and likewise for $A^{(C)}$. Then $A^{(B)}$ and $A^{(C)}$ are related by
 
 \[
-A^{(C)}=PA^{(B)}P^{-1}.
+A^{(C)}=PA^{(B)}P^{-1}
 \]
 
-Namely, consider what happens when we multiply this matrix to a coordinate vector of the form $\vx^{\vw}$. First, applying $P^{-1}$ to $\vx^{\vw}$ gives $\vx^{\vv}$. Next, applying $A^{(B)}$ gives $(A\vx)^{(B)}$. Finally, applying $P$ gives $(A\vx)^{(C)}$, which is what we wanted to show.
+Namely, consider what happens when we multiply this matrix to a coordinate vector of the form $\boldsymbol{x}^{\left(C\right)}$. First, applying $P^{-1}$\footnote{Note que se $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$e sendo $P^{-1}P=\mathbb{I}$, então $P^{-1}\boldsymbol{x}^{(C)}=\boldsymbol{x}^{(B)}$, o seja $P^{-1}=P_{C\rightarrow B}$} to $\boldsymbol{x}^{\left(C\right)}$ gives $\boldsymbol{x}^{\left(B\right)}$. Next, applying $A^{(B)}$ gives $(A\boldsymbol{x})^{(B)}$. Finally, applying $P$ gives $(A\boldsymbol{x})^{(C)}$, which is what we wanted to show.
 
-```{code-cell} ipython3 :tags: {[}remove-input{]} from jupyterquiz import displayquiz displayquiz("_static/quizzes/basistrans.json") ```
-
-\#\# Invariance under basis transformations
-
-In {[}{]}(matrix-operations) we attached several quantities to a square matrix: the trace, the determinant and the characteristic polynomial. In {ref}`trace-det-basis-invariant`, you will check that the trace and the determinant are invariant under basis transformation: if $A$ and $P$ are square matrices of the same size with $P$ invertible, then we have
+The trace and the determinant are invariant under basis transformation: if $A$ and $P$ are square matrices of the same size with $P$ invertible, then we have
 
 \[
-\tr(PAP^{-1})=\tr A\quad\text{and}\quad\det(PAP^{-1})=\det A.
+\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A.
 \]
 
 Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
 
-{*}{*}{*}
+\subsection{Diagonalisation}
 
-\#\# Exercises
+\subsection{Hilbert Spaces}
 
-:::{exercise} Which of the following collections of vectors are bases for $\RR^{2}$?
+\subsection{Operators on Hilbert spaces}
 
-1. $\begin{pmatrix}1\\
-2
-\end{pmatrix}$, $\begin{pmatrix}3\\
-4
-\end{pmatrix}$, $\begin{pmatrix}5\\
-6
-\end{pmatrix}$
-
-2. $\begin{pmatrix}0\\
-0
-\end{pmatrix}$, $\begin{pmatrix}1\\
-1
-\end{pmatrix}$
-
-3. $\begin{pmatrix}1\\
-2
-\end{pmatrix}$, $\begin{pmatrix}-3\\
-4
-\end{pmatrix}$ :::
-
-:::{exercise} Given the two bases
-
-\[
-B=(\vb_{1},\vb_{2})=\biggl(\begin{pmatrix}1\\
-2
-\end{pmatrix},\begin{pmatrix}2\\
-1
-\end{pmatrix}\biggr)\quad\text{and}\quad C=(\vc_{1},\vc_{2})=\biggl(\begin{pmatrix}0\\
-1
-\end{pmatrix},\begin{pmatrix}2\\
-1
-\end{pmatrix}\biggr)
-\]
-
-determine the basis transformation matrix $P_{B\to C}$. :::
-
-:::{exercise} :label: trace-det-basis-invariant
-
-Suppose $A$ and $B$ are two $n\times n$-matrices and $P$ is an invertible $n\times n$-matrix such that $B=PAP^{-1}$. Show that
-
-\[
-\tr B=\tr A\quad\text{and}\quad\det B=\det A.
-\]
-:::
-
-:::{exercise} Consider two $n\times n$-matrices $A$ and $B$.
-
-1. Suppose there exists an invertible $n\times n$-matrix $P$ satisfying $B=PAP^{-1}$. Show that $A$ and $B$ have the same characteristic polynomial.
-
-2. Give an example where $A$ and $B$ have the same characteristic polynomial but a matrix $P$ as above does not exist. ::: 
-
-\section{Probabilidade e estatística}
-
-\section{Apêndice}
+\subsection{Tensor products}
 \begin{quotation}
 \bibliographystyle{plain}
 \bibliography{ref}

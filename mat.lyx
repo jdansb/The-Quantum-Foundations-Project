@@ -102,7 +102,7 @@
 \begin_body
 
 \begin_layout Title
-Matemática para Mecânia Quântica
+Matemática para Mecânica Quântica
 \end_layout
 
 \begin_layout Author
@@ -147,11 +147,11 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-Análise
+Álgebra Linear
 \end_layout
 
-\begin_layout Section
-Álgebra Linear
+\begin_layout Subsection
+Aritmética Matricial Básica
 \end_layout
 
 \begin_layout Subsection
@@ -1124,15 +1124,14 @@ Definition:
 \end_inset
 
  contains the coordinates of 
-\begin_inset Formula $\vb_{j}$
+\begin_inset Formula $\boldsymbol{b}_{j}$
 \end_inset
 
  relative to the basis 
-\begin_inset Formula $(\vc_{1},\ldots,\vc_{n})$
+\begin_inset Formula $(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n})$
 \end_inset
 
 .
- :::
 \end_layout
 
 \begin_layout Standard
@@ -1140,33 +1139,13 @@ The definition of
 \begin_inset Formula $P$
 \end_inset
 
- means (note the difference with the formula 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-eq
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`matrix-vector` for matrix-vector multiplication)
+ means:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\vb_{j}=\sum^{n}_{i=1}P_{i,j}\vc_{i}.
+\boldsymbol{b}_{j}=\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}.
 \]
 
 \end_inset
@@ -1176,25 +1155,25 @@ status collapsed
 
 \begin_layout Standard
 Given a vector 
-\begin_inset Formula $\vx$
+\begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
 ,
  we write 
-\begin_inset Formula $\vx^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$
+\begin_inset Formula $\boldsymbol{x}^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$
 \end_inset
 
  for the coordinate vector of 
-\begin_inset Formula $\vx$
+\begin_inset Formula $\boldsymbol{x}$
 \end_inset
 
  with respect to the basis 
-\begin_inset Formula $B=(\vb_{1},\ldots,\vb_{n})$
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
 \end_inset
 
 ,
  and we define 
-\begin_inset Formula $\vx^{(C)}$
+\begin_inset Formula $\boldsymbol{x}^{(C)}$
 \end_inset
 
  similarly.
@@ -1204,10 +1183,10 @@ Given a vector
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\begin{aligned}\vx & =\sum^{n}_{j=1}x^{(B)}_{j}\vb_{j}\\
- & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\vc_{i}\\
- & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\vc_{i}\\
- & =\sum^{n}_{i=1}\bigl(P\vx^{(B)}\bigr)_{i}\vc_{i},
+\begin{aligned}\boldsymbol{x} & =\sum^{n}_{j=1}x^{(B)}_{j}\boldsymbol{b}_{j}\\
+ & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}\\
+ & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\boldsymbol{c}_{i}\\
+ & =\sum^{n}_{i=1}\bigl(P\boldsymbol{x}^{(B)}\bigr)_{i}\boldsymbol{c}_{i},
 \end{aligned}
 \]
 
@@ -1223,7 +1202,7 @@ which shows that
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\vx^{(C)}=P_{B\to C}\vx^{(B)}.
+\boldsymbol{x}^{(C)}=P_{B\to C}\boldsymbol{x}^{(B)}.
 \]
 
 \end_inset
@@ -1247,7 +1226,7 @@ Similarly,
 \end_inset
 
  with respect to the basis 
-\begin_inset Formula $B=(\vb_{1},\ldots,\vb_{n})$
+\begin_inset Formula $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$
 \end_inset
 
 ,
@@ -1270,7 +1249,7 @@ Similarly,
 \begin_layout Standard
 \begin_inset Formula 
 \[
-A^{(C)}=PA^{(B)}P^{-1}.
+A^{(C)}=PA^{(B)}P^{-1}
 \]
 
 \end_inset
@@ -1281,7 +1260,7 @@ A^{(C)}=PA^{(B)}P^{-1}.
 \begin_layout Standard
 Namely,
  consider what happens when we multiply this matrix to a coordinate vector of the form 
-\begin_inset Formula $\vx^{\vw}$
+\begin_inset Formula $\boldsymbol{x}^{\left(C\right)}$
 \end_inset
 
 .
@@ -1290,12 +1269,40 @@ Namely,
 \begin_inset Formula $P^{-1}$
 \end_inset
 
+
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Note que se 
+\begin_inset Formula $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$
+\end_inset
+
+e sendo 
+\begin_inset Formula $P^{-1}P=\mathbb{I}$
+\end_inset
+
+,
+ então 
+\begin_inset Formula $P^{-1}\boldsymbol{x}^{(C)}=\boldsymbol{x}^{(B)}$
+\end_inset
+
+,
+ o seja 
+\begin_inset Formula $P^{-1}=P_{C\rightarrow B}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
  to 
-\begin_inset Formula $\vx^{\vw}$
+\begin_inset Formula $\boldsymbol{x}^{\left(C\right)}$
 \end_inset
 
  gives 
-\begin_inset Formula $\vx^{\vv}$
+\begin_inset Formula $\boldsymbol{x}^{\left(B\right)}$
 \end_inset
 
 .
@@ -1305,7 +1312,7 @@ Namely,
 \end_inset
 
  gives 
-\begin_inset Formula $(A\vx)^{(B)}$
+\begin_inset Formula $(A\boldsymbol{x})^{(B)}$
 \end_inset
 
 .
@@ -1315,7 +1322,7 @@ Namely,
 \end_inset
 
  gives 
-\begin_inset Formula $(A\vx)^{(C)}$
+\begin_inset Formula $(A\boldsymbol{x})^{(C)}$
 \end_inset
 
 ,
@@ -1323,35 +1330,7 @@ Namely,
 \end_layout
 
 \begin_layout Standard
-## Invariance under basis transformations
-\end_layout
-
-\begin_layout Standard
-In [](matrix-operations) we attached several quantities to a square matrix:
- the trace,
- the determinant and the characteristic polynomial.
- In 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-ref
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`trace-det-basis-invariant`,
- you will check that the trace and the determinant are invariant under basis transformation:
+The trace and the determinant are invariant under basis transformation:
  if 
 \begin_inset Formula $A$
 \end_inset
@@ -1371,7 +1350,7 @@ status collapsed
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\tr(PAP^{-1})=\tr A\quad\text{and}\quad\det(PAP^{-1})=\det A.
+\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A.
 \]
 
 \end_inset
@@ -1384,12 +1363,20 @@ Because the characteristic polynomial is also defined as a determinant,
  it too is invariant under basis transformation.
 \end_layout
 
-\begin_layout Section
-Probabilidade e estatística
+\begin_layout Subsection
+Diagonalisation
 \end_layout
 
-\begin_layout Section
-Apêndice
+\begin_layout Subsection
+Hilbert Spaces
+\end_layout
+
+\begin_layout Subsection
+Operators on Hilbert spaces
+\end_layout
+
+\begin_layout Subsection
+Tensor products
 \end_layout
 
 \begin_layout Quotation
