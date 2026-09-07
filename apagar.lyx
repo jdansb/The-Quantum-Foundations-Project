@@ -85,28 +85,85 @@
 \begin_body
 
 \begin_layout Standard
-— jupytext: formats: md:myst textrepresentation: extension: .md formatname: myst kernelspec: displayname: Python 3 language: python name: python3 —
+# Basic matrix arithmetic
 \end_layout
 
 \begin_layout Standard
-# Basis transformations
-\end_layout
+An 
+\begin_inset Formula $m\times n$
+\end_inset
 
-\begin_layout Standard
-## Bases
-\end_layout
+-*matrix* is an array of 
+\begin_inset Formula $m$
+\end_inset
 
-\begin_layout Standard
-Until now, we have been working with one specific coordinate system in which vectors are identified with their coordinate vectors with respect to the *standard basis vectors*
+ rows and 
+\begin_inset Formula $n$
+\end_inset
+
+ columns containing (usually real or complex) numbers called the *entries* (or *coefficients*) of the matrix. The entries of a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ are denoted by 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+, 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ or similar, where the first index refers to the row and the second to the column. That is, the entries are laid out like
 \end_layout
 
 \begin_layout Standard
 
 \begin_inset Formula \[
-\ve_1=\begin{pmatrix}1\\ 0\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
-\ve_2=\begin{pmatrix}0\\ 1\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
-\ldots,\quad
-\ve_n=\begin{pmatrix}0\\ 0\\ 0\\ \vdots\\ 1\end{pmatrix}.
+A = \begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots& \vdots& \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{pmatrix}.
+\]
+\end_inset
+
+(matrix-A)
+\end_layout
+
+\begin_layout Standard
+You will often see notation like 
+\begin_inset Formula $A=(a_{i,j})$
+\end_inset
+
+ or 
+\begin_inset Formula $A=(a_{i,j})_{1\le
+i\le m\atop 1\le j\le n}$
+\end_inset
+
+ to indicate how the entries are denoted and/or how many rows and columns the matrix has.
+\end_layout
+
+\begin_layout Standard
+In this section we focus on the basic operations that can be performed with matrices.
+\end_layout
+
+\begin_layout Standard
+## Addition and scalar multiplication
+\end_layout
+
+\begin_layout Standard
+Like vectors, matrices can be added or subtracted entrywise. They can also be multiplied entrywise by a given scalar. For example,
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+4\begin{pmatrix}1& 0\\ 3& -1\end{pmatrix}
+- 2\begin{pmatrix}0& 2\\ 1& -1\end{pmatrix} =
+\begin{pmatrix}4& 0\\ 12& -4\end{pmatrix}
+- \begin{pmatrix}0& 4\\ 2& -2\end{pmatrix} =
+\begin{pmatrix}4& -4\\ 10& -2\end{pmatrix}.
 \]
 \end_inset
 
@@ -114,26 +171,73 @@ Until now, we have been working with one specific coordinate system in which vec
 \end_layout
 
 \begin_layout Standard
-In other words, a vector 
-\begin_inset Formula $\vv=\begin{pmatrix}v_1\\ v_2\\ \vdots\\
-v_n\end{pmatrix}$
-\end_inset
-
- means the same as the corresponding linear combination of the standard basis vectors:
+## Special matrices
 \end_layout
 
 \begin_layout Standard
+A few (types of) matrices occur very often and have their own names:
+\end_layout
 
-\begin_inset Formula \[
-\vv = v_1 \ve_1 + \cdots + v_n \ve_n.
-\]
+\begin_layout Standard
+- the 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ *zero matrix* 
+\begin_inset Formula $\begin{pmatrix} 0 & 0 & \cdots & 0\\
+  0 & 0 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & 0 \end{pmatrix}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-In many situations, it is useful to express vectors in a different coordinate system. For this we need the general concept of a *basis*.
+- the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ *identity matrix* 
+\begin_inset Formula $\begin{pmatrix} 1 & 0 & \cdots &
+  0\\ 0 & 1 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & 1 \end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- diagonal matrices 
+\begin_inset Formula $\begin{pmatrix} a_{1,1} & 0 & \cdots & 0\\ 0 &
+  a_{2,2} & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & a_{n,n} \end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- upper triangular matrices 
+\begin_inset Formula $\begin{pmatrix} a_{1,1} & a_{1,2} &
+  \cdots & a_{1,n}\\ 0 & a_{2,2} & \cdots & a_{2,n}\\ \vdots& \ddots&
+  \ddots & \vdots\\ 0 & \cdots & 0 & a_{n,n} \end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- lower triangular matrices 
+\begin_inset Formula $\begin{pmatrix} a_{1,1} & 0 & \cdots &
+  0\\ a_{2,1} & a_{2,2} & \ddots & \vdots\\ \vdots& \vdots& \ddots &
+  0\\ a_{n,1} & a_{n,2} & \cdots & a_{n,n} \end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+## Inner product of vectors
 \end_layout
 
 \begin_layout Standard
@@ -157,29 +261,163 @@ status collapsed
 
 \end_inset
 
- Basis A *basis* of 
-\begin_inset Formula $\RR^n$
+ :label: def-inner-product
+\end_layout
+
+\begin_layout Standard
+Given two vectors 
+\begin_inset Formula $\vv=(v_1,\ldots,v_n)$
 \end_inset
 
- consists of 
-\begin_inset Formula $n$
+ and 
+\begin_inset Formula $\vw=(w_1,\ldots,w_n)$
 \end_inset
 
- vectors 
-\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
+, the *inner product* of 
+\begin_inset Formula $\vv$
 \end_inset
 
- such that every vector 
-\begin_inset Formula $\vv\in\RR^n$
+ and 
+\begin_inset Formula $\vw$
 \end_inset
 
- can be written in exactly one way as a *linear combination*
+ is the scalar
 \end_layout
 
 \begin_layout Standard
 
 \begin_inset Formula \[
-\vv=c_1\vb_1+\cdots+c_n\vb_n
+\vv\cdot\vw = v_1 w_1 + \cdots + v_n w_n.
+\]
+\end_inset
+
+:::
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+prf:property
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Properties of the inner product
+\end_layout
+
+\begin_layout Standard
+For vectors 
+\begin_inset Formula $\vv$
+\end_inset
+
+, 
+\begin_inset Formula $\vw$
+\end_inset
+
+, 
+\begin_inset Formula $\vx$
+\end_inset
+
+ (all of the same length) and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold:
+\end_layout
+
+\begin_layout Standard
+- 
+\begin_inset Formula $\vv\cdot(\vw+\vx) = \vv\cdot\vw + \vv\cdot\vx$
+\end_inset
+
+ - 
+\begin_inset Formula $(\vv+\vw)\cdot\vx = \vv\cdot\vx + \vw\cdot\vx$
+\end_inset
+
+ - 
+\begin_inset Formula $\vv\cdot(c\vw) = c(\vv\cdot\vw)=(c\vv)\cdot\vw$
+\end_inset
+
+ - 
+\begin_inset Formula $\vv\cdot\vw = \vw\cdot\vv$
+\end_inset
+
+ :::
+\end_layout
+
+\begin_layout Standard
+## Matrix-vector multiplication
+\end_layout
+
+\begin_layout Standard
+Matrices can be multiplied by vectors.
+\end_layout
+
+\begin_layout Standard
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+prf:definition
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+ Given a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ as in 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\end_inset
+
+eq
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`matrix-A` and a vector
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix} \in\mathbb{R}^n
 \]
 \end_inset
 
@@ -187,76 +425,105 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-of 
-\begin_inset Formula $\vb_1,\ldots,\vb_n$
+the *(matrix-vector) product* of 
+\begin_inset Formula $A$
 \end_inset
 
- with scalars 
-\begin_inset Formula $c_1,\ldots,c_n$
-\end_inset
-
-. These scalars are called the *coordinates* of 
+ and 
 \begin_inset Formula $\vv$
 \end_inset
 
- relative to 
-\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
-\end_inset
-
-. The vector 
-\begin_inset Formula $\begin{pmatrix}c_1\\ \vdots\\
-c_n\end{pmatrix}$
-\end_inset
-
- is called the *coordinate vector* of 
-\begin_inset Formula $\vv$
-\end_inset
-
- relative to 
-\begin_inset Formula $(\vb_1,\ldots,\vb_n)$
-\end_inset
-
-.
+ is the vector
 \end_layout
 
 \begin_layout Standard
+
+\begin_inset Formula \[
+A\vv=\begin{pmatrix}a_{1,1}v_1 + \cdots + a_{1,n}v_n\\
+\vdots\\
+a_{m,1}v_1 + \cdots + a_{m,n}v_n\end{pmatrix} \in\mathbb{R}^m.
+\]
+\end_inset
+
 :::
 \end_layout
 
 \begin_layout Standard
-Alternatively, a basis consists of 
-\begin_inset Formula $n$
-\end_inset
-
- vectors 
-\begin_inset Formula $\vb_1,\ldots,\vb_n$
-\end_inset
-
- with the following two properties:
+Equivalently, we can write
 \end_layout
 
 \begin_layout Standard
-- they *span* the space 
-\begin_inset Formula $\RR^n$
+
+\begin_inset Formula \[
+(A\vv)_i = \sum_{j=1}^n A_{i,j} v_j\quad(1\le i\le m).
+\]
 \end_inset
 
-, i.e. every vector is a linear combination of 
-\begin_inset Formula $\vb_1,\ldots,\vb_n$
-\end_inset
-
-;
+(matrix-vector)
 \end_layout
 
 \begin_layout Standard
-- they are *linearly independent*, i.e. the only way to write the zero vector as a linear combination of 
-\begin_inset Formula $\vb_1,\ldots,\vb_n$
+:::
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
+\end_layout
+
 \end_inset
 
- is as 
-\begin_inset Formula $0\vb_1+\cdots+0\vb_n$
+prf:property
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
 \end_inset
 
-.
+ Properties of matrix-vector multiplication For matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+, vectors 
+\begin_inset Formula $\vv$
+\end_inset
+
+ and 
+\begin_inset Formula $\vw$
+\end_inset
+
+ and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold whenever the expressions are defined:
+\end_layout
+
+\begin_layout Standard
+- 
+\begin_inset Formula $A(\vv+\vw)= A\vv + A\vw$
+\end_inset
+
+ - 
+\begin_inset Formula $A(c\vv) = c(A\vv)$
+\end_inset
+
+ - 
+\begin_inset Formula $(A+B)\vv = A\vv+B\vv$
+\end_inset
+
+ - 
+\begin_inset Formula $(cA)\vv = c(A\vv)$
+\end_inset
+
+ :::
 \end_layout
 
 \begin_layout Standard
@@ -280,42 +547,136 @@ status collapsed
 
 \end_inset
 
- A priori, we could have defined a basis as a collection of *some* number (say 
-\begin_inset Formula $m$
-\end_inset
-
-) of vectors that span the space and are linearly independent. However, it can be shown that in fact any two bases contain the same number of vectors. Since the standard basis of 
-\begin_inset Formula $\RR^n$
-\end_inset
-
- consists of 
-\begin_inset Formula $n$
-\end_inset
-
- vectors, the same therefore holds for *any* basis. :::
+ Here are two other useful ways to think about matrix-vector products.
 \end_layout
 
 \begin_layout Standard
-## Basis transformation matrices
+First, in terms of inner products (see 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+{
 \end_layout
 
-\begin_layout Standard
-Suppose we have two bases of 
-\begin_inset Formula $\RR^n$
 \end_inset
 
-, say
+prf:ref
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\end_inset
+
+`def-inner-product`): the vector 
+\begin_inset Formula $A\vv$
+\end_inset
+
+ consists of the inner products of each of the rows of 
+\begin_inset Formula $A$
+\end_inset
+
+ with the vector 
+\begin_inset Formula $\vv$
+\end_inset
+
+. Namely, if
 \end_layout
 
 \begin_layout Standard
 
 \begin_inset Formula \[
-B=(\vb_1, \ldots, \vb_n)\quad\text{and}\quad
-C=(\vc_1, \ldots, \vc_n).
+A = \begin{pmatrix}\va_1\\ \vdots\\ \va_m\end{pmatrix},
 \]
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+then
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A\vv = \begin{pmatrix}\va_1\cdot\vv\\ \vdots\\ \va_m\cdot\vv\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Second, in terms of linear combinations: the vector 
+\begin_inset Formula $A\vv$
+\end_inset
+
+ is a linear combination of the columns of 
+\begin_inset Formula $A$
+\end_inset
+
+ where the coefficients are the entries of 
+\begin_inset Formula $\vv$
+\end_inset
+
+. Namely, if
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A = (\va_1\ \va_2\ \cdots\ \va_n)\quad\text{and}\quad
+\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A\vv = v_1 \va_1 + v_2 \va_2 + \cdots + v_n \va_m.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+:::
+\end_layout
+
+\begin_layout Standard
+## Matrix multiplication
+\end_layout
+
+\begin_layout Standard
+Two matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ can be multiplied if the number of columns of 
+\begin_inset Formula $A$
+\end_inset
+
+ equals the number of rows of 
+\begin_inset Formula $B$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -339,324 +700,76 @@ status collapsed
 
 \end_inset
 
- Basis transformation matrix
-\end_layout
+ If 
+\begin_inset Formula $A$
+\end_inset
 
-\begin_layout Standard
-The *basis transformation matrix* (or *change-of-basis matrix*) from 
+ is an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix and 
 \begin_inset Formula $B$
 \end_inset
 
- to 
-\begin_inset Formula $C$
+ is an 
+\begin_inset Formula $n\times p$
 \end_inset
 
- is the matrix 
-\begin_inset Formula $P=P_{B\to C}$
-\end_inset
-
- such that the 
-\begin_inset Formula $j$
-\end_inset
-
--th column of 
-\begin_inset Formula $P$
-\end_inset
-
- contains the coordinates of 
-\begin_inset Formula $\vb_j$
-\end_inset
-
- relative to the basis 
-\begin_inset Formula $(\vc_1,\ldots,\vc_n)$
-\end_inset
-
-. :::
-\end_layout
-
-\begin_layout Standard
-The definition of 
-\begin_inset Formula $P$
-\end_inset
-
- means (note the difference with the formula 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-eq
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`matrix-vector` for matrix-vector multiplication)
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\vb_j = \sum_{i=1}^n P_{i,j}\vc_i.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Given a vector 
-\begin_inset Formula $\vx$
-\end_inset
-
-, we write 
-\begin_inset Formula $\vx^{(B)}=(x_1^{(B)},\ldots,x_n^{(B)})$
-\end_inset
-
- for the coordinate vector of 
-\begin_inset Formula $\vx$
-\end_inset
-
- with respect to the basis 
-\begin_inset Formula $B=(\vb_1,\ldots,\vb_n)$
-\end_inset
-
-, and we define 
-\begin_inset Formula $\vx^{(C)}$
-\end_inset
-
- similarly. Then we calculate
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\begin{aligned}
-\vx &= \sum_{j=1}^n x_j^{(B)} \vb_j\\
-&= \sum_{j=1}^n x_j^{(B)}\sum_{i=1}^n P_{i,j}\vc_i\\
-&= \sum_{i=1}^n\left(\sum_{j=1}^n P_{i,j} x_j^{(B)}\right) \vc_i\\
-&= \sum_{i=1}^n\bigl(P \vx^{(B)}\bigr)_i \vc_i,
-\end{aligned}
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-which shows that
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\vx^{(C)} = P_{B\to C}\vx^{(B)}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Similarly, given a linear map 
-\begin_inset Formula $A$
-\end_inset
-
-, we write 
-\begin_inset Formula $A^{(B)}$
-\end_inset
-
- for the matrix of 
-\begin_inset Formula $A$
-\end_inset
-
- with respect to the basis 
-\begin_inset Formula $B=(\vb_1,\ldots,\vb_n)$
-\end_inset
-
-, and likewise for 
-\begin_inset Formula $A^{(C)}$
-\end_inset
-
-. Then 
-\begin_inset Formula $A^{(B)}$
-\end_inset
-
- and 
-\begin_inset Formula $A^{(C)}$
-\end_inset
-
- are related by
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A^{(C)} = PA^{(B)}P^{-1}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Namely, consider what happens when we multiply this matrix to a coordinate vector of the form 
-\begin_inset Formula $\vx^{\vw}$
-\end_inset
-
-. First, applying 
-\begin_inset Formula $P^{-1}$
-\end_inset
-
- to 
-\begin_inset Formula $\vx^{\vw}$
-\end_inset
-
- gives 
-\begin_inset Formula $\vx^{\vv}$
-\end_inset
-
-. Next, applying 
-\begin_inset Formula $A^{(B)}$
-\end_inset
-
- gives 
-\begin_inset Formula $(A\vx)^{(B)}$
-\end_inset
-
-. Finally, applying 
-\begin_inset Formula $P$
-\end_inset
-
- gives 
-\begin_inset Formula $(A\vx)^{(C)}$
-\end_inset
-
-, which is what we wanted to show.
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Quotes eld
-\end_inset
-
-`
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-code-cell
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- ipython3 :tags: [remove-input] from jupyterquiz import displayquiz displayquiz(
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"_
-\end_layout
-
-\end_inset
-
-static/quizzes/basistrans.json
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"
-\end_layout
-
-\end_inset
-
-) 
-\begin_inset Quotes eld
-\end_inset
-
-`
-\end_layout
-
-\begin_layout Standard
-## Invariance under basis transformations
-\end_layout
-
-\begin_layout Standard
-In [](matrix-operations) we attached several quantities to a square matrix: the trace, the determinant and the characteristic polynomial. In 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-ref
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`trace-det-basis-invariant`, you will check that the trace and the determinant are invariant under basis transformation: if 
+-matrix, then the *(matrix) product* of 
 \begin_inset Formula $A$
 \end_inset
 
  and 
-\begin_inset Formula $P$
+\begin_inset Formula $B$
 \end_inset
 
- are square matrices of the same size with 
-\begin_inset Formula $P$
+ is the 
+\begin_inset Formula $m\times p$
 \end_inset
 
- invertible, then we have
+-matrix 
+\begin_inset Formula $AB$
+\end_inset
+
+ defined as follows:
 \end_layout
 
 \begin_layout Standard
 
 \begin_inset Formula \[
-\tr(PAP^{-1})=\tr A
-\quad\text{and}\quad
-\det(PAP^{-1})=\det A.
+(AB)_{i,k} = \sum_{j=1}^n A_{i,j} B_{j,k}
+\quad(1\le i\le m,1\le k\le p).
+\]
+\end_inset
+
+:::
+\end_layout
+
+\begin_layout Standard
+The product 
+\begin_inset Formula $AB$
+\end_inset
+
+ can be viewed as 
+\begin_inset Formula $p$
+\end_inset
+
+ matrix-vector multiplications: if 
+\begin_inset Formula $B=(\vb_1\ \vb_2\ \cdots \vb_p)$
+\end_inset
+
+, then
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+AB = (A\vb_1\ A\vb_2\ \cdots A\vb_p).
 \]
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
-\end_layout
-
-\begin_layout Standard
-***
-\end_layout
-
-\begin_layout Standard
-## Exercises
 \end_layout
 
 \begin_layout Standard
@@ -670,7 +783,7 @@ status collapsed
 
 \end_inset
 
-exercise
+prf:property
 \begin_inset ERT
 status collapsed
 
@@ -680,48 +793,40 @@ status collapsed
 
 \end_inset
 
- Which of the following collections of vectors are bases for 
-\begin_inset Formula $\RR^2$
+ Properties of matrix multiplication For matrices 
+\begin_inset Formula $A$
 \end_inset
 
-?
+, 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold whenever the expressions are defined:
 \end_layout
 
 \begin_layout Standard
-1. 
-\begin_inset Formula $\begin{pmatrix}1\\ 2\end{pmatrix}$
+- 
+\begin_inset Formula $A(B + C)= AB + AC$
 \end_inset
 
-, 
-\begin_inset Formula $\begin{pmatrix}3\\ 4\end{pmatrix}$
+ - 
+\begin_inset Formula $(A + B)C = AC + BC$
 \end_inset
 
-, 
-\begin_inset Formula $\begin{pmatrix}5\\ 6\end{pmatrix}$
+ - 
+\begin_inset Formula $(AB)C = A(BC)$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-2. 
-\begin_inset Formula $\begin{pmatrix}0\\ 0\end{pmatrix}$
-\end_inset
-
-, 
-\begin_inset Formula $\begin{pmatrix}1\\ 1\end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-3. 
-\begin_inset Formula $\begin{pmatrix}1\\ 2\end{pmatrix}$
-\end_inset
-
-, 
-\begin_inset Formula $\begin{pmatrix}-3\\ 4\end{pmatrix}$
+ - 
+\begin_inset Formula $(cA)B = c(AB) = A(cB)$
 \end_inset
 
  :::
@@ -738,7 +843,7 @@ status collapsed
 
 \end_inset
 
-exercise
+warning
 \begin_inset ERT
 status collapsed
 
@@ -748,167 +853,19 @@ status collapsed
 
 \end_inset
 
- Given the two bases
+ Matrix multiplication is not commutative! That is, in general we have
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-B=(\vb_1,\vb_2)=\biggl(\begin{pmatrix}1\\ 2\end{pmatrix},
-\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
-\quad\text{and}\quad
-C=(\vc_1,\vc_2)=\biggl(\begin{pmatrix}0\\ 1\end{pmatrix},
-\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
-\]
+\begin_inset Formula \[AB\ne BA.\]
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-determine the basis transformation matrix 
-\begin_inset Formula $P_{B\to C}$
-\end_inset
-
-. :::
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-exercise
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- :label: trace-det-basis-invariant
-\end_layout
-
-\begin_layout Standard
-Suppose 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- are two 
-\begin_inset Formula $n\times n$
-\end_inset
-
--matrices and 
-\begin_inset Formula $P$
-\end_inset
-
- is an invertible 
-\begin_inset Formula $n\times n$
-\end_inset
-
--matrix such that 
-\begin_inset Formula $B=PAP^{-1}$
-\end_inset
-
-. Show that
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\tr B = \tr A\quad\text{and}\quad \det B = \det A.
-\]
-\end_inset
-
-:::
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-exercise
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Consider two 
-\begin_inset Formula $n\times n$
-\end_inset
-
--matrices 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-1. Suppose there exists an invertible 
-\begin_inset Formula $n\times n$
-\end_inset
-
--matrix 
-\begin_inset Formula $P$
-\end_inset
-
- satisfying 
-\begin_inset Formula $B=PAP^{-1}$
-\end_inset
-
-. Show that 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- have the same characteristic polynomial.
-\end_layout
-
-\begin_layout Standard
-2. Give an example where 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- have the same characteristic polynomial but a matrix 
-\begin_inset Formula $P$
-\end_inset
-
- as above does not exist. ::: 
+::: 
 \end_layout
 
 \end_body

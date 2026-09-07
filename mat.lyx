@@ -102,11 +102,29 @@
 \begin_body
 
 \begin_layout Title
-Matemática para Mecânica Quântica
+Álgebra Linear
 \end_layout
 
 \begin_layout Author
 Jhordan Silveira de Borba
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Note
+\series default
+ If Portuguese is not your native language,
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Firefox"
+target "https://www.firefox.com/"
+literal "false"
+
+\end_inset
+
+'s automatic translation works well.
 \end_layout
 
 \begin_layout Standard
@@ -144,14 +162,708 @@ literal "false"
 \end_inset
 
 .
-\end_layout
+ Uma revisão mais completa pode ser vista 
+\begin_inset CommandInset href
+LatexCommand href
+name "aqui"
+target "https://github.com/jonasmaziero/algebra_linear"
+literal "false"
 
-\begin_layout Section
-Álgebra Linear
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Aritmética Matricial Básica
+\end_layout
+
+\begin_layout Standard
+An 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix is an array of 
+\begin_inset Formula $m$
+\end_inset
+
+ rows and 
+\begin_inset Formula $n$
+\end_inset
+
+ columns containing (usually real or complex) numbers called the entries (or coefficients) of the matrix.
+ The entries of a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ are denoted by 
+\begin_inset Formula $A_{i,j}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $a_{ij}$
+\end_inset
+
+ or similar,
+ where the first index refers to the row and the second to the column.
+ That is,
+ the entries are laid out like
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+A=\begin{pmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{pmatrix}.\label{eq:1}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+You will often see notation like 
+\begin_inset Formula $A=(a_{i,j})$
+\end_inset
+
+ or 
+\begin_inset Formula $A=(a_{i,j})_{{1\le i\le m\atop 1\le j\le n}}$
+\end_inset
+
+ to indicate how the entries are denoted and/or how many rows and columns the matrix has.
+\end_layout
+
+\begin_layout Standard
+In this section we focus on the basic operations that can be performed with matrices.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Addition and scalar multiplication
+\end_layout
+
+\begin_layout Standard
+Like vectors,
+ matrices can be added or subtracted entrywise.
+ They can also be multiplied entrywise by a given scalar.
+ For example,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+4\begin{pmatrix}1 & 0\\
+3 & -1
+\end{pmatrix}-2\begin{pmatrix}0 & 2\\
+1 & -1
+\end{pmatrix}=\begin{pmatrix}4 & 0\\
+12 & -4
+\end{pmatrix}-\begin{pmatrix}0 & 4\\
+2 & -2
+\end{pmatrix}=\begin{pmatrix}4 & -4\\
+10 & -2
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Special matrices
+\end_layout
+
+\begin_layout Standard
+A few (types of) matrices occur very often and have their own names:
+\end_layout
+
+\begin_layout Standard
+- the 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ zero matrix 
+\begin_inset Formula $\begin{pmatrix}0 & 0 & \cdots & 0\\
+0 & 0 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & 0
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ identity matrix 
+\begin_inset Formula $\begin{pmatrix}1 & 0 & \cdots & 0\\
+0 & 1 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & 1
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- diagonal matrices 
+\begin_inset Formula $\begin{pmatrix}a_{1,1} & 0 & \cdots & 0\\
+0 & a_{2,2} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & a_{n,n}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- upper triangular matrices 
+\begin_inset Formula $\begin{pmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+0 & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \ddots & \ddots & \vdots\\
+0 & \cdots & 0 & a_{n,n}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+- lower triangular matrices 
+\begin_inset Formula $\begin{pmatrix}a_{1,1} & 0 & \cdots & 0\\
+a_{2,1} & a_{2,2} & \ddots & \vdots\\
+\vdots & \vdots & \ddots & 0\\
+a_{n,1} & a_{n,2} & \cdots & a_{n,n}
+\end{pmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Inner product of vectors
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+ Given two vectors 
+\begin_inset Formula $\boldsymbol{v}=(v_{1},\ldots,v_{n})$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{w}=(w_{1},\ldots,w_{n})$
+\end_inset
+
+,
+ the inner product of 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{w}$
+\end_inset
+
+ is the scalar 
+\begin_inset Formula $\boldsymbol{v}\cdot\boldsymbol{w}=v_{1}w_{1}+\cdots+v_{n}w_{n}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Properties of the inner product:
+ For vectors 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\boldsymbol{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\boldsymbol{x}$
+\end_inset
+
+ (all of the same length) and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{v}\cdot(\boldsymbol{w}+\boldsymbol{x})=\boldsymbol{v}\cdot\boldsymbol{w}+\boldsymbol{v}\cdot\boldsymbol{x}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(\boldsymbol{v}+\boldsymbol{w})\cdot\boldsymbol{x}=\boldsymbol{v}\cdot\boldsymbol{x}+\boldsymbol{w}\cdot\boldsymbol{x}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{v}\cdot(c\boldsymbol{w})=c(\boldsymbol{v}\cdot\boldsymbol{w})=(c\boldsymbol{v})\cdot\boldsymbol{w}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\boldsymbol{v}\cdot\boldsymbol{w}=\boldsymbol{w}\cdot\boldsymbol{v}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Matrix-vector multiplication
+\end_layout
+
+\begin_layout Standard
+Matrices can be multiplied by vectors.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ Given a matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ as in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ and a vector
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Formula 
+\[
+\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+\vdots\\
+v_{n}
+\end{pmatrix}\in\mathbb{R}^{n}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+the (matrix-vector) product of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ is the vector
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Formula 
+\[
+A\boldsymbol{v}=\begin{pmatrix}a_{1,1}v_{1}+\cdots+a_{1,n}v_{n}\\
+\vdots\\
+a_{m,1}v_{1}+\cdots+a_{m,n}v_{n}
+\end{pmatrix}\in\mathbb{R}^{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Equivalently,
+ we can write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(A\boldsymbol{v})_{i}=\sum^{n}_{j=1}A_{i,j}v_{j}\quad(1\le i\le m).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Properties of matrix-vector multiplication:
+ For matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+,
+ vectors 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ and 
+\begin_inset Formula $\boldsymbol{w}$
+\end_inset
+
+ and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold whenever the expressions are defined:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A(\boldsymbol{v}+\boldsymbol{w})=A\boldsymbol{v}+A\boldsymbol{w}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A(c\boldsymbol{v})=c(A\boldsymbol{v})$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(A+B)\boldsymbol{v}=A\boldsymbol{v}+B\boldsymbol{v}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(cA)\boldsymbol{v}=c(A\boldsymbol{v})$
+\end_inset
+
+ :::
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note
+\series default
+:
+ Here are two other useful ways to think about matrix-vector products.
+ First,
+ in terms of inner products:
+ the vector 
+\begin_inset Formula $A\boldsymbol{v}$
+\end_inset
+
+ consists of the inner products of each of the rows of 
+\begin_inset Formula $A$
+\end_inset
+
+ with the vector 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+.
+ Namely,
+ if
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\begin{pmatrix}\boldsymbol{a}_{1}\\
+\vdots\\
+\textbf{a}_{m}
+\end{pmatrix},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=\begin{pmatrix}\boldsymbol{a}_{1}\cdot\boldsymbol{v}\\
+\vdots\\
+\boldsymbol{a}_{m}\cdot\boldsymbol{v}
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Second,
+ in terms of linear combinations:
+ the vector 
+\begin_inset Formula $A\boldsymbol{v}$
+\end_inset
+
+ is a linear combination of the columns of 
+\begin_inset Formula $A$
+\end_inset
+
+ where the coefficients are the entries of 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+.
+ Namely,
+ if
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A=(\boldsymbol{a}_{1}\ \boldsymbol{a}_{2}\ \cdots\ \boldsymbol{a}_{n})\quad\text{and}\quad\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+\vdots\\
+v_{n}
+\end{pmatrix},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+A\boldsymbol{v}=v_{1}\boldsymbol{a}_{1}+\boldsymbol{v}_{2}\boldsymbol{a}_{2}+\cdots+\boldsymbol{v}_{n}\boldsymbol{a}_{m}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Matrix multiplication
+\end_layout
+
+\begin_layout Standard
+Two matrices 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ can be multiplied if the number of columns of 
+\begin_inset Formula $A$
+\end_inset
+
+ equals the number of rows of 
+\begin_inset Formula $B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ If 
+\begin_inset Formula $A$
+\end_inset
+
+ is an 
+\begin_inset Formula $m\times n$
+\end_inset
+
+-matrix and 
+\begin_inset Formula $B$
+\end_inset
+
+ is an 
+\begin_inset Formula $n\times p$
+\end_inset
+
+-matrix,
+ then the (matrix) product of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is the 
+\begin_inset Formula $m\times p$
+\end_inset
+
+-matrix 
+\begin_inset Formula $AB$
+\end_inset
+
+ defined as follows:
+ 
+\begin_inset Formula $(AB)_{i,k}=\sum^{n}_{j=1}A_{i,j}B_{j,k}\quad(1\le i\le m,1\le k\le p).$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The product 
+\begin_inset Formula $AB$
+\end_inset
+
+ can be viewed as 
+\begin_inset Formula $p$
+\end_inset
+
+ matrix-vector multiplications:
+ if 
+\begin_inset Formula $B=(\boldsymbol{b}_{1}\ \boldsymbol{b}_{2}\ \cdots\boldsymbol{b}_{p})$
+\end_inset
+
+,
+ then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+AB=(A\boldsymbol{b}_{1}\ A\boldsymbol{b}_{2}\ \cdots A\boldsymbol{b}_{p}).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Properties of matrix multiplication
+\series default
+:
+ For matrices 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ 
+\begin_inset Formula $B$
+\end_inset
+
+ and 
+\begin_inset Formula $C$
+\end_inset
+
+ and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+ the following hold whenever the expressions are defined:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A(B+C)=AB+AC$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(A+B)C=AC+BC$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(AB)C=A(BC)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(cA)B=c(AB)=A(cB)$
+\end_inset
+
+ :::
+\end_layout
+
+\begin_layout Standard
+Warning:
+ Matrix multiplication is not commutative!
+ That is,
+ in general we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+AB\ne BA.
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -889,6 +1601,59 @@ o
 
 \end_layout
 
+\begin_layout Standard
+Propriedades que suas demonstrações podem ser vistas em exercícios:
+\end_layout
+
+\begin_layout Itemize
+Se 
+\begin_inset Formula $A$
+\end_inset
+
+ é uma matri 
+\begin_inset Formula $m\times n$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ uma matriz 
+\begin_inset Formula $n\times m$
+\end_inset
+
+ então 
+\begin_inset Formula $\text{Tr}\left(AB\right)=Tr\left(BA\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Se 
+\begin_inset Formula $A$
+\end_inset
+
+ é uma matriz 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ e 
+\begin_inset Formula $c$
+\end_inset
+
+ um escalar,
+ então 
+\begin_inset Formula $\text{Tr}\left(cA\right)=c\text{Tr}\left(A\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $\det\left(ca\right)=c^{n}\det\left(A\right)$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Basis transformations
 \end_layout
@@ -1088,9 +1853,9 @@ Suppose we have two bases of
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 B=(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})\quad\text{and}\quad C=(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n}).
-\]
+\end{equation}
 
 \end_inset
 
@@ -1144,9 +1909,9 @@ The definition of
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \boldsymbol{b}_{j}=\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}.
-\]
+\end{equation}
 
 \end_inset
 
@@ -1182,13 +1947,13 @@ Given a vector
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \begin{aligned}\boldsymbol{x} & =\sum^{n}_{j=1}x^{(B)}_{j}\boldsymbol{b}_{j}\\
  & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}\\
  & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\boldsymbol{c}_{i}\\
  & =\sum^{n}_{i=1}\bigl(P\boldsymbol{x}^{(B)}\bigr)_{i}\boldsymbol{c}_{i},
 \end{aligned}
-\]
+\end{equation}
 
 \end_inset
 
@@ -1201,9 +1966,9 @@ which shows that
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \boldsymbol{x}^{(C)}=P_{B\to C}\boldsymbol{x}^{(B)}.
-\]
+\end{equation}
 
 \end_inset
 
@@ -1271,7 +2036,7 @@ Namely,
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Note que se 
@@ -1349,9 +2114,9 @@ The trace and the determinant are invariant under basis transformation:
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A.
-\]
+\begin{equation}
+\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A
+\end{equation}
 
 \end_inset
 
@@ -1363,20 +2128,3324 @@ Because the characteristic polynomial is also defined as a determinant,
  it too is invariant under basis transformation.
 \end_layout
 
+\begin_layout Standard
+Propriedades que podem serem demonstradas como exercícios:
+\end_layout
+
+\begin_layout Itemize
+Supondo que 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ sejam duas matrizes 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ e 
+\begin_inset Formula $P$
+\end_inset
+
+ é uma matriz 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ inversível de forma que 
+\begin_inset Formula $B=PAP^{-1}$
+\end_inset
+
+ então 
+\begin_inset Formula $\text{Tr}\left(B\right)=\text{Tr}\left(A\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $\det B=\det A$
+\end_inset
+
+,
+ além disso,
+ 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
+\begin_inset Formula $B$
+\end_inset
+
+ compartilham do mesmo polinômio característico.
+\end_layout
+
 \begin_layout Subsection
 Diagonalisation
+\end_layout
+
+\begin_layout Standard
+A very common example of a basis transformation is diagonalisation of a matrix.
+ For this we first introduce the concept of eigenvalues and eigenvectors.
+ Consider an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $T$
+\end_inset
+
+ with complex entries.
+ We view 
+\begin_inset Formula $T$
+\end_inset
+
+ as a linear map on 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ An eigenvector for 
+\begin_inset Formula $A$
+\end_inset
+
+ is a non-zero vector 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ such that 
+\begin_inset Formula $A\boldsymbol{v}=\lambda\boldsymbol{v}$
+\end_inset
+
+ for some scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+.
+ This 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is called the eigenvalue of 
+\begin_inset Formula $T$
+\end_inset
+
+ acting on 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Writing 
+\begin_inset Formula $I$
+\end_inset
+
+ for the 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ identity matrix,
+ we see that if 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ is an eigenvector with eigenvalue 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ then
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(A-\lambda I)\boldsymbol{v}=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This means that 
+\begin_inset Formula $A-\lambda I$
+\end_inset
+
+ is not invertible
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Se 
+\begin_inset Formula $B=(A-\lambda I)$
+\end_inset
+
+ é invertivel significa que 
+\begin_inset Formula $B^{-1}B=I$
+\end_inset
+
+ então 
+\begin_inset Formula $\boldsymbol{v}=B^{-1}0=0$
+\end_inset
+
+.
+ O que é contraditório pois por definição 
+\begin_inset Formula $\boldsymbol{v}$
+\end_inset
+
+ é não nulo.
+ E se não é invertível,
+ então 
+\begin_inset Formula $\text{det}\left(B\right)=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+;
+ equivalently,
+ its determinant vanishes.
+ Thus,
+ if 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\det(A-\lambda I)=0
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This implies that the eigenvalues of 
+\begin_inset Formula $A$
+\end_inset
+
+ are roots of the characteristic polynomial 
+\begin_inset Formula $\chi_{A}$
+\end_inset
+
+ .
+ We can factor the characteristic polynomial as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\chi_{A}(x)=(x-\lambda_{1})^{k_{1}}\cdots(x-\lambda_{r})^{k_{r}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\lambda_{1},\ldots,\lambda_{r}$
+\end_inset
+
+ are the distinct roots of 
+\begin_inset Formula $\chi_{A}(t)$
+\end_inset
+
+ and each 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ is an integer called the multiplicity of 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ as a root of 
+\begin_inset Formula $\chi_{A}(t)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The idea of diagonalisation is that it is often easiest to understand a linear map 
+\begin_inset Formula $A$
+\end_inset
+
+ if we can find a basis of our space consisting of vectors on which 
+\begin_inset Formula $A$
+\end_inset
+
+ acts as multiplication by some scalar.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ An 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is diagonalisable if there exist a diagonal
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Matriz diagonal é aquela que só tem elementos na diagonal principal 
+\begin_inset Formula $D_{ii}\neq0,$
+\end_inset
+
+para qualquer 
+\begin_inset Formula $j\neq0$
+\end_inset
+
+,
+ temos 
+\begin_inset Formula $D_{ij}=0$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ matrix 
+\begin_inset Formula $D$
+\end_inset
+
+ and an invertible 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $P$
+\end_inset
+
+ such that 
+\begin_inset Formula $A=PDP^{-1},$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can rewrite the above equation as 
+\begin_inset Formula $AP=PD$
+\end_inset
+
+.
+ Let us write 
+\begin_inset Formula $\boldsymbol{v}_{1},\ldots,\boldsymbol{v}_{n}$
+\end_inset
+
+ for the columns of 
+\begin_inset Formula $P$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{1},\ldots,\lambda_{n}$
+\end_inset
+
+ for the diagonal entries of 
+\begin_inset Formula $D$
+\end_inset
+
+.
+ Then we compute
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+AP=\begin{pmatrix}A\boldsymbol{v}_{1} & A\boldsymbol{v}_{2} & \cdots & A\boldsymbol{v}_{n}\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+PD=\begin{pmatrix}\lambda_{1}\boldsymbol{v}_{1} & \lambda\boldsymbol{v}_{2} & \cdots & \lambda_{n}\boldsymbol{v}_{n}\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We therefore see that the equation 
+\begin_inset Formula $AP=PD$
+\end_inset
+
+ comes down to the 
+\begin_inset Formula $n$
+\end_inset
+
+ equations 
+\begin_inset Formula $A\boldsymbol{v}_{i}=\lambda_{i}\boldsymbol{v}_{i}$
+\end_inset
+
+.
+ In other words,
+ each 
+\begin_inset Formula $\boldsymbol{v}_{i}$
+\end_inset
+
+ is an eigenvector of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ is the corresponding eigenvalue.
+\end_layout
+
+\begin_layout Standard
+The fact that 
+\begin_inset Formula $P$
+\end_inset
+
+ is invertible means that the eigenvectors 
+\begin_inset Formula $\boldsymbol{v}_{i}$
+\end_inset
+
+ form a basis of 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+.
+ We obtain the following conclusion.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Theorem
+\series default
+:
+ An 
+\begin_inset Formula $n\times n$
+\end_inset
+
+-matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is diagonalisable precisely when there exists a basis of 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+ consisting of eigenvectors for 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+This also gives us a way to tell whether 
+\begin_inset Formula $A$
+\end_inset
+
+ is diagonalisable,
+ and if so to determine matrices 
+\begin_inset Formula $D$
+\end_inset
+
+ and 
+\begin_inset Formula $P$
+\end_inset
+
+ as above:
+\end_layout
+
+\begin_layout Standard
+1.
+ Determine the eigenvalues 
+\begin_inset Formula $\lambda_{1},\ldots,\lambda_{r}$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+ by finding the roots of the characteristic polynomial 
+\begin_inset Formula $\chi_{A}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+2.
+ For each eigenvalue 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+,
+ say with multiplicity 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+,
+ determine if there exist 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ linearly independent eigenvectors 
+\begin_inset Formula $\boldsymbol{v}_{\lambda_{i},1},\ldots,\boldsymbol{v}_{\lambda_{i},k_{i}}$
+\end_inset
+
+ with eigenvalue 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+3.
+ The matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ is diagonalisable if and only if there exist 
+\begin_inset Formula $k_{i}$
+\end_inset
+
+ linearly independent eigenvectors with eigenvalue 
+\begin_inset Formula $\lambda_{i}$
+\end_inset
+
+ for all 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ In this case,
+ the matrices
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+D=\begin{pmatrix}\lambda_{1}I_{k_{1}} & 0 & \cdots & 0\\
+0 & \lambda_{2}I_{k_{2}} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & \lambda_{r}I_{k_{r}}
+\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P=\begin{pmatrix}\boldsymbol{v}_{\lambda_{1},1} & \cdots & \boldsymbol{v}_{\lambda_{1},k_{1}} & \boldsymbol{v}_{\lambda_{2},1} & \cdots & \boldsymbol{v}_{\lambda_{2},k_{2}} & \cdots & \boldsymbol{v}_{\lambda_{r},1} & \cdots & \boldsymbol{v}_{\lambda_{r},k_{r}}\end{pmatrix}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+give a diagonalisation of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Propriedades que podem serem demonstradas como exercícios:
+\end_layout
+
+\begin_layout Itemize
+Assumindo 
+\begin_inset Formula $A=PDP^{-1}$
+\end_inset
+
+ com 
+\begin_inset Formula $P$
+\end_inset
+
+ invertível e 
+\begin_inset Formula $D$
+\end_inset
+
+ uma matriz escalar
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Uma matriz é escalar quando ela é um multiplo 
+\begin_inset Formula $c$
+\end_inset
+
+ da matriz identidade 
+\begin_inset Formula $I$
+\end_inset
+
+,
+ isto é 
+\begin_inset Formula $D=cI$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+,
+ então 
+\begin_inset Formula $A=D$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
 Hilbert Spaces
 \end_layout
 
+\begin_layout Standard
+So far,
+ we have been considering vectors in an 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional real or complex space.
+ In quantum mechanics,
+ one encounters infinite-dimensional vector spaces as well.
+ In particular,
+ the state of a quantum system is represented mathematically by a (unit) vector in a Hilbert space.
+\end_layout
+
+\begin_layout Subsubsection*
+Vector spaces
+\end_layout
+
+\begin_layout Standard
+As is customary in quantum physics and quantum algorithms,
+ we use bra-ket notation for vectors in Hilbert spaces.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ A (real or complex) *vector space* consists of
+\end_layout
+
+\begin_layout Quotation
+- a set of vectors,
+ denoted by symbols like 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+- a distinguished vector 
+\begin_inset Formula $\mathbf{0}$
+\end_inset
+
+ called the zero vector
+\end_layout
+
+\begin_layout Quotation
+- a way of adding vectors,
+ i.e.
+ given two vectors 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ we can obtain a third vector 
+\begin_inset Formula $\left|\alpha\right\rangle +\left|\beta\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+- a way of multiplying a vector by a scalar:
+ given a scalar 
+\begin_inset Formula $c$
+\end_inset
+
+ (a real or complex number,
+ depending on whether we consider a real or complex vector space) and a vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ we can obtain a vector 
+\begin_inset Formula $c\left|\alpha\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+Such that a number of properties hold:
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $0\left|\alpha\right\rangle =\mathbf{0}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $1\left|\alpha\right\rangle =\left|\alpha\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\mathbf{0}+\left|\alpha\right\rangle =\left|\alpha\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\left|\alpha\right\rangle +\left|\beta\right\rangle =\left|\beta\right\rangle +\left|\alpha\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $(\left|\alpha\right\rangle +\left|\beta\right\rangle )+\left|\gamma\right\rangle =\left|\alpha\right\rangle +(\left|\beta\right\rangle +\left|\gamma\right\rangle )$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $c(\left|\alpha\right\rangle +\left|\beta\right\rangle )=c\left|\alpha\right\rangle +c\left|\beta\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $(c+d)\left|\alpha\right\rangle =c\left|\alpha\right\rangle +d\left|\alpha\right\rangle $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $c(d\left|\alpha\right\rangle )=(cd)\left|\alpha\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ A basis for a vector space is a collection of vectors 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i}$
+\end_inset
+
+ such that every vector can be written in exactly one way as a linear combination of the 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i}$
+\end_inset
+
+.
+ The number of vectors in a basis is called the dimension of the space.
+ 
+\end_layout
+
+\begin_layout Standard
+As in basis-transformations,
+ any two bases contain the same number of vectors,
+ so the dimension does not depend on the choice of basis.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Exemplo:
+
+\series default
+ The simplest examples are the 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional vector spaces 
+\begin_inset Formula $\mathbb{R}^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+ with coordinatewise addition and scalar multiplication.
+ An important special case is the two-dimensional space 
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+.
+ In bra-ket notation,
+ various symbols are used for the standard basis vectors 
+\begin_inset Formula $\binom{1}{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\binom{0}{1}$
+\end_inset
+
+ in this space,
+ such as:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|+\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+;
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|0\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|1\right\rangle $
+\end_inset
+
+ (in the context of quantum computing);
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left|\uparrow\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\downarrow\right\rangle $
+\end_inset
+
+ (in the context of spins).
+\end_layout
+
+\begin_layout Subsubsection*
+Hermitian inner products and Hilbert spaces
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ A Hermitian inner product assigns to vectors 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ a complex number 
+\begin_inset Formula $\left\langle \alpha|\beta\right\rangle $
+\end_inset
+
+ such that the following properties hold:
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\left\langle \alpha|\beta\right\rangle =\overline{\left\langle \beta|\alpha\right\rangle }$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\left\langle \alpha|\alpha\right\rangle \ge0$
+\end_inset
+
+,
+ and 
+\begin_inset Formula $\left\langle \alpha|\alpha\right\rangle =0$
+\end_inset
+
+ holds precisely when 
+\begin_inset Formula $\left|\alpha\right\rangle =\mathbf{0}$
+\end_inset
+
+ (note that 
+\begin_inset Formula $\left\langle \alpha|\alpha\right\rangle $
+\end_inset
+
+ is a real number because of the first property);
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\left\langle \alpha\right|\left(\left|\beta\right\rangle +\left|\gamma\right\rangle \right)=\left\langle \alpha|\beta\right\rangle +\left\langle \alpha|\gamma\right\rangle $
+\end_inset
+
+;
+ 
+\end_layout
+
+\begin_layout Quotation
+- 
+\begin_inset Formula $\left\langle \alpha\right|\left(c\left|\beta\right\rangle \right)=c\left(\left\langle \alpha|\beta\right\rangle \right)$
+\end_inset
+
+;
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ The norm or length of a vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ in a Hilbert space is defined as the real number 
+\begin_inset Formula $\|\alpha\|=\sqrt{\left\langle \alpha|\alpha\right\rangle }$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The properties above imply that for any scalar 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ the inner product of 
+\begin_inset Formula $c\left|\alpha\right\rangle $
+\end_inset
+
+ with 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ equals 
+\begin_inset Formula $\bar{c}\left\langle \alpha|\beta\right\rangle $
+\end_inset
+
+.
+ In other words,
+ while the inner product is (complex) linear in its second argument,
+ it is only conjugate linear in its first argument.
+ This is the usual convention in physics.
+ It differs from the convention in mathematics,
+ where inner products are usually linear in the first argument and conjugate linear in the second argument.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ A Hilbert space is a complex vector space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ equipped with a Hermitian inner product 
+\begin_inset Formula $\left\langle \enspace|\enspace\right\rangle $
+\end_inset
+
+ and satisfying a condition called completeness.
+\end_layout
+
+\begin_layout Standard
+We will not make the notion of completeness precise in these notes.
+ Roughly speaking,
+ it means that we do not have to worry too much about convergence of sequences or series in our Hilbert space,
+ and there is a notion of infinite linear combinations
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Em poucas palavras,
+ podemos pensar que um espaço completo é aquele em que uma sequência de vetores não pode convergir para um vetor que esteja fora do espaço.
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example:
+
+\series default
+ We take 
+\begin_inset Formula $\mathcal{H}=\mathbb{C}^{n}$
+\end_inset
+
+ and define an inner product by 
+\begin_inset Formula $\left\langle \alpha|\beta\right\rangle =\sum^{n}_{i=1}\bar{\alpha}_{i}\beta_{i}.$
+\end_inset
+
+ This satisfies all the properties of a Hermitian inner product.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Example
+\series default
+:
+ Consider the space 
+\begin_inset Formula $L^{2}(\mathbb{R})$
+\end_inset
+
+ of square-integrable functions on the real line,
+ i.e.
+ functions 
+\begin_inset Formula $f\colon\mathbb{C}\to\mathbb{C}$
+\end_inset
+
+ such that the integral 
+\begin_inset Formula $\int^{\infty}_{-\infty}|f(x)|^{2}dx$
+\end_inset
+
+ exists and is finite.
+ This is a Hilbert space with inner product 
+\begin_inset Formula $\left\langle f|g\right\rangle =\int^{\infty}_{-\infty}\bar{f}(x)g(x)dx.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+Example
+\series default
+:
+ Consider the space 
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+ of sequences 
+\begin_inset Formula $z=(z_{0},z_{1},\ldots)$
+\end_inset
+
+ of complex numbers such that 
+\begin_inset Formula $\sum^{\infty}_{n=0}|z_{n}|^{2}<\infty.$
+\end_inset
+
+ Then 
+\begin_inset Formula $\ell^{2}$
+\end_inset
+
+ is a Hilbert space with inner product 
+\begin_inset Formula $\left\langle w|z\right\rangle =\sum^{\infty}_{n=0}\bar{w}_{n}z_{n}.$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+The dual Hilbert space
+\end_layout
+
+\begin_layout Standard
+With any Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ we can associate a dual Hilbert space 
+\begin_inset Formula $\mathcal{H}^{*}$
+\end_inset
+
+.
+ In the bra-ket formalism used in quantum mechanics,
+ for every 
+\begin_inset Quotes eld
+\end_inset
+
+ket vector
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ we have a dual 
+\begin_inset Quotes eld
+\end_inset
+
+bra vector
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Formula $\left\langle \alpha\right|$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}^{*}$
+\end_inset
+
+.
+ This correspondence has the following properties:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\begin{array}{cc}
+\text{vector in}\mathcal{H} & \text{corresponding vector in}\mathcal{H^{*}}\\
+\left|\alpha\right\rangle  & \left\langle \alpha\right|\\
+\left|\alpha\right\rangle +\left|\beta\right\rangle  & \left\langle \alpha\right|+\left\langle \beta\right|\\
+c\left|\alpha\right\rangle  & \overline{c}\left\langle \alpha\right|
+\end{array}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In mathematical language,
+ 
+\begin_inset Formula $\mathcal{H^{*}}$
+\end_inset
+
+ is the space of continuous linear maps 
+\begin_inset Formula $\mathcal{H}\to\mathbb{C}$
+\end_inset
+
+.
+ The bra vector 
+\begin_inset Formula $\left\langle \alpha\right|$
+\end_inset
+
+ then represents the linear map that sends 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ to 
+\begin_inset Formula $\left\langle \alpha|\beta\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example
+\series default
+:In the case 
+\begin_inset Formula $\mathcal{H}=\mathbb{C}^{n}$
+\end_inset
+
+ we can identify 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ with 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+ as well;
+ for a vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ in 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+,
+ the dual vector 
+\begin_inset Formula $\left\langle \alpha\right|$
+\end_inset
+
+ can then be naturally identified with the corresponding vector in 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+.
+ It can also be convenient to distinguish 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ from 
+\begin_inset Formula $\mathcal{H}^{*}$
+\end_inset
+
+ by denoting a ket vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ as a column vector and the corresponding bra vector 
+\begin_inset Formula $\left\langle \alpha\right|$
+\end_inset
+
+ by the conjugate transpose of 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+,
+ so 
+\begin_inset Formula $\left\langle \alpha\right|$
+\end_inset
+
+ is the row vector whose entries are the complex conjugates of those of 
+\begin_inset Formula $\alpha$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+In 
+\begin_inset Formula $\mathbb{C}^{2}$
+\end_inset
+
+,
+ for example,
+ we have
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left|\alpha\right\rangle =\begin{pmatrix}1\\
+i
+\end{pmatrix}\Longrightarrow\left\langle \alpha\right|=\begin{pmatrix}1 & -i\end{pmatrix}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This allows us to view 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ as a linear map sending 
+\begin_inset Formula $\left\langle \beta\right|$
+\end_inset
+
+ to the scalar obtained by multiplying the row vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ by the column vector 
+\begin_inset Formula $\left\langle \beta\right|$
+\end_inset
+
+.
+ If you know about continuous linear maps of Hilbert spaces,
+ here is a useful connection between the mathematical definition of 
+\begin_inset Formula $\mathcal{H}^{*}$
+\end_inset
+
+ and the bra-ket formalism:
+ the Riesz representation theorem states that every continuous linear map 
+\begin_inset Formula $\mathcal{H}\to\mathbb{C}$
+\end_inset
+
+ is of the form 
+\begin_inset Formula $\left\langle \alpha|\enskip\right\rangle $
+\end_inset
+
+ for some 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ Ou seja,
+ todo mapa linear contínuo 
+\begin_inset Formula $f:\mathcal{H}\to\mathbb{C}$
+\end_inset
+
+ tem a forma 
+\begin_inset Formula $\left\langle \alpha|\enskip\right\rangle $
+\end_inset
+
+ onde 
+\begin_inset Formula $\left\langle \alpha\right|\in\mathcal{H}^{*}$
+\end_inset
+
+ tem um único vetor correspondente 
+\begin_inset Formula $\left|\alpha\right\rangle \in\mathcal{H}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Orthonormal bases
+\end_layout
+
+\begin_layout Standard
+When working with vector spaces,
+ it is frequently useful to make a choice of basis adapted to the problem at hand.
+ In the context of a Hilbert space,
+ it turns out that a 
+\begin_inset Quotes eld
+\end_inset
+
+good
+\begin_inset Quotes erd
+\end_inset
+
+ basis is often one that satisfies the following property with respect to the inner product.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ An orthonormal system of vectors in a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is a collection of vectors 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$
+\end_inset
+
+,
+ where 
+\begin_inset Formula $I$
+\end_inset
+
+ is some index set,
+ satisfying
+\end_layout
+
+\begin_layout Quotation
+\begin_inset Formula 
+\begin{equation}
+\left\langle e_{i}|e_{j}\right\rangle =\begin{cases}
+1 & \quad\text{if }i=j,\\
+0 & \quad\text{if }i\ne j.
+\end{cases}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ An orthonormal basis of a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is an orthonormal system 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ that spans 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ i.e.
+ every vector in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ can be written as a (possibly infinite) linear combination of the 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example
+\series default
+:
+ In the Hilbert space 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+ with the standard inner product,
+ the standard basis 
+\begin_inset Formula $(e_{1},\ldots,e_{n})$
+\end_inset
+
+ is an orthonormal basis.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Example
+\series default
+;
+ Consider the space 
+\begin_inset Formula $L^{2}([0,1])$
+\end_inset
+
+ of square-integrable functions on the unit interval.
+ An orthonormal basis for this space consists of the functions 
+\begin_inset Formula $e_{n}(x)=\exp(2\pi inx)$
+\end_inset
+
+ for all integers 
+\begin_inset Formula $n$
+\end_inset
+
+.
+ This reflects the fact that every 
+\begin_inset Quotes eld
+\end_inset
+
+nice
+\begin_inset Quotes erd
+\end_inset
+
+ function on 
+\begin_inset Formula $[0,1]$
+\end_inset
+
+ can be expressed as a fourier-series.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Linear subspaces
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ A linear subspace of a vector space 
+\begin_inset Formula $V$
+\end_inset
+
+ is a set of vectors 
+\begin_inset Formula $W$
+\end_inset
+
+ contained in 
+\begin_inset Formula $V$
+\end_inset
+
+ such that the following properties hold:
+\end_layout
+
+\begin_layout Quotation
+- The zero vector of 
+\begin_inset Formula $V$
+\end_inset
+
+ lies in 
+\begin_inset Formula $W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quotation
+- For all vectors 
+\begin_inset Formula $w$
+\end_inset
+
+ and 
+\begin_inset Formula $w'$
+\end_inset
+
+ in 
+\begin_inset Formula $W$
+\end_inset
+
+,
+ the sum 
+\begin_inset Formula $w+w'$
+\end_inset
+
+ is also in 
+\begin_inset Formula $W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Quotation
+- For every vector 
+\begin_inset Formula $w$
+\end_inset
+
+ in 
+\begin_inset Formula $W$
+\end_inset
+
+ and every scalar 
+\begin_inset Formula $\lambda$
+\end_inset
+
+,
+ the scalar multiple 
+\begin_inset Formula $\lambda w$
+\end_inset
+
+ is also in 
+\begin_inset Formula $W$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In quantum physics,
+ linear subspaces are important because they encode quantum states that a physical state can collapse to when a measurement is performed.
+ To make this more precise,
+ we need the notions of orthogonal complement of a subspace and of orthogonal projection onto a subspace.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ Orthogonal complement Consider a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ and a linear subspace 
+\begin_inset Formula $W$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ The orthogonal complement of 
+\begin_inset Formula $W$
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ denoted by 
+\begin_inset Formula $W^{\perp}$
+\end_inset
+
+,
+ is the set of all vectors 
+\begin_inset Formula $\left|v\right\rangle $
+\end_inset
+
+ in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ that are orthogonal to all of 
+\begin_inset Formula $W$
+\end_inset
+
+,
+ i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W^{\perp}=\{\left|v\right\rangle \in\mathcal{H}\mid\left\langle v|w\right\rangle =0\quad\text{for all }w\in W\}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is not hard to verify that the orthogonal complement of a linear subspace of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is again a linear subspace.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Example:
+\end_layout
+
+\begin_layout Plain Layout
+In physics,
+ Hilbert spaces often occur as spaces of functions on some space.
+ Another useful example is the Hilbert space of square-integrable functions 
+\begin_inset Formula $L^{2}(S^{2})$
+\end_inset
+
+ on the unit sphere
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+S^{2}=\{(x,y,z)\in\mathbb{R}^{3}\mid x^{2}+y^{2}+z^{2}=1\}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+It is useful to work with spherical coordinates 
+\begin_inset Formula $\theta,\phi$
+\end_inset
+
+ with 
+\begin_inset Formula $0\le\theta\le\pi$
+\end_inset
+
+ and 
+\begin_inset Formula $0\le\phi\le2\pi$
+\end_inset
+
+ such that
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+x=\sin\theta\cos\phi,\quad y=\sin\theta\sin\phi,\quad z=\cos\theta.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Then the inner product of two functions 
+\begin_inset Formula $f,g:S^{2}\to\mathbb{C}$
+\end_inset
+
+ is defined via the standard area form 
+\begin_inset Formula $\sin\theta d\theta d\phi$
+\end_inset
+
+ as
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+\langle f|g\rangle_{S^{2}}=\int^{2\pi}_{\phi=0}\int^{\pi}_{\theta=0}\overline{f(\theta,\phi)}g(\theta,\phi)\sin\theta d\theta d\phi
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+We can write down a set of functions forming an orthonormal basis for 
+\begin_inset Formula $L^{2}(S^{2})$
+\end_inset
+
+.
+ The standard functions are the spherical harmonics.
+ These are defined by
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\begin{equation}
+Y^{m}_{\ell}(\theta,\phi)=N^{m}_{\ell}\exp(im\phi)P^{m}_{\ell}(\cos\theta)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+where 
+\begin_inset Formula $\ell$
+\end_inset
+
+ and 
+\begin_inset Formula $m$
+\end_inset
+
+ are integers with 
+\begin_inset Formula $-\ell\le m\le\ell$
+\end_inset
+
+.
+ Here 
+\begin_inset Formula $P^{m}_{\ell}$
+\end_inset
+
+ is an associated Legendre polynomial and 
+\begin_inset Formula $N^{m}_{\ell}$
+\end_inset
+
+ is an appropriate normalisation factor.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Propriedades que podem serem demonstradas como exercícios:
+\end_layout
+
+\begin_layout Itemize
+A desigualdade de Cauchy-Schwarz declara que para os vetores 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ e 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+,
+ em um espaço de Hilbert,
+ temos 
+\begin_inset Formula $\left|\left\langle \alpha|\beta\right\rangle \right|^{2}\leq\left\langle \alpha|\alpha\right\rangle \left\langle \beta|\beta\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+A desigualdade triangular declara que para os vetores 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ e 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+,
+ em um espaço de Hilbert,
+ temos 
+\begin_inset Formula $\left\Vert \left|\alpha\right\rangle +\left|\beta\right\rangle \right\Vert \leq\left\Vert \left|\alpha\right\rangle \right\Vert +\left\Vert \left|\beta\right\rangle \right\Vert $
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Se consideramos 
+\begin_inset Formula $W$
+\end_inset
+
+ um subespaço linear do espaço de Hilbert 
+\begin_inset Formula $\mathcal{H},$
+\end_inset
+
+então o complemento ortogonal
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+O complemento ortogonal a 
+\begin_inset Formula $W$
+\end_inset
+
+ é o conjunto de vetores que são ortogonais a todo vetor de 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ Por exemplo,
+ se 
+\begin_inset Formula $W$
+\end_inset
+
+ em como base os vetores 
+\begin_inset Formula $\boldsymbol{u}=\left(1,0,0\right)$
+\end_inset
+
+ e 
+\begin_inset Formula $v=\left(0,1,0\right)$
+\end_inset
+
+ ,
+ então 
+\begin_inset Formula $W^{\perp}$
+\end_inset
+
+ é o subespaço correspondente ao eixo 
+\begin_inset Formula $z$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $W^{\perp}$
+\end_inset
+
+ é também um espaço linear.
+\end_layout
+
 \begin_layout Subsection
 Operators on Hilbert spaces
 \end_layout
 
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+An operator or linear map on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is a map
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+T\colon\mathcal{H}\to\mathcal{H}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+such that
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T(c\left|\alpha\right\rangle )=c(T\left|\alpha\right\rangle )$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T(\left|\alpha\right\rangle +\left|\beta\right\rangle )=T\left|\alpha\right\rangle +T\left|\beta\right\rangle $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is also possible to define linear maps between different Hilbert spaces,
+ but we will not go into this.
+\end_layout
+
+\begin_layout Standard
+In physics,
+ operators are often denoted with a hat,
+ so what we call 
+\begin_inset Formula $T$
+\end_inset
+
+ would be written as 
+\begin_inset Formula $\hat{T}$
+\end_inset
+
+.
+ One reason for this is to distinguish a physical quantity (like momentum or energy) from the corresponding mathematical operator.
+ Since we do not consider physical quantities in this module,
+ we do not use the hat notation.
+\end_layout
+
+\begin_layout Standard
+Operators form a vector space:
+ the sum of two operators 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $U$
+\end_inset
+
+ is defined by the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(T+U)\left|\alpha\right\rangle )=T\left|\alpha\right\rangle +U\left|\alpha\right\rangle 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and multiplication of an operator 
+\begin_inset Formula $T$
+\end_inset
+
+ by a scalar 
+\begin_inset Formula $c$
+\end_inset
+
+ is defined by the formula
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(cT)\left|\alpha\right\rangle =c(T\left|\alpha\right\rangle ).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Like matrices (but unlike vectors),
+ operators can be composed:
+ if 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $U$
+\end_inset
+
+ are two operators,
+ then 
+\begin_inset Formula $TU$
+\end_inset
+
+ is the operator defined by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+(TU)\left|\alpha\right\rangle =T(U\left|\alpha\right\rangle ).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Matrix entries
+\end_layout
+
+\begin_layout Standard
+In physics,
+ quantities of the form
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\left\langle \alpha\left|T\right|\beta\right\rangle 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+are often of special interest.
+ These are called matrix entries of 
+\begin_inset Formula $T$
+\end_inset
+
+,
+ especially if 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ are basis vectors in some fixed orthonormal basis of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Example:
+
+\series default
+ Consider a linear map 
+\begin_inset Formula $A$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathbb{C}^{n}$
+\end_inset
+
+,
+ viewed as a matrix.
+ Taking the matrix entries as above,
+ where 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta$
+\end_inset
+
+ range over the standard basis vectors,
+ we obtain the usual matrix entries of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A remark on notation:
+ you will often see notation like 
+\begin_inset Formula $\left\langle \alpha|T\beta\right\rangle $
+\end_inset
+
+.
+ This is literally meaningless:
+ the operator 
+\begin_inset Formula $T$
+\end_inset
+
+ can be applied to vectors,
+ which we denote by 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+,
+ while the symbol 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is just a label.
+ However,
+ in practice it is very convenient and completely unambiguous to write 
+\begin_inset Formula $\left\langle \alpha|T\beta\right\rangle $
+\end_inset
+
+ instead of the strictly speaking more correct 
+\begin_inset Formula $\left\langle \alpha\right|(T\left|\beta\right\rangle )$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Similarly,
+ we will write 
+\begin_inset Formula $\left\langle T\alpha|\beta\right\rangle $
+\end_inset
+
+ to mean the inner product of 
+\begin_inset Formula $T\left|\alpha\right\rangle $
+\end_inset
+
+ with 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+.
+ Extending this notation to scalars 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ we can also write
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\langle c\alpha|\beta\right\rangle =\overline{\left\langle \beta|c\alpha\right\rangle }=\bar{c}\overline{\left\langle \beta|\alpha\right\rangle }=\bar{c}\left\langle \alpha|\beta\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+The adjoint of an operator
+\end_layout
+
+\begin_layout Standard
+Given an operator 
+\begin_inset Formula $T$
+\end_inset
+
+ on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ there exists an operator 
+\begin_inset Formula $T^{\dagger}$
+\end_inset
+
+ with the property
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\langle T^{\dagger}\alpha|\beta\right\rangle =\left\langle \alpha|T\beta\right\rangle \quad\text{for all }\left|\alpha\right\rangle ,\left|\beta\right\rangle \in\mathcal{H}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The operator 
+\begin_inset Formula $T^{\dagger}$
+\end_inset
+
+ is called the *adjoint* of 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Properties of the adjoint:
+ For all operators 
+\begin_inset Formula $T$
+\end_inset
+
+,
+ 
+\begin_inset Formula $U$
+\end_inset
+
+ and scalars 
+\begin_inset Formula $c$
+\end_inset
+
+,
+ we have
+\end_layout
+
+\begin_layout Standard
+1.
+ 
+\begin_inset Formula $(cT)^{\dagger}=\bar{c}T^{\dagger}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2.
+ 
+\begin_inset Formula $(TU)^{\dagger}=U^{\dagger}T^{\dagger}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3.
+ 
+\begin_inset Formula $(T^{\dagger})^{\dagger}=T$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Hermitian operators
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ An operator 
+\begin_inset Formula $T$
+\end_inset
+
+ on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is called Hermitian if it is equal to its own adjoint,
+ i.e.
+ 
+\begin_inset Formula $T=T^{\dagger}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It is clear from the definition that all real symmetric matrices are Hermitian.
+ The following two results are of fundamental importance in quantum mechanics.
+ Together,
+ they explain why in the mathematical formalism of quantum mechanics,
+ Hermitian operators correspond to physical observables.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Theorem
+\series default
+:
+ The eigenvalues of a Hermitian operator 
+\begin_inset Formula $T$
+\end_inset
+
+ are real.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Proof:
+
+\series default
+ Suppose 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is an eigenvalue of 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ is a corresponding eigenvector.
+ Then we have:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\lambda\left\langle \alpha|\alpha\right\rangle =\left\langle \alpha|T\alpha\right\rangle =\left\langle T\alpha|\alpha\right\rangle =\left\langle \lambda\alpha|\alpha\right\rangle =\bar{\lambda}\left\langle \alpha|\alpha\right\rangle 
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Since 
+\begin_inset Formula $\left\langle \alpha|\alpha\right\rangle $
+\end_inset
+
+ is non-zero,
+ we can divide by it and obtain 
+\begin_inset Formula $\lambda=\bar{\lambda}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Theorem
+\series default
+:
+ If 
+\begin_inset Formula $T$
+\end_inset
+
+ is a Hermitian operator on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ then there exists an orthonormal basis of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ that consists of eigenvectors for 
+\begin_inset Formula $T$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Unitary operators
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ An operator 
+\begin_inset Formula $T$
+\end_inset
+
+ on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is called unitary if the adjoint 
+\begin_inset Formula $T^{\dagger}$
+\end_inset
+
+ is a two-sided inverse of 
+\begin_inset Formula $T$
+\end_inset
+
+,
+ i.e.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+TT^{\dagger}=I\quad\text{and}\quad T^{\dagger}T=I
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+It follows immediately from the definition that the identity operator on a Hilbert space (sending every vector to itself) is unitary,
+ and if 
+\begin_inset Formula $T$
+\end_inset
+
+ is a unitary operator,
+ then its inverse 
+\begin_inset Formula $T^{-1}$
+\end_inset
+
+ (which equals 
+\begin_inset Formula $T^{\dagger}$
+\end_inset
+
+) is also unitary.
+ Similarly,
+ if 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $U$
+\end_inset
+
+ are unitary operators,
+ then so is the product 
+\begin_inset Formula $TU$
+\end_inset
+
+.
+ This means that the collection of all unitary operators on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ has the mathematical structure of a group.
+\end_layout
+
+\begin_layout Subsubsection*
+Orthogonal projection
+\end_layout
+
+\begin_layout Standard
+Consider a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ and a linear subspace.
+ One can show that every vector 
+\begin_inset Formula $\left|\alpha\right\rangle \alpha\in\mathcal{H}$
+\end_inset
+
+ can be decomposed uniquely as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left|\alpha\right\rangle =\left|\alpha\right\rangle _{W}+\left|\alpha\right\rangle _{W^{\perp}}\quad\text{with}\quad\left|\alpha\right\rangle _{W}\text{ in }W\quad\text{and}\quad\left|\alpha\right\rangle _{W^{\perp}}\text{ in }W^{\perp}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ Orthogonal projection Given a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ and a linear subspace 
+\begin_inset Formula $W$
+\end_inset
+
+ of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ the orthogonal projection of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ onto 
+\begin_inset Formula $W$
+\end_inset
+
+ is the map that sends every vector 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ to 
+\begin_inset Formula $\left|\alpha\right\rangle _{W}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Orthogonal projections onto linear subspaces turn out to be important examples of linear maps.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example
+\series default
+:
+ Let 
+\begin_inset Formula $W$
+\end_inset
+
+ be a one-dimensional linear subspace of a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ Then for any unit vector 
+\begin_inset Formula $\left|e\right\rangle $
+\end_inset
+
+ in 
+\begin_inset Formula $W$
+\end_inset
+
+,
+ the operator 
+\begin_inset Formula $\left|e\right\rangle \left\langle e\right|$
+\end_inset
+
+ sending every vector 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ to 
+\begin_inset Formula $\left|e\right\rangle \left\langle e|\psi\right\rangle =(\left\langle e|\psi\right\rangle )\left|e\right\rangle $
+\end_inset
+
+ is the orthogonal projection onto 
+\begin_inset Formula $W$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Density operators
+\end_layout
+
+\begin_layout Standard
+The topic of this section is usually not treated in BSc-level mathematics courses.
+ We include it because density matrices are a fundamental mathematical concept in quantum physics and are important examples of Hermitian operators.
+ :::
+\end_layout
+
+\begin_layout Standard
+Density operators on Hilbert spaces,
+ or density matrices,
+ play a central role in situations where quantum states are combined with classical uncertainty.
+ They describe mixed states (ensembles of quantum systems) rather than individual (
+\begin_inset Quotes eld
+\end_inset
+
+pure
+\begin_inset Quotes erd
+\end_inset
+
+) quantum states.
+ Density operators are intensively used in the theory of entanglement and in quantum information theory,
+ for example.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ A density operator on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is an operator 
+\begin_inset Formula $\rho\colon\mathcal{H}\to\mathcal{H}$
+\end_inset
+
+ with the following properties:
+\end_layout
+
+\begin_layout Quotation
+1.
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is Hermitian;
+ 
+\end_layout
+
+\begin_layout Quotation
+2.
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is positive semi-definite,
+ i.e.
+ for all 
+\begin_inset Formula $\left|\alpha\right\rangle \in\mathcal{H}$
+\end_inset
+
+ we have 
+\begin_inset Formula $\left\langle \alpha\left|\rho\right|\alpha\right\rangle \ge0$
+\end_inset
+
+;
+ 
+\end_layout
+
+\begin_layout Quotation
+3.
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+ has trace 1.
+\end_layout
+
+\begin_layout Quotation
+A density matrix is the matrix of a density operator relative to some choice of basis of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+When 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is finite-dimensional,
+ the trace of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is simply the trace of the matrix of 
+\begin_inset Formula $\rho$
+\end_inset
+
+ with respect to any choice of basis for 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ When 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+ is infinite-dimensional,
+ the definition is somewhat more complicated.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Example
+\series default
+:
+ Let 
+\begin_inset Formula $\left|e\right\rangle $
+\end_inset
+
+ be a unit vector in 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+.
+ The operator 
+\begin_inset Formula $\left|e\right\rangle \left\langle e\right|$
+\end_inset
+
+ sending every vector 
+\begin_inset Formula $\left|\psi\right\rangle $
+\end_inset
+
+ to 
+\begin_inset Formula $\left|e\right\rangle \left\langle e|\psi\right\rangle =(\left\langle e|\psi\right\rangle )\left|e\right\rangle $
+\end_inset
+
+ is a density operator.
+ :::
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ A density operator 
+\begin_inset Formula $\rho\colon\mathcal{H}\to\mathcal{H}$
+\end_inset
+
+ is pure when 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is the orthogonal projection onto a 1-dimensional linear subspace of 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ and mixed otherwise.
+\end_layout
+
+\begin_layout Standard
+On a finite-dimensional Hilbert space,
+ an operator 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is a density operator precisely when there exist unit vectors 
+\begin_inset Formula $e_{1},\ldots,e_{n}$
+\end_inset
+
+ and real numbers 
+\begin_inset Formula $p_{1},\ldots,p_{n}\ge0$
+\end_inset
+
+ with 
+\begin_inset Formula $p_{1}+\cdots+p_{n}=1$
+\end_inset
+
+ such that 
+\begin_inset Formula $\rho$
+\end_inset
+
+ can be expressed as the convex combination:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\rho=\sum^{n}_{i=1}p_{i}\left|e\right\rangle \left\langle e\right|
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+of the pure density operators 
+\begin_inset Formula $\left|e\right\rangle \left\langle e\right|$
+\end_inset
+
+.
+ Given a density operator 
+\begin_inset Formula $\rho$
+\end_inset
+
+,
+ there are in general multiple ways of expressing 
+\begin_inset Formula $\rho$
+\end_inset
+
+ as such a convex combination.
+ By definition,
+ 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is pure precisely when it admits a decomposition as above with 
+\begin_inset Formula $n=1$
+\end_inset
+
+.
+ Furthermore,
+ it can be shown that 
+\begin_inset Formula $\rho$
+\end_inset
+
+ is pure precisely when it satisfies the identity 
+\begin_inset Formula $\rho^{2}=\rho$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Exponential of an operator
+\end_layout
+
+\begin_layout Standard
+The exponential function can be characterised by the Taylor series
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exp(x)=\sum^{\infty}_{n=0}\frac{1}{n!}x^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In quantum physics,
+ it is frequently useful to apply this formula not just to (real or complex) numbers,
+ but to operators as well.
+ One reason is that there is an important application to differential equations.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition:
+
+\series default
+ If 
+\begin_inset Formula $T$
+\end_inset
+
+ is an operator on a Hilbert space 
+\begin_inset Formula $\mathcal{H}$
+\end_inset
+
+,
+ then the exponential of 
+\begin_inset Formula $T$
+\end_inset
+
+ is the operator
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the case where 
+\begin_inset Formula $\mathcal{H}=\mathbb{C}^{n}$
+\end_inset
+
+,
+ an operator 
+\begin_inset Formula $T$
+\end_inset
+
+ corresponds to an 
+\begin_inset Formula $n\times n$
+\end_inset
+
+ matrix 
+\begin_inset Formula $A$
+\end_inset
+
+.
+ The same formula as above then defines the matrix exponential 
+\begin_inset Formula $\exp(A)$
+\end_inset
+
+ of 
+\begin_inset Formula $A$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Warning:
+
+\series default
+ Since operators do not commute in general,
+ the exponential does not have the property 
+\begin_inset Formula $\exp(T+U)=\exp(T)\exp(U)$
+\end_inset
+
+ as one might expect from the case of ordinary exponentials.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Example:
+
+\series default
+ The solution of the differential equation
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\dot{x}(t)=\lambda x(t),\quad x(0)=x_{0}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+is given by
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+x(t)=x_{0}\exp(\lambda t)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Using the operator exponential,
+ we can solve the higher-dimensional variant
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\frac{d}{dt}\left|x\left(t\right)\right\rangle =T\left|x\left(t\right)\right\rangle ,\quad\left|x\left(0\right)\right\rangle =\left|x_{0}\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Namely,
+ the solution is
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+\left|x\left(t\right)\right\rangle =\exp(Tt)\left|x_{0}\right\rangle .
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Propriedades que podem serem demonstradas como exercícios:
+\end_layout
+
+\begin_layout Itemize
+An operator 
+\begin_inset Formula $T$
+\end_inset
+
+ is unitary precisely when it satisfies 
+\begin_inset Formula $\left\langle T\alpha|T\beta\right\rangle $
+\end_inset
+
+for all vectors 
+\begin_inset Formula $\left|\alpha\right\rangle ,\left|\beta\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Consider a square matrix 
+\begin_inset Formula $D$
+\end_inset
+
+ and an invertible matrix 
+\begin_inset Formula $P$
+\end_inset
+
+.
+ So the matrix exponential of 
+\begin_inset Formula $PDP^{-1}$
+\end_inset
+
+ satisfies:
+ 
+\begin_inset Formula $\exp\left(PDP^{-1}\right)=P\exp\left(D\right)P^{-1}$
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Subsection
 Tensor products
+\end_layout
+
+\begin_layout Standard
+In the mathematical formalism of quantum mechanics,
+ the state of a system is a (unit) vector in a Hilbert space.
+ Likewise,
+ a composite of two quantum systems can be described by the tensor product of the corresponding Hilbert spaces.
+\end_layout
+
+\begin_layout Standard
+In this section,
+ 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+ are two Hilbert spaces.
+\end_layout
+
+\begin_layout Quotation
+
+\series bold
+Definition
+\series default
+:
+ The tensor product of 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+ is a Hilbert space 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{1}$
+\end_inset
+
+.
+ This space contains vectors of the form 
+\begin_inset Formula $\left|\alpha\right\rangle \left|\beta\right\rangle =\left|\alpha\right\rangle \otimes\left|\beta\right\rangle $
+\end_inset
+
+,
+ where 
+\begin_inset Formula $\left|\alpha\right\rangle $
+\end_inset
+
+ is in 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\beta\right\rangle $
+\end_inset
+
+ is in 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+.
+ These vectors are called pure tensors.
+ Importantly,
+ 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+ also contains linear combinations of such pure tensors (possibly with infinitely many terms);
+ these are called (non-pure) tensors.
+\end_layout
+
+\begin_layout Quotation
+The inner product between two pure tensors 
+\begin_inset Formula $\left|\alpha\right\rangle \left|\beta\right\rangle $
+\end_inset
+
+ and 
+\begin_inset Formula $\left|\alpha'\right\rangle \left|\alpha'\right\rangle $
+\end_inset
+
+ is by definition 
+\begin_inset Formula $\left\langle \alpha|\alpha'\right\rangle \left\langle \beta|\beta'\right\rangle $
+\end_inset
+
+.
+ (Note that the first inner product is taken in 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and the second in 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+!)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note:
+
+\series default
+ In quantum mechanics,
+ a non-pure tensor in 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+ represents an entangled state of a composite quantum system.
+\end_layout
+
+\begin_layout Standard
+We can easily write down a basis for a tensor product 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+ using bases of 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{\mathcal{H}}_{2}$
+\end_inset
+
+.
+ It turns out that the 
+\begin_inset Quotes eld
+\end_inset
+
+obvious
+\begin_inset Quotes erd
+\end_inset
+
+ definition works well with inner products.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Property
+\series default
+:
+ If 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \right\} _{i}$
+\end_inset
+
+ is an orthonormal basis of 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\left\{ \left|f_{i}\right\rangle \right\} _{i}$
+\end_inset
+
+ is an orthonormal basis of 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+,
+ then 
+\begin_inset Formula $\left\{ \left|e_{i}\right\rangle \left|e_{j}\right\rangle \right\} _{i,j}$
+\end_inset
+
+ is an orthonormal basis of 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+If 
+\begin_inset Formula $A$
+\end_inset
+
+ is an operator (i.e.
+ a linear map) on 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ is a linear map on 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+,
+ then there is a linear map 
+\begin_inset Formula $A\otimes B$
+\end_inset
+
+ on 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+.
+ This is defined on pure tensors by
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+(A\otimes B)(\left|\alpha\right\rangle \left|\beta\right\rangle )=(A\left|\alpha\right\rangle )(B\left|\beta\right\rangle ).
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+However,
+ just like not every tensor is a pure tensor,
+ there are many operators on 
+\begin_inset Formula $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$
+\end_inset
+
+ that cannot be written in the form 
+\begin_inset Formula $T\otimes U$
+\end_inset
+
+ (where 
+\begin_inset Formula $T$
+\end_inset
+
+ and 
+\begin_inset Formula $U$
+\end_inset
+
+ are operators on 
+\begin_inset Formula $\mathcal{H}_{1}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathcal{H}_{2}$
+\end_inset
+
+,
+ respectively).
 \end_layout
 
 \begin_layout Quotation

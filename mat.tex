@@ -11,19 +11,190 @@
 \usepackage[]
  {hyperref}
 \begin{document}
-\title{Matemática para Mecânica Quântica}
+\title{Álgebra Linear}
 \author{Jhordan Silveira de Borba}
-
 \maketitle
+\begin{quotation}
+\textbf{Note} If Portuguese is not your native language, \href{https://www.firefox.com/}{Firefox}'s automatic translation works well.
+\end{quotation}
 Como já estudei o básico das ferramentas matemáticas necessárias, por enquanto quero priorizar a compreensão física. Assim, aprofundarei a matemática até o nível necessário para compreender, aplicar e questionar criticamente a estrutura física em estudo. Demonstrações e desenvolvimentos puramente matemáticos podem ser deixados para quando se tornarem necessários ou quando eu decidir aprofundar os fundamentos.
 
 Por exemplo, não é necessário, neste momento, aprofundar a demonstração do teorema espectral para matrizes Hermitianas, pois sua prova é predominantemente matemática e não acrescenta, por si só, uma nova interpretação física ao problema. Em contrapartida, vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física, como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam, pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
 
-Porém estarei compartilhando aqui uma revisão puramente matemática, uma reprodução quase na íntegra deste material: \cite{DelftSpectralTheorem}.
-
-\section{Álgebra Linear}
+Porém estarei compartilhando aqui uma revisão puramente matemática, uma reprodução quase na íntegra deste material: \cite{DelftSpectralTheorem}. Uma revisão mais completa pode ser vista \href{https://github.com/jonasmaziero/algebra_linear}{aqui}.
 
 \subsection{Aritmética Matricial Básica}
+
+An $m\times n$-matrix is an array of $m$ rows and $n$ columns containing (usually real or complex) numbers called the entries (or coefficients) of the matrix. The entries of a matrix $A$ are denoted by $A_{i,j}$, $a_{ij}$ or similar, where the first index refers to the row and the second to the column. That is, the entries are laid out like
+
+\begin{equation}
+A=\begin{pmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{pmatrix}.\label{eq:1}
+\end{equation}
+
+You will often see notation like $A=(a_{i,j})$ or $A=(a_{i,j})_{{1\le i\le m\atop 1\le j\le n}}$ to indicate how the entries are denoted and/or how many rows and columns the matrix has.
+
+In this section we focus on the basic operations that can be performed with matrices.
+
+\textbf{Addition and scalar multiplication}
+
+Like vectors, matrices can be added or subtracted entrywise. They can also be multiplied entrywise by a given scalar. For example,
+
+\[
+4\begin{pmatrix}1 & 0\\
+3 & -1
+\end{pmatrix}-2\begin{pmatrix}0 & 2\\
+1 & -1
+\end{pmatrix}=\begin{pmatrix}4 & 0\\
+12 & -4
+\end{pmatrix}-\begin{pmatrix}0 & 4\\
+2 & -2
+\end{pmatrix}=\begin{pmatrix}4 & -4\\
+10 & -2
+\end{pmatrix}.
+\]
+
+\textbf{Special matrices}
+
+A few (types of) matrices occur very often and have their own names:
+
+- the $m\times n$ zero matrix $\begin{pmatrix}0 & 0 & \cdots & 0\\
+0 & 0 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & 0
+\end{pmatrix}$
+
+- the $n\times n$ identity matrix $\begin{pmatrix}1 & 0 & \cdots & 0\\
+0 & 1 & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & 1
+\end{pmatrix}$
+
+- diagonal matrices $\begin{pmatrix}a_{1,1} & 0 & \cdots & 0\\
+0 & a_{2,2} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & a_{n,n}
+\end{pmatrix}$
+
+- upper triangular matrices $\begin{pmatrix}a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+0 & a_{2,2} & \cdots & a_{2,n}\\
+\vdots & \ddots & \ddots & \vdots\\
+0 & \cdots & 0 & a_{n,n}
+\end{pmatrix}$
+
+- lower triangular matrices $\begin{pmatrix}a_{1,1} & 0 & \cdots & 0\\
+a_{2,1} & a_{2,2} & \ddots & \vdots\\
+\vdots & \vdots & \ddots & 0\\
+a_{n,1} & a_{n,2} & \cdots & a_{n,n}
+\end{pmatrix}$
+
+\textbf{Inner product of vectors}
+\begin{quotation}
+\textbf{Definition} Given two vectors $\boldsymbol{v}=(v_{1},\ldots,v_{n})$ and $\boldsymbol{w}=(w_{1},\ldots,w_{n})$, the inner product of $\boldsymbol{v}$ and $\boldsymbol{w}$ is the scalar $\boldsymbol{v}\cdot\boldsymbol{w}=v_{1}w_{1}+\cdots+v_{n}w_{n}.$
+\end{quotation}
+Properties of the inner product: For vectors $\boldsymbol{v}$, $\boldsymbol{w}$, $\boldsymbol{x}$ (all of the same length) and scalars $c$ the following hold:
+\begin{itemize}
+\item $\boldsymbol{v}\cdot(\boldsymbol{w}+\boldsymbol{x})=\boldsymbol{v}\cdot\boldsymbol{w}+\boldsymbol{v}\cdot\boldsymbol{x}$ 
+\item $(\boldsymbol{v}+\boldsymbol{w})\cdot\boldsymbol{x}=\boldsymbol{v}\cdot\boldsymbol{x}+\boldsymbol{w}\cdot\boldsymbol{x}$ 
+\item $\boldsymbol{v}\cdot(c\boldsymbol{w})=c(\boldsymbol{v}\cdot\boldsymbol{w})=(c\boldsymbol{v})\cdot\boldsymbol{w}$ 
+\item $\boldsymbol{v}\cdot\boldsymbol{w}=\boldsymbol{w}\cdot\boldsymbol{v}$ 
+\end{itemize}
+\textbf{Matrix-vector multiplication}
+
+Matrices can be multiplied by vectors.
+\begin{quotation}
+\textbf{Definition}: Given a matrix $A$ as in \ref{eq:1} and a vector
+
+\[
+\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+\vdots\\
+v_{n}
+\end{pmatrix}\in\mathbb{R}^{n}
+\]
+
+the (matrix-vector) product of $A$ and $\boldsymbol{v}$ is the vector
+
+\[
+A\boldsymbol{v}=\begin{pmatrix}a_{1,1}v_{1}+\cdots+a_{1,n}v_{n}\\
+\vdots\\
+a_{m,1}v_{1}+\cdots+a_{m,n}v_{n}
+\end{pmatrix}\in\mathbb{R}^{m}.
+\]
+\end{quotation}
+Equivalently, we can write
+
+\[
+(A\boldsymbol{v})_{i}=\sum^{n}_{j=1}A_{i,j}v_{j}\quad(1\le i\le m).
+\]
+
+Properties of matrix-vector multiplication: For matrices $A$ and $B$, vectors $\boldsymbol{v}$ and $\boldsymbol{w}$ and scalars $c$ the following hold whenever the expressions are defined:
+\begin{itemize}
+\item $A(\boldsymbol{v}+\boldsymbol{w})=A\boldsymbol{v}+A\boldsymbol{w}$ 
+\item $A(c\boldsymbol{v})=c(A\boldsymbol{v})$ 
+\item $(A+B)\boldsymbol{v}=A\boldsymbol{v}+B\boldsymbol{v}$ 
+\item $(cA)\boldsymbol{v}=c(A\boldsymbol{v})$ :::
+\end{itemize}
+\textbf{Note}: Here are two other useful ways to think about matrix-vector products. First, in terms of inner products: the vector $A\boldsymbol{v}$ consists of the inner products of each of the rows of $A$ with the vector $\boldsymbol{v}$. Namely, if
+
+\[
+A=\begin{pmatrix}\boldsymbol{a}_{1}\\
+\vdots\\
+\textbf{a}_{m}
+\end{pmatrix},
+\]
+
+then
+
+\[
+A=\begin{pmatrix}\boldsymbol{a}_{1}\cdot\boldsymbol{v}\\
+\vdots\\
+\boldsymbol{a}_{m}\cdot\boldsymbol{v}
+\end{pmatrix}.
+\]
+
+Second, in terms of linear combinations: the vector $A\boldsymbol{v}$ is a linear combination of the columns of $A$ where the coefficients are the entries of $\boldsymbol{v}$. Namely, if
+
+\[
+A=(\boldsymbol{a}_{1}\ \boldsymbol{a}_{2}\ \cdots\ \boldsymbol{a}_{n})\quad\text{and}\quad\boldsymbol{v}=\begin{pmatrix}v_{1}\\
+\vdots\\
+v_{n}
+\end{pmatrix},
+\]
+
+then
+
+\[
+A\boldsymbol{v}=v_{1}\boldsymbol{a}_{1}+\boldsymbol{v}_{2}\boldsymbol{a}_{2}+\cdots+\boldsymbol{v}_{n}\boldsymbol{a}_{m}.
+\]
+
+\textbf{Matrix multiplication}
+
+Two matrices $A$ and $B$ can be multiplied if the number of columns of $A$ equals the number of rows of $B$.
+\begin{quotation}
+\textbf{Definition:} If $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix, then the (matrix) product of $A$ and $B$ is the $m\times p$-matrix $AB$ defined as follows: $(AB)_{i,k}=\sum^{n}_{j=1}A_{i,j}B_{j,k}\quad(1\le i\le m,1\le k\le p).$
+\end{quotation}
+The product $AB$ can be viewed as $p$ matrix-vector multiplications: if $B=(\boldsymbol{b}_{1}\ \boldsymbol{b}_{2}\ \cdots\boldsymbol{b}_{p})$, then
+
+\[
+AB=(A\boldsymbol{b}_{1}\ A\boldsymbol{b}_{2}\ \cdots A\boldsymbol{b}_{p}).
+\]
+
+\textbf{Properties of matrix multiplication}: For matrices $A$, $B$ and $C$ and scalars $c$ the following hold whenever the expressions are defined:
+\begin{itemize}
+\item $A(B+C)=AB+AC$ 
+\item $(A+B)C=AC+BC$ 
+\item $(AB)C=A(BC)$ 
+\item $(cA)B=c(AB)=A(cB)$ :::
+\end{itemize}
+Warning: Matrix multiplication is not commutative! That is, in general we have
+
+\[
+AB\ne BA.
+\]
+
 
 \subsection{Operação de Matrizes}
 
@@ -68,6 +239,11 @@ Finally, we define the characteristic polynomial of a square matrix; this will b
 \textbf{Definition}: The characteristic polynomial of an $n\times n$-matrix $A$ is the polynomial of degree $n$ in a variable $t$ defined by $\chi_{A}(t)=\det(x\mathbb{I}-A).$\footnote{An alternative definition of the characteristic polynomial, which agrees with the one above up to a factor $(-1)^{n}$, is $\chi_{A}(t)=\det(A-x\mathbb{I}).$}
 \end{quotation}
 
+Propriedades que suas demonstrações podem ser vistas em exercícios:
+\begin{itemize}
+\item Se $A$ é uma matri $m\times n$ e $B$ uma matriz $n\times m$ então $\text{Tr}\left(AB\right)=Tr\left(BA\right)$
+\item Se $A$ é uma matriz $n\times n$ e $c$ um escalar, então $\text{Tr}\left(cA\right)=c\text{Tr}\left(A\right)$ e $\det\left(ca\right)=c^{n}\det\left(A\right)$
+\end{itemize}
 
 \subsection{Basis transformations}
 
@@ -116,34 +292,34 @@ A priori, we could have defined a basis as a collection of some number (say $m$)
 
 Suppose we have two bases of $\mathbb{R}^{n}$, say
 
-\[
+\begin{equation}
 B=(\boldsymbol{b}_{1},\ldots,\boldsymbol{b}_{n})\quad\text{and}\quad C=(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n}).
-\]
+\end{equation}
 
 \begin{quotation}
 \textbf{Definition:} The basis transformation matrix (or change-of-basis matrix) from $B$ to $C$ is the matrix $P=P_{B\to C}$ such that the $j$-th column of $P$ contains the coordinates of $\boldsymbol{b}_{j}$ relative to the basis $(\boldsymbol{c}_{1},\ldots,\boldsymbol{c}_{n})$.
 \end{quotation}
 The definition of $P$ means:
 
-\[
+\begin{equation}
 \boldsymbol{b}_{j}=\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}.
-\]
+\end{equation}
 
 Given a vector $\boldsymbol{x}$, we write $\boldsymbol{x}^{(B)}=(x^{(B)}_{1},\ldots,x^{(B)}_{n})$ for the coordinate vector of $\boldsymbol{x}$ with respect to the basis $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$, and we define $\boldsymbol{x}^{(C)}$ similarly. Then we calculate
 
-\[
+\begin{equation}
 \begin{aligned}\boldsymbol{x} & =\sum^{n}_{j=1}x^{(B)}_{j}\boldsymbol{b}_{j}\\
  & =\sum^{n}_{j=1}x^{(B)}_{j}\sum^{n}_{i=1}P_{i,j}\boldsymbol{c}_{i}\\
  & =\sum^{n}_{i=1}\left(\sum^{n}_{j=1}P_{i,j}x^{(B)}_{j}\right)\boldsymbol{c}_{i}\\
  & =\sum^{n}_{i=1}\bigl(P\boldsymbol{x}^{(B)}\bigr)_{i}\boldsymbol{c}_{i},
 \end{aligned}
-\]
+\end{equation}
 
 which shows that
 
-\[
+\begin{equation}
 \boldsymbol{x}^{(C)}=P_{B\to C}\boldsymbol{x}^{(B)}.
-\]
+\end{equation}
 
 Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix of $A$ with respect to the basis $\left\{ \boldsymbol{b}_{i}\right\} ^{n}_{i=1}$, and likewise for $A^{(C)}$. Then $A^{(B)}$ and $A^{(C)}$ are related by
 
@@ -155,19 +331,432 @@ Namely, consider what happens when we multiply this matrix to a coordinate vecto
 
 The trace and the determinant are invariant under basis transformation: if $A$ and $P$ are square matrices of the same size with $P$ invertible, then we have
 
-\[
-\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A.
-\]
+\begin{equation}
+\text{Tr}(PAP^{-1})=\text{Tr}\left(A\right)\quad\text{and}\quad\det(PAP^{-1})=\det A
+\end{equation}
 
 Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
 
+Propriedades que podem serem demonstradas como exercícios:
+\begin{itemize}
+\item Supondo que $A$ e $B$ sejam duas matrizes $n\times n$ e $P$ é uma matriz $n\times n$ inversível de forma que $B=PAP^{-1}$ então $\text{Tr}\left(B\right)=\text{Tr}\left(A\right)$ e $\det B=\det A$, além disso, $A$ e $B$ compartilham do mesmo polinômio característico.
+\end{itemize}
+
 \subsection{Diagonalisation}
+
+A very common example of a basis transformation is diagonalisation of a matrix. For this we first introduce the concept of eigenvalues and eigenvectors. Consider an $n\times n$-matrix $T$ with complex entries. We view $T$ as a linear map on $\mathbb{C}^{n}$.
+\begin{quotation}
+\textbf{Definition:} An eigenvector for $A$ is a non-zero vector $\boldsymbol{v}$ such that $A\boldsymbol{v}=\lambda\boldsymbol{v}$ for some scalar $\lambda$. This $\lambda$ is called the eigenvalue of $T$ acting on $\boldsymbol{v}$.
+\end{quotation}
+Writing $I$ for the $n\times n$ identity matrix, we see that if $\boldsymbol{v}$ is an eigenvector with eigenvalue $\lambda$, then
+
+\begin{equation}
+(A-\lambda I)\boldsymbol{v}=0
+\end{equation}
+
+This means that $A-\lambda I$ is not invertible\footnote{Se $B=(A-\lambda I)$ é invertivel significa que $B^{-1}B=I$ então $\boldsymbol{v}=B^{-1}0=0$. O que é contraditório pois por definição $\boldsymbol{v}$ é não nulo. E se não é invertível, então $\text{det}\left(B\right)=0$.}; equivalently, its determinant vanishes. Thus, if $\lambda$ is an eigenvalue of $A$, we have
+
+\begin{equation}
+\det(A-\lambda I)=0
+\end{equation}
+
+This implies that the eigenvalues of $A$ are roots of the characteristic polynomial $\chi_{A}$ . We can factor the characteristic polynomial as
+
+\begin{equation}
+\chi_{A}(x)=(x-\lambda_{1})^{k_{1}}\cdots(x-\lambda_{r})^{k_{r}}
+\end{equation}
+
+where $\lambda_{1},\ldots,\lambda_{r}$ are the distinct roots of $\chi_{A}(t)$ and each $k_{i}$ is an integer called the multiplicity of $\lambda_{i}$ as a root of $\chi_{A}(t)$.
+
+The idea of diagonalisation is that it is often easiest to understand a linear map $A$ if we can find a basis of our space consisting of vectors on which $A$ acts as multiplication by some scalar.
+\begin{quotation}
+\textbf{Definition}: An $n\times n$-matrix $A$ is diagonalisable if there exist a diagonal\footnote{Matriz diagonal é aquela que só tem elementos na diagonal principal $D_{ii}\neq0,$para qualquer $j\neq0$, temos $D_{ij}=0$.} matrix $D$ and an invertible $n\times n$-matrix $P$ such that $A=PDP^{-1},$
+\end{quotation}
+We can rewrite the above equation as $AP=PD$. Let us write $\boldsymbol{v}_{1},\ldots,\boldsymbol{v}_{n}$ for the columns of $P$ and $\lambda_{1},\ldots,\lambda_{n}$ for the diagonal entries of $D$. Then we compute
+
+\begin{equation}
+AP=\begin{pmatrix}A\boldsymbol{v}_{1} & A\boldsymbol{v}_{2} & \cdots & A\boldsymbol{v}_{n}\end{pmatrix}
+\end{equation}
+
+and
+
+\begin{equation}
+PD=\begin{pmatrix}\lambda_{1}\boldsymbol{v}_{1} & \lambda\boldsymbol{v}_{2} & \cdots & \lambda_{n}\boldsymbol{v}_{n}\end{pmatrix}
+\end{equation}
+
+We therefore see that the equation $AP=PD$ comes down to the $n$ equations $A\boldsymbol{v}_{i}=\lambda_{i}\boldsymbol{v}_{i}$. In other words, each $\boldsymbol{v}_{i}$ is an eigenvector of $A$ and $\lambda_{i}$ is the corresponding eigenvalue.
+
+The fact that $P$ is invertible means that the eigenvectors $\boldsymbol{v}_{i}$ form a basis of $\mathbb{C}^{n}$. We obtain the following conclusion.
+\begin{quotation}
+\textbf{Theorem}: An $n\times n$-matrix $A$ is diagonalisable precisely when there exists a basis of $\mathbb{C}^{n}$ consisting of eigenvectors for $A$.
+\end{quotation}
+This also gives us a way to tell whether $A$ is diagonalisable, and if so to determine matrices $D$ and $P$ as above:
+
+1. Determine the eigenvalues $\lambda_{1},\ldots,\lambda_{r}$ of $A$ by finding the roots of the characteristic polynomial $\chi_{A}$.
+
+2. For each eigenvalue $\lambda_{i}$, say with multiplicity $k_{i}$, determine if there exist $k_{i}$ linearly independent eigenvectors $\boldsymbol{v}_{\lambda_{i},1},\ldots,\boldsymbol{v}_{\lambda_{i},k_{i}}$ with eigenvalue $\lambda_{i}$.
+
+3. The matrix $A$ is diagonalisable if and only if there exist $k_{i}$ linearly independent eigenvectors with eigenvalue $\lambda_{i}$ for all $i$. In this case, the matrices
+
+\begin{equation}
+D=\begin{pmatrix}\lambda_{1}I_{k_{1}} & 0 & \cdots & 0\\
+0 & \lambda_{2}I_{k_{2}} & \cdots & 0\\
+\vdots & \vdots & \ddots & \vdots\\
+0 & 0 & \cdots & \lambda_{r}I_{k_{r}}
+\end{pmatrix}
+\end{equation}
+
+and
+
+\begin{equation}
+P=\begin{pmatrix}\boldsymbol{v}_{\lambda_{1},1} & \cdots & \boldsymbol{v}_{\lambda_{1},k_{1}} & \boldsymbol{v}_{\lambda_{2},1} & \cdots & \boldsymbol{v}_{\lambda_{2},k_{2}} & \cdots & \boldsymbol{v}_{\lambda_{r},1} & \cdots & \boldsymbol{v}_{\lambda_{r},k_{r}}\end{pmatrix}
+\end{equation}
+
+give a diagonalisation of $A$.
+
+Propriedades que podem serem demonstradas como exercícios:
+\begin{itemize}
+\item Assumindo $A=PDP^{-1}$ com $P$ invertível e $D$ uma matriz escalar\footnote{Uma matriz é escalar quando ela é um multiplo $c$ da matriz identidade $I$, isto é $D=cI$.}, então $A=D$.
+\end{itemize}
 
 \subsection{Hilbert Spaces}
 
+So far, we have been considering vectors in an $n$-dimensional real or complex space. In quantum mechanics, one encounters infinite-dimensional vector spaces as well. In particular, the state of a quantum system is represented mathematically by a (unit) vector in a Hilbert space.
+
+\subsubsection*{Vector spaces}
+
+As is customary in quantum physics and quantum algorithms, we use bra-ket notation for vectors in Hilbert spaces.
+\begin{quotation}
+\textbf{Definition}: A (real or complex) {*}vector space{*} consists of
+
+- a set of vectors, denoted by symbols like $\left|\alpha\right\rangle $
+
+- a distinguished vector $\mathbf{0}$ called the zero vector
+
+- a way of adding vectors, i.e. given two vectors $\left|\alpha\right\rangle $ and $\left|\beta\right\rangle $ we can obtain a third vector $\left|\alpha\right\rangle +\left|\beta\right\rangle $
+
+- a way of multiplying a vector by a scalar: given a scalar $c$ (a real or complex number, depending on whether we consider a real or complex vector space) and a vector $\left|\alpha\right\rangle $ we can obtain a vector $c\left|\alpha\right\rangle $
+
+Such that a number of properties hold:
+
+- $0\left|\alpha\right\rangle =\mathbf{0}$ 
+
+- $1\left|\alpha\right\rangle =\left|\alpha\right\rangle $ 
+
+- $\mathbf{0}+\left|\alpha\right\rangle =\left|\alpha\right\rangle $ 
+
+- $\left|\alpha\right\rangle +\left|\beta\right\rangle =\left|\beta\right\rangle +\left|\alpha\right\rangle $ 
+
+- $(\left|\alpha\right\rangle +\left|\beta\right\rangle )+\left|\gamma\right\rangle =\left|\alpha\right\rangle +(\left|\beta\right\rangle +\left|\gamma\right\rangle )$ 
+
+- $c(\left|\alpha\right\rangle +\left|\beta\right\rangle )=c\left|\alpha\right\rangle +c\left|\beta\right\rangle $ 
+
+- $(c+d)\left|\alpha\right\rangle =c\left|\alpha\right\rangle +d\left|\alpha\right\rangle $ 
+
+- $c(d\left|\alpha\right\rangle )=(cd)\left|\alpha\right\rangle $
+
+\textbf{Definition:} A basis for a vector space is a collection of vectors $\left\{ \left|e_{i}\right\rangle \right\} _{i}$ such that every vector can be written in exactly one way as a linear combination of the $\left\{ \left|e_{i}\right\rangle \right\} _{i}$. The number of vectors in a basis is called the dimension of the space. 
+\end{quotation}
+As in basis-transformations, any two bases contain the same number of vectors, so the dimension does not depend on the choice of basis.
+
+\textbf{Exemplo:} The simplest examples are the $n$-dimensional vector spaces $\mathbb{R}^{2}$ and $\mathbb{C}^{n}$ with coordinatewise addition and scalar multiplication. An important special case is the two-dimensional space $\mathbb{C}^{2}$. In bra-ket notation, various symbols are used for the standard basis vectors $\binom{1}{0}$ and $\binom{0}{1}$ in this space, such as:
+\begin{itemize}
+\item $\left|+\right\rangle $ and $\left|0\right\rangle $; 
+\item $\left|0\right\rangle $ and $\left|1\right\rangle $ (in the context of quantum computing); 
+\item $\left|\uparrow\right\rangle $ and $\left|\downarrow\right\rangle $ (in the context of spins).
+\end{itemize}
+
+\subsubsection*{Hermitian inner products and Hilbert spaces}
+\begin{quotation}
+\textbf{Definition}: A Hermitian inner product assigns to vectors $\left|\alpha\right\rangle $ and $\left|\beta\right\rangle $ a complex number $\left\langle \alpha|\beta\right\rangle $ such that the following properties hold:
+
+- $\left\langle \alpha|\beta\right\rangle =\overline{\left\langle \beta|\alpha\right\rangle }$;
+
+- $\left\langle \alpha|\alpha\right\rangle \ge0$, and $\left\langle \alpha|\alpha\right\rangle =0$ holds precisely when $\left|\alpha\right\rangle =\mathbf{0}$ (note that $\left\langle \alpha|\alpha\right\rangle $ is a real number because of the first property); 
+
+- $\left\langle \alpha\right|\left(\left|\beta\right\rangle +\left|\gamma\right\rangle \right)=\left\langle \alpha|\beta\right\rangle +\left\langle \alpha|\gamma\right\rangle $; 
+
+- $\left\langle \alpha\right|\left(c\left|\beta\right\rangle \right)=c\left(\left\langle \alpha|\beta\right\rangle \right)$;
+
+\textbf{Definition:} The norm or length of a vector $\left|\alpha\right\rangle $ in a Hilbert space is defined as the real number $\|\alpha\|=\sqrt{\left\langle \alpha|\alpha\right\rangle }$.
+\end{quotation}
+The properties above imply that for any scalar $c$, the inner product of $c\left|\alpha\right\rangle $ with $\left|\beta\right\rangle $ equals $\bar{c}\left\langle \alpha|\beta\right\rangle $. In other words, while the inner product is (complex) linear in its second argument, it is only conjugate linear in its first argument. This is the usual convention in physics. It differs from the convention in mathematics, where inner products are usually linear in the first argument and conjugate linear in the second argument.
+\begin{quotation}
+\textbf{Definition:} A Hilbert space is a complex vector space $\mathcal{H}$ equipped with a Hermitian inner product $\left\langle \enspace|\enspace\right\rangle $ and satisfying a condition called completeness.
+\end{quotation}
+We will not make the notion of completeness precise in these notes. Roughly speaking, it means that we do not have to worry too much about convergence of sequences or series in our Hilbert space, and there is a notion of infinite linear combinations\footnote{Em poucas palavras, podemos pensar que um espaço completo é aquele em que uma sequência de vetores não pode convergir para um vetor que esteja fora do espaço.}.
+
+\textbf{Example:} We take $\mathcal{H}=\mathbb{C}^{n}$ and define an inner product by $\left\langle \alpha|\beta\right\rangle =\sum^{n}_{i=1}\bar{\alpha}_{i}\beta_{i}.$ This satisfies all the properties of a Hermitian inner product.
+
+
+\subsubsection*{The dual Hilbert space}
+
+With any Hilbert space $\mathcal{H}$, we can associate a dual Hilbert space $\mathcal{H}^{*}$. In the bra-ket formalism used in quantum mechanics, for every ``ket vector'' $\left|\alpha\right\rangle $ in $\mathcal{H}$ we have a dual ``bra vector'' $\left\langle \alpha\right|$ in $\mathcal{H}^{*}$. This correspondence has the following properties:
+
+\begin{equation}
+\begin{array}{cc}
+\text{vector in}\mathcal{H} & \text{corresponding vector in}\mathcal{H^{*}}\\
+\left|\alpha\right\rangle  & \left\langle \alpha\right|\\
+\left|\alpha\right\rangle +\left|\beta\right\rangle  & \left\langle \alpha\right|+\left\langle \beta\right|\\
+c\left|\alpha\right\rangle  & \overline{c}\left\langle \alpha\right|
+\end{array}
+\end{equation}
+
+In mathematical language, $\mathcal{H^{*}}$ is the space of continuous linear maps $\mathcal{H}\to\mathbb{C}$. The bra vector $\left\langle \alpha\right|$ then represents the linear map that sends $\left|\beta\right\rangle $ to $\left\langle \alpha|\beta\right\rangle $.
+
+\textbf{Example}:In the case $\mathcal{H}=\mathbb{C}^{n}$ we can identify $\mathcal{H}$ with $\mathbb{C}^{n}$ as well; for a vector $\left|\alpha\right\rangle $ in $\mathbb{C}^{n}$, the dual vector $\left\langle \alpha\right|$ can then be naturally identified with the corresponding vector in $\mathbb{C}^{n}$. It can also be convenient to distinguish $\mathcal{H}$ from $\mathcal{H}^{*}$ by denoting a ket vector $\left|\alpha\right\rangle $ as a column vector and the corresponding bra vector $\left\langle \alpha\right|$ by the conjugate transpose of $\left|\alpha\right\rangle $, so $\left\langle \alpha\right|$ is the row vector whose entries are the complex conjugates of those of $\alpha$. 
+
+In $\mathbb{C}^{2}$, for example, we have
+
+\begin{equation}
+\left|\alpha\right\rangle =\begin{pmatrix}1\\
+i
+\end{pmatrix}\Longrightarrow\left\langle \alpha\right|=\begin{pmatrix}1 & -i\end{pmatrix}.
+\end{equation}
+
+This allows us to view $\left|\alpha\right\rangle $ as a linear map sending $\left\langle \beta\right|$ to the scalar obtained by multiplying the row vector $\left|\alpha\right\rangle $ by the column vector $\left\langle \beta\right|$. If you know about continuous linear maps of Hilbert spaces, here is a useful connection between the mathematical definition of $\mathcal{H}^{*}$ and the bra-ket formalism: the Riesz representation theorem states that every continuous linear map $\mathcal{H}\to\mathbb{C}$ is of the form $\left\langle \alpha|\enskip\right\rangle $ for some $\alpha$ in $\mathcal{H}$. Ou seja, todo mapa linear contínuo $f:\mathcal{H}\to\mathbb{C}$ tem a forma $\left\langle \alpha|\enskip\right\rangle $ onde $\left\langle \alpha\right|\in\mathcal{H}^{*}$ tem um único vetor correspondente $\left|\alpha\right\rangle \in\mathcal{H}$.
+
+\subsubsection*{Orthonormal bases}
+
+When working with vector spaces, it is frequently useful to make a choice of basis adapted to the problem at hand. In the context of a Hilbert space, it turns out that a ``good'' basis is often one that satisfies the following property with respect to the inner product.
+\begin{quotation}
+\textbf{Definition:} An orthonormal system of vectors in a Hilbert space $\mathcal{H}$ is a collection of vectors $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$, where $I$ is some index set, satisfying
+
+\begin{equation}
+\left\langle e_{i}|e_{j}\right\rangle =\begin{cases}
+1 & \quad\text{if }i=j,\\
+0 & \quad\text{if }i\ne j.
+\end{cases}
+\end{equation}
+
+\textbf{Definition}: An orthonormal basis of a Hilbert space $\mathcal{H}$ is an orthonormal system $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$ in $\mathcal{H}$ that spans $\mathcal{H}$, i.e. every vector in $\mathcal{H}$ can be written as a (possibly infinite) linear combination of the $\left\{ \left|e_{i}\right\rangle \right\} _{i\in I}$. 
+\end{quotation}
+\textbf{Example}: In the Hilbert space $\mathbb{C}^{n}$ with the standard inner product, the standard basis $(e_{1},\ldots,e_{n})$ is an orthonormal basis. 
+
+
+\subsubsection*{Linear subspaces}
+\begin{quotation}
+\textbf{Definition}: A linear subspace of a vector space $V$ is a set of vectors $W$ contained in $V$ such that the following properties hold:
+
+- The zero vector of $V$ lies in $W$.
+
+- For all vectors $w$ and $w'$ in $W$, the sum $w+w'$ is also in $W$.
+
+- For every vector $w$ in $W$ and every scalar $\lambda$, the scalar multiple $\lambda w$ is also in $W$.
+\end{quotation}
+In quantum physics, linear subspaces are important because they encode quantum states that a physical state can collapse to when a measurement is performed. To make this more precise, we need the notions of orthogonal complement of a subspace and of orthogonal projection onto a subspace.
+\begin{quotation}
+\textbf{Definition:} Orthogonal complement Consider a Hilbert space $\mathcal{H}$ and a linear subspace $W$ of $\mathcal{H}$. The orthogonal complement of $W$ in $\mathcal{H}$, denoted by $W^{\perp}$, is the set of all vectors $\left|v\right\rangle $ in $\mathcal{H}$ that are orthogonal to all of $W$, i.e.
+\end{quotation}
+\begin{equation}
+W^{\perp}=\{\left|v\right\rangle \in\mathcal{H}\mid\left\langle v|w\right\rangle =0\quad\text{for all }w\in W\}.
+\end{equation}
+
+It is not hard to verify that the orthogonal complement of a linear subspace of $\mathcal{H}$ is again a linear subspace.
+
+Propriedades que podem serem demonstradas como exercícios:
+\begin{itemize}
+\item A desigualdade de Cauchy-Schwarz declara que para os vetores $\left|\alpha\right\rangle $ e $\left|\beta\right\rangle $, em um espaço de Hilbert, temos $\left|\left\langle \alpha|\beta\right\rangle \right|^{2}\leq\left\langle \alpha|\alpha\right\rangle \left\langle \beta|\beta\right\rangle $
+\item A desigualdade triangular declara que para os vetores $\left|\alpha\right\rangle $ e $\left|\beta\right\rangle $, em um espaço de Hilbert, temos $\left\Vert \left|\alpha\right\rangle +\left|\beta\right\rangle \right\Vert \leq\left\Vert \left|\alpha\right\rangle \right\Vert +\left\Vert \left|\beta\right\rangle \right\Vert $ 
+\item Se consideramos $W$ um subespaço linear do espaço de Hilbert $\mathcal{H},$então o complemento ortogonal\footnote{O complemento ortogonal a $W$ é o conjunto de vetores que são ortogonais a todo vetor de $W$. Por exemplo, se $W$ em como base os vetores $\boldsymbol{u}=\left(1,0,0\right)$ e $v=\left(0,1,0\right)$ , então $W^{\perp}$ é o subespaço correspondente ao eixo $z$.} $W^{\perp}$ é também um espaço linear.
+\end{itemize}
+
 \subsection{Operators on Hilbert spaces}
 
+An operator or linear map on a Hilbert space $\mathcal{H}$ is a map
+
+\begin{equation}
+T\colon\mathcal{H}\to\mathcal{H}
+\end{equation}
+
+such that
+\begin{itemize}
+\item $T(c\left|\alpha\right\rangle )=c(T\left|\alpha\right\rangle )$
+\item $T(\left|\alpha\right\rangle +\left|\beta\right\rangle )=T\left|\alpha\right\rangle +T\left|\beta\right\rangle $
+\end{itemize}
+It is also possible to define linear maps between different Hilbert spaces, but we will not go into this.
+
+In physics, operators are often denoted with a hat, so what we call $T$ would be written as $\hat{T}$. One reason for this is to distinguish a physical quantity (like momentum or energy) from the corresponding mathematical operator. Since we do not consider physical quantities in this module, we do not use the hat notation.
+
+Operators form a vector space: the sum of two operators $T$ and $U$ is defined by the formula
+
+\begin{equation}
+(T+U)\left|\alpha\right\rangle )=T\left|\alpha\right\rangle +U\left|\alpha\right\rangle 
+\end{equation}
+
+and multiplication of an operator $T$ by a scalar $c$ is defined by the formula
+
+\begin{equation}
+(cT)\left|\alpha\right\rangle =c(T\left|\alpha\right\rangle ).
+\end{equation}
+
+Like matrices (but unlike vectors), operators can be composed: if $T$ and $U$ are two operators, then $TU$ is the operator defined by
+
+\begin{equation}
+(TU)\left|\alpha\right\rangle =T(U\left|\alpha\right\rangle ).
+\end{equation}
+
+
+\subsubsection*{Matrix entries}
+
+In physics, quantities of the form
+
+\begin{equation}
+\left\langle \alpha\left|T\right|\beta\right\rangle 
+\end{equation}
+
+are often of special interest. These are called matrix entries of $T$, especially if $\left|\alpha\right\rangle $ and $\left|\beta\right\rangle $ are basis vectors in some fixed orthonormal basis of $\mathcal{H}$.
+
+A remark on notation: you will often see notation like $\left\langle \alpha|T\beta\right\rangle $. This is literally meaningless: the operator $T$ can be applied to vectors, which we denote by $\left|\beta\right\rangle $, while the symbol $\beta$ is just a label. However, in practice it is very convenient and completely unambiguous to write $\left\langle \alpha|T\beta\right\rangle $ instead of the strictly speaking more correct $\left\langle \alpha\right|(T\left|\beta\right\rangle )$.
+
+Similarly, we will write $\left\langle T\alpha|\beta\right\rangle $ to mean the inner product of $T\left|\alpha\right\rangle $ with $\left|\beta\right\rangle $. Extending this notation to scalars $c$, we can also write
+
+\[
+\left\langle c\alpha|\beta\right\rangle =\overline{\left\langle \beta|c\alpha\right\rangle }=\bar{c}\overline{\left\langle \beta|\alpha\right\rangle }=\bar{c}\left\langle \alpha|\beta\right\rangle .
+\]
+
+
+\subsubsection*{The adjoint of an operator}
+
+Given an operator $T$ on a Hilbert space $\mathcal{H}$, there exists an operator $T^{\dagger}$ with the property
+
+\[
+\left\langle T^{\dagger}\alpha|\beta\right\rangle =\left\langle \alpha|T\beta\right\rangle \quad\text{for all }\left|\alpha\right\rangle ,\left|\beta\right\rangle \in\mathcal{H}.
+\]
+
+The operator $T^{\dagger}$ is called the {*}adjoint{*} of $T$.
+
+Properties of the adjoint: For all operators $T$, $U$ and scalars $c$, we have
+
+1. $(cT)^{\dagger}=\bar{c}T^{\dagger}$
+
+2. $(TU)^{\dagger}=U^{\dagger}T^{\dagger}$
+
+3. $(T^{\dagger})^{\dagger}=T$
+
+\subsubsection*{Hermitian operators}
+\begin{quotation}
+\textbf{Definition:} An operator $T$ on a Hilbert space $\mathcal{H}$ is called Hermitian if it is equal to its own adjoint, i.e. $T=T^{\dagger}.$
+\end{quotation}
+It is clear from the definition that all real symmetric matrices are Hermitian. The following two results are of fundamental importance in quantum mechanics. Together, they explain why in the mathematical formalism of quantum mechanics, Hermitian operators correspond to physical observables.
+\begin{quotation}
+\textbf{Theorem}: The eigenvalues of a Hermitian operator $T$ are real. 
+\end{quotation}
+\textbf{Proof:} Suppose $\lambda$ is an eigenvalue of $T$ and $\left|\alpha\right\rangle $ is a corresponding eigenvector. Then we have:
+
+\begin{equation}
+\lambda\left\langle \alpha|\alpha\right\rangle =\left\langle \alpha|T\alpha\right\rangle =\left\langle T\alpha|\alpha\right\rangle =\left\langle \lambda\alpha|\alpha\right\rangle =\bar{\lambda}\left\langle \alpha|\alpha\right\rangle 
+\end{equation}
+
+Since $\left\langle \alpha|\alpha\right\rangle $ is non-zero, we can divide by it and obtain $\lambda=\bar{\lambda}$. 
+\begin{quotation}
+\textbf{Theorem}: If $T$ is a Hermitian operator on a Hilbert space $\mathcal{H}$, then there exists an orthonormal basis of $\mathcal{H}$ that consists of eigenvectors for $T$.
+\end{quotation}
+
+\subsubsection*{Unitary operators}
+\begin{quotation}
+\textbf{Definition:} An operator $T$ on a Hilbert space $\mathcal{H}$ is called unitary if the adjoint $T^{\dagger}$ is a two-sided inverse of $T$, i.e.
+\end{quotation}
+\begin{equation}
+TT^{\dagger}=I\quad\text{and}\quad T^{\dagger}T=I
+\end{equation}
+
+It follows immediately from the definition that the identity operator on a Hilbert space (sending every vector to itself) is unitary, and if $T$ is a unitary operator, then its inverse $T^{-1}$ (which equals $T^{\dagger}$) is also unitary. Similarly, if $T$ and $U$ are unitary operators, then so is the product $TU$. This means that the collection of all unitary operators on a Hilbert space $\mathcal{H}$ has the mathematical structure of a group.
+
+\subsubsection*{Orthogonal projection}
+
+Consider a Hilbert space $\mathcal{H}$ and a linear subspace. One can show that every vector $\left|\alpha\right\rangle \alpha\in\mathcal{H}$ can be decomposed uniquely as
+
+\[
+\left|\alpha\right\rangle =\left|\alpha\right\rangle _{W}+\left|\alpha\right\rangle _{W^{\perp}}\quad\text{with}\quad\left|\alpha\right\rangle _{W}\text{ in }W\quad\text{and}\quad\left|\alpha\right\rangle _{W^{\perp}}\text{ in }W^{\perp}.
+\]
+
+\begin{quotation}
+\textbf{Definition}: Orthogonal projection Given a Hilbert space $\mathcal{H}$ and a linear subspace $W$ of $\mathcal{H}$, the orthogonal projection of $\mathcal{H}$ onto $W$ is the map that sends every vector $\left|\alpha\right\rangle $ to $\left|\alpha\right\rangle _{W}$. 
+\end{quotation}
+Orthogonal projections onto linear subspaces turn out to be important examples of linear maps.
+
+\textbf{Example}: Let $W$ be a one-dimensional linear subspace of a Hilbert space $\mathcal{H}$. Then for any unit vector $\left|e\right\rangle $ in $W$, the operator $\left|e\right\rangle \left\langle e\right|$ sending every vector $\left|\psi\right\rangle $ to $\left|e\right\rangle \left\langle e|\psi\right\rangle =(\left\langle e|\psi\right\rangle )\left|e\right\rangle $ is the orthogonal projection onto $W$. 
+
+\subsubsection*{Density operators}
+
+The topic of this section is usually not treated in BSc-level mathematics courses. We include it because density matrices are a fundamental mathematical concept in quantum physics and are important examples of Hermitian operators. :::
+
+Density operators on Hilbert spaces, or density matrices, play a central role in situations where quantum states are combined with classical uncertainty. They describe mixed states (ensembles of quantum systems) rather than individual (``pure'') quantum states. Density operators are intensively used in the theory of entanglement and in quantum information theory, for example.
+\begin{quotation}
+\textbf{Definition:} A density operator on a Hilbert space $\mathcal{H}$ is an operator $\rho\colon\mathcal{H}\to\mathcal{H}$ with the following properties:
+
+1. $\rho$ is Hermitian; 
+
+2. $\rho$ is positive semi-definite, i.e. for all $\left|\alpha\right\rangle \in\mathcal{H}$ we have $\left\langle \alpha\left|\rho\right|\alpha\right\rangle \ge0$; 
+
+3. $\rho$ has trace 1.
+
+A density matrix is the matrix of a density operator relative to some choice of basis of $\mathcal{H}$. 
+\end{quotation}
+When $\mathcal{H}$ is finite-dimensional, the trace of $\rho$ is simply the trace of the matrix of $\rho$ with respect to any choice of basis for $\mathcal{H}$. When $\mathcal{H}$ is infinite-dimensional, the definition is somewhat more complicated.
+
+\textbf{Example}: Let $\left|e\right\rangle $ be a unit vector in $\mathcal{H}$. The operator $\left|e\right\rangle \left\langle e\right|$ sending every vector $\left|\psi\right\rangle $ to $\left|e\right\rangle \left\langle e|\psi\right\rangle =(\left\langle e|\psi\right\rangle )\left|e\right\rangle $ is a density operator. :::
+\begin{quotation}
+\textbf{Definition:} A density operator $\rho\colon\mathcal{H}\to\mathcal{H}$ is pure when $\rho$ is the orthogonal projection onto a 1-dimensional linear subspace of $\mathcal{H}$, and mixed otherwise.
+\end{quotation}
+On a finite-dimensional Hilbert space, an operator $\rho$ is a density operator precisely when there exist unit vectors $e_{1},\ldots,e_{n}$ and real numbers $p_{1},\ldots,p_{n}\ge0$ with $p_{1}+\cdots+p_{n}=1$ such that $\rho$ can be expressed as the convex combination:
+
+\[
+\rho=\sum^{n}_{i=1}p_{i}\left|e\right\rangle \left\langle e\right|
+\]
+
+of the pure density operators $\left|e\right\rangle \left\langle e\right|$. Given a density operator $\rho$, there are in general multiple ways of expressing $\rho$ as such a convex combination. By definition, $\rho$ is pure precisely when it admits a decomposition as above with $n=1$. Furthermore, it can be shown that $\rho$ is pure precisely when it satisfies the identity $\rho^{2}=\rho$.
+
+\subsubsection*{Exponential of an operator}
+
+The exponential function can be characterised by the Taylor series
+
+\[
+\exp(x)=\sum^{\infty}_{n=0}\frac{1}{n!}x^{n}.
+\]
+
+In quantum physics, it is frequently useful to apply this formula not just to (real or complex) numbers, but to operators as well. One reason is that there is an important application to differential equations.
+\begin{quotation}
+\textbf{Definition:} If $T$ is an operator on a Hilbert space $\mathcal{H}$, then the exponential of $T$ is the operator
+\end{quotation}
+\[
+\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}.
+\]
+
+In the case where $\mathcal{H}=\mathbb{C}^{n}$, an operator $T$ corresponds to an $n\times n$ matrix $A$. The same formula as above then defines the matrix exponential $\exp(A)$ of $A$.
+
+\textbf{Warning:} Since operators do not commute in general, the exponential does not have the property $\exp(T+U)=\exp(T)\exp(U)$ as one might expect from the case of ordinary exponentials.
+
+Propriedades que podem serem demonstradas como exercícios:
+\begin{itemize}
+\item An operator $T$ is unitary precisely when it satisfies $\left\langle T\alpha|T\beta\right\rangle $for all vectors $\left|\alpha\right\rangle ,\left|\beta\right\rangle $.
+\item Consider a square matrix $D$ and an invertible matrix $P$. So the matrix exponential of $PDP^{-1}$ satisfies: $\exp\left(PDP^{-1}\right)=P\exp\left(D\right)P^{-1}$.
+\end{itemize}
+
 \subsection{Tensor products}
+
+In the mathematical formalism of quantum mechanics, the state of a system is a (unit) vector in a Hilbert space. Likewise, a composite of two quantum systems can be described by the tensor product of the corresponding Hilbert spaces.
+
+In this section, $\mathcal{H}_{1}$ and $\mathcal{H}_{2}$ are two Hilbert spaces.
+\begin{quotation}
+\textbf{Definition}: The tensor product of $\mathcal{H}_{1}$ and $\mathcal{H}_{2}$ is a Hilbert space $\mathcal{H}_{1}\otimes\mathcal{H}_{1}$. This space contains vectors of the form $\left|\alpha\right\rangle \left|\beta\right\rangle =\left|\alpha\right\rangle \otimes\left|\beta\right\rangle $, where $\left|\alpha\right\rangle $ is in $\mathcal{H}_{1}$ and $\left|\beta\right\rangle $ is in $\mathcal{H}_{2}$. These vectors are called pure tensors. Importantly, $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$ also contains linear combinations of such pure tensors (possibly with infinitely many terms); these are called (non-pure) tensors.
+
+The inner product between two pure tensors $\left|\alpha\right\rangle \left|\beta\right\rangle $ and $\left|\alpha'\right\rangle \left|\alpha'\right\rangle $ is by definition $\left\langle \alpha|\alpha'\right\rangle \left\langle \beta|\beta'\right\rangle $. (Note that the first inner product is taken in $\mathcal{H}_{1}$ and the second in $\mathcal{H}_{2}$!)
+\end{quotation}
+\textbf{Note:} In quantum mechanics, a non-pure tensor in $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$ represents an entangled state of a composite quantum system.
+
+We can easily write down a basis for a tensor product $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$ using bases of $\mathcal{H}_{1}$ and $\mathcal{\mathcal{H}}_{2}$. It turns out that the ``obvious'' definition works well with inner products.
+
+\textbf{Property}: If $\left\{ \left|e_{i}\right\rangle \right\} _{i}$ is an orthonormal basis of $\mathcal{H}_{1}$ and $\left\{ \left|f_{i}\right\rangle \right\} _{i}$ is an orthonormal basis of $\mathcal{H}_{2}$, then $\left\{ \left|e_{i}\right\rangle \left|e_{j}\right\rangle \right\} _{i,j}$ is an orthonormal basis of $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$. 
+
+If $A$ is an operator (i.e. a linear map) on $\mathcal{H}_{1}$ and $B$ is a linear map on $\mathcal{H}_{2}$, then there is a linear map $A\otimes B$ on $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$. This is defined on pure tensors by
+
+\[
+(A\otimes B)(\left|\alpha\right\rangle \left|\beta\right\rangle )=(A\left|\alpha\right\rangle )(B\left|\beta\right\rangle ).
+\]
+
+However, just like not every tensor is a pure tensor, there are many operators on $\mathcal{H}_{1}\otimes\mathcal{H}_{2}$ that cannot be written in the form $T\otimes U$ (where $T$ and $U$ are operators on $\mathcal{H}_{1}$ and $\mathcal{H}_{2}$, respectively).
 \begin{quotation}
 \bibliographystyle{plain}
 \bibliography{ref}

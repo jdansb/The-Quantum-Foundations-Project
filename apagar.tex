@@ -1,205 +1,196 @@
----
-jupytext:
-    formats: md:myst
-    text_representation:
-        extension: .md
-        format_name: myst
-kernelspec:
-    display_name: Python 3
-    language: python
-    name: python3
----
+# Basic matrix arithmetic
 
-# Basis transformations
-
-## Bases
-
-Until now, we have been working with one specific coordinate system in
-which vectors are identified with their coordinate vectors with
-respect to the *standard basis vectors*
+An $m\times n$-*matrix* is an array of $m$ rows and $n$ columns
+containing (usually real or complex) numbers called the *entries* (or
+*coefficients*) of the matrix.  The entries of a matrix $A$ are
+denoted by $A_{i,j}$, $a_{ij}$ or similar, where the first index
+refers to the row and the second to the column.  That is, the entries
+are laid out like
 
 $$
-\ve_1=\begin{pmatrix}1\\ 0\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
-\ve_2=\begin{pmatrix}0\\ 1\\ 0\\ \vdots\\ 0\end{pmatrix},\quad
-\ldots,\quad
-\ve_n=\begin{pmatrix}0\\ 0\\ 0\\ \vdots\\ 1\end{pmatrix}.
-$$
+A = \begin{pmatrix}
+a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
+a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
+\vdots& \vdots& \ddots & \vdots\\
+a_{m,1} & a_{m,2} & \cdots & a_{m,n}
+\end{pmatrix}.
+$$ (matrix-A)
 
-In other words, a vector $\vv=\begin{pmatrix}v_1\\ v_2\\ \vdots\\
-v_n\end{pmatrix}$ means the same as the corresponding linear
-combination of the standard basis vectors:
+You will often see notation like $A=(a_{i,j})$ or $A=(a_{i,j})_{1\le
+i\le m\atop 1\le j\le n}$ to indicate how the entries are denoted
+and/or how many rows and columns the matrix has.
 
-$$
-\vv = v_1 \ve_1 + \cdots + v_n \ve_n.
-$$
+In this section we focus on the basic operations that can be performed
+with matrices.
 
-In many situations, it is useful to express vectors in a different
-coordinate system.  For this we need the general concept of a *basis*.
+## Addition and scalar multiplication
 
-:::{prf:definition} Basis
-A *basis* of $\RR^n$ consists of $n$ vectors $(\vb_1,\ldots,\vb_n)$
-such that every vector $\vv\in\RR^n$ can be written in exactly one way
-as a *linear combination*
+Like vectors, matrices can be added or subtracted entrywise.  They can
+also be multiplied entrywise by a given scalar.  For example,
 
 $$
-\vv=c_1\vb_1+\cdots+c_n\vb_n
+4\begin{pmatrix}1& 0\\ 3& -1\end{pmatrix}
+- 2\begin{pmatrix}0& 2\\ 1& -1\end{pmatrix} =
+\begin{pmatrix}4& 0\\ 12& -4\end{pmatrix}
+- \begin{pmatrix}0& 4\\ 2& -2\end{pmatrix} =
+\begin{pmatrix}4& -4\\ 10& -2\end{pmatrix}.
 $$
 
-of $\vb_1,\ldots,\vb_n$ with scalars $c_1,\ldots,c_n$.  These scalars
-are called the *coordinates* of $\vv$ relative to
-$(\vb_1,\ldots,\vb_n)$.  The vector $\begin{pmatrix}c_1\\ \vdots\\
-c_n\end{pmatrix}$ is called the *coordinate vector* of $\vv$ relative
-to $(\vb_1,\ldots,\vb_n)$.
+## Special matrices
 
+A few (types of) matrices occur very often and have their own names:
+
+- the $m\times n$ *zero matrix* $\begin{pmatrix} 0 & 0 & \cdots & 0\\
+  0 & 0 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & 0 \end{pmatrix}$
+
+- the $n\times n$ *identity matrix* $\begin{pmatrix} 1 & 0 & \cdots &
+  0\\ 0 & 1 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & 1 \end{pmatrix}$
+
+- diagonal matrices $\begin{pmatrix} a_{1,1} & 0 & \cdots & 0\\ 0 &
+  a_{2,2} & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
+  \cdots & a_{n,n} \end{pmatrix}$
+
+- upper triangular matrices $\begin{pmatrix} a_{1,1} & a_{1,2} &
+  \cdots & a_{1,n}\\ 0 & a_{2,2} & \cdots & a_{2,n}\\ \vdots& \ddots&
+  \ddots & \vdots\\ 0 & \cdots & 0 & a_{n,n} \end{pmatrix}$
+
+- lower triangular matrices $\begin{pmatrix} a_{1,1} & 0 & \cdots &
+  0\\ a_{2,1} & a_{2,2} & \ddots & \vdots\\ \vdots& \vdots& \ddots &
+  0\\ a_{n,1} & a_{n,2} & \cdots & a_{n,n} \end{pmatrix}$
+
+## Inner product of vectors
+
+:::{prf:definition}
+:label: def-inner-product
+
+Given two vectors $\vv=(v_1,\ldots,v_n)$ and $\vw=(w_1,\ldots,w_n)$,
+the *inner product* of $\vv$ and $\vw$ is the scalar
+
+$$
+\vv\cdot\vw = v_1 w_1 + \cdots + v_n w_n.
+$$
 :::
 
-Alternatively, a basis consists of $n$ vectors $\vb_1,\ldots,\vb_n$
-with the following two properties:
+:::{prf:property} Properties of the inner product
 
-- they *span* the space $\RR^n$, i.e. every vector is a linear
-  combination of $\vb_1,\ldots,\vb_n$;
+For vectors $\vv$, $\vw$, $\vx$ (all of the same length) and scalars
+$c$ the following hold:
 
-- they are *linearly independent*, i.e. the only way to write the zero
-  vector as a linear combination of $\vb_1,\ldots,\vb_n$ is as
-  $0\vb_1+\cdots+0\vb_n$.
+- $\vv\cdot(\vw+\vx) = \vv\cdot\vw + \vv\cdot\vx$
+- $(\vv+\vw)\cdot\vx = \vv\cdot\vx + \vw\cdot\vx$
+- $\vv\cdot(c\vw) = c(\vv\cdot\vw)=(c\vv)\cdot\vw$
+- $\vv\cdot\vw = \vw\cdot\vv$
+:::
+
+## Matrix-vector multiplication
+
+Matrices can be multiplied by vectors.
+
+:::{prf:definition}
+Given a matrix $A$ as in {eq}`matrix-A` and a vector
+
+$$
+\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix} \in\mathbb{R}^n
+$$
+
+the *(matrix-vector) product* of $A$ and $\vv$ is the vector
+
+$$
+A\vv=\begin{pmatrix}a_{1,1}v_1 + \cdots + a_{1,n}v_n\\
+\vdots\\
+a_{m,1}v_1 + \cdots + a_{m,n}v_n\end{pmatrix} \in\mathbb{R}^m.
+$$
+:::
+
+Equivalently, we can write
+
+$$
+(A\vv)_i = \sum_{j=1}^n A_{i,j} v_j\quad(1\le i\le m).
+$$(matrix-vector)
+
+:::{prf:property} Properties of matrix-vector multiplication
+For matrices $A$ and $B$, vectors $\vv$ and $\vw$ and scalars $c$ the
+following hold whenever the expressions are defined:
+
+- $A(\vv+\vw)= A\vv + A\vw$
+- $A(c\vv) = c(A\vv)$
+- $(A+B)\vv = A\vv+B\vv$
+- $(cA)\vv = c(A\vv)$
+:::
 
 :::{note}
-A priori, we could have defined a basis as a collection of *some*
-number (say $m$) of vectors that span the space and are linearly
-independent.  However, it can be shown that in fact any two bases contain
-the same number of vectors.  Since the standard basis of $\RR^n$
-consists of $n$ vectors, the same therefore holds for *any* basis.
+Here are two other useful ways to think about matrix-vector products.
+
+First, in terms of inner products (see {prf:ref}`def-inner-product`):
+the vector $A\vv$ consists of the inner products of each of the rows
+of $A$ with the vector $\vv$.  Namely, if
+
+$$
+A = \begin{pmatrix}\va_1\\ \vdots\\ \va_m\end{pmatrix},
+$$
+
+then
+
+$$
+A\vv = \begin{pmatrix}\va_1\cdot\vv\\ \vdots\\ \va_m\cdot\vv\end{pmatrix}.
+$$
+
+Second, in terms of linear combinations: the vector $A\vv$ is a linear
+combination of the columns of $A$ where the coefficients are the
+entries of $\vv$.  Namely, if
+
+$$
+A = (\va_1\ \va_2\ \cdots\ \va_n)\quad\text{and}\quad
+\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix},
+$$
+
+then
+
+$$
+A\vv = v_1 \va_1 + v_2 \va_2 + \cdots + v_n \va_m.
+$$
+
 :::
 
-## Basis transformation matrices
+## Matrix multiplication
 
-Suppose we have two bases of $\RR^n$, say
+Two matrices $A$ and $B$ can be multiplied if the number of columns of
+$A$ equals the number of rows of $B$.
+
+:::{prf:definition}
+If $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix, then
+the *(matrix) product* of $A$ and $B$ is the $m\times p$-matrix $AB$
+defined as follows:
 
 $$
-B=(\vb_1, \ldots, \vb_n)\quad\text{and}\quad
-C=(\vc_1, \ldots, \vc_n).
+(AB)_{i,k} = \sum_{j=1}^n A_{i,j} B_{j,k}
+\quad(1\le i\le m,1\le k\le p).
 $$
-
-:::{prf:definition} Basis transformation matrix
-
-The *basis transformation matrix* (or *change-of-basis matrix*) from
-$B$ to $C$ is the matrix $P=P_{B\to C}$ such that the $j$-th column of
-$P$ contains the coordinates of $\vb_j$ relative to the basis
-$(\vc_1,\ldots,\vc_n)$.
 :::
 
-The definition of $P$ means (note the difference with the formula
-{eq}`matrix-vector` for matrix-vector multiplication)
+The product $AB$ can be viewed as $p$ matrix-vector multiplications:
+if $B=(\vb_1\ \vb_2\ \cdots \vb_p)$, then
 
 $$
-\vb_j = \sum_{i=1}^n P_{i,j}\vc_i.
+AB = (A\vb_1\ A\vb_2\ \cdots A\vb_p).
 $$
 
-Given a vector $\vx$, we write
-$\vx^{(B)}=(x_1^{(B)},\ldots,x_n^{(B)})$ for the coordinate vector of
-$\vx$ with respect to the basis $B=(\vb_1,\ldots,\vb_n)$, and we
-define $\vx^{(C)}$ similarly.  Then we calculate
+:::{prf:property} Properties of matrix multiplication
+For matrices $A$, $B$ and $C$ and scalars $c$ the following hold
+whenever the expressions are defined:
 
-$$
-\begin{aligned}
-\vx &= \sum_{j=1}^n x_j^{(B)} \vb_j\\
-&= \sum_{j=1}^n x_j^{(B)}\sum_{i=1}^n P_{i,j}\vc_i\\
-&= \sum_{i=1}^n\left(\sum_{j=1}^n P_{i,j} x_j^{(B)}\right) \vc_i\\
-&= \sum_{i=1}^n\bigl(P \vx^{(B)}\bigr)_i \vc_i,
-\end{aligned}
-$$
+- $A(B + C)= AB + AC$
+- $(A + B)C = AC + BC$
+- $(AB)C = A(BC)$
+- $(cA)B = c(AB) = A(cB)$
+:::
 
-which shows that
-
-$$
-\vx^{(C)} = P_{B\to C}\vx^{(B)}.
-$$
-
-Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix
-of $A$ with respect to the basis $B=(\vb_1,\ldots,\vb_n)$, and
-likewise for $A^{(C)}$.  Then $A^{(B)}$ and $A^{(C)}$ are related by
-
-$$
-A^{(C)} = PA^{(B)}P^{-1}.
-$$
-
-Namely, consider what happens when we multiply this matrix to a
-coordinate vector of the form $\vx^{\vw}$.  First, applying $P^{-1}$
-to $\vx^{\vw}$ gives $\vx^{\vv}$.  Next, applying $A^{(B)}$ gives
-$(A\vx)^{(B)}$.  Finally, applying $P$ gives $(A\vx)^{(C)}$, which
-is what we wanted to show.
-
-```{code-cell} ipython3
-:tags: [remove-input]
-from jupyterquiz import display_quiz
-display_quiz("_static/quizzes/basis_trans.json")
-```
-
-## Invariance under basis transformations
-
-In [](matrix-operations) we attached several quantities to a square
-matrix: the trace, the determinant and the characteristic polynomial.
-In {ref}`trace-det-basis-invariant`, you will check that the trace and
-the determinant are invariant under basis transformation: if $A$ and
-$P$ are square matrices of the same size with $P$ invertible, then we
+:::{warning}
+Matrix multiplication is not commutative!  That is, in general we
 have
 
-$$
-\tr(PAP^{-1})=\tr A
-\quad\text{and}\quad
-\det(PAP^{-1})=\det A.
-$$
+$$AB\ne BA.$$
 
-Because the characteristic polynomial is also defined as a
-determinant, it too is invariant under basis transformation.
-
-***
-
-## Exercises
-
-:::{exercise}
-Which of the following collections of vectors are bases for $\RR^2$?
-
-1. $\begin{pmatrix}1\\ 2\end{pmatrix}$, $\begin{pmatrix}3\\ 4\end{pmatrix}$,
-   $\begin{pmatrix}5\\ 6\end{pmatrix}$
-
-2. $\begin{pmatrix}0\\ 0\end{pmatrix}$, $\begin{pmatrix}1\\ 1\end{pmatrix}$
-
-3. $\begin{pmatrix}1\\ 2\end{pmatrix}$, $\begin{pmatrix}-3\\ 4\end{pmatrix}$
-:::
-
-:::{exercise}
-Given the two bases
-
-$$
-B=(\vb_1,\vb_2)=\biggl(\begin{pmatrix}1\\ 2\end{pmatrix},
-\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
-\quad\text{and}\quad
-C=(\vc_1,\vc_2)=\biggl(\begin{pmatrix}0\\ 1\end{pmatrix},
-\begin{pmatrix}2\\ 1\end{pmatrix}\biggr)
-$$
-
-determine the basis transformation matrix $P_{B\to C}$.
-:::
-
-:::{exercise}
-:label: trace-det-basis-invariant
-
-Suppose $A$ and $B$ are two $n\times n$-matrices and $P$ is an
-invertible $n\times n$-matrix such that $B=PAP^{-1}$.  Show that
-
-$$
-\tr B = \tr A\quad\text{and}\quad \det B = \det A.
-$$
-:::
-
-:::{exercise}
-Consider two $n\times n$-matrices $A$ and $B$.
-
-1.  Suppose there exists an invertible $n\times n$-matrix $P$
-    satisfying $B=PAP^{-1}$.  Show that $A$ and $B$ have the same
-    characteristic polynomial.
-
-2.  Give an example where $A$ and $B$ have the same characteristic
-    polynomial but a matrix $P$ as above does not exist.
 :::

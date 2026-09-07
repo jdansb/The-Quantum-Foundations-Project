@@ -10,9 +10,15 @@ project:
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
     - file: interpretacao.tex
-    - file: mat.tex
+    - title: Blog 
+      url: https://angpisiko1.substack.com/
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
+    - title: Appendix
+      children:    
+        - file: mat.tex
+          title: Algebra Linear
+    
 
 
     
