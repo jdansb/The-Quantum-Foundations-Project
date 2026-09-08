@@ -1,196 +1,102 @@
-# Basic matrix arithmetic
+# Relações de incerteza
+Vimos que a existência de observáveis incompatíveis, que não comutam, possibilita a preparação de estados de superposição que tem a eles associada uma "incerteza quântica" com relação a medidas futuras. Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das "incertezas" (desvios padrões) sobre dois observáveis.
 
-An $m\times n$-*matrix* is an array of $m$ rows and $n$ columns
-containing (usually real or complex) numbers called the *entries* (or
-*coefficients*) of the matrix.  The entries of a matrix $A$ are
-denoted by $A_{i,j}$, $a_{ij}$ or similar, where the first index
-refers to the row and the second to the column.  That is, the entries
-are laid out like
+## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
 
-$$
-A = \begin{pmatrix}
-a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
-a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
-\vdots& \vdots& \ddots & \vdots\\
-a_{m,1} & a_{m,2} & \cdots & a_{m,n}
-\end{pmatrix}.
-$$ (matrix-A)
+A RIHRS lê-se:
+$$\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},$$
+com a variância definida e.g. por $Var(A) = \langle (A-\langle A\rangle)^2\rangle.$ As quantidades no lado direito da desigualdade serão definidas a seguir.
 
-You will often see notation like $A=(a_{i,j})$ or $A=(a_{i,j})_{1\le
-i\le m\atop 1\le j\le n}$ to indicate how the entries are denoted
-and/or how many rows and columns the matrix has.
+Para provar a RIHRS, usaremos como uma das principais ferramentas a __desigualdade de Cauchy-Scharz__ (DCS):
+\begin{equation}
+\langle\psi|\psi\rangle\langle\phi|\phi\rangle \ge |\langle\psi|\phi\rangle|^{2} = \langle\psi|\phi\rangle\langle\phi|\psi\rangle,
+\end{equation}
+como igualdade obtida se e somente se $|\psi\rangle$ e $|\phi\rangle$ são colineares ($|\psi\rangle\propto |\phi\rangle$). Esse resultado é válido para qualquer par de vetores $|\psi\rangle,|\phi\rangle$ em um espaço de Hilbert $\mathcal{H}.$
 
-In this section we focus on the basic operations that can be performed
-with matrices.
+Considere $A$ e $B$ dois _observáveis_ de um sistema físico _preparado no estado_ $|\xi\rangle$. Usaremos 
+$$\langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle$$
+para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Vamos definir ainda os seguintes vetores:
+\begin{align}
+& |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle, \\
+& |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
+\end{align}
+que substituiremos na DCS. Notemos que 
+\begin{align}
+\langle\psi|\psi\rangle & = ((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle) \\
+& = (|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle) \\
+& = \langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle \\
+& = \mathrm{Var}(A), \\ 
+\langle\phi|\phi\rangle & = \mathrm{Var}(B),
+\end{align}
+com $\mathrm{Var}(X)=\mathrm{Var}(X)_\xi=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$
+sendo a variância de $X$. 
 
-## Addition and scalar multiplication
+Ademais, temos que
+\begin{align}
+\langle\psi|\phi\rangle &= ((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle) \\
+& = (|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle) \\ 
+& = (|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle) \\
+& = \langle AB-\langle A\rangle\langle B\rangle I\rangle \\
+& =  2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle + 2^{-1}\langle[A,B]\rangle \\
+& = \Re(\langle\psi|\phi\rangle) + i \Im(\langle\psi|\phi\rangle) \\
+& = 2^{-1}(\langle AB\rangle -\langle A\rangle\langle B\rangle + \langle BA\rangle - \langle A\rangle\langle B\rangle) + i(-i 2^{-1}\langle[A,B]\rangle)
+\end{align}
+onde
+\begin{align}
+& [A,B]=AB-BA, \\
+& \{A,B\}=AB+BA
+\end{align}
+são, respectivamente, o comutador e anti-comutador de $A$ e $B$. Note que 
+$$AB = 2^{-1}(\{A,B\}+[A,B]).$$
+Como $\{A,B\}$ e $[A,B]$ são, respectivamente, operadores Hermitianos ($\{A,B\}^\dagger=\{A,B\}$) e anti-Hermitianos ($[A,B]^\dagger = -[A,B]$), seus valores médios são, respectivamente, números reais e imaginários puros. Temos com isso que
+\begin{align}
+& \Re(\langle\psi|\phi\rangle) = 2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle, \\
+& \Im(\langle\psi|\phi\rangle) = -i2^{-1}\langle[A,B]\rangle.
+\end{align}
+Assim, considerando que 
+\begin{equation}
+|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
+\end{equation}
+e substituindo na DCS, depois de algumas manipulações algébricas obteremos a RIHRS:
+\begin{equation}
+\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}},
+\end{equation}
+onde a média simples das covariâncias clássicas,
+\begin{equation}
+\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
+\end{equation}
+é denominada de covariância quântica, com 
+$$\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$$
+sendo a covariância entre os observáveis $X$ e $Y$.
+Vale observar que se $A$ e $B$ são observáveis compatíveis, i.e., se
+$[A,B]=0$, teremos que $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.
 
-Like vectors, matrices can be added or subtracted entrywise.  They can
-also be multiplied entrywise by a given scalar.  For example,
+Vamos analizar agora o __problema da possível trivialidade__ da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável $A$, i.e., 
+$$|\xi\rangle=|a\rangle$$
+com $A|a\rangle=a|a\rangle$ e $a\in\mathbb{R}$. Neste caso pode-se verificar que 
+\begin{equation}
+\mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
+\end{equation}
+E com isso a RIHRS nos retorna 
+\begin{equation}
+0\mathrm{Var}(\hat{B})\ge0.
+\end{equation}
+Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de $A$ e $B$. O mesmo tipo de limitação se aplica se $|\xi\rangle=|b\rangle$ para $B|b\rangle=b|b\rangle.$
 
-$$
-4\begin{pmatrix}1& 0\\ 3& -1\end{pmatrix}
-- 2\begin{pmatrix}0& 2\\ 1& -1\end{pmatrix} =
-\begin{pmatrix}4& 0\\ 12& -4\end{pmatrix}
-- \begin{pmatrix}0& 4\\ 2& -2\end{pmatrix} =
-\begin{pmatrix}4& -4\\ 10& -2\end{pmatrix}.
-$$
+### Relações de incerteza de Robertson e de Heisenberg (RIH)
+Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a __relação de incerteza de Robertson__:
+\begin{equation}
+\sigma_{A}\sigma_{B} \ge 2^{-1}|\langle[A,B]\rangle|,
+\end{equation}
+com e.g. $\sigma_A = \sqrt{Var(A)}.$ Quando aplicada a posição e momento linear é uma das __relações de incerteza de Heisenberg__:
+\begin{equation}
+\sigma_{X}\sigma_{P} \ge 2^{-1}|\langle[X,P]\rangle|=\hbar/2,
+\end{equation}
+pois $[X,P]=i\hbar I$.
 
-## Special matrices
-
-A few (types of) matrices occur very often and have their own names:
-
-- the $m\times n$ *zero matrix* $\begin{pmatrix} 0 & 0 & \cdots & 0\\
-  0 & 0 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & 0 \end{pmatrix}$
-
-- the $n\times n$ *identity matrix* $\begin{pmatrix} 1 & 0 & \cdots &
-  0\\ 0 & 1 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & 1 \end{pmatrix}$
-
-- diagonal matrices $\begin{pmatrix} a_{1,1} & 0 & \cdots & 0\\ 0 &
-  a_{2,2} & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & a_{n,n} \end{pmatrix}$
-
-- upper triangular matrices $\begin{pmatrix} a_{1,1} & a_{1,2} &
-  \cdots & a_{1,n}\\ 0 & a_{2,2} & \cdots & a_{2,n}\\ \vdots& \ddots&
-  \ddots & \vdots\\ 0 & \cdots & 0 & a_{n,n} \end{pmatrix}$
-
-- lower triangular matrices $\begin{pmatrix} a_{1,1} & 0 & \cdots &
-  0\\ a_{2,1} & a_{2,2} & \ddots & \vdots\\ \vdots& \vdots& \ddots &
-  0\\ a_{n,1} & a_{n,2} & \cdots & a_{n,n} \end{pmatrix}$
-
-## Inner product of vectors
-
-:::{prf:definition}
-:label: def-inner-product
-
-Given two vectors $\vv=(v_1,\ldots,v_n)$ and $\vw=(w_1,\ldots,w_n)$,
-the *inner product* of $\vv$ and $\vw$ is the scalar
-
-$$
-\vv\cdot\vw = v_1 w_1 + \cdots + v_n w_n.
-$$
-:::
-
-:::{prf:property} Properties of the inner product
-
-For vectors $\vv$, $\vw$, $\vx$ (all of the same length) and scalars
-$c$ the following hold:
-
-- $\vv\cdot(\vw+\vx) = \vv\cdot\vw + \vv\cdot\vx$
-- $(\vv+\vw)\cdot\vx = \vv\cdot\vx + \vw\cdot\vx$
-- $\vv\cdot(c\vw) = c(\vv\cdot\vw)=(c\vv)\cdot\vw$
-- $\vv\cdot\vw = \vw\cdot\vv$
-:::
-
-## Matrix-vector multiplication
-
-Matrices can be multiplied by vectors.
-
-:::{prf:definition}
-Given a matrix $A$ as in {eq}`matrix-A` and a vector
-
-$$
-\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix} \in\mathbb{R}^n
-$$
-
-the *(matrix-vector) product* of $A$ and $\vv$ is the vector
-
-$$
-A\vv=\begin{pmatrix}a_{1,1}v_1 + \cdots + a_{1,n}v_n\\
-\vdots\\
-a_{m,1}v_1 + \cdots + a_{m,n}v_n\end{pmatrix} \in\mathbb{R}^m.
-$$
-:::
-
-Equivalently, we can write
-
-$$
-(A\vv)_i = \sum_{j=1}^n A_{i,j} v_j\quad(1\le i\le m).
-$$(matrix-vector)
-
-:::{prf:property} Properties of matrix-vector multiplication
-For matrices $A$ and $B$, vectors $\vv$ and $\vw$ and scalars $c$ the
-following hold whenever the expressions are defined:
-
-- $A(\vv+\vw)= A\vv + A\vw$
-- $A(c\vv) = c(A\vv)$
-- $(A+B)\vv = A\vv+B\vv$
-- $(cA)\vv = c(A\vv)$
-:::
-
-:::{note}
-Here are two other useful ways to think about matrix-vector products.
-
-First, in terms of inner products (see {prf:ref}`def-inner-product`):
-the vector $A\vv$ consists of the inner products of each of the rows
-of $A$ with the vector $\vv$.  Namely, if
-
-$$
-A = \begin{pmatrix}\va_1\\ \vdots\\ \va_m\end{pmatrix},
-$$
-
-then
-
-$$
-A\vv = \begin{pmatrix}\va_1\cdot\vv\\ \vdots\\ \va_m\cdot\vv\end{pmatrix}.
-$$
-
-Second, in terms of linear combinations: the vector $A\vv$ is a linear
-combination of the columns of $A$ where the coefficients are the
-entries of $\vv$.  Namely, if
-
-$$
-A = (\va_1\ \va_2\ \cdots\ \va_n)\quad\text{and}\quad
-\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix},
-$$
-
-then
-
-$$
-A\vv = v_1 \va_1 + v_2 \va_2 + \cdots + v_n \va_m.
-$$
-
-:::
-
-## Matrix multiplication
-
-Two matrices $A$ and $B$ can be multiplied if the number of columns of
-$A$ equals the number of rows of $B$.
-
-:::{prf:definition}
-If $A$ is an $m\times n$-matrix and $B$ is an $n\times p$-matrix, then
-the *(matrix) product* of $A$ and $B$ is the $m\times p$-matrix $AB$
-defined as follows:
-
-$$
-(AB)_{i,k} = \sum_{j=1}^n A_{i,j} B_{j,k}
-\quad(1\le i\le m,1\le k\le p).
-$$
-:::
-
-The product $AB$ can be viewed as $p$ matrix-vector multiplications:
-if $B=(\vb_1\ \vb_2\ \cdots \vb_p)$, then
-
-$$
-AB = (A\vb_1\ A\vb_2\ \cdots A\vb_p).
-$$
-
-:::{prf:property} Properties of matrix multiplication
-For matrices $A$, $B$ and $C$ and scalars $c$ the following hold
-whenever the expressions are defined:
-
-- $A(B + C)= AB + AC$
-- $(A + B)C = AC + BC$
-- $(AB)C = A(BC)$
-- $(cA)B = c(AB) = A(cB)$
-:::
-
-:::{warning}
-Matrix multiplication is not commutative!  That is, in general we
-have
-
-$$AB\ne BA.$$
-
-:::
+Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a _soma das variâncias_:
+\begin{align}
+& (\sigma_{A}-\sigma_{B})^{2}\ge 0 \therefore \sigma_{A}^{2}+\sigma_{B}^{2}-2\sigma_{A}\sigma_{B}\ge 0 \\
+& Var(A)+Var(B) \ge 2\sigma_{A}\sigma_{B} \ge |\langle[A,B]\rangle|.
+\end{align}
+No entanto, essa nova relação também sofre do problema da trivialidade.

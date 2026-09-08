@@ -85,787 +85,337 @@
 \begin_body
 
 \begin_layout Standard
-# Basic matrix arithmetic
+# Relações de incerteza Vimos que a existência de observáveis incompatíveis, que não comutam, possibilita a preparação de estados de superposição que tem a eles associada uma 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+incerteza quântica
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ com relação a medidas futuras. Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+incertezas
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ (desvios padrões) sobre dois observáveis.
 \end_layout
 
 \begin_layout Standard
-An 
-\begin_inset Formula $m\times n$
+## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
+\end_layout
+
+\begin_layout Standard
+A RIHRS lê-se: 
+\begin_inset Formula \[\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},\]
 \end_inset
 
--*matrix* is an array of 
-\begin_inset Formula $m$
+com a variância definida e.g. por 
+\begin_inset Formula $Var(A) = \langle (A-\langle A\rangle)^2\rangle.$
 \end_inset
 
- rows and 
-\begin_inset Formula $n$
+ As quantidades no lado direito da desigualdade serão definidas a seguir.
+\end_layout
+
+\begin_layout Standard
+Para provar a RIHRS, usaremos como uma das principais ferramentas a desigualdade de Cauchy-Scharz (DCS): 
+\begin_inset Formula \begin{equation}
+\langle\psi|\psi\rangle\langle\phi|\phi\rangle \ge |\langle\psi|\phi\rangle|^{2} = \langle\psi|\phi\rangle\langle\phi|\psi\rangle,
+\end{equation}
 \end_inset
 
- columns containing (usually real or complex) numbers called the *entries* (or *coefficients*) of the matrix. The entries of a matrix 
+como igualdade obtida se e somente se 
+\begin_inset Formula $|\psi\rangle$
+\end_inset
+
+ e 
+\begin_inset Formula $|\phi\rangle$
+\end_inset
+
+ são colineares (
+\begin_inset Formula $|\psi\rangle\propto |\phi\rangle$
+\end_inset
+
+). Esse resultado é válido para qualquer par de vetores 
+\begin_inset Formula $|\psi\rangle,|\phi\rangle$
+\end_inset
+
+ em um espaço de Hilbert 
+\begin_inset Formula $\mathcal{H}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considere 
 \begin_inset Formula $A$
 \end_inset
 
- are denoted by 
-\begin_inset Formula $A_{i,j}$
-\end_inset
-
-, 
-\begin_inset Formula $a_{ij}$
-\end_inset
-
- or similar, where the first index refers to the row and the second to the column. That is, the entries are laid out like
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A = \begin{pmatrix}
-a_{1,1} & a_{1,2} & \cdots & a_{1,n}\\
-a_{2,1} & a_{2,2} & \cdots & a_{2,n}\\
-\vdots& \vdots& \ddots & \vdots\\
-a_{m,1} & a_{m,2} & \cdots & a_{m,n}
-\end{pmatrix}.
-\]
-\end_inset
-
-(matrix-A)
-\end_layout
-
-\begin_layout Standard
-You will often see notation like 
-\begin_inset Formula $A=(a_{i,j})$
-\end_inset
-
- or 
-\begin_inset Formula $A=(a_{i,j})_{1\le
-i\le m\atop 1\le j\le n}$
-\end_inset
-
- to indicate how the entries are denoted and/or how many rows and columns the matrix has.
-\end_layout
-
-\begin_layout Standard
-In this section we focus on the basic operations that can be performed with matrices.
-\end_layout
-
-\begin_layout Standard
-## Addition and scalar multiplication
-\end_layout
-
-\begin_layout Standard
-Like vectors, matrices can be added or subtracted entrywise. They can also be multiplied entrywise by a given scalar. For example,
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-4\begin{pmatrix}1& 0\\ 3& -1\end{pmatrix}
-- 2\begin{pmatrix}0& 2\\ 1& -1\end{pmatrix} =
-\begin{pmatrix}4& 0\\ 12& -4\end{pmatrix}
-- \begin{pmatrix}0& 4\\ 2& -2\end{pmatrix} =
-\begin{pmatrix}4& -4\\ 10& -2\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-## Special matrices
-\end_layout
-
-\begin_layout Standard
-A few (types of) matrices occur very often and have their own names:
-\end_layout
-
-\begin_layout Standard
-- the 
-\begin_inset Formula $m\times n$
-\end_inset
-
- *zero matrix* 
-\begin_inset Formula $\begin{pmatrix} 0 & 0 & \cdots & 0\\
-  0 & 0 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & 0 \end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- the 
-\begin_inset Formula $n\times n$
-\end_inset
-
- *identity matrix* 
-\begin_inset Formula $\begin{pmatrix} 1 & 0 & \cdots &
-  0\\ 0 & 1 & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & 1 \end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- diagonal matrices 
-\begin_inset Formula $\begin{pmatrix} a_{1,1} & 0 & \cdots & 0\\ 0 &
-  a_{2,2} & \cdots & 0\\ \vdots& \vdots& \ddots & \vdots\\ 0 & 0 &
-  \cdots & a_{n,n} \end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- upper triangular matrices 
-\begin_inset Formula $\begin{pmatrix} a_{1,1} & a_{1,2} &
-  \cdots & a_{1,n}\\ 0 & a_{2,2} & \cdots & a_{2,n}\\ \vdots& \ddots&
-  \ddots & \vdots\\ 0 & \cdots & 0 & a_{n,n} \end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-- lower triangular matrices 
-\begin_inset Formula $\begin{pmatrix} a_{1,1} & 0 & \cdots &
-  0\\ a_{2,1} & a_{2,2} & \ddots & \vdots\\ \vdots& \vdots& \ddots &
-  0\\ a_{n,1} & a_{n,2} & \cdots & a_{n,n} \end{pmatrix}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-## Inner product of vectors
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:definition
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- :label: def-inner-product
-\end_layout
-
-\begin_layout Standard
-Given two vectors 
-\begin_inset Formula $\vv=(v_1,\ldots,v_n)$
-\end_inset
-
- and 
-\begin_inset Formula $\vw=(w_1,\ldots,w_n)$
-\end_inset
-
-, the *inner product* of 
-\begin_inset Formula $\vv$
-\end_inset
-
- and 
-\begin_inset Formula $\vw$
-\end_inset
-
- is the scalar
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\vv\cdot\vw = v_1 w_1 + \cdots + v_n w_n.
-\]
-\end_inset
-
-:::
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:property
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Properties of the inner product
-\end_layout
-
-\begin_layout Standard
-For vectors 
-\begin_inset Formula $\vv$
-\end_inset
-
-, 
-\begin_inset Formula $\vw$
-\end_inset
-
-, 
-\begin_inset Formula $\vx$
-\end_inset
-
- (all of the same length) and scalars 
-\begin_inset Formula $c$
-\end_inset
-
- the following hold:
-\end_layout
-
-\begin_layout Standard
-- 
-\begin_inset Formula $\vv\cdot(\vw+\vx) = \vv\cdot\vw + \vv\cdot\vx$
-\end_inset
-
- - 
-\begin_inset Formula $(\vv+\vw)\cdot\vx = \vv\cdot\vx + \vw\cdot\vx$
-\end_inset
-
- - 
-\begin_inset Formula $\vv\cdot(c\vw) = c(\vv\cdot\vw)=(c\vv)\cdot\vw$
-\end_inset
-
- - 
-\begin_inset Formula $\vv\cdot\vw = \vw\cdot\vv$
-\end_inset
-
- :::
-\end_layout
-
-\begin_layout Standard
-## Matrix-vector multiplication
-\end_layout
-
-\begin_layout Standard
-Matrices can be multiplied by vectors.
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:definition
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Given a matrix 
-\begin_inset Formula $A$
-\end_inset
-
- as in 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-eq
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`matrix-A` and a vector
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix} \in\mathbb{R}^n
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-the *(matrix-vector) product* of 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $\vv$
-\end_inset
-
- is the vector
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A\vv=\begin{pmatrix}a_{1,1}v_1 + \cdots + a_{1,n}v_n\\
-\vdots\\
-a_{m,1}v_1 + \cdots + a_{m,n}v_n\end{pmatrix} \in\mathbb{R}^m.
-\]
-\end_inset
-
-:::
-\end_layout
-
-\begin_layout Standard
-Equivalently, we can write
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-(A\vv)_i = \sum_{j=1}^n A_{i,j} v_j\quad(1\le i\le m).
-\]
-\end_inset
-
-(matrix-vector)
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:property
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Properties of matrix-vector multiplication For matrices 
-\begin_inset Formula $A$
-\end_inset
-
- and 
+ e 
 \begin_inset Formula $B$
 \end_inset
 
-, vectors 
-\begin_inset Formula $\vv$
+ dois observáveis de um sistema físico preparado no estado 
+\begin_inset Formula $|\xi\rangle$
 \end_inset
 
- and 
-\begin_inset Formula $\vw$
+. Usaremos 
+\begin_inset Formula \[\langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle\]
 \end_inset
 
- and scalars 
-\begin_inset Formula $c$
+para denotar o valor médio de um operador qualquer 
+\begin_inset Formula $X$
 \end_inset
 
- the following hold whenever the expressions are defined:
-\end_layout
-
-\begin_layout Standard
-- 
-\begin_inset Formula $A(\vv+\vw)= A\vv + A\vw$
+ e 
+\begin_inset Formula $I$
 \end_inset
 
- - 
-\begin_inset Formula $A(c\vv) = c(A\vv)$
+ para denotar o operador identidade em 
+\begin_inset Formula $\mathcal{H}$
 \end_inset
 
- - 
-\begin_inset Formula $(A+B)\vv = A\vv+B\vv$
+. Vamos definir ainda os seguintes vetores: 
+\begin_inset Formula \begin{align}
+& |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle, \\
+& |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
+\end{align}
 \end_inset
 
- - 
-\begin_inset Formula $(cA)\vv = c(A\vv)$
+que substituiremos na DCS. Notemos que 
+\begin_inset Formula \begin{align}
+\langle\psi|\psi\rangle & = ((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle) \\
+& = (|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle) \\
+& = \langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle \\
+& = \mathrm{Var}(A), \\ 
+\langle\phi|\phi\rangle & = \mathrm{Var}(B),
+\end{align}
 \end_inset
 
- :::
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
+com 
+\begin_inset Formula $\mathrm{Var}(X)=\mathrm{Var}(X)_\xi=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$
 \end_inset
 
-note
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Here are two other useful ways to think about matrix-vector products.
-\end_layout
-
-\begin_layout Standard
-First, in terms of inner products (see 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:ref
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
-`def-inner-product`): the vector 
-\begin_inset Formula $A\vv$
-\end_inset
-
- consists of the inner products of each of the rows of 
-\begin_inset Formula $A$
-\end_inset
-
- with the vector 
-\begin_inset Formula $\vv$
-\end_inset
-
-. Namely, if
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A = \begin{pmatrix}\va_1\\ \vdots\\ \va_m\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-then
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A\vv = \begin{pmatrix}\va_1\cdot\vv\\ \vdots\\ \va_m\cdot\vv\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Second, in terms of linear combinations: the vector 
-\begin_inset Formula $A\vv$
-\end_inset
-
- is a linear combination of the columns of 
-\begin_inset Formula $A$
-\end_inset
-
- where the coefficients are the entries of 
-\begin_inset Formula $\vv$
-\end_inset
-
-. Namely, if
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A = (\va_1\ \va_2\ \cdots\ \va_n)\quad\text{and}\quad
-\vv = \begin{pmatrix}v_1\\ \vdots\\ v_n\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-then
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A\vv = v_1 \va_1 + v_2 \va_2 + \cdots + v_n \va_m.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-:::
-\end_layout
-
-\begin_layout Standard
-## Matrix multiplication
-\end_layout
-
-\begin_layout Standard
-Two matrices 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- can be multiplied if the number of columns of 
-\begin_inset Formula $A$
-\end_inset
-
- equals the number of rows of 
-\begin_inset Formula $B$
+ sendo a variância de 
+\begin_inset Formula $X$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
+Ademais, temos que 
+\begin_inset Formula \begin{align}
+\langle\psi|\phi\rangle &= ((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle) \\
+& = (|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle) \\ 
+& = (|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle) \\
+& = \langle AB-\langle A\rangle\langle B\rangle I\rangle \\
+& =  2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle + 2^{-1}\langle[A,B]\rangle \\
+& = \Re(\langle\psi|\phi\rangle) + i \Im(\langle\psi|\phi\rangle) \\
+& = 2^{-1}(\langle AB\rangle -\langle A\rangle\langle B\rangle + \langle BA\rangle - \langle A\rangle\langle B\rangle) + i(-i 2^{-1}\langle[A,B]\rangle)
+\end{align}
 \end_inset
 
-prf:definition
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
+onde 
+\begin_inset Formula \begin{align}
+& [A,B]=AB-BA, \\
+& \{A,B\}=AB+BA
+\end{align}
 \end_inset
 
- If 
+são, respectivamente, o comutador e anti-comutador de 
 \begin_inset Formula $A$
 \end_inset
 
- is an 
-\begin_inset Formula $m\times n$
-\end_inset
-
--matrix and 
+ e 
 \begin_inset Formula $B$
 \end_inset
 
- is an 
-\begin_inset Formula $n\times p$
+. Note que 
+\begin_inset Formula \[AB = 2^{-1}(\{A,B\}+[A,B]).\]
 \end_inset
 
--matrix, then the *(matrix) product* of 
+Como 
+\begin_inset Formula $\{A,B\}$
+\end_inset
+
+ e 
+\begin_inset Formula $[A,B]$
+\end_inset
+
+ são, respectivamente, operadores Hermitianos (
+\begin_inset Formula $\{A,B\}^\dagger=\{A,B\}$
+\end_inset
+
+) e anti-Hermitianos (
+\begin_inset Formula $[A,B]^\dagger = -[A,B]$
+\end_inset
+
+), seus valores médios são, respectivamente, números reais e imaginários puros. Temos com isso que 
+\begin_inset Formula \begin{align}
+& \Re(\langle\psi|\phi\rangle) = 2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle, \\
+& \Im(\langle\psi|\phi\rangle) = -i2^{-1}\langle[A,B]\rangle.
+\end{align}
+\end_inset
+
+Assim, considerando que 
+\begin_inset Formula \begin{equation}
+|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
+\end{equation}
+\end_inset
+
+e substituindo na DCS, depois de algumas manipulações algébricas obteremos a RIHRS: 
+\begin_inset Formula \begin{equation}
+\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}},
+\end{equation}
+\end_inset
+
+onde a média simples das covariâncias clássicas, 
+\begin_inset Formula \begin{equation}
+\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
+\end{equation}
+\end_inset
+
+é denominada de covariância quântica, com 
+\begin_inset Formula \[\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle\]
+\end_inset
+
+sendo a covariância entre os observáveis 
+\begin_inset Formula $X$
+\end_inset
+
+ e 
+\begin_inset Formula $Y$
+\end_inset
+
+. Vale observar que se 
 \begin_inset Formula $A$
 \end_inset
 
- and 
+ e 
 \begin_inset Formula $B$
 \end_inset
 
- is the 
-\begin_inset Formula $m\times p$
+ são observáveis compatíveis, i.e., se 
+\begin_inset Formula $[A,B]=0$
 \end_inset
 
--matrix 
-\begin_inset Formula $AB$
+, teremos que 
+\begin_inset Formula $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$
 \end_inset
 
- defined as follows:
+.
 \end_layout
 
 \begin_layout Standard
-
-\begin_inset Formula \[
-(AB)_{i,k} = \sum_{j=1}^n A_{i,j} B_{j,k}
-\quad(1\le i\le m,1\le k\le p).
-\]
-\end_inset
-
-:::
-\end_layout
-
-\begin_layout Standard
-The product 
-\begin_inset Formula $AB$
-\end_inset
-
- can be viewed as 
-\begin_inset Formula $p$
-\end_inset
-
- matrix-vector multiplications: if 
-\begin_inset Formula $B=(\vb_1\ \vb_2\ \cdots \vb_p)$
-\end_inset
-
-, then
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-AB = (A\vb_1\ A\vb_2\ \cdots A\vb_p).
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-prf:property
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Properties of matrix multiplication For matrices 
+Vamos analizar agora o problema da possível trivialidade da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável 
 \begin_inset Formula $A$
 \end_inset
 
-, 
+, i.e., 
+\begin_inset Formula \[|\xi\rangle=|a\rangle\]
+\end_inset
+
+com 
+\begin_inset Formula $A|a\rangle=a|a\rangle$
+\end_inset
+
+ e 
+\begin_inset Formula $a\in\mathbb{R}$
+\end_inset
+
+. Neste caso pode-se verificar que 
+\begin_inset Formula \begin{equation}
+\mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
+\end{equation}
+\end_inset
+
+E com isso a RIHRS nos retorna 
+\begin_inset Formula \begin{equation}
+0\mathrm{Var}(\hat{B})\ge0.
+\end{equation}
+\end_inset
+
+Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de 
+\begin_inset Formula $A$
+\end_inset
+
+ e 
 \begin_inset Formula $B$
 \end_inset
 
- and 
-\begin_inset Formula $C$
+. O mesmo tipo de limitação se aplica se 
+\begin_inset Formula $|\xi\rangle=|b\rangle$
 \end_inset
 
- and scalars 
-\begin_inset Formula $c$
-\end_inset
-
- the following hold whenever the expressions are defined:
-\end_layout
-
-\begin_layout Standard
-- 
-\begin_inset Formula $A(B + C)= AB + AC$
-\end_inset
-
- - 
-\begin_inset Formula $(A + B)C = AC + BC$
-\end_inset
-
- - 
-\begin_inset Formula $(AB)C = A(BC)$
-\end_inset
-
- - 
-\begin_inset Formula $(cA)B = c(AB) = A(cB)$
-\end_inset
-
- :::
-\end_layout
-
-\begin_layout Standard
-:::
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\end_inset
-
-warning
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\end_inset
-
- Matrix multiplication is not commutative! That is, in general we have
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[AB\ne BA.\]
+ para 
+\begin_inset Formula $B|b\rangle=b|b\rangle.$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-::: 
+### Relações de incerteza de Robertson e de Heisenberg (RIH) Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson: 
+\begin_inset Formula \begin{equation}
+\sigma_{A}\sigma_{B} \ge 2^{-1}|\langle[A,B]\rangle|,
+\end{equation}
+\end_inset
+
+com e.g. 
+\begin_inset Formula $\sigma_A = \sqrt{Var(A)}.$
+\end_inset
+
+ Quando aplicada a posição e momento linear é uma das relações de incerteza de Heisenberg: 
+\begin_inset Formula \begin{equation}
+\sigma_{X}\sigma_{P} \ge 2^{-1}|\langle[X,P]\rangle|=\hbar/2,
+\end{equation}
+\end_inset
+
+pois 
+\begin_inset Formula $[X,P]=i\hbar I$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a soma das variâncias: 
+\begin_inset Formula \begin{align}
+& (\sigma_{A}-\sigma_{B})^{2}\ge 0 \therefore \sigma_{A}^{2}+\sigma_{B}^{2}-2\sigma_{A}\sigma_{B}\ge 0 \\
+& Var(A)+Var(B) \ge 2\sigma_{A}\sigma_{B} \ge |\langle[A,B]\rangle|.
+\end{align}
+\end_inset
+
+No entanto, essa nova relação também sofre do problema da trivialidade.
 \end_layout
 
 \end_body

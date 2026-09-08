@@ -3,6 +3,7 @@
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{luainputenc}
+\usepackage{color}
 \usepackage{babel}
 \usepackage{mathtools}
 \usepackage{amsmath}
@@ -269,7 +270,7 @@ Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linear
 
 Para o caso degenerado, então temos mais vetores associados a $a_{j}$. Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e, sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, então $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora, como $A$ e $B$ comutam, temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Em particular, $B$ transforma um autovetor de $A$ associado a $a_{j}$ em um vetor permanece no mesmo autoespaço de $A$, se $B\left|a^{k}_{j}\right\rangle \neq0$, essevetor também é um autovetor de $A$ associado a $a_{j}$.
 
-Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano,sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita, podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar novamente por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
+Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano, sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita (e é hermitiano), podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
 
 Assim, os autovetores são simultanemanete autovetores de $A$ e $B$. Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores comuns aos dois operadores.
 
@@ -299,7 +300,7 @@ Onde cada $B_{j}$ é uma submatriz representando a ação interna de $B$ atuando
 
 Como $B$ é Hermitiano, cada bloco $B_{j}$ também é uma matriz Hermitiana e, portanto, pode ser diagonalizado. Assim, podemos diagonalizar $B$ dentro de cada subespaço $\mathcal{H}_{j}$, obtendo uma base de autovetores de $B$ que também são autovetores de $A$. Assim provamos que se e semente se, dois operadores $A$ e $B$ comutam, então compartilham de uma base de autovetores em comum.
 \begin{center}
-\href{/exemplo-incompatibilidade}{Exemplo}.
+\href{/exemplo-incompatibilidade}{Exemplo 1}.
 \par\end{center}
 
 Em resumo, quando temos um autovalor $a_{j}$ não degenerado, a situação é muito simples, pois nesse caso, o único autovetor de $A$, a menos de um fator multiplicativo, é automaticamente também um autovetor de $B$.
@@ -310,19 +311,201 @@ Essa possibilidade é garantida pelo fato de $B$ ser Hermitiano: sua atuação r
 
 Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}$ formada por autovetores comuns de $A$ e $B$.
 
-\textbf{---Daqui pra baixo é rascunho--}
+Com a prova deste teorema, sabemos que se dois observáveis $A$ e $B$ de um sistema não comutam, eles não podem compartilhar todos os autovetores. Se, medindo o observável $A$, preparamos o sistema em um estado que não é autovetor do observável $B$, este vetor deve ser obrigatoriamente uma combinação linear dos autovetores de com duas ou mais amplitudes de probabilidade não nulas.
+\begin{center}
+\href{/exemplo-incompatibilidade}{Exemplo 2}.
+\par\end{center}
 
-\subsection{Relação de Incerteza}
+\subsubsection*{Relação de Incerteza}
 
-Incerteza: questão se é uma questão natureza, ou uma questão de médias.
+Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das ``incertezas'' (desvios padrões) sobre dois observáveis.
 
-https://qm1.quantumtinkerer.tudelft.nl/6\_the\_free\_particle/
+\textbf{Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)}
 
-Não podemos saber com precisão a posição e energia da particula.
+A RIHRS lê-se: 
+\[
+\mathrm{Var}(A)\mathrm{Var}(B)\ge(\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},
+\]
+com a variância definida e.g. por $Var(A)=\langle(A-\langle A\rangle)^{2}\rangle.$ As quantidades no lado direito da desigualdade serão definidas a seguir.
+
+Para provar a RIHRS, usaremos como uma das principais ferramentas a desigualdade de Cauchy-Scharz (DCS): 
+\begin{equation}
+\langle\psi|\psi\rangle\langle\phi|\phi\rangle\ge|\langle\psi|\phi\rangle|^{2}=\langle\psi|\phi\rangle\langle\phi|\psi\rangle,
+\end{equation}
+com a igualdade obtida se e somente se $|\psi\rangle$ e $|\phi\rangle$ são colineares ($|\psi\rangle\propto|\phi\rangle$). Esse resultado é válido para qualquer par de vetores $|\psi\rangle,|\phi\rangle$ em um espaço de Hilbert $\mathcal{H}.$
+
+Considere $A$ e $B$ dois observáveis de um sistema físico preparado no estado $|\xi\rangle$. Usaremos 
+\[
+\langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle
+\]
+para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Vamos definir ainda os seguintes vetores: 
+\begin{align}
+|\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
+|\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
+\end{align}
+que substituiremos na DCS. Notemos que 
+\begin{align}
+\langle\psi|\psi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle)\\
+ & =(|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle)\\
+ & =\langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle\\
+ & =\mathrm{Var}(A),\\
+\langle\phi|\phi\rangle & =\mathrm{Var}(B),
+\end{align}
+com $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$ sendo a variância de $X$.
+
+Ademais, temos que 
+\begin{align}
+\langle\psi|\phi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle)\\
+ & =(|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle)\\
+ & =(|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle)\\
+ & =\langle AB-\langle A\rangle\langle B\rangle I\rangle\\
+ & =2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle+2^{-1}\langle[A,B]\rangle\\
+ & =\Re(\langle\psi|\phi\rangle)+i\Im(\langle\psi|\phi\rangle)\\
+ & =2^{-1}(\langle AB\rangle-\langle A\rangle\langle B\rangle+\langle BA\rangle-\langle A\rangle\langle B\rangle)+i(-i2^{-1}\langle[A,B]\rangle)
+\end{align}
+onde 
+\begin{align}
+ & [A,B]=AB-BA,\\
+ & \{A,B\}=AB+BA
+\end{align}
+são, respectivamente, o comutador e anti-comutador de $A$ e $B$. Note que 
+\[
+AB=2^{-1}(\{A,B\}+[A,B]).
+\]
+Como $\{A,B\}$ e $[A,B]$ são, respectivamente, operadores Hermitianos ($\{A,B\}^{\dagger}=\{A,B\}$) e anti-Hermitianos ($[A,B]^{\dagger}=-[A,B]$), seus valores médios são, respectivamente, números reais e imaginários puros. Temos com isso que 
+\begin{align}
+ & \Re(\langle\psi|\phi\rangle)=2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle,\\
+ & \Im(\langle\psi|\phi\rangle)=-i2^{-1}\langle[A,B]\rangle.
+\end{align}
+Assim, considerando que 
+\begin{equation}
+|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
+\end{equation}
+e substituindo na DCS, depois de algumas manipulações algébricas obteremos a RIHRS: 
+\begin{equation}
+{\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge(\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}}}\mathpunct{\color{blue},}
+\end{equation}
+onde a média simples das covariâncias clássicas, 
+\begin{equation}
+\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
+\end{equation}
+é denominada de covariância quântica, com 
+\[
+\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle
+\]
+sendo a covariância entre os observáveis $X$ e $Y$. Vale observar que se $A$ e $B$ são observáveis compatíveis, i.e., se $[A,B]=0$, teremos que $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.
+
+Vamos analizar agora o problema da possível trivialidade da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável $A$, i.e., 
+\[
+|\xi\rangle=|a\rangle
+\]
+com $A|a\rangle=a|a\rangle$ e $a\in\mathbb{R}$. Neste caso pode-se verificar que 
+\begin{equation}
+\mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
+\end{equation}
+E com isso a RIHRS nos retorna 
+\begin{equation}
+0\mathrm{Var}(\hat{B})\ge0.
+\end{equation}
+Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de $A$ e $B$. O mesmo tipo de limitação se aplica se $|\xi\rangle=|b\rangle$ para $B|b\rangle=b|b\rangle.$
+
+\textbf{Relações de incerteza de Robertson e de Heisenberg (RIH)}
+
+Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson: 
+\begin{equation}
+\sigma_{A}\sigma_{B}\ge2^{-1}|\langle[A,B]\rangle|,
+\end{equation}
+com e.g. $\sigma_{A}=\sqrt{Var(A)}.$ Quando aplicada a posição e momento linear é uma das relações de incerteza de Heisenberg: 
+\begin{equation}
+\sigma_{X}\sigma_{P}\ge2^{-1}|\langle[X,P]\rangle|=\hbar/2,
+\end{equation}
+pois $[X,P]=i\hbar I$.
+
+Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a soma das variâncias: 
+\begin{align}
+ & (\sigma_{A}-\sigma_{B})^{2}\ge0\therefore\sigma^{2}_{A}+\sigma^{2}_{B}-2\sigma_{A}\sigma_{B}\ge0\\
+ & Var(A)+Var(B)\ge2\sigma_{A}\sigma_{B}\ge|\langle[A,B]\rangle|.
+\end{align}
+No entanto, essa nova relação também sofre do problema da trivialidade.
+
 
 \subsection{Postulado da dinâmica}
 
-não há espaço para determinismo.
+As mudanças de estados em MQ são descritas por uma transformação unitária: 
+\begin{equation}
+|\psi_{t}\rangle=U_{t}|\psi_{0}\rangle,
+\end{equation}
+i.e., 
+\[
+U_{t}U^{\dagger}_{t}=U_{t}U^{\dagger}_{t}=\mathbb{I}.
+\]
+O operador de evolução temporal sendo obtido da equação de Schrödinger: 
+\begin{equation}
+i\hbar\partial_{t}U_{t}=H_{t}U_{t},
+\end{equation}
+com a condição inicial 
+\[
+U_{0}=\mathbb{I},
+\]
+onde $H_{t}$ é o operador Hamiltoniano do sistema no instante de tempo $t$,$\hbar$ é a constante de Planck dividida por $2\pi$ e usamos a notação $\partial_{t}=\frac{\partial}{\partial_{t}}$. As duas equações acima são equivalentes à equação de Schrödinger para o estado 
+\begin{equation}
+i\hbar\partial_{t}|\psi_{t}\rangle=H_{t}|\psi_{t}\rangle.
+\end{equation}
+Verificamos esse resultado como segue: 
+\begin{align}
+i\hbar\partial_{t}|\psi_{t}\rangle & =i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle)\\
+ & =(i\hbar\partial_{t}U_{t})|\psi_{0}\rangle\\
+ & =H_{t}U_{t}|\psi_{0}\rangle\\
+ & =H_{t}|\psi_{t}\rangle.
+\end{align}
+
+\textbf{Exemplo}: Quando $H_{t}=H$
+
+Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida: 
+\begin{equation}
+U_{t}=e^{-iHt/\hbar}.
+\end{equation}
+Faremos isso primeiramente usando a decomposição espectral do Hamiltoniano, 
+\[
+H=\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|,
+\]
+e aplicando a função de operador: 
+\begin{align}
+i\hbar\partial_{t}U_{t} & =i\hbar\partial_{t}\exp\left(-\frac{iHt}{\hbar}\right)\\
+ & =i\hbar\partial_{t}\exp\left(\sum_{j}\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\right)
+\end{align}
+
+Aqui devemos fazer uma pausa para entender a matemática. Vimos que para um operador hermitiano qualquer $T$ temos $\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}$. Primeiro podemos ver que $H^{2}$:
+
+\begin{align*}
+H^{2} & =\left(\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|\right)\left(\sum_{n}E_{n}|E_{n}\rangle\langle E_{n}|\right)=\sum_{j,n}E_{j}E_{n}|E_{j}\rangle\langle E_{j}|E_{n}\rangle\langle E_{n}|=\sum_{j}E^{2}_{j}|E_{j}\rangle\langle E_{j}|
+\end{align*}
+
+Onde usamos o fato de que $\left\langle E_{j}|E_{n}\right\rangle =\delta_{jn}$. De modo geral temos que $H^{n}=\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|$. Escrevendo então:
+
+\begin{align*}
+\exp(H) & =\sum^{\infty}_{n=0}\frac{1}{n!}H^{n}\\
+ & =\sum^{\infty}_{n=0}\frac{1}{n!}\left(\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|\right)\\
+ & =\sum_{j}\left(\sum^{\infty}_{n=0}\frac{E^{n}_{j}}{n!}\right)|E_{j}\rangle\langle E_{j}|
+\end{align*}
+
+E sendo $\exp(x)=\sum^{\infty}_{n=0}\frac{x^{n}}{n!}$, então: $\exp(H)=\sum_{j}e^{E_{j}}|E_{j}\rangle\langle E_{j}|$. No nosso caso temos então:
+
+\begin{align}
+i\hbar\partial_{t}U_{t} & =i\hbar\sum_{j}\partial_{t}\exp\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\\
+ & =i\hbar\sum_{j}\left(-\frac{iE_{j}}{\hbar}\right)\exp\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\\
+ & =i\hbar\left(-\frac{i}{\hbar}\right)\sum_{j}\exp\left(-\frac{iE_{j}t}{\hbar}\right)E_{j}|E_{j}\rangle\langle E_{j}|\\
+ & =\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}H|E_{j}\rangle\langle E_{j}\\
+ & =H\left(\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|\right)
+\end{align}
+em que usamos $H|E_{j}\rangle=E_{j}|E_{j}\rangle$ ao longo de toda demonstração. as agora sendo então que 
+\[
+\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|=e^{-\frac{it}{\hbar}\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|}=e^{-\frac{iHt}{\hbar}|}
+\]
+
+Então $i\hbar\partial_{t}U_{t}=He^{-\frac{iHt}{\hbar}|}$ e como $i\hbar\partial_{t}U_{t}=H_{t}U_{t},$logo $U_{t}=e^{-iHt/\hbar}$.
+
+OBS. Note que poderíamos obter $U_{t}$ resolvendo a equação de Schrödinger para cada hamiltoniano $H$. No entanto, tendo essa fórmula geral, podemos começar a resolução já calculando a exponencial, sem precisar resolver a equação diferencial.
 
 \section{Experimento dupla fenda}
 

@@ -2028,9 +2028,7 @@ incertezas
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
+## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
 \end_layout
 
 \begin_layout Standard
@@ -2062,7 +2060,7 @@ Para provar a RIHRS,
 
 \end_inset
 
-com a igualdade obtida se e somente se 
+como igualdade obtida se e somente se 
 \begin_inset Formula $|\psi\rangle$
 \end_inset
 
@@ -2125,8 +2123,8 @@ para denotar o valor médio de um operador qualquer
  
 \begin_inset Formula 
 \begin{align}
-|\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
-|\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
+ & |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle,\\
+ & |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
 \end{align}
 
 \end_inset
@@ -2363,13 +2361,7 @@ Por conseguinte,
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-Relações de incerteza de Robertson e de Heisenberg (RIH)
-\end_layout
-
-\begin_layout Standard
-Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
+### Relações de incerteza de Robertson e de Heisenberg (RIH) Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
  obtemos a relação de incerteza de Robertson:
  
 \begin_inset Formula 
@@ -2417,7 +2409,7 @@ No entanto,
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

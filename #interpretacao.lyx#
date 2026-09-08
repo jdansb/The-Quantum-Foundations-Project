@@ -1785,7 +1785,7 @@ Como
 \align center
 \begin_inset CommandInset href
 LatexCommand href
-name "Exemplo 1"
+name "Exemplo"
 target "/exemplo-incompatibilidade"
 type "other"
 literal "false"
@@ -1971,57 +1971,54 @@ Repetindo esse procedimento para cada autoespaço de
 .
 \end_layout
 
-\begin_layout Standard
-Com a prova deste teorema,
- sabemos que se dois observáveis 
-\begin_inset Formula $A$
-\end_inset
-
- e 
-\begin_inset Formula $B$
-\end_inset
-
- de um sistema não comutam,
- eles não podem compartilhar todos os autovetores.
- Se,
- medindo o observável 
-\begin_inset Formula $A$
-\end_inset
-
-,
- preparamos o sistema em um estado que não é autovetor do observável 
-\begin_inset Formula $B$
-\end_inset
-
-,
- este vetor deve ser obrigatoriamente uma combinação linear dos autovetores de com duas ou mais amplitudes de probabilidade não nulas.
-\end_layout
-
-\begin_layout Standard
-\align center
-\begin_inset CommandInset href
-LatexCommand href
-name "Exemplo 2"
-target "/exemplo-incompatibilidade"
-type "other"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
 \begin_layout Subsubsection*
 Relação de Incerteza
 \end_layout
 
 \begin_layout Standard
-Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das 
-\begin_inset Quotes eld
+
+\lang english
+# Relações de incerteza Vimos que a existência de observáveis incompatíveis,
+ que não comutam,
+ possibilita a preparação de estados de superposição que tem a eles associada uma 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+incerteza quântica
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
+\end_inset
+
+ com relação a medidas futuras.
+ Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das 
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
 \end_inset
 
 incertezas
-\begin_inset Quotes erd
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+"
+\end_layout
+
 \end_inset
 
  (desvios padrões) sobre dois observáveis.
@@ -2029,11 +2026,13 @@ incertezas
 
 \begin_layout Standard
 
-\series bold
-Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
+\lang english
+## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 A RIHRS lê-se:
  
 \begin_inset Formula 
@@ -2052,6 +2051,8 @@ com a variância definida e.g.
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Para provar a RIHRS,
  usaremos como uma das principais ferramentas a desigualdade de Cauchy-Scharz (DCS):
  
@@ -2062,7 +2063,7 @@ Para provar a RIHRS,
 
 \end_inset
 
-com a igualdade obtida se e somente se 
+como igualdade obtida se e somente se 
 \begin_inset Formula $|\psi\rangle$
 \end_inset
 
@@ -2087,6 +2088,8 @@ com a igualdade obtida se e somente se
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Considere 
 \begin_inset Formula $A$
 \end_inset
@@ -2125,8 +2128,8 @@ para denotar o valor médio de um operador qualquer
  
 \begin_inset Formula 
 \begin{align}
-|\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
-|\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
+ & |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle,\\
+ & |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
 \end{align}
 
 \end_inset
@@ -2156,6 +2159,8 @@ com
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Ademais,
  temos que 
 \begin_inset Formula 
@@ -2299,6 +2304,8 @@ sendo a covariância entre os observáveis
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Vamos analizar agora o problema da possível trivialidade da RIHRS,
  que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis.
  Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável 
@@ -2364,12 +2371,8 @@ Por conseguinte,
 
 \begin_layout Standard
 
-\series bold
-Relações de incerteza de Robertson e de Heisenberg (RIH)
-\end_layout
-
-\begin_layout Standard
-Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
+\lang english
+### Relações de incerteza de Robertson e de Heisenberg (RIH) Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
  obtemos a relação de incerteza de Robertson:
  
 \begin_inset Formula 
@@ -2401,6 +2404,8 @@ pois
 \end_layout
 
 \begin_layout Standard
+
+\lang english
 Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a soma das variâncias:
  
 \begin_inset Formula 
@@ -2417,7 +2422,7 @@ No entanto,
 
 \begin_layout Standard
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
