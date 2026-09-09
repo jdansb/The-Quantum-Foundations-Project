@@ -2617,7 +2617,7 @@ Nos resta agora demonstrar que:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}=\left(\frac{\text{Cov\left(A,B\right)+Cov\left(BA\right)}}{2}\right)^{2}
+\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=CovQ\left(A,B\right)^{2}=\left(\frac{Cov\left(A,B\right)+Cov\left(BA\right)}{2}\right)^{2}
 \]
 
 \end_inset
