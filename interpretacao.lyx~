@@ -103,7 +103,7 @@
 \begin_body
 
 \begin_layout Title
-Qual (não) é a interpretação da Mecânica Quântica
+Postulados
 \end_layout
 
 \begin_layout Author
@@ -2028,7 +2028,9 @@ incertezas
 \end_layout
 
 \begin_layout Standard
-## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
+
+\series bold
+Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
 \end_layout
 
 \begin_layout Standard
@@ -2036,14 +2038,13 @@ A RIHRS lê-se:
  
 \begin_inset Formula 
 \[
-\mathrm{Var}(A)\mathrm{Var}(B)\ge(\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},
+\text{Var}\left(A\right)\text{Var}\left(B\right)\ge(\text{CovQ}\left(A,B\right))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},
 \]
 
 \end_inset
 
-com a variância definida e.g.
- por 
-\begin_inset Formula $Var(A)=\langle(A-\langle A\rangle)^{2}\rangle.$
+com a variância definida por 
+\begin_inset Formula $\mathrm{Var}(A)=\langle(A-\langle A\rangle)^{2}\rangle.$
 \end_inset
 
  As quantidades no lado direito da desigualdade serão definidas a seguir.
@@ -2060,7 +2061,7 @@ Para provar a RIHRS,
 
 \end_inset
 
-como igualdade obtida se e somente se 
+com a igualdade obtida se e somente se 
 \begin_inset Formula $|\psi\rangle$
 \end_inset
 
@@ -2119,12 +2120,85 @@ para denotar o valor médio de um operador qualquer
 \end_inset
 
 .
- Vamos definir ainda os seguintes vetores:
+ Antes de prosseguirmos,
+ gostaria de exlorar mais esse resultado.
+ Vamos considerar um sistema no estado 
+\begin_inset Formula $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $
+\end_inset
+
+,
+ e um operador 
+\begin_inset Formula $X$
+\end_inset
+
+ com autovalores 
+\begin_inset Formula $x_{n}$
+\end_inset
+
+ associados aos autovetores 
+\begin_inset Formula $\left|x_{n}\right\rangle $
+\end_inset
+
+.
+ Pela definição de média ponderada,
+ o valor médio dos resultados é 
+\begin_inset Formula $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$
+\end_inset
+
+,
+ como 
+\begin_inset Formula $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$
+\end_inset
+
+,
+ podemos escrever 
+\begin_inset Formula $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Como 
+\begin_inset Formula $\left\langle o_{n}|\psi\right\rangle =c_{n}$
+\end_inset
+
+,
+ então 
+\begin_inset Formula $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $
+\end_inset
+
+ uma vez que 
+\begin_inset Formula $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$
+\end_inset
+
+.
+ Então pela decomposição espectral 
+\begin_inset Formula $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$
+\end_inset
+
+ então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left\langle O\right\rangle =\left\langle \psi\right|\left(\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|\right)\left|\psi\right\rangle =\left\langle \psi\left|o\right|\psi\right\rangle 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vamos definir ainda os seguintes vetores:
  
 \begin_inset Formula 
 \begin{align}
- & |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle,\\
- & |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
+|\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
+|\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
 \end{align}
 
 \end_inset
@@ -2133,8 +2207,8 @@ que substituiremos na DCS.
  Notemos que 
 \begin_inset Formula 
 \begin{align}
-\langle\psi|\psi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle)\\
- & =(|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle)\\
+\langle\psi|\psi\rangle & =\left((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle\right)\\
+ & =\left(|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle\right)\\
  & =\langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle\\
  & =\mathrm{Var}(A),\\
 \langle\phi|\phi\rangle & =\mathrm{Var}(B),
@@ -2151,29 +2225,66 @@ com
 \end_inset
 
 .
+ Também usamos 
+\begin_inset Formula $(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)=(A-\langle A\rangle I)^{2}$
+\end_inset
+
+ uma vez que 
+\begin_inset Formula $A=A^{\dagger}$
+\end_inset
+
+ e 
+\begin_inset Formula $\left\langle A\right\rangle =\left\langle A\right\rangle ^{*}$
+\end_inset
+
+.
+ Podemos ver que isso decorre de do fato de 
+\begin_inset Formula $A$
+\end_inset
+
+ (e 
+\begin_inset Formula $I$
+\end_inset
+
+) serem hermitianos uma vez que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =\left\langle \psi\left|A\right|\psi\right\rangle =\left\langle A\right\rangle 
+\end{align*}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Ademais,
- temos que 
+ temos que
 \begin_inset Formula 
 \begin{align}
 \langle\psi|\phi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle)\\
  & =(|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle)\\
  & =(|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle)\\
- & =\langle AB-\langle A\rangle\langle B\rangle I\rangle\\
- & =2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle+2^{-1}\langle[A,B]\rangle\\
- & =\Re(\langle\psi|\phi\rangle)+i\Im(\langle\psi|\phi\rangle)\\
- & =2^{-1}(\langle AB\rangle-\langle A\rangle\langle B\rangle+\langle BA\rangle-\langle A\rangle\langle B\rangle)+i(-i2^{-1}\langle[A,B]\rangle)
+ & =\left\langle \xi\left|\left(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I\right)\right|\xi\right\rangle \\
+ & =\left\langle \xi\left|AB\right|\xi\right\rangle -\left\langle \xi\left|A\right|\xi\right\rangle \left\langle \xi\left|B\right|\xi\right\rangle -\left\langle \xi\left|A\right|\xi\right\rangle \left\langle \xi\left|B\right|\xi\right\rangle +\left\langle \xi\left|A\right|\xi\right\rangle \left\langle \xi\left|BI\right|\xi\right\rangle \\
+ & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle +\left\langle A\right\rangle \left\langle B\right\rangle \\
+ & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle 
 \end{align}
 
 \end_inset
 
-onde 
+
+\end_layout
+
+\begin_layout Standard
+Sendo:
 \begin_inset Formula 
 \begin{align}
- & [A,B]=AB-BA,\\
- & \{A,B\}=AB+BA
+\left[A,B\right] & =AB-BA,\\
+\left\{ A,B\right\}  & =AB+BA
 \end{align}
 
 \end_inset
@@ -2189,7 +2300,20 @@ são,
 \end_inset
 
 .
- Note que 
+ Somando:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left[A,B\right]+\left\{ A,B\right\}  & =AB-BA+AB+BA\\
+ & =2AB\\
+2^{-1}\left(\left[A,B\right]+\left\{ A,B\right\} \right) & =AB
+\end{align*}
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
 AB=2^{-1}(\{A,B\}+[A,B]).
@@ -2197,6 +2321,43 @@ AB=2^{-1}(\{A,B\}+[A,B]).
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left\langle \psi|\phi\right\rangle  & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle \\
+ & =\left\langle 2^{-1}(\{A,B\}+[A,B])\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle \\
+ & =2^{-1}\left(\left\langle \{A,B\}\right\rangle +\left\langle [A,B]\right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle 
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Até aqui temos então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align}
+\left\langle \psi|\psi\right\rangle \left\langle \phi|\phi\right\rangle  & \ge\left|\left\langle \psi|\phi\right\rangle \right|{}^{2}\\
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\left|2^{-1}\left(\left\langle \{A,B\}\right\rangle +\left\langle [A,B]\right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle \right|{}^{2}
+\end{align}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Como 
 \begin_inset Formula $\{A,B\}$
 \end_inset
@@ -2219,53 +2380,257 @@ Como
  seus valores médios são,
  respectivamente,
  números reais e imaginários puros.
- Temos com isso que 
+ Que o valor médio de um hermitiano é um número real já verificamos,
+ agora sobre um anti-hermitiano:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =-\left\langle \psi\left|A\right|\psi\right\rangle =-\left\langle A\right\rangle 
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agora se 
+\begin_inset Formula $\left\langle A\right\rangle =a+ib$
+\end_inset
+
+,
+ seu conjugado 
+\begin_inset Formula $\left\langle A\right\rangle ^{*}=a-ib$
+\end_inset
+
+,
+ se 
+\begin_inset Formula $\left\langle A\right\rangle ^{*}=-\left\langle A\right\rangle $
+\end_inset
+
+,
+ então 
+\begin_inset Formula $a+ib=-\left(a-ib\right)$
+\end_inset
+
+,
+ ou seja 
+\begin_inset Formula $a+ib=-a+ib$
+\end_inset
+
+,
+ pra isso ser igual então 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+ e ficamos apenas com 
+\begin_inset Formula $\left\langle A\right\rangle =ib$
+\end_inset
+
+.
+ Como 
+\begin_inset Formula $\left\langle A\right\rangle $
+\end_inset
+
+ e 
+\begin_inset Formula $\left\langle B\right\rangle $
+\end_inset
+
+ também são números reais.
+ Podemos verificar sobre 
+\begin_inset Formula $\left[A,B\right]$
+\end_inset
+
+ e 
+\begin_inset Formula $\left\{ A,B\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left(A,B\right) & =AB\mp BA\\
+\left(A,B\right)^{\dag} & =\left(AB\mp BA\right)^{\dagger}\\
+ & =\left(AB\right)^{\dagger}\mp\left(BA\right)^{\dagger}\\
+ & =B^{\dagger}A^{\dagger}\mp A^{\dagger}B^{\dagger}\\
+ & =\mp A^{\dagger}B^{\dagger}+B^{\dagger}A^{\dagger}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou seja,
+ se 
+\begin_inset Formula $\left[A,B\right]=AB-BA$
+\end_inset
+
+ então 
+\begin_inset Formula $\left[A,B\right]^{\dagger}=-\left[A,B\right]$
+\end_inset
+
+.
+ E se 
+\begin_inset Formula $\left\{ A,B\right\} =AB+BA$
+\end_inset
+
+ então 
+\begin_inset Formula $\left\{ A,B\right\} ^{\dagger}=\left\{ A,B\right\} $
+\end_inset
+
+.
+ Então podemos escrever:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle \psi|\phi\right\rangle  & =\Re\left(\left\langle \psi|\phi\right\rangle \right)+i\Im\left(\left\langle \psi|\phi\right\rangle \right)\\
+ & =\left[2^{-1}\left(\left\langle \left\{ A,B\right\} \right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle \right]+\left[2^{-1}\left\langle \left[A,B\right]\right\rangle \right]
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou seja:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{align}
- & \Re(\langle\psi|\phi\rangle)=2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle,\\
- & \Im(\langle\psi|\phi\rangle)=-i2^{-1}\langle[A,B]\rangle.
+\Re(\langle\psi|\phi\rangle) & =2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle,\\
+\Im(\langle\psi|\phi\rangle) & =-i2^{-1}\langle[A,B]\rangle.
 \end{align}
 
 \end_inset
 
-Assim,
- considerando que 
+
+\end_layout
+
+\begin_layout Standard
+Obs.:
+ Como 
+\begin_inset Formula $2^{-1}\langle[A,B]\rangle=ib$
+\end_inset
+
+ é um nummero puramente imaginário,
+ fazendo 
+\begin_inset Formula $-i\cdot\left(ib\right)=b$
+\end_inset
+
+ obtemos seu coeficiente real.
+ Assim,
+ considerando que
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
-\end{equation}
+\begin{align*}
+\left|\left\langle \psi|\phi\right\rangle \right|^{2} & =\left\langle \psi|\phi\right\rangle ^{*}\left\langle \psi|\phi\right\rangle \\
+ & =\left(\Re\left(\left\langle \psi|\phi\right\rangle \right)-i\Im\left(\left\langle \psi|\phi\right\rangle \right)\right)\left(\Re\left(\left\langle \psi|\phi\right\rangle \right)+i\Im\left(\left\langle \psi|\phi\right\rangle \right)\right)\\
+ & =\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}
+\end{align*}
 
 \end_inset
 
-e substituindo na DCS,
- depois de algumas manipulações algébricas obteremos a RIHRS:
- 
+
+\end_layout
+
+\begin_layout Standard
+Temos então:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-{\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge(\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}},}
-\end{equation}
+\begin{align*}
+\mathrm{Var}(A)\mathrm{Var}(B) & \geq(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2}
+\end{align*}
 
 \end_inset
 
-onde a média simples das covariâncias clássicas,
- 
-\begin_inset Formula 
-\begin{equation}
-\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
-\end{equation}
 
-\end_inset
+\end_layout
 
-é denominada de covariância quântica,
- com 
+\begin_layout Standard
+Agora vamos abrir:
 \begin_inset Formula 
 \[
-\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle
+\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\left(-i2^{-1}\langle[A,B]\rangle\right)^{2}=-2^{-2}\langle[A,B]\rangle^{2}
 \]
 
 \end_inset
 
-sendo a covariância entre os observáveis 
+
+\end_layout
+
+\begin_layout Standard
+Além disso como é puramente imginário então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\langle[A,B]\rangle^{2}=\left(-ib\right)^{2}=-b^{2}=-\left|b\right|^{2}=-\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ficamos então com 
+\begin_inset Formula $\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}$
+\end_inset
+
+.
+ E nossa desigualdade:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\left\langle \psi|\psi\right\rangle \left\langle \phi|\phi\right\rangle  & \ge\left|\left\langle \psi|\phi\right\rangle \right|{}^{2}\\
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}\\
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nos resta agora demonstrar que:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}=\left(\frac{\text{Cov\left(A,B\right)+Cov\left(BA\right)}}{2}\right)^{2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde a covariância é 
+\begin_inset Formula $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$
+\end_inset
+
+ entre os observáveis 
 \begin_inset Formula $X$
 \end_inset
 
@@ -2273,8 +2638,51 @@ sendo a covariância entre os observáveis
 \begin_inset Formula $Y$
 \end_inset
 
-.
- Vale observar que se 
+,
+ logo:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2} & =\left(\frac{\langle AB\rangle-\langle A\rangle\langle B\rangle+\langle BA\rangle-\langle B\rangle\langle A\rangle}{2}\right)^{2}\\
+\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2} & =\left(\frac{\langle AB\rangle+\langle BA\rangle-2\langle B\rangle\langle A\rangle}{2}\right)^{2}\\
+ & =\left(\frac{\left\langle AB+BA\right\rangle }{2}-\langle B\rangle\langle A\rangle\right)^{2}\\
+ & =\left(2^{-1}\left\langle \left\{ AB\right\} \right\rangle -\langle B\rangle\langle A\rangle\right)^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+E este 
+\begin_inset Formula $\Re\left(\left\langle \psi|\phi\right\rangle \right)=2^{-1}\left\langle \left\{ A,B\right\} \right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle $
+\end_inset
+
+ é o resultado que tínhamos obtido.
+ Podemos escrever então 
+\begin_inset Formula $\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}$
+\end_inset
+
+ e:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vale observar que se 
 \begin_inset Formula $A$
 \end_inset
 
@@ -2331,9 +2739,12 @@ com
 \end_inset
 
 E com isso a RIHRS nos retorna 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-0\mathrm{Var}(\hat{B})\ge0.
+0\mathrm{Var}(B)\ge0.
 \end{equation}
 
 \end_inset
@@ -2361,16 +2772,132 @@ Por conseguinte,
 \end_layout
 
 \begin_layout Standard
-### Relações de incerteza de Robertson e de Heisenberg (RIH) Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
- obtemos a relação de incerteza de Robertson:
- 
+De toda forma,
+ vamos verificar.
+ Para o comutador:
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
-\begin{equation}
-\sigma_{A}\sigma_{B}\ge2^{-1}|\langle[A,B]\rangle|,
-\end{equation}
+\begin{align*}
+\left\langle a_{k}\left|\left[A,B\right]\right|a_{k}\right\rangle  & =\left\langle a_{k}\left|AB\right|a_{k}\right\rangle -\left\langle a_{k}\left|BA\right|a_{k}\right\rangle \\
+ & =\left\langle a_{k}\left|\sum_{n}a_{n}\left|a_{n}\right\rangle \left\langle a_{n}\right|B\right|a_{k}\right\rangle -\left\langle a_{k}\left|B\sum_{n}a_{n}\left|a_{n}\right\rangle \left\langle a_{n}\right|\right|a_{k}\right\rangle \\
+ & =\sum_{n}a_{n}\left[\left\langle a_{k}|a_{n}\right\rangle \left\langle a_{n}\left|B\right|a_{k}\right\rangle -\left\langle a_{k}\left|B\right|a_{n}\right\rangle \left\langle a_{n}|a_{k}\right\rangle \right]\\
+ & =a_{k}\left[\left\langle a_{k}\left|B\right|a_{k}\right\rangle -\left\langle a_{k}\left|B\right|a_{k}\right\rangle \right]\\
+ & =0
+\end{align*}
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+Para a variância,
+ vamos adotar outra estratégia,
+ ao invés de escrever a decomposição espectral,
+ vamos usar que 
+\begin_inset Formula $A|a\rangle=a|a\rangle$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathrm{Var}(A)_{|a\rangle} & =\langle a_{n}|(A-\langle a_{n}\left|A\right|a_{n}\rangle I)^{2}|a_{n}\rangle\\
+ & =\langle a_{n}|(A-a_{n}\langle a_{n}|a_{n}\rangle I)^{2}|a_{n}\rangle\\
+ & =\langle a_{n}|(A-a_{n}I)^{2}|a_{n}\rangle\\
+ & =\langle a_{n}|A^{2}|a_{n}\rangle+a^{2}_{n}\langle a_{n}|a_{n}\rangle-2a_{n}\langle a_{n}|A|a_{n}\rangle\\
+ & =a^{2}_{n}+a^{2}_{n}-2a^{2}_{n}\\
+ & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+E para a Covariância Quântica,
+ já vimos que 
+\begin_inset Formula $\langle a_{n}\left|A\right|a_{n}\rangle=a_{n}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\left\langle a_{k}\left|AB\right|a_{k}\right\rangle =\left\langle a_{k}\left|BA\right|a_{k}\right\rangle =a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle $
+\end_inset
+
+,
+ então:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\mathrm{CovQ}(A,B)_{|a\rangle} & =\frac{\langle a_{k}\left|AB\right|a_{k}\rangle+\langle a_{k}\left|BA\right|a_{k}\rangle-2\langle a_{k}\left|B\right|a_{k}\rangle\langle a_{k}\left|A\right|a_{k}\rangle}{2}\\
+ & =\frac{a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle +a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle -2a_{k}\langle a_{k}\left|B\right|a_{k}\rangle}{2}\\
+ & =0
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Relações de incerteza de Robertson e de Heisenberg (RIH)
+\end_layout
+
+\begin_layout Standard
+Ignorando-se
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Isto é,
+ se 
+\begin_inset Formula $a\geq b+c\geq c$
+\end_inset
+
+,
+ sendo 
+\begin_inset Formula $b\geq0$
+\end_inset
+
+,
+ então necessariamente 
+\begin_inset Formula $a\geq c$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta,
+ obtemos a relação de incerteza de Robertson:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{align*}
+\text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
+\sqrt{\text{Var}\left(A\right)}\sqrt{\text{Var}\left(B\right)} & \geq\sqrt{2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}}\\
+\sigma_{A}\sigma_{B} & \ge2^{-1}\left|\left\langle \left[A,B\right]\right\rangle \right|
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 com e.g.
  
 \begin_inset Formula $\sigma_{A}=\sqrt{Var(A)}.$
@@ -2393,23 +2920,8 @@ pois
 \end_layout
 
 \begin_layout Standard
-Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a soma das variâncias:
- 
-\begin_inset Formula 
-\begin{align}
- & (\sigma_{A}-\sigma_{B})^{2}\ge0\therefore\sigma^{2}_{A}+\sigma^{2}_{B}-2\sigma_{A}\sigma_{B}\ge0\\
- & Var(A)+Var(B)\ge2\sigma_{A}\sigma_{B}\ge|\langle[A,B]\rangle|.
-\end{align}
-
-\end_inset
-
-No entanto,
- essa nova relação também sofre do problema da trivialidade.
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 
@@ -2435,6 +2947,67 @@ Não podemos saber com precisão a posição e energia da particula.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Aqui estamos em condições de realizar mais algumas discussões.
+ A relação de incerteza de Heisenberg é constantemente fruto de más compreensões.
+ A primeira delas diz respeito ao próprio status da relação.
+ Embora seja tradicionalmente chamada de princípio de incerteza,
+ ela não precisa ser postulada como um princípio.
+ Como vimos,
+ a relação de Heisenberg pode ser obtida como um caso particular da Relação de incerteza de Heisenberg-Robertson-Schrödinger,
+ que,
+ por sua vez,
+ pode ser derivada da desigualdade de Cauchy–Schwarz,
+ juntamente com as propriedades matemáticas dos observáveis representados por operadores em um espaço de Hilbert.
+\end_layout
+
+\begin_layout Standard
+O segundo ponto é que é incorreto interpretar a relação de incerteza como afirmando que uma partícula "não tem posição e momento definidos" ou que "não podemos medir posição e momento na mesma preparação".
+ A primeira afirmação é uma interpretação possível,
+ mas não é o conteúdo matemático da relação,
+ enquanto a segunda é simplesmente incorreta.
+ A relação de incerteza não diz que é impossível obter resultados de posição e momento na mesma preparação;
+ ela estabelece uma relação entre as variâncias dos resultados dessas medidas.
+\end_layout
+
+\begin_layout Standard
+Em outras palavras,
+ podemos preparar repetidamente o sistema no mesmo estado e realizar medidas de posição e de momento.
+ A partir dos resultados,
+ podemos determinar as respectivas distribuições e,
+ consequentemente,
+ suas variâncias.
+ A relação de incerteza estabelece que o produto dessas variâncias —
+ ou,
+ mais precisamente,
+ dos desvios-padrão —
+ deve satisfazer uma dada relação.
+\end_layout
+
+\begin_layout Standard
+Isso contrasta com a mecânica clássica.
+ Podemos imaginar,
+ por exemplo,
+ uma partícula parada em uma posição perfeitamente determinada.
+ Ignorando limitações experimentais,
+ seria possível conceber um estado clássico no qual a posição e a velocidade fossem simultaneamente bem definidas,
+ por exemplo,
+ uma particula parada na origem (
+\begin_inset Formula $x=0,v=0$
+\end_inset
+
+).
+ Nesse caso,
+ se repetíssemos as medidas,
+ obteríamos sempre os mesmos valores e,
+ portanto,
+ teríamos 
+\begin_inset Formula $\sigma_{x}=\sigma_{v}=0$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -2701,28 +3274,89 @@ OBS.
  sem precisar resolver a equação diferencial.
 \end_layout
 
-\begin_layout Section
-Experimento dupla fenda
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+FALAR SOBRE DETERMINISMO
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Achar o texto,
- mas o ponto é:
- o comportamento ondulatório aparece qauandos se vê coletivamente.
+Agora podemos abordar uma outra questão que se relaciona ao “determinismo” como oposição ao livre-arbítrio.
+ Há pelo menos dois sentidos para a palavra determinismo.
+ Um deles é mais associado à física clássica e consiste na ideia de que,
+ se conhecemos perfeitamente o estado atual de um sistema e as leis que governam sua evolução,
+ seu estado futuro e passado são,
+ em princípio,
+ determinados.
+ O outro é um sentido mais amplo,
+ de natureza filosófica,
+ que diz respeito à negação do livre-arbítrio.
+\end_layout
+
+\begin_layout Standard
+Quanto ao primeiro sentido,
+ a formulação usual da mecânica quântica introduz um elemento probabilístico que contrasta com o determinismo da mecânica clássica.
+ Os resultados das medidas não são,
+ em geral,
+ determinados de maneira unívoca pelo estado quântico anterior,
+ mas descritos por distribuições de probabilidade.
+ Nesse sentido,
+ a teoria apresenta um elemento indeterminista.
+ Vale notar,
+ contudo,
+ que a equação de Schrödinger que governa a evolução do estado quântico é determinista.
+ Dado o estado inicial e o Hamiltoniano do sistema,
+ a equação determina univocamente o estado quântico em qualquer instante posterior.
+ As probabilidades dos resultados de uma medida são então obtidas a partir desse estado,
+ por meio da regra de Born.
+\end_layout
+
+\begin_layout Standard
+Se a natureza é,
+ em última instância,
+ determinista e a natureza probabilística da mecânica quântica decorre de alguma descrição incompleta,
+ ou se a indeterminação quântica é fundamental,
+ é uma questão para a qual não possuímos uma resposta consensual.
+ Diferentes posicionamentos a respeito dessa questão dão origem,
+ em parte,
+ a diferentes interpretações da mecânica quântica.
+\end_layout
+
+\begin_layout Standard
+Porém,
+ é um equívoco pensar que esse elemento matemático probabilístico serviria,
+ por si só,
+ como suporte para uma defesa do livre-arbítrio.
+ Não há,
+ nas leis físicas conhecidas,
+ uma formulação que incorpore o livre-arbítrio.
+ Podemos aproximar a chance de obter cara ou coroa ao lançar uma moeda de maneira aproximadamente simétrica a 50% para cada resultado.
+ Esse é um evento probabilístico,
+ mas não diríamos,
+ por isso,
+ que a moeda possui livre-arbítrio.
+ A introdução de probabilidades na descrição da natureza,
+ portanto,
+ não confere mais livre-arbítrio à natureza do que o lançamento probabilístico de uma moeda.
+\end_layout
+
+\begin_layout Standard
+Além disso,
+ não apenas a evolução do estado quântico é determinista,
+ como a própria distribuição de probabilidade em qualquer instante impõe restrições aos possíveis resultados e às suas probabilidades.
+ Ao meu ver,
+ essas restrições são incompatíveis com uma concepção de “livre” arbítrio na qual o agente deveria possuir liberdade irrestrita para determinar qualquer um dos resultados possíveis.
 \end_layout
 
 \begin_layout Section
-Desigualdade de bell
-\end_layout
 
-\begin_layout Section
-Interpertaçoes:
- 
-\end_layout
-
-\begin_layout Section
-Curiosidade:
- problema da decoerencia
 \end_layout
 
 \begin_layout Quotation
