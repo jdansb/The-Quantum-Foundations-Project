@@ -2617,7 +2617,7 @@ Nos resta agora demonstrar que:
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}=\left(\frac{\text{Cov\left(A,B\right)+Cov\left(BA\right)}}{2}\right)^{2}
+\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=CovQ\left(A,B\right)^{2}=\left(\frac{Cov\left(A,B\right)+Cov\left(BA\right)}{2}\right)^{2}
 \]
 
 \end_inset
@@ -2964,7 +2964,23 @@ Aqui estamos em condições de realizar mais algumas discussões.
 \end_layout
 
 \begin_layout Standard
-O segundo ponto é que é incorreto interpretar a relação de incerteza como afirmando que uma partícula "não tem posição e momento definidos" ou que "não podemos medir posição e momento na mesma preparação".
+O segundo ponto é que é incorreto interpretar a relação de incerteza como afirmando que uma partícula 
+\begin_inset Quotes eld
+\end_inset
+
+não tem posição e momento definidos
+\begin_inset Quotes erd
+\end_inset
+
+ ou que 
+\begin_inset Quotes eld
+\end_inset
+
+não podemos medir posição e momento na mesma preparação
+\begin_inset Quotes erd
+\end_inset
+
+.
  A primeira afirmação é uma interpretação possível,
  mas não é o conteúdo matemático da relação,
  enquanto a segunda é simplesmente incorreta.

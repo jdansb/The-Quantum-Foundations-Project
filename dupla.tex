@@ -1,0 +1,186 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Wave Function}
+\author{Jhordan Silveira de Borba}
+\maketitle
+\begin{quote}
+``If anyone aims to have anything like a broad understanding of the sciences that underpin modern technology, as well as obtaining some insight into the modern view of the character of the physical world, then some knowledge and understanding of quantum mechanics is mandatory.'' (\cite{cresser2001quantum})
+\end{quote}
+Um material que parece muito interessante é o PDF ``Quantum Physics Notes'' do professor J D Cresser (\cite{cresser2001quantum}). Provavelmente estarei na sequência trabalhando com os capítulos 3, 4, 6 e 7. Mas me parece que o PDF inteiro é uma excelente introdução, apenas eu pessoalmente estou com preguiça de rever (uma vez mais) o formalismo matemático da mecânica quântica\footnote{Pelo que pude notar, dos capítulos restantes, os capítulos 1 e 2 são introdutórios/históricos, o últim capítulo (11) trata dos postulados da mecânica quântica, já os capítulos 8, 9 e 10 tratando do seu formalismo matemático e por fim, o capítulo 5 discute a formulação ondulatória da mecânica quântica.}. Mas um dia talvez eu adicione como apêndice.
+
+Quantum mechanics provides a framework of physical and mathematical principles through which we seek to understand the physical nature of the world in which we live. These principles are fundamental and are presumed to apply to all physical systems. They embody fundamental physical and philosophical questions that can be abstracted from any particular physical system and studied independently of the specific systems in which they may be manifested. It is this abstract formulation of these principles that constitutes quantum mechanics.
+
+\subsection{Algum background histórico}
+
+\textbf{Planck’s Black Body Theory (1900):} In an attempt to understand the form of the spectrum of the electromagnetic radiation emitted by an object in thermal equilibrium at some temperature (a black body), Planck was forced to propose that the atoms making up the object absorbed and emitted light of (angular) frequency $\omega$ in multiples of a fundamental unit of energy, or quantum of energy, $E=\hbar\omega$, where $\hbar=h/2\pi$ and where $h$ is a new fundamental constant of nature, Planck’s constant, $h=6.622\times10^{-34}Js^{-1}$ though the name Planck’s constant is now often applied to $\hbar$.
+
+\textbf{Einstein’s Light Quanta (1905):} Although Planck believed that the rule for the absorption and emission of light in quanta applied only to black body radiation, and was a property of the atoms, rather than the radiation, Einstein saw it as a property of electromagnetic radiation, whether it was black body radiation or of any other origin.In particular, in his work on the photoelectric effect, he proposed that light of frequency $\omega$ was made up of particles of energy $\hbar\omega$, now known as photons, which could be only absorbed or emitted in their entirety.So light, a form of wave motion, had been given a particle character.Much later, in 1922, the particle nature of light was quite explicitly confirmed in the light scattering experiments of Compton.
+
+\textbf{De Broglie’s Hypothesis} (1924) Inspired by Einstein’s picture of light, a form of wave motion, as also behaving in some circumstances as if it was made up of particles, and inspired also by the success of the Bohr model of the hydrogen atom, de Broglie was lead, by purely aesthetic arguments to make a radical proposal.If light waves of frequency $\omega$ can behave under some circumstances like a collection of particles of energy $E=\hbar\omega$, then by symmetry, a massive particle of energy $E$, an electron say, should behave under some circumstances like a wave of frequency $\omega=E/\hbar$.
+
+But a defining characteristic of a wave is its wavelength. For a photon, the wavelength of the associated wave is $\lambda=c/f$ where $f=\omega/2\pi$ . So what is it for a massive particle? From Einstein’s theory of relativity, which showed that the energy of a photon (moving freely in empty space) is related to its momentum $p$ by $E=pc$, it follows that
+
+\[
+E=\hbar\omega=\hbar2\pi f=\frac{\hbar2\pi}{\lambda}c=\frac{h}{\lambda}c
+\]
+
+So $p=h/\lambda$. This equation then gave the wavelength of the photon in terms of its momentum, but it is also an expression that contains nothing that is specific to a photon.So De Broglie assumed that this relationship applied to all free particles, whether they were photons or electrons or anything else, and so arrived at the pair of equations
+
+\[
+f=\frac{E}{h},\qquad\lambda=\frac{h}{p}
+\]
+
+which gave the frequency and wavelength of the waves that were to be associated with a free particle of kinetic energy $E$ and momentum $p$. But now, given that particles can exhibit wave like properties, the natural question that arises is: what is doing the ‘waving’ ? Further, as wave motion is usually describable in terms of some kind of wave equation, it is then also natural to ask what the wave equation is for these de Broglie waves.
+
+The latter question turned out to be much easier to answer than the first -- these waves satisfy the famous Schr¨ odinger wave equation.But what these waves are is still, largely speaking, an incompletely answered question.Nevertheless, it is possible to say a considerable amount about what these waves tell us about the particle. It is this topic to which we now turn.
+
+\subsection{The Harmonic Wave Function}
+
+On the basis of de Broglie’s hypothesis, there is associated with a particle of energy $E$ and momentum $p$, a wave of frequency $f$ and wavelength $\lambda$ given by the de Broglie relations:
+
+\[
+f=\frac{E}{h},\qquad\lambda=\frac{h}{p}
+\]
+
+It more usual to work in terms of the angular frequency $\omega=2\pi f$ and wave number $k=2\pi/\lambda$ so that the de Broglie relations become
+
+\[
+\omega=E/\hbar\qquad k=p/\hbar
+\]
+
+With this in mind, we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)\footnote{Lembre que quando resolvemos a equação de Schroedinger para a partícula livre obtemos 2 dessas possibilidades.}:
+
+\[
+\Psi\left(x,t\right)=A\sin\left(kx-\omega t\right),\quad Ae^{-i\left(kx+\omega t\right)}+Ae^{i\left(kx-\omega t\right)},\dots
+\]
+
+At this stage, we have no idea what the quantity $\Psi\left(x,t\right)$ represents physically.It is given the name the wave function, and in this particular case we will use the term harmonic wave function to describe any trigonometric wave function of the kind listed above.
+
+In order to understand what information may be contained in the wave function, which will lead us to gaining a physical understanding of what it might represent, we will turn things around briefly and look at what we can learn about the properties of a particle if we know what its wave function is.
+
+First, given that the wave has frequency $\omega$ and wave number $k$, then it is straightforward to calculate the phase velocity $v_{p}$ of the wave:
+
+\[
+v_{p}=\frac{\omega}{k}=\frac{\hbar\omega}{\hbar k}=\frac{E}{p}=\frac{\frac{1}{2}mv^{2}}{mv}=\frac{1}{2}v
+\]
+
+Thus, given the frequency and wave number of a wave function, we can determine the speed of the particle from the phase velocity of its wave function, $v=2v_{p}$.
+
+We could also try to learn from the wave function the position of the particle.However, the wave function above tells us nothing about where the particle is to be found in space.We can make this statement because this wave function is the same everywhere i.e. there is nothing whatsoever to distinguish $\Psi$ at one point in space from any other.
+
+Thus, this particular wave function gives no information on the whereabouts of the particle with which it is associated.So from a harmonic wave function it is possible to learn how fast a particle is moving, but not what the position is of the particle.
+
+\subsection{Wave Packets}
+
+From what was said above about a wave function that was constant throughout all space, it would seem that a wave function can only convey information on the position of the particle if the wave function did not have the same amplitude throughout all space.
+
+In fact, since what we mean by a particle is a physical object that is confined to a highly localized region in space, ideally a point, it would be intuitively appealing to be able to devise a wave function that is zero or nearly so everywhere in space except for one localized region.
+
+It is in fact possible to construct, from the harmonic wave functions, a wave function which has this property.To show how this is done, we first consider what happens if we combine together two harmonic waves of very close frequency. The resultis well-known: a ‘beat note’ is produced, i.e. periodically in space the waves add together in phase to produce a local maximum, while midway in between the waves will be totally out of phase and hence will destructively interfere.
+
+Each localized maximum is known as a wave packet, so what is produced is a series of wave packets.Now suppose we add together a large number of harmonic waves with wave numbers $k_{1},k_{2},k_{3},\dots$ all lying in the range:
+
+\[
+\overline{k}-\Delta k<k_{n}<\overline{k}+\Delta k
+\]
+
+around a mean value $\overline{k}$, i. e.
+
+\begin{align*}
+\Psi\left(x,t\right) & =A\left(k_{1}\right)\cos\left(k_{1}x-\omega t\right)+A\left(k_{2}\right)\cos\left(k_{2}x-\omega t\right)+\dots\\
+ & =\sum_{n}A\left(k_{n}\right)\cos\left(k_{n}x-\omega t\right)
+\end{align*}
+
+where $A\left(k_{n}\right)$ is a function peaked about the mean value $\overline{k}$ with a full width at half maximum $2\Delta k$\footnote{Isto é, $A\left(k_{n}\right)$ tem um pico em $\overline{k}$ e assume metade de seu valor máximo a uma distância $\Delta k$ de $\overline{k}$, de modo que sua largura total à meia altura é $2\Delta k$.}. What is found is that in the limit in which the sum becomes an integral:
+
+\begin{align*}
+\Psi\left(x,t\right) & =\int^{+\infty}_{-\infty}A\left(k\right)\cos\left(kx-\omega t\right)dk
+\end{align*}
+
+all the waves interfere constructively to produce only a single beat note (in effect, the ‘beat notes’ or wave packets are infinitely far apart).In other words, the wave function so constructed is found to have essentially zero amplitude everywhere except for a single localized region in space, over a region of width $2\Delta x$, i.e. the wave function $\Psi\left(x,t\right)$ in this case takes the form of a single wave packet.
+
+This wave packet is clearly particle-like in that its region of significant magnitude is confined to a localized region in space.Moreover, this wave packet is constructed out of a group of waves with an average wave number $\overline{k}$, and so these waves could be associated in some sense with a particle of momentum $\overline{p}=h\overline{k}$. If this were true, then the wave packet would be expected to move with a velocity of $\overline{p}/m$.This is in fact found to be the case, as the following calculation shows.
+
+Because a wave packet is made up of individual waves which themselves are moving, though not with the same speed, the wave packet itself will move (and spread as well). The speed with which the wave packet moves is given by its group velocity $v_{g}$:
+
+\[
+v_{g}=\left(\frac{d\omega}{dk}\right)_{k=\overline{k}}
+\]
+
+This is the speed of the maximum of the wave packet i.e. it is the speed of the point on the wave packet where all the waves are in phase.Calculating the group velocity requires determining the relationship between $\omega$ to $k$, known as a dispersion relation.
+
+This dispersion relation is obtained from
+
+\[
+E=\frac{1}{2}mv^{2}=\frac{p^{2}}{2m}
+\]
+
+Substituting in the de Broglie relations ($f=\frac{E}{h},\lambda=\frac{h}{p}$) gives
+
+\begin{align*}
+hf & =\frac{h^{2}}{\lambda^{2}}\frac{1}{2m}\\
+\frac{h}{2\pi}\omega & =\left(\frac{h}{2\pi}\right)^{2}\frac{k^{2}}{2m}\\
+\hbar\omega & =\frac{\hbar^{2}k^{2}}{2m}
+\end{align*}
+
+Onde também usamos: $\omega=2\pi f$ and wave number $k=2\pi/\lambda$. From which follows the dispersion relation
+
+\[
+\omega=\frac{\hbar k^{2}}{2m}
+\]
+
+The group velocity of the wave packet is then
+
+\[
+v_{g}=\left(\frac{d\omega}{dk}\right)_{k=\overline{k}}=\frac{\hbar k}{m}
+\]
+
+Substituting $\overline{p}=\hbar\overline{k}$, this becomes $v_{g}=\overline{p}/m$ .i.e.the packet is indeed moving with the velocity of a particle of momentum $\overline{p}$, as suspected.
+
+This is a result of some significance, i.e. we have constructed a wave function of the form of a wave packet which is particle-like in nature.But unfortunately this is done at a cost. We had to combine together harmonic wave functions $\cos\left(kx-\omega t\right)$ with a range of $k$ values $2\Delta k$ to produce a wave packet which has a spread in space of size $2\Delta k$.The two ranges of $k$ and $x$ are not unrelated -- their connection is embodied in an important result known as the Heisenberg Uncertainty Principle.
+
+\subsubsection{The Heisenberg Uncertainty Principle}
+
+The wave packet constructed in the previous section obviously has properties that are reminiscent of a particle, but it is not entirely particle-like -- the wave function is non-zero over a region in space of size $2\Delta x$.In the absence of any better way of relating the wave function to the position of the atom, it is intuitively appealing to suppose that where $\Psi\left(x,t\right)$ has its greatest amplitude is where the particle is most likely to be found, i.e the particle is to be found somewhere in a region of size $2\Delta x$.
+
+More than that, however, we have seen that to construct this wavepacket, harmonic waves having $k$ values in the range $\left(k-\Delta k,k+\Delta k\right)$ were adding together.These ranges $\Delta x$ and $\Delta k$\ensuremath{\Delta}are related by the bandwidth theorem, which applies when adding together harmonic waves, which tell us that
+
+\[
+\Delta x\Delta k\gtrsim1
+\]
+
+Using $p=\hbar k$, we have $\Delta p=\hbar\Delta k$ so that
+\[
+\Delta x\Delta p\ge\hbar
+\]
+
+{[}A more rigorous derivation, based on a more precise definition of $\Delta x$ and $\Delta k$ leads to
+
+\[
+\Delta x\Delta p\ge\frac{\hbar}{2}
+\]
+
+A closer look at this result is warranted.A wave packet that has a significant amplitude within a range $2\Delta x$ was constructed from harmonic wave functions which represent a range of momenta $\overline{p}-\Delta p$ to $\overline{p}+\Delta p$.We can say then say that the particle is likely to be found somewhere in the region $2\Delta x$, and given that wave functions representing a range of possible momenta were used to form this wave packet, we could also say that the momentum of the particle will have a value in the range $\overline{p}-\Delta p$ to $\overline{p}+\Delta p$.
+
+The quantities $\Delta x$ and $\Delta p$ are known as uncertainties for reasons that will become increasingly apparent, and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
+
+
+\subsection{Retomando a partícula livre}
+
+https://paulskrzypczyk.github.io/qm-lecture-notes/free-particle?utm\_source=chatgpt.com
+\begin{quotation}
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{quotation}
+
+\end{document}

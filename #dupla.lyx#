@@ -893,116 +893,22 @@ More than that,
 \begin_inset Formula $\left(k-\Delta k,k+\Delta k\right)$
 \end_inset
 
- were adding together.These ranges 
-\begin_inset Formula $\Delta x$
-\end_inset
 
- and 
-\begin_inset Formula $\Delta k$
-\end_inset
+\end_layout
 
-∆are related by the bandwidth theorem,
+\begin_layout Standard
+(k − ∆k,
+ k + ∆x) were adding together.These ranges ∆x and ∆k are related by the
+\end_layout
+
+\begin_layout Standard
+bandwidth theorem,
  which applies when adding together harmonic waves,
- which tell us that
+ which tell us
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
-\Delta x\Delta k\gtrsim1
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Using 
-\begin_inset Formula $p=\hbar k$
-\end_inset
-
-,
- we have 
-\begin_inset Formula $\Delta p=\hbar\Delta k$
-\end_inset
-
- so that
-\begin_inset Formula 
-\[
-\Delta x\Delta p\ge\hbar
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-[A more rigorous derivation,
- based on a more precise definition of 
-\begin_inset Formula $\Delta x$
-\end_inset
-
- and 
-\begin_inset Formula $\Delta k$
-\end_inset
-
- leads to
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-\Delta x\Delta p\ge\frac{\hbar}{2}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A closer look at this result is warranted.A wave packet that has a significant amplitude within a range 
-\begin_inset Formula $2\Delta x$
-\end_inset
-
- was constructed from harmonic wave functions which represent a range of momenta 
-\begin_inset Formula $\overline{p}-\Delta p$
-\end_inset
-
- to 
-\begin_inset Formula $\overline{p}+\Delta p$
-\end_inset
-
-.We can say then say that the particle is likely to be found somewhere in the region 
-\begin_inset Formula $2\Delta x$
-\end_inset
-
-,
- and given that wave functions representing a range of possible momenta were used to form this wave packet,
- we could also say that the momentum of the particle will have a value in the range 
-\begin_inset Formula $\overline{p}-\Delta p$
-\end_inset
-
- to 
-\begin_inset Formula $\overline{p}+\Delta p$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-The quantities 
-\begin_inset Formula $\Delta x$
-\end_inset
-
- and 
-\begin_inset Formula $\Delta p$
-\end_inset
-
- are known as uncertainties for reasons that will become increasingly apparent,
- and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
+that
 \end_layout
 
 \begin_layout Subsection
