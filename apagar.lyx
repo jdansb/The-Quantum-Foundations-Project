@@ -1,9 +1,9 @@
-#LyX file created by tex2lyx 2.5
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
 \lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin D:/Github/The-Quantum-Foundations-Project/
+\origin unavailable
 \textclass article
 \use_default_options false
 \maintain_unincluded_children no
@@ -54,8 +54,17 @@
 \suppress_date false
 \justification true
 \crossref_package prettyref
+\use_formatted_ref 0
 \use_minted 0
-\use_lineno false
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -71,9 +80,11 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
 \change_bars false
+\postpone_fragile_content true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -84,219 +95,279 @@
 
 \begin_body
 
-\begin_layout Standard
-**Example 1**
+\begin_layout Section
+1
 \end_layout
 
 \begin_layout Standard
-Let us consider the operator 
+
+\lang brazilian
+Suppose we have the operators 
+\begin_inset Formula $A=\begin{pmatrix}0 & 1\\
+1 & 0
+\end{pmatrix}$
+\end_inset
+
+ and 
+\begin_inset Formula $B=\begin{pmatrix}1 & 0\\
+0 & -1
+\end{pmatrix}.$
+\end_inset
+
+ We can verify that they do not commute,
+ since 
+\begin_inset Formula 
+\[
+[A,B]=AB-BA=\begin{pmatrix}0 & -2\\
+2 & 0
+\end{pmatrix}\neq0.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+For the operator 
 \begin_inset Formula $A$
 \end_inset
 
-:
+,
+ the eigenvalues are 
+\begin_inset Formula $\left\{ +1,-1\right\} $
+\end_inset
+
+ with corresponding normalized eigenvectors
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-A =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
+\lang brazilian
+\begin_inset Formula 
+\[
+|a_{+1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
+1
+\end{pmatrix},\qquad|a_{-1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\
+1
 \end{pmatrix}.
 \]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-To verify that it is a Hermitian matrix, we can verify its conjugate transpose:
+
+\lang brazilian
+Suppose,
+ for example,
+ that after measuring 
+\begin_inset Formula $A$
+\end_inset
+
+,
+ we obtain the value 
+\begin_inset Formula $a=+1$
+\end_inset
+
+.
+ The system is then in the corresponding eigenstate,
+ 
+\begin_inset Formula $|\psi\rangle=|a_{+1}\rangle.$
+\end_inset
+
+ Now consider measuring 
+\begin_inset Formula $B$
+\end_inset
+
+.
+ The eigenvalues of 
+\begin_inset Formula $B$
+\end_inset
+
+ are also 
+\begin_inset Formula $\left\{ +1,-1\right\} $
+\end_inset
+
+ with corresponding eigenvectors
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-A^\dagger =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
+\lang brazilian
+\begin_inset Formula 
+\[
+|b_{+1}\rangle=\begin{pmatrix}1\\
+0
+\end{pmatrix},\qquad|b_{-1}\rangle=\begin{pmatrix}0\\
+1
+\end{pmatrix}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The probability of obtaining a particular eigenvalue 
+\begin_inset Formula $b_{n}$
+\end_inset
+
+ is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
+ 
+\begin_inset Formula $P(b_{n})=|\langle b_{n}|\psi\rangle|^{2}$
+\end_inset
+
+.
+ Therefore,
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+\begin_inset Formula 
+\begin{align*}
+P(b_{+1})=|\langle b_{+1}|a_{+1}\rangle|^{2}=\frac{1}{2}\\
+P(b_{-1})=|\langle b_{-1}|a_{-1}\rangle|^{2}=\frac{1}{2}
+\end{align*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Thus,
+ there is a 
+\begin_inset Formula $50\%$
+\end_inset
+
+ probability of observing 
+\begin_inset Formula $+1$
+\end_inset
+
+ and a 
+\begin_inset Formula $50\%$
+\end_inset
+
+ probability of observing 
+\begin_inset Formula $-1$
+\end_inset
+
+.
+ In other words,
+ since 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ do not commute and,
+ in this example,
+ do not share any eigenvectors,
+ after measuring one of the observables,
+ the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
+\end_layout
+
+\begin_layout Section
+
+\lang brazilian
+1
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Let us consider the operator 
+\begin_inset Formula $A=\begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
 0 & 0 & 2
-\end{pmatrix}
-= A.
-\]
+\end{pmatrix}.$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Its eigenvalues are:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-[1,\;1,\;2].
-\]
+ To verify that it is a Hermitian matrix,
+ we can verify its conjugate transpose
+\begin_inset Formula $A^{\dagger}=A.$
 \end_inset
 
+ Its eigenvalues are 
+\begin_inset Formula $\left\{ 1,1,2\right\} ,$
+\end_inset
 
-\end_layout
-
-\begin_layout Standard
-And the corresponding eigenvectors (each column is an eigenvector) are
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
+and the corresponding eigenvectors (each column is an eigenvector) are 
+\begin_inset Formula $\left(\left|a_{1}\right\rangle ,\left|a_{2}\right\rangle ,\left|a_{3}\right\rangle \right)=\begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
 0 & 0 & 1
-\end{pmatrix}.
-\]
+\end{pmatrix}.$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-We have then that eigenvalue 
+ We have then that eigenvalue 
 \begin_inset Formula $1$
 \end_inset
 
- is degenerate. We can reconstruct matrix 
+ is degenerate.
+ We can reconstruct matrix 
 \begin_inset Formula $A$
 \end_inset
 
  by spectral decomposition:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{pmatrix}.
-\]
+ 
+\begin_inset Formula $A=\sum^{3}_{n=1}a_{n}\left|a_{n}\right\rangle \left\langle a_{n}\right|.$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-We have now defined a Hermitian matrix 
-\begin_inset Formula $B$
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-B =
-\begin{pmatrix}
-3 & 1 & 0 \\
-1 & 4 & 0 \\
+ We have now defined a Hermitian matrix 
+\begin_inset Formula $B=\begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
 0 & 0 & 5
-\end{pmatrix}.
-\]
+\end{pmatrix}.$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-We can verify that they commute, that is, 
-\begin_inset Formula $AB-BA=0$
+ We can verify that they commute,
+ that is,
+ 
+\begin_inset Formula $\left[A,B\right]=AB-BA=0$
 \end_inset
 
-:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-AB-BA =
-\begin{pmatrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the simplest case, we then have a subspace of only one dimension for eigenvalue 
+.
+ In the simplest case,
+ we then have a subspace of only one dimension for eigenvalue 
 \begin_inset Formula $2$
 \end_inset
 
-. We can see that 
-\begin_inset Formula $Bv=bv$
+.
+ We can see that 
+\begin_inset Formula $B\left|a_{3}\right\rangle =5\left|a_{3}\right\rangle $
 \end_inset
 
-, with 
-\begin_inset Formula $b=5$
-\end_inset
-
-:
+.
+ 
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-B
-\begin{pmatrix}
-0\\
-0\\
-1
-\end{pmatrix}
-=
-\begin{pmatrix}
-0\\
-0\\
-5
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\lang brazilian
 Now for eigenvalue 
 \begin_inset Formula $1$
 \end_inset
 
-, we have a two-dimensional subspace formed by the vectors
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\begin{pmatrix}
-1 & 0\\
-0 & 1\\
-0 & 0
-\end{pmatrix}.
-\]
+,
+ we have a two-dimensional subspace formed by the vectors 
+\begin_inset Formula $\left\{ \left|a_{1}\right\rangle ,\left|a_{2}\right\rangle \right\} $
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-All non-null vectors in this subspace continue to be eigenvectors of 
+.
+ All non-null vectors in this subspace continue to be eigenvectors of 
 \begin_inset Formula $A$
 \end_inset
 
@@ -304,59 +375,42 @@ All non-null vectors in this subspace continue to be eigenvectors of
 \begin_inset Formula $1$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-If we denote the two eigenvectors by 
-\begin_inset Formula $(v_1,v_2)$
+,
+ Any non-null vector that is a linear combination of them,
+ 
+\begin_inset Formula $\left|u\right\rangle =a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle ,$
 \end_inset
 
- and use them as a basis, any non-null vector that is a linear combination of them,
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-u = av_1+bv_2,
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-is also an eigenvector of 
+ is also an eigenvector of 
 \begin_inset Formula $A$
 \end_inset
 
-. In fact,
+.
+ In fact,
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-Au
-=
-A(av_1+bv_2)
-=
-aAv_1+bAv_2
-=
-av_1+bv_2
-=
-u.
+\lang brazilian
+\begin_inset Formula 
+\[
+A\left|u\right\rangle =A\left(a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle \right)=aA\left|a_{1}\right\rangle +bA\left|a_{2}\right\rangle =a\left(1\cdot\left|a_{1}\right\rangle \right)+b\left(1\cdot\left|a_{2}\right\rangle \right)=a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle =1\cdot\left|u\right\rangle 
 \]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Now applying 
 \begin_inset Formula $B$
 \end_inset
 
- to the first eigenvector, we can see that it is a linear combination of the other two vectors in the subspace and is not a 
+ to the first eigenvector,
+ we can see that it is a linear combination of the other two vectors in the subspace and is not a 
 \begin_inset Formula $B$
 \end_inset
 
@@ -365,117 +419,97 @@ Now applying
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-B
-\begin{pmatrix}
-1\\
+\lang brazilian
+\begin_inset Formula 
+\[
+B\left|a_{1}\right\rangle =\begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}1\\
 0\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
-3\\
+\end{pmatrix}=\begin{pmatrix}3\\
 1\\
 0
-\end{pmatrix}.
+\end{pmatrix}=3\left|a_{1}\right\rangle +\left|a_{2}\right\rangle 
 \]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-That is, even though these two eigenvectors associated with 
+
+\lang brazilian
+That is,
+ even though these two eigenvectors associated with 
 \begin_inset Formula $1$
 \end_inset
 
- are a basis for this subspace, they do not form a common eigenvector basis. But we can build one.
-\end_layout
-
-\begin_layout Standard
-Since all non-null vectors in this subspace are eigenvectors of 
+ are a basis for this subspace,
+ they do not form a common eigenvector basis.
+ But we can build one.
+ Since all non-null vectors in this subspace are eigenvectors of 
 \begin_inset Formula $A$
 \end_inset
 
-, we only need to find those who are also eigenvectors of 
+,
+ we only need to find those who are also eigenvectors of 
 \begin_inset Formula $B$
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-In this two-dimensional space, 
+ In this two-dimensional space,
+ 
 \begin_inset Formula $B$
 \end_inset
 
-'s action on the vectors of the space is given by:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-B_1 =
-\begin{pmatrix}
-3 & 1\\
+'s action on the vectors of the space is given by 
+\begin_inset Formula $B_{1}=\begin{pmatrix}3 & 1\\
 1 & 4
-\end{pmatrix}.
-\]
+\end{pmatrix}.$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Its eigenvalues are
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-[2.38,\;4.62].
-\]
+ Its eigenvalues are 
+\begin_inset Formula $\left\{ 2.38,4.62\right\} $
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-And the corresponding eigenvectors (each column is an eigenvector) are:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-\begin{pmatrix}
--0.85 & -0.53\\
+ and the corresponding eigenvectors (each column is an eigenvector) are 
+\begin_inset Formula $\begin{pmatrix}-0.85 & -0.53\\
 0.53 & -0.85
-\end{pmatrix}.
-\]
+\end{pmatrix}.$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Combining with the previous results, we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis):
+
+\lang brazilian
+Combining with the previous results,
+ we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis)
 \end_layout
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-\begin{pmatrix}
--0.85 & -0.53 & 0\\
+\lang brazilian
+\begin_inset Formula 
+\[
+\left(\left|b_{1}\right\rangle ,\left|b_{2}\right\rangle ,\left|b_{3}\right\rangle \right)=\begin{pmatrix}-0.85 & -0.53 & 0\\
 0.53 & -0.85 & 0\\
 0 & 0 & 1
 \end{pmatrix}.
 \]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 We can test by applying 
 \begin_inset Formula $A$
 \end_inset
@@ -485,82 +519,49 @@ We can test by applying
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-A
-\begin{pmatrix}
--0.85\\
+\lang brazilian
+\begin_inset Formula 
+\begin{align*}
+A\left|b_{1}\right\rangle  & =\left|b_{1}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
--0.85\\
+\end{pmatrix} & =\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A
-\begin{pmatrix}
--0.53\\
+\end{pmatrix}\\
+A\left|b_{2}\right\rangle  & =\left|b_{2}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
--0.53\\
+\end{pmatrix} & =\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A
-\begin{pmatrix}
+\end{pmatrix}\\
+A\left|b_{3}\right\rangle  & =2\left|b_{3}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}0\\
 0\\
+1
+\end{pmatrix} & =2\begin{pmatrix}0\\
 0\\
 1
 \end{pmatrix}
-=
-2 \begin{pmatrix}
-0\\
-0\\
-1
-\end{pmatrix}.
-\]
+\end{align*}
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-With the corresponding eigenvalues:
-\end_layout
 
-\begin_layout Standard
-
-\begin_inset Formula \[
-[1,\;1,\;2].
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
+\lang brazilian
 We can test by applying 
 \begin_inset Formula $B$
 \end_inset
@@ -570,352 +571,44 @@ We can test by applying
 
 \begin_layout Standard
 
-\begin_inset Formula \[
-B
-\begin{pmatrix}
--0.85\\
+\lang brazilian
+\begin_inset Formula 
+\begin{align*}
+B\left|b_{1}\right\rangle  & =2.38\left|b_{1}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix}
-=
-2.38
-\begin{pmatrix}
--0.85\\
+\end{pmatrix} & =2.38\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-B
-\begin{pmatrix}
--0.53\\
+\end{pmatrix}\\
+B\left|b_{2}\right\rangle  & =4.62\left|b_{2}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix}
-=
-4.62
-\begin{pmatrix}
--0.53\\
+\end{pmatrix} & =4.62\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-B
-\begin{pmatrix}
+\end{pmatrix}\\
+B\left|b_{3}\right\rangle  & =5\left|b_{3}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}0\\
 0\\
+1
+\end{pmatrix} & =5\begin{pmatrix}0\\
 0\\
 1
 \end{pmatrix}
-=
-5
-\begin{pmatrix}
-0\\
-0\\
-1
-\end{pmatrix}.
-\]
+\end{align*}
+
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-With the corresponding eigenvalues:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-[2.38,\;4.62,\;5].
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-**Example 2**
-\end_layout
-
-\begin_layout Standard
-Suppose we have the operators
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-A=
-\begin{pmatrix}
-0 & 1\\
-1 & 0
-\end{pmatrix}
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-and
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-B=
-\begin{pmatrix}
-1 & 0\\
-0 & -1
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-We can verify that they do not commute, since
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-[A,B]=AB-BA
-=
-\begin{pmatrix}
-0 & -2\\
-2 & 0
-\end{pmatrix}
-\neq 0.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-For the operator 
-\begin_inset Formula \(A\)
-\end_inset
-
-, the eigenvalues are
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-a=+1,\,-1,
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-with corresponding normalized eigenvectors
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-|a=+1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
-1\\
-1
-\end{pmatrix},
-\qquad
-|a=-1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
--1\\
-1
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Suppose, for example, that after measuring 
-\begin_inset Formula \(A\)
-\end_inset
-
-, we obtain the value 
-\begin_inset Formula \(a=+1\)
-\end_inset
-
-. The system is then in the corresponding eigenstate,
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-|\psi\rangle
-=
-|a=+1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
-1\\
-1
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Now consider measuring 
-\begin_inset Formula \(B\)
-\end_inset
-
-. The eigenvalues of 
-\begin_inset Formula \(B\)
-\end_inset
-
- are also
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-b=+1,\,-1,
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-with corresponding eigenvectors
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-|b=+1\rangle
-=
-\begin{pmatrix}
-1\\
-0
-\end{pmatrix},
-\qquad
-|b=-1\rangle
-=
-\begin{pmatrix}
-0\\
-1
-\end{pmatrix}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The probability of obtaining a particular eigenvalue 
-\begin_inset Formula \(b\)
-\end_inset
-
- is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-P(b)=|\langle b|\psi\rangle|^2.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Therefore,
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-P(b=+1)
-=
-|\langle b=+1|a=+1\rangle|^2
-=
-\frac{1}{2},
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-and
-\end_layout
-
-\begin_layout Standard
-
-\begin_inset Formula \[
-P(b=-1)
-=
-|\langle b=-1|a=+1\rangle|^2
-=
-\frac{1}{2}.
-\]
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Thus, there is a 
-\begin_inset Formula \(50\%\)
-\end_inset
-
- probability of observing 
-\begin_inset Formula \(+1\)
-\end_inset
-
- and a 
-\begin_inset Formula \(50\%\)
-\end_inset
-
- probability of observing 
-\begin_inset Formula \(-1\)
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-In other words, since 
-\begin_inset Formula \(A\)
-\end_inset
-
- and 
-\begin_inset Formula \(B\)
-\end_inset
-
- do not commute and, in this example, do not share any eigenvectors, after measuring one of the observables, the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
 \end_layout
 
 \end_body

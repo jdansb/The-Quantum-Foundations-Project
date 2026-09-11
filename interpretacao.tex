@@ -42,7 +42,7 @@
 There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible (\cite{griffiths2017introduction}). 
 \end{quote}
 
-\section{Analogy with Classical Mechanics}
+Analogy with Classical Mechanics}
 
 \subsection{Newton's Second Law}
 
@@ -327,42 +327,42 @@ With the proof of this theorem, we know that if two observables $A$ and $B$ of a
 \href{/exemplo-incompatibilidade}{Example 2}
 \par\end{center}
 
-\subsubsection*{Relação de Incerteza}
+\subsubsection*{Uncertainty Relation}
 
-Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das ``incertezas'' (desvios padrões) sobre dois observáveis.
+Here we will use the quantum kinematic formalism to obtain general mathematical relations that provide limitations on the product or sum of the ``uncertainties'' (standard deviations) of two observables.
 
-\textbf{Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)}
+\textbf{Heisenberg-Robertson-Schrödinger Uncertainty Relation (HRSUR)}
 
-A RIHRS lê-se: 
+The HRSUR :
 \[
 \text{Var}\left(A\right)\text{Var}\left(B\right)\ge(\text{CovQ}\left(A,B\right))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},
 \]
-com a variância definida por $\mathrm{Var}(A)=\langle(A-\langle A\rangle)^{2}\rangle.$ As quantidades no lado direito da desigualdade serão definidas a seguir.
 
-Para provar a RIHRS, usaremos como uma das principais ferramentas a desigualdade de Cauchy-Scharz (DCS): 
+with the variance defined by $\mathrm{Var}(A)=\langle(A-\langle A\rangle)^{2}\rangle.$ The quantities on the right-hand side of the inequality will be defined below.
+
+To prove the HRSUR, we will use the Cauchy-Schwarz inequality (CSI) as one of the main tools:
+
 \begin{equation}
 \langle\psi|\psi\rangle\langle\phi|\phi\rangle\ge|\langle\psi|\phi\rangle|^{2}=\langle\psi|\phi\rangle\langle\phi|\psi\rangle,
 \end{equation}
-com a igualdade obtida se e somente se $|\psi\rangle$ e $|\phi\rangle$ são colineares ($|\psi\rangle\propto|\phi\rangle$). Esse resultado é válido para qualquer par de vetores $|\psi\rangle,|\phi\rangle$ em um espaço de Hilbert $\mathcal{H}.$
+with equality obtained if and only if $|\psi\rangle$ and $|\phi\rangle$ are collinear ($|\psi\rangle\propto|\phi\rangle$). This result is valid for any pair of vectors $|\psi\rangle,|\phi\rangle$ in a Hilbert space $\mathcal{H}.$  Consider $A$ and $B$ to be two observables of a physical system prepared in the state $|\xi\rangle$. We will use
 
-Considere $A$ e $B$ dois observáveis de um sistema físico preparado no estado $|\xi\rangle$. Usaremos 
 \[
 \langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle
 \]
-para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Antes de prosseguirmos, gostaria de exlorar mais esse resultado. Vamos considerar um sistema no estado $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, e um operador $X$ com autovalores $x_{n}$ associados aos autovetores $\left|x_{n}\right\rangle $. Pela definição de média ponderada, o valor médio dos resultados é $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, como $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, podemos escrever $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$.
-
-Como $\left\langle o_{n}|\psi\right\rangle =c_{n}$, então $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $ uma vez que $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$. Então pela decomposição espectral $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$ então:
+to denote the expectation value of any operator $X$ and $I$ to denote the identity operator in $\mathcal{H}$. Before proceeding, I would like to explore this result further. Let us consider a system in the state $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, and an operator $X$ with eigenvalues $x_{n}$ associated with the eigenvectors $\left|x_{n}\right\rangle $. By the definition of a weighted average, the mean value of the results is $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, and since $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, we can write $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$.  
+Since $\left\langle o_{n}|\psi\right\rangle =c_{n}$, then $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $, since $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$. Then, by the spectral decomposition $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$, we have:
 
 \[
 \left\langle O\right\rangle =\left\langle \psi\right|\left(\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|\right)\left|\psi\right\rangle =\left\langle \psi\left|o\right|\psi\right\rangle 
 \]
 
-Vamos definir ainda os seguintes vetores: 
+We will also define the following vectors:
 \begin{align}
 |\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
 |\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
 \end{align}
-que substituiremos na DCS. Notemos que 
+which we will replace at CSI. Let us note that
 \begin{align}
 \langle\psi|\psi\rangle & =\left((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle\right)\\
  & =\left(|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle\right)\\
@@ -370,13 +370,14 @@ que substituiremos na DCS. Notemos que
  & =\mathrm{Var}(A),\\
 \langle\phi|\phi\rangle & =\mathrm{Var}(B),
 \end{align}
-com $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$ sendo a variância de $X$. Também usamos $(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)=(A-\langle A\rangle I)^{2}$ uma vez que $A=A^{\dagger}$ e $\left\langle A\right\rangle =\left\langle A\right\rangle ^{*}$. Podemos ver que isso decorre de do fato de $A$ (e $I$) serem hermitianos uma vez que:
 
+
+with $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$ being the variance of $X$. We also use $(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)=(A-\langle A\rangle I)^{2}$ since $A=A^{\dagger}$ and $\left\langle A\right\rangle =\left\langle A\right\rangle ^{*}$. We can see that this follows from the fact that $A$ (and $I$) are Hermitian, and:
 \begin{align*}
 \left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =\left\langle \psi\left|A\right|\psi\right\rangle =\left\langle A\right\rangle 
 \end{align*}
 
-Ademais, temos que 
+Furthermore, we have to
 \begin{align}
 \langle\psi|\phi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle)\\
  & =(|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle)\\
@@ -387,12 +388,12 @@ Ademais, temos que
  & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle 
 \end{align}
 
-Sendo: 
+And since:
 \begin{align}
 \left[A,B\right] & =AB-BA,\\
 \left\{ A,B\right\}  & =AB+BA
 \end{align}
-são, respectivamente, o comutador e anti-comutador de $A$ e $B$. Somando:
+are, respectively, the commutator and anticommutator of $A$ and $B$. Summing them:
 
 \begin{align*}
 \left[A,B\right]+\left\{ A,B\right\}  & =AB-BA+AB+BA\\
@@ -403,7 +404,7 @@ são, respectivamente, o comutador e anti-comutador de $A$ e $B$. Somando:
 AB=2^{-1}(\{A,B\}+[A,B]).
 \]
 
-Então:
+Then:
 
 \begin{align}
 \left\langle \psi|\phi\right\rangle  & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle \\
@@ -411,44 +412,47 @@ Então:
  & =2^{-1}\left(\left\langle \{A,B\}\right\rangle +\left\langle [A,B]\right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle 
 \end{align}
 
-Até aqui temos então:
+So far, then, we have:
 
 \begin{align}
 \left\langle \psi|\psi\right\rangle \left\langle \phi|\phi\right\rangle  & \ge\left|\left\langle \psi|\phi\right\rangle \right|{}^{2}\\
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\left|2^{-1}\left(\left\langle \{A,B\}\right\rangle +\left\langle [A,B]\right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle \right|{}^{2}
 \end{align}
 
-Como $\{A,B\}$ e $[A,B]$ são, respectivamente, operadores Hermitianos ($\{A,B\}^{\dagger}=\{A,B\}$) e anti-Hermitianos ($[A,B]^{\dagger}=-[A,B]$), seus valores médios são, respectivamente, números reais e imaginários puros. Que o valor médio de um hermitiano é um número real já verificamos, agora sobre um anti-hermitiano:
+Since $\{A,B\}$ and $[A,B]$ are, respectively, Hermitian ($\{A,B\}^{\dagger}=\{A,B\}$) and anti-Hermitian ($[A,B]^{\dagger}=-[A,B]$) operators, their expectation values are, respectively, purely real and purely imaginary numbers. We have already verified that the expectation value of a Hermitian operator is a real number; now, for an anti-Hermitian operator:
+
 
 \begin{align*}
 \left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =-\left\langle \psi\left|A\right|\psi\right\rangle =-\left\langle A\right\rangle 
 \end{align*}
 
-Agora se $\left\langle A\right\rangle =a+ib$, seu conjugado $\left\langle A\right\rangle ^{*}=a-ib$, se $\left\langle A\right\rangle ^{*}=-\left\langle A\right\rangle $, então $a+ib=-\left(a-ib\right)$, ou seja $a+ib=-a+ib$, pra isso ser igual então $a=0$. e ficamos apenas com $\left\langle A\right\rangle =ib$. Como $\left\langle A\right\rangle $ e $\left\langle B\right\rangle $ também são números reais. Podemos verificar sobre $\left[A,B\right]$ e $\left\{ A,B\right\} $
+Now, if $\left\langle A\right\rangle =a+ib$, its conjugate $\left\langle A\right\rangle ^{*}=a-ib$, and if $\left\langle A\right\rangle ^{*}=-\left\langle A\right\rangle $, then $a+ib=-\left(a-ib\right)$, that is, $a+ib=-a+ib$. For this to be equal, we must have $a=0$. Thus, we are left with $\left\langle A\right\rangle =ib$. Since $\left\langle A\right\rangle $ and $\left\langle B\right\rangle $ are also real numbers, we can verify this for $\left[A,B\right]$ and $\left\{ A,B\right\}$.
+
 
 \begin{align*}
 \left(A,B\right) & =AB\mp BA\\
-\left(A,B\right)^{\dag} & =\left(AB\mp BA\right)^{\dagger}\\
+\left(A,B\right)^{\dagger} & =\left(AB\mp BA\right)^{\dagger}\\
  & =\left(AB\right)^{\dagger}\mp\left(BA\right)^{\dagger}\\
  & =B^{\dagger}A^{\dagger}\mp A^{\dagger}B^{\dagger}\\
  & =\mp A^{\dagger}B^{\dagger}+B^{\dagger}A^{\dagger}
 \end{align*}
+That is, if $\left[A,B\right]=AB-BA$ then $\left[A,B\right]^{\dagger}=-\left[A,B\right]$. And if $\left\{ A,B\right\} =AB+BA$ then $\left\{ A,B\right\} ^{\dagger}=\left\{ A,B\right\} $. Thus, we can write:
 
-Ou seja, se $\left[A,B\right]=AB-BA$ então $\left[A,B\right]^{\dagger}=-\left[A,B\right]$. E se $\left\{ A,B\right\} =AB+BA$ então $\left\{ A,B\right\} ^{\dagger}=\left\{ A,B\right\} $. Então podemos escrever:
 
 \begin{align*}
 \left\langle \psi|\phi\right\rangle  & =\Re\left(\left\langle \psi|\phi\right\rangle \right)+i\Im\left(\left\langle \psi|\phi\right\rangle \right)\\
  & =\left[2^{-1}\left(\left\langle \left\{ A,B\right\} \right\rangle \right)-\left\langle A\right\rangle \left\langle B\right\rangle \right]+\left[2^{-1}\left\langle \left[A,B\right]\right\rangle \right]
 \end{align*}
 
-Ou seja:
+We then have:
 
 \begin{align}
 \Re(\langle\psi|\phi\rangle) & =2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle,\\
 \Im(\langle\psi|\phi\rangle) & =-i2^{-1}\langle[A,B]\rangle.
 \end{align}
+Note: Since $2^{-1}\langle[A,B]\rangle=ib$ is a purely imaginary number, multiplying by $-i$: $-i\cdot\left(ib\right)=b$, gives us its real coefficient. Thus, considering that
 
-Obs.: Como $2^{-1}\langle[A,B]\rangle=ib$ é um nummero puramente imaginário, fazendo $-i\cdot\left(ib\right)=b$ obtemos seu coeficiente real. Assim, considerando que
+
 
 \begin{align*}
 \left|\left\langle \psi|\phi\right\rangle \right|^{2} & =\left\langle \psi|\phi\right\rangle ^{*}\left\langle \psi|\phi\right\rangle \\
@@ -456,24 +460,26 @@ Obs.: Como $2^{-1}\langle[A,B]\rangle=ib$ é um nummero puramente imaginário, f
  & =\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}
 \end{align*}
 
-Temos então:
+We then have:
 
 \begin{align*}
 \mathrm{Var}(A)\mathrm{Var}(B) & \geq(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2}
 \end{align*}
 
-Agora vamos abrir: 
+Now let's open it:
 \[
 \Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\left(-i2^{-1}\langle[A,B]\rangle\right)^{2}=-2^{-2}\langle[A,B]\rangle^{2}
 \]
 
-Além disso como é puramente imginário então:
+Furthermore, since it is purely imaginary, then:
 
 \[
 \langle[A,B]\rangle^{2}=\left(-ib\right)^{2}=-b^{2}=-\left|b\right|^{2}=-\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
 \]
 
-Ficamos então com $\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}$. E nossa desigualdade:
+
+We are then left with $\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}$. And our inequality:
+
 
 \begin{align*}
 \left\langle \psi|\psi\right\rangle \left\langle \phi|\phi\right\rangle  & \ge\left|\left\langle \psi|\phi\right\rangle \right|{}^{2}\\
@@ -481,13 +487,13 @@ Ficamos então com $\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=2^{
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
 \end{align*}
 
-Nos resta agora demonstrar que:
+It now remains for us to demonstrate that:
 
 \[
 \Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=CovQ\left(A,B\right)^{2}=\left(\frac{Cov\left(A,B\right)+Cov\left(BA\right)}{2}\right)^{2}
 \]
+Where the covariance is $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$ between the observables $X$ and $Y$, therefore:
 
-Onde a covariância é $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$ entre os observáveis $X$ e $Y$, logo:
 
 \begin{align*}
 \Re\left(\left\langle \psi|\phi\right\rangle \right)^{2} & =\left(\frac{\langle AB\rangle-\langle A\rangle\langle B\rangle+\langle BA\rangle-\langle B\rangle\langle A\rangle}{2}\right)^{2}\\
@@ -495,32 +501,32 @@ Onde a covariância é $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\lan
  & =\left(\frac{\left\langle AB+BA\right\rangle }{2}-\langle B\rangle\langle A\rangle\right)^{2}\\
  & =\left(2^{-1}\left\langle \left\{ AB\right\} \right\rangle -\langle B\rangle\langle A\rangle\right)^{2}
 \end{align*}
+And this $\Re\left(\left\langle \psi|\phi\right\rangle \right)=2^{-1}\left\langle \left\{ A,B\right\} \right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle $ is the result we had obtained. We can then write $\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}$ and:
 
-E este $\Re\left(\left\langle \psi|\phi\right\rangle \right)=2^{-1}\left\langle \left\{ A,B\right\} \right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle $ é o resultado que tínhamos obtido. Podemos escrever então $\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}$ e:
 
 \begin{align*}
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
 \end{align*}
 
-Vale observar que se $A$ e $B$ são observáveis compatíveis, i.e., se $[A,B]=0$, teremos que $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.
+It is worth noting that if $A$ and $B$ are compatible observables, i.e., if $[A,B]=0$, then we will have $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.  
 
-Vamos analizar agora o problema da possível trivialidade da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável $A$, i.e., 
+Let us now analyze the problem of the possible triviality of the HRSUR, whose general objective is to determine how small the product of the variances of a pair of observables can be. For this, let us assume that the system is prepared in a state that is an eigenvector of the observable $A$, i.e.,
+
 \[
 |\xi\rangle=|a\rangle
 \]
-com $A|a\rangle=a|a\rangle$ e $a\in\mathbb{R}$. Neste caso pode-se verificar que 
+with $A|a\rangle=a|a\rangle$ and $a\in\mathbb{R}$. In this case, it can be verified that
 \begin{equation}
 \mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
 \end{equation}
-E com isso a RIHRS nos retorna
+And with that, HRSUR gets back to us:
 
 \begin{equation}
 0\mathrm{Var}(B)\ge0.
 \end{equation}
-Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de $A$ e $B$. O mesmo tipo de limitação se aplica se $|\xi\rangle=|b\rangle$ para $B|b\rangle=b|b\rangle.$
+Therefore, in this case, the HRSUR provides no information whatsoever about the possible incompatibility of $A$ and $B$. The same type of limitation applies if $|\xi\rangle=|b\rangle$ for $B|b\rangle=b|b\rangle.$  In any case, let us verify. For the commutator:
 
-De toda forma, vamos verificar. Para o comutador:
 
 \begin{align*}
 \left\langle a_{k}\left|\left[A,B\right]\right|a_{k}\right\rangle  & =\left\langle a_{k}\left|AB\right|a_{k}\right\rangle -\left\langle a_{k}\left|BA\right|a_{k}\right\rangle \\
@@ -529,8 +535,8 @@ De toda forma, vamos verificar. Para o comutador:
  & =a_{k}\left[\left\langle a_{k}\left|B\right|a_{k}\right\rangle -\left\langle a_{k}\left|B\right|a_{k}\right\rangle \right]\\
  & =0
 \end{align*}
+For the variance, we will adopt a different strategy: instead of writing out the spectral decomposition, we will use the fact that $A|a\rangle=a|a\rangle$:
 
-Para a variância, vamos adotar outra estratégia, ao invés de escrever a decomposição espectral, vamos usar que $A|a\rangle=a|a\rangle$:
 
 \begin{align*}
 \mathrm{Var}(A)_{|a\rangle} & =\langle a_{n}|(A-\langle a_{n}\left|A\right|a_{n}\rangle I)^{2}|a_{n}\rangle\\
@@ -541,7 +547,7 @@ Para a variância, vamos adotar outra estratégia, ao invés de escrever a decom
  & =0
 \end{align*}
 
-E para a Covariância Quântica, já vimos que $\langle a_{n}\left|A\right|a_{n}\rangle=a_{n}$, $\left\langle a_{k}\left|AB\right|a_{k}\right\rangle =\left\langle a_{k}\left|BA\right|a_{k}\right\rangle =a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle $, então:
+And for Quantum Covariance, we've already seen that  $\langle a_{n}\left|A\right|a_{n}\rangle=a_{n}$, $\left\langle a_{k}\left|AB\right|a_{k}\right\rangle =\left\langle a_{k}\left|BA\right|a_{k}\right\rangle =a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle $, then:
 
 \begin{align*}
 \mathrm{CovQ}(A,B)_{|a\rangle} & =\frac{\langle a_{k}\left|AB\right|a_{k}\rangle+\langle a_{k}\left|BA\right|a_{k}\rangle-2\langle a_{k}\left|B\right|a_{k}\rangle\langle a_{k}\left|A\right|a_{k}\rangle}{2}\\
@@ -549,9 +555,9 @@ E para a Covariância Quântica, já vimos que $\langle a_{n}\left|A\right|a_{n}
  & =0
 \end{align*}
 
-\textbf{Relações de incerteza de Robertson e de Heisenberg (RIH)}
+\textbf{Robertson and Heisenberg Uncertainty Relations (HUR)}
 
-Ignorando-se\footnote{Isto é, se $a\geq b+c\geq c$, sendo $b\geq0$, então necessariamente $a\geq c$.} o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson:
+Ignoring\footnote{That is, if $a\geq b+c\geq c$. With $b\geq0$, then necessarily $a\geq c$.} the term related to quantum covariance in the HRSUR and taking the square root of the remaining expression, we obtain the Robertson uncertainty relation:
 
 \begin{align*}
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
@@ -559,23 +565,25 @@ Ignorando-se\footnote{Isto é, se $a\geq b+c\geq c$, sendo $b\geq0$, então nece
 \sigma_{A}\sigma_{B} & \ge2^{-1}\left|\left\langle \left[A,B\right]\right\rangle \right|
 \end{align*}
 
-com e.g. $\sigma_{A}=\sqrt{Var(A)}.$ Quando aplicada a posição e momento linear é uma das relações de incerteza de Heisenberg: 
+
+with, e.g., $\sigma_{A}=\sqrt{Var(A)}.$ When applied to position and linear momentum, it is one of Heisenberg's uncertainty relations:
 \begin{equation}
 \sigma_{X}\sigma_{P}\ge2^{-1}|\langle[X,P]\rangle|=\hbar/2,
 \end{equation}
-pois $[X,P]=i\hbar I$.
+since $[X,P]=i\hbar I$.
 
-Aqui estamos em condições de realizar mais algumas discussões. A relação de incerteza de Heisenberg é constantemente fruto de más compreensões. A primeira delas diz respeito ao próprio status da relação. Embora seja tradicionalmente chamada de princípio de incerteza, ela não precisa ser postulada como um princípio. Como vimos, a relação de Heisenberg pode ser obtida como um caso particular da Relação de incerteza de Heisenberg-Robertson-Schrödinger, que, por sua vez, pode ser derivada da desigualdade de Cauchy--Schwarz, juntamente com as propriedades matemáticas dos observáveis representados por operadores em um espaço de Hilbert.
+Here we are in a position to engage in some further discussion. Heisenberg's uncertainty relation is constantly the subject of misunderstandings. The first concerns the status of the relation itself. Although it is traditionally called an uncertainty principle, it does not need to be postulated as a principle. As we have seen, Heisenberg's relation can be obtained as a particular case of the Heisenberg-Robertson-Schrödinger Uncertainty Relation, which, in turn, can be derived from the Cauchy--Schwarz inequality, together with the mathematical properties of observables represented by operators in a Hilbert space.
 
-O segundo ponto é que é incorreto interpretar a relação de incerteza como afirmando que uma partícula ``não tem posição e momento definidos'' ou que ``não podemos medir posição e momento na mesma preparação''. A primeira afirmação é uma interpretação possível, mas não é o conteúdo matemático da relação, enquanto a segunda é simplesmente incorreta. A relação de incerteza não diz que é impossível obter resultados de posição e momento na mesma preparação; ela estabelece uma relação entre as variâncias dos resultados dessas medidas.
+The second point is that it is incorrect to interpret the uncertainty relation as stating that a particle ``does not have a definite position and momentum'' or that ``we cannot measure position and momentum in the same preparation''. The first statement is a possible interpretation, but it is not the mathematical content of the relation, whereas the second is simply incorrect. The uncertainty relation does not say that it is impossible to obtain position and momentum results in the same preparation; it establishes a relationship between the variances of the results of these measurements.
 
-Em outras palavras, podemos preparar repetidamente o sistema no mesmo estado e realizar medidas de posição e de momento. A partir dos resultados, podemos determinar as respectivas distribuições e, consequentemente, suas variâncias. A relação de incerteza estabelece que o produto dessas variâncias --- ou, mais precisamente, dos desvios-padrão --- deve satisfazer uma dada relação.
+In other words, we can repeatedly prepare the system in the same state and perform position and momentum measurements. From the results, we can determine the respective distributions and, consequently, their variances. The uncertainty relation establishes that the product of these variances --- or, more precisely, of the standard deviations --- must satisfy a given relation.
 
-Isso contrasta com a mecânica clássica. Podemos imaginar, por exemplo, uma partícula parada em uma posição perfeitamente determinada. Ignorando limitações experimentais, seria possível conceber um estado clássico no qual a posição e a velocidade fossem simultaneamente bem definidas, por exemplo, uma particula parada na origem ($x=0,v=0$). Nesse caso, se repetíssemos as medidas, obteríamos sempre os mesmos valores e, portanto, teríamos $\sigma_{x}=\sigma_{v}=0$.
+This contrasts with classical mechanics. We can imagine, for example, a particle at rest at a perfectly determined position. Ignoring experimental limitations, it would be possible to conceive of a classical state in which position and velocity were simultaneously well defined, for example, a particle at rest at the origin ($x=0,v=0$). In this case, if we repeated the measurements, we would always obtain the same values and, therefore, we would have $\sigma_{x}=\sigma_{v}=0$.
 
-\subsection{Postulado da dinâmica}
+\subsection{Dynamics Postulate}  
 
-As mudanças de estados em MQ são descritas por uma transformação unitária: 
+Changes of states in QM are described by a unitary transformation:
+
 \begin{equation}
 |\psi_{t}\rangle=U_{t}|\psi_{0}\rangle,
 \end{equation}
@@ -583,19 +591,21 @@ i.e.,
 \[
 U_{t}U^{\dagger}_{t}=U_{t}U^{\dagger}_{t}=\mathbb{I}.
 \]
-O operador de evolução temporal sendo obtido da equação de Schrödinger: 
+The time-evolution operator being obtained from the Schrödinger equation:
 \begin{equation}
 i\hbar\partial_{t}U_{t}=H_{t}U_{t},
 \end{equation}
-com a condição inicial 
+with the initial condition:
 \[
 U_{0}=\mathbb{I},
 \]
-onde $H_{t}$ é o operador Hamiltoniano do sistema no instante de tempo $t$,$\hbar$ é a constante de Planck dividida por $2\pi$ e usamos a notação $\partial_{t}=\frac{\partial}{\partial_{t}}$. As duas equações acima são equivalentes à equação de Schrödinger para o estado 
+
+
+where $H_{t}$ is the Hamiltonian operator of the system at the instant of time $t$,$\hbar$ is Planck's constant divided by $2\pi$ and we use the notation $\partial_{t}=\frac{\partial}{\partial_{t}}$. The two equations above are equivalent to the Schrödinger equation for the state
 \begin{equation}
 i\hbar\partial_{t}|\psi_{t}\rangle=H_{t}|\psi_{t}\rangle.
 \end{equation}
-Verificamos esse resultado como segue: 
+We verify this result as follows:
 \begin{align}
 i\hbar\partial_{t}|\psi_{t}\rangle & =i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle)\\
  & =(i\hbar\partial_{t}U_{t})|\psi_{0}\rangle\\
@@ -603,29 +613,30 @@ i\hbar\partial_{t}|\psi_{t}\rangle & =i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle)\
  & =H_{t}|\psi_{t}\rangle.
 \end{align}
 
-\textbf{Exemplo}: Quando $H_{t}=H$
+\textbf{Example}: When $H_{t}=H$
 
-Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida: 
+In this type of situation—i.e., when the Hamiltonian is time-independent—we can verify that the following general form holds:
 \begin{equation}
 U_{t}=e^{-iHt/\hbar}.
 \end{equation}
-Faremos isso primeiramente usando a decomposição espectral do Hamiltoniano, 
+We will do this first using the spectral decomposition of the Hamiltonian,
 \[
 H=\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|,
 \]
-e aplicando a função de operador: 
+and applying the operator function:
 \begin{align}
 i\hbar\partial_{t}U_{t} & =i\hbar\partial_{t}\exp\left(-\frac{iHt}{\hbar}\right)\\
  & =i\hbar\partial_{t}\exp\left(\sum_{j}\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\right)
 \end{align}
 
-Aqui devemos fazer uma pausa para entender a matemática. Vimos que para um operador hermitiano qualquer $T$ temos $\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}$. Primeiro podemos ver que $H^{2}$:
+
+Here we should pause to understand the mathematics. We have seen that for any Hermitian operator $T$ we have $\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}$. First, we can see that $H^{2}$:
 
 \begin{align*}
 H^{2} & =\left(\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|\right)\left(\sum_{n}E_{n}|E_{n}\rangle\langle E_{n}|\right)=\sum_{j,n}E_{j}E_{n}|E_{j}\rangle\langle E_{j}|E_{n}\rangle\langle E_{n}|=\sum_{j}E^{2}_{j}|E_{j}\rangle\langle E_{j}|
 \end{align*}
+where we used the fact that $\left\langle E_{j}|E_{n}\right\rangle =\delta_{jn}$. In general, we have $H^{n}=\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|$. Writing then:
 
-Onde usamos o fato de que $\left\langle E_{j}|E_{n}\right\rangle =\delta_{jn}$. De modo geral temos que $H^{n}=\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|$. Escrevendo então:
 
 \begin{align*}
 \exp(H) & =\sum^{\infty}_{n=0}\frac{1}{n!}H^{n}\\
@@ -633,7 +644,8 @@ Onde usamos o fato de que $\left\langle E_{j}|E_{n}\right\rangle =\delta_{jn}$. 
  & =\sum_{j}\left(\sum^{\infty}_{n=0}\frac{E^{n}_{j}}{n!}\right)|E_{j}\rangle\langle E_{j}|
 \end{align*}
 
-E sendo $\exp(x)=\sum^{\infty}_{n=0}\frac{x^{n}}{n!}$, então: $\exp(H)=\sum_{j}e^{E_{j}}|E_{j}\rangle\langle E_{j}|$. No nosso caso temos então:
+
+And since $\exp(x)=\sum^{\infty}_{n=0}\frac{x^{n}}{n!}$, then: $\exp(H)=\sum_{j}e^{E_{j}}|E_{j}\rangle\langle E_{j}|$. In our case, we then have:
 
 \begin{align}
 i\hbar\partial_{t}U_{t} & =i\hbar\sum_{j}\partial_{t}\exp\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\\
@@ -642,24 +654,26 @@ i\hbar\partial_{t}U_{t} & =i\hbar\sum_{j}\partial_{t}\exp\left(-\frac{iE_{j}t}{\
  & =\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}H|E_{j}\rangle\langle E_{j}\\
  & =H\left(\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|\right)
 \end{align}
-em que usamos $H|E_{j}\rangle=E_{j}|E_{j}\rangle$ ao longo de toda demonstração. as agora sendo então que 
+where we used $H|E_{j}\rangle=E_{j}|E_{j}\rangle$ throughout the entire proof. But now, since
 \[
 \sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|=e^{-\frac{it}{\hbar}\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|}=e^{-\frac{iHt}{\hbar}|}
 \]
 
-Então $i\hbar\partial_{t}U_{t}=He^{-\frac{iHt}{\hbar}|}$ e como $i\hbar\partial_{t}U_{t}=H_{t}U_{t},$logo $U_{t}=e^{-iHt/\hbar}$.
+Thus $i\hbar\partial_{t}U_{t}=He^{-\frac{iHt}{\hbar}|}$ and since $i\hbar\partial_{t}U_{t}=H_{t}U_{t},$ therefore $U_{t}=e^{-iHt/\hbar}$.
 
-OBS. Note que poderíamos obter $U_{t}$ resolvendo a equação de Schrödinger para cada hamiltoniano $H$. No entanto, tendo essa fórmula geral, podemos começar a resolução já calculando a exponencial, sem precisar resolver a equação diferencial.
 
-Agora podemos abordar uma outra questão que se relaciona ao “determinismo” como oposição ao livre-arbítrio. Há pelo menos dois sentidos para a palavra determinismo. Um deles é mais associado à física clássica e consiste na ideia de que, se conhecemos perfeitamente o estado atual de um sistema e as leis que governam sua evolução, seu estado futuro e passado são, em princípio, determinados. O outro é um sentido mais amplo, de natureza filosófica, que diz respeito à negação do livre-arbítrio.
+OBS. Note that we could obtain $U_{t}$ by solving the Schrödinger equation for each Hamiltonian $H$. However, having this general formula, we can begin the solution by calculating the exponential directly, without having to solve the differential equation.
 
-Quanto ao primeiro sentido, a formulação usual da mecânica quântica introduz um elemento probabilístico que contrasta com o determinismo da mecânica clássica. Os resultados das medidas não são, em geral, determinados de maneira unívoca pelo estado quântico anterior, mas descritos por distribuições de probabilidade. Nesse sentido, a teoria apresenta um elemento indeterminista. Vale notar, contudo, que a equação de Schrödinger que governa a evolução do estado quântico é determinista. Dado o estado inicial e o Hamiltoniano do sistema, a equação determina univocamente o estado quântico em qualquer instante posterior. As probabilidades dos resultados de uma medida são então obtidas a partir desse estado, por meio da regra de Born.
 
-Se a natureza é, em última instância, determinista e a natureza probabilística da mecânica quântica decorre de alguma descrição incompleta, ou se a indeterminação quântica é fundamental, é uma questão para a qual não possuímos uma resposta consensual. Diferentes posicionamentos a respeito dessa questão dão origem, em parte, a diferentes interpretações da mecânica quântica.
+Now we can address another question related to “determinism” as opposed to free will. There are at least two senses of the word determinism. One is more closely associated with classical physics and consists of the idea that, if we know perfectly the current state of a system and the laws governing its evolution, its future and past states are, in principle, determined. The other is a broader sense, of a philosophical nature, which concerns the denial of free will.
 
-Porém, é um equívoco pensar que esse elemento matemático probabilístico serviria, por si só, como suporte para uma defesa do livre-arbítrio. Não há, nas leis físicas conhecidas, uma formulação que incorpore o livre-arbítrio. Podemos aproximar a chance de obter cara ou coroa ao lançar uma moeda de maneira aproximadamente simétrica a 50\% para cada resultado. Esse é um evento probabilístico, mas não diríamos, por isso, que a moeda possui livre-arbítrio. A introdução de probabilidades na descrição da natureza, portanto, não confere mais livre-arbítrio à natureza do que o lançamento probabilístico de uma moeda.
+Regarding the first sense, the usual formulation of quantum mechanics introduces a probabilistic element that contrasts with the determinism of classical mechanics. The results of measurements are, in general, not uniquely determined by the previous quantum state, but are described by probability distributions. In this sense, the theory contains an indeterministic element. It is worth noting, however, that the Schrödinger equation governing the evolution of the quantum state is deterministic. Given the initial state and the Hamiltonian of the system, the equation uniquely determines the quantum state at any subsequent time. The probabilities of measurement outcomes are then obtained from this state through the Born rule.
 
-Além disso, não apenas a evolução do estado quântico é determinista, como a própria distribuição de probabilidade em qualquer instante impõe restrições aos possíveis resultados e às suas probabilidades. Ao meu ver, essas restrições são incompatíveis com uma concepção de “livre” arbítrio na qual o agente deveria possuir liberdade irrestrita para determinar qualquer um dos resultados possíveis. 
+Whether nature is ultimately deterministic and the probabilistic nature of quantum mechanics results from some incomplete description, or whether quantum indeterminacy is fundamental, is a question for which we do not have a consensual answer. Different positions regarding this question give rise, in part, to different interpretations of quantum mechanics.
+
+However, it is a mistake to think that this probabilistic mathematical element would, by itself, serve as support for a defense of free will. There is no formulation in the known laws of physics that incorporates free will. We can approximate the chance of obtaining heads or tails when tossing an approximately symmetric coin to 50\% for each outcome. This is a probabilistic event, but we would not say, for that reason, that the coin possesses free will. The introduction of probabilities into the description of nature, therefore, does not confer any more free will upon nature than the probabilistic tossing of a coin.
+
+Furthermore, not only is the evolution of the quantum state deterministic, but the probability distribution itself at any given instant imposes constraints on the possible outcomes and their probabilities. In my view, these constraints are incompatible with a conception of “free” will in which the agent should possess unrestricted freedom to determine any of the possible outcomes.
 \begin{quotation}
  \bibliographystyle{plain}
 \bibliography{ref}

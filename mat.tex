@@ -11,19 +11,17 @@
 \usepackage[]
  {hyperref}
 \begin{document}
-\title{Álgebra Linear}
+\title{Linear Algebra}
 \author{Jhordan Silveira de Borba}
+
 \maketitle
-\begin{quotation}
-\textbf{Note} If Portuguese is not your native language, \href{https://www.firefox.com/}{Firefox}'s automatic translation works well.
-\end{quotation}
-Como já estudei o básico das ferramentas matemáticas necessárias, por enquanto quero priorizar a compreensão física. Assim, aprofundarei a matemática até o nível necessário para compreender, aplicar e questionar criticamente a estrutura física em estudo. Demonstrações e desenvolvimentos puramente matemáticos podem ser deixados para quando se tornarem necessários ou quando eu decidir aprofundar os fundamentos.
+Since I have already studied the basics of the necessary mathematical tools, for now I want to prioritize physical understanding. Thus, I will deepen my understanding of the mathematics to the level necessary to understand, apply, and critically question the physical framework under study. Purely mathematical proofs and developments can be left for when they become necessary or when I decide to delve deeper into the foundations.
 
-Por exemplo, não é necessário, neste momento, aprofundar a demonstração do teorema espectral para matrizes Hermitianas, pois sua prova é predominantemente matemática e não acrescenta, por si só, uma nova interpretação física ao problema. Em contrapartida, vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física, como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam, pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
+For example, it is not necessary, at this point, to delve deeper into the proof of the spectral theorem for Hermitian matrices, since its proof is predominantly mathematical and does not, by itself, add a new physical interpretation to the problem. On the other hand, it is worth deepening mathematical results that establish relationships directly relevant to the physical theory, such as proving that two operators that have the same complete basis of eigenvectors commute, since this relationship allows us to understand mathematically the compatibility between observables.
 
-Porém estarei compartilhando aqui uma revisão puramente matemática, uma reprodução quase na íntegra deste material: \cite{DelftSpectralTheorem}. Uma revisão mais completa pode ser vista \href{https://github.com/jonasmaziero/algebra_linear}{aqui}.
+However, I will be sharing here a purely mathematical review, an almost verbatim reproduction of this material (\cite{DelftSpectralTheorem}). A more complete review can be found \href{https://github.com/jonasmaziero/algebra_linear}{aqui}.
 
-\subsection{Aritmética Matricial Básica}
+\subsection{Basic Matrix Arithmetic}
 
 An $m\times n$-matrix is an array of $m$ rows and $n$ columns containing (usually real or complex) numbers called the entries (or coefficients) of the matrix. The entries of a matrix $A$ are denoted by $A_{i,j}$, $a_{ij}$ or similar, where the first index refers to the row and the second to the column. That is, the entries are laid out like
 
@@ -196,7 +194,7 @@ AB\ne BA.
 \]
 
 
-\subsection{Operação de Matrizes}
+\subsection{Matrix Operations}
 
 Very often, an $m\times n$-matrix $A$ with real entries represents a linear map from the space $\mathbb{R}^{n}$ of vectors of length $n$ to the space $\mathbb{R}^{m}$ of vectors of length $m$. Similarly, a matrix with complex entries represents a linear map from $\mathbb{C}^{n}$ to $\mathbb{C}^{m}$. This map is defined by the matrix-vector product.
 \begin{quotation}
@@ -239,11 +237,12 @@ Finally, we define the characteristic polynomial of a square matrix; this will b
 \textbf{Definition}: The characteristic polynomial of an $n\times n$-matrix $A$ is the polynomial of degree $n$ in a variable $t$ defined by $\chi_{A}(t)=\det(x\mathbb{I}-A).$\footnote{An alternative definition of the characteristic polynomial, which agrees with the one above up to a factor $(-1)^{n}$, is $\chi_{A}(t)=\det(A-x\mathbb{I}).$}
 \end{quotation}
 
-Propriedades que suas demonstrações podem ser vistas em exercícios:
+Properties that are typically demonstrated in exercises:
 \begin{itemize}
-\item Se $A$ é uma matri $m\times n$ e $B$ uma matriz $n\times m$ então $\text{Tr}\left(AB\right)=Tr\left(BA\right)$
-\item Se $A$ é uma matriz $n\times n$ e $c$ um escalar, então $\text{Tr}\left(cA\right)=c\text{Tr}\left(A\right)$ e $\det\left(ca\right)=c^{n}\det\left(A\right)$
+\item If $A$ is an $m\times n$ matrix and $B$ an $n\times m$ matrix, then $\text{Tr}\left(AB\right)=Tr\left(BA\right)$
+\item If $A$ is an $n\times n$ matrix and $c$ a scalar, then $\text{Tr}\left(cA\right)=c\text{Tr}\left(A\right)$ and $\det\left(ca\right)=c^{n}\det\left(A\right)$
 \end{itemize}
+
 
 \subsection{Basis transformations}
 
@@ -327,7 +326,7 @@ Similarly, given a linear map $A$, we write $A^{(B)}$ for the matrix of $A$ with
 A^{(C)}=PA^{(B)}P^{-1}
 \]
 
-Namely, consider what happens when we multiply this matrix to a coordinate vector of the form $\boldsymbol{x}^{\left(C\right)}$. First, applying $P^{-1}$\footnote{Note que se $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$e sendo $P^{-1}P=\mathbb{I}$, então $P^{-1}\boldsymbol{x}^{(C)}=\boldsymbol{x}^{(B)}$, o seja $P^{-1}=P_{C\rightarrow B}$} to $\boldsymbol{x}^{\left(C\right)}$ gives $\boldsymbol{x}^{\left(B\right)}$. Next, applying $A^{(B)}$ gives $(A\boldsymbol{x})^{(B)}$. Finally, applying $P$ gives $(A\boldsymbol{x})^{(C)}$, which is what we wanted to show.
+Namely, consider what happens when we multiply this matrix to a coordinate vector of the form $\boldsymbol{x}^{\left(C\right)}$. First, applying $P^{-1}$\footnote{Note that if $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$and given that $P^{-1}P=\mathbb{I}$, then $P^{-1}\boldsymbol{x}^{(C)}=\boldsymbol{x}^{(B)}$, that is, $P^{-1}=P_{C\rightarrow B}$.} to $\boldsymbol{x}^{\left(C\right)}$ gives $\boldsymbol{x}^{\left(B\right)}$. Next, applying $A^{(B)}$ gives $(A\boldsymbol{x})^{(B)}$. Finally, applying $P$ gives $(A\boldsymbol{x})^{(C)}$, which is what we wanted to show.
 
 The trace and the determinant are invariant under basis transformation: if $A$ and $P$ are square matrices of the same size with $P$ invertible, then we have
 
@@ -337,9 +336,10 @@ The trace and the determinant are invariant under basis transformation: if $A$ a
 
 Because the characteristic polynomial is also defined as a determinant, it too is invariant under basis transformation.
 
-Propriedades que podem serem demonstradas como exercícios:
+
+Properties that are typically demonstrated in exercises:
 \begin{itemize}
-\item Supondo que $A$ e $B$ sejam duas matrizes $n\times n$ e $P$ é uma matriz $n\times n$ inversível de forma que $B=PAP^{-1}$ então $\text{Tr}\left(B\right)=\text{Tr}\left(A\right)$ e $\det B=\det A$, além disso, $A$ e $B$ compartilham do mesmo polinômio característico.
+\item Suppose that $A$ and $B$ are two $n\times n$ matrices and $P$ is an invertible $n\times n$ matrix such that $B=PAP^{-1}$, then $\text{Tr}\left(B\right)=\text{Tr}\left(A\right)$ and $\det B=\det A$, in addition, $A$ and $B$ share the same characteristic polynomial.
 \end{itemize}
 
 \subsection{Diagonalisation}
@@ -354,7 +354,7 @@ Writing $I$ for the $n\times n$ identity matrix, we see that if $\boldsymbol{v}$
 (A-\lambda I)\boldsymbol{v}=0
 \end{equation}
 
-This means that $A-\lambda I$ is not invertible\footnote{Se $B=(A-\lambda I)$ é invertivel significa que $B^{-1}B=I$ então $\boldsymbol{v}=B^{-1}0=0$. O que é contraditório pois por definição $\boldsymbol{v}$ é não nulo. E se não é invertível, então $\text{det}\left(B\right)=0$.}; equivalently, its determinant vanishes. Thus, if $\lambda$ is an eigenvalue of $A$, we have
+This means that $A-\lambda I$ is not invertible\footnote{If $B=(A-\lambda I)$ is invertible, it means that $B^{-1}B=I$ ,so $\boldsymbol{v}=B^{-1}0=0$ This is contradictory, since by definition $\boldsymbol{v}$ is nonzero. If it is not invertible, then $\text{det}\left(B\right)=0$.}; equivalently, its determinant vanishes. Thus, if $\lambda$ is an eigenvalue of $A$, we have
 
 \begin{equation}
 \det(A-\lambda I)=0
@@ -370,7 +370,7 @@ where $\lambda_{1},\ldots,\lambda_{r}$ are the distinct roots of $\chi_{A}(t)$ a
 
 The idea of diagonalisation is that it is often easiest to understand a linear map $A$ if we can find a basis of our space consisting of vectors on which $A$ acts as multiplication by some scalar.
 \begin{quotation}
-\textbf{Definition}: An $n\times n$-matrix $A$ is diagonalisable if there exist a diagonal\footnote{Matriz diagonal é aquela que só tem elementos na diagonal principal $D_{ii}\neq0,$para qualquer $j\neq0$, temos $D_{ij}=0$.} matrix $D$ and an invertible $n\times n$-matrix $P$ such that $A=PDP^{-1},$
+\textbf{Definition}: An $n\times n$-matrix $A$ is diagonalisable if there exist a diagonal\footnote{A diagonal matrix is one that has elements only on the main diagonal $D_{ii}\neq0$, for any $j\neq0$, we have $D_{ij}=0$.} matrix $D$ and an invertible $n\times n$-matrix $P$ such that $A=PDP^{-1},$
 \end{quotation}
 We can rewrite the above equation as $AP=PD$. Let us write $\boldsymbol{v}_{1},\ldots,\boldsymbol{v}_{n}$ for the columns of $P$ and $\lambda_{1},\ldots,\lambda_{n}$ for the diagonal entries of $D$. Then we compute
 
@@ -414,9 +414,10 @@ P=\begin{pmatrix}\boldsymbol{v}_{\lambda_{1},1} & \cdots & \boldsymbol{v}_{\lamb
 
 give a diagonalisation of $A$.
 
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
 \begin{itemize}
-\item Assumindo $A=PDP^{-1}$ com $P$ invertível e $D$ uma matriz escalar\footnote{Uma matriz é escalar quando ela é um multiplo $c$ da matriz identidade $I$, isto é $D=cI$.}, então $A=D$.
+
+\item Assuming $A=PDP^{-1}$ with $P$ invertible and $D$ a scalar matrix\footnote{A matrix is scalar when it is a multiple $c$ of the identity matrix $I$ , that is, $D=cI$ .}, then $A=D$.
 \end{itemize}
 
 \subsection{Hilbert Spaces}
@@ -484,7 +485,7 @@ The properties above imply that for any scalar $c$, the inner product of $c\left
 \begin{quotation}
 \textbf{Definition:} A Hilbert space is a complex vector space $\mathcal{H}$ equipped with a Hermitian inner product $\left\langle \enspace|\enspace\right\rangle $ and satisfying a condition called completeness.
 \end{quotation}
-We will not make the notion of completeness precise in these notes. Roughly speaking, it means that we do not have to worry too much about convergence of sequences or series in our Hilbert space, and there is a notion of infinite linear combinations\footnote{Em poucas palavras, podemos pensar que um espaço completo é aquele em que uma sequência de vetores não pode convergir para um vetor que esteja fora do espaço.}.
+We will not make the notion of completeness precise in these notes. Roughly speaking, it means that we do not have to worry too much about convergence of sequences or series in our Hilbert space, and there is a notion of infinite linear combinations\footnote{In short, we can think of a complete space as one in which a sequence of vectors cannot converge to a vector outside the space.}.
 
 \textbf{Example:} We take $\mathcal{H}=\mathbb{C}^{n}$ and define an inner product by $\left\langle \alpha|\beta\right\rangle =\sum^{n}_{i=1}\bar{\alpha}_{i}\beta_{i}.$ This satisfies all the properties of a Hermitian inner product.
 
@@ -554,11 +555,14 @@ W^{\perp}=\{\left|v\right\rangle \in\mathcal{H}\mid\left\langle v|w\right\rangle
 
 It is not hard to verify that the orthogonal complement of a linear subspace of $\mathcal{H}$ is again a linear subspace.
 
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
 \begin{itemize}
-\item A desigualdade de Cauchy-Schwarz declara que para os vetores $\left|\alpha\right\rangle $ e $\left|\beta\right\rangle $, em um espaço de Hilbert, temos $\left|\left\langle \alpha|\beta\right\rangle \right|^{2}\leq\left\langle \alpha|\alpha\right\rangle \left\langle \beta|\beta\right\rangle $
-\item A desigualdade triangular declara que para os vetores $\left|\alpha\right\rangle $ e $\left|\beta\right\rangle $, em um espaço de Hilbert, temos $\left\Vert \left|\alpha\right\rangle +\left|\beta\right\rangle \right\Vert \leq\left\Vert \left|\alpha\right\rangle \right\Vert +\left\Vert \left|\beta\right\rangle \right\Vert $ 
-\item Se consideramos $W$ um subespaço linear do espaço de Hilbert $\mathcal{H},$então o complemento ortogonal\footnote{O complemento ortogonal a $W$ é o conjunto de vetores que são ortogonais a todo vetor de $W$. Por exemplo, se $W$ em como base os vetores $\boldsymbol{u}=\left(1,0,0\right)$ e $v=\left(0,1,0\right)$ , então $W^{\perp}$ é o subespaço correspondente ao eixo $z$.} $W^{\perp}$ é também um espaço linear.
+
+\item The Cauchy-Schwarz inequality states that for the vectors $\left|\alpha\right\rangle $ and $\left|\beta\right\rangle $, in a Hilbert space, we have $\left|\left\langle \alpha|\beta\right\rangle \right|^{2}\leq\left\langle \alpha|\alpha\right\rangle \left\langle \beta|\beta\right\rangle $
+
+\item The triangle inequality states that for the vectors $\left|\alpha\right\rangle $ and $\left|\beta\right\rangle $, in a Hilbert space, we have $\left\Vert \left|\alpha\right\rangle +\left|\beta\right\rangle \right\Vert \leq\left\Vert \left|\alpha\right\rangle \right\Vert +\left\Vert \left|\beta\right\rangle \right\Vert $ 
+
+\item If we consider $W$ a linear subspace of the Hilbert space $\mathcal{H},$ then the orthogonal complement\footnote{The orthogonal complement of $W$ is the set of vectors that are orthogonal to every vector in $W$. For example, if $W$ has as its basis the vectors $\boldsymbol{u}=\left(1,0,0\right)$ and $v=\left(0,1,0\right)$, then $W^{\perp}$ is the subspace corresponding to the $z$-axis.} $W^{\perp}$ is also a linear space.
 \end{itemize}
 
 \subsection{Operators on Hilbert spaces}
@@ -728,7 +732,7 @@ In the case where $\mathcal{H}=\mathbb{C}^{n}$, an operator $T$ corresponds to a
 
 \textbf{Warning:} Since operators do not commute in general, the exponential does not have the property $\exp(T+U)=\exp(T)\exp(U)$ as one might expect from the case of ordinary exponentials.
 
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
 \begin{itemize}
 \item An operator $T$ is unitary precisely when it satisfies $\left\langle T\alpha|T\beta\right\rangle $for all vectors $\left|\alpha\right\rangle ,\left|\beta\right\rangle $.
 \item Consider a square matrix $D$ and an invertible matrix $P$. So the matrix exponential of $PDP^{-1}$ satisfies: $\exp\left(PDP^{-1}\right)=P\exp\left(D\right)P^{-1}$.

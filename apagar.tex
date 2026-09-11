@@ -1,417 +1,171 @@
-**Example 1**
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass{article}
+\usepackage[latin9]{luainputenc}
+\usepackage{amsmath}
+\begin{document}
 
-Let us consider the operator $A$:
+\section{1}
 
-$$
-A =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{pmatrix}.
-$$
+\selectlanguage{brazil}%
+Suppose we have the operators $A=\begin{pmatrix}0 & 1\\
+1 & 0
+\end{pmatrix}$ and $B=\begin{pmatrix}1 & 0\\
+0 & -1
+\end{pmatrix}.$ We can verify that they do not commute, since 
+\[
+[A,B]=AB-BA=\begin{pmatrix}0 & -2\\
+2 & 0
+\end{pmatrix}\neq0.
+\]
 
-To verify that it is a Hermitian matrix, we can verify its conjugate transpose:
+For the operator $A$, the eigenvalues are $\left\{ +1,-1\right\} $ with corresponding normalized eigenvectors
 
-$$
-A^\dagger =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{pmatrix}
-= A.
-$$
-
-Its eigenvalues are:
-
-$$
-[1,\;1,\;2].
-$$
-
-And the corresponding eigenvectors (each column is an eigenvector) are
-
-$$
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{pmatrix}.
-$$
-
-We have then that eigenvalue $1$ is degenerate. We can reconstruct matrix $A$ by spectral decomposition:
-
-$$
-A =
-\begin{pmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 2
-\end{pmatrix}.
-$$
-
-We have now defined a Hermitian matrix $B$:
-
-$$
-B =
-\begin{pmatrix}
-3 & 1 & 0 \\
-1 & 4 & 0 \\
-0 & 0 & 5
-\end{pmatrix}.
-$$
-
-We can verify that they commute, that is, $AB-BA=0$:
-
-$$
-AB-BA =
-\begin{pmatrix}
-0 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 0
-\end{pmatrix}.
-$$
-
-In the simplest case, we then have a subspace of only one dimension for eigenvalue $2$. We can see that $Bv=bv$, with $b=5$:
-
-$$
-B
-\begin{pmatrix}
-0\\
-0\\
+\[
+|a_{+1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
 1
-\end{pmatrix}
-=
-\begin{pmatrix}
-0\\
-0\\
-5
+\end{pmatrix},\qquad|a_{-1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\
+1
 \end{pmatrix}.
-$$
+\]
 
-Now for eigenvalue $1$, we have a two-dimensional subspace formed by the vectors
+Suppose, for example, that after measuring $A$, we obtain the value $a=+1$. The system is then in the corresponding eigenstate, $|\psi\rangle=|a_{+1}\rangle.$ Now consider measuring $B$. The eigenvalues of $B$ are also $\left\{ +1,-1\right\} $ with corresponding eigenvectors
 
-$$
-\begin{pmatrix}
-1 & 0\\
-0 & 1\\
-0 & 0
+\[
+|b_{+1}\rangle=\begin{pmatrix}1\\
+0
+\end{pmatrix},\qquad|b_{-1}\rangle=\begin{pmatrix}0\\
+1
 \end{pmatrix}.
-$$
+\]
 
-All non-null vectors in this subspace continue to be eigenvectors of $A$ with the same eigenvalue $1$.
+The probability of obtaining a particular eigenvalue $b_{n}$ is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system: $P(b_{n})=|\langle b_{n}|\psi\rangle|^{2}$. Therefore,
 
-If we denote the two eigenvectors by $(v_1,v_2)$ and use them as a basis, any non-null vector that is a linear combination of them,
+\begin{align*}
+P(b_{+1})=|\langle b_{+1}|a_{+1}\rangle|^{2}=\frac{1}{2}\\
+P(b_{-1})=|\langle b_{-1}|a_{-1}\rangle|^{2}=\frac{1}{2}
+\end{align*}
 
-$$
-u = av_1+bv_2,
-$$
+Thus, there is a $50\%$ probability of observing $+1$ and a $50\%$ probability of observing $-1$. In other words, since $A$ and $B$ do not commute and, in this example, do not share any eigenvectors, after measuring one of the observables, the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
 
-is also an eigenvector of $A$. In fact,
+\section{1}
 
-$$
-Au
-=
-A(av_1+bv_2)
-=
-aAv_1+bAv_2
-=
-av_1+bv_2
-=
-u.
-$$
+Let us consider the operator $A=\begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}.$ To verify that it is a Hermitian matrix, we can verify its conjugate transpose$A^{\dagger}=A.$ Its eigenvalues are $\left\{ 1,1,2\right\} ,$and the corresponding eigenvectors (each column is an eigenvector) are $\left(\left|a_{1}\right\rangle ,\left|a_{2}\right\rangle ,\left|a_{3}\right\rangle \right)=\begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{pmatrix}.$ We have then that eigenvalue $1$ is degenerate. We can reconstruct matrix $A$ by spectral decomposition: $A=\sum^{3}_{n=1}a_{n}\left|a_{n}\right\rangle \left\langle a_{n}\right|.$ We have now defined a Hermitian matrix $B=\begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}.$ We can verify that they commute, that is, $\left[A,B\right]=AB-BA=0$. In the simplest case, we then have a subspace of only one dimension for eigenvalue $2$. We can see that $B\left|a_{3}\right\rangle =5\left|a_{3}\right\rangle $. 
+
+Now for eigenvalue $1$, we have a two-dimensional subspace formed by the vectors $\left\{ \left|a_{1}\right\rangle ,\left|a_{2}\right\rangle \right\} $. All non-null vectors in this subspace continue to be eigenvectors of $A$ with the same eigenvalue $1$, Any non-null vector that is a linear combination of them, $\left|u\right\rangle =a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle ,$ is also an eigenvector of $A$. In fact,
+
+\[
+A\left|u\right\rangle =A\left(a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle \right)=aA\left|a_{1}\right\rangle +bA\left|a_{2}\right\rangle =a\left(1\cdot\left|a_{1}\right\rangle \right)+b\left(1\cdot\left|a_{2}\right\rangle \right)=a\left|a_{1}\right\rangle +b\left|a_{2}\right\rangle =1\cdot\left|u\right\rangle 
+\]
 
 Now applying $B$ to the first eigenvector, we can see that it is a linear combination of the other two vectors in the subspace and is not a $B$ eigenvector:
 
-$$
-B
-\begin{pmatrix}
-1\\
+\[
+B\left|a_{1}\right\rangle =\begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}1\\
 0\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
-3\\
+\end{pmatrix}=\begin{pmatrix}3\\
 1\\
 0
-\end{pmatrix}.
-$$
+\end{pmatrix}=3\left|a_{1}\right\rangle +\left|a_{2}\right\rangle 
+\]
 
-That is, even though these two eigenvectors associated with $1$ are a basis for this subspace, they do not form a common eigenvector basis. But we can build one.
-
-Since all non-null vectors in this subspace are eigenvectors of $A$, we only need to find those who are also eigenvectors of $B$.
-
-In this two-dimensional space, $B$'s action on the vectors of the space is given by:
-
-$$
-B_1 =
-\begin{pmatrix}
-3 & 1\\
+That is, even though these two eigenvectors associated with $1$ are a basis for this subspace, they do not form a common eigenvector basis. But we can build one. Since all non-null vectors in this subspace are eigenvectors of $A$, we only need to find those who are also eigenvectors of $B$. In this two-dimensional space, $B$'s action on the vectors of the space is given by $B_{1}=\begin{pmatrix}3 & 1\\
 1 & 4
-\end{pmatrix}.
-$$
-
-Its eigenvalues are
-
-$$
-[2.38,\;4.62].
-$$
-
-And the corresponding eigenvectors (each column is an eigenvector) are:
-
-$$
-\begin{pmatrix}
--0.85 & -0.53\\
+\end{pmatrix}.$ Its eigenvalues are $\left\{ 2.38,4.62\right\} $ and the corresponding eigenvectors (each column is an eigenvector) are $\begin{pmatrix}-0.85 & -0.53\\
 0.53 & -0.85
-\end{pmatrix}.
-$$
+\end{pmatrix}.$
 
-Combining with the previous results, we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis):
+Combining with the previous results, we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis)
 
-$$
-\begin{pmatrix}
--0.85 & -0.53 & 0\\
+\[
+\left(\left|b_{1}\right\rangle ,\left|b_{2}\right\rangle ,\left|b_{3}\right\rangle \right)=\begin{pmatrix}-0.85 & -0.53 & 0\\
 0.53 & -0.85 & 0\\
 0 & 0 & 1
 \end{pmatrix}.
-$$
+\]
 
 We can test by applying $A$ to the vectors of the new basis:
 
-$$
-A
-\begin{pmatrix}
--0.85\\
+\begin{align*}
+A\left|b_{1}\right\rangle  & =\left|b_{1}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
--0.85\\
+\end{pmatrix} & =\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix},
-$$
-
-$$
-A
-\begin{pmatrix}
--0.53\\
+\end{pmatrix}\\
+A\left|b_{2}\right\rangle  & =\left|b_{2}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix}
-=
-\begin{pmatrix}
--0.53\\
+\end{pmatrix} & =\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix},
-$$
-
-$$
-A
-\begin{pmatrix}
+\end{pmatrix}\\
+A\left|b_{3}\right\rangle  & =2\left|b_{3}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{pmatrix}\begin{pmatrix}0\\
 0\\
+1
+\end{pmatrix} & =2\begin{pmatrix}0\\
 0\\
 1
 \end{pmatrix}
-=
-2 \begin{pmatrix}
-0\\
-0\\
-1
-\end{pmatrix}.
-$$
-
-With the corresponding eigenvalues:
-
-$$
-[1,\;1,\;2].
-$$
+\end{align*}
 
 We can test by applying $B$ to the vectors of the new basis:
 
-$$
-B
-\begin{pmatrix}
--0.85\\
+\begin{align*}
+B\left|b_{1}\right\rangle  & =2.38\left|b_{1}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix}
-=
-2.38
-\begin{pmatrix}
--0.85\\
+\end{pmatrix} & =2.38\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix},
-$$
-
-$$
-B
-\begin{pmatrix}
--0.53\\
+\end{pmatrix}\\
+B\left|b_{2}\right\rangle  & =4.62\left|b_{2}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix}
-=
-4.62
-\begin{pmatrix}
--0.53\\
+\end{pmatrix} & =4.62\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix},
-$$
-
-$$
-B
-\begin{pmatrix}
+\end{pmatrix}\\
+B\left|b_{3}\right\rangle  & =5\left|b_{3}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
+1 & 4 & 0\\
+0 & 0 & 5
+\end{pmatrix}\begin{pmatrix}0\\
 0\\
+1
+\end{pmatrix} & =5\begin{pmatrix}0\\
 0\\
 1
 \end{pmatrix}
-=
-5
-\begin{pmatrix}
-0\\
-0\\
-1
-\end{pmatrix}.
-$$
+\end{align*}
+\selectlanguage{english}%
 
-With the corresponding eigenvalues:
-
-$$
-[2.38,\;4.62,\;5].
-$$
-
-
-**Example 2**
-
-Suppose we have the operators
-
-$$
-A=
-\begin{pmatrix}
-0 & 1\\
-1 & 0
-\end{pmatrix}
-$$
-
-and
-
-$$
-B=
-\begin{pmatrix}
-1 & 0\\
-0 & -1
-\end{pmatrix}.
-$$
-
-We can verify that they do not commute, since
-
-$$
-[A,B]=AB-BA
-=
-\begin{pmatrix}
-0 & -2\\
-2 & 0
-\end{pmatrix}
-\neq 0.
-$$
-
-For the operator \(A\), the eigenvalues are
-
-$$
-a=+1,\,-1,
-$$
-
-with corresponding normalized eigenvectors
-
-$$
-|a=+1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
-1\\
-1
-\end{pmatrix},
-\qquad
-|a=-1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
--1\\
-1
-\end{pmatrix}.
-$$
-
-Suppose, for example, that after measuring \(A\), we obtain the value \(a=+1\). The system is then in the corresponding eigenstate,
-
-$$
-|\psi\rangle
-=
-|a=+1\rangle
-=
-\frac{1}{\sqrt{2}}
-\begin{pmatrix}
-1\\
-1
-\end{pmatrix}.
-$$
-
-Now consider measuring \(B\). The eigenvalues of \(B\) are also
-
-$$
-b=+1,\,-1,
-$$
-
-with corresponding eigenvectors
-
-$$
-|b=+1\rangle
-=
-\begin{pmatrix}
-1\\
-0
-\end{pmatrix},
-\qquad
-|b=-1\rangle
-=
-\begin{pmatrix}
-0\\
-1
-\end{pmatrix}.
-$$
-
-The probability of obtaining a particular eigenvalue \(b\) is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
-
-$$
-P(b)=|\langle b|\psi\rangle|^2.
-$$
-
-Therefore,
-
-$$
-P(b=+1)
-=
-|\langle b=+1|a=+1\rangle|^2
-=
-\frac{1}{2},
-$$
-
-and
-
-$$
-P(b=-1)
-=
-|\langle b=-1|a=+1\rangle|^2
-=
-\frac{1}{2}.
-$$
-
-Thus, there is a \(50\%\) probability of observing \(+1\) and a \(50\%\) probability of observing \(-1\).
-
-In other words, since \(A\) and \(B\) do not commute and, in this example, do not share any eigenvectors, after measuring one of the observables, the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
-
+\end{document}

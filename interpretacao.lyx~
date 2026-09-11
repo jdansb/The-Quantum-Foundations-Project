@@ -1666,8 +1666,9 @@ Since
 \align center
 \begin_inset CommandInset href
 LatexCommand href
-name "Exemplo 1"
+name "Example 1"
 target "/exemplo-incompatibilidade"
+type "other"
 literal "false"
 
 \end_inset
@@ -1881,14 +1882,14 @@ With the proof of this theorem,
 \align center
 \begin_inset CommandInset href
 LatexCommand href
-name "Exemplo 2"
-target "http:///exemplo-incompatibilidade"
+name "Example 2"
+target "/exemplo-incompatibilidade"
+type "other"
 literal "false"
 
 \end_inset
 
-.
- 
+
 \end_layout
 
 \begin_layout Subsubsection*

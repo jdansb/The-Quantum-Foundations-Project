@@ -5,12 +5,15 @@
 \save_transient_properties true
 \origin unavailable
 \textclass article
-\use_default_options true
+\begin_preamble
+\usepackage{babel}
+\end_preamble
+\use_default_options false
 \maintain_unincluded_children no
 \language brazilian
 \language_package default
 \inputencoding utf8
-\fontencoding auto
+\fontencoding T1
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -30,23 +33,30 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement class
-\float_alignment class
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle false
 \papersize default
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
 \use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
 \cite_engine_type default
 \biblio_style plain
@@ -54,8 +64,8 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -102,58 +112,41 @@
 \begin_body
 
 \begin_layout Title
-Álgebra Linear
+Linear Algebra
 \end_layout
 
 \begin_layout Author
 Jhordan Silveira de Borba
 \end_layout
 
-\begin_layout Quotation
-
-\series bold
-Note
-\series default
- If Portuguese is not your native language,
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "Firefox"
-target "https://www.firefox.com/"
-literal "false"
-
-\end_inset
-
-'s automatic translation works well.
+\begin_layout Standard
+Since I have already studied the basics of the necessary mathematical tools,
+ for now I want to prioritize physical understanding.
+ Thus,
+ I will deepen my understanding of the mathematics to the level necessary to understand,
+ apply,
+ and critically question the physical framework under study.
+ Purely mathematical proofs and developments can be left for when they become necessary or when I decide to delve deeper into the foundations.
 \end_layout
 
 \begin_layout Standard
-Como já estudei o básico das ferramentas matemáticas necessárias,
- por enquanto quero priorizar a compreensão física.
- Assim,
- aprofundarei a matemática até o nível necessário para compreender,
- aplicar e questionar criticamente a estrutura física em estudo.
- Demonstrações e desenvolvimentos puramente matemáticos podem ser deixados para quando se tornarem necessários ou quando eu decidir aprofundar os fundamentos.
+For example,
+ it is not necessary,
+ at this point,
+ to delve deeper into the proof of the spectral theorem for Hermitian matrices,
+ since its proof is predominantly mathematical and does not,
+ by itself,
+ add a new physical interpretation to the problem.
+ On the other hand,
+ it is worth deepening mathematical results that establish relationships directly relevant to the physical theory,
+ such as proving that two operators that have the same complete basis of eigenvectors commute,
+ since this relationship allows us to understand mathematically the compatibility between observables.
 \end_layout
 
 \begin_layout Standard
-Por exemplo,
- não é necessário,
- neste momento,
- aprofundar a demonstração do teorema espectral para matrizes Hermitianas,
- pois sua prova é predominantemente matemática e não acrescenta,
- por si só,
- uma nova interpretação física ao problema.
- Em contrapartida,
- vale aprofundar resultados matemáticos que estabelecem relações diretamente relevantes para a teoria física,
- como demonstrar que dois operadores que possuem uma mesma base completa de autovetores comutam,
- pois essa relação permite compreender matematicamente a compatibilidade entre observáveis.
-\end_layout
-
-\begin_layout Standard
-Porém estarei compartilhando aqui uma revisão puramente matemática,
- uma reprodução quase na íntegra deste material:
- 
+However,
+ I will be sharing here a purely mathematical review,
+ an almost verbatim reproduction of this material (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "DelftSpectralTheorem"
@@ -161,8 +154,8 @@ literal "false"
 
 \end_inset
 
-.
- Uma revisão mais completa pode ser vista 
+).
+ A more complete review can be found 
 \begin_inset CommandInset href
 LatexCommand href
 name "aqui"
@@ -175,7 +168,7 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-Aritmética Matricial Básica
+Basic Matrix Arithmetic
 \end_layout
 
 \begin_layout Standard
@@ -358,6 +351,8 @@ a_{n,1} & a_{n,2} & \cdots & a_{n,n}
 
 \series bold
 Inner product of vectors
+\series default
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -386,7 +381,7 @@ Definition
 \begin_inset Formula $\boldsymbol{v}\cdot\boldsymbol{w}=v_{1}w_{1}+\cdots+v_{n}w_{n}.$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -410,6 +405,7 @@ Properties of the inner product:
 \end_inset
 
  the following hold:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -448,6 +444,7 @@ Matrix-vector multiplication
 
 \begin_layout Standard
 Matrices can be multiplied by vectors.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -555,6 +552,7 @@ Properties of matrix-vector multiplication:
 \end_inset
 
  the following hold whenever the expressions are defined:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -583,6 +581,7 @@ Properties of matrix-vector multiplication:
 \end_inset
 
  :::
+ 
 \end_layout
 
 \begin_layout Standard
@@ -716,6 +715,7 @@ Two matrices
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -762,7 +762,7 @@ Definition:
 \begin_inset Formula $(AB)_{i,k}=\sum^{n}_{j=1}A_{i,j}B_{j,k}\quad(1\le i\le m,1\le k\le p).$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -818,6 +818,7 @@ Properties of matrix multiplication
 \end_inset
 
  the following hold whenever the expressions are defined:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -846,6 +847,7 @@ Properties of matrix multiplication
 \end_inset
 
  :::
+ 
 \end_layout
 
 \begin_layout Standard
@@ -867,11 +869,7 @@ AB\ne BA.
 \end_layout
 
 \begin_layout Subsection
-Operação de Matrizes
-\end_layout
-
-\begin_layout Standard
-
+Matrix Operations
 \end_layout
 
 \begin_layout Standard
@@ -912,6 +910,7 @@ Very often,
 
 .
  This map is defined by the matrix-vector product.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -953,6 +952,7 @@ Definition:
 
 ).
  :::
+ 
 \end_layout
 
 \begin_layout Standard
@@ -984,6 +984,7 @@ Matrix multiplication is defined so that the product
 Note that on the left we have one matrix multiplication and one matrix-vector multiplication,
  while on the right we just have two matrix-vector multiplications.
  Commutators play an extremely important role in quantum physics.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -1089,7 +1090,6 @@ Definition:
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Quotation
@@ -1115,7 +1115,7 @@ Definition
 \begin_inset Formula $\text{Tr}\left(A\right)=\sum^{n}_{i=1}A_{i,i}.$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1198,6 +1198,7 @@ is an even permutation from
 
 \begin_layout Standard
 Properties of the determinant :
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1210,6 +1211,7 @@ A square matrix
 \end_inset
 
  is non-zero.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1230,11 +1232,12 @@ Given two
 \begin_inset Formula $\det(AB)=(\det A)(\det B).$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Enumerate
 The determinant of a diagonal matrix (and more generally of an upper or lower triangular matrix) is the product of the diagonal entries.
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1257,6 +1260,7 @@ The determinant of a diagonal matrix (and more generally of an upper or lower tr
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1275,6 +1279,7 @@ The determinant of a diagonal matrix (and more generally of an upper or lower tr
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -1293,6 +1298,7 @@ The determinant of a diagonal matrix (and more generally of an upper or lower tr
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1303,6 +1309,7 @@ Properties 4-6 also hold for columns instead of rows.
 Finally,
  we define the characteristic polynomial of a square matrix;
  this will be used in diagonalisation.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -1351,307 +1358,62 @@ An alternative definition of the characteristic polynomial,
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Frequentemente,
- uma matriz 
-\begin_inset Formula $A$
-\end_inset
-
- de dimensão 
-\begin_inset Formula $m\times n$
-\end_inset
-
- ,
- com entradas reais,
- representa uma transformação linear do espaço 
-\begin_inset Formula $\mathbb{R}^{n}$
-\end_inset
-
-,
- formado por vetores de comprimento 
-\begin_inset Formula $n$
-\end_inset
-
-,
- para o espaço 
-\begin_inset Formula $\mathbb{R}^{m}$
-\end_inset
-
-,
- formado por vetores de comprimento 
-\begin_inset Formula $m$
-\end_inset
-
-.
+Properties that are typically demonstrated in exercises:
  
-\end_layout
-
-\begin_layout Plain Layout
-Analogamente,
- uma matriz com entradas complexas representa uma transforação linear de 
-\begin_inset Formula $\mathbb{C}^{n}$
-\end_inset
-
- para 
-\begin_inset Formula $\mathbb{C}^{m}$
-\end_inset
-
-.
- Essa aplicação é definida pelo produto entre a matriz e o vetor.
-\end_layout
-
-\begin_layout Quotation
-
-\series bold
-Definição
-\series default
-:
- Dada uma matriz 
-\begin_inset Formula $A$
-\end_inset
-
- real (complexa) de dimensão 
-\begin_inset Formula $m\times n$
-\end_inset
-
-,
- a transformação linear associada a 
-\begin_inset Formula $A$
-\end_inset
-
- é a transformação que leva cada vetor 
-\begin_inset Formula $\boldsymbol{v}\in\mathbb{R}^{n}$
-\end_inset
-
- ao vetor 
-\begin_inset Formula $A\boldsymbol{v}\in\mathbb{R}^{m}$
-\end_inset
-
- ( cada vetor 
-\begin_inset Formula $\boldsymbol{v}\in\mathbb{C}^{n}$
-\end_inset
-
- ao vetor 
-\begin_inset Formula $A\boldsymbol{v}\in\mathbb{C}^{m}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-A multiplicação de matrizes é definida de modo que o produto 
-\begin_inset Formula $AB$
-\end_inset
-
- represente a transformação linear obtida aplicando primeiro 
-\begin_inset Formula $B$
-\end_inset
-
- e depois 
-\begin_inset Formula $A$
-\end_inset
-
-.
- Em outras palavras,
- temos
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{equation}
-\left(AB\right)\boldsymbol{v}=A\left(B\boldsymbol{v}\right)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Observe que,
- no lado esquerdo,
- temos uma multiplicação de matrizes e uma multiplicação matriz-vetor,
- enquanto,
- no lado direito,
- temos apenas duas multiplicações matriz-vetor.
-\end_layout
-
-\begin_layout Plain Layout
-Na física quântica,
- as matrizes são frequentemente quadradas e possuem algumas propriedades adicionais que as tornam adequadas para atuar como operadores sobre um sistema físico ou como observáveis de tal sistema.
- 
-\end_layout
-
-\begin_layout Plain Layout
-Muitas das definições a seguir são especificamente para matrizes quadradas.
- Um primeiro exemplo é o dos comutadores,
- que desempenham um papel extremamente importante na física quântica.
-\end_layout
-
-\begin_layout Quotation
-
-\series bold
-Definição
-\series default
-:
- Dada duas matrizes 
-\begin_inset Formula $A$
-\end_inset
-
- e 
-\begin_inset Formula $B$
-\end_inset
-
- de dimensões 
-\begin_inset Formula $n\times n$
-\end_inset
-
-,
- o comutador de 
-\begin_inset Formula $A$
-\end_inset
-
-e 
-\begin_inset Formula $B$
-\end_inset
-
- é a matriz 
-\begin_inset Formula $n\times n$
-\end_inset
-
-:
- 
-\begin_inset Formula $\left[A,B\right]=AB-BA$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Quotation
-
-\series bold
-Definição
-\series default
-:
- A transposta de uma matriz 
-\begin_inset Formula $A$
-\end_inset
-
- de dimensão 
-\begin_inset Formula $m\times n$
-\end_inset
-
- é a matriz 
-\begin_inset Formula $A^{T}$
-\end_inset
-
- de dimensão 
-\begin_inset Formula $n\times m$
-\end_inset
-
- definido por 
-\begin_inset Formula $\left(A^{T}\right)_{i,j}=A_{j,i}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Quotation
-
-\series bold
-Definiçã
-\series default
-o
-\series bold
-:
-
-\series default
- A transposa de uma matriz 
-\begin_inset Formula $A$
-\end_inset
-
- de dimensão 
-\begin_inset Formula $m\times n$
-\end_inset
-
- é a matriz 
-\begin_inset Formula $A^{T}$
-\end_inset
-
- de dimensão 
-\begin_inset Formula $n\times m$
-\end_inset
-
- definido por 
-\begin_inset Formula $\left(A^{T}\right)_{i,j}=A_{j,i}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Propriedades que suas demonstrações podem ser vistas em exercícios:
 \end_layout
 
 \begin_layout Itemize
-Se 
+If 
 \begin_inset Formula $A$
 \end_inset
 
- é uma matri 
+ is an 
 \begin_inset Formula $m\times n$
 \end_inset
 
- e 
+ matrix and 
 \begin_inset Formula $B$
 \end_inset
 
- uma matriz 
+ an 
 \begin_inset Formula $n\times m$
 \end_inset
 
- então 
+ matrix,
+ then 
 \begin_inset Formula $\text{Tr}\left(AB\right)=Tr\left(BA\right)$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Itemize
-Se 
+If 
 \begin_inset Formula $A$
 \end_inset
 
- é uma matriz 
+ is an 
 \begin_inset Formula $n\times n$
 \end_inset
 
- e 
+ matrix and 
 \begin_inset Formula $c$
 \end_inset
 
- um escalar,
- então 
+ a scalar,
+ then 
 \begin_inset Formula $\text{Tr}\left(cA\right)=c\text{Tr}\left(A\right)$
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $\det\left(ca\right)=c^{n}\det\left(A\right)$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -1717,6 +1479,7 @@ v_{n}
 In many situations,
  it is useful to express vectors in a different coordinate system.
  For this we need the general concept of a basis.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -1778,6 +1541,7 @@ c_{1} & \dots & c_{n}\end{array}\right)^{T}$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1791,6 +1555,7 @@ Alternatively,
 \end_inset
 
  with the following two properties:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -1805,6 +1570,7 @@ they span the space
 \end_inset
 
 ;
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -1819,6 +1585,7 @@ is as
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1897,6 +1664,7 @@ Definition:
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2036,28 +1804,29 @@ Namely,
 
 
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Note que se 
+Note that if 
 \begin_inset Formula $\boldsymbol{x}^{(C)}=P\boldsymbol{x}^{(B)}$
 \end_inset
 
-e sendo 
+and given that 
 \begin_inset Formula $P^{-1}P=\mathbb{I}$
 \end_inset
 
 ,
- então 
+ then 
 \begin_inset Formula $P^{-1}\boldsymbol{x}^{(C)}=\boldsymbol{x}^{(B)}$
 \end_inset
 
 ,
- o seja 
+ that is,
+ 
 \begin_inset Formula $P^{-1}=P_{C\rightarrow B}$
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -2129,53 +1898,56 @@ Because the characteristic polynomial is also defined as a determinant,
 \end_layout
 
 \begin_layout Standard
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
+ 
 \end_layout
 
 \begin_layout Itemize
-Supondo que 
+Suppose that 
 \begin_inset Formula $A$
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $B$
 \end_inset
 
- sejam duas matrizes 
+ are two 
 \begin_inset Formula $n\times n$
 \end_inset
 
- e 
+ matrices and 
 \begin_inset Formula $P$
 \end_inset
 
- é uma matriz 
+ is an invertible 
 \begin_inset Formula $n\times n$
 \end_inset
 
- inversível de forma que 
+ matrix such that 
 \begin_inset Formula $B=PAP^{-1}$
 \end_inset
 
- então 
+,
+ then 
 \begin_inset Formula $\text{Tr}\left(B\right)=\text{Tr}\left(A\right)$
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $\det B=\det A$
 \end_inset
 
 ,
- além disso,
+ in addition,
  
 \begin_inset Formula $A$
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $B$
 \end_inset
 
- compartilham do mesmo polinômio característico.
+ share the same characteristic polynomial.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2203,6 +1975,7 @@ A very common example of a basis transformation is diagonalisation of a matrix.
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -2241,6 +2014,7 @@ Definition:
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2286,26 +2060,27 @@ This means that
 status collapsed
 
 \begin_layout Plain Layout
-Se 
+If 
 \begin_inset Formula $B=(A-\lambda I)$
 \end_inset
 
- é invertivel significa que 
+ is invertible,
+ it means that 
 \begin_inset Formula $B^{-1}B=I$
 \end_inset
 
- então 
+ ,so 
 \begin_inset Formula $\boldsymbol{v}=B^{-1}0=0$
 \end_inset
 
-.
- O que é contraditório pois por definição 
+ This is contradictory,
+ since by definition 
 \begin_inset Formula $\boldsymbol{v}$
 \end_inset
 
- é não nulo.
- E se não é invertível,
- então 
+ is nonzero.
+ If it is not invertible,
+ then 
 \begin_inset Formula $\text{det}\left(B\right)=0$
 \end_inset
 
@@ -2399,6 +2174,7 @@ The idea of diagonalisation is that it is often easiest to understand a linear m
 \end_inset
 
  acts as multiplication by some scalar.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -2417,19 +2193,20 @@ Definition
 
  is diagonalisable if there exist a diagonal
 \begin_inset Foot
-status open
+status collapsed
 
 \begin_layout Plain Layout
-Matriz diagonal é aquela que só tem elementos na diagonal principal 
-\begin_inset Formula $D_{ii}\neq0,$
+A diagonal matrix is one that has elements only on the main diagonal 
+\begin_inset Formula $D_{ii}\neq0$
 \end_inset
 
-para qualquer 
+,
+ for any 
 \begin_inset Formula $j\neq0$
 \end_inset
 
 ,
- temos 
+ we have 
 \begin_inset Formula $D_{ij}=0$
 \end_inset
 
@@ -2454,7 +2231,7 @@ para qualquer
 \begin_inset Formula $A=PDP^{-1},$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2554,6 +2331,7 @@ The fact that
 
 .
  We obtain the following conclusion.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -2579,6 +2357,7 @@ Theorem
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2704,51 +2483,54 @@ give a diagonalisation of
 \end_layout
 
 \begin_layout Standard
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
+ 
 \end_layout
 
 \begin_layout Itemize
-Assumindo 
+Assuming 
 \begin_inset Formula $A=PDP^{-1}$
 \end_inset
 
- com 
+ with 
 \begin_inset Formula $P$
 \end_inset
 
- invertível e 
+ invertible and 
 \begin_inset Formula $D$
 \end_inset
 
- uma matriz escalar
+ a scalar matrix
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Uma matriz é escalar quando ela é um multiplo 
+A matrix is scalar when it is a multiple 
 \begin_inset Formula $c$
 \end_inset
 
- da matriz identidade 
+ of the identity matrix 
 \begin_inset Formula $I$
 \end_inset
 
-,
- isto é 
+ ,
+ that is,
+ 
 \begin_inset Formula $D=cI$
 \end_inset
 
-.
+ .
 \end_layout
 
 \end_inset
 
 ,
- então 
+ then 
 \begin_inset Formula $A=D$
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -2775,6 +2557,7 @@ Vector spaces
 \begin_layout Standard
 As is customary in quantum physics and quantum algorithms,
  we use bra-ket notation for vectors in Hilbert spaces.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -2848,7 +2631,7 @@ Such that a number of properties hold:
 \begin_inset Formula $0\left|\alpha\right\rangle =\mathbf{0}$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2856,7 +2639,7 @@ Such that a number of properties hold:
 \begin_inset Formula $1\left|\alpha\right\rangle =\left|\alpha\right\rangle $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2864,7 +2647,7 @@ Such that a number of properties hold:
 \begin_inset Formula $\mathbf{0}+\left|\alpha\right\rangle =\left|\alpha\right\rangle $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2872,7 +2655,7 @@ Such that a number of properties hold:
 \begin_inset Formula $\left|\alpha\right\rangle +\left|\beta\right\rangle =\left|\beta\right\rangle +\left|\alpha\right\rangle $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2880,7 +2663,7 @@ Such that a number of properties hold:
 \begin_inset Formula $(\left|\alpha\right\rangle +\left|\beta\right\rangle )+\left|\gamma\right\rangle =\left|\alpha\right\rangle +(\left|\beta\right\rangle +\left|\gamma\right\rangle )$
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2888,7 +2671,7 @@ Such that a number of properties hold:
 \begin_inset Formula $c(\left|\alpha\right\rangle +\left|\beta\right\rangle )=c\left|\alpha\right\rangle +c\left|\beta\right\rangle $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2896,7 +2679,7 @@ Such that a number of properties hold:
 \begin_inset Formula $(c+d)\left|\alpha\right\rangle =c\left|\alpha\right\rangle +d\left|\alpha\right\rangle $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Quotation
@@ -2967,6 +2750,7 @@ Exemplo:
 
  in this space,
  such as:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -3002,6 +2786,7 @@ Exemplo:
 \end_inset
 
  (in the context of spins).
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3056,7 +2841,6 @@ Definition
 \end_inset
 
  is a real number because of the first property);
- 
 \end_layout
 
 \begin_layout Quotation
@@ -3065,7 +2849,6 @@ Definition
 \end_inset
 
 ;
- 
 \end_layout
 
 \begin_layout Quotation
@@ -3091,6 +2874,7 @@ Definition:
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3118,6 +2902,7 @@ The properties above imply that for any scalar
  This is the usual convention in physics.
  It differs from the convention in mathematics,
  where inner products are usually linear in the first argument and conjugate linear in the second argument.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -3135,6 +2920,7 @@ Definition:
 \end_inset
 
  and satisfying a condition called completeness.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3146,8 +2932,8 @@ We will not make the notion of completeness precise in these notes.
 status collapsed
 
 \begin_layout Plain Layout
-Em poucas palavras,
- podemos pensar que um espaço completo é aquele em que uma sequência de vetores não pode convergir para um vetor que esteja fora do espaço.
+In short,
+ we can think of a complete space as one in which a sequence of vectors cannot converge to a vector outside the space.
 \end_layout
 
 \end_inset
@@ -3170,72 +2956,6 @@ Example:
 \end_inset
 
  This satisfies all the properties of a Hermitian inner product.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Example
-\series default
-:
- Consider the space 
-\begin_inset Formula $L^{2}(\mathbb{R})$
-\end_inset
-
- of square-integrable functions on the real line,
- i.e.
- functions 
-\begin_inset Formula $f\colon\mathbb{C}\to\mathbb{C}$
-\end_inset
-
- such that the integral 
-\begin_inset Formula $\int^{\infty}_{-\infty}|f(x)|^{2}dx$
-\end_inset
-
- exists and is finite.
- This is a Hilbert space with inner product 
-\begin_inset Formula $\left\langle f|g\right\rangle =\int^{\infty}_{-\infty}\bar{f}(x)g(x)dx.$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\series bold
-Example
-\series default
-:
- Consider the space 
-\begin_inset Formula $\ell^{2}$
-\end_inset
-
- of sequences 
-\begin_inset Formula $z=(z_{0},z_{1},\ldots)$
-\end_inset
-
- of complex numbers such that 
-\begin_inset Formula $\sum^{\infty}_{n=0}|z_{n}|^{2}<\infty.$
-\end_inset
-
- Then 
-\begin_inset Formula $\ell^{2}$
-\end_inset
-
- is a Hilbert space with inner product 
-\begin_inset Formula $\left\langle w|z\right\rangle =\sum^{\infty}_{n=0}\bar{w}_{n}z_{n}.$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3398,7 +3118,6 @@ Example
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -3502,6 +3221,7 @@ good
 \end_inset
 
  basis is often one that satisfies the following property with respect to the inner product.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -3593,51 +3313,6 @@ Example
 \end_inset
 
  is an orthonormal basis.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Example
-\series default
-;
- Consider the space 
-\begin_inset Formula $L^{2}([0,1])$
-\end_inset
-
- of square-integrable functions on the unit interval.
- An orthonormal basis for this space consists of the functions 
-\begin_inset Formula $e_{n}(x)=\exp(2\pi inx)$
-\end_inset
-
- for all integers 
-\begin_inset Formula $n$
-\end_inset
-
-.
- This reflects the fact that every 
-\begin_inset Quotes eld
-\end_inset
-
-nice
-\begin_inset Quotes erd
-\end_inset
-
- function on 
-\begin_inset Formula $[0,1]$
-\end_inset
-
- can be expressed as a fourier-series.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3725,6 +3400,7 @@ Definition
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3732,6 +3408,7 @@ In quantum physics,
  linear subspaces are important because they encode quantum states that a physical state can collapse to when a measurement is performed.
  To make this more precise,
  we need the notions of orthogonal complement of a subspace and of orthogonal projection onto a subspace.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -3781,6 +3458,7 @@ Definition:
 
 ,
  i.e.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3803,153 +3481,22 @@ It is not hard to verify that the orthogonal complement of a linear subspace of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Example:
-\end_layout
-
-\begin_layout Plain Layout
-In physics,
- Hilbert spaces often occur as spaces of functions on some space.
- Another useful example is the Hilbert space of square-integrable functions 
-\begin_inset Formula $L^{2}(S^{2})$
-\end_inset
-
- on the unit sphere
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{equation}
-S^{2}=\{(x,y,z)\in\mathbb{R}^{3}\mid x^{2}+y^{2}+z^{2}=1\}.
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-It is useful to work with spherical coordinates 
-\begin_inset Formula $\theta,\phi$
-\end_inset
-
- with 
-\begin_inset Formula $0\le\theta\le\pi$
-\end_inset
-
- and 
-\begin_inset Formula $0\le\phi\le2\pi$
-\end_inset
-
- such that
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-x=\sin\theta\cos\phi,\quad y=\sin\theta\sin\phi,\quad z=\cos\theta.
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Then the inner product of two functions 
-\begin_inset Formula $f,g:S^{2}\to\mathbb{C}$
-\end_inset
-
- is defined via the standard area form 
-\begin_inset Formula $\sin\theta d\theta d\phi$
-\end_inset
-
- as
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{equation}
-\langle f|g\rangle_{S^{2}}=\int^{2\pi}_{\phi=0}\int^{\pi}_{\theta=0}\overline{f(\theta,\phi)}g(\theta,\phi)\sin\theta d\theta d\phi
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-We can write down a set of functions forming an orthonormal basis for 
-\begin_inset Formula $L^{2}(S^{2})$
-\end_inset
-
-.
- The standard functions are the spherical harmonics.
- These are defined by
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\begin{equation}
-Y^{m}_{\ell}(\theta,\phi)=N^{m}_{\ell}\exp(im\phi)P^{m}_{\ell}(\cos\theta)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-where 
-\begin_inset Formula $\ell$
-\end_inset
-
- and 
-\begin_inset Formula $m$
-\end_inset
-
- are integers with 
-\begin_inset Formula $-\ell\le m\le\ell$
-\end_inset
-
-.
- Here 
-\begin_inset Formula $P^{m}_{\ell}$
-\end_inset
-
- is an associated Legendre polynomial and 
-\begin_inset Formula $N^{m}_{\ell}$
-\end_inset
-
- is an appropriate normalisation factor.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
+ 
 \end_layout
 
 \begin_layout Itemize
-A desigualdade de Cauchy-Schwarz declara que para os vetores 
+The Cauchy-Schwarz inequality states that for the vectors 
 \begin_inset Formula $\left|\alpha\right\rangle $
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $\left|\beta\right\rangle $
 \end_inset
 
 ,
- em um espaço de Hilbert,
- temos 
+ in a Hilbert space,
+ we have 
 \begin_inset Formula $\left|\left\langle \alpha|\beta\right\rangle \right|^{2}\leq\left\langle \alpha|\alpha\right\rangle \left\langle \beta|\beta\right\rangle $
 \end_inset
 
@@ -3957,69 +3504,69 @@ A desigualdade de Cauchy-Schwarz declara que para os vetores
 \end_layout
 
 \begin_layout Itemize
-A desigualdade triangular declara que para os vetores 
+The triangle inequality states that for the vectors 
 \begin_inset Formula $\left|\alpha\right\rangle $
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $\left|\beta\right\rangle $
 \end_inset
 
 ,
- em um espaço de Hilbert,
- temos 
+ in a Hilbert space,
+ we have 
 \begin_inset Formula $\left\Vert \left|\alpha\right\rangle +\left|\beta\right\rangle \right\Vert \leq\left\Vert \left|\alpha\right\rangle \right\Vert +\left\Vert \left|\beta\right\rangle \right\Vert $
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Itemize
-Se consideramos 
+If we consider 
 \begin_inset Formula $W$
 \end_inset
 
- um subespaço linear do espaço de Hilbert 
+ a linear subspace of the Hilbert space 
 \begin_inset Formula $\mathcal{H},$
 \end_inset
 
-então o complemento ortogonal
+ then the orthogonal complement
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-O complemento ortogonal a 
+The orthogonal complement of 
 \begin_inset Formula $W$
 \end_inset
 
- é o conjunto de vetores que são ortogonais a todo vetor de 
+ is the set of vectors that are orthogonal to every vector in 
 \begin_inset Formula $W$
 \end_inset
 
 .
- Por exemplo,
- se 
+ For example,
+ if 
 \begin_inset Formula $W$
 \end_inset
 
- em como base os vetores 
+ has as its basis the vectors 
 \begin_inset Formula $\boldsymbol{u}=\left(1,0,0\right)$
 \end_inset
 
- e 
+ and 
 \begin_inset Formula $v=\left(0,1,0\right)$
 \end_inset
 
- ,
- então 
+,
+ then 
 \begin_inset Formula $W^{\perp}$
 \end_inset
 
- é o subespaço correspondente ao eixo 
+ is the subspace corresponding to the 
 \begin_inset Formula $z$
 \end_inset
 
-.
+-axis.
 \end_layout
 
 \end_inset
@@ -4028,15 +3575,12 @@ O complemento ortogonal a
 \begin_inset Formula $W^{\perp}$
 \end_inset
 
- é também um espaço linear.
+ is also a linear space.
+ 
 \end_layout
 
 \begin_layout Subsection
 Operators on Hilbert spaces
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -4059,21 +3603,21 @@ T\colon\mathcal{H}\to\mathcal{H}
 \end_layout
 
 \begin_layout Standard
-such that
+such that 
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $T(c\left|\alpha\right\rangle )=c(T\left|\alpha\right\rangle )$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $T(\left|\alpha\right\rangle +\left|\beta\right\rangle )=T\left|\alpha\right\rangle +T\left|\beta\right\rangle $
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4215,48 +3759,6 @@ are often of special interest.
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Example:
-
-\series default
- Consider a linear map 
-\begin_inset Formula $A$
-\end_inset
-
- on 
-\begin_inset Formula $\mathbb{C}^{n}$
-\end_inset
-
-,
- viewed as a matrix.
- Taking the matrix entries as above,
- where 
-\begin_inset Formula $\alpha$
-\end_inset
-
- and 
-\begin_inset Formula $\beta$
-\end_inset
-
- range over the standard basis vectors,
- we obtain the usual matrix entries of 
-\begin_inset Formula $A$
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4442,7 +3944,7 @@ Definition:
 \begin_inset Formula $T=T^{\dagger}.$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4451,6 +3953,7 @@ It is clear from the definition that all real symmetric matrices are Hermitian.
  Together,
  they explain why in the mathematical formalism of quantum mechanics,
  Hermitian operators correspond to physical observables.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -4538,6 +4041,7 @@ Theorem
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4568,6 +4072,7 @@ Definition:
 
 ,
  i.e.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -4731,7 +4236,6 @@ Example
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -4759,6 +4263,7 @@ pure
 ) quantum states.
  Density operators are intensively used in the theory of entanglement and in quantum information theory,
  for example.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -4785,7 +4290,6 @@ Definition:
 \end_inset
 
  is Hermitian;
- 
 \end_layout
 
 \begin_layout Quotation
@@ -4805,7 +4309,6 @@ Definition:
 \end_inset
 
 ;
- 
 \end_layout
 
 \begin_layout Quotation
@@ -4882,6 +4385,7 @@ Example
 
  is a density operator.
  :::
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -4904,6 +4408,7 @@ Definition:
 
 ,
  and mixed otherwise.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -5004,6 +4509,7 @@ In quantum physics,
  it is frequently useful to apply this formula not just to (real or complex) numbers,
  but to operators as well.
  One reason is that there is an important application to differential equations.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -5025,7 +4531,7 @@ Definition:
 \begin_inset Formula $T$
 \end_inset
 
- is the operator
+ is the operator 
 \end_layout
 
 \begin_layout Standard
@@ -5084,83 +4590,8 @@ Warning:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Example:
-
-\series default
- The solution of the differential equation
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\dot{x}(t)=\lambda x(t),\quad x(0)=x_{0}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-is given by
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-x(t)=x_{0}\exp(\lambda t)
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Using the operator exponential,
- we can solve the higher-dimensional variant
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\frac{d}{dt}\left|x\left(t\right)\right\rangle =T\left|x\left(t\right)\right\rangle ,\quad\left|x\left(0\right)\right\rangle =\left|x_{0}\right\rangle .
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Namely,
- the solution is
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Formula 
-\[
-\left|x\left(t\right)\right\rangle =\exp(Tt)\left|x_{0}\right\rangle .
-\]
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Propriedades que podem serem demonstradas como exercícios:
+Properties that are typically demonstrated in exercises:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -5177,6 +4608,7 @@ for all vectors
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -5199,6 +4631,7 @@ Consider a square matrix
 \end_inset
 
 .
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -5223,6 +4656,7 @@ In this section,
 \end_inset
 
  are two Hilbert spaces.
+ 
 \end_layout
 
 \begin_layout Quotation
@@ -5298,7 +4732,7 @@ The inner product between two pure tensors
 \begin_inset Formula $\mathcal{H}_{2}$
 \end_inset
 
-!)
+!) 
 \end_layout
 
 \begin_layout Standard
@@ -5372,7 +4806,6 @@ Property
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Standard
@@ -5446,19 +4879,19 @@ However,
 
 ,
  respectively).
+ 
 \end_layout
 
 \begin_layout Quotation
+ 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-btprint "btPrintCited"
 bibfiles "ref"
 options "plain"
-encoding "default"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \end_body
