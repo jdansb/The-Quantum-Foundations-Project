@@ -16,10 +16,10 @@ project:
       hidden: true
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
-    - title: Appendix
+    - title: Math
       children:    
         - file: mat.tex
-          title: Algebra Linear
+          title: Linear Algebra 
     
 
 

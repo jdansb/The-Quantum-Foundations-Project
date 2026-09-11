@@ -32,17 +32,22 @@
 
 
 
+
+
+
+
+
 \makeatother
 
 \begin{document}
-\title{Postulados}
+\title{The-Quantum-Foundations-Project}
 \author{Jhordan Silveira de Borba}
 \maketitle
 \begin{quote}
 There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible (\cite{griffiths2017introduction}). 
 \end{quote}
 
-Analogy with Classical Mechanics}
+\section{Analogy with Classical Mechanics}
 
 \subsection{Newton's Second Law}
 
@@ -133,7 +138,7 @@ Or, writing $k^{2}=2mE/\hbar^{2}$ and $\omega=\frac{E}{\hbar}$:
 \end{align}
 where $K_{1}$ and $K_{2}$ are constants determined by the conditions imposed on the solution. Here, some questions already arise. When we solved Newton's second law, we obtained $x\left(t\right)$, which described the position of the particle. When we solve the Schrödinger equation, we obtain $\Psi\left(x,t\right)$, but what is $\Psi\left(x,t\right)$? What does $\Psi\left(x,t\right)$ describe?
 
-A somewhat more in-depth discussion of this can be found \href{/dupla}{here}.
+A somewhat more in-depth discussion of this can be found \href{http:///dupla}{here}.
 
 \section{Postulates of quantum mechanics}
 
@@ -311,7 +316,7 @@ where each $B_{j}$ is a submatrix representing the internal action of $B$ acting
 
 Since $B$ is Hermitian, each block $B_{j}$ is also a Hermitian matrix and, therefore, can be diagonalized. Thus, we can diagonalize $B$ within each subspace $\mathcal{H}_{j}$, obtaining a basis of eigenvectors of $B$ that are also eigenvectors of $A$. Thus, we prove that if and only if two operators $A$ and $B$ commute, then they share a common basis of eigenvectors. 
 \begin{center}
-\href{/exemplo-incompatibilidade}{Example 1}
+\href{http:///exemplo-incompatibilidade}{Example 1}
 \par\end{center}
 
 In summary, when we have a non-degenerate eigenvalue $a_{j}$, the situation is very simple, since in this case, the only eigenvector of $A$, up to a multiplicative factor, is automatically also an eigenvector of $B$.
@@ -322,9 +327,9 @@ This possibility is guaranteed by the fact that $B$ is Hermitian: its action res
 
 Repeating this procedure for each eigenspace of $A$, we obtain an orthonormal basis of $\mathcal{H}$ formed by common eigenvectors of $A$ and $B$.
 
-With the proof of this theorem, we know that if two observables $A$ and $B$ of a system do not commute, they cannot share all eigenvectors. If, by measuring the observable $A$, we prepare the system in a state that is not an eigenvector of the observable $B$, this vector must necessarily be a linear combination of the eigenvectors of with two or more nonzero probability amplitudes.
+With the proof of this theorem, we know that if two observables $A$ and $B$ of a system do not commute, they cannot share all eigenvectors. If, by measuring the observable $A$, we prepare the system in a state that is not an eigenvector of the observable $B$, this vector must necessarily be a linear combination of the eigenvectors of with two or more nonzero probability amplitudes. 
 \begin{center}
-\href{/exemplo-incompatibilidade}{Example 2}
+\href{http:///exemplo-incompatibilidade}{Example 2}
 \par\end{center}
 
 \subsubsection*{Uncertainty Relation}
@@ -333,7 +338,7 @@ Here we will use the quantum kinematic formalism to obtain general mathematical 
 
 \textbf{Heisenberg-Robertson-Schrödinger Uncertainty Relation (HRSUR)}
 
-The HRSUR :
+The HRSUR : 
 \[
 \text{Var}\left(A\right)\text{Var}\left(B\right)\ge(\text{CovQ}\left(A,B\right))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},
 \]
@@ -345,24 +350,23 @@ To prove the HRSUR, we will use the Cauchy-Schwarz inequality (CSI) as one of th
 \begin{equation}
 \langle\psi|\psi\rangle\langle\phi|\phi\rangle\ge|\langle\psi|\phi\rangle|^{2}=\langle\psi|\phi\rangle\langle\phi|\psi\rangle,
 \end{equation}
-with equality obtained if and only if $|\psi\rangle$ and $|\phi\rangle$ are collinear ($|\psi\rangle\propto|\phi\rangle$). This result is valid for any pair of vectors $|\psi\rangle,|\phi\rangle$ in a Hilbert space $\mathcal{H}.$  Consider $A$ and $B$ to be two observables of a physical system prepared in the state $|\xi\rangle$. We will use
+with equality obtained if and only if $|\psi\rangle$ and $|\phi\rangle$ are collinear ($|\psi\rangle\propto|\phi\rangle$). This result is valid for any pair of vectors $|\psi\rangle,|\phi\rangle$ in a Hilbert space $\mathcal{H}.$ Consider $A$ and $B$ to be two observables of a physical system prepared in the state $|\xi\rangle$. We will use
 
 \[
 \langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle
 \]
-to denote the expectation value of any operator $X$ and $I$ to denote the identity operator in $\mathcal{H}$. Before proceeding, I would like to explore this result further. Let us consider a system in the state $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, and an operator $X$ with eigenvalues $x_{n}$ associated with the eigenvectors $\left|x_{n}\right\rangle $. By the definition of a weighted average, the mean value of the results is $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, and since $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, we can write $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$.  
-Since $\left\langle o_{n}|\psi\right\rangle =c_{n}$, then $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $, since $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$. Then, by the spectral decomposition $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$, we have:
+to denote the expectation value of any operator $X$ and $I$ to denote the identity operator in $\mathcal{H}$. Before proceeding, I would like to explore this result further. Let us consider a system in the state $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, and an operator $X$ with eigenvalues $x_{n}$ associated with the eigenvectors $\left|x_{n}\right\rangle $. By the definition of a weighted average, the mean value of the results is $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, and since $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, we can write $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$. Since $\left\langle o_{n}|\psi\right\rangle =c_{n}$, then $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $, since $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$. Then, by the spectral decomposition $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$, we have:
 
 \[
 \left\langle O\right\rangle =\left\langle \psi\right|\left(\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|\right)\left|\psi\right\rangle =\left\langle \psi\left|o\right|\psi\right\rangle 
 \]
 
-We will also define the following vectors:
+We will also define the following vectors: 
 \begin{align}
 |\psi\rangle & =(A-\langle A\rangle I)|\xi\rangle,\\
 |\phi\rangle & =(B-\langle B\rangle I)|\xi\rangle,
 \end{align}
-which we will replace at CSI. Let us note that
+which we will replace at CSI. Let us note that 
 \begin{align}
 \langle\psi|\psi\rangle & =\left((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle\right)\\
  & =\left(|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle\right)\\
@@ -371,13 +375,12 @@ which we will replace at CSI. Let us note that
 \langle\phi|\phi\rangle & =\mathrm{Var}(B),
 \end{align}
 
-
-with $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$ being the variance of $X$. We also use $(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)=(A-\langle A\rangle I)^{2}$ since $A=A^{\dagger}$ and $\left\langle A\right\rangle =\left\langle A\right\rangle ^{*}$. We can see that this follows from the fact that $A$ (and $I$) are Hermitian, and:
+with $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$ being the variance of $X$. We also use $(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)=(A-\langle A\rangle I)^{2}$ since $A=A^{\dagger}$ and $\left\langle A\right\rangle =\left\langle A\right\rangle ^{*}$. We can see that this follows from the fact that $A$ (and $I$) are Hermitian, and: 
 \begin{align*}
 \left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =\left\langle \psi\left|A\right|\psi\right\rangle =\left\langle A\right\rangle 
 \end{align*}
 
-Furthermore, we have to
+Furthermore, we have to 
 \begin{align}
 \langle\psi|\phi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle)\\
  & =(|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle)\\
@@ -388,7 +391,7 @@ Furthermore, we have to
  & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle 
 \end{align}
 
-And since:
+And since: 
 \begin{align}
 \left[A,B\right] & =AB-BA,\\
 \left\{ A,B\right\}  & =AB+BA
@@ -421,13 +424,11 @@ So far, then, we have:
 
 Since $\{A,B\}$ and $[A,B]$ are, respectively, Hermitian ($\{A,B\}^{\dagger}=\{A,B\}$) and anti-Hermitian ($[A,B]^{\dagger}=-[A,B]$) operators, their expectation values are, respectively, purely real and purely imaginary numbers. We have already verified that the expectation value of a Hermitian operator is a real number; now, for an anti-Hermitian operator:
 
-
 \begin{align*}
 \left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =-\left\langle \psi\left|A\right|\psi\right\rangle =-\left\langle A\right\rangle 
 \end{align*}
 
-Now, if $\left\langle A\right\rangle =a+ib$, its conjugate $\left\langle A\right\rangle ^{*}=a-ib$, and if $\left\langle A\right\rangle ^{*}=-\left\langle A\right\rangle $, then $a+ib=-\left(a-ib\right)$, that is, $a+ib=-a+ib$. For this to be equal, we must have $a=0$. Thus, we are left with $\left\langle A\right\rangle =ib$. Since $\left\langle A\right\rangle $ and $\left\langle B\right\rangle $ are also real numbers, we can verify this for $\left[A,B\right]$ and $\left\{ A,B\right\}$.
-
+Now, if $\left\langle A\right\rangle =a+ib$, its conjugate $\left\langle A\right\rangle ^{*}=a-ib$, and if $\left\langle A\right\rangle ^{*}=-\left\langle A\right\rangle $, then $a+ib=-\left(a-ib\right)$, that is, $a+ib=-a+ib$. For this to be equal, we must have $a=0$. Thus, we are left with $\left\langle A\right\rangle =ib$. Since $\left\langle A\right\rangle $ and $\left\langle B\right\rangle $ are also real numbers, we can verify this for $\left[A,B\right]$ and $\left\{ A,B\right\} $.
 
 \begin{align*}
 \left(A,B\right) & =AB\mp BA\\
@@ -437,7 +438,6 @@ Now, if $\left\langle A\right\rangle =a+ib$, its conjugate $\left\langle A\right
  & =\mp A^{\dagger}B^{\dagger}+B^{\dagger}A^{\dagger}
 \end{align*}
 That is, if $\left[A,B\right]=AB-BA$ then $\left[A,B\right]^{\dagger}=-\left[A,B\right]$. And if $\left\{ A,B\right\} =AB+BA$ then $\left\{ A,B\right\} ^{\dagger}=\left\{ A,B\right\} $. Thus, we can write:
-
 
 \begin{align*}
 \left\langle \psi|\phi\right\rangle  & =\Re\left(\left\langle \psi|\phi\right\rangle \right)+i\Im\left(\left\langle \psi|\phi\right\rangle \right)\\
@@ -452,8 +452,6 @@ We then have:
 \end{align}
 Note: Since $2^{-1}\langle[A,B]\rangle=ib$ is a purely imaginary number, multiplying by $-i$: $-i\cdot\left(ib\right)=b$, gives us its real coefficient. Thus, considering that
 
-
-
 \begin{align*}
 \left|\left\langle \psi|\phi\right\rangle \right|^{2} & =\left\langle \psi|\phi\right\rangle ^{*}\left\langle \psi|\phi\right\rangle \\
  & =\left(\Re\left(\left\langle \psi|\phi\right\rangle \right)-i\Im\left(\left\langle \psi|\phi\right\rangle \right)\right)\left(\Re\left(\left\langle \psi|\phi\right\rangle \right)+i\Im\left(\left\langle \psi|\phi\right\rangle \right)\right)\\
@@ -466,7 +464,7 @@ We then have:
 \mathrm{Var}(A)\mathrm{Var}(B) & \geq(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2}
 \end{align*}
 
-Now let's open it:
+Now let's open it: 
 \[
 \Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\left(-i2^{-1}\langle[A,B]\rangle\right)^{2}=-2^{-2}\langle[A,B]\rangle^{2}
 \]
@@ -477,9 +475,7 @@ Furthermore, since it is purely imaginary, then:
 \langle[A,B]\rangle^{2}=\left(-ib\right)^{2}=-b^{2}=-\left|b\right|^{2}=-\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
 \]
 
-
 We are then left with $\Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}$. And our inequality:
-
 
 \begin{align*}
 \left\langle \psi|\psi\right\rangle \left\langle \phi|\phi\right\rangle  & \ge\left|\left\langle \psi|\phi\right\rangle \right|{}^{2}\\
@@ -494,7 +490,6 @@ It now remains for us to demonstrate that:
 \]
 Where the covariance is $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$ between the observables $X$ and $Y$, therefore:
 
-
 \begin{align*}
 \Re\left(\left\langle \psi|\phi\right\rangle \right)^{2} & =\left(\frac{\langle AB\rangle-\langle A\rangle\langle B\rangle+\langle BA\rangle-\langle B\rangle\langle A\rangle}{2}\right)^{2}\\
 \Re\left(\left\langle \psi|\phi\right\rangle \right)^{2} & =\left(\frac{\langle AB\rangle+\langle BA\rangle-2\langle B\rangle\langle A\rangle}{2}\right)^{2}\\
@@ -503,20 +498,19 @@ Where the covariance is $\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\la
 \end{align*}
 And this $\Re\left(\left\langle \psi|\phi\right\rangle \right)=2^{-1}\left\langle \left\{ A,B\right\} \right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle $ is the result we had obtained. We can then write $\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\text{CovQ}\left(A,B\right)^{2}$ and:
 
-
 \begin{align*}
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\Re\left(\left\langle \psi|\phi\right\rangle \right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}
 \end{align*}
 
-It is worth noting that if $A$ and $B$ are compatible observables, i.e., if $[A,B]=0$, then we will have $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.  
+It is worth noting that if $A$ and $B$ are compatible observables, i.e., if $[A,B]=0$, then we will have $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.
 
 Let us now analyze the problem of the possible triviality of the HRSUR, whose general objective is to determine how small the product of the variances of a pair of observables can be. For this, let us assume that the system is prepared in a state that is an eigenvector of the observable $A$, i.e.,
 
 \[
 |\xi\rangle=|a\rangle
 \]
-with $A|a\rangle=a|a\rangle$ and $a\in\mathbb{R}$. In this case, it can be verified that
+with $A|a\rangle=a|a\rangle$ and $a\in\mathbb{R}$. In this case, it can be verified that 
 \begin{equation}
 \mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
 \end{equation}
@@ -525,8 +519,7 @@ And with that, HRSUR gets back to us:
 \begin{equation}
 0\mathrm{Var}(B)\ge0.
 \end{equation}
-Therefore, in this case, the HRSUR provides no information whatsoever about the possible incompatibility of $A$ and $B$. The same type of limitation applies if $|\xi\rangle=|b\rangle$ for $B|b\rangle=b|b\rangle.$  In any case, let us verify. For the commutator:
-
+Therefore, in this case, the HRSUR provides no information whatsoever about the possible incompatibility of $A$ and $B$. The same type of limitation applies if $|\xi\rangle=|b\rangle$ for $B|b\rangle=b|b\rangle.$ In any case, let us verify. For the commutator:
 
 \begin{align*}
 \left\langle a_{k}\left|\left[A,B\right]\right|a_{k}\right\rangle  & =\left\langle a_{k}\left|AB\right|a_{k}\right\rangle -\left\langle a_{k}\left|BA\right|a_{k}\right\rangle \\
@@ -537,7 +530,6 @@ Therefore, in this case, the HRSUR provides no information whatsoever about the 
 \end{align*}
 For the variance, we will adopt a different strategy: instead of writing out the spectral decomposition, we will use the fact that $A|a\rangle=a|a\rangle$:
 
-
 \begin{align*}
 \mathrm{Var}(A)_{|a\rangle} & =\langle a_{n}|(A-\langle a_{n}\left|A\right|a_{n}\rangle I)^{2}|a_{n}\rangle\\
  & =\langle a_{n}|(A-a_{n}\langle a_{n}|a_{n}\rangle I)^{2}|a_{n}\rangle\\
@@ -547,7 +539,7 @@ For the variance, we will adopt a different strategy: instead of writing out the
  & =0
 \end{align*}
 
-And for Quantum Covariance, we've already seen that  $\langle a_{n}\left|A\right|a_{n}\rangle=a_{n}$, $\left\langle a_{k}\left|AB\right|a_{k}\right\rangle =\left\langle a_{k}\left|BA\right|a_{k}\right\rangle =a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle $, then:
+And for Quantum Covariance, we've already seen that $\langle a_{n}\left|A\right|a_{n}\rangle=a_{n}$, $\left\langle a_{k}\left|AB\right|a_{k}\right\rangle =\left\langle a_{k}\left|BA\right|a_{k}\right\rangle =a_{k}\left\langle a_{k}\left|B\right|a_{k}\right\rangle $, then:
 
 \begin{align*}
 \mathrm{CovQ}(A,B)_{|a\rangle} & =\frac{\langle a_{k}\left|AB\right|a_{k}\rangle+\langle a_{k}\left|BA\right|a_{k}\rangle-2\langle a_{k}\left|B\right|a_{k}\rangle\langle a_{k}\left|A\right|a_{k}\rangle}{2}\\
@@ -565,8 +557,7 @@ Ignoring\footnote{That is, if $a\geq b+c\geq c$. With $b\geq0$, then necessarily
 \sigma_{A}\sigma_{B} & \ge2^{-1}\left|\left\langle \left[A,B\right]\right\rangle \right|
 \end{align*}
 
-
-with, e.g., $\sigma_{A}=\sqrt{Var(A)}.$ When applied to position and linear momentum, it is one of Heisenberg's uncertainty relations:
+with, e.g., $\sigma_{A}=\sqrt{Var(A)}.$ When applied to position and linear momentum, it is one of Heisenberg's uncertainty relations: 
 \begin{equation}
 \sigma_{X}\sigma_{P}\ge2^{-1}|\langle[X,P]\rangle|=\hbar/2,
 \end{equation}
@@ -580,7 +571,7 @@ In other words, we can repeatedly prepare the system in the same state and perfo
 
 This contrasts with classical mechanics. We can imagine, for example, a particle at rest at a perfectly determined position. Ignoring experimental limitations, it would be possible to conceive of a classical state in which position and velocity were simultaneously well defined, for example, a particle at rest at the origin ($x=0,v=0$). In this case, if we repeated the measurements, we would always obtain the same values and, therefore, we would have $\sigma_{x}=\sigma_{v}=0$.
 
-\subsection{Dynamics Postulate}  
+\subsection{Dynamics Postulate}
 
 Changes of states in QM are described by a unitary transformation:
 
@@ -591,21 +582,20 @@ i.e.,
 \[
 U_{t}U^{\dagger}_{t}=U_{t}U^{\dagger}_{t}=\mathbb{I}.
 \]
-The time-evolution operator being obtained from the Schrödinger equation:
+The time-evolution operator being obtained from the Schrödinger equation: 
 \begin{equation}
 i\hbar\partial_{t}U_{t}=H_{t}U_{t},
 \end{equation}
-with the initial condition:
+with the initial condition: 
 \[
 U_{0}=\mathbb{I},
 \]
 
-
-where $H_{t}$ is the Hamiltonian operator of the system at the instant of time $t$,$\hbar$ is Planck's constant divided by $2\pi$ and we use the notation $\partial_{t}=\frac{\partial}{\partial_{t}}$. The two equations above are equivalent to the Schrödinger equation for the state
+where $H_{t}$ is the Hamiltonian operator of the system at the instant of time $t$,$\hbar$ is Planck's constant divided by $2\pi$ and we use the notation $\partial_{t}=\frac{\partial}{\partial_{t}}$. The two equations above are equivalent to the Schrödinger equation for the state 
 \begin{equation}
 i\hbar\partial_{t}|\psi_{t}\rangle=H_{t}|\psi_{t}\rangle.
 \end{equation}
-We verify this result as follows:
+We verify this result as follows: 
 \begin{align}
 i\hbar\partial_{t}|\psi_{t}\rangle & =i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle)\\
  & =(i\hbar\partial_{t}U_{t})|\psi_{0}\rangle\\
@@ -615,20 +605,19 @@ i\hbar\partial_{t}|\psi_{t}\rangle & =i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle)\
 
 \textbf{Example}: When $H_{t}=H$
 
-In this type of situation—i.e., when the Hamiltonian is time-independent—we can verify that the following general form holds:
+In this type of situation---i.e., when the Hamiltonian is time-independent---we can verify that the following general form holds: 
 \begin{equation}
 U_{t}=e^{-iHt/\hbar}.
 \end{equation}
-We will do this first using the spectral decomposition of the Hamiltonian,
+We will do this first using the spectral decomposition of the Hamiltonian, 
 \[
 H=\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|,
 \]
-and applying the operator function:
+and applying the operator function: 
 \begin{align}
 i\hbar\partial_{t}U_{t} & =i\hbar\partial_{t}\exp\left(-\frac{iHt}{\hbar}\right)\\
  & =i\hbar\partial_{t}\exp\left(\sum_{j}\left(-\frac{iE_{j}t}{\hbar}\right)|E_{j}\rangle\langle E_{j}|\right)
 \end{align}
-
 
 Here we should pause to understand the mathematics. We have seen that for any Hermitian operator $T$ we have $\exp(T)=\sum^{\infty}_{n=0}\frac{1}{n!}T^{n}$. First, we can see that $H^{2}$:
 
@@ -637,13 +626,11 @@ H^{2} & =\left(\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|\right)\left(\sum_{n}E_{n
 \end{align*}
 where we used the fact that $\left\langle E_{j}|E_{n}\right\rangle =\delta_{jn}$. In general, we have $H^{n}=\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|$. Writing then:
 
-
 \begin{align*}
 \exp(H) & =\sum^{\infty}_{n=0}\frac{1}{n!}H^{n}\\
  & =\sum^{\infty}_{n=0}\frac{1}{n!}\left(\sum_{j}E^{n}_{j}|E_{j}\rangle\langle E_{j}|\right)\\
  & =\sum_{j}\left(\sum^{\infty}_{n=0}\frac{E^{n}_{j}}{n!}\right)|E_{j}\rangle\langle E_{j}|
 \end{align*}
-
 
 And since $\exp(x)=\sum^{\infty}_{n=0}\frac{x^{n}}{n!}$, then: $\exp(H)=\sum_{j}e^{E_{j}}|E_{j}\rangle\langle E_{j}|$. In our case, we then have:
 
@@ -654,16 +641,14 @@ i\hbar\partial_{t}U_{t} & =i\hbar\sum_{j}\partial_{t}\exp\left(-\frac{iE_{j}t}{\
  & =\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}H|E_{j}\rangle\langle E_{j}\\
  & =H\left(\sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|\right)
 \end{align}
-where we used $H|E_{j}\rangle=E_{j}|E_{j}\rangle$ throughout the entire proof. But now, since
+where we used $H|E_{j}\rangle=E_{j}|E_{j}\rangle$ throughout the entire proof. But now, since 
 \[
 \sum_{j}e^{-\frac{iE_{j}t}{\hbar}}|E_{j}\rangle\langle E_{j}|=e^{-\frac{it}{\hbar}\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|}=e^{-\frac{iHt}{\hbar}|}
 \]
 
 Thus $i\hbar\partial_{t}U_{t}=He^{-\frac{iHt}{\hbar}|}$ and since $i\hbar\partial_{t}U_{t}=H_{t}U_{t},$ therefore $U_{t}=e^{-iHt/\hbar}$.
 
-
 OBS. Note that we could obtain $U_{t}$ by solving the Schrödinger equation for each Hamiltonian $H$. However, having this general formula, we can begin the solution by calculating the exponential directly, without having to solve the differential equation.
-
 
 Now we can address another question related to “determinism” as opposed to free will. There are at least two senses of the word determinism. One is more closely associated with classical physics and consists of the idea that, if we know perfectly the current state of a system and the laws governing its evolution, its future and past states are, in principle, determined. The other is a broader sense, of a philosophical nature, which concerns the denial of free will.
 
@@ -673,10 +658,11 @@ Whether nature is ultimately deterministic and the probabilistic nature of quant
 
 However, it is a mistake to think that this probabilistic mathematical element would, by itself, serve as support for a defense of free will. There is no formulation in the known laws of physics that incorporates free will. We can approximate the chance of obtaining heads or tails when tossing an approximately symmetric coin to 50\% for each outcome. This is a probabilistic event, but we would not say, for that reason, that the coin possesses free will. The introduction of probabilities into the description of nature, therefore, does not confer any more free will upon nature than the probabilistic tossing of a coin.
 
-Furthermore, not only is the evolution of the quantum state deterministic, but the probability distribution itself at any given instant imposes constraints on the possible outcomes and their probabilities. In my view, these constraints are incompatible with a conception of “free” will in which the agent should possess unrestricted freedom to determine any of the possible outcomes.
+Furthermore, not only is the evolution of the quantum state deterministic, but the probability distribution itself at any given instant imposes constraints on the possible outcomes and their probabilities. In my view, these constraints are incompatible with a conception of “free” will in which the agent should possess unrestricted freedom to determine any of the possible outcomes. 
 \begin{quotation}
  \bibliographystyle{plain}
 \bibliography{ref}
+ 
 \end{quotation}
 
 \end{document}
