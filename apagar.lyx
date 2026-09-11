@@ -85,337 +85,837 @@
 \begin_body
 
 \begin_layout Standard
-# Relações de incerteza Vimos que a existência de observáveis incompatíveis, que não comutam, possibilita a preparação de estados de superposição que tem a eles associada uma 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"
-\end_layout
-
-\end_inset
-
-incerteza quântica
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"
-\end_layout
-
-\end_inset
-
- com relação a medidas futuras. Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"
-\end_layout
-
-\end_inset
-
-incertezas
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-"
-\end_layout
-
-\end_inset
-
- (desvios padrões) sobre dois observáveis.
+**Example 1**
 \end_layout
 
 \begin_layout Standard
-## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
-\end_layout
-
-\begin_layout Standard
-A RIHRS lê-se: 
-\begin_inset Formula \[\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},\]
-\end_inset
-
-com a variância definida e.g. por 
-\begin_inset Formula $Var(A) = \langle (A-\langle A\rangle)^2\rangle.$
-\end_inset
-
- As quantidades no lado direito da desigualdade serão definidas a seguir.
-\end_layout
-
-\begin_layout Standard
-Para provar a RIHRS, usaremos como uma das principais ferramentas a desigualdade de Cauchy-Scharz (DCS): 
-\begin_inset Formula \begin{equation}
-\langle\psi|\psi\rangle\langle\phi|\phi\rangle \ge |\langle\psi|\phi\rangle|^{2} = \langle\psi|\phi\rangle\langle\phi|\psi\rangle,
-\end{equation}
-\end_inset
-
-como igualdade obtida se e somente se 
-\begin_inset Formula $|\psi\rangle$
-\end_inset
-
- e 
-\begin_inset Formula $|\phi\rangle$
-\end_inset
-
- são colineares (
-\begin_inset Formula $|\psi\rangle\propto |\phi\rangle$
-\end_inset
-
-). Esse resultado é válido para qualquer par de vetores 
-\begin_inset Formula $|\psi\rangle,|\phi\rangle$
-\end_inset
-
- em um espaço de Hilbert 
-\begin_inset Formula $\mathcal{H}.$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Considere 
+Let us consider the operator 
 \begin_inset Formula $A$
 \end_inset
 
- e 
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+To verify that it is a Hermitian matrix, we can verify its conjugate transpose:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A^\dagger =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}
+= A.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Its eigenvalues are:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+[1,\;1,\;2].
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+And the corresponding eigenvectors (each column is an eigenvector) are
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have then that eigenvalue 
+\begin_inset Formula $1$
+\end_inset
+
+ is degenerate. We can reconstruct matrix 
+\begin_inset Formula $A$
+\end_inset
+
+ by spectral decomposition:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We have now defined a Hermitian matrix 
 \begin_inset Formula $B$
 \end_inset
 
- dois observáveis de um sistema físico preparado no estado 
-\begin_inset Formula $|\xi\rangle$
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B =
+\begin{pmatrix}
+3 & 1 & 0 \\
+1 & 4 & 0 \\
+0 & 0 & 5
+\end{pmatrix}.
+\]
 \end_inset
 
-. Usaremos 
-\begin_inset Formula \[\langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle\]
+
+\end_layout
+
+\begin_layout Standard
+We can verify that they commute, that is, 
+\begin_inset Formula $AB-BA=0$
 \end_inset
 
-para denotar o valor médio de um operador qualquer 
-\begin_inset Formula $X$
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+AB-BA =
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}.
+\]
 \end_inset
 
- e 
-\begin_inset Formula $I$
+
+\end_layout
+
+\begin_layout Standard
+In the simplest case, we then have a subspace of only one dimension for eigenvalue 
+\begin_inset Formula $2$
 \end_inset
 
- para denotar o operador identidade em 
-\begin_inset Formula $\mathcal{H}$
+. We can see that 
+\begin_inset Formula $Bv=bv$
 \end_inset
 
-. Vamos definir ainda os seguintes vetores: 
-\begin_inset Formula \begin{align}
-& |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle, \\
-& |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
-\end{align}
+, with 
+\begin_inset Formula $b=5$
 \end_inset
 
-que substituiremos na DCS. Notemos que 
-\begin_inset Formula \begin{align}
-\langle\psi|\psi\rangle & = ((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle) \\
-& = (|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle) \\
-& = \langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle \\
-& = \mathrm{Var}(A), \\ 
-\langle\phi|\phi\rangle & = \mathrm{Var}(B),
-\end{align}
+:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0\\
+5
+\end{pmatrix}.
+\]
 \end_inset
 
-com 
-\begin_inset Formula $\mathrm{Var}(X)=\mathrm{Var}(X)_\xi=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$
+
+\end_layout
+
+\begin_layout Standard
+Now for eigenvalue 
+\begin_inset Formula $1$
 \end_inset
 
- sendo a variância de 
-\begin_inset Formula $X$
+, we have a two-dimensional subspace formed by the vectors
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\begin{pmatrix}
+1 & 0\\
+0 & 1\\
+0 & 0
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+All non-null vectors in this subspace continue to be eigenvectors of 
+\begin_inset Formula $A$
+\end_inset
+
+ with the same eigenvalue 
+\begin_inset Formula $1$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Ademais, temos que 
-\begin_inset Formula \begin{align}
-\langle\psi|\phi\rangle &= ((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle) \\
-& = (|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle) \\ 
-& = (|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle) \\
-& = \langle AB-\langle A\rangle\langle B\rangle I\rangle \\
-& =  2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle + 2^{-1}\langle[A,B]\rangle \\
-& = \Re(\langle\psi|\phi\rangle) + i \Im(\langle\psi|\phi\rangle) \\
-& = 2^{-1}(\langle AB\rangle -\langle A\rangle\langle B\rangle + \langle BA\rangle - \langle A\rangle\langle B\rangle) + i(-i 2^{-1}\langle[A,B]\rangle)
-\end{align}
+If we denote the two eigenvectors by 
+\begin_inset Formula $(v_1,v_2)$
 \end_inset
 
-onde 
-\begin_inset Formula \begin{align}
-& [A,B]=AB-BA, \\
-& \{A,B\}=AB+BA
-\end{align}
+ and use them as a basis, any non-null vector that is a linear combination of them,
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+u = av_1+bv_2,
+\]
 \end_inset
 
-são, respectivamente, o comutador e anti-comutador de 
+
+\end_layout
+
+\begin_layout Standard
+is also an eigenvector of 
 \begin_inset Formula $A$
 \end_inset
 
- e 
+. In fact,
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+Au
+=
+A(av_1+bv_2)
+=
+aAv_1+bAv_2
+=
+av_1+bv_2
+=
+u.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now applying 
 \begin_inset Formula $B$
 \end_inset
 
-. Note que 
-\begin_inset Formula \[AB = 2^{-1}(\{A,B\}+[A,B]).\]
+ to the first eigenvector, we can see that it is a linear combination of the other two vectors in the subspace and is not a 
+\begin_inset Formula $B$
 \end_inset
 
-Como 
-\begin_inset Formula $\{A,B\}$
+ eigenvector:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+1\\
+0
+\end{pmatrix}.
+\]
 \end_inset
 
- e 
-\begin_inset Formula $[A,B]$
+
+\end_layout
+
+\begin_layout Standard
+That is, even though these two eigenvectors associated with 
+\begin_inset Formula $1$
 \end_inset
 
- são, respectivamente, operadores Hermitianos (
-\begin_inset Formula $\{A,B\}^\dagger=\{A,B\}$
-\end_inset
+ are a basis for this subspace, they do not form a common eigenvector basis. But we can build one.
+\end_layout
 
-) e anti-Hermitianos (
-\begin_inset Formula $[A,B]^\dagger = -[A,B]$
-\end_inset
-
-), seus valores médios são, respectivamente, números reais e imaginários puros. Temos com isso que 
-\begin_inset Formula \begin{align}
-& \Re(\langle\psi|\phi\rangle) = 2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle, \\
-& \Im(\langle\psi|\phi\rangle) = -i2^{-1}\langle[A,B]\rangle.
-\end{align}
-\end_inset
-
-Assim, considerando que 
-\begin_inset Formula \begin{equation}
-|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
-\end{equation}
-\end_inset
-
-e substituindo na DCS, depois de algumas manipulações algébricas obteremos a RIHRS: 
-\begin_inset Formula \begin{equation}
-\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}},
-\end{equation}
-\end_inset
-
-onde a média simples das covariâncias clássicas, 
-\begin_inset Formula \begin{equation}
-\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
-\end{equation}
-\end_inset
-
-é denominada de covariância quântica, com 
-\begin_inset Formula \[\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle\]
-\end_inset
-
-sendo a covariância entre os observáveis 
-\begin_inset Formula $X$
-\end_inset
-
- e 
-\begin_inset Formula $Y$
-\end_inset
-
-. Vale observar que se 
+\begin_layout Standard
+Since all non-null vectors in this subspace are eigenvectors of 
 \begin_inset Formula $A$
 \end_inset
 
- e 
+, we only need to find those who are also eigenvectors of 
 \begin_inset Formula $B$
-\end_inset
-
- são observáveis compatíveis, i.e., se 
-\begin_inset Formula $[A,B]=0$
-\end_inset
-
-, teremos que 
-\begin_inset Formula $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Vamos analizar agora o problema da possível trivialidade da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável 
-\begin_inset Formula $A$
-\end_inset
-
-, i.e., 
-\begin_inset Formula \[|\xi\rangle=|a\rangle\]
-\end_inset
-
-com 
-\begin_inset Formula $A|a\rangle=a|a\rangle$
-\end_inset
-
- e 
-\begin_inset Formula $a\in\mathbb{R}$
-\end_inset
-
-. Neste caso pode-se verificar que 
-\begin_inset Formula \begin{equation}
-\mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
-\end{equation}
-\end_inset
-
-E com isso a RIHRS nos retorna 
-\begin_inset Formula \begin{equation}
-0\mathrm{Var}(\hat{B})\ge0.
-\end{equation}
-\end_inset
-
-Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de 
-\begin_inset Formula $A$
-\end_inset
-
- e 
+In this two-dimensional space, 
 \begin_inset Formula $B$
 \end_inset
 
-. O mesmo tipo de limitação se aplica se 
-\begin_inset Formula $|\xi\rangle=|b\rangle$
-\end_inset
+'s action on the vectors of the space is given by:
+\end_layout
 
- para 
-\begin_inset Formula $B|b\rangle=b|b\rangle.$
+\begin_layout Standard
+
+\begin_inset Formula \[
+B_1 =
+\begin{pmatrix}
+3 & 1\\
+1 & 4
+\end{pmatrix}.
+\]
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-### Relações de incerteza de Robertson e de Heisenberg (RIH) Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson: 
-\begin_inset Formula \begin{equation}
-\sigma_{A}\sigma_{B} \ge 2^{-1}|\langle[A,B]\rangle|,
-\end{equation}
+Its eigenvalues are
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+[2.38,\;4.62].
+\]
 \end_inset
 
-com e.g. 
-\begin_inset Formula $\sigma_A = \sqrt{Var(A)}.$
+
+\end_layout
+
+\begin_layout Standard
+And the corresponding eigenvectors (each column is an eigenvector) are:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\begin{pmatrix}
+-0.85 & -0.53\\
+0.53 & -0.85
+\end{pmatrix}.
+\]
 \end_inset
 
- Quando aplicada a posição e momento linear é uma das relações de incerteza de Heisenberg: 
-\begin_inset Formula \begin{equation}
-\sigma_{X}\sigma_{P} \ge 2^{-1}|\langle[X,P]\rangle|=\hbar/2,
-\end{equation}
+
+\end_layout
+
+\begin_layout Standard
+Combining with the previous results, we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis):
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+\begin{pmatrix}
+-0.85 & -0.53 & 0\\
+0.53 & -0.85 & 0\\
+0 & 0 & 1
+\end{pmatrix}.
+\]
 \end_inset
 
-pois 
-\begin_inset Formula $[X,P]=i\hbar I$
+
+\end_layout
+
+\begin_layout Standard
+We can test by applying 
+\begin_inset Formula $A$
+\end_inset
+
+ to the vectors of the new basis:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+2 \begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the corresponding eigenvalues:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+[1,\;1,\;2].
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can test by applying 
+\begin_inset Formula $B$
+\end_inset
+
+ to the vectors of the new basis:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix}
+=
+2.38
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix}
+=
+4.62
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+5
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+With the corresponding eigenvalues:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+[2.38,\;4.62,\;5].
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+**Example 2**
+\end_layout
+
+\begin_layout Standard
+Suppose we have the operators
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+A=
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+B=
+\begin{pmatrix}
+1 & 0\\
+0 & -1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+We can verify that they do not commute, since
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+[A,B]=AB-BA
+=
+\begin{pmatrix}
+0 & -2\\
+2 & 0
+\end{pmatrix}
+\neq 0.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For the operator 
+\begin_inset Formula \(A\)
+\end_inset
+
+, the eigenvalues are
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+a=+1,\,-1,
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with corresponding normalized eigenvectors
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+|a=+1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix},
+\qquad
+|a=-1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+-1\\
+1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suppose, for example, that after measuring 
+\begin_inset Formula \(A\)
+\end_inset
+
+, we obtain the value 
+\begin_inset Formula \(a=+1\)
+\end_inset
+
+. The system is then in the corresponding eigenstate,
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+|\psi\rangle
+=
+|a=+1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Now consider measuring 
+\begin_inset Formula \(B\)
+\end_inset
+
+. The eigenvalues of 
+\begin_inset Formula \(B\)
+\end_inset
+
+ are also
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+b=+1,\,-1,
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with corresponding eigenvectors
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+|b=+1\rangle
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+\qquad
+|b=-1\rangle
+=
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The probability of obtaining a particular eigenvalue 
+\begin_inset Formula \(b\)
+\end_inset
+
+ is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+P(b)=|\langle b|\psi\rangle|^2.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+P(b=+1)
+=
+|\langle b=+1|a=+1\rangle|^2
+=
+\frac{1}{2},
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Formula \[
+P(b=-1)
+=
+|\langle b=-1|a=+1\rangle|^2
+=
+\frac{1}{2}.
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thus, there is a 
+\begin_inset Formula \(50\%\)
+\end_inset
+
+ probability of observing 
+\begin_inset Formula \(+1\)
+\end_inset
+
+ and a 
+\begin_inset Formula \(50\%\)
+\end_inset
+
+ probability of observing 
+\begin_inset Formula \(-1\)
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a soma das variâncias: 
-\begin_inset Formula \begin{align}
-& (\sigma_{A}-\sigma_{B})^{2}\ge 0 \therefore \sigma_{A}^{2}+\sigma_{B}^{2}-2\sigma_{A}\sigma_{B}\ge 0 \\
-& Var(A)+Var(B) \ge 2\sigma_{A}\sigma_{B} \ge |\langle[A,B]\rangle|.
-\end{align}
+In other words, since 
+\begin_inset Formula \(A\)
 \end_inset
 
-No entanto, essa nova relação também sofre do problema da trivialidade.
+ and 
+\begin_inset Formula \(B\)
+\end_inset
+
+ do not commute and, in this example, do not share any eigenvectors, after measuring one of the observables, the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
 \end_layout
 
 \end_body

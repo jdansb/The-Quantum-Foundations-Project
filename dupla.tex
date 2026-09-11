@@ -16,11 +16,11 @@
 \begin{quote}
 ``If anyone aims to have anything like a broad understanding of the sciences that underpin modern technology, as well as obtaining some insight into the modern view of the character of the physical world, then some knowledge and understanding of quantum mechanics is mandatory.'' (\cite{cresser2001quantum})
 \end{quote}
-Um material que parece muito interessante é o PDF ``Quantum Physics Notes'' do professor J D Cresser (\cite{cresser2001quantum}). Provavelmente estarei na sequência trabalhando com os capítulos 3, 4, 6 e 7. Mas me parece que o PDF inteiro é uma excelente introdução, apenas eu pessoalmente estou com preguiça de rever (uma vez mais) o formalismo matemático da mecânica quântica\footnote{Pelo que pude notar, dos capítulos restantes, os capítulos 1 e 2 são introdutórios/históricos, o últim capítulo (11) trata dos postulados da mecânica quântica, já os capítulos 8, 9 e 10 tratando do seu formalismo matemático e por fim, o capítulo 5 discute a formulação ondulatória da mecânica quântica.}. Mas um dia talvez eu adicione como apêndice.
+A material that seems very interesting is the PDF ``Quantum Physics Notes'' by Professor J. D. Cresser (\cite{cresser2001quantum}). I will probably be working next with Chapters 3, 4, 6, and 7. But it seems to me that the entire PDF is an excellent introduction; I am just personally too lazy to review (once again) the mathematical formalism of quantum mechanics\footnote{From what I could tell, among the remaining chapters, Chapters 1 and 2 are introductory/historical, the last chapter (11) deals with the postulates of quantum mechanics, Chapters 8, 9, and 10 deal with its mathematical formalism, and finally, Chapter 5 discusses the wave formulation of quantum mechanics.}. But perhaps one day I will add it as an appendix.
 
 Quantum mechanics provides a framework of physical and mathematical principles through which we seek to understand the physical nature of the world in which we live. These principles are fundamental and are presumed to apply to all physical systems. They embody fundamental physical and philosophical questions that can be abstracted from any particular physical system and studied independently of the specific systems in which they may be manifested. It is this abstract formulation of these principles that constitutes quantum mechanics.
 
-\subsection{Algum background histórico}
+\subsection{Some historical background}
 
 \textbf{Planck’s Black Body Theory (1900):} In an attempt to understand the form of the spectrum of the electromagnetic radiation emitted by an object in thermal equilibrium at some temperature (a black body), Planck was forced to propose that the atoms making up the object absorbed and emitted light of (angular) frequency $\omega$ in multiples of a fundamental unit of energy, or quantum of energy, $E=\hbar\omega$, where $\hbar=h/2\pi$ and where $h$ is a new fundamental constant of nature, Planck’s constant, $h=6.622\times10^{-34}Js^{-1}$ though the name Planck’s constant is now often applied to $\hbar$.
 
@@ -58,7 +58,7 @@ It more usual to work in terms of the angular frequency $\omega=2\pi f$ and wave
 \omega=E/\hbar\qquad k=p/\hbar
 \]
 
-With this in mind, we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)\footnote{Lembre que quando resolvemos a equação de Schroedinger para a partícula livre obtemos 2 dessas possibilidades.}:
+With this in mind, we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)\footnote{Recall that when we solved the Schrödinger equation for the free particle, we obtained two of these possibilities.}:
 
 \[
 \Psi\left(x,t\right)=A\sin\left(kx-\omega t\right),\quad Ae^{-i\left(kx+\omega t\right)}+Ae^{i\left(kx-\omega t\right)},\dots
@@ -101,7 +101,7 @@ around a mean value $\overline{k}$, i. e.
  & =\sum_{n}A\left(k_{n}\right)\cos\left(k_{n}x-\omega t\right)
 \end{align*}
 
-where $A\left(k_{n}\right)$ is a function peaked about the mean value $\overline{k}$ with a full width at half maximum $2\Delta k$\footnote{Isto é, $A\left(k_{n}\right)$ tem um pico em $\overline{k}$ e assume metade de seu valor máximo a uma distância $\Delta k$ de $\overline{k}$, de modo que sua largura total à meia altura é $2\Delta k$.}. What is found is that in the limit in which the sum becomes an integral:
+where $A\left(k_{n}\right)$ is a function peaked about the mean value $\overline{k}$ with a full width at half maximum $2\Delta k$\footnote{That is, $A\left(k_{n}\right)$ has a peak at $\overline{k}$ and assumes half of its maximum value at a distance $\Delta k$ from $\overline{k}$, so that its full width at half maximum is $2\Delta k$.}. What is found is that in the limit in which the sum becomes an integral:
 
 \begin{align*}
 \Psi\left(x,t\right) & =\int^{+\infty}_{-\infty}A\left(k\right)\cos\left(kx-\omega t\right)dk
@@ -153,7 +153,7 @@ This is a result of some significance, i.e. we have constructed a wave function 
 
 The wave packet constructed in the previous section obviously has properties that are reminiscent of a particle, but it is not entirely particle-like -- the wave function is non-zero over a region in space of size $2\Delta x$.In the absence of any better way of relating the wave function to the position of the atom, it is intuitively appealing to suppose that where $\Psi\left(x,t\right)$ has its greatest amplitude is where the particle is most likely to be found, i.e the particle is to be found somewhere in a region of size $2\Delta x$.
 
-More than that, however, we have seen that to construct this wavepacket, harmonic waves having $k$ values in the range $\left(k-\Delta k,k+\Delta k\right)$ were adding together.These ranges $\Delta x$ and $\Delta k$\ensuremath{\Delta}are related by the bandwidth theorem, which applies when adding together harmonic waves, which tell us that
+More than that, however, we have seen that to construct this wavepacket, harmonic waves having $k$ values in the range $\left(k-\Delta k,k+\Delta k\right)$ were adding together.These ranges $\Delta x$ and $\Delta k$ are related by the bandwidth theorem, which applies when adding together harmonic waves, which tell us that
 
 \[
 \Delta x\Delta k\gtrsim1
@@ -173,7 +173,6 @@ Using $p=\hbar k$, we have $\Delta p=\hbar\Delta k$ so that
 A closer look at this result is warranted.A wave packet that has a significant amplitude within a range $2\Delta x$ was constructed from harmonic wave functions which represent a range of momenta $\overline{p}-\Delta p$ to $\overline{p}+\Delta p$.We can say then say that the particle is likely to be found somewhere in the region $2\Delta x$, and given that wave functions representing a range of possible momenta were used to form this wave packet, we could also say that the momentum of the particle will have a value in the range $\overline{p}-\Delta p$ to $\overline{p}+\Delta p$.
 
 The quantities $\Delta x$ and $\Delta p$ are known as uncertainties for reasons that will become increasingly apparent, and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
-
 
 \subsection{Retomando a partícula livre}
 

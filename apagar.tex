@@ -1,102 +1,417 @@
-# Relações de incerteza
-Vimos que a existência de observáveis incompatíveis, que não comutam, possibilita a preparação de estados de superposição que tem a eles associada uma "incerteza quântica" com relação a medidas futuras. Aqui usaremos o formalismo cinemático quântico para obter relações matemáticas gerais que fornecem limitações para o produto ou soma das "incertezas" (desvios padrões) sobre dois observáveis.
+**Example 1**
 
-## Relação de incerteza de Heisenberg-Robertson-Schrödinger (RIHRS)
+Let us consider the operator $A$:
 
-A RIHRS lê-se:
-$$\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2},$$
-com a variância definida e.g. por $Var(A) = \langle (A-\langle A\rangle)^2\rangle.$ As quantidades no lado direito da desigualdade serão definidas a seguir.
+$$
+A =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}.
+$$
 
-Para provar a RIHRS, usaremos como uma das principais ferramentas a __desigualdade de Cauchy-Scharz__ (DCS):
-\begin{equation}
-\langle\psi|\psi\rangle\langle\phi|\phi\rangle \ge |\langle\psi|\phi\rangle|^{2} = \langle\psi|\phi\rangle\langle\phi|\psi\rangle,
-\end{equation}
-como igualdade obtida se e somente se $|\psi\rangle$ e $|\phi\rangle$ são colineares ($|\psi\rangle\propto |\phi\rangle$). Esse resultado é válido para qualquer par de vetores $|\psi\rangle,|\phi\rangle$ em um espaço de Hilbert $\mathcal{H}.$
+To verify that it is a Hermitian matrix, we can verify its conjugate transpose:
 
-Considere $A$ e $B$ dois _observáveis_ de um sistema físico _preparado no estado_ $|\xi\rangle$. Usaremos 
-$$\langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle$$
-para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Vamos definir ainda os seguintes vetores:
-\begin{align}
-& |\psi\rangle=(A-\langle A\rangle I)|\xi\rangle, \\
-& |\phi\rangle=(B-\langle B\rangle I)|\xi\rangle,
-\end{align}
-que substituiremos na DCS. Notemos que 
-\begin{align}
-\langle\psi|\psi\rangle & = ((A-\langle A\rangle I)|\xi\rangle,(A-\langle A\rangle I)|\xi\rangle) \\
-& = (|\xi\rangle,(A-\langle A\rangle I)^{\dagger}(A-\langle A\rangle I)|\xi\rangle) \\
-& = \langle\xi|(A-\langle A\rangle I)^{2}|\xi\rangle \\
-& = \mathrm{Var}(A), \\ 
-\langle\phi|\phi\rangle & = \mathrm{Var}(B),
-\end{align}
-com $\mathrm{Var}(X)=\mathrm{Var}(X)_\xi=\langle\xi|(X-\langle X\rangle I)^{2}|\xi\rangle=\langle(X-\langle X\rangle I)^{2}\rangle$
-sendo a variância de $X$. 
+$$
+A^\dagger =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}
+= A.
+$$
 
-Ademais, temos que
-\begin{align}
-\langle\psi|\phi\rangle &= ((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle) \\
-& = (|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle) \\ 
-& = (|\xi\rangle,(AB-A\langle B\rangle-\langle A\rangle B+\langle A\rangle\langle B\rangle I)|\xi\rangle) \\
-& = \langle AB-\langle A\rangle\langle B\rangle I\rangle \\
-& =  2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle + 2^{-1}\langle[A,B]\rangle \\
-& = \Re(\langle\psi|\phi\rangle) + i \Im(\langle\psi|\phi\rangle) \\
-& = 2^{-1}(\langle AB\rangle -\langle A\rangle\langle B\rangle + \langle BA\rangle - \langle A\rangle\langle B\rangle) + i(-i 2^{-1}\langle[A,B]\rangle)
-\end{align}
-onde
-\begin{align}
-& [A,B]=AB-BA, \\
-& \{A,B\}=AB+BA
-\end{align}
-são, respectivamente, o comutador e anti-comutador de $A$ e $B$. Note que 
-$$AB = 2^{-1}(\{A,B\}+[A,B]).$$
-Como $\{A,B\}$ e $[A,B]$ são, respectivamente, operadores Hermitianos ($\{A,B\}^\dagger=\{A,B\}$) e anti-Hermitianos ($[A,B]^\dagger = -[A,B]$), seus valores médios são, respectivamente, números reais e imaginários puros. Temos com isso que
-\begin{align}
-& \Re(\langle\psi|\phi\rangle) = 2^{-1}\langle\{A,B\}-2\langle A\rangle\langle B\rangle\mathbb{I}\rangle, \\
-& \Im(\langle\psi|\phi\rangle) = -i2^{-1}\langle[A,B]\rangle.
-\end{align}
-Assim, considerando que 
-\begin{equation}
-|\langle\psi|\phi\rangle|^{2}=(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2},
-\end{equation}
-e substituindo na DCS, depois de algumas manipulações algébricas obteremos a RIHRS:
-\begin{equation}
-\color{blue}{\mathrm{Var}(A)\mathrm{Var}(B)\ge (\mathrm{CovQ}(A,B))^{2}+2^{-2}|\langle[A,B]\rangle|^{2}},
-\end{equation}
-onde a média simples das covariâncias clássicas,
-\begin{equation}
-\mathrm{CovQ}(A,B)=2^{-1}(\mathrm{Cov}(A,B)+\mathrm{Cov}(B,A)),
-\end{equation}
-é denominada de covariância quântica, com 
-$$\mathrm{Cov}(X,Y)=\langle XY\rangle-\langle X\rangle\langle Y\rangle$$
-sendo a covariância entre os observáveis $X$ e $Y$.
-Vale observar que se $A$ e $B$ são observáveis compatíveis, i.e., se
-$[A,B]=0$, teremos que $\mathrm{CovQ}(A,B)=\mathrm{Cov}(A,B)$.
+Its eigenvalues are:
 
-Vamos analizar agora o __problema da possível trivialidade__ da RIHRS, que tem por objetivo geral delimitar o quão pequeno pode ser o produto das variâncias de um par de observáveis. Para isso vamos assumir que o sistema está preparado em um estado que é autovetor do observável $A$, i.e., 
-$$|\xi\rangle=|a\rangle$$
-com $A|a\rangle=a|a\rangle$ e $a\in\mathbb{R}$. Neste caso pode-se verificar que 
-\begin{equation}
-\mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
-\end{equation}
-E com isso a RIHRS nos retorna 
-\begin{equation}
-0\mathrm{Var}(\hat{B})\ge0.
-\end{equation}
-Por conseguinte, neste caso, a RIHRS não fornece informação alguma sobre a possível incompatibilidade de $A$ e $B$. O mesmo tipo de limitação se aplica se $|\xi\rangle=|b\rangle$ para $B|b\rangle=b|b\rangle.$
+$$
+[1,\;1,\;2].
+$$
 
-### Relações de incerteza de Robertson e de Heisenberg (RIH)
-Ignorando-se o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a __relação de incerteza de Robertson__:
-\begin{equation}
-\sigma_{A}\sigma_{B} \ge 2^{-1}|\langle[A,B]\rangle|,
-\end{equation}
-com e.g. $\sigma_A = \sqrt{Var(A)}.$ Quando aplicada a posição e momento linear é uma das __relações de incerteza de Heisenberg__:
-\begin{equation}
-\sigma_{X}\sigma_{P} \ge 2^{-1}|\langle[X,P]\rangle|=\hbar/2,
-\end{equation}
-pois $[X,P]=i\hbar I$.
+And the corresponding eigenvectors (each column is an eigenvector) are
 
-Vale observar aqui que podemos usar a relação de incerteza de Robertson para obter uma relação que envolve a _soma das variâncias_:
-\begin{align}
-& (\sigma_{A}-\sigma_{B})^{2}\ge 0 \therefore \sigma_{A}^{2}+\sigma_{B}^{2}-2\sigma_{A}\sigma_{B}\ge 0 \\
-& Var(A)+Var(B) \ge 2\sigma_{A}\sigma_{B} \ge |\langle[A,B]\rangle|.
-\end{align}
-No entanto, essa nova relação também sofre do problema da trivialidade.
+$$
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 1
+\end{pmatrix}.
+$$
+
+We have then that eigenvalue $1$ is degenerate. We can reconstruct matrix $A$ by spectral decomposition:
+
+$$
+A =
+\begin{pmatrix}
+1 & 0 & 0 \\
+0 & 1 & 0 \\
+0 & 0 & 2
+\end{pmatrix}.
+$$
+
+We have now defined a Hermitian matrix $B$:
+
+$$
+B =
+\begin{pmatrix}
+3 & 1 & 0 \\
+1 & 4 & 0 \\
+0 & 0 & 5
+\end{pmatrix}.
+$$
+
+We can verify that they commute, that is, $AB-BA=0$:
+
+$$
+AB-BA =
+\begin{pmatrix}
+0 & 0 & 0 \\
+0 & 0 & 0 \\
+0 & 0 & 0
+\end{pmatrix}.
+$$
+
+In the simplest case, we then have a subspace of only one dimension for eigenvalue $2$. We can see that $Bv=bv$, with $b=5$:
+
+$$
+B
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0\\
+5
+\end{pmatrix}.
+$$
+
+Now for eigenvalue $1$, we have a two-dimensional subspace formed by the vectors
+
+$$
+\begin{pmatrix}
+1 & 0\\
+0 & 1\\
+0 & 0
+\end{pmatrix}.
+$$
+
+All non-null vectors in this subspace continue to be eigenvectors of $A$ with the same eigenvalue $1$.
+
+If we denote the two eigenvectors by $(v_1,v_2)$ and use them as a basis, any non-null vector that is a linear combination of them,
+
+$$
+u = av_1+bv_2,
+$$
+
+is also an eigenvector of $A$. In fact,
+
+$$
+Au
+=
+A(av_1+bv_2)
+=
+aAv_1+bAv_2
+=
+av_1+bv_2
+=
+u.
+$$
+
+Now applying $B$ to the first eigenvector, we can see that it is a linear combination of the other two vectors in the subspace and is not a $B$ eigenvector:
+
+$$
+B
+\begin{pmatrix}
+1\\
+0\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+3\\
+1\\
+0
+\end{pmatrix}.
+$$
+
+That is, even though these two eigenvectors associated with $1$ are a basis for this subspace, they do not form a common eigenvector basis. But we can build one.
+
+Since all non-null vectors in this subspace are eigenvectors of $A$, we only need to find those who are also eigenvectors of $B$.
+
+In this two-dimensional space, $B$'s action on the vectors of the space is given by:
+
+$$
+B_1 =
+\begin{pmatrix}
+3 & 1\\
+1 & 4
+\end{pmatrix}.
+$$
+
+Its eigenvalues are
+
+$$
+[2.38,\;4.62].
+$$
+
+And the corresponding eigenvectors (each column is an eigenvector) are:
+
+$$
+\begin{pmatrix}
+-0.85 & -0.53\\
+0.53 & -0.85
+\end{pmatrix}.
+$$
+
+Combining with the previous results, we can have a new basis given by the eigenvectors (where each column corresponds to a vector of the new basis):
+
+$$
+\begin{pmatrix}
+-0.85 & -0.53 & 0\\
+0.53 & -0.85 & 0\\
+0 & 0 & 1
+\end{pmatrix}.
+$$
+
+We can test by applying $A$ to the vectors of the new basis:
+
+$$
+A
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix},
+$$
+
+$$
+A
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix},
+$$
+
+$$
+A
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+2 \begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}.
+$$
+
+With the corresponding eigenvalues:
+
+$$
+[1,\;1,\;2].
+$$
+
+We can test by applying $B$ to the vectors of the new basis:
+
+$$
+B
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix}
+=
+2.38
+\begin{pmatrix}
+-0.85\\
+0.53\\
+0
+\end{pmatrix},
+$$
+
+$$
+B
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix}
+=
+4.62
+\begin{pmatrix}
+-0.53\\
+-0.85\\
+0
+\end{pmatrix},
+$$
+
+$$
+B
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}
+=
+5
+\begin{pmatrix}
+0\\
+0\\
+1
+\end{pmatrix}.
+$$
+
+With the corresponding eigenvalues:
+
+$$
+[2.38,\;4.62,\;5].
+$$
+
+
+**Example 2**
+
+Suppose we have the operators
+
+$$
+A=
+\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+$$
+
+and
+
+$$
+B=
+\begin{pmatrix}
+1 & 0\\
+0 & -1
+\end{pmatrix}.
+$$
+
+We can verify that they do not commute, since
+
+$$
+[A,B]=AB-BA
+=
+\begin{pmatrix}
+0 & -2\\
+2 & 0
+\end{pmatrix}
+\neq 0.
+$$
+
+For the operator \(A\), the eigenvalues are
+
+$$
+a=+1,\,-1,
+$$
+
+with corresponding normalized eigenvectors
+
+$$
+|a=+1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix},
+\qquad
+|a=-1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+-1\\
+1
+\end{pmatrix}.
+$$
+
+Suppose, for example, that after measuring \(A\), we obtain the value \(a=+1\). The system is then in the corresponding eigenstate,
+
+$$
+|\psi\rangle
+=
+|a=+1\rangle
+=
+\frac{1}{\sqrt{2}}
+\begin{pmatrix}
+1\\
+1
+\end{pmatrix}.
+$$
+
+Now consider measuring \(B\). The eigenvalues of \(B\) are also
+
+$$
+b=+1,\,-1,
+$$
+
+with corresponding eigenvectors
+
+$$
+|b=+1\rangle
+=
+\begin{pmatrix}
+1\\
+0
+\end{pmatrix},
+\qquad
+|b=-1\rangle
+=
+\begin{pmatrix}
+0\\
+1
+\end{pmatrix}.
+$$
+
+The probability of obtaining a particular eigenvalue \(b\) is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
+
+$$
+P(b)=|\langle b|\psi\rangle|^2.
+$$
+
+Therefore,
+
+$$
+P(b=+1)
+=
+|\langle b=+1|a=+1\rangle|^2
+=
+\frac{1}{2},
+$$
+
+and
+
+$$
+P(b=-1)
+=
+|\langle b=-1|a=+1\rangle|^2
+=
+\frac{1}{2}.
+$$
+
+Thus, there is a \(50\%\) probability of observing \(+1\) and a \(50\%\) probability of observing \(-1\).
+
+In other words, since \(A\) and \(B\) do not commute and, in this example, do not share any eigenvectors, after measuring one of the observables, the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
+

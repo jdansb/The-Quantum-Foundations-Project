@@ -1433,1130 +1433,7 @@ The quantities
 \end_layout
 
 \begin_layout Section
-Postulates of quantum mechanics
-\end_layout
-
-\begin_layout Subsection
-Notation
-\end_layout
-
-\begin_layout Standard
-To move forward,
- we need to know the postulates
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-A postulate is a proposition assumed to be true within a theory,
- serving as a starting point for the construction of its concepts and results.
-\end_layout
-
-\end_inset
-
- of quantum mechanics.
- The first point to note is that they can be formulated in different ways from one book to another.
- We will use Professor Jonas Maziero's material (
-\begin_inset CommandInset citation
-LatexCommand cite
-key "maziero"
-literal "false"
-
-\end_inset
-
-).
- We need to begin,
- then,
- with some comments on Dirac notation.
-\end_layout
-
-\begin_layout Standard
-In this notation,
- we write a vector as 
-\begin_inset Formula $\left|v\right\rangle $
-\end_inset
-
-,
- called a ket.
- Taking the conjugate transpose of this vector (or adjoint),
- we obtain 
-\begin_inset Formula $\left\langle v\right|=\left|v\right\rangle ^{\dagger}=\left(\left|v\right\rangle ^{T}\right)^{*}$
-\end_inset
-
-,
- which is called a bra.
- If we represent the vector 
-\begin_inset Formula $\left|v\right\rangle $
-\end_inset
-
- in an orthonormal basis 
-\begin_inset Formula $\left\{ \left|b_{j}\right\rangle \right\} $
-\end_inset
-
-,
- we can write it as a linear combination of the basis vectors:
- 
-\begin_inset Formula $\left|v\right\rangle =\sum_{i}\left\langle b_{i}|v\right\rangle \left|b_{i}\right\rangle $
-\end_inset
-
-.
- In matrix representation,
- we have
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\left|v\right\rangle =\left[\begin{array}{c}
-\left\langle b_{1}|v\right\rangle \\
-\vdots\\
-\left\langle b_{n}|v\right\rangle 
-\end{array}\right]
-\end{equation}
-
-\end_inset
-
-The product of a bra and a ket is called the inner product and results in a scalar:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\left\langle w|v\right\rangle =\left|w\right\rangle ^{\dagger}\left|v\right\rangle =\left[\begin{array}{ccc}
-\left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|w\right\rangle ^{*}\end{array}\right]\left[\begin{array}{c}
-\left\langle b_{1}|v\right\rangle \\
-\vdots\\
-\left\langle b_{n}|v\right\rangle 
-\end{array}\right]=\sum^{n}_{j=1}\left\langle b_{j}|w\right\rangle ^{*}\left\langle b_{j}|v\right\rangle 
-\end{equation}
-
-\end_inset
-
-On the other hand,
- the product of a ket and a bra is called the outer product and results in an operator,
- whose matrix representation is:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\left|v\right\rangle \left\langle w\right|=\left|v\right\rangle \left|w\right\rangle ^{\dagger}=\left[\begin{array}{c}
-\left\langle b_{1}|v\right\rangle \\
-\vdots\\
-\left\langle b_{n}|v\right\rangle 
-\end{array}\right]\left[\begin{array}{ccc}
-\left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|w\right\rangle ^{*}\end{array}\right]=\left[\begin{array}{ccc}
-\left\langle b_{1}|v\right\rangle \left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{1}|v\right\rangle \left\langle b_{n}|w\right\rangle ^{*}\\
-\vdots & \vdots & \vdots\\
-\left\langle b_{n}|v\right\rangle \left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|v\right\rangle \left\langle b_{n}|w\right\rangle ^{*}
-\end{array}\right]
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-With this in mind,
- we can now move on to the postulates of quantum mechanics.
-\end_layout
-
-\begin_layout Subsection
-State Postulate
-\end_layout
-
-\begin_layout Quote
-In every physical theory,
- we seek to describe the possible states of the system of interest,
- the changes in these states (temporal evolution),
- and the observable quantities and their measurements.
- For example,
- in Newtonian Mechanics (NM),
- the state of a system at a certain instant of time is specified by the values of position and velocity relative to a certain inertial reference frame,
- and its temporal evolution is given by Newton's second law.
- The observables are essentially the positions,
- from which we obtain the velocities using the time parameter.
- It is implicit in NM that the values of the observables are determined even before they are measured,
- and that all these observables can have well-defined values at a given instant of time.
- Next,
- we will see the postulates of QM for describing states,
- changes in these states,
- observables,
- and their measurements.
- We will see that the measurement part differs greatly from that of NM,
- mainly because of the existence of observables that cannot have well-defined values at the same time (
-\begin_inset CommandInset citation
-LatexCommand cite
-key "maziero"
-literal "false"
-
-\end_inset
-
-).
- 
-\end_layout
-
-\begin_layout Standard
-The state of a quantum system is described by a normalized vector in a Hilbert space 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
-.
- For simplicity,
- we will consider 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
- as a vector space equipped with an inner product function 
-\begin_inset Formula $\left\langle \cdot|\cdot\right\rangle :\mathcal{H}\rightarrow\mathbb{C}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Furthermore,
- a Hilbert space is a complete complex vector space.
- To understand what it means to be complete,
- we first need to understand the concept of a Cauchy sequence.
- A Cauchy sequence is a sequence whose elements become arbitrarily close to one another as we advance through the sequence.
- A complete metric space
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-A metric space is,
- essentially,
- a set of objects in which we define a way of measuring the distance between two objects.
- In the case of a vector space with an inner product,
- the distance can be defined from the norm induced by the inner product.
-\end_layout
-
-\end_inset
-
- is one in which every Cauchy sequence converges to a limit that also belongs to the space itself.
-\end_layout
-
-\begin_layout Standard
-By system,
- we refer to a degree of freedom
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-A degree of freedom corresponds to an independent physical variable that can vary and that can be used to characterize the state of a system.
- For example,
- the position and spin of a particle correspond to different degrees of freedom.
-\end_layout
-
-\end_inset
-
-.
- For example,
- the spin of an electron is a system,
- another system would be its position,
- and so on.
- When we consider two or more degrees of freedom as a single entity,
- we call it a composite system,
- and if we divide the composite system into subsystems,
- its state is described by a normalized vector in a Hilbert space obtained by taking the tensor product of the individual spaces:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\mathcal{H}=\mathcal{H}_{a}\otimes\mathcal{H}_{b}\otimes\dots
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Measurement Postulate
-\end_layout
-
-\begin_layout Standard
-Observable (measurable) quantities are represented by linear Hermitian operators,
- 
-\begin_inset Formula $O=O^{\dagger}$
-\end_inset
-
-,
- defined on 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
-.
- When we measure an observable,
- we will obtain one of its possible values,
- which are given by the eigenvalues of the Hermitian operator.
-\end_layout
-
-\begin_layout Standard
-Unlike classical mechanics (CM),
- quantum mechanics (QM),
- in general,
- does not allow us to predict with certainty the outcome of a measurement.
- What QM provides us with are the probabilities of obtaining the different outcomes,
- calculated by means of the Born rule:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-P\left(o|\psi\right)=\left|\left\langle \psi|o\right\rangle \right|^{2}=\left|\left\langle o|\psi\right\rangle \right|^{2}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-This is the probability of obtaining the value 
-\begin_inset Formula $o$
-\end_inset
-
- when measuring the observable 
-\begin_inset Formula $O$
-\end_inset
-
- of a system that is in the state 
-\begin_inset Formula $\left|\psi\right\rangle $
-\end_inset
-
- immediately before the measurement,
- and 
-\begin_inset Formula $\left|o\right\rangle $
-\end_inset
-
- is the eigenvector of 
-\begin_inset Formula $O$
-\end_inset
-
- corresponding to the eigenvalue 
-\begin_inset Formula $o$
-\end_inset
-
-.
- 
-\begin_inset Formula $O=O^{\dagger}$
-\end_inset
-
- are defined on 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
-.
- When we measure an observable,
- we obtain one of its possible values,
- which are represented by the eigenvalues of the Hermitian operator.
-\end_layout
-
-\begin_layout Standard
-Before moving forward,
- we can stop to reflect for a moment.
- When we were working with classical mechanics and Newton's law,
- one of the observables of a particle was its position,
- and Newton's law directly described how this quantity varied in time.
-\end_layout
-
-\begin_layout Standard
-However,
- when we approach quantum mechanics,
- the Schrödinger equation describes how the wave function varies in time (and space).
- With Dirac notation,
- as we will see when studying the dynamics postulate,
- we have a mathematical description of how the state vector of the system varies in time.
- However,
- the state vector is not itself an observable.
-\end_layout
-
-\begin_layout Standard
-Even temporarily ignoring the probabilistic aspect,
- we use the state vector to calculate quantities associated with observables.
- This already constitutes a fundamental difference between the classical and quantum descriptions of systems.
- But if we calculate scalar quantities associated with observables from the state vector (or the wave function) of the system,
- what is the physical meaning of the state vector itself?
- Does it even have a direct physical meaning?
-\end_layout
-
-\begin_layout Standard
-This is one of the points on which different interpretations of quantum mechanics diverge.
- There is still no consensus on which interpretation provides the correct description of physical reality,
- although some interpretations may be ruled out or considered problematic in light of certain theoretical arguments and experimental results.
-\end_layout
-
-\begin_layout Standard
-Likewise,
- different interpretations diverge on the question of whether all relevant physical information about a system is necessarily contained in its state vector.
- We will explore different interpretations later on.
- For now,
- it is enough to emphasize that the physical meaning of the state vector and the status of the information it contains are profound interpretational questions on which there is no consensus.
-\end_layout
-
-\begin_layout Subsubsection
-Repeatability of measurements
-\end_layout
-
-\begin_layout Standard
-However,
- there is one more detail that,
- although it is not explicitly contained in the postulates we have presented so far,
- is significantly different when we are in the quantum domain:
- performing a measurement affects the system.
-\end_layout
-
-\begin_layout Standard
-When we observe the position of a soccer ball that moves according to classical mechanics,
- we can,
- in principle,
- make this observation without significantly altering the state of the ball.
- We can therefore consider that the observation was performed approximately “externally” to the system itself,
- leaving it practically unchanged.
-\end_layout
-
-\begin_layout Standard
-In the quantum domain,
- however,
- the situation is different.
- When we perform a measurement,
- the system interacts with the measurement apparatus and,
- in general,
- its state is significantly altered.
- One consequence of this is that,
- if we measure the same observable twice immediately in succession,
- the result of the second measurement will necessarily be equal to that obtained in the first.
-\end_layout
-
-\begin_layout Standard
-Indeed,
- suppose that the first measurement of the observable (
-\begin_inset Formula $O$
-\end_inset
-
-) produced the result (
-\begin_inset Formula $o$
-\end_inset
-
-).
- After this measurement,
- the state of the system becomes a state associated with the result (
-\begin_inset Formula $o$
-\end_inset
-
-).
- In the case where the eigenvalue (
-\begin_inset Formula $o$
-\end_inset
-
-) is non-degenerate
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-A non-degenerate eigenvalue is one to which a single eigenvector corresponds,
- up to a global phase,
- that is,
- a complex phase factor 
-\begin_inset Formula $e^{i\phi}$
-\end_inset
-
- that multiplies the state vector and does not affect the measurement outcomes,
- since 
-\begin_inset Formula $e^{i\phi}\left(e^{i\phi}\right)^{*}=1$
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-,
- we can write
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-P\left(o|\psi\right)=1,\quad\rightarrow\left|\psi\right\rangle =e^{i\phi}\left|o\right\rangle 
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-A second immediately subsequent measurement of the same observable will therefore once again produce the result (
-\begin_inset Formula $o$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-Note that,
- theoretically,
- before the measurement is performed,
- quantum mechanics provides us only with the probabilities associated with the possible outcomes.
- In the laboratory,
- however,
- an individual realization of the measurement necessarily produces a definite outcome.
- This leads us to another fundamental question:
- the probabilistic nature of quantum mechanics.
- Its probabilistic predictions concern the frequencies and distributions of outcomes obtained from ensembles of systems prepared in equivalent ways and subjected to the same experimental procedure,
- and they do not,
- in general,
- determine which specific outcome will be obtained in an individual realization.
-\end_layout
-
-\begin_layout Standard
-Before the measurement is performed,
- we have only the probabilities associated with the different values we may obtain.
- In this situation,
- in what state is the system?
- When dealing with classical mechanics,
- deterministic dynamics allows us,
- in principle,
- to determine the state of a system at an earlier instant 
-\begin_inset Formula $t'<t$
-\end_inset
-
- by knowing its state at an instant 
-\begin_inset Formula $t$
-\end_inset
-
-.
- Can we extend this line of reasoning to quantum mechanics?
- Is the probabilistic character of the theory a fundamental feature of nature,
- or merely an expression of our ignorance about the state of the system?
- Again,
- we have no conclusive answers to this question,
- and different interpretations of quantum mechanics offer different answers.
-\end_layout
-
-\begin_layout Standard
-And finally,
- still related to the probabilistic nature of measurements,
- misguided interpretations often support the idea that quantum mechanics is a scientific formulation that naturally incorporates the possibility of free will.
- However,
- the probabilistic character of the theory,
- by itself,
- provides no support for this conclusion and does not make quantum mechanics compatible with free will.
- We can discuss this misconception in greater detail when we address the dynamics postulate.
-\end_layout
-
-\begin_layout Subsubsection
-Quantum incompatibility
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- be two Hermitian operators defined on a finite-dimensional Hilbert space of dimension 
-\begin_inset Formula $d$
-\end_inset
-
-.
- By the spectral theorem,
- we can write them in their respective spectral decompositions as
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-A= & \sum^{d}_{j=1}a_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right| & B= & \sum^{d}_{j=1}b_{j}\left|b_{j}\right\rangle \left\langle b_{j}\right|
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The numbers 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- and 
-\begin_inset Formula $b_{j}$
-\end_inset
-
- are the respective eigenvalues,
- and the sets
-\begin_inset Formula $\left\{ \left|a_{j}\right\rangle \right\} ^{d}_{j=1}$
-\end_inset
-
- and 
-\begin_inset Formula $\left\{ \left|b_{j}\right\rangle \right\} ^{d}_{j=1}$
-\end_inset
-
- form orthonormal bases of eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-,
- respectively,
- that is,
- they diagonalize these operators,
- so that:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-A\left|a_{j}\right\rangle  & =a_{j}\left|a_{j}\right\rangle  & B\left|b_{j}\right\rangle = & b_{j}\left|b_{j}\right\rangle 
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Assuming that the two operators share the same basis 
-\begin_inset Formula $\left|a_{j}\right\rangle =\left|b_{j}\right\rangle \coloneqq\left|j\right\rangle $
-\end_inset
-
-,
- then,
- with the commutator defined as 
-\begin_inset Formula $\left[A,B\right]=AB-BA$
-\end_inset
-
-,
- we have:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-\left[A,B\right] & =\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)-\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
- & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle j|k\right\rangle \left\langle k\right|-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle k|j\right\rangle \left\langle j\right|\\
- & =\sum^{d}_{j,k=1}a_{j}b_{k}\left|j\right\rangle \left\langle k\right|\delta_{jk}-\sum^{d}_{j,k=1}b_{k}a_{j}\left|k\right\rangle \left\langle j\right|\delta_{jk}\\
- & =\sum^{d}_{j=1}\left(a_{j}b_{j}\left|j\right\rangle \left\langle j\right|-b_{j}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
- & =0
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Then:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-0=\left[A,B\right]=AB-BA\Longrightarrow AB=BA
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Thus,
- we have that if the operators share the same set of eigenvectors,
- they commute.
- And to prove that if they commute,
- they share the same basis of eigenvectors:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{align}
-A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
- & =B\left(A\left|a_{j}\right\rangle \right)\\
- & =B\left(a_{j}\left|a_{j}\right\rangle \right)\\
- & =a_{j}B\left|a_{j}\right\rangle 
-\end{align}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-That is,
- in this case,
- we must have that 
-\begin_inset Formula $B\left|a_{j}\right\rangle $
-\end_inset
-
- and 
-\begin_inset Formula $\left|a_{j}\right\rangle $
-\end_inset
-
- belong to the eigenspace of 
-\begin_inset Formula $A$
-\end_inset
-
- corresponding to the eigenvalue 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
- If 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- is non-degenerate,
- its eigenspace has dimension 1.
- Therefore,
- any eigenvector of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- is linearly dependent on 
-\begin_inset Formula $\left|a_{j}\right\rangle $
-\end_inset
-
-.
- Since 
-\begin_inset Formula $B\left|a_{j}\right\rangle $
-\end_inset
-
- also belongs to this eigenspace,
- we necessarily have 
-\begin_inset Formula $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle $
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Now,
- if 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- is degenerate,
- that is,
- if there are two or more linearly independent eigenvectors corresponding to the same eigenvalue 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-,
- then there exists a subspace of 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
- generated by the eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- corresponding to 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
- It is a little more complex,
- but it is the same idea applied to a subspace of dimension greater than 1.
- To understand this,
- we will base our discussion on another source (
-\begin_inset CommandInset citation
-LatexCommand cite
-key "MIT804_CommonEigenbases"
-literal "false"
-
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-For the degenerate case,
- we then have more vectors associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
- Let us call this subspace 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- and,
- with 
-\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$
-\end_inset
-
- being any basis of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-,
- then 
-\begin_inset Formula $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $
-\end_inset
-
-.
- Now,
- since 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- commute,
- we have 
-\begin_inset Formula $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$
-\end_inset
-
-,
- that is,
- 
-\begin_inset Formula $B$
-\end_inset
-
- transforms vectors from 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- into vectors that also belong to 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- In particular,
- 
-\begin_inset Formula $B$
-\end_inset
-
- transforms an eigenvector of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- into a vector that remains in the same eigenspace of 
-\begin_inset Formula $A$
-\end_inset
-
-.
- If 
-\begin_inset Formula $B\left|a^{k}_{j}\right\rangle \neq0$
-\end_inset
-
-,
- this vector is also an eigenvector of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Therefore,
- each 
-\begin_inset Formula $B\left|a^{k}_{j}\right\rangle $
-\end_inset
-
- can be written as a linear combination of the basis vectors of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- Thus,
- we can consider the action of 
-\begin_inset Formula $B$
-\end_inset
-
- “internally” within the subspace 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- Since 
-\begin_inset Formula $B$
-\end_inset
-
- is Hermitian,
- its restriction to 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- is also Hermitian.
- And since 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- has finite dimension (and is Hermitian),
- we can diagonalize this restriction of 
-\begin_inset Formula $B$
-\end_inset
-
- in an orthonormal basis of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- Therefore,
- there exists a basis of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-,
- which we can denote by 
-\begin_inset Formula $\left\{ \left|a^{k}_{j}\right\rangle \right\} $
-\end_inset
-
-,
- such that 
-\begin_inset Formula $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $
-\end_inset
-
-.
- Since this new basis remains a basis of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-,
- its vectors continue to be eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Thus,
- the eigenvectors are simultaneously eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-.
- Repeating this procedure for each eigenspace of 
-\begin_inset Formula $A$
-\end_inset
-
-,
- we obtain an orthonormal basis of 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
-
- consisting of common eigenvectors of the two operators.
-\end_layout
-
-\begin_layout Standard
-In other words,
- if the Hermitian operators 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- commute,
- then they share the same orthonormal basis of eigenvectors.
- To better understand this proof,
- we can represent the operator 
-\begin_inset Formula $B$
-\end_inset
-
- as a matrix in the basis of eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
-.
- Using the completeness relation,
- 
-\begin_inset Formula $\mathbb{I}=\sum_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right|$
-\end_inset
-
-,
- we have 
-\begin_inset Formula $B=\mathbb{I}B\mathbb{I}=\sum_{j,k}\left(\left\langle a_{j}\left|B\right|a_{k}\right\rangle \right)\left(\left|a_{j}\right\rangle \left\langle a_{k}\right|\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Thus,
- the elements of the matrix representing 
-\begin_inset Formula $B$
-\end_inset
-
- in this basis are 
-\begin_inset Formula $B_{a_{j},a_{k}}=\left\langle a_{j}\left|B\right|a_{k}\right\rangle $
-\end_inset
-
-,
- or in matrix form:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-B=\left[\begin{array}{ccc}
-\left\langle a_{1}\left|B\right|a_{1}\right\rangle  & \left\langle a_{1}\left|B\right|a_{2}\right\rangle  & \dots\\
-\left\langle a_{2}\left|B\right|a_{1}\right\rangle  & \left\langle a_{2}\left|B\right|a_{2}\right\rangle  & \dots\\
-\vdots & \vdots & \ddots
-\end{array}\right]
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Then we can think of 
-\begin_inset Formula $B$
-\end_inset
-
- as a block-diagonal matrix:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\[
-B=\left[\begin{array}{ccc}
-B_{1} & 0 & 0\\
-0 & B_{2} & 0\\
-0 & 0 & \ddots
-\end{array}\right]
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-where each 
-\begin_inset Formula $B_{j}$
-\end_inset
-
- is a submatrix representing the internal action of 
-\begin_inset Formula $B$
-\end_inset
-
- acting on the subspace 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- If the eigenvalue 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- is non-degenerate,
- then the block 
-\begin_inset Formula $B_{j}$
-\end_inset
-
- is just a 
-\begin_inset Formula $1\times1$
-\end_inset
-
- matrix.
- If 
-\begin_inset Formula $a_{j}$
-\end_inset
-
- is degenerate,
- then the block 
-\begin_inset Formula $B_{j}$
-\end_inset
-
- has dimension 
-\begin_inset Formula $d_{j}\times d_{j}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Since 
-\begin_inset Formula $B$
-\end_inset
-
- is Hermitian,
- each block 
-\begin_inset Formula $B_{j}$
-\end_inset
-
- is also a Hermitian matrix and,
- therefore,
- can be diagonalized.
- Thus,
- we can diagonalize 
-\begin_inset Formula $B$
-\end_inset
-
- within each subspace 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-,
- obtaining a basis of eigenvectors of 
-\begin_inset Formula $B$
-\end_inset
-
- that are also eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
-.
- Thus,
- we prove that if and only if two operators 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- commute,
- then they share a common basis of eigenvectors.
- 
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\series bold
-Example:
- Beginning
+Postulados
 \end_layout
 
 \begin_layout Standard
@@ -2573,7 +1450,7 @@ Let us consider the operator
 \end_inset
 
  Its eigenvalues are 
-\begin_inset Formula $\left\{ 1,1,2\right\} ,$
+\begin_inset Formula $[1,1,2],$
 \end_inset
 
 and the corresponding eigenvectors (each column is an eigenvector) are 
@@ -2733,7 +1610,7 @@ That is,
 \end_inset
 
  Its eigenvalues are 
-\begin_inset Formula $\left\{ 2.38,4.62\right\} $
+\begin_inset Formula $[2.38,4.62]$
 \end_inset
 
  and the corresponding eigenvectors (each column is an eigenvector) are 
@@ -2823,33 +1700,33 @@ We can test by applying
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
-B\left|b_{1}\right\rangle  & =2.38\left|b_{1}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
-1 & 4 & 0\\
-0 & 0 & 5
+B\left|b_{1}\right\rangle  & =\left|b_{1}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
 \end{pmatrix}\begin{pmatrix}-0.85\\
 0.53\\
 0
-\end{pmatrix} & =2.38\begin{pmatrix}-0.85\\
+\end{pmatrix} & =\begin{pmatrix}-0.85\\
 0.53\\
 0
 \end{pmatrix}\\
-B\left|b_{2}\right\rangle  & =4.62\left|b_{2}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
-1 & 4 & 0\\
-0 & 0 & 5
+B\left|b_{2}\right\rangle  & =\left|b_{2}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
 \end{pmatrix}\begin{pmatrix}-0.53\\
 -0.85\\
 0
-\end{pmatrix} & =4.62\begin{pmatrix}-0.53\\
+\end{pmatrix} & =\begin{pmatrix}-0.53\\
 -0.85\\
 0
 \end{pmatrix}\\
-B\left|b_{3}\right\rangle  & =5\left|b_{3}\right\rangle  & \begin{pmatrix}3 & 1 & 0\\
-1 & 4 & 0\\
-0 & 0 & 5
+A\left|b_{3}\right\rangle  & =2\left|b_{3}\right\rangle  & \begin{pmatrix}1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
 \end{pmatrix}\begin{pmatrix}0\\
 0\\
 1
-\end{pmatrix} & =5\begin{pmatrix}0\\
+\end{pmatrix} & =2\begin{pmatrix}0\\
 0\\
 1
 \end{pmatrix}
@@ -2861,238 +1738,115 @@ B\left|b_{3}\right\rangle  & =5\left|b_{3}\right\rangle  & \begin{pmatrix}3 & 1 
 \end_layout
 
 \begin_layout Standard
-\align center
+\begin_inset Formula 
+\[
+B\begin{pmatrix}-0.85\\
+0.53\\
+0
+\end{pmatrix}=2.38\begin{pmatrix}-0.85\\
+0.53\\
+0
+\end{pmatrix},
+\]
 
-\series bold
-Example:
- End
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-In summary,
- when we have a non-degenerate eigenvalue 
-\begin_inset Formula $a_{j}$
+\begin_inset Formula 
+\[
+B\begin{pmatrix}-0.53\\
+-0.85\\
+0
+\end{pmatrix}=4.62\begin{pmatrix}-0.53\\
+-0.85\\
+0
+\end{pmatrix},
+\]
+
 \end_inset
 
-,
- the situation is very simple,
- since in this case,
- the only eigenvector of 
-\begin_inset Formula $A$
-\end_inset
 
-,
- up to a multiplicative factor,
- is automatically also an eigenvector of 
-\begin_inset Formula $B$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-When 
-\begin_inset Formula $a_{j}$
+\begin_inset Formula 
+\[
+B\begin{pmatrix}0\\
+0\\
+1
+\end{pmatrix}=5\begin{pmatrix}0\\
+0\\
+1
+\end{pmatrix}.
+\]
+
 \end_inset
 
- is degenerate,
- its eigenvectors form a subspace 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
 
-,
- corresponding to the eigenvalue 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-,
- in which every nonzero vector is also an eigenvector of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-.
- Since 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- commute,
- applying 
-\begin_inset Formula $B$
-\end_inset
-
- to any vector in 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- results in another vector belonging to 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
-.
- Thus,
- it is sufficient to find,
- within this subspace,
- the vectors that are also eigenvectors of 
-\begin_inset Formula $B$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-This possibility is guaranteed by the fact that 
-\begin_inset Formula $B$
-\end_inset
-
- is Hermitian:
- its action restricted to 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- can be represented by a Hermitian submatrix,
- which can be diagonalized by an orthonormal basis of eigenvectors
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-The fact that a matrix is Hermitian guarantees that we can choose,
- in the space on which it acts,
- an orthonormal basis formed by its eigenvectors (
-\begin_inset CommandInset citation
-LatexCommand cite
-key "DelftSpectralTheorem"
-literal "false"
-
-\end_inset
-
-,
- 
-\begin_inset CommandInset href
-LatexCommand href
-name "on this page"
-target "https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html"
-literal "false"
-
-\end_inset
-
-.)
-\end_layout
-
-\end_inset
-
-.
- Therefore,
- we can choose an orthonormal basis of 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- formed by eigenvectors of 
-\begin_inset Formula $B$
-\end_inset
-
-.
- Since all vectors in 
-\begin_inset Formula $\mathcal{H}_{j}$
-\end_inset
-
- are also eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- associated with 
-\begin_inset Formula $a_{j}$
-\end_inset
-
-,
- these vectors are common eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-.
+With the corresponding eigenvalues:
 \end_layout
 
 \begin_layout Standard
-Repeating this procedure for each eigenspace of 
-\begin_inset Formula $A$
+\begin_inset Formula 
+\[
+[2.38,\;4.62,\;5].
+\]
+
 \end_inset
 
-,
- we obtain an orthonormal basis of 
-\begin_inset Formula $\mathcal{H}$
-\end_inset
 
- formed by common eigenvectors of 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-With the proof of this theorem,
- we know that if two observables 
-\begin_inset Formula $A$
-\end_inset
-
- and 
-\begin_inset Formula $B$
-\end_inset
-
- of a system do not commute,
- they cannot share all eigenvectors.
- If,
- by measuring the observable 
-\begin_inset Formula $A$
-\end_inset
-
-,
- we prepare the system in a state that is not an eigenvector of the observable 
-\begin_inset Formula $B$
-\end_inset
-
-,
- this vector must necessarily be a linear combination of the eigenvectors of with two or more nonzero probability amplitudes.
+**Example 2**
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\series bold
-Example:
- Beginning
+Suppose we have the operators
 \end_layout
 
 \begin_layout Standard
-Suppose we have the operators 
-\begin_inset Formula $A=\begin{pmatrix}0 & 1\\
+\begin_inset Formula 
+\[
+A=\begin{pmatrix}0 & 1\\
 1 & 0
-\end{pmatrix}$
+\end{pmatrix}
+\]
+
 \end_inset
 
- and 
-\begin_inset Formula $B=\begin{pmatrix}1 & 0\\
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+B=\begin{pmatrix}1 & 0\\
 0 & -1
-\end{pmatrix}.$
+\end{pmatrix}.
+\]
+
 \end_inset
 
- We can verify that they do not commute,
- since 
+
+\end_layout
+
+\begin_layout Standard
+We can verify that they do not commute,
+ since
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \[
 [A,B]=AB-BA=\begin{pmatrix}0 & -2\\
@@ -3111,19 +1865,30 @@ For the operator
 \end_inset
 
 ,
- the eigenvalues are 
-\begin_inset Formula $\left\{ +1,-1\right\} $
-\end_inset
-
- with corresponding normalized eigenvectors
+ the eigenvalues are
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-|a_{+1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
+a=+1,\,-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with corresponding normalized eigenvectors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|a=+1\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
 1
-\end{pmatrix},\qquad|a_{-1}\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\
+\end{pmatrix},\qquad|a=-1\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}-1\\
 1
 \end{pmatrix}.
 \]
@@ -3147,11 +1912,23 @@ Suppose,
 
 .
  The system is then in the corresponding eigenstate,
- 
-\begin_inset Formula $|\psi\rangle=|a_{+1}\rangle.$
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|\psi\rangle=|a=+1\rangle=\frac{1}{\sqrt{2}}\begin{pmatrix}1\\
+1
+\end{pmatrix}.
+\]
+
 \end_inset
 
- Now consider measuring 
+
+\end_layout
+
+\begin_layout Standard
+Now consider measuring 
 \begin_inset Formula $B$
 \end_inset
 
@@ -3160,19 +1937,30 @@ Suppose,
 \begin_inset Formula $B$
 \end_inset
 
- are also 
-\begin_inset Formula $\left\{ +1,-1\right\} $
-\end_inset
-
- with corresponding eigenvectors
+ are also
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \[
-|b_{+1}\rangle=\begin{pmatrix}1\\
+b=+1,\,-1,
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+with corresponding eigenvectors
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+|b=+1\rangle=\begin{pmatrix}1\\
 0
-\end{pmatrix},\qquad|b_{-1}\rangle=\begin{pmatrix}0\\
+\end{pmatrix},\qquad|b=-1\rangle=\begin{pmatrix}0\\
 1
 \end{pmatrix}.
 \]
@@ -3184,24 +1972,47 @@ Suppose,
 
 \begin_layout Standard
 The probability of obtaining a particular eigenvalue 
-\begin_inset Formula $b_{n}$
+\begin_inset Formula $b$
 \end_inset
 
  is given by the squared magnitude of the inner product between the corresponding eigenvector and the state of the system:
- 
-\begin_inset Formula $P(b_{n})=|\langle b_{n}|\psi\rangle|^{2}$
-\end_inset
-
-.
- Therefore,
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
-\begin{align*}
-P(b_{+1})=|\langle b_{+1}|a_{+1}\rangle|^{2}=\frac{1}{2}\\
-P(b_{-1})=|\langle b_{-1}|a_{-1}\rangle|^{2}=\frac{1}{2}
-\end{align*}
+\[
+P(b)=|\langle b|\psi\rangle|^{2}.
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Therefore,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(b=+1)=|\langle b=+1|a=+1\rangle|^{2}=\frac{1}{2},
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+and
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+P(b=-1)=|\langle b=-1|a=+1\rangle|^{2}=\frac{1}{2}.
+\]
 
 \end_inset
 
@@ -3227,7 +2038,10 @@ Thus,
 \end_inset
 
 .
- In other words,
+\end_layout
+
+\begin_layout Standard
+In other words,
  since 
 \begin_inset Formula $A$
 \end_inset
@@ -3241,26 +2055,6 @@ Thus,
  do not share any eigenvectors,
  after measuring one of the observables,
  the outcome of a subsequent measurement of the other is intrinsically indeterminate within this mathematical formalism.
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\series bold
-Example:
- End
-\end_layout
-
-\begin_layout Subsubsection
-Relação de Incerteza
-\end_layout
-
-\begin_layout Section
-Postulados
-\end_layout
-
-\begin_layout Standard
-**Example 2**
 \end_layout
 
 \begin_layout Quotation

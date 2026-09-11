@@ -131,7 +131,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Um material que parece muito interessante é o PDF 
+A material that seems very interesting is the PDF 
 \begin_inset Quotes eld
 \end_inset
 
@@ -139,7 +139,9 @@ Quantum Physics Notes
 \begin_inset Quotes erd
 \end_inset
 
- do professor J D Cresser (
+ by Professor J.
+ D.
+ Cresser (
 \begin_inset CommandInset citation
 LatexCommand cite
 key "cresser2001quantum"
@@ -148,28 +150,31 @@ literal "false"
 \end_inset
 
 ).
- Provavelmente estarei na sequência trabalhando com os capítulos 3,
+ I will probably be working next with Chapters 3,
  4,
- 6 e 7.
- Mas me parece que o PDF inteiro é uma excelente introdução,
- apenas eu pessoalmente estou com preguiça de rever (uma vez mais) o formalismo matemático da mecânica quântica
+ 6,
+ and 7.
+ But it seems to me that the entire PDF is an excellent introduction;
+ I am just personally too lazy to review (once again) the mathematical formalism of quantum mechanics
 \begin_inset Foot
 status collapsed
 
 \begin_layout Plain Layout
-Pelo que pude notar,
- dos capítulos restantes,
- os capítulos 1 e 2 são introdutórios/históricos,
- o últim capítulo (11) trata dos postulados da mecânica quântica,
- já os capítulos 8,
- 9 e 10 tratando do seu formalismo matemático e por fim,
- o capítulo 5 discute a formulação ondulatória da mecânica quântica.
+From what I could tell,
+ among the remaining chapters,
+ Chapters 1 and 2 are introductory/historical,
+ the last chapter (11) deals with the postulates of quantum mechanics,
+ Chapters 8,
+ 9,
+ and 10 deal with its mathematical formalism,
+ and finally,
+ Chapter 5 discusses the wave formulation of quantum mechanics.
 \end_layout
 
 \end_inset
 
 .
- Mas um dia talvez eu adicione como apêndice.
+ But perhaps one day I will add it as an appendix.
 \end_layout
 
 \begin_layout Standard
@@ -180,7 +185,7 @@ Quantum mechanics provides a framework of physical and mathematical principles t
 \end_layout
 
 \begin_layout Subsection
-Algum background histórico
+Some historical background
 \end_layout
 
 \begin_layout Standard
@@ -435,10 +440,11 @@ It more usual to work in terms of the angular frequency
 With this in mind,
  we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Lembre que quando resolvemos a equação de Schroedinger para a partícula livre obtemos 2 dessas possibilidades.
+Recall that when we solved the Schrödinger equation for the free particle,
+ we obtained two of these possibilities.
 \end_layout
 
 \end_inset
@@ -614,28 +620,28 @@ where
 
 
 \begin_inset Foot
-status collapsed
+status open
 
 \begin_layout Plain Layout
-Isto é,
+That is,
  
 \begin_inset Formula $A\left(k_{n}\right)$
 \end_inset
 
- tem um pico em 
+ has a peak at 
 \begin_inset Formula $\overline{k}$
 \end_inset
 
- e assume metade de seu valor máximo a uma distância 
+ and assumes half of its maximum value at a distance 
 \begin_inset Formula $\Delta k$
 \end_inset
 
- de 
+ from 
 \begin_inset Formula $\overline{k}$
 \end_inset
 
 ,
- de modo que sua largura total à meia altura é 
+ so that its full width at half maximum is 
 \begin_inset Formula $2\Delta k$
 \end_inset
 
@@ -770,7 +776,7 @@ hf & =\frac{h^{2}}{\lambda^{2}}\frac{1}{2m}\\
 \end_layout
 
 \begin_layout Standard
-Onde também usamos:
+Where we also use:
  
 \begin_inset Formula $\omega=2\pi f$
 \end_inset
@@ -901,7 +907,7 @@ More than that,
 \begin_inset Formula $\Delta k$
 \end_inset
 
-∆are related by the bandwidth theorem,
+ are related by the bandwidth theorem,
  which applies when adding together harmonic waves,
  which tell us that
 \end_layout

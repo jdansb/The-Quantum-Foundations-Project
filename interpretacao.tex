@@ -9,12 +9,28 @@
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
-\usepackage[]
+\usepackage[bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
  {hyperref}
 
 \makeatletter
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
 \usepackage{babel}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \makeatother
 
@@ -23,31 +39,29 @@
 \author{Jhordan Silveira de Borba}
 \maketitle
 \begin{quote}
-There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible {[}\cite{griffiths2017introduction}{]}. 
+There is no general consensus as to what its fundamental principles are, how it should be taught, or what it really “means.” Every competent physicist can “do” quantum mechanics, but the stories we tell ourselves about what we are doing are as various as the tales of Scheherazade, and almost as implausible (\cite{griffiths2017introduction}). 
 \end{quote}
-\begin{quotation}
-\textbf{Note} If Portuguese is not your native language, \href{https://www.firefox.com/}{Firefox}'s automatic translation works well.
-\end{quotation}
 
-\section{Analogia com a Mecânica Clássica}
+\section{Analogy with Classical Mechanics}
 
-\subsection{Segunda Lei de Newton}
+\subsection{Newton's Second Law}
 
-Uma lei da física pode ser entendida como uma regra que descreve, usualmente por meio de uma formulação matemática, como determinados sistemas físicos se comportam {[}\cite{Siddiqui2014}{]}. A segunda lei de Newton, por exemplo, pode ser expressa pela equação
+A law of physics can be understood as a rule that describes---usually by means of a mathematical formulation---how certain physical systems behave(\cite{Siddiqui2014}). Newton's second law, for example, can be expressed by the equation
 
 \begin{equation}
 F\left(x,t\right)=m\frac{d^{2}}{dt^{2}}x\left(t\right)
 \end{equation}
 
-onde $x\left(t\right)$ representa a posição de uma partícula de massa $m$ em relação à origem no instante $t$. Quando resolvemos esta equação diferencial sob determinadas condições iniciais, obtemos como solução uma função $x\left(t\right)$. Assim, uma vez especificadas as forças que atuam sobre a partícula e suas condições iniciais, a segunda lei de Newton determina sua evolução temporal: resolver a equação nos fornece a equação de movimento da partícula.
+where $x\left(t\right)$ represents the position of a particle of mass $m$ relative to the origin at the instant $t$. When we solve this differential equation under certain initial conditions, we obtain as a solution a function $x\left(t\right)$. Thus, once the forces acting on the particle and its initial conditions are specified, Newton's second law determines its temporal evolution: solving the equation provides us with the equation of motion of the particle.
 
-Por exemplo, para uma partícula livre ($F=0$), podemos obter sua equação de movimento a partir da segunda lei de Newton:
+For example, for a free particle($F=0$), we can obtain its equation of motion from Newton's second law:
 
 \begin{equation}
 0=m\frac{d^{2}x}{dt^{2}}
 \end{equation}
 
-Definindo a velocidade como $v\left(t\right)\equiv\frac{dx}{dt}$ , temos: 
+Defining the velocity as $v\left(t\right)\equiv\frac{dx}{dt}$, we have:
+
 \begin{align}
 0 & =\frac{d^{2}x}{dt^{2}}\\
 0 & =\frac{dv}{dt}\\
@@ -55,7 +69,7 @@ Definindo a velocidade como $v\left(t\right)\equiv\frac{dx}{dt}$ , temos:
 0 & =v\left(t\right)-v\left(t_{0}\right)
 \end{align}
 
-Portanto $v\left(t\right)=v\left(t_{0}\right)$,ou seja, a velocidade da partícula é constante. Denotando essa velocidade constante por $v$, temos:
+Therefore, $v\left(t\right)=v\left(t_{0}\right)$, that is, the particle's velocity is constant. Denoting this constant velocity by $v$, we have:
 
 \begin{align}
 v\left(t\right) & =v\left(t_{0}\right)\\
@@ -64,72 +78,70 @@ v\left(t\right) & =v\left(t_{0}\right)\\
 x\left(t\right)-x\left(t_{0}\right) & =v\left(t-t_{0}\right)
 \end{align}
 
-Se $x\left(t_{0}\right)=x_{0}$ e $t_{0}=0$ ficamos com:
+If $x\left(t_{0}\right)=x_{0}$ and $t_{0}=0$, we obtain:
 
 \begin{equation}
 x\left(t\right)=x_{0}+vt
 \end{equation}
 
-Neste caso $x\left(t\right)$ é facilmente interpretável como a posição da partícula no instante $t$.
+In this case, $x\left(t\right)$ is easily interpretable as the position of the particle at the instant $t$.
 
-\subsection{Equação de Schroedinger}
+\subsection{Schrödinger Equation}
 
-O análogo na mecânica quântica para a segunda lei de Newton é a equação de Schroedinger. Em uma dimensão e não relativísitca, a equação de Schroedinger é:
+The quantum mechanical analogue of Newton's second law is the Schrödinger equation. In one dimension and in the non-relativistic case, the Schrödinger equation is:
 
 \begin{equation}
 i\hbar\frac{\partial}{\partial t}\Psi\left(x,t\right)=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\Psi\left(x,t\right)+V\left(x,t\right)\Psi\left(x,t\right)
 \end{equation}
 
-O equivalente agora para uma partícula livre ($V\left(x,t\right)=0$) é:
+The corresponding equation for a free particle ($V\left(x,t\right)=0$) is:
 
 \begin{align}
 i\hbar\frac{\partial\Psi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}
 \end{align}
-
-Usando então o método de separação de variáveis, isto é, considerando que a solução pode ser separada em uma parte expacial $\Phi\left(x\right)$ e outra temporal $\Pi\left(t\right)$ , isto é $\Psi\left(x,t\right)=\Phi\left(x\right)\Pi\left(t\right)$. Então:
+Using the method of separation of variables, that is, assuming that the solution can be separated into a spatial part $\Phi\left(x\right)$ and a temporal part $\Pi\left(t\right)$, that is, $\Psi\left(x,t\right)=\Phi\left(x\right)\Pi\left(t\right)$. Then:
 
 \begin{align}
 i\hbar\frac{\partial}{\partial t}\left(\Phi\left(x\right)\Pi\left(t\right)\right) & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left(\Phi\left(x\right)\Pi\left(t\right)\right)\\
 i\hbar\frac{1}{\Pi}\frac{\partial\Pi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{1}{\Phi}\frac{\partial^{2}\Phi}{\partial x^{2}}
 \end{align}
 
-Como um lado depende apenas da dimensao espacial ($x$) e o outro apena da dimensão temporal ($t$) a única forma de ser verdade é se os dois lados são igual a uma constante $E$: Resolvendo então pra parte temporal:
+Since one side depends only on the spatial dimension ($x$) and the other only on the temporal dimension ($t$), the only way this can be true is if both sides are equal to a constant: $E$. Solving then for the temporal part:
 
 \begin{align}
 \frac{i\hbar}{\Pi}\frac{\partial\Pi}{\partial t} & =E\\
 \frac{d\Pi}{dt} & =-\frac{iE}{\hbar}\Pi
 \end{align}
 
-Como temos que a derivada da função $\Pi\left(t\right)$ é igual ela mesmo mutiplicada por uma constante, temos uma solução exponencial $\Pi\left(t\right)=A\exp\left(-\frac{iE}{\hbar}t\right)$. Para a parte espacial:
+Since the derivative of the function $\Pi\left(t\right)$ is equal to the function itself multiplied by a constant, we have an exponential solution $\Pi\left(t\right)=A\exp\left(-\frac{iE}{\hbar}t\right)$. For the spatial part:
 
 \begin{align}
 \frac{1}{\Phi}\frac{\partial^{2}\Phi}{\partial x^{2}} & =-\frac{2mE}{\hbar^{2}}\\
 \frac{\partial^{2}\Phi}{\partial x^{2}} & =-\frac{2mE}{\hbar^{2}}\Phi
 \end{align}
 
-Como essa é uma equação diferencial linear homogênea de segunda ordem com coeficientes constantes, podemos procurar soluções na forma exponencial $\Phi\left(x\right)=e^{\pm ikx}$. Nesse caso, de modo que $e^{ikx}$ e $e^{-ikx}$ são duas soluções linearmente independentes para $\frac{d^{2}\Phi}{dx^{2}}=-k^{2}\Phi$. Pela linearidade da equação, sua solução geral é uma combinação linear dessas soluções:
+Since this is a second-order linear homogeneous differential equation with constant coefficients, we can look for solutions of the form $\Phi\left(x\right)=e^{\pm ikx}$. In this case, $e^{ikx}$ and $e^{-ikx}$ are two linearly independent solutions to $\frac{d^{2}\Phi}{dx^{2}}=-k^{2}\Phi$. By the linearity of the equation, its general solution is a linear combination of these solutions:
 
 \begin{equation}
 \Psi\left(x,t\right)=\Pi\left(t\right)\Phi\left(x\right)=A\exp\left(-\frac{iE}{\hbar}t\right)\left(B\exp\left(-i\sqrt{\frac{2mE}{\hbar^{2}}}x\right)+C\exp\left(i\sqrt{\frac{2mE}{\hbar^{2}}}x\right)\right)
 \end{equation}
 
-Ou escrevendo $k^{2}=2mE/\hbar^{2}$ e $\omega=\frac{E}{\hbar}$
+Or, writing $k^{2}=2mE/\hbar^{2}$ and $\omega=\frac{E}{\hbar}$:
 
 \begin{align}
 \Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}
 \end{align}
+where $K_{1}$ and $K_{2}$ are constants determined by the conditions imposed on the solution. Here, some questions already arise. When we solved Newton's second law, we obtained $x\left(t\right)$, which described the position of the particle. When we solve the Schrödinger equation, we obtain $\Psi\left(x,t\right)$, but what is $\Psi\left(x,t\right)$? What does $\Psi\left(x,t\right)$ describe?
 
-Onde $K_{1}$ e $K_{2}$ são constantes determinadas pelas condições impostas à solução. Aqui já surgem algumas questões. Quando resolvemos a segunda lei de Newton, obtivemos $x\left(t\right)$ que descria a posição da partícula. Quando resolvemos a equação de Schroedinger obtivemos $\Psi\left(x,t\right)$, mas o que é $\Psi\left(x,t\right)$? O que $\Psi\left(x,t\right)$ descreve?
+A somewhat more in-depth discussion of this can be found \href{/dupla}{here}.
 
-Uma discussão um pouco mais aprofundada sobre isto pode ser vista \href{/dupla}{aqui}.
+\section{Postulates of quantum mechanics}
 
-\section{Postulados da mecânica quântica}
+\subsection{Notation}
 
-\subsection{Notação}
+To move forward, we need to know the postulates\footnote{A postulate is a proposition assumed to be true within a theory, serving as a starting point for the construction of its concepts and results.} of quantum mechanics. The first point to note is that they can be formulated in different ways from one book to another. We will use Professor Jonas Maziero's material (\cite{maziero}). We need to begin, then, with some comments on Dirac notation.
 
-Para avançarmos, precisamos conhecer os postulados\footnote{Um postulado é uma proposição assumida como verdadeira dentro de uma teoria, servindo como ponto de partida para a construção de seus conceitos e resultados.} da mecânica quântica. O primeiro ponto a observar é que eles podem ser formulados de maneiras diferentes de um livro para outro. Vamos utilizar o material do professor Jonas Maziero {[}\cite{maziero}{]}. Precisamos começar, então, com alguns comentários sobre a notação de Dirac.
-
-Nessa notação, escrevemos um vetor como $\left|v\right\rangle $, chamado ket. Tomando o transposto conjugado desse vetor (ou adjunto), obtemos $\left\langle v\right|=\left|v\right\rangle ^{\dag}=\left(\left|v\right\rangle ^{T}\right)^{*}$ , que é chamado bra. Se representamos o vetor $\left|v\right\rangle $em uma base ortonormal $\left\{ \left|b_{j}\right\rangle \right\} $ , podemos escrevê-lo como uma combinação linear dos vetores da base: $\left|v\right\rangle =\sum_{i}\left\langle b_{i}|v\right\rangle \left|b_{i}\right\rangle $. Na representação matricial, temos
+In this notation, we write a vector as $\left|v\right\rangle $, called a ket. Taking the conjugate transpose of this vector (or adjoint), we obtain $\left\langle v\right|=\left|v\right\rangle ^{\dagger}=\left(\left|v\right\rangle ^{T}\right)^{*}$, which is called a bra. If we represent the vector $\left|v\right\rangle $ in an orthonormal basis $\left\{ \left|b_{j}\right\rangle \right\} $, we can write it as a linear combination of the basis vectors: $\left|v\right\rangle =\sum_{i}\left\langle b_{i}|v\right\rangle \left|b_{i}\right\rangle $. In matrix representation, we have
 
 \begin{equation}
 \left|v\right\rangle =\left[\begin{array}{c}
@@ -138,22 +150,20 @@ Nessa notação, escrevemos um vetor como $\left|v\right\rangle $, chamado ket. 
 \left\langle b_{n}|v\right\rangle 
 \end{array}\right]
 \end{equation}
-
-O produto de um bra por um ket é chamado produto interno e resulta em um escalar:
+The product of a bra and a ket is called the inner product and results in a scalar:
 
 \begin{equation}
-\left\langle w|v\right\rangle =\left|w\right\rangle ^{\dag}\left|v\right\rangle =\left[\begin{array}{ccc}
+\left\langle w|v\right\rangle =\left|w\right\rangle ^{\dagger}\left|v\right\rangle =\left[\begin{array}{ccc}
 \left\langle b_{1}|w\right\rangle ^{*} & \dots & \left\langle b_{n}|w\right\rangle ^{*}\end{array}\right]\left[\begin{array}{c}
 \left\langle b_{1}|v\right\rangle \\
 \vdots\\
 \left\langle b_{n}|v\right\rangle 
 \end{array}\right]=\sum^{n}_{j=1}\left\langle b_{j}|w\right\rangle ^{*}\left\langle b_{j}|v\right\rangle 
 \end{equation}
-
-Por outro lado, o produto de um ket por um bra, é chamado produto externo e resulta em um operador, cuja representação matricial é:
+On the other hand, the product of a ket and a bra is called the outer product and results in an operator, whose matrix representation is:
 
 \begin{equation}
-\left|v\right\rangle \left\langle w\right|=\left|v\right\rangle \left|w\right\rangle ^{\dag}=\left[\begin{array}{c}
+\left|v\right\rangle \left\langle w\right|=\left|v\right\rangle \left|w\right\rangle ^{\dagger}=\left[\begin{array}{c}
 \left\langle b_{1}|v\right\rangle \\
 \vdots\\
 \left\langle b_{n}|v\right\rangle 
@@ -165,82 +175,82 @@ Por outro lado, o produto de um ket por um bra, é chamado produto externo e res
 \end{array}\right]
 \end{equation}
 
-Com esses conceitos em mente, podemos agora avançar para os postulados da mecânica quântica propriamente ditos.
+With this in mind, we can now move on to the postulates of quantum mechanics.
 
-\subsection{Postulado dos estados}
+\section{State Postulate}
 \begin{quote}
-Em toda teoria física, buscamos descrever os estados possíveis do sistema de interesse, as mudanças desses estados (evolução temporal) e as quantidades observáveis e suas medidas. Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo. Na sequência veremos os postulados da MQ para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo {[}\cite{maziero}{]}. 
+In every physical theory, we seek to describe the possible states of the system of interest, the changes in these states (temporal evolution), and the observable quantities and their measurements. For example, in Newtonian Mechanics (NM), the state of a system at a certain instant of time is specified by the values of position and velocity relative to a certain inertial reference frame, and its temporal evolution is given by Newton's second law. The observables are essentially the positions, from which we obtain the velocities using the time parameter. It is implicit in NM that the values of the observables are determined even before they are measured, and that all these observables can have well-defined values at a given instant of time. Next, we will see the postulates of QM for describing states, changes in these states, observables, and their measurements. We will see that the measurement part differs greatly from that of NM, mainly because of the existence of observables that cannot have well-defined values at the same time (\cite{maziero}). 
 \end{quote}
-O estado de um sistema quântico é descrito por um vetor normalizado em um espaço de Hilbert $\mathcal{H}$. Por simplicidade, consideraremos $\mathcal{H}$ como sendo um espaço vetorial munido de uma função produto interno $\left\langle \cdot|\cdot\right\rangle :\mathcal{H}\rightarrow\mathbb{C}$.
+The state of a quantum system is described by a normalized vector in a Hilbert space $\mathcal{H}$. For simplicity, we will consider $\mathcal{H}$ as a vector space equipped with an inner product function $\left\langle \cdot|\cdot\right\rangle :\mathcal{H}\rightarrow\mathbb{C}$.
 
-Além disso, um espaço de Hilbert é um espaço vetorial complexo completo. Para entendermos o que significa ser completo, precisamos primeiro compreender o conceito de sequência de Cauchy. Uma sequência de Cauchy é uma sequência cujos elementos se tornam arbitrariamente próximos uns dos outros à medida que avançamos na sequência. Já um espaço métrico\footnote{Um espaço métrico é, essencialmente, um conjunto de objetos no qual definimos uma maneira de medir a distância entre dois objetos. No caso de um espaço vetorial com produto interno, a distância pode ser definida a partir da norma induzida pelo produto interno.} completo é aquele em que toda sequência de Cauchy converge para um limite que também pertence ao próprio espaço.
+Furthermore, a Hilbert space is a complete complex vector space. To understand what it means to be complete, we first need to understand the concept of a Cauchy sequence. A Cauchy sequence is a sequence whose elements become arbitrarily close to one another as we advance through the sequence. A complete metric space\footnote{A metric space is, essentially, a set of objects in which we define a way of measuring the distance between two objects. In the case of a vector space with an inner product, the distance can be defined from the norm induced by the inner product.} is one in which every Cauchy sequence converges to a limit that also belongs to the space itself.
 
-Por sistema nos referimos a um grau de liberdade\footnote{Um grau de liberdade corresponde a uma variável física independente que pode variar e que pode ser utilizada para caracterizar o estado de um sistema. Por exemplo, a posição e o spin de uma partícula correspondem a diferentes graus de liberdade.}. Por exemplo, o spin do elétron é um sistema, outro sistema seria sua posição, e assim por diante. Quando consideramos dois ou mais graus de liberdade como uma única entidade, a chamamos de sistema composto, e se dividirmos o sistema composto em subsistemas, seu estado é descrito por um vetor normalizado em um espaço de Hilbert obtido tomando-se o produto tensorial dos espaços individuais:
+By system, we refer to a degree of freedom\footnote{A degree of freedom corresponds to an independent physical variable that can vary and that can be used to characterize the state of a system. For example, the position and spin of a particle correspond to different degrees of freedom.}. For example, the spin of an electron is a system, another system would be its position, and so on. When we consider two or more degrees of freedom as a single entity, we call it a composite system, and if we divide the composite system into subsystems, its state is described by a normalized vector in a Hilbert space obtained by taking the tensor product of the individual spaces:
 
 \begin{equation}
 \mathcal{H}=\mathcal{H}_{a}\otimes\mathcal{H}_{b}\otimes\dots
 \end{equation}
 
 
-\subsection{Postulado das medidas}
+\section{Measurement Postulate}
 
-Quantidades observáveis (mensuráveis) são representadas por operadores lineares Hermitianos, $O=O^{\dagger}$ definidos em $\mathcal{H}$. Ao medirmos um observável, obteremos um de seus possíveis valores, que são dados pelos autovalores do operador hermitiano.
+Observable (measurable) quantities are represented by linear Hermitian operators, $O=O^{\dagger}$, defined on $\mathcal{H}$. When we measure an observable, we will obtain one of its possible values, which are given by the eigenvalues of the Hermitian operator.
 
-Diferentemente da mecânica clássica (MC), a mecânica quântica (MQ), em geral, não nos permite prever com certeza o resultado de uma medida. O que a MQ nos fornece são as probabilidades de obtenção dos diferentes resultados, calculadas por meio da regra de Born:
+Unlike classical mechanics (CM), quantum mechanics (QM), in general, does not allow us to predict with certainty the outcome of a measurement. What QM provides us with are the probabilities of obtaining the different outcomes, calculated by means of the Born rule:
 
 \begin{equation}
 P\left(o|\psi\right)=\left|\left\langle \psi|o\right\rangle \right|^{2}=\left|\left\langle o|\psi\right\rangle \right|^{2}
 \end{equation}
 
-Essa é a probabilidade de obtermos o valor $o$ ao medirmos o observável $O$ de um sistema que está no estado $\left|\psi\right\rangle $ imediatamente antes da medida, e $\left|o\right\rangle $ é o autovetor de $O$ correspondente ao autovalor $o$. $O=O^{\dagger}$ definidos em $\mathcal{H}$. Ao medirmos um observável obteremos um dos seus possíveis valores, que são representados pelos autovalores do operador Hermitiano.
+This is the probability of obtaining the value $o$ when measuring the observable $O$ of a system that is in the state $\left|\psi\right\rangle $ immediately before the measurement, and $\left|o\right\rangle $ is the eigenvector of $O$ corresponding to the eigenvalue $o$. $O=O^{\dagger}$ are defined on $\mathcal{H}$. When we measure an observable, we obtain one of its possible values, which are represented by the eigenvalues of the Hermitian operator.
 
-Antes de avançarmos, podemos parar para refletir um pouco. Quando estávamos trabalhando com a mecânica clássica e a lei de Newton, um dos observáveis de uma partícula era sua posição, e a lei de Newton descrevia diretamente como essa grandeza variava no tempo.
+Before moving forward, we can stop to reflect for a moment. When we were working with classical mechanics and Newton's law, one of the observables of a particle was its position, and Newton's law directly described how this quantity varied in time.
 
-Porém, quando abordamos a mecânica quântica, a equação de Schrödinger descreve como a função de onda varia no tempo (e no espaço). Com a notação de Dirac, como veremos ao estudarmos o postulado da dinâmica, temos uma descrição matemática de como o vetor de estado do sistema varia no tempo. Porém, o vetor de estado não é, ele próprio, um observável.
+However, when we approach quantum mechanics, the Schrödinger equation describes how the wave function varies in time (and space). With Dirac notation, as we will see when studying the dynamics postulate, we have a mathematical description of how the state vector of the system varies in time. However, the state vector is not itself an observable.
 
-Mesmo ignorando momentaneamente o aspecto probabilístico, utilizamos o vetor de estado para calcular grandezas associadas aos observáveis. Isso já constitui uma diferença fundamental entre a descrição clássica e a quântica dos sistemas. Mas, se calculamos grandezas escalares associadas aos observáveis a partir do vetor de estado (ou da função de onda) do sistema, qual é o significado físico do próprio vetor de estado? Ele sequer possui um significado físico direto?
+Even temporarily ignoring the probabilistic aspect, we use the state vector to calculate quantities associated with observables. This already constitutes a fundamental difference between the classical and quantum descriptions of systems. But if we calculate scalar quantities associated with observables from the state vector (or the wave function) of the system, what is the physical meaning of the state vector itself? Does it even have a direct physical meaning?
 
-Este é um dos pontos em que diferentes interpretações da mecânica quântica divergem. Ainda não há consenso sobre qual interpretação fornece a descrição correta da realidade física, embora algumas interpretações possam ser descartadas ou consideradas problemáticas diante de determinados argumentos teóricos e resultados experimentais.
+This is one of the points on which different interpretations of quantum mechanics diverge. There is still no consensus on which interpretation provides the correct description of physical reality, although some interpretations may be ruled out or considered problematic in light of certain theoretical arguments and experimental results.
 
-Da mesma forma, diferentes interpretações divergem quanto à questão de saber se todas as informações físicas relevantes sobre um sistema estão necessariamente contidas em seu vetor de estado. Exploraremos diferentes interpretações mais adiante. Por enquanto, basta destacar que o significado físico do vetor de estado e o estatuto da informação que ele contém são questões interpretativas profundas sobre as quais não há consenso.
+Likewise, different interpretations diverge on the question of whether all relevant physical information about a system is necessarily contained in its state vector. We will explore different interpretations later on. For now, it is enough to emphasize that the physical meaning of the state vector and the status of the information it contains are profound interpretational questions on which there is no consensus.
 
-\subsubsection*{Repetibilidade das medidas}
+\subsubsection*{Repeatability of measurements}
 
-Porém, existe mais um detalhe que, embora não esteja explicitamente contido nos postulados que apresentamos até aqui, é significativamente diferente quando estamos no domínio quântico: a realização de uma medida afeta o sistema.
+However, there is one more detail that, although it is not explicitly contained in the postulates we have presented so far, is significantly different when we are in the quantum domain: performing a measurement affects the system.
 
-Quando observamos a posição de uma bola de futebol que se move de acordo com a mecânica clássica, podemos, em princípio, realizar essa observação sem alterar significativamente o estado da bola. Podemos, portanto, considerar que a observação foi realizada de forma aproximadamente “externa” ao próprio sistema, mantendo-o praticamente inalterado.
+When we observe the position of a soccer ball that moves according to classical mechanics, we can, in principle, make this observation without significantly altering the state of the ball. We can therefore consider that the observation was performed approximately “externally” to the system itself, leaving it practically unchanged.
 
-No domínio quântico, porém, a situação é diferente. Quando realizamos uma medida, o sistema interage com o aparato de medição e, em geral, seu estado é alterado de maneira significativa. Uma consequência disso é que, se medirmos um mesmo observável duas vezes imediatamente em sequência, o resultado da segunda medida será necessariamente igual ao obtido na primeira.
+In the quantum domain, however, the situation is different. When we perform a measurement, the system interacts with the measurement apparatus and, in general, its state is significantly altered. One consequence of this is that, if we measure the same observable twice immediately in succession, the result of the second measurement will necessarily be equal to that obtained in the first.
 
-De fato, suponha que a primeira medida do observável ($O$) tenha produzido o resultado ($o$). Após essa medida, o estado do sistema passa a ser um estado associado ao resultado ($o$). No caso em que o autovalor ($o$) não é degenerado\footnote{Um autovalor não degenerado é aquele ao qual corresponde um único autovetor, à parte de uma fase global, isto é, um fator de fase complexo $e^{i\phi}$ que acompanha o vetor de estado e não afeta os resultados das medidas, pois $e^{i\phi}\left(e^{i\phi}\right)^{*}=1$.}, podemos escrever
+Indeed, suppose that the first measurement of the observable ($O$) produced the result ($o$). After this measurement, the state of the system becomes a state associated with the result ($o$). In the case where the eigenvalue ($o$) is non-degenerate\footnote{A non-degenerate eigenvalue is one to which a single eigenvector corresponds, up to a global phase, that is, a complex phase factor $e^{i\phi}$ that multiplies the state vector and does not affect the measurement outcomes, since $e^{i\phi}\left(e^{i\phi}\right)^{*}=1$.}, we can write
 
 \[
 P\left(o|\psi\right)=1,\quad\rightarrow\left|\psi\right\rangle =e^{i\phi}\left|o\right\rangle 
 \]
 
-Uma segunda medida imediatamente subsequente do mesmo observável produzirá, portanto, novamente o resultado ($o$) .
+A second immediately subsequent measurement of the same observable will therefore once again produce the result ($o$).
 
-Observe que, teoricamente, antes da realização da medida, a mecânica quântica nos fornece apenas as probabilidades associadas aos possíveis resultados. No laboratório, entretanto, uma realização individual da medida produz necessariamente um resultado definido. Isso nos conduz a outra questão fundamental: a natureza probabilística da mecânica quântica. Suas previsões probabilísticas dizem respeito às frequências e distribuições de resultados obtidas em conjuntos de sistemas preparados de maneira equivalente e submetidos ao mesmo procedimento experimental, e não determinam, em geral, qual resultado específico será obtido em uma realização individual.
+Note that, theoretically, before the measurement is performed, quantum mechanics provides us only with the probabilities associated with the possible outcomes. In the laboratory, however, an individual realization of the measurement necessarily produces a definite outcome. This leads us to another fundamental question: the probabilistic nature of quantum mechanics. Its probabilistic predictions concern the frequencies and distributions of outcomes obtained from ensembles of systems prepared in equivalent ways and subjected to the same experimental procedure, and they do not, in general, determine which specific outcome will be obtained in an individual realization.
 
-Porém, neste instante, antes de a medida ser realizada, temos apenas as probabilidades associadas aos diferentes valores que podemos obter. Nesse caso, em que estado o sistema se encontra? Quando estamos lidando com a mecânica clássica, a dinâmica determinística permite, em princípio, que, conhecendo o estado do sistema em um instante $t$, possamos determinar seu estado em um instante anterior $t'<t$. Podemos estender essa linha de raciocínio para a mecânica quântica? O caráter probabilístico da teoria é uma característica fundamental da natureza ou apenas uma expressão da nossa ignorância sobre o estado do sistema? Novamente, não temos respostas conclusivas para essa questão, e diferentes interpretações da mecânica quântica oferecem respostas distintas.
+Before the measurement is performed, we have only the probabilities associated with the different values we may obtain. In this situation, in what state is the system? When dealing with classical mechanics, deterministic dynamics allows us, in principle, to determine the state of a system at an earlier instant $t'<t$ by knowing its state at an instant $t$. Can we extend this line of reasoning to quantum mechanics? Is the probabilistic character of the theory a fundamental feature of nature, or merely an expression of our ignorance about the state of the system? Again, we have no conclusive answers to this question, and different interpretations of quantum mechanics offer different answers.
 
-E, por fim, ainda relacionado à natureza probabilística das medições, interpretações equivocadas frequentemente sustentam a ideia de que a mecânica quântica é uma formulação científica que naturalmente incorpora a possibilidade do livre-arbítrio. Entretanto, o caráter probabilístico da teoria, por si só, não fornece suporte a essa conclusão e não torna a mecânica quântica compatível com o livre-arbítrio. Poderemos discutir melhor esse equívoco quando abordarmos o postulado da dinâmica.
+And finally, still related to the probabilistic nature of measurements, misguided interpretations often support the idea that quantum mechanics is a scientific formulation that naturally incorporates the possibility of free will. However, the probabilistic character of the theory, by itself, provides no support for this conclusion and does not make quantum mechanics compatible with free will. We can discuss this misconception in greater detail when we address the dynamics postulate.
 
-\subsubsection*{Incompatibilidade quântica}
+\subsubsection*{Quantum incompatibility}
 
-Sejam $A$ e $B$ dois operadores Hermitianos definidos em um espaço de Hilbert de dimensão finita $d$. Pelo teorema espectral, podemos escrevê-los em suas respectivas decomposições espectrais como
+Let $A$ and $B$ be two Hermitian operators defined on a finite-dimensional Hilbert space of dimension $d$. By the spectral theorem, we can write them in their respective spectral decompositions as
 
 \begin{align}
 A= & \sum^{d}_{j=1}a_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right| & B= & \sum^{d}_{j=1}b_{j}\left|b_{j}\right\rangle \left\langle b_{j}\right|
 \end{align}
 
-Os números $a_{j}$ e $b_{j}$ são os respectivos autovalores, e os conjuntos $\left\{ \left|a_{j}\right\rangle \right\} ^{d}_{j=1}$e $\left\{ \left|b_{j}\right\rangle \right\} ^{d}_{j=1}$ formam bases ortonormais de autovetores de $A$ e $B$, respectivamente, isto é, diagonalizam esses operadores, de modo que:
+The numbers $a_{j}$ and $b_{j}$ are the respective eigenvalues, and the sets$\left\{ \left|a_{j}\right\rangle \right\} ^{d}_{j=1}$ and $\left\{ \left|b_{j}\right\rangle \right\} ^{d}_{j=1}$ form orthonormal bases of eigenvectors of $A$ and $B$, respectively, that is, they diagonalize these operators, so that:
 
 \begin{align}
 A\left|a_{j}\right\rangle  & =a_{j}\left|a_{j}\right\rangle  & B\left|b_{j}\right\rangle = & b_{j}\left|b_{j}\right\rangle 
 \end{align}
 
-Assumindo que os dois operadores compartilham a mesma base $\left|a_{j}\right\rangle =\left|b_{j}\right\rangle \coloneqq\left|j\right\rangle $, então, sendo o comutador definido como $\left[A,B\right]=AB-BA$, temos:
+Assuming that the two operators share the same basis $\left|a_{j}\right\rangle =\left|b_{j}\right\rangle \coloneqq\left|j\right\rangle $, then, with the commutator defined as $\left[A,B\right]=AB-BA$, we have:
 
 \begin{align}
 \left[A,B\right] & =\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)-\left(\sum^{d}_{k=1}b_{k}\left|k\right\rangle \left\langle k\right|\right)\left(\sum^{d}_{j=1}a_{j}\left|j\right\rangle \left\langle j\right|\right)\\
@@ -250,13 +260,13 @@ Assumindo que os dois operadores compartilham a mesma base $\left|a_{j}\right\ra
  & =0
 \end{align}
 
-Então:
+Then:
 
 \begin{equation}
 0=\left[A,B\right]=AB-BA\Longrightarrow AB=BA
 \end{equation}
 
-Então nós temos que se os operadores compartilham do mesmo conjunto de autovetores eles comutam. E para provar que se comutam compartilham da mesma base de autovetores:
+Thus, we have that if the operators share the same set of eigenvectors, they commute. And to prove that if they commute, they share the same basis of eigenvectors:
 
 \begin{align}
 A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\rangle \\
@@ -265,19 +275,19 @@ A\left(B\left|a_{j}\right\rangle \right) & =\left(AB\right)\left|a_{j}\right\ran
  & =a_{j}B\left|a_{j}\right\rangle 
 \end{align}
 
-Ou seja, nesse caso devemos ter que $B\left|a_{j}\right\rangle $ e $\left|a_{j}\right\rangle $ pertence ao autoespaço de $A$ correspondente ao autovalor $a_{j}$. Se $a_{j}$ não é degenerado, seu autoespaço possui dimensão 1. Portanto, qualquer autovetor de $A$ associado a $a_{j}$ é linearmente dependente de $\left|a_{j}\right\rangle $. Como $B$ em $\left|a_{j}\right\rangle $ também pertence a esse autoespaço, necessariamente $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle .$
+That is, in this case, we must have that $B\left|a_{j}\right\rangle $ and $\left|a_{j}\right\rangle $ belong to the eigenspace of $A$ corresponding to the eigenvalue $a_{j}$. If $a_{j}$ is non-degenerate, its eigenspace has dimension 1. Therefore, any eigenvector of $A$ associated with $a_{j}$ is linearly dependent on $\left|a_{j}\right\rangle $. Since $B\left|a_{j}\right\rangle $ also belongs to this eigenspace, we necessarily have $B\left|a_{j}\right\rangle =b_{j}\left|a_{j}\right\rangle $.
 
-Agora se $a_{j}$ é degenerado, isto é, existem dois ou mais autovetores linearmente independentes correspondentes ao mesmo autovalor $a_{j}$, então existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes a $a_{j}$. É um pouco mais complexo, mas é a mesma ideia aplicada a um subespaço de dimensão maior que 1. Para entender isso, vamos nos basear em outra fonte {[}\cite{MIT804_CommonEigenbases}{]}.
+Now, if $a_{j}$ is degenerate, that is, if there are two or more linearly independent eigenvectors corresponding to the same eigenvalue $a_{j}$, then there exists a subspace of $\mathcal{H}$ generated by the eigenvectors of $A$ corresponding to $a_{j}$. It is a little more complex, but it is the same idea applied to a subspace of dimension greater than 1. To understand this, we will base our discussion on another source (\cite{MIT804_CommonEigenbases}).
 
-Para o caso degenerado, então temos mais vetores associados a $a_{j}$. Vamos chamar esse subespaço de $\mathcal{H}_{j}$ e, sendo $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ uma base qualquer de $\mathcal{H}_{j}$, então $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Agora, como $A$ e $B$ comutam, temos que $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, isto é, $B$ transforma vetores de $\mathcal{H}_{j}$ em vetores que também pertencem a $\mathcal{H}_{j}$. Em particular, $B$ transforma um autovetor de $A$ associado a $a_{j}$ em um vetor permanece no mesmo autoespaço de $A$, se $B\left|a^{k}_{j}\right\rangle \neq0$, essevetor também é um autovetor de $A$ associado a $a_{j}$.
+For the degenerate case, we then have more vectors associated with $a_{j}$. Let us call this subspace $\mathcal{H}_{j}$ and, with $\left\{ \left|a^{k}_{j}\right\rangle \right\} ^{d_{j}}_{k=1}$ being any basis of $\mathcal{H}_{j}$, then $A\left|a^{k}_{j}\right\rangle =a_{j}\left|a^{k}_{j}\right\rangle $. Now, since $A$ and $B$ commute, we have $B\left|a_{j}\right\rangle \in\mathcal{H}_{j}$, that is, $B$ transforms vectors from $\mathcal{H}_{j}$ into vectors that also belong to $\mathcal{H}_{j}$. In particular, $B$ transforms an eigenvector of $A$ associated with $a_{j}$ into a vector that remains in the same eigenspace of $A$. If $B\left|a^{k}_{j}\right\rangle \neq0$, this vector is also an eigenvector of $A$ associated with $a_{j}$.
 
-Portanto, cada $B\left|a^{k}_{j}\right\rangle $ pode ser escritor como uma combinação linear dos vetores da base de $\mathcal{H}_{j}$. Assim podemos considerar a ação de $B$ ``internamente'' no subespaço $\mathcal{H}_{j}$. Como $B$ é hermitiano, sua restrição a $\mathcal{H}_{j}$ também é. E como $\mathcal{H}_{j}$ possui dimensão finita (e é hermitiano), podemos diagonalizar essa restrição de $B$ em uma base ortonormal de $\mathcal{H}_{j}$. Portanto existe uma base de $\mathcal{H}_{j}$ , que podemos denotar por $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, tal que $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Como essa nova base continua sendo uma base de $\mathcal{H}_{j}$, seus vetores continuam sendo autovetores de $A$ associados a $a_{j}$.
+Therefore, each $B\left|a^{k}_{j}\right\rangle $ can be written as a linear combination of the basis vectors of $\mathcal{H}_{j}$. Thus, we can consider the action of $B$ “internally” within the subspace $\mathcal{H}_{j}$. Since $B$ is Hermitian, its restriction to $\mathcal{H}_{j}$ is also Hermitian. And since $\mathcal{H}_{j}$ has finite dimension (and is Hermitian), we can diagonalize this restriction of $B$ in an orthonormal basis of $\mathcal{H}_{j}$. Therefore, there exists a basis of $\mathcal{H}_{j}$, which we can denote by $\left\{ \left|a^{k}_{j}\right\rangle \right\} $, such that $B\left|a^{k}_{j}\right\rangle =b_{j}\left|a^{k}_{j}\right\rangle $. Since this new basis remains a basis of $\mathcal{H}_{j}$, its vectors continue to be eigenvectors of $A$ associated with $a_{j}$.
 
-Assim, os autovetores são simultanemanete autovetores de $A$ e $B$. Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores comuns aos dois operadores.
+Thus, the eigenvectors are simultaneously eigenvectors of $A$ and $B$. Repeating this procedure for each eigenspace of $A$, we obtain an orthonormal basis of $\mathcal{H}$ consisting of common eigenvectors of the two operators.
 
-Ou seja, se os operadores Hermitianos $A$ e $B$ comutam, então compartilham uma mesma base ortonormal de autovetores. Para entender melhor essa prova, podemos representar o operador $B$ como uma matriz na base de autovetores de $A$. Usando a relação de completude, $\mathbb{I}=\sum_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right|$ temos que $B=\mathbb{I}B\mathbb{I}=\sum_{j,k}\left(\left\langle a_{j}\left|B\right|a_{k}\right\rangle \right)\left(\left|a_{j}\right\rangle \left\langle a_{k}\right|\right)$.
+In other words, if the Hermitian operators $A$ and $B$ commute, then they share the same orthonormal basis of eigenvectors. To better understand this proof, we can represent the operator $B$ as a matrix in the basis of eigenvectors of $A$. Using the completeness relation, $\mathbb{I}=\sum_{j}\left|a_{j}\right\rangle \left\langle a_{j}\right|$, we have $B=\mathbb{I}B\mathbb{I}=\sum_{j,k}\left(\left\langle a_{j}\left|B\right|a_{k}\right\rangle \right)\left(\left|a_{j}\right\rangle \left\langle a_{k}\right|\right)$.
 
-Assim, os elementos da matriz que representa $B$ nessa base são $B_{a_{j},a_{k}}=\left\langle a_{j}\left|B\right|a_{k}\right\rangle $, ou em forma matricial:
+Thus, the elements of the matrix representing $B$ in this basis are $B_{a_{j},a_{k}}=\left\langle a_{j}\left|B\right|a_{k}\right\rangle $, or in matrix form:
 
 \begin{equation}
 B=\left[\begin{array}{ccc}
@@ -287,7 +297,7 @@ B=\left[\begin{array}{ccc}
 \end{array}\right]
 \end{equation}
 
-Então podemos pensar em $B$ como uma matriz bloco-diagonal:
+Then we can think of $B$ as a block-diagonal matrix:
 
 \[
 B=\left[\begin{array}{ccc}
@@ -297,24 +307,24 @@ B_{1} & 0 & 0\\
 \end{array}\right]
 \]
 
-Onde cada $B_{j}$ é uma submatriz representando a ação interna de $B$ atuando no subespaço $\mathcal{H}_{j}$. Se o autovalor $a_{j}$ é não degenerado, então o bloco $B_{j}$é apenas uma matriz $1\times1$. Se $a_{j}$ é degenerado, então o bloco $B_{j}$possui dimensão $d_{j}\times d_{j}$. 
+where each $B_{j}$ is a submatrix representing the internal action of $B$ acting on the subspace $\mathcal{H}_{j}$. If the eigenvalue $a_{j}$ is non-degenerate, then the block $B_{j}$ is just a $1\times1$ matrix. If $a_{j}$ is degenerate, then the block $B_{j}$ has dimension $d_{j}\times d_{j}$.
 
-Como $B$ é Hermitiano, cada bloco $B_{j}$ também é uma matriz Hermitiana e, portanto, pode ser diagonalizado. Assim, podemos diagonalizar $B$ dentro de cada subespaço $\mathcal{H}_{j}$, obtendo uma base de autovetores de $B$ que também são autovetores de $A$. Assim provamos que se e semente se, dois operadores $A$ e $B$ comutam, então compartilham de uma base de autovetores em comum.
+Since $B$ is Hermitian, each block $B_{j}$ is also a Hermitian matrix and, therefore, can be diagonalized. Thus, we can diagonalize $B$ within each subspace $\mathcal{H}_{j}$, obtaining a basis of eigenvectors of $B$ that are also eigenvectors of $A$. Thus, we prove that if and only if two operators $A$ and $B$ commute, then they share a common basis of eigenvectors. 
 \begin{center}
-\href{/exemplo-incompatibilidade}{Exemplo 1}.
+\href{/exemplo-incompatibilidade}{Example 1}
 \par\end{center}
 
-Em resumo, quando temos um autovalor $a_{j}$ não degenerado, a situação é muito simples, pois nesse caso, o único autovetor de $A$, a menos de um fator multiplicativo, é automaticamente também um autovetor de $B$.
+In summary, when we have a non-degenerate eigenvalue $a_{j}$, the situation is very simple, since in this case, the only eigenvector of $A$, up to a multiplicative factor, is automatically also an eigenvector of $B$.
 
-Quando $a_{j}$ é degenerado, seus autovetores formam um subespaço $\mathcal{H}_{j}$, correspondente ao autovalor $a_{j}$, no qual todo vetor não nulo também é um autovetor de $A$ associado a $a_{j}$. Como $A$ e $B$ comutam, a aplicação de $B$ sobre qualquer vetor de $\mathcal{H}_{j}$ resulta em outro vetor pertencente a $\mathcal{H}_{j}$. Assim, basta encontrar, dentro desse subespaço, os vetores que também sejam autovetores de $B$.
+When $a_{j}$ is degenerate, its eigenvectors form a subspace $\mathcal{H}_{j}$, corresponding to the eigenvalue $a_{j}$, in which every nonzero vector is also an eigenvector of $A$ associated with $a_{j}$. Since $A$ and $B$ commute, applying $B$ to any vector in $\mathcal{H}_{j}$ results in another vector belonging to $\mathcal{H}_{j}$. Thus, it is sufficient to find, within this subspace, the vectors that are also eigenvectors of $B$.
 
-Essa possibilidade é garantida pelo fato de $B$ ser Hermitiano: sua atuação restrita a $\mathcal{H}_{j}$ pode ser representada por uma submatriz Hermitiana, que pode ser diagonalizada por uma base ortonormal de autovetores\footnote{O fato de uma matriz ser Hermitiana garante que podemos escolher, no espaço em que ela atua, uma base ortonormal formada por seus autovetores{[}\cite{DelftSpectralTheorem}, \href{https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html}{nesta página}.{]}.}. Portanto, podemos escolher uma base ortonormal de $\mathcal{H}_{j}$ formada por autovetores de $B$. Como todos os vetores de $\mathcal{H}_{j}$ são também autovetores de $A$ associados a $a_{j}$, esses vetores são autovetores comuns de $A$ e $B$.
+This possibility is guaranteed by the fact that $B$ is Hermitian: its action restricted to $\mathcal{H}_{j}$ can be represented by a Hermitian submatrix, which can be diagonalized by an orthonormal basis of eigenvectors\footnote{The fact that a matrix is Hermitian guarantees that we can choose, in the space on which it acts, an orthonormal basis formed by its eigenvectors (\cite{DelftSpectralTheorem}, \href{https://interactivetextbooks.tudelft.nl/mqp-v2/operators.html}{on this page}.)}. Therefore, we can choose an orthonormal basis of $\mathcal{H}_{j}$ formed by eigenvectors of $B$. Since all vectors in $\mathcal{H}_{j}$ are also eigenvectors of $A$ associated with $a_{j}$, these vectors are common eigenvectors of $A$ and $B$.
 
-Repetindo esse procedimento para cada autoespaço de $A$, obtemos uma base ortonormal de $\mathcal{H}$ formada por autovetores comuns de $A$ e $B$.
+Repeating this procedure for each eigenspace of $A$, we obtain an orthonormal basis of $\mathcal{H}$ formed by common eigenvectors of $A$ and $B$.
 
-Com a prova deste teorema, sabemos que se dois observáveis $A$ e $B$ de um sistema não comutam, eles não podem compartilhar todos os autovetores. Se, medindo o observável $A$, preparamos o sistema em um estado que não é autovetor do observável $B$, este vetor deve ser obrigatoriamente uma combinação linear dos autovetores de com duas ou mais amplitudes de probabilidade não nulas.
+With the proof of this theorem, we know that if two observables $A$ and $B$ of a system do not commute, they cannot share all eigenvectors. If, by measuring the observable $A$, we prepare the system in a state that is not an eigenvector of the observable $B$, this vector must necessarily be a linear combination of the eigenvectors of with two or more nonzero probability amplitudes.
 \begin{center}
-\href{/exemplo-incompatibilidade}{Exemplo 2}.
+\href{/exemplo-incompatibilidade}{Example 2}
 \par\end{center}
 
 \subsubsection*{Relação de Incerteza}
@@ -339,7 +349,7 @@ Considere $A$ e $B$ dois observáveis de um sistema físico preparado no estado 
 \[
 \langle X\rangle:=\langle X\rangle_{\xi}=\langle\xi|X|\xi\rangle
 \]
-para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Antes de prosseguirmos, gostaria de exlorar mais esse resultado. Vamos considerar um sistema no estado $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, e um operador $X$ com autovalores $x_{n}$ associados aos autovetores $\left|x_{n}\right\rangle $. Pela definição de média ponderada, o valor médio dos resultados é $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, como $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, podemos escrever $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$. 
+para denotar o valor médio de um operador qualquer $X$ e $I$ para denotar o operador identidade em $\mathcal{H}$. Antes de prosseguirmos, gostaria de exlorar mais esse resultado. Vamos considerar um sistema no estado $\left|\psi\right\rangle =\sum_{n}c_{n}\left|\psi\right\rangle $, e um operador $X$ com autovalores $x_{n}$ associados aos autovetores $\left|x_{n}\right\rangle $. Pela definição de média ponderada, o valor médio dos resultados é $\left\langle O\right\rangle =\sum_{n}o_{n}P\left(o_{n}\right)$, como $P\left(o_{n}\right)=\left|c_{n}\right|^{2}$, podemos escrever $\left\langle O\right\rangle =\sum_{n}o_{n}\left|c_{n}\right|^{2}$.
 
 Como $\left\langle o_{n}|\psi\right\rangle =c_{n}$, então $\left\langle O\right\rangle =\sum_{n}o_{n}\left\langle \psi|o_{n}\right\rangle \left\langle o_{n}|\psi\right\rangle $ uma vez que $\left|\left\langle \psi|o_{n}\right\rangle \right|=\sqrt{\left\langle o_{n}|\psi\right\rangle \left\langle \psi|o_{n}\right\rangle }$. Então pela decomposição espectral $O=\sum_{n}o_{n}\left|o_{n}\right\rangle \left\langle o_{n}\right|$ então:
 
@@ -366,7 +376,7 @@ com $\mathrm{Var}(X)=\mathrm{Var}(X)_{\xi}=\langle\xi|(X-\langle X\rangle I)^{2}
 \left\langle A\right\rangle ^{*} & =\left(\left\langle \psi\left|A\right|\psi\right\rangle \right)^{*}=\left\langle \psi\left|A^{\dagger}\right|\psi\right\rangle =\left\langle \psi\left|A\right|\psi\right\rangle =\left\langle A\right\rangle 
 \end{align*}
 
-Ademais, temos que
+Ademais, temos que 
 \begin{align}
 \langle\psi|\phi\rangle & =((A-\langle A\rangle I)|\xi\rangle,(B-\langle B\rangle I)|\xi\rangle)\\
  & =(|\xi\rangle,(A-\langle A\rangle I)(B-\langle B\rangle I)|\xi\rangle)\\
@@ -377,7 +387,7 @@ Ademais, temos que
  & =\left\langle AB\right\rangle -\left\langle A\right\rangle \left\langle B\right\rangle 
 \end{align}
 
-Sendo:
+Sendo: 
 \begin{align}
 \left[A,B\right] & =AB-BA,\\
 \left\{ A,B\right\}  & =AB+BA
@@ -452,7 +462,7 @@ Temos então:
 \mathrm{Var}(A)\mathrm{Var}(B) & \geq(\Re(\langle\psi|\phi\rangle))^{2}+(\Im(\langle\psi|\phi\rangle))^{2}
 \end{align*}
 
-Agora vamos abrir:
+Agora vamos abrir: 
 \[
 \Im\left(\left\langle \psi|\phi\right\rangle \right)^{2}=\left(-i2^{-1}\langle[A,B]\rangle\right)^{2}=-2^{-2}\langle[A,B]\rangle^{2}
 \]
@@ -503,7 +513,7 @@ com $A|a\rangle=a|a\rangle$ e $a\in\mathbb{R}$. Neste caso pode-se verificar que
 \begin{equation}
 \mathrm{Var}(A)_{|a\rangle}=\mathrm{CovQ}(A,B)_{|a\rangle}=\langle[A,B]\rangle_{|a\rangle}=0.
 \end{equation}
-E com isso a RIHRS nos retorna 
+E com isso a RIHRS nos retorna
 
 \begin{equation}
 0\mathrm{Var}(B)\ge0.
@@ -541,7 +551,7 @@ E para a Covariância Quântica, já vimos que $\langle a_{n}\left|A\right|a_{n}
 
 \textbf{Relações de incerteza de Robertson e de Heisenberg (RIH)}
 
-Ignorando-se\footnote{Isto é, se $a\geq b+c\geq c$, sendo $b\geq0$, então necessariamente $a\geq c$.} o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson: 
+Ignorando-se\footnote{Isto é, se $a\geq b+c\geq c$, sendo $b\geq0$, então necessariamente $a\geq c$.} o termo relacionado à covariância quântica na RIHRS e tomando a raiz quadrada da expressão que resta, obtemos a relação de incerteza de Robertson:
 
 \begin{align*}
 \text{Var}\left(A\right)\text{Var}\left(B\right) & \geq\text{CovQ}\left(A,B\right)^{2}+2^{-2}\left|\left\langle \left[A,B\right]\right\rangle \right|^{2}\\
@@ -649,11 +659,10 @@ Se a natureza é, em última instância, determinista e a natureza probabilísti
 
 Porém, é um equívoco pensar que esse elemento matemático probabilístico serviria, por si só, como suporte para uma defesa do livre-arbítrio. Não há, nas leis físicas conhecidas, uma formulação que incorpore o livre-arbítrio. Podemos aproximar a chance de obter cara ou coroa ao lançar uma moeda de maneira aproximadamente simétrica a 50\% para cada resultado. Esse é um evento probabilístico, mas não diríamos, por isso, que a moeda possui livre-arbítrio. A introdução de probabilidades na descrição da natureza, portanto, não confere mais livre-arbítrio à natureza do que o lançamento probabilístico de uma moeda.
 
-Além disso, não apenas a evolução do estado quântico é determinista, como a própria distribuição de probabilidade em qualquer instante impõe restrições aos possíveis resultados e às suas probabilidades. Ao meu ver, essas restrições são incompatíveis com uma concepção de “livre” arbítrio na qual o agente deveria possuir liberdade irrestrita para determinar qualquer um dos resultados possíveis.
+Além disso, não apenas a evolução do estado quântico é determinista, como a própria distribuição de probabilidade em qualquer instante impõe restrições aos possíveis resultados e às suas probabilidades. Ao meu ver, essas restrições são incompatíveis com uma concepção de “livre” arbítrio na qual o agente deveria possuir liberdade irrestrita para determinar qualquer um dos resultados possíveis. 
 \begin{quotation}
-\bibliographystyle{plain}
+ \bibliographystyle{plain}
 \bibliography{ref}
- 
 \end{quotation}
 
 \end{document}
