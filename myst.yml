@@ -12,14 +12,14 @@ project:
     - file: interpretacao.tex    
     - title: Blog 
       url: https://angpisiko1.substack.com/
-    - file: dupla.tex 
-      hidden: true
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
+    - title: Appendix
+      children:
+        - file: dupla.tex 
     - title: Math
       children:    
         - file: mat.tex
-          title: Linear Algebra 
     
 
 
