@@ -4,13 +4,23 @@
 \usepackage[T1]{fontenc}
 \usepackage{textcomp}
 \usepackage[utf8]{luainputenc}
+\usepackage{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
-\usepackage{babel}
+\usepackage[]
+ {hyperref}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+
+
+\makeatother
+
 \begin{document}
-\title{Wave Function}
+\title{Free Particle}
 \author{Jhordan Silveira de Borba}
 \maketitle
 \begin{quote}
@@ -133,7 +143,7 @@ hf & =\frac{h^{2}}{\lambda^{2}}\frac{1}{2m}\\
 \hbar\omega & =\frac{\hbar^{2}k^{2}}{2m}
 \end{align*}
 
-Onde também usamos: $\omega=2\pi f$ and wave number $k=2\pi/\lambda$. From which follows the dispersion relation
+Where we also use: $\omega=2\pi f$ and wave number $k=2\pi/\lambda$. From which follows the dispersion relation
 
 \[
 \omega=\frac{\hbar k^{2}}{2m}
@@ -174,12 +184,328 @@ A closer look at this result is warranted.A wave packet that has a significant a
 
 The quantities $\Delta x$ and $\Delta p$ are known as uncertainties for reasons that will become increasingly apparent, and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
 
-\subsection{Retomando a partícula livre}
+\subsection{The Statistical Interpretation}
 
-https://paulskrzypczyk.github.io/qm-lecture-notes/free-particle?utm\_source=chatgpt.com
-\begin{quotation}
+From this point on, we will continue with Professor Paul Skrzypczyk's work (\cite{SkrzypczykFreeParticle}).
+
+According to quantum mechanics, in general, particles do not have well-defined properties such as position, momentum or energy. Quantum mechanics says that if at time $t=t_{0}$ a particle has a wavefunction $\Psi\left(x,t_{0}\right)$ then the probability to find the particle between $x=x_{a}$ and $x=x_{b}$ is
+
+\[
+P\left(x_{a}\leq x\leq x_{b},t_{0}\right)=\int^{x_{b}}_{x_{a}}\left|\Psi\left(x,t_{0}\right)^{2}\right|dx
+\]
+
+That is, the modulus square of the wavefunction specifies, in the form of probabilities, where the particle is at time $t_{0}$. We can interpret $\left|\Psi\left(x,t_{0}\right)^{2}\right|$ as the probability density $P\left(x,t_{0}\right)$ to find the particle at position $x$ at time $t=t_{0}$. That is,
+
+\[
+P\left(x,t_{0}\right)dx=\left|\Psi\left(x,t_{0}\right)^{2}\right|dx
+\]
+
+is the probability to find the particle between $x$ and $x+dx$ at time $t_{0}$, for $dx$ infinitesimally small. We can think of this as being the probability to find the particle in the vicinity of $x$ at time $t_{0}$.
+
+It is important to note that probabilities enter quantum mechanics in a fundamental way: Even if the most careful and ideal experiment were to be carried out in order to measure the position of a particle, then it would still be found in different places in different runs of the experiment. This means that in quantum mechanics, identical experiments lead to non-identical outcomes.
+
+The probabilities that arise in quantum mechanics have nothing to do with imperfections or experimental limitations. This is contrary to classical mechanics, where in principle all experiments can be made perfectly repeatable, such that identical experiments lead to identical outcomes if sufficient care is taken (this is true even for chaotic systems, which are very sensitive to changes in conditions).
+
+The probabilistic nature of quantum mechanics is arguably the biggest departure from classical mechanics, from which many of its counter-intuitive predictions arise.
+
+With the above statistical interpretation in place, it is useful to introduce some terminology. We will say that $\Psi\left(x,t_{0}\right)$ is the probability amplitude for the particle to be at position x at time $t_{0}$. When there is no loss of confusion, we will also simply use amplitude in place of probability amplitude. Probability amplitudes are thus complex numbers, whose modulus squares are probabilities.
+
+In order for the statistical interpretation of the wavefunction to be possible, $\Psi\left(x,t_{0}\right)$ is required to satisfy a normalisation condition which ensures that the total probability for the particle to be found somewhere is one. Mathematically, because $\left|\Psi\left(x,t_{0}\right)^{2}\right|$ is the probability density $P\left(x,t_{0}\right)$, this condition is given by
+
+\[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=1
+\]
+
+Normalisation is not a very restrictive property\footnote{However, we can demonstrate that normalization is conserved---that is, if the wave function is normalized at the initial instant $t_{0}$, it remains normalized as it evolves over time $t>t_{0}$.}, since we can normalise functions to turn them into valid wavefunctions. In particular, if we have some unnormalised function $\Psi\left(x,t_{0}\right)$ that satisfies
+
+\[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=N
+\]
+
+where $N<\infty$, that is, if this integral is finite, then
+
+\[
+\Psi'\left(x,t_{0}\right)=\frac{\Psi\left(x,t_{0}\right)}{\sqrt{N}}
+\]
+
+will be a normalised wavefunction. This condition is known as being square-integrable. It simply says that the integral of the modulus squared of the function should be a finite number, i.e. that the total area under the curve is not infinite.
+
+If $N$ would have been infinite then it would not have been possible to divide by $\sqrt{N}$ in order to obtain a normalised wavefunction, as dividing by infinity would have left us with a wavefunction that vanishes everywhere, which doesn’t make sense physically. We can also note that the normalization is independent of a phase factor $\theta$ in $\Psi'=\frac{e^{i\theta}}{\sqrt{N}}\Psi$. This shows that there is freedom in choosing how to normalise a wavefunction, since no matter how we normalise it we end up with the same probability density. A standard choice is to pick $\theta=0$, such that $e^{i\theta}=1$. That is, the standard choice is to normalise by a real and positive number (even though a negative, or complex number would also be an equally valid choice).
+
+The requirement that the wavefunction be normalised imposes constraints on the behaviour of particles at $x=\pm\infty$. Physically, the normalisation says that the probability to find the particle somewhere must be one. If there is a non-zero probability to find the particle at infinity, then such a wavefunction necessarily cannot be normalised, as the area under the curve will be infinite.
+
+This statement can be made more precise, as we can show that the wavefunction must decay to zero sufficiently fast in order to be normalised. In particular, $\Psi\left(x,t_{0}\right)$ must decay faster than $1/\sqrt{\left|x\right|}$ in order that the probability to find the particle at large $x$ does not diverge.
+
+Let's try to demonstrate this, starting with $\Psi=x^{-1/2}$ for $x\geq x_{0}$:
+
+\[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=\int^{+\infty}_{x_{0}}\frac{1}{x}dx=\left.\ln\left(\left|x\right|\right)\right|^{+\infty}_{x_{0}}=\lim_{a\rightarrow\infty,b\rightarrow x_{0}}\ln\left(\frac{a}{b}\right)=\infty
+\]
+
+The total area under the curve of $\left|\Psi\left(x,t_{0}\right)\right|^{2}$ in the region $x\geq x_{0}$ is infinite. This shows that this function is not square integrable, and we cannot form a valid wavefunction from it. Let's assume now that for $x\geq x_{0}$ , the wavefunction has the form $\Psi=x^{-\left(1/2+a/2\right)}=$ where $a\neq0$:
+
+\[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=\int^{+\infty}_{x_{0}}x^{-1-a}dx=\left.\frac{x^{-a}}{-a}\right|^{+\infty}_{x_{0}}=-\frac{1}{a}\left(\lim_{x\rightarrow\infty}\frac{x^{-a}}{a}-x_{0}\right)
+\]
+
+If $a>0$, the total area under the curve of $\left|\Psi\left(x,t_{0}\right)\right|$ in the region $x\geq x_{0}$is finite.This shows that this function is potentially square integrable (it is only potentially so since we don’t know how it behaves in other regions).
+
+As we discussed briefly above, in classical mechanics we have a lot of freedom in specifying the state of the particle at some time $t_{0}$. In quantum mechanics, we have even more freedom. In general, within reason, any normalised wavefunction $\Psi\left(x,t_{0}\right)$ is a valid state for a particle. This is rather remarkable, as the wavefunction specifies a complex number at every point in space. There is thus significantly more freedom than just specifying the initial position $x_{0}$ and initial momentum $p_{0}$ in classical mechanics.
+
+\subsection{The Free Particle}
+
+We had already obtained:
+
+\begin{align}
+\Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}
+\end{align}
+
+Using$k^{2}=2mE/\hbar^{2}$ and $\omega=\frac{E}{\hbar}$, with some manipulation and by renaming the constants, we can write:
+
+\begin{align*}
+\Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}\\
+ & =e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]\\
+ & =e^{-i\hbar k^{2}t/2m}\left[Ae^{-ikx}+Be^{ikx}\right]
+\end{align*}
+
+This is a separable solution to the free-particle Schrödinger equation for all values of $A$ and $B$, and all values of $k>0$. It might appear that we are thus done, as we have managed to solve the Schrödinger equation, and thus have found how a free particle evolves in time. There are however a number of obstacles that we still need to overcome.
+
+First, we can specify an arbitrary initial state of the particle, i.e. an arbitrary wavefunction $\Psi\left(x,t_{0}\right)$ at $t=t_{0}$. For stationary states of the form above, at $t=t_{0}$, we only have two complex numbers $A$ and $B$ to specify, and hence this definitely does not amount to an arbitrary wavefunction. We therefore seem to have much less generality than we need.
+
+More worryingly, as we will see next, the solutions found don’t appear to be permissible at all, due to their normalisation. We will see below that both of these problems can be overcome, by using the superposition principle.
+
+Wavefunctions must be normalised in order that the probability to find the particle somewhere is one. Let us therefore attempt to normalise the wavefunction:
+
+\begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =\int^{+\infty}_{-\infty}\left|e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]\right|^{2}dx\\
+ & =\int^{+\infty}_{-\infty}e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]e^{i\omega t}\left[A^{*}e^{ikx}+B^{*}e^{-ikx}\right]dx\\
+ & =\int^{+\infty}_{-\infty}\left(\left|A^{2}\right|+\left|B\right|^{2}+AB^{*}e^{-2ikx}+A^{*}Be^{2ikx}\right)dx
+\end{align*}
+
+unless $A=B=0$. Indeed, when $A\neq0$ or $B\neq0$, the first two terms are positive and constant, and hence contribute an infinite amount to the integral. Moreover, the wavefunction does not decay for large $x$, as we already showed was necessary for normalised wavefunctions. On the other hand, $A=B=0$ leads to the solution $\Psi\left(x,t\right)=0$, which also cannot be normalised, and is inadmissible.
+
+At first sight, this appears like a major problem with the separation of variables method. It is true that our assumption that the wavefunction is separable, for a free particle, is in fact inconsistent\footnote{An isolated sinusoidal wave is a mathematically valid solution to the Schrödinger equation, but it does not represent a localized physical state because it is not normalizable. To describe a physically realistic particle, we therefore need a more elaborate initial condition.}, and free particles cannot be in stationary states. However, it does not mean that the method of separation of variables is a bad one, but only that we have to use it in a smarter way. We must further make use of the superposition principle\footnote{Because of the fact that the Schrödinger equation is linear, it has an extremely important property known as the superposition principle: If $\Psi_{1}\left(x,t\right)$ and $\Psi_{2}\left(x,t\right)$ are both solutions of the Schrödinger equation, then $\Psi_{1}\left(x,t\right)=a\Psi_{1}\left(x,t\right)+b\Psi_{1}\left(x,t\right)$ is also a solution of the Schrödinger equation for all complex numbers $a$ and $b$.} in order to turn it into a powerful technique for solving the Schrödinger equation.
+
+Consider two distinct separable solutions to the Schrödinger equation, $\Psi_{1}\left(x,t\right)$ and $\Psi_{2}\left(x,t\right)$, each with a corresponding constant $E_{1}>0$ and $E_{2}>0$, such that $E_{1}\neq E_{2}$. That is, consider
+
+\begin{align*}
+\Psi_{1}\left(x,t\right) & =\exp\left(-\frac{i\hbar k^{2}_{1}}{2m}t\right)\left[A_{1}e^{-ik_{1}x}+B_{1}e^{ik_{1}x}\right]\\
+\Psi_{2}\left(x,t\right) & =\exp\left(-\frac{i\hbar k^{2}_{2}}{2m}t\right)\left[A_{2}e^{-ik_{2}x}+B_{2}e^{ik_{2}x}\right]
+\end{align*}
+
+where $k_{i}=\frac{\sqrt{2mE_{i}}}{\hbar}$ and $A_{i},B_{i}$ are arbitrary complex constants. Both of these wavefunctions solve the Schrödinger equation separately. Now, because of the superposition principle we know that
+
+\begin{align*}
+\Psi\left(x,t\right) & =a_{1}\Psi_{1}\left(x,t\right)+a_{2}\Psi_{2}\left(x,t\right)\\
+ & =\sum^{2}_{i=-2}\exp\left(-\frac{i\hbar k^{2}_{i}}{2m}t\right)a_{i}e^{ik_{i}x}
+\end{align*}
+
+is also a solution to the Schrödinger equation, for arbitrary complex numbers $a_{i}$, where $a_{0}=0$, and $k_{-j}=-k_{j}$.
+
+This new superposed wavefunction has an interesting form. First, it is no longer separable. That is, $\Psi\left(x,t\right)$ is not of the form $\Psi\left(x,t\right)=X\left(x\right)T\left(t\right)$, for some functions $T\left(t\right)$ and $X\left(x\right)$. Second, the normalisation of $\Psi\left(x,t\right)$ is not directly related to the normalisation of $\Psi_{i}\left(x,t\right)$. We will not calculate the normalisation of $\Psi\left(x,t\right)$ just yet, but will show next that we can in fact form normalised wavefunctions by carefully superposing separable solutions.
+
+Before doing so, it will turn out to be important to first ask ourselves what form the most general superposition of separable solutions can take. In particular, whereas we superposed two solutions in the above, more generally we can in fact superpose as many solutions as we wish.
+
+In the above example it is instructive to realise that although we superposed two solutions, in fact superpose infinitely many separable solutions, one for every value of $k$ --- positive or negative. Such a wavefunction can be written
+
+\begin{equation}
+\Psi\left(x,t\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)\exp\left(-\frac{i\hbar k^{2}}{2m}t\right)e^{ikx}dk\label{eq:quantummechanics}
+\end{equation}
+
+where $c\left(k\right)$ is a complex function which collects together all of the constants that multiply each function $\Psi_{k}\left(x,t\right)$. We have written this as an integral as $k$ can vary continuously. I also have introduced the constant $1/\sqrt{2\pi}$ as it turns out to be the ‘correct’ normalisation. It is much easier to introduce it at this stage, even if this appears somewhat arbitrary and unjustified, rather than to wait and fix the normalisation later.
+
+We will now show that by choosing the function $c\left(k\right)$ appropriately --- i.e. by carefully superposing separable solutions --- we can obtain a normalised solution to the Schrödinger equation. This is in spite of the fact that the separable solutions themselves cannot be normalised.
+
+We can also use the insight that normalisation is conserved in time, in order to simplify our calculation. In particular, we need only calculate the normalisation of $\Psi\left(x,0\right)$, which has a simpler form than $\Psi\left(x,t\right)$. If $\Psi\left(x,0\right)$ is normalised, we know that $\Psi\left(x,t\right)$ will also be normalised, so we should carry out the simplest calculation we can. We see that
+\begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,0\right)\right|^{2}dx & =\int^{+\infty}_{-\infty}\left|\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right|^{2}dx\\
+ & =\int^{+\infty}_{-\infty}\left(\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right)\left(\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k'\right)^{*}e^{-ik'x}dk'\right)dx\\
+ & =\frac{1}{2\pi}\int^{+\infty}_{-\infty}\left(\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right)\left(\int^{+\infty}_{-\infty}c\left(k'\right)^{*}e^{-ik'x}dk'\right)dx\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{ikx}e^{-ik'x}\right)dx\right)dkdk'\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{i\left(k-k'\right)x}\right)dx\right)dkdk'
+\end{align*}
+
+where we introduced a new variable $k'$ for the second integration (which is just a dummy variable that we are integrating over). This expression looks formidable, but it can in fact be substantially simplified.
+
+The Dirac Delta function $\delta\left(x\right)$ is defined such that:
+
+\[
+\int^{+\infty}_{-\infty}f\left(x\right)\delta\left(x-x_{0}\right)dx=f\left(x_{0}\right)
+\]
+
+The delta function is an infinitely thin, infinitely tall ‘spike’. Two key properties of the delta function are that it is an even function, $\delta\left(-x\right)=\delta\left(x\right)$ and that under a change of scale $\delta\left(ax\right)=\delta\left(x\right)/\left|a\right|$. One representation of the Dirac Delta function is $\delta\left(x\right)=\int^{+\infty}_{-\infty}\frac{e^{iax}}{2\pi}da$.
+
+We therefore see that:
+
+\begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,0\right)\right|^{2}dx & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{i\left(k-k'\right)x}\right)dx\right)dkdk'\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}2\pi\delta\left(k-k'\right)\right)dkdk'\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)\int^{+\infty}_{-\infty}c\left(k'\right)^{*}\delta\left(k-k'\right)dk'\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)\int^{+\infty}_{-\infty}c\left(k'\right)^{*}\delta\left(k'-k\right)dk'\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k\right)^{*}\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk
+\end{align*}
+
+Therefore the wavefunction $\Psi\left(x,0\right)$ will be normalised if $\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk=1$. To summarise, a wavefunction of the form \ref{eq:quantummechanics} is a normalised solution to the Schrödinger equation whenever $\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk=1$ is satisfied.
+\begin{center}
+\textbf{Example: Beginning}
+\par\end{center}
+
+We are going now to study a solution to the Schrödinger equation known as a Gaussian wavepacket. This is a very special solution, whereby the particle is seen to be roughly localised in a packet, which evolves in time in a rather simple way, maintaining the same general form for all time. Consider a superposition specified by
+
+\[
+c\left(k\right)=\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-a^{2}\left(k-k_{0}\right)^{2}}
+\]
+
+which is a Gaussian function, centred at $k=k_{0}$, with width $\sqrt{2}/a$ (distance between inflection points):
+
+\begin{align*}
+\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk & =\int^{+\infty}_{-\infty}\left(\frac{2a^{2}}{\pi}\right)^{1/2}e^{-2a^{2}\left(k-k_{0}\right)^{2}}dk\\
+ & =\left(\frac{2a^{2}}{\pi}\right)^{1/2}\int^{+\infty}_{-\infty}e^{-\alpha x^{2}}dx
+\end{align*}
+
+Where we substitute $x=k-k_{0}$ ($\frac{dx}{dk}=1$) and $\alpha=2a^{2}$. This is a Gaussian integral with a well-known result (\href{https://github.com/jonasmaziero/mecanica_quantica/blob/main/notas_de_aula/02_Probabilidades.ipynb}{solution}). We then define an integral $G=\int^{+\infty}_{-\infty}e^{-ax^{2}}dx$. We can then calculate:
+
+\begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)
+\end{equation}
+
+Since $x\rightarrow y$ is the variable of integration in each of the integrals---that is, merely a label---we can substitute $x\rightarrow y$ in the second one, and we are then left with:
+
+\begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ay^{2}}dx\right)=\left(\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}e^{-a\left(x^{2}+y^{2}\right)}dxdy\right)
+\end{equation}
+
+We can now perform a change of coordinate system, obviously also changing the area element. Using the polar coordinate system (\href{https://en.wikipedia.org/wiki/Polar_coordinate_system}{definition}):
+
+\begin{align}
+x & =r\cos\theta\\
+y & =r\sin\theta\\
+da & =rdrd\theta
+\end{align}
+
+To cover the entire space, our limits are $0\leq r<\infty$ and $0\leq\theta<2\pi$. Substituting:
+
+\begin{align}
+G^{2} & =\left(\int^{2\pi}_{0}\int^{\infty}_{0}e^{-ar^{2}}rdrd\theta\right)\\
+ & =\left(\int^{2\pi}_{0}d\theta\right)\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)\\
+ & =2\pi\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)
+\end{align}
+
+Replacing $u=-ar^{2}$, then $\frac{du}{dr}=-a2r\rightarrow-\frac{du}{a}=2rdr$, and the limits of integration are now $u=-a0^{2}=0$ e $u=-ar\infty^{2}=-\infty$
+
+\begin{align}
+G^{2} & =\pi\left(\int^{-\infty}_{0}e^{-ar^{2}}2rdr\right)\\
+ & =-\frac{\pi}{a}\left(\int^{-\infty}_{0}e^{u}du\right)\\
+ & =-\frac{\pi}{a}\left[e^{u}\right]^{-\infty}_{0}\\
+ & =-\frac{\pi}{a}\left[\frac{1}{e^{u}}-e^{0}\right]^{-\infty}_{0}\\
+ & =\frac{\pi}{a}
+\end{align}
+
+Thus, if $G^{2}=\pi/a$, then $G=\sqrt{\pi/a}$ e:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=G=\sqrt{\frac{\pi}{a}}
+\end{equation}
+
+Returning to our integral, then:
+
+\begin{align*}
+\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk & =\sqrt{\frac{2a^{2}}{\pi}}\int^{+\infty}_{-\infty}e^{-\alpha x^{2}}dx\\
+ & =\sqrt{\frac{2a^{2}}{\pi}}\sqrt{\frac{\pi}{\alpha}}\\
+ & =\sqrt{2a^{2}}=\frac{1}{\sqrt{2a^{2}}}\\
+ & =1
+\end{align*}
+
+Specifying $c\left(k\right)$ can be seen to be equivalent to specifying an initial condition $\Psi\left(x,0\right)$. At $t=0$, the wavefunction is found to be
+
+\begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-a^{2}\left(k-k_{0}\right)^{2}}e^{ikx}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(k-k_{0}\right)^{2}+ikx\right)dk
+\end{align*}
+
+Replacing $u=k-k_{0}$:
+
+\begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux+\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux\right)du
+\end{align*}
+
+And given that:
+\[
+-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}=\left[-a^{2}u^{2}+iux\right]+\frac{x^{2}}{4a^{4}}
+\]
+
+So:
+
+\begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux+\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}-\frac{x^{2}}{4a^{4}}\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}\right)du
+\end{align*}
+
+Replacing again $v=u-\frac{ix}{2a^{2}}$:
+
+\begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}e^{-a^{2}v^{2}}dv\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\sqrt{\frac{\pi}{a^{2}}}\\
+ & =\frac{1}{\left(2^{2}a^{4}\right)^{1/4}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-x^{2}/4a^{2}}e^{ik_{0}x}\\
+ & =\left(\frac{1}{a^{2}2\pi}\right)^{1/4}e^{-x^{2}/4a^{2}}e^{ik_{0}x}
+\end{align*}
+
+This is also a Gaussian function, now centred at the origin, $x=0$, and multiplied by a phase factor $\exp\left(ik_{0}x\right)$.
+
+The probability density to find the particle at position $x$ is:
+
+\[
+P\left(x,0\right)=\left|\Psi\left(x,0\right)\right|^{2}=\frac{1}{a\sqrt{2\pi}}e^{-\frac{x^{2}}{2a^{2}}}
+\]
+
+Which is a normal distribution with mean\footnote{For a discrete probability distribution, we would have: $\left\langle x\right\rangle =\sum_{n}x_{n}P\left(x_{n}\right)$.}:
+
+\begin{align*}
+\left\langle x\right\rangle  & =\int^{+\infty}_{-\infty}xP\left(x,0\right)dx\\
+ & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}xe^{-\frac{x^{2}}{2a^{2}}}dx\\
+ & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}xe^{-bx^{2}}dx
+\end{align*}
+
+In this case, since the integrand is an odd function, that is, if $I\left(x\right)=xe^{-bx^{2}}$, then $G\left(-x\right)=-G\left(x\right)$, the integral is simply zero, and we have $\left\langle x\right\rangle =0$. Now let's calculate: $\left\langle x^{2}\right\rangle $. 
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx
+\end{equation}
+
+We can find this using the standard Gaussian integral $\int^{+\infty}_{-\infty}e^{-bx^{2}}dx=\sqrt{\frac{\pi}{a}}$. Differentiating both sides with respect to the parameter $b$:
+
+\begin{align*}
+\int^{+\infty}_{-\infty}e^{-bx^{2}}dx & =\frac{d}{db}\sqrt{\frac{\pi}{b}}\\
+\int^{+\infty}_{-\infty}-x^{2}e^{-bx^{2}}dx & =-\frac{1}{2b}\sqrt{\frac{\pi}{b}}\\
+\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx & =\frac{1}{2b}\sqrt{\frac{\pi}{b}}
+\end{align*}
+
+Then:
+
+\begin{align*}
+\left\langle x^{2}\right\rangle  & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}\\
+ & =\frac{1}{a\sqrt{2\pi}}\frac{1}{2b}\sqrt{\frac{\pi}{b}}\\
+ & =\frac{1}{a\sqrt{2}}\frac{2a^{2}\sqrt{2a^{2}}}{2}\\
+ & =a^{2}
+\end{align*}
+
+The standard deviation is then:
+
+\[
+\Delta x=\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}=\sqrt{a^{2}-0^{2}}=a
+\]
+
+The particle is therefore localised close to the origin, and the smaller $a$ is, the smaller the standard deviation is, and hence the particle is more tightly localised. Based on the initial conditions $\Psi\left(x,0\right)$, we are then in a position to determine how the wavefunction $\Psi\left(x,t\right)$ evolves in time from this initial condition. But for our discussion, this is sufficient for now.
+\begin{center}
+\textbf{Example: end}
+\par\end{center}
+
 \bibliographystyle{plain}
 \bibliography{ref}
-\end{quotation}
 
 \end{document}

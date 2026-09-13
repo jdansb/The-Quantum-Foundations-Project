@@ -1,16 +1,20 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
+#LyX file created by tex2lyx 2.5
 \lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
-\origin unavailable
+\origin D:/Github/The-Quantum-Foundations-Project/
 \textclass article
-\use_default_options true
+\begin_preamble
+\usepackage{babel}
+
+\end_preamble
+\use_default_options false
 \maintain_unincluded_children no
 \language brazilian
 \language_package default
 \inputencoding utf8
-\fontencoding auto
+\fontencoding T1
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -30,23 +34,30 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement class
-\float_alignment class
 \paperfontsize default
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref false
+\pdf_pdfusetitle 0
 \papersize default
 \use_geometry true
-\use_package amsmath 1
-\use_package amssymb 1
-\use_package cancel 1
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
 \use_package esint 1
-\use_package mathdots 1
-\use_package mathtools 1
-\use_package mhchem 1
-\use_package stackrel 1
-\use_package stmaryrd 1
-\use_package undertilde 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
 \cite_engine basic
 \cite_engine_type default
 \biblio_style plain
@@ -54,19 +65,10 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
-\use_formatted_ref 0
+\justification true
+\crossref_package prettyref
 \use_minted 0
-\use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
+\use_lineno false
 \index Index
 \shortcut idx
 \color #008000
@@ -86,11 +88,9 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
-\tablestyle default
 \tracking_changes false
 \output_changes false
 \change_bars false
-\postpone_fragile_content true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -102,35 +102,43 @@
 \begin_body
 
 \begin_layout Title
+
+\lang brazilian
 Free Particle
 \end_layout
 
 \begin_layout Author
+
+\lang brazilian
 Jhordan Silveira de Borba
 \end_layout
 
 \begin_layout Quote
+
+\lang brazilian
+
 \begin_inset Quotes eld
 \end_inset
 
-If anyone aims to have anything like a broad understanding of the sciences that underpin modern technology,
- as well as obtaining some insight into the modern view of the character of the physical world,
- then some knowledge and understanding of quantum mechanics is mandatory.
+If anyone aims to have anything like a broad understanding of the sciences that underpin modern technology, as well as obtaining some insight into the modern view of the character of the physical world, then some knowledge and understanding of quantum mechanics is mandatory.
 \begin_inset Quotes erd
 \end_inset
 
  (
 \begin_inset CommandInset citation
 LatexCommand cite
+after ""
 key "cresser2001quantum"
 literal "false"
 
 \end_inset
 
-)
+) 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 A material that seems very interesting is the PDF 
 \begin_inset Quotes eld
 \end_inset
@@ -139,74 +147,59 @@ Quantum Physics Notes
 \begin_inset Quotes erd
 \end_inset
 
- by Professor J.
- D.
- Cresser (
+ by Professor J. D. Cresser (
 \begin_inset CommandInset citation
 LatexCommand cite
+after ""
 key "cresser2001quantum"
 literal "false"
 
 \end_inset
 
-).
- I will probably be working next with Chapters 3,
- 4,
- 6,
- and 7.
- But it seems to me that the entire PDF is an excellent introduction;
- I am just personally too lazy to review (once again) the mathematical formalism of quantum mechanics
+). I will probably be working next with Chapters 3, 4, 6, and 7. But it seems to me that the entire PDF is an excellent introduction; I am just personally too lazy to review (once again) the mathematical formalism of quantum mechanics
 \begin_inset Foot
 status collapsed
 
-\begin_layout Plain Layout
-From what I could tell,
- among the remaining chapters,
- Chapters 1 and 2 are introductory/historical,
- the last chapter (11) deals with the postulates of quantum mechanics,
- Chapters 8,
- 9,
- and 10 deal with its mathematical formalism,
- and finally,
- Chapter 5 discusses the wave formulation of quantum mechanics.
+
+\begin_layout Standard
+
+\lang brazilian
+From what I could tell, among the remaining chapters, Chapters 1 and 2 are introductory/historical, the last chapter (11) deals with the postulates of quantum mechanics, Chapters 8, 9, and 10 deal with its mathematical formalism, and finally, Chapter 5 discusses the wave formulation of quantum mechanics.
 \end_layout
 
 \end_inset
 
-.
- But perhaps one day I will add it as an appendix.
+. But perhaps one day I will add it as an appendix.
 \end_layout
 
 \begin_layout Standard
-Quantum mechanics provides a framework of physical and mathematical principles through which we seek to understand the physical nature of the world in which we live.
- These principles are fundamental and are presumed to apply to all physical systems.
- They embody fundamental physical and philosophical questions that can be abstracted from any particular physical system and studied independently of the specific systems in which they may be manifested.
- It is this abstract formulation of these principles that constitutes quantum mechanics.
+
+\lang brazilian
+Quantum mechanics provides a framework of physical and mathematical principles through which we seek to understand the physical nature of the world in which we live. These principles are fundamental and are presumed to apply to all physical systems. They embody fundamental physical and philosophical questions that can be abstracted from any particular physical system and studied independently of the specific systems in which they may be manifested. It is this abstract formulation of these principles that constitutes quantum mechanics.
 \end_layout
 
 \begin_layout Subsection
+
+\lang brazilian
 Some historical background
 \end_layout
 
 \begin_layout Standard
 
+\lang brazilian
+
 \series bold
 Planck’s Black Body Theory (1900):
-
 \series default
- In an attempt to understand the form of the spectrum of the electromagnetic radiation emitted by an object in thermal equilibrium at some temperature (a black body),
- Planck was forced to propose that the atoms making up the object absorbed and emitted light of (angular) frequency 
+ In an attempt to understand the form of the spectrum of the electromagnetic radiation emitted by an object in thermal equilibrium at some temperature (a black body), Planck was forced to propose that the atoms making up the object absorbed and emitted light of (angular) frequency 
 \begin_inset Formula $\omega$
 \end_inset
 
- in multiples of a fundamental unit of energy,
- or quantum of energy,
- 
+ in multiples of a fundamental unit of energy, or quantum of energy, 
 \begin_inset Formula $E=\hbar\omega$
 \end_inset
 
-,
- where 
+, where 
 \begin_inset Formula $\hbar=h/2\pi$
 \end_inset
 
@@ -214,9 +207,7 @@ Planck’s Black Body Theory (1900):
 \begin_inset Formula $h$
 \end_inset
 
- is a new fundamental constant of nature,
- Planck’s constant,
- 
+ is a new fundamental constant of nature, Planck’s constant, 
 \begin_inset Formula $h=6.622\times10^{-34}Js^{-1}$
 \end_inset
 
@@ -229,17 +220,12 @@ Planck’s Black Body Theory (1900):
 
 \begin_layout Standard
 
+\lang brazilian
+
 \series bold
 Einstein’s Light Quanta (1905):
-
 \series default
- Although Planck believed that the rule for the absorption and emission of light in quanta applied only to black body radiation,
- and was a property of the atoms,
- rather than the radiation,
- Einstein saw it as a property of electromagnetic radiation,
- whether it was black body radiation or of any other origin.In particular,
- in his work on the photoelectric effect,
- he proposed that light of frequency 
+ Although Planck believed that the rule for the absorption and emission of light in quanta applied only to black body radiation, and was a property of the atoms, rather than the radiation, Einstein saw it as a property of electromagnetic radiation, whether it was black body radiation or of any other origin.In particular, in his work on the photoelectric effect, he proposed that light of frequency 
 \begin_inset Formula $\omega$
 \end_inset
 
@@ -247,26 +233,17 @@ Einstein’s Light Quanta (1905):
 \begin_inset Formula $\hbar\omega$
 \end_inset
 
-,
- now known as photons,
- which could be only absorbed or emitted in their entirety.So light,
- a form of wave motion,
- had been given a particle character.Much later,
- in 1922,
- the particle nature of light was quite explicitly confirmed in the light scattering experiments of Compton.
+, now known as photons, which could be only absorbed or emitted in their entirety.So light, a form of wave motion, had been given a particle character.Much later, in 1922, the particle nature of light was quite explicitly confirmed in the light scattering experiments of Compton.
 \end_layout
 
 \begin_layout Standard
 
+\lang brazilian
+
 \series bold
 De Broglie’s Hypothesis
 \series default
- (1924) Inspired by Einstein’s picture of light,
- a form of wave motion,
- as also behaving in some circumstances as if it was made up of particles,
- and inspired also by the success of the Bohr model of the hydrogen atom,
- de Broglie was lead,
- by purely aesthetic arguments to make a radical proposal.If light waves of frequency 
+ (1924) Inspired by Einstein’s picture of light, a form of wave motion, as also behaving in some circumstances as if it was made up of particles, and inspired also by the success of the Bohr model of the hydrogen atom, de Broglie was lead, by purely aesthetic arguments to make a radical proposal.If light waves of frequency 
 \begin_inset Formula $\omega$
 \end_inset
 
@@ -274,15 +251,11 @@ De Broglie’s Hypothesis
 \begin_inset Formula $E=\hbar\omega$
 \end_inset
 
-,
- then by symmetry,
- a massive particle of energy 
+, then by symmetry, a massive particle of energy 
 \begin_inset Formula $E$
 \end_inset
 
-,
- an electron say,
- should behave under some circumstances like a wave of frequency 
+, an electron say, should behave under some circumstances like a wave of frequency 
 \begin_inset Formula $\omega=E/\hbar$
 \end_inset
 
@@ -290,9 +263,9 @@ De Broglie’s Hypothesis
 \end_layout
 
 \begin_layout Standard
-But a defining characteristic of a wave is its wavelength.
- For a photon,
- the wavelength of the associated wave is 
+
+\lang brazilian
+But a defining characteristic of a wave is its wavelength. For a photon, the wavelength of the associated wave is 
 \begin_inset Formula $\lambda=c/f$
 \end_inset
 
@@ -300,10 +273,7 @@ But a defining characteristic of a wave is its wavelength.
 \begin_inset Formula $f=\omega/2\pi$
 \end_inset
 
- .
- So what is it for a massive particle?
- From Einstein’s theory of relativity,
- which showed that the energy of a photon (moving freely in empty space) is related to its momentum 
+ . So what is it for a massive particle? From Einstein’s theory of relativity, which showed that the energy of a photon (moving freely in empty space) is related to its momentum 
 \begin_inset Formula $p$
 \end_inset
 
@@ -311,45 +281,46 @@ But a defining characteristic of a wave is its wavelength.
 \begin_inset Formula $E=pc$
 \end_inset
 
-,
- it follows that
+, it follows that
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 E=\hbar\omega=\hbar2\pi f=\frac{\hbar2\pi}{\lambda}c=\frac{h}{\lambda}c
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 So 
 \begin_inset Formula $p=h/\lambda$
 \end_inset
 
-.
- This equation then gave the wavelength of the photon in terms of its momentum,
- but it is also an expression that contains nothing that is specific to a photon.So De Broglie assumed that this relationship applied to all free particles,
- whether they were photons or electrons or anything else,
- and so arrived at the pair of equations
+. This equation then gave the wavelength of the photon in terms of its momentum, but it is also an expression that contains nothing that is specific to a photon.So De Broglie assumed that this relationship applied to all free particles, whether they were photons or electrons or anything else, and so arrived at the pair of equations
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 f=\frac{E}{h},\qquad\lambda=\frac{h}{p}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 which gave the frequency and wavelength of the waves that were to be associated with a free particle of kinetic energy 
 \begin_inset Formula $E$
 \end_inset
@@ -358,31 +329,25 @@ which gave the frequency and wavelength of the waves that were to be associated 
 \begin_inset Formula $p$
 \end_inset
 
-.
- But now,
- given that particles can exhibit wave like properties,
- the natural question that arises is:
- what is doing the ‘waving’ ?
- Further,
- as wave motion is usually describable in terms of some kind of wave equation,
- it is then also natural to ask what the wave equation is for these de Broglie waves.
+. But now, given that particles can exhibit wave like properties, the natural question that arises is: what is doing the ‘waving’ ? Further, as wave motion is usually describable in terms of some kind of wave equation, it is then also natural to ask what the wave equation is for these de Broglie waves.
 \end_layout
 
 \begin_layout Standard
-The latter question turned out to be much easier to answer than the first – these waves satisfy the famous Schr¨ odinger wave equation.But what these waves are is still,
- largely speaking,
- an incompletely answered question.Nevertheless,
- it is possible to say a considerable amount about what these waves tell us about the particle.
- It is this topic to which we now turn.
+
+\lang brazilian
+The latter question turned out to be much easier to answer than the first – these waves satisfy the famous Schr¨ odinger wave equation.But what these waves are is still, largely speaking, an incompletely answered question.Nevertheless, it is possible to say a considerable amount about what these waves tell us about the particle. It is this topic to which we now turn.
 \end_layout
 
 \begin_layout Subsection
+
+\lang brazilian
 The Harmonic Wave Function
 \end_layout
 
 \begin_layout Standard
-On the basis of de Broglie’s hypothesis,
- there is associated with a particle of energy 
+
+\lang brazilian
+On the basis of de Broglie’s hypothesis, there is associated with a particle of energy 
 \begin_inset Formula $E$
 \end_inset
 
@@ -390,8 +355,7 @@ On the basis of de Broglie’s hypothesis,
 \begin_inset Formula $p$
 \end_inset
 
-,
- a wave of frequency 
+, a wave of frequency 
 \begin_inset Formula $f$
 \end_inset
 
@@ -403,17 +367,20 @@ On the basis of de Broglie’s hypothesis,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 f=\frac{E}{h},\qquad\lambda=\frac{h}{p}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 It more usual to work in terms of the angular frequency 
 \begin_inset Formula $\omega=2\pi f$
 \end_inset
@@ -426,25 +393,29 @@ It more usual to work in terms of the angular frequency
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \omega=E/\hbar\qquad k=p/\hbar
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-With this in mind,
- we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)
-\begin_inset Foot
-status open
 
-\begin_layout Plain Layout
-Recall that when we solved the Schrödinger equation for the free particle,
- we obtained two of these possibilities.
+\lang brazilian
+With this in mind, we are in a position to make a reasonable guess at a mathematical expression for the wave associated with the particle.The possibilities include (in one dimension)
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang brazilian
+Recall that when we solved the Schrödinger equation for the free particle, we obtained two of these possibilities.
 \end_layout
 
 \end_inset
@@ -453,35 +424,37 @@ Recall that when we solved the Schrödinger equation for the free particle,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \Psi\left(x,t\right)=A\sin\left(kx-\omega t\right),\quad Ae^{-i\left(kx+\omega t\right)}+Ae^{i\left(kx-\omega t\right)},\dots
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-At this stage,
- we have no idea what the quantity 
+
+\lang brazilian
+At this stage, we have no idea what the quantity 
 \begin_inset Formula $\Psi\left(x,t\right)$
 \end_inset
 
- represents physically.It is given the name the wave function,
- and in this particular case we will use the term harmonic wave function to describe any trigonometric wave function of the kind listed above.
+ represents physically.It is given the name the wave function, and in this particular case we will use the term harmonic wave function to describe any trigonometric wave function of the kind listed above.
 \end_layout
 
 \begin_layout Standard
-In order to understand what information may be contained in the wave function,
- which will lead us to gaining a physical understanding of what it might represent,
- we will turn things around briefly and look at what we can learn about the properties of a particle if we know what its wave function is.
+
+\lang brazilian
+In order to understand what information may be contained in the wave function, which will lead us to gaining a physical understanding of what it might represent, we will turn things around briefly and look at what we can learn about the properties of a particle if we know what its wave function is.
 \end_layout
 
 \begin_layout Standard
-First,
- given that the wave has frequency 
+
+\lang brazilian
+First, given that the wave has frequency 
 \begin_inset Formula $\omega$
 \end_inset
 
@@ -489,8 +462,7 @@ First,
 \begin_inset Formula $k$
 \end_inset
 
-,
- then it is straightforward to calculate the phase velocity 
+, then it is straightforward to calculate the phase velocity 
 \begin_inset Formula $v_{p}$
 \end_inset
 
@@ -498,21 +470,21 @@ First,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 v_{p}=\frac{\omega}{k}=\frac{\hbar\omega}{\hbar k}=\frac{E}{p}=\frac{\frac{1}{2}mv^{2}}{mv}=\frac{1}{2}v
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Thus,
- given the frequency and wave number of a wave function,
- we can determine the speed of the particle from the phase velocity of its wave function,
- 
+
+\lang brazilian
+Thus, given the frequency and wave number of a wave function, we can determine the speed of the particle from the phase velocity of its wave function, 
 \begin_inset Formula $v=2v_{p}$
 \end_inset
 
@@ -520,9 +492,9 @@ Thus,
 \end_layout
 
 \begin_layout Standard
-We could also try to learn from the wave function the position of the particle.However,
- the wave function above tells us nothing about where the particle is to be found in space.We can make this statement because this wave function is the same everywhere i.e.
- there is nothing whatsoever to distinguish 
+
+\lang brazilian
+We could also try to learn from the wave function the position of the particle.However, the wave function above tells us nothing about where the particle is to be found in space.We can make this statement because this wave function is the same everywhere i.e. there is nothing whatsoever to distinguish 
 \begin_inset Formula $\Psi$
 \end_inset
 
@@ -530,42 +502,39 @@ We could also try to learn from the wave function the position of the particle.H
 \end_layout
 
 \begin_layout Standard
-Thus,
- this particular wave function gives no information on the whereabouts of the particle with which it is associated.So from a harmonic wave function it is possible to learn how fast a particle is moving,
- but not what the position is of the particle.
+
+\lang brazilian
+Thus, this particular wave function gives no information on the whereabouts of the particle with which it is associated.So from a harmonic wave function it is possible to learn how fast a particle is moving, but not what the position is of the particle.
 \end_layout
 
 \begin_layout Subsection
+
+\lang brazilian
 Wave Packets
 \end_layout
 
 \begin_layout Standard
-From what was said above about a wave function that was constant throughout all space,
- it would seem that a wave function can only convey information on the position of the particle if the wave function did not have the same amplitude throughout all space.
+
+\lang brazilian
+From what was said above about a wave function that was constant throughout all space, it would seem that a wave function can only convey information on the position of the particle if the wave function did not have the same amplitude throughout all space.
 \end_layout
 
 \begin_layout Standard
-In fact,
- since what we mean by a particle is a physical object that is confined to a highly localized region in space,
- ideally a point,
- it would be intuitively appealing to be able to devise a wave function that is zero or nearly so everywhere in space except for one localized region.
+
+\lang brazilian
+In fact, since what we mean by a particle is a physical object that is confined to a highly localized region in space, ideally a point, it would be intuitively appealing to be able to devise a wave function that is zero or nearly so everywhere in space except for one localized region.
 \end_layout
 
 \begin_layout Standard
-It is in fact possible to construct,
- from the harmonic wave functions,
- a wave function which has this property.To show how this is done,
- we first consider what happens if we combine together two harmonic waves of very close frequency.
- The resultis well-known:
- a ‘beat note’ is produced,
- i.e.
- periodically in space the waves add together in phase to produce a local maximum,
- while midway in between the waves will be totally out of phase and hence will destructively interfere.
+
+\lang brazilian
+It is in fact possible to construct, from the harmonic wave functions, a wave function which has this property.To show how this is done, we first consider what happens if we combine together two harmonic waves of very close frequency. The resultis well-known: a ‘beat note’ is produced, i.e. periodically in space the waves add together in phase to produce a local maximum, while midway in between the waves will be totally out of phase and hence will destructively interfere.
 \end_layout
 
 \begin_layout Standard
-Each localized maximum is known as a wave packet,
- so what is produced is a series of wave packets.Now suppose we add together a large number of harmonic waves with wave numbers 
+
+\lang brazilian
+Each localized maximum is known as a wave packet, so what is produced is a series of wave packets.Now suppose we add together a large number of harmonic waves with wave numbers 
 \begin_inset Formula $k_{1},k_{2},k_{3},\dots$
 \end_inset
 
@@ -573,39 +542,43 @@ Each localized maximum is known as a wave packet,
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \overline{k}-\Delta k<k_{n}<\overline{k}+\Delta k
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 around a mean value 
 \begin_inset Formula $\overline{k}$
 \end_inset
 
-,
- i.
- e.
+, i. e.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
 \Psi\left(x,t\right) & =A\left(k_{1}\right)\cos\left(k_{1}x-\omega t\right)+A\left(k_{2}\right)\cos\left(k_{2}x-\omega t\right)+\dots\\
  & =\sum_{n}A\left(k_{n}\right)\cos\left(k_{n}x-\omega t\right)
 \end{align*}
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 where 
 \begin_inset Formula $A\left(k_{n}\right)$
 \end_inset
@@ -620,11 +593,13 @@ where
 
 
 \begin_inset Foot
-status open
+status collapsed
 
-\begin_layout Plain Layout
-That is,
- 
+
+\begin_layout Standard
+
+\lang brazilian
+That is, 
 \begin_inset Formula $A\left(k_{n}\right)$
 \end_inset
 
@@ -640,8 +615,7 @@ That is,
 \begin_inset Formula $\overline{k}$
 \end_inset
 
-,
- so that its full width at half maximum is 
+, so that its full width at half maximum is 
 \begin_inset Formula $2\Delta k$
 \end_inset
 
@@ -650,32 +624,29 @@ That is,
 
 \end_inset
 
-.
- What is found is that in the limit in which the sum becomes an integral:
+. What is found is that in the limit in which the sum becomes an integral:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
 \Psi\left(x,t\right) & =\int^{+\infty}_{-\infty}A\left(k\right)\cos\left(kx-\omega t\right)dk
 \end{align*}
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-all the waves interfere constructively to produce only a single beat note (in effect,
- the ‘beat notes’ or wave packets are infinitely far apart).In other words,
- the wave function so constructed is found to have essentially zero amplitude everywhere except for a single localized region in space,
- over a region of width 
+
+\lang brazilian
+all the waves interfere constructively to produce only a single beat note (in effect, the ‘beat notes’ or wave packets are infinitely far apart).In other words, the wave function so constructed is found to have essentially zero amplitude everywhere except for a single localized region in space, over a region of width 
 \begin_inset Formula $2\Delta x$
 \end_inset
 
-,
- i.e.
- the wave function 
+, i.e. the wave function 
 \begin_inset Formula $\Psi\left(x,t\right)$
 \end_inset
 
@@ -683,31 +654,27 @@ all the waves interfere constructively to produce only a single beat note (in ef
 \end_layout
 
 \begin_layout Standard
-This wave packet is clearly particle-like in that its region of significant magnitude is confined to a localized region in space.Moreover,
- this wave packet is constructed out of a group of waves with an average wave number 
+
+\lang brazilian
+This wave packet is clearly particle-like in that its region of significant magnitude is confined to a localized region in space.Moreover, this wave packet is constructed out of a group of waves with an average wave number 
 \begin_inset Formula $\overline{k}$
 \end_inset
 
-,
- and so these waves could be associated in some sense with a particle of momentum 
+, and so these waves could be associated in some sense with a particle of momentum 
 \begin_inset Formula $\overline{p}=h\overline{k}$
 \end_inset
 
-.
- If this were true,
- then the wave packet would be expected to move with a velocity of 
+. If this were true, then the wave packet would be expected to move with a velocity of 
 \begin_inset Formula $\overline{p}/m$
 \end_inset
 
-.This is in fact found to be the case,
- as the following calculation shows.
+.This is in fact found to be the case, as the following calculation shows.
 \end_layout
 
 \begin_layout Standard
-Because a wave packet is made up of individual waves which themselves are moving,
- though not with the same speed,
- the wave packet itself will move (and spread as well).
- The speed with which the wave packet moves is given by its group velocity 
+
+\lang brazilian
+Because a wave packet is made up of individual waves which themselves are moving, though not with the same speed, the wave packet itself will move (and spread as well). The speed with which the wave packet moves is given by its group velocity 
 \begin_inset Formula $v_{g}$
 \end_inset
 
@@ -715,19 +682,21 @@ Because a wave packet is made up of individual waves which themselves are moving
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 v_{g}=\left(\frac{d\omega}{dk}\right)_{k=\overline{k}}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-This is the speed of the maximum of the wave packet i.e.
- it is the speed of the point on the wave packet where all the waves are in phase.Calculating the group velocity requires determining the relationship between 
+
+\lang brazilian
+This is the speed of the maximum of the wave packet i.e. it is the speed of the point on the wave packet where all the waves are in phase.Calculating the group velocity requires determining the relationship between 
 \begin_inset Formula $\omega$
 \end_inset
 
@@ -735,26 +704,30 @@ This is the speed of the maximum of the wave packet i.e.
 \begin_inset Formula $k$
 \end_inset
 
-,
- known as a dispersion relation.
+, known as a dispersion relation.
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 This dispersion relation is obtained from
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 E=\frac{1}{2}mv^{2}=\frac{p^{2}}{2m}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Substituting in the de Broglie relations (
 \begin_inset Formula $f=\frac{E}{h},\lambda=\frac{h}{p}$
 \end_inset
@@ -763,21 +736,23 @@ Substituting in the de Broglie relations (
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\begin{align*}
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
 hf & =\frac{h^{2}}{\lambda^{2}}\frac{1}{2m}\\
 \frac{h}{2\pi}\omega & =\left(\frac{h}{2\pi}\right)^{2}\frac{k^{2}}{2m}\\
 \hbar\omega & =\frac{\hbar^{2}k^{2}}{2m}
 \end{align*}
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Where we also use:
- 
+
+\lang brazilian
+Where we also use: 
 \begin_inset Formula $\omega=2\pi f$
 \end_inset
 
@@ -785,43 +760,47 @@ Where we also use:
 \begin_inset Formula $k=2\pi/\lambda$
 \end_inset
 
-.
- From which follows the dispersion relation
+. From which follows the dispersion relation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \omega=\frac{\hbar k^{2}}{2m}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 The group velocity of the wave packet is then
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 v_{g}=\left(\frac{d\omega}{dk}\right)_{k=\overline{k}}=\frac{\hbar k}{m}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Substituting 
 \begin_inset Formula $\overline{p}=\hbar\overline{k}$
 \end_inset
 
-,
- this becomes 
+, this becomes 
 \begin_inset Formula $v_{g}=\overline{p}/m$
 \end_inset
 
@@ -829,15 +808,13 @@ Substituting
 \begin_inset Formula $\overline{p}$
 \end_inset
 
-,
- as suspected.
+, as suspected.
 \end_layout
 
 \begin_layout Standard
-This is a result of some significance,
- i.e.
- we have constructed a wave function of the form of a wave packet which is particle-like in nature.But unfortunately this is done at a cost.
- We had to combine together harmonic wave functions 
+
+\lang brazilian
+This is a result of some significance, i.e. we have constructed a wave function of the form of a wave packet which is particle-like in nature.But unfortunately this is done at a cost. We had to combine together harmonic wave functions 
 \begin_inset Formula $\cos\left(kx-\omega t\right)$
 \end_inset
 
@@ -865,22 +842,23 @@ This is a result of some significance,
 \end_layout
 
 \begin_layout Subsubsection
+
+\lang brazilian
 The Heisenberg Uncertainty Principle
 \end_layout
 
 \begin_layout Standard
-The wave packet constructed in the previous section obviously has properties that are reminiscent of a particle,
- but it is not entirely particle-like – the wave function is non-zero over a region in space of size 
+
+\lang brazilian
+The wave packet constructed in the previous section obviously has properties that are reminiscent of a particle, but it is not entirely particle-like – the wave function is non-zero over a region in space of size 
 \begin_inset Formula $2\Delta x$
 \end_inset
 
-.In the absence of any better way of relating the wave function to the position of the atom,
- it is intuitively appealing to suppose that where 
+.In the absence of any better way of relating the wave function to the position of the atom, it is intuitively appealing to suppose that where 
 \begin_inset Formula $\Psi\left(x,t\right)$
 \end_inset
 
- has its greatest amplitude is where the particle is most likely to be found,
- i.e the particle is to be found somewhere in a region of size 
+ has its greatest amplitude is where the particle is most likely to be found, i.e the particle is to be found somewhere in a region of size 
 \begin_inset Formula $2\Delta x$
 \end_inset
 
@@ -888,10 +866,9 @@ The wave packet constructed in the previous section obviously has properties tha
 \end_layout
 
 \begin_layout Standard
-More than that,
- however,
- we have seen that to construct this wavepacket,
- harmonic waves having 
+
+\lang brazilian
+More than that, however, we have seen that to construct this wavepacket, harmonic waves having 
 \begin_inset Formula $k$
 \end_inset
 
@@ -907,46 +884,45 @@ More than that,
 \begin_inset Formula $\Delta k$
 \end_inset
 
- are related by the bandwidth theorem,
- which applies when adding together harmonic waves,
- which tell us that
+ are related by the bandwidth theorem, which applies when adding together harmonic waves, which tell us that
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \Delta x\Delta k\gtrsim1
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 Using 
 \begin_inset Formula $p=\hbar k$
 \end_inset
 
-,
- we have 
+, we have 
 \begin_inset Formula $\Delta p=\hbar\Delta k$
 \end_inset
 
- so that
-\begin_inset Formula 
-\[
+ so that 
+\begin_inset Formula \[
 \Delta x\Delta p\ge\hbar
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-[A more rigorous derivation,
- based on a more precise definition of 
+
+\lang brazilian
+[A more rigorous derivation, based on a more precise definition of 
 \begin_inset Formula $\Delta x$
 \end_inset
 
@@ -958,17 +934,20 @@ Using
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
-\[
+
+\lang brazilian
+
+\begin_inset Formula \[
 \Delta x\Delta p\ge\frac{\hbar}{2}
 \]
-
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 A closer look at this result is warranted.A wave packet that has a significant amplitude within a range 
 \begin_inset Formula $2\Delta x$
 \end_inset
@@ -985,9 +964,7 @@ A closer look at this result is warranted.A wave packet that has a significant a
 \begin_inset Formula $2\Delta x$
 \end_inset
 
-,
- and given that wave functions representing a range of possible momenta were used to form this wave packet,
- we could also say that the momentum of the particle will have a value in the range 
+, and given that wave functions representing a range of possible momenta were used to form this wave packet, we could also say that the momentum of the particle will have a value in the range 
 \begin_inset Formula $\overline{p}-\Delta p$
 \end_inset
 
@@ -999,6 +976,8 @@ A closer look at this result is warranted.A wave packet that has a significant a
 \end_layout
 
 \begin_layout Standard
+
+\lang brazilian
 The quantities 
 \begin_inset Formula $\Delta x$
 \end_inset
@@ -1007,25 +986,1535 @@ The quantities
 \begin_inset Formula $\Delta p$
 \end_inset
 
- are known as uncertainties for reasons that will become increasingly apparent,
- and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
+ are known as uncertainties for reasons that will become increasingly apparent, and the relation above is known as the Heisenberg uncertainty relation for position and momentum.
 \end_layout
 
 \begin_layout Subsection
-Retomando a partícula livre
+
+\lang brazilian
+The Statistical Interpretation
 \end_layout
 
 \begin_layout Standard
-https://paulskrzypczyk.github.io/qm-lecture-notes/
+
+\lang brazilian
+From this point on, we will continue with Professor Paul Skrzypczyk's work (
+\begin_inset CommandInset citation
+LatexCommand cite
+after ""
+key "SkrzypczykFreeParticle"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
-\begin_layout Quotation
+\begin_layout Standard
+
+\lang brazilian
+According to quantum mechanics, in general, particles do not have well-defined properties such as position, momentum or energy. Quantum mechanics says that if at time 
+\begin_inset Formula $t=t_{0}$
+\end_inset
+
+ a particle has a wavefunction 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ then the probability to find the particle between 
+\begin_inset Formula $x=x_{a}$
+\end_inset
+
+ and 
+\begin_inset Formula $x=x_{b}$
+\end_inset
+
+ is
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+P\left(x_{a}\leq x\leq x_{b},t_{0}\right)=\int^{x_{b}}_{x_{a}}\left|\Psi\left(x,t_{0}\right)^{2}\right|dx
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+That is, the modulus square of the wavefunction specifies, in the form of probabilities, where the particle is at time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+. We can interpret 
+\begin_inset Formula $\left|\Psi\left(x,t_{0}\right)^{2}\right|$
+\end_inset
+
+ as the probability density 
+\begin_inset Formula $P\left(x,t_{0}\right)$
+\end_inset
+
+ to find the particle at position 
+\begin_inset Formula $x$
+\end_inset
+
+ at time 
+\begin_inset Formula $t=t_{0}$
+\end_inset
+
+. That is,
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+P\left(x,t_{0}\right)dx=\left|\Psi\left(x,t_{0}\right)^{2}\right|dx
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+is the probability to find the particle between 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $x+dx$
+\end_inset
+
+ at time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+, for 
+\begin_inset Formula $dx$
+\end_inset
+
+ infinitesimally small. We can think of this as being the probability to find the particle in the vicinity of 
+\begin_inset Formula $x$
+\end_inset
+
+ at time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+It is important to note that probabilities enter quantum mechanics in a fundamental way: Even if the most careful and ideal experiment were to be carried out in order to measure the position of a particle, then it would still be found in different places in different runs of the experiment. This means that in quantum mechanics, identical experiments lead to non-identical outcomes.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The probabilities that arise in quantum mechanics have nothing to do with imperfections or experimental limitations. This is contrary to classical mechanics, where in principle all experiments can be made perfectly repeatable, such that identical experiments lead to identical outcomes if sufficient care is taken (this is true even for chaotic systems, which are very sensitive to changes in conditions).
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The probabilistic nature of quantum mechanics is arguably the biggest departure from classical mechanics, from which many of its counter-intuitive predictions arise.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+With the above statistical interpretation in place, it is useful to introduce some terminology. We will say that 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ is the probability amplitude for the particle to be at position x at time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+. When there is no loss of confusion, we will also simply use amplitude in place of probability amplitude. Probability amplitudes are thus complex numbers, whose modulus squares are probabilities.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+In order for the statistical interpretation of the wavefunction to be possible, 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ is required to satisfy a normalisation condition which ensures that the total probability for the particle to be found somewhere is one. Mathematically, because 
+\begin_inset Formula $\left|\Psi\left(x,t_{0}\right)^{2}\right|$
+\end_inset
+
+ is the probability density 
+\begin_inset Formula $P\left(x,t_{0}\right)$
+\end_inset
+
+, this condition is given by
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=1
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Normalisation is not a very restrictive property
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang brazilian
+However, we can demonstrate that normalization is conserved—that is, if the wave function is normalized at the initial instant 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+, it remains normalized as it evolves over time 
+\begin_inset Formula $t>t_{0}$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+, since we can normalise functions to turn them into valid wavefunctions. In particular, if we have some unnormalised function 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ that satisfies
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=N
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+where 
+\begin_inset Formula $N<\infty$
+\end_inset
+
+, that is, if this integral is finite, then
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\Psi'\left(x,t_{0}\right)=\frac{\Psi\left(x,t_{0}\right)}{\sqrt{N}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+will be a normalised wavefunction. This condition is known as being square-integrable. It simply says that the integral of the modulus squared of the function should be a finite number, i.e. that the total area under the curve is not infinite.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+If 
+\begin_inset Formula $N$
+\end_inset
+
+ would have been infinite then it would not have been possible to divide by 
+\begin_inset Formula $\sqrt{N}$
+\end_inset
+
+ in order to obtain a normalised wavefunction, as dividing by infinity would have left us with a wavefunction that vanishes everywhere, which doesn’t make sense physically. We can also note that the normalization is independent of a phase factor 
+\begin_inset Formula $\theta$
+\end_inset
+
+ in 
+\begin_inset Formula $\Psi'=\frac{e^{i\theta}}{\sqrt{N}}\Psi$
+\end_inset
+
+. This shows that there is freedom in choosing how to normalise a wavefunction, since no matter how we normalise it we end up with the same probability density. A standard choice is to pick 
+\begin_inset Formula $\theta=0$
+\end_inset
+
+, such that 
+\begin_inset Formula $e^{i\theta}=1$
+\end_inset
+
+. That is, the standard choice is to normalise by a real and positive number (even though a negative, or complex number would also be an equally valid choice).
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The requirement that the wavefunction be normalised imposes constraints on the behaviour of particles at 
+\begin_inset Formula $x=\pm\infty$
+\end_inset
+
+. Physically, the normalisation says that the probability to find the particle somewhere must be one. If there is a non-zero probability to find the particle at infinity, then such a wavefunction necessarily cannot be normalised, as the area under the curve will be infinite.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+This statement can be made more precise, as we can show that the wavefunction must decay to zero sufficiently fast in order to be normalised. In particular, 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ must decay faster than 
+\begin_inset Formula $1/\sqrt{\left|x\right|}$
+\end_inset
+
+ in order that the probability to find the particle at large 
+\begin_inset Formula $x$
+\end_inset
+
+ does not diverge.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Let's try to demonstrate this, starting with 
+\begin_inset Formula $\Psi=x^{-1/2}$
+\end_inset
+
+ for 
+\begin_inset Formula $x\geq x_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=\int^{+\infty}_{x_{0}}\frac{1}{x}dx=\left.\ln\left(\left|x\right|\right)\right|^{+\infty}_{x_{0}}=\lim_{a\rightarrow\infty,b\rightarrow x_{0}}\ln\left(\frac{a}{b}\right)=\infty
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The total area under the curve of 
+\begin_inset Formula $\left|\Psi\left(x,t_{0}\right)\right|^{2}$
+\end_inset
+
+ in the region 
+\begin_inset Formula $x\geq x_{0}$
+\end_inset
+
+ is infinite. This shows that this function is not square integrable, and we cannot form a valid wavefunction from it. Let's assume now that for 
+\begin_inset Formula $x\geq x_{0}$
+\end_inset
+
+ , the wavefunction has the form 
+\begin_inset Formula $\Psi=x^{-\left(1/2+a/2\right)}=$
+\end_inset
+
+ where 
+\begin_inset Formula $a\neq0$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t_{0}\right)\right|^{2}dx=\int^{+\infty}_{x_{0}}x^{-1-a}dx=\left.\frac{x^{-a}}{-a}\right|^{+\infty}_{x_{0}}=-\frac{1}{a}\left(\lim_{x\rightarrow\infty}\frac{x^{-a}}{a}-x_{0}\right)
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+If 
+\begin_inset Formula $a>0$
+\end_inset
+
+, the total area under the curve of 
+\begin_inset Formula $\left|\Psi\left(x,t_{0}\right)\right|$
+\end_inset
+
+ in the region 
+\begin_inset Formula $x\geq x_{0}$
+\end_inset
+
+is finite.This shows that this function is potentially square integrable (it is only potentially so since we don’t know how it behaves in other regions).
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+As we discussed briefly above, in classical mechanics we have a lot of freedom in specifying the state of the particle at some time 
+\begin_inset Formula $t_{0}$
+\end_inset
+
+. In quantum mechanics, we have even more freedom. In general, within reason, any normalised wavefunction 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ is a valid state for a particle. This is rather remarkable, as the wavefunction specifies a complex number at every point in space. There is thus significantly more freedom than just specifying the initial position 
+\begin_inset Formula $x_{0}$
+\end_inset
+
+ and initial momentum 
+\begin_inset Formula $p_{0}$
+\end_inset
+
+ in classical mechanics.
+\end_layout
+
+\begin_layout Subsection
+
+\lang brazilian
+The Free Particle
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We had already obtained:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align}
+\Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Using
+\begin_inset Formula $k^{2}=2mE/\hbar^{2}$
+\end_inset
+
+ and 
+\begin_inset Formula $\omega=\frac{E}{\hbar}$
+\end_inset
+
+, with some manipulation and by renaming the constants, we can write:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,t\right) & =K_{1}e^{-i\left(kx+\omega t\right)}+K_{2}e^{i\left(kx-\omega t\right)}\\
+ & =e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]\\
+ & =e^{-i\hbar k^{2}t/2m}\left[Ae^{-ikx}+Be^{ikx}\right]
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+This is a separable solution to the free-particle Schrödinger equation for all values of 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+, and all values of 
+\begin_inset Formula $k>0$
+\end_inset
+
+. It might appear that we are thus done, as we have managed to solve the Schrödinger equation, and thus have found how a free particle evolves in time. There are however a number of obstacles that we still need to overcome.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+First, we can specify an arbitrary initial state of the particle, i.e. an arbitrary wavefunction 
+\begin_inset Formula $\Psi\left(x,t_{0}\right)$
+\end_inset
+
+ at 
+\begin_inset Formula $t=t_{0}$
+\end_inset
+
+. For stationary states of the form above, at 
+\begin_inset Formula $t=t_{0}$
+\end_inset
+
+, we only have two complex numbers 
+\begin_inset Formula $A$
+\end_inset
+
+ and 
+\begin_inset Formula $B$
+\end_inset
+
+ to specify, and hence this definitely does not amount to an arbitrary wavefunction. We therefore seem to have much less generality than we need.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+More worryingly, as we will see next, the solutions found don’t appear to be permissible at all, due to their normalisation. We will see below that both of these problems can be overcome, by using the superposition principle.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Wavefunctions must be normalised in order that the probability to find the particle somewhere is one. Let us therefore attempt to normalise the wavefunction:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =\int^{+\infty}_{-\infty}\left|e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]\right|^{2}dx\\
+ & =\int^{+\infty}_{-\infty}e^{-i\omega t}\left[Ae^{-ikx}+Be^{ikx}\right]e^{i\omega t}\left[A^{*}e^{ikx}+B^{*}e^{-ikx}\right]dx\\
+ & =\int^{+\infty}_{-\infty}\left(\left|A^{2}\right|+\left|B\right|^{2}+AB^{*}e^{-2ikx}+A^{*}Be^{2ikx}\right)dx
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+unless 
+\begin_inset Formula $A=B=0$
+\end_inset
+
+. Indeed, when 
+\begin_inset Formula $A\neq0$
+\end_inset
+
+ or 
+\begin_inset Formula $B\neq0$
+\end_inset
+
+, the first two terms are positive and constant, and hence contribute an infinite amount to the integral. Moreover, the wavefunction does not decay for large 
+\begin_inset Formula $x$
+\end_inset
+
+, as we already showed was necessary for normalised wavefunctions. On the other hand, 
+\begin_inset Formula $A=B=0$
+\end_inset
+
+ leads to the solution 
+\begin_inset Formula $\Psi\left(x,t\right)=0$
+\end_inset
+
+, which also cannot be normalised, and is inadmissible.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+At first sight, this appears like a major problem with the separation of variables method. It is true that our assumption that the wavefunction is separable, for a free particle, is in fact inconsistent
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang brazilian
+An isolated sinusoidal wave is a mathematically valid solution to the Schrödinger equation, but it does not represent a localized physical state because it is not normalizable. To describe a physically realistic particle, we therefore need a more elaborate initial condition.
+\end_layout
+
+\end_inset
+
+, and free particles cannot be in stationary states. However, it does not mean that the method of separation of variables is a bad one, but only that we have to use it in a smarter way. We must further make use of the superposition principle
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang brazilian
+Because of the fact that the Schrödinger equation is linear, it has an extremely important property known as the superposition principle: If 
+\begin_inset Formula $\Psi_{1}\left(x,t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Psi_{2}\left(x,t\right)$
+\end_inset
+
+ are both solutions of the Schrödinger equation, then 
+\begin_inset Formula $\Psi_{1}\left(x,t\right)=a\Psi_{1}\left(x,t\right)+b\Psi_{1}\left(x,t\right)$
+\end_inset
+
+ is also a solution of the Schrödinger equation for all complex numbers 
+\begin_inset Formula $a$
+\end_inset
+
+ and 
+\begin_inset Formula $b$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+ in order to turn it into a powerful technique for solving the Schrödinger equation.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Consider two distinct separable solutions to the Schrödinger equation, 
+\begin_inset Formula $\Psi_{1}\left(x,t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\Psi_{2}\left(x,t\right)$
+\end_inset
+
+, each with a corresponding constant 
+\begin_inset Formula $E_{1}>0$
+\end_inset
+
+ and 
+\begin_inset Formula $E_{2}>0$
+\end_inset
+
+, such that 
+\begin_inset Formula $E_{1}\neq E_{2}$
+\end_inset
+
+. That is, consider
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi_{1}\left(x,t\right) & =\exp\left(-\frac{i\hbar k^{2}_{1}}{2m}t\right)\left[A_{1}e^{-ik_{1}x}+B_{1}e^{ik_{1}x}\right]\\
+\Psi_{2}\left(x,t\right) & =\exp\left(-\frac{i\hbar k^{2}_{2}}{2m}t\right)\left[A_{2}e^{-ik_{2}x}+B_{2}e^{ik_{2}x}\right]
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+where 
+\begin_inset Formula $k_{i}=\frac{\sqrt{2mE_{i}}}{\hbar}$
+\end_inset
+
+ and 
+\begin_inset Formula $A_{i},B_{i}$
+\end_inset
+
+ are arbitrary complex constants. Both of these wavefunctions solve the Schrödinger equation separately. Now, because of the superposition principle we know that
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,t\right) & =a_{1}\Psi_{1}\left(x,t\right)+a_{2}\Psi_{2}\left(x,t\right)\\
+ & =\sum^{2}_{i=-2}\exp\left(-\frac{i\hbar k^{2}_{i}}{2m}t\right)a_{i}e^{ik_{i}x}
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+is also a solution to the Schrödinger equation, for arbitrary complex numbers 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $a_{0}=0$
+\end_inset
+
+, and 
+\begin_inset Formula $k_{-j}=-k_{j}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+This new superposed wavefunction has an interesting form. First, it is no longer separable. That is, 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ is not of the form 
+\begin_inset Formula $\Psi\left(x,t\right)=X\left(x\right)T\left(t\right)$
+\end_inset
+
+, for some functions 
+\begin_inset Formula $T\left(t\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $X\left(x\right)$
+\end_inset
+
+. Second, the normalisation of 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ is not directly related to the normalisation of 
+\begin_inset Formula $\Psi_{i}\left(x,t\right)$
+\end_inset
+
+. We will not calculate the normalisation of 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ just yet, but will show next that we can in fact form normalised wavefunctions by carefully superposing separable solutions.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Before doing so, it will turn out to be important to first ask ourselves what form the most general superposition of separable solutions can take. In particular, whereas we superposed two solutions in the above, more generally we can in fact superpose as many solutions as we wish.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+In the above example it is instructive to realise that although we superposed two solutions, in fact superpose infinitely many separable solutions, one for every value of 
+\begin_inset Formula $k$
+\end_inset
+
+ — positive or negative. Such a wavefunction can be written
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{equation}
+\Psi\left(x,t\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)\exp\left(-\frac{i\hbar k^{2}}{2m}t\right)e^{ikx}dk\label{eq:quantummechanics}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+where 
+\begin_inset Formula $c\left(k\right)$
+\end_inset
+
+ is a complex function which collects together all of the constants that multiply each function 
+\begin_inset Formula $\Psi_{k}\left(x,t\right)$
+\end_inset
+
+. We have written this as an integral as 
+\begin_inset Formula $k$
+\end_inset
+
+ can vary continuously. I also have introduced the constant 
+\begin_inset Formula $1/\sqrt{2\pi}$
+\end_inset
+
+ as it turns out to be the ‘correct’ normalisation. It is much easier to introduce it at this stage, even if this appears somewhat arbitrary and unjustified, rather than to wait and fix the normalisation later.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We will now show that by choosing the function 
+\begin_inset Formula $c\left(k\right)$
+\end_inset
+
+ appropriately — i.e. by carefully superposing separable solutions — we can obtain a normalised solution to the Schrödinger equation. This is in spite of the fact that the separable solutions themselves cannot be normalised.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We can also use the insight that normalisation is conserved in time, in order to simplify our calculation. In particular, we need only calculate the normalisation of 
+\begin_inset Formula $\Psi\left(x,0\right)$
+\end_inset
+
+, which has a simpler form than 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+. If 
+\begin_inset Formula $\Psi\left(x,0\right)$
+\end_inset
+
+ is normalised, we know that 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ will also be normalised, so we should carry out the simplest calculation we can. We see that 
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,0\right)\right|^{2}dx & =\int^{+\infty}_{-\infty}\left|\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right|^{2}dx\\
+ & =\int^{+\infty}_{-\infty}\left(\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right)\left(\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k'\right)^{*}e^{-ik'x}dk'\right)dx\\
+ & =\frac{1}{2\pi}\int^{+\infty}_{-\infty}\left(\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\right)\left(\int^{+\infty}_{-\infty}c\left(k'\right)^{*}e^{-ik'x}dk'\right)dx\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{ikx}e^{-ik'x}\right)dx\right)dkdk'\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{i\left(k-k'\right)x}\right)dx\right)dkdk'
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+where we introduced a new variable 
+\begin_inset Formula $k'$
+\end_inset
+
+ for the second integration (which is just a dummy variable that we are integrating over). This expression looks formidable, but it can in fact be substantially simplified.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The Dirac Delta function 
+\begin_inset Formula $\delta\left(x\right)$
+\end_inset
+
+ is defined such that:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\int^{+\infty}_{-\infty}f\left(x\right)\delta\left(x-x_{0}\right)dx=f\left(x_{0}\right)
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The delta function is an infinitely thin, infinitely tall ‘spike’. Two key properties of the delta function are that it is an even function, 
+\begin_inset Formula $\delta\left(-x\right)=\delta\left(x\right)$
+\end_inset
+
+ and that under a change of scale 
+\begin_inset Formula $\delta\left(ax\right)=\delta\left(x\right)/\left|a\right|$
+\end_inset
+
+. One representation of the Dirac Delta function is 
+\begin_inset Formula $\delta\left(x\right)=\int^{+\infty}_{-\infty}\frac{e^{iax}}{2\pi}da$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We therefore see that:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,0\right)\right|^{2}dx & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}\int^{+\infty}_{-\infty}\left(e^{i\left(k-k'\right)x}\right)dx\right)dkdk'\\
+ & =\frac{1}{2\pi}\iint^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k'\right)^{*}2\pi\delta\left(k-k'\right)\right)dkdk'\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)\int^{+\infty}_{-\infty}c\left(k'\right)^{*}\delta\left(k-k'\right)dk'\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)\int^{+\infty}_{-\infty}c\left(k'\right)^{*}\delta\left(k'-k\right)dk'\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left(c\left(k\right)c\left(k\right)^{*}\right)dk\\
+ & =\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Therefore the wavefunction 
+\begin_inset Formula $\Psi\left(x,0\right)$
+\end_inset
+
+ will be normalised if 
+\begin_inset Formula $\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk=1$
+\end_inset
+
+. To summarise, a wavefunction of the form 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:quantummechanics"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ is a normalised solution to the Schrödinger equation whenever 
+\begin_inset Formula $\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk=1$
+\end_inset
+
+ is satisfied. 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang brazilian
+
+\series bold
+Example: Beginning
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We are going now to study a solution to the Schrödinger equation known as a Gaussian wavepacket. This is a very special solution, whereby the particle is seen to be roughly localised in a packet, which evolves in time in a rather simple way, maintaining the same general form for all time. Consider a superposition specified by
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+c\left(k\right)=\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-a^{2}\left(k-k_{0}\right)^{2}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+which is a Gaussian function, centred at 
+\begin_inset Formula $k=k_{0}$
+\end_inset
+
+, with width 
+\begin_inset Formula $\sqrt{2}/a$
+\end_inset
+
+ (distance between inflection points):
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk & =\int^{+\infty}_{-\infty}\left(\frac{2a^{2}}{\pi}\right)^{1/2}e^{-2a^{2}\left(k-k_{0}\right)^{2}}dk\\
+ & =\left(\frac{2a^{2}}{\pi}\right)^{1/2}\int^{+\infty}_{-\infty}e^{-\alpha x^{2}}dx
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Where we substitute 
+\begin_inset Formula $x=k-k_{0}$
+\end_inset
+
+ (
+\begin_inset Formula $\frac{dx}{dk}=1$
+\end_inset
+
+) and 
+\begin_inset Formula $\alpha=2a^{2}$
+\end_inset
+
+. This is a Gaussian integral with a well-known result (
+\begin_inset CommandInset href
+LatexCommand href
+name "solution"
+target "https://github.com/jonasmaziero/mecanica_quantica/blob/main/notas_de_aula/02_Probabilidades.ipynb"
+literal "false"
+
+\end_inset
+
+). We then define an integral 
+\begin_inset Formula $G=\int^{+\infty}_{-\infty}e^{-ax^{2}}dx$
+\end_inset
+
+. We can then calculate:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Since 
+\begin_inset Formula $x\rightarrow y$
+\end_inset
+
+ is the variable of integration in each of the integrals—that is, merely a label—we can substitute 
+\begin_inset Formula $x\rightarrow y$
+\end_inset
+
+ in the second one, and we are then left with:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ay^{2}}dx\right)=\left(\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}e^{-a\left(x^{2}+y^{2}\right)}dxdy\right)
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We can now perform a change of coordinate system, obviously also changing the area element. Using the polar coordinate system (
+\begin_inset CommandInset href
+LatexCommand href
+name "definition"
+target "https://en.wikipedia.org/wiki/Polar_coordinate_system"
+literal "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align}
+x & =r\cos\theta\\
+y & =r\sin\theta\\
+da & =rdrd\theta
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+To cover the entire space, our limits are 
+\begin_inset Formula $0\leq r<\infty$
+\end_inset
+
+ and 
+\begin_inset Formula $0\leq\theta<2\pi$
+\end_inset
+
+. Substituting:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align}
+G^{2} & =\left(\int^{2\pi}_{0}\int^{\infty}_{0}e^{-ar^{2}}rdrd\theta\right)\\
+ & =\left(\int^{2\pi}_{0}d\theta\right)\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)\\
+ & =2\pi\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Replacing 
+\begin_inset Formula $u=-ar^{2}$
+\end_inset
+
+, then 
+\begin_inset Formula $\frac{du}{dr}=-a2r\rightarrow-\frac{du}{a}=2rdr$
+\end_inset
+
+, and the limits of integration are now 
+\begin_inset Formula $u=-a0^{2}=0$
+\end_inset
+
+ e 
+\begin_inset Formula $u=-ar\infty^{2}=-\infty$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align}
+G^{2} & =\pi\left(\int^{-\infty}_{0}e^{-ar^{2}}2rdr\right)\\
+ & =-\frac{\pi}{a}\left(\int^{-\infty}_{0}e^{u}du\right)\\
+ & =-\frac{\pi}{a}\left[e^{u}\right]^{-\infty}_{0}\\
+ & =-\frac{\pi}{a}\left[\frac{1}{e^{u}}-e^{0}\right]^{-\infty}_{0}\\
+ & =\frac{\pi}{a}
+\end{align}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Thus, if 
+\begin_inset Formula $G^{2}=\pi/a$
+\end_inset
+
+, then 
+\begin_inset Formula $G=\sqrt{\pi/a}$
+\end_inset
+
+ e:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{equation}
+\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=G=\sqrt{\frac{\pi}{a}}
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Returning to our integral, then:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}\left|c\left(k\right)\right|^{2}dk & =\sqrt{\frac{2a^{2}}{\pi}}\int^{+\infty}_{-\infty}e^{-\alpha x^{2}}dx\\
+ & =\sqrt{\frac{2a^{2}}{\pi}}\sqrt{\frac{\pi}{\alpha}}\\
+ & =\sqrt{2a^{2}}=\frac{1}{\sqrt{2a^{2}}}\\
+ & =1
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Specifying 
+\begin_inset Formula $c\left(k\right)$
+\end_inset
+
+ can be seen to be equivalent to specifying an initial condition 
+\begin_inset Formula $\Psi\left(x,0\right)$
+\end_inset
+
+. At 
+\begin_inset Formula $t=0$
+\end_inset
+
+, the wavefunction is found to be
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}c\left(k\right)e^{ikx}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-a^{2}\left(k-k_{0}\right)^{2}}e^{ikx}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(k-k_{0}\right)^{2}+ikx\right)dk
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Replacing 
+\begin_inset Formula $u=k-k_{0}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux+\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux\right)du
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+And given that: 
+\begin_inset Formula \[
+-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}=\left[-a^{2}u^{2}+iux\right]+\frac{x^{2}}{4a^{4}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+So:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}\int^{+\infty}_{-\infty}\exp\left(-a^{2}u^{2}+iux+\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}-\frac{x^{2}}{4a^{4}}\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}\right)du
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Replacing again 
+\begin_inset Formula $v=u-\frac{ix}{2a^{2}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\Psi\left(x,0\right) & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}\exp\left(-a^{2}\left(u-\frac{ix}{2a^{2}}\right)^{2}\right)du\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\int^{+\infty}_{-\infty}e^{-a^{2}v^{2}}dv\\
+ & =\frac{1}{\sqrt{2\pi}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{ik_{0}x-\frac{x^{2}}{4a^{4}}}\sqrt{\frac{\pi}{a^{2}}}\\
+ & =\frac{1}{\left(2^{2}a^{4}\right)^{1/4}}\left(\frac{2a^{2}}{\pi}\right)^{1/4}e^{-x^{2}/4a^{2}}e^{ik_{0}x}\\
+ & =\left(\frac{1}{a^{2}2\pi}\right)^{1/4}e^{-x^{2}/4a^{2}}e^{ik_{0}x}
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+This is also a Gaussian function, now centred at the origin, 
+\begin_inset Formula $x=0$
+\end_inset
+
+, and multiplied by a phase factor 
+\begin_inset Formula $\exp\left(ik_{0}x\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The probability density to find the particle at position 
+\begin_inset Formula $x$
+\end_inset
+
+ is:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+P\left(x,0\right)=\left|\Psi\left(x,0\right)\right|^{2}=\frac{1}{a\sqrt{2\pi}}e^{-\frac{x^{2}}{2a^{2}}}
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Which is a normal distribution with mean
+\begin_inset Foot
+status collapsed
+
+
+\begin_layout Standard
+
+\lang brazilian
+For a discrete probability distribution, we would have: 
+\begin_inset Formula $\left\langle x\right\rangle =\sum_{n}x_{n}P\left(x_{n}\right)$
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\left\langle x\right\rangle  & =\int^{+\infty}_{-\infty}xP\left(x,0\right)dx\\
+ & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}xe^{-\frac{x^{2}}{2a^{2}}}dx\\
+ & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}xe^{-bx^{2}}dx
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+In this case, since the integrand is an odd function, that is, if 
+\begin_inset Formula $I\left(x\right)=xe^{-bx^{2}}$
+\end_inset
+
+, then 
+\begin_inset Formula $G\left(-x\right)=-G\left(x\right)$
+\end_inset
+
+, the integral is simply zero, and we have 
+\begin_inset Formula $\left\langle x\right\rangle =0$
+\end_inset
+
+. Now let's calculate: 
+\begin_inset Formula $\left\langle x^{2}\right\rangle $
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{equation}
+\left\langle x^{2}\right\rangle =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx
+\end{equation}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+We can find this using the standard Gaussian integral 
+\begin_inset Formula $\int^{+\infty}_{-\infty}e^{-bx^{2}}dx=\sqrt{\frac{\pi}{a}}$
+\end_inset
+
+. Differentiating both sides with respect to the parameter 
+\begin_inset Formula $b$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\int^{+\infty}_{-\infty}e^{-bx^{2}}dx & =\frac{d}{db}\sqrt{\frac{\pi}{b}}\\
+\int^{+\infty}_{-\infty}-x^{2}e^{-bx^{2}}dx & =-\frac{1}{2b}\sqrt{\frac{\pi}{b}}\\
+\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx & =\frac{1}{2b}\sqrt{\frac{\pi}{b}}
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+Then:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \begin{align*}
+\left\langle x^{2}\right\rangle  & =\frac{1}{a\sqrt{2\pi}}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}\\
+ & =\frac{1}{a\sqrt{2\pi}}\frac{1}{2b}\sqrt{\frac{\pi}{b}}\\
+ & =\frac{1}{a\sqrt{2}}\frac{2a^{2}\sqrt{2a^{2}}}{2}\\
+ & =a^{2}
+\end{align*}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The standard deviation is then:
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+
+\begin_inset Formula \[
+\Delta x=\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}=\sqrt{a^{2}-0^{2}}=a
+\]
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+The particle is therefore localised close to the origin, and the smaller 
+\begin_inset Formula $a$
+\end_inset
+
+ is, the smaller the standard deviation is, and hence the particle is more tightly localised. Based on the initial conditions 
+\begin_inset Formula $\Psi\left(x,0\right)$
+\end_inset
+
+, we are then in a position to determine how the wavefunction 
+\begin_inset Formula $\Psi\left(x,t\right)$
+\end_inset
+
+ evolves in time from this initial condition. But for our discussion, this is sufficient for now. 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\lang brazilian
+
+\series bold
+Example: end
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang brazilian
+ 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
-btprint "btPrintCited"
 bibfiles "ref"
 options "plain"
-encoding "default"
 
 \end_inset
 

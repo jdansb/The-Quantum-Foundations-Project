@@ -101,90 +101,46 @@
 
 \begin_body
 
-\begin_layout Title
-The Two Slit Experiment 
-\end_layout
+\begin_layout Section
 
-\begin_layout Author
-Jhordan Silveira de Borba
-\end_layout
-
-\begin_layout Standard
-This experiment is said to illustrate the essential mystery of quantum mechanics1.
- This mystery
-\end_layout
-
-\begin_layout Standard
-is embodied in the apparent ability of a system to exhibit properties which,
- from a classical
-\end_layout
-
-\begin_layout Standard
-physics point-of-view,
- are mutually contradictory.
- We have already touched on one such instance,
-\end_layout
-
-\begin_layout Standard
-in which the same physical system can exhibit under different circumstances,
- either particle or
-\end_layout
-
-\begin_layout Standard
-wave-like properties,
- otherwise known as wave-particle duality.
- This property of physical systems,
-\end_layout
-
-\begin_layout Standard
-otherwise known as ‘the superposition of states’,
- must be mirrored in a mathematical language in
-\end_layout
-
-\begin_layout Standard
-terms of which the behaviour of such systems can be described and in some sense ‘understood’.
-\end_layout
-
-\begin_layout Standard
-As we shall see in later chapters,
- the two slit experiment is a means by which we arrive at this new
-\end_layout
-
-\begin_layout Standard
-mathematical language.
-\end_layout
-
-\begin_layout Standard
-The experiment will be considered in three forms:
- performed with macroscopic particles,
- with
-\end_layout
-
-\begin_layout Standard
-waves,
- and with electrons.
- The first two experiments merely show what we expect to see based
-\end_layout
-
-\begin_layout Standard
-on our everyday experience.
- It is the third which displays the counterintuitive behaviour of mi-
-\end_layout
-
-\begin_layout Standard
-croscopic systems – a peculiar combination of particle and wave like behaviour which cannot be
-\end_layout
-
-\begin_layout Standard
-understood in terms of the concepts of classical physics.
- The analysis of the two slit experiment
-\end_layout
-
-\begin_layout Standard
-presented below is more or less taken from Volume III of the Feynman Lectures in Physics.
+\series bold
+stern gerlaxh experiment
 \end_layout
 
 \begin_layout Section
+Desigualdade de bell
+\end_layout
+
+\begin_layout Standard
+David Albert
+\end_layout
+
+\begin_layout Standard
+localidade e realidade
+\end_layout
+
+\begin_layout Section
+Bohms Teory
+\end_layout
+
+\begin_layout Standard
+David Albert
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Interpertações
+\end_layout
+
+\begin_layout Plain Layout
+Problema da decoerencia
+\end_layout
+
+\end_inset
+
 
 \end_layout
 

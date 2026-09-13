@@ -671,7 +671,7 @@ With this in mind,
  we can now move on to the postulates of quantum mechanics.
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 State Postulate
 \end_layout
 
@@ -783,7 +783,7 @@ A degree of freedom corresponds to an independent physical variable that can var
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Subsection
 Measurement Postulate
 \end_layout
 

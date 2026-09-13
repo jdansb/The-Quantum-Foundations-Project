@@ -9,16 +9,17 @@ project:
   github: https://github.com/jdansb/The-Quantum-Foundations-Project
   # To autogenerate a Table of Contents, run "jupyter book init --write-toc"
   toc:
-    - file: interpretacao.tex    
-    - title: Blog 
+    - file: interpretacao.tex
+    - title: Blog
       url: https://angpisiko1.substack.com/
+    - file: fenda.tex
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
     - title: Appendix
       children:
-        - file: dupla.tex 
+        - file: dupla.tex
     - title: Math
-      children:    
+      children:
         - file: mat.tex
     
 
