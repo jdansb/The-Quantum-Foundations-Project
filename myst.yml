@@ -29,7 +29,13 @@ project:
           - file: sakurai/livre.tex
     - title: Undergrad Thesis
       children:
-        - file: introducao.tex
+        - file: nielsen/introducao.tex
+        - file: nielsen/aprendizado.tex
+        - file: nielsen/postulados.tex
+        - file: nielsen/computacao.tex
+        - file: nielsen/adaptacoes.tex
+        - file: nielsen/reacionados.tex
+        - file: nielsen/resultados.tex
     - title: Classes notes
       children:
     - title: Math

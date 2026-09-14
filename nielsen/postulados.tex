@@ -1,0 +1,150 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Postulados da MQ}
+
+\maketitle
+A Mecânica Quântica é um formalismo matemático para o desenvolvimento de teorias físicas. Por si só, ela não nos diz quais leis físicas um sistema deve obedecer, mas fornece um \textit{framework} conceitual e matemático para o desenvolvimento de tais leis. Estes postulados foram obtidos após um longo processo basicamente de tentativa e erro \cite{nielsen2000quantum}.
+
+\subsection{Espaço de estados}
+
+O primeiro postulado nos diz qual o `lugar' em que a Mecânica Quântica é obedecida: 
+\begin{itemize}
+\item \textbf{Postulado 1}: Associado a qualquer sistema físico isolado há um espaço vetorial complexo com produto interno (Espaço de Hilbert) conhecido como espaço de estados do sistema. O sistema é completamente descrito pelo seu vetor de estado, que é um vetor unitário no espaço de estados do sistema. 
+\end{itemize}
+A Mecânica Quântica não nos diz qual o espaço de estados do sistema para um sistema físico em específico nem em qual vetor de estado o sistema está. Identificar qual é o espaço de estados para um sistema em específico é um desafio. A eletrodinâmica quântica (\textit{Quantum Electrodynamics} - QED), por exemplo, nos diz quais espaços nos fornecem uma descrição quântica dos átomos e da luz. Mas não estamos interessados em teorias complexas como QED, mas sim no framework geral fornecido pela Mecânica Quântica.
+
+O sistema mecânico quântico mais simples e que estamos mais interessados é o \textit{qubit}. Qubit é um espaço de estados de duas dimensões. Supondo uma base ortonormal formada por $\left|0\right\rangle $ e $\left|1\right\rangle $, então um vetor de estado arbitrário no espaço pode ser descrito como: 
+\begin{equation}
+\left|\psi\right\rangle =a\left|0\right\rangle +b\left|1\right\rangle .
+\end{equation}
+Os coeficientes $a$ e $b$ são números complexos e, devido à condição de normalização, devem obedecer $\left|a\right|^{2}+\left|b\right|^{2}=1$. Intuitivamente $\left|0\right\rangle $ e $\left|1\right\rangle $ são análogos dos valores $0$ e $1$ que um bit pode assumir, a diferença surge devido a superposição dos estados, isto é, o qubit pode assumir o estado $a\left|0\right\rangle +b\left|1\right\rangle $ no qual não é possível dizer se o qubit está definitivamente em um estado ou em outro. Dizemos que a combinação linear de estados $\sum_{i}\alpha_{i}\left|\psi_{i}\right\rangle $ é uma superposição dos estados $\left|\psi_{i}\right\rangle $ com amplitude de probabilidade $\alpha_{i}$ para o estado $\left|\psi_{i}\right\rangle $.
+
+\subsection{Evolução}
+
+O segundo postulado nos diz como um estado $\left|\psi\right\rangle $ varia com o tempo. 
+\begin{itemize}
+\item \textbf{Postulado 2}: A evolução de um sistema fechado é descrita por uma transformação unitária. O estado $\left|\psi\right\rangle $ do sistema no instante $t_{1}$ é relacionado ao estado $\left|\psi'\right\rangle $ no instante $t_{2}$ por um operador unitário $U$ que depende somente dos tempos $t_{1}$ e $t_{2}$: 
+\end{itemize}
+\begin{equation}
+\left|\psi'\right\rangle =U\left|\psi\right\rangle .
+\end{equation}
+Sendo que um operador unitário é definido como $UU^{\dagger}=U^{\dagger}U=\mathbb{I}$. Semelhante ao postulado anterior, a Mecânica Quântica não nos diz quais operadores $U$ descrevem a dinâmica real do mundo quântico. Somente assegura que a evolução pode ser descrita desta maneira. Para nosso sistema de qubits qualquer operador unitário pode ser realizado em um sistema realístico.
+
+O postulado requer que o sistema seja fechado, isto é, que só com outro sistema de forma a não mudar seu estado quântico. Apesar de todos os sistemas interagirem de alguma forma com outros sistemas, há alguns sistemas que podem ser descritos com uma boa aproximação como sendo fechados.
+
+\subsection{Medida quântica}
+
+O postulado 2 descreve a evolução de um sistema fechado, ou seja, que não interage com o resto do mundo. Porém algumas vezes cientistas desejam observar o sistema para entender o que está acontecendo, e esta interação faz com que o sistema não seja mais fechado e a partir disto, não precisa mais necessariamente obedecer o postulado 2. Para explicar o que acontece quando isto é feito, introduzimos o postulado 3 sobre os efeitos de uma medição em um sistema quântico. 
+\begin{itemize}
+\item \textbf{Postulado 3}: As medidas quânticas são descritas por uma coleção $\left\{ M_{m}\right\} $ de operadores de medidas. Esses operadores atuam no espaço de estados que está sendo medido. O índice $m$ faz referência ao resultado que pode ocorrer no experimento. Se o estado do sistema quântico é $\left|\psi\right\rangle $ imediatamente antes da medição, a probabilidade do resultado $m$ ocorrer é dado por: 
+\end{itemize}
+\begin{equation}
+p\left(m\right)=\left\langle \psi\left|M^{\dagger}_{m}M_{m}\right|\psi\right\rangle .
+\end{equation}
+E o estado do sistema após a medida é dado por:
+
+\begin{equation}
+\left|\psi'\right\rangle =\frac{M_{m}\left|\psi\right\rangle }{\sqrt{\left\langle \psi\left|M^{\dagger}_{m}M_{m}\right|\psi\right\rangle }}.
+\end{equation}
+Além disso, os operadores de medida satisfazem a equação completeza: $\sum_{m}M^{\dagger}_{m}M_{m}=I.$
+
+\subsubsection{Medidas projetivas}
+
+Medidas projetivas são um caso especial importante do postulado 3. Muitas aplicações de computação quântica são focadas principalmente em medidas projetivas. Além disso, pode ser equivalente ao postulado geral quando expandido com a habilidade de realizar transformações unitárias, conforme será demonstrado mais adiante com o auxílio do próximo postulado. 
+\begin{itemize}
+\item \textbf{Medidas projetivas}: uma medida projetiva é descrita por um observável $M$, que é um operador hermitiano no espaço de estado do sistema que está sendo observado. O observável tem a decomposição espectral: 
+\end{itemize}
+\begin{equation}
+M=\sum_{m}mP_{m}.
+\end{equation}
+Onde $P_{m}$ é o projetor no auto-espaço de $M$ com o autovalor $m$. Os possíveis resultados correspondem aos autovalores $m$ do observável. Então, medindo o estado $\left|\psi\right\rangle $, a probabilidade de obter o resultado $m$ é dado por: 
+\begin{equation}
+p\left(m\right)=\left\langle \psi\left|P_{m}\right|\psi\right\rangle .
+\end{equation}
+E após obtido $m$ o estado do sistema imediatamente após a medição é: 
+\begin{equation}
+\left|\psi'\right\rangle =\frac{P_{m}\left|\psi\right\rangle }{\sqrt{p\left(m\right)}}.
+\end{equation}
+Medidas projetivas podem compreendidas como um caso especial do postulado 3, onde além da relação de completeza, temos as condições extras de que os operadores $M_{m}$ são Hermitianos e $M_{m}M_{m'}=\delta_{mm'}M_{m}$. Com essas restrições, o postulado 3 se reduz as medidas projetivas definida acima. Além disto, duas nomenclaturas largamente usadas para observações merecem ênfase: 
+\begin{enumerate}
+\item Ao invés de fornecer um observável que descreve uma medida projetiva, listam-se um conjunto de projetores ortogonais que satisfazem as condições: $\sum_{m}P_{m}=I$ e $P_{m}P_{m'}=\delta_{mm'}P_{m}.$ O correspondente observável implícito nesse caso é $M=\sum_{m}mP_{m}$. 
+\item Uma frase bastante usada é ``medido na base $\left|m\right\rangle $'', onde os vetores $\left|m\right\rangle $ formam uma base ortonormal. Isso significa que foi feita uma medida projetiva com os projetores: $P_{m}=\left|m\right\rangle \left\langle m\right|$. 
+\end{enumerate}
+Tendo por exemplo uma medida projetiva em um único qubit, sendo a medida feita de um observável $Z=\left|0\right\rangle \left\langle 0\right|-\left|1\right\rangle \left\langle 1\right|$ , temos então os autovalores $+1$ e $-1$ e os autovetores $\left|0\right\rangle $ e $\left|1\right\rangle $ respectivamente. Se vamos medir no estado $\left|\psi\right\rangle =\frac{1}{\sqrt{2}}\left(\left|0\right\rangle +\left|1\right\rangle \right)$, a probabilidade de obtermos o resultado $+1$ é $\left\langle \psi|0\right\rangle \left\langle 0|\psi\right\rangle =\frac{1}{2}$.
+
+\subsubsection{Fase}
+
+``Fase'' é um termo largamente usado em Mecânica Quântica que pode ter mais de um significado dependendo do contexto. Por isso, se mostra útil abordar um par destes conceitos neste ponto. Considerando o estado $e^{i\theta}\left|\psi\right\rangle $ onde $\left|\psi\right\rangle $ é um vetor de estado e $\theta$ um número real. Então falamos que o estado $e^{i\theta}\left|\psi\right\rangle $ é igual ao estado $\left|\psi\right\rangle $ sob um fator de fase global $e^{i\theta}$, e a estatística da medida é a mesma para ambos, ou seja, fatores de fase globais são irrelevantes para as propriedades observadas de um sistema físico. Isso é visto facilmente se supomos um operador de medida $M_{m}$, então a probabilidade de medirmos $m$ no estado $e^{i\theta}\left|\psi\right\rangle $ é $\left\langle \psi\left|e^{-i\theta}M^{\dagger}_{m}M_{m}e^{i\theta}\right|\psi\right\rangle =\left\langle \psi\left|M^{\dagger}_{m}M_{m}\right|\psi\right\rangle $, ou seja, o mesmo que para $\left|\psi\right\rangle $ .
+
+Mas outro tipo de fase é a fase relativa. Considerando os estados: 
+\begin{equation}
+\frac{\left(\left|0\right\rangle +\left|1\right\rangle \right)}{\sqrt{2}};\quad\frac{\left(\left|0\right\rangle -\left|1\right\rangle \right)}{\sqrt{2}}.
+\end{equation}
+Então a amplitude de $\left|1\right\rangle $ no primeiro e segundo estado é $\pm\frac{1}{\sqrt{2}}$, respectivamente, isto é a mesma magnitude porém com um sinal diferente. De uma maneira geral, dizemos que duas amplitudes ($a$ e $b$) diferem por uma fase relativa, se para um número $\theta$ real, temos $a=e^{i\theta}b$. Como a fase relativa pode variar de amplitude para amplitude, diferentemente da fase global não podemos considerar estes estados como fisicamente equivalentes, uma vez que as medidas estatísticas para uma propriedade observada no sistema físico será diferente para cada estado.
+
+\subsection{Sistemas compostos}
+
+Se estamos interessados em um sistema quântico composto, isto é, descrito por 2 ou mais sistemas físicos distintos, é o postulado 4 que descreve como um espaço de estados do sistema composto é construído a partir dos espaços de estados dos componentes do sistema. 
+\begin{itemize}
+\item \textbf{Postulado 4}: O espaço de estados de um sistema físico composto é o produto tensorial dos espaços de estados dos componentes do sistema. 
+\end{itemize}
+A prova de que medidas projetivas com dinâmica unitária é suficiente para implementar uma medida geral é uma boa ilustração da aplicação do postulado 4.
+
+Suponha que temos um espaço de estados $Q$ e queremos fazer uma medida descrita pelos operadores $M_{m}$ neste espaço. Para fazer isso, introduzimos um sistema auxiliar com o espaço de estados $M$ formado por uma base ortonormal $\left|m\right\rangle $ com uma correspondência `um-para-um' com os possíveis resultados das medidas que vamos implementar. Este sistema auxiliar pode ser tanto um mero dispositivo matemático, quanto um sistema quântico físico extra introduzido no problema. Mas independente disto, o espaço composto é dado por $Q\otimes M$.
+
+Sendo $\left|0\right\rangle $ um estado de $M$, definimos um operador $U$ onde: 
+\begin{equation}
+U\left|\psi\right\rangle \left|0\right\rangle \equiv\sum_{m}M_{m}\left|\psi\right\rangle \left|m\right\rangle .
+\end{equation}
+Uma observação é que há diferentes formas de representar um produto tensorial na literatura $\left|a\right\rangle \otimes\left|b\right\rangle =\left|a\right\rangle \left|b\right\rangle =\left|ab\right\rangle $. Lembrando da ortonormalidade dos estados $\left|m\right\rangle $ e a relação de completeza dos operadores $M_{m}$, podemos ver que o operador $U$ preserva o produto interno entre os estados na forma $\left|\psi\right\rangle \left|0\right\rangle $: 
+\begin{equation}
+\begin{split}\left\langle \varphi\right|\left\langle 0\right|U^{\dagger}U\left|\psi\right\rangle \left|0\right\rangle  & =\sum_{m,m'}\left(M_{m'}\left|\varphi\right\rangle \left|m'\right\rangle ,M_{m}\left|\psi\right\rangle \left|m\right\rangle \right),\\
+ & =\sum_{m,m'}\left(M^{\dagger}_{m}M_{m'}\left|\varphi\right\rangle \left|m'\right\rangle ,\left|\psi\right\rangle \left|m\right\rangle \right),\\
+ & =\sum_{m,m'}\left(M^{\dagger}_{m}M_{m'}\left|\varphi\right\rangle ,\left|\psi\right\rangle \right)\left(\left|m'\right\rangle ,\left|m\right\rangle \right),\\
+ & =\left(\sum_{m}M^{\dagger}_{m}M_{m}\left|\varphi\right\rangle ,\left|\psi\right\rangle \right),\\
+ & =\left(\left|\varphi\right\rangle ,\left|\psi\right\rangle \right),\\
+ & =\left\langle \varphi|\psi\right\rangle .
+\end{split}
+\end{equation}
+Então supondo que fazemos uma medida projetiva nos dois sistemas descrita pelos projetores $P_{m}=I_{Q}\otimes\left|m\right\rangle \left\langle m\right|$. A saída $m$ ocorre com a probabilidade:
+
+\begin{equation}
+\begin{split}p\left(m\right) & =\left\langle \psi\right|\left\langle 0\right|U^{\dagger}P_{m}U\left|\psi\right\rangle \left|0\right\rangle ,\\
+ & =\left(\sum_{m'}\left\langle \psi\right|M^{\dagger}_{m'}\left\langle m'\right|\right)\left(\mathbb{I}\otimes\left|m\right\rangle \left\langle m\right|\right)\left(\sum_{m''}M_{m''}\left|\psi\right\rangle \left|m''\right\rangle \right)\\
+ & =\sum_{m',m''}\left(\left\langle \psi\right|M^{\dagger}_{m'}\left\langle m'\right|\right)\left(M_{m''}\left|\psi\right\rangle \left|m\right\rangle \left\langle m|m''\right\rangle \right),\\
+ & =\sum_{m',m''}\left(\left\langle \psi\right|M^{\dagger}_{m'}M_{m''}\left|\psi\right\rangle \left\langle m'|m\right\rangle \left\langle m|m''\right\rangle \right),\\
+ & =\left\langle \psi\right|M^{\dagger}_{m}M_{m}\left|\psi\right\rangle .
+\end{split}
+\end{equation}
+
+Como é dado pelo postulado 3. Após a medição, o estado do sistema é: 
+\begin{equation}
+\begin{split}\frac{P_{m}U\left|\psi\right\rangle \left|0\right\rangle }{\sqrt{p\left(m\right)}} & =\frac{\left(I_{Q}\otimes\left|m''\right\rangle \left\langle m''\right|\right)\left(\sum_{m}M_{m}\left|\psi\right\rangle \otimes\left|m\right\rangle \right)}{\sqrt{p\left(m\right)}}\\
+ & =\sum I_{Q}{}_{m}\frac{M_{m}\left|\psi\right\rangle \otimes\left|m''\right\rangle \left\langle m''|m\right\rangle }{\sqrt{p\left(m\right)}}\\
+ & =\frac{M_{m}\left|\psi\right\rangle }{\sqrt{p\left(m\right)}}\otimes\left|m\right\rangle .
+\end{split}
+.
+\end{equation}
+Isso implica que o estado do sistema $M$ após a medida é $\left|m\right\rangle $, o estado do sistema $Q$ é: 
+\begin{equation}
+\left|\psi'\right\rangle =\frac{M_{m}\left|\psi\right\rangle }{\sqrt{p\left(m\right)}}.
+\end{equation}
+O Postulado 4 também nos ajuda a definir o entrelaçamento. Considerando por exemplo o seguinte estado de dois qubit: 
+\begin{equation}
+\left|\psi\right\rangle =\frac{\left|00\right\rangle +\left|11\right\rangle }{\sqrt{2}}.
+\end{equation}
+Então este estado não pode ser obtido por dois qubits separados $\left|a\right\rangle $ e $\left|b\right\rangle $ na forma: $\left|a\right\rangle \otimes\left|b\right\rangle $. Dizemos então que o estado de um sistema composto que tenha essa propriedade de não poder ser escrito como o produto dos estados de seus componentes, é um estado emaranhado.
+
+ \bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}

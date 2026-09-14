@@ -1,0 +1,376 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children no
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package refstyle
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2.5cm
+\bottommargin 3cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Introdução
+\end_layout
+
+\begin_layout Standard
+Redes neurais artificiais compõem uma classe de modelos computacionais que alcançaram uma alta taxa de sucesso em tarefas específicas envolvendo reconhecimento de padrões.
+ Em aplicações práticas atuais,
+ redes neurais artificiais são executadas usualmente como algoritmos clássicos em computadores convencionais 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Italiano"
+literal "false"
+
+\end_inset
+
+,
+ mas há um crescente aumento de interesse em sua implementação em dispositivos quânticos.
+ Propriedades intrínsecas da Mecânica Quântica como representação e armazenamento de grande quantidade de dados como vetores e matrizes,
+ além da realização de operações lineares resultam em um aumento exponencial tanto na capacidade de armazenamento como no poder de processamento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Do_Russo_1"
+literal "false"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Do_Russo_2"
+literal "false"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Do_Russo_3"
+literal "false"
+
+\end_inset
+
+,
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Do_Russo_4"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Entre os modelos de neurônios mais simples de redes neurais temos o perceptron.
+ O perceptron foi proposto como um modelo probabilístico para o armazenamento e organização da informação no cérebro,
+ descrito originalmente como uma aproximação frutífera na compreensão e organização dos sistemas cognitivos,
+ permitia predizer as curvas de aprendizagem a partir de variáveis neurológicas e vice-versa 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosenblatt1958perceptron"
+literal "false"
+
+\end_inset
+
+.
+ Apesar de ser o modelo mais simples,
+ ainda assim redes neurais construídas a partir de perceptrons,
+ sob certos cenários,
+ têm demonstrado benefícios quando comparado com técnicas de modelagem estatísticas mais tradicionais.
+ Dentre estes benefícios,
+ podemos destacar que,
+ ao contrário de outras técnicas estatísticas,
+ não faz suposições anteriores a distribuições de dados,
+ podendo modelar funções altamente não lineares e pode ser treinado para generalizar com precisão quando defrontado com novos dados 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gardner1998artificial"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Avançando ainda dentro das redes neurais,
+ posteriormente também foram propostos modelos quânticos inspirados por modelos de redes neurais biológicas no qual os neurônios são sensíveis não somente a amplitude dos sinais de entrada,
+ como é o caso do perceptron,
+ mas também a fase.
+ Desta maneira,
+ uma evolução natural esperada dos modelos mais simples foi levar em conta a natureza complexa dos valores de entrada,
+ e utilizar então a fase destes números para codificar a informação,
+ além da amplitude até então utilizada 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Russo"
+literal "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Esloveno"
+literal "false"
+
+\end_inset
+
+.
+ Sutherland inclusive interpreta a fase como a informação em si,
+ e a amplitude como o nível correspondente de confiança na mesma 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Do_Esloveno"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Redes neurais foram responsáveis por avanços significativos e sem precedentes,
+ gerando um enorme impacto no desenvolvimento da área.
+ Porém,
+ os métodos de kernel,
+ apesar de terem ganho menos publicidade,
+ também foram extensivamente estudados,
+ tanto teoricamente quanto empiricamente,
+ devido ao seu alto poder de modelagem de dados não-lineares.
+ Uma das razões comumente atribuídas para isso,
+ é a crença que seria difícil para os métodos de kernel acompanharem as redes neurais artificiais em problemas de larga escala,
+ pois muitos algoritmos kernel escalam quadraticamente de acordo com o número de amostras de treinamento 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lu2014scale"
+literal "false"
+
+\end_inset
+
+.
+ Porém este é um problema que pode ser superado com o emprego da computação quântica,
+ uma vez que a exploração de espaços quânticos,
+ que aumentam exponencialmente a capacidade de representação dos dados,
+ é um dos elementos centrais desta mesma.
+\end_layout
+
+\begin_layout Standard
+Dessa forma,
+ aprendizado de máquina e computação quântica são duas tecnologias que possuem o potencial de alterar como a computação é feita e resolver problemas até então sem solução em tempo hábil.
+ O uso da computação quântica em modelos de aprendizado de máquina se apresenta como uma possível aplicação em que há ganho de performance significativo se comparado com o melhor algoritmo possível em um computador clássico,
+ isto é,
+ o algoritmo quântico executado em um computador quântico é capaz de resolver determinados problemas em um tempo significativamente menor se comparado a alternativas clássicas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "havlivcek2019supervised"
+literal "false"
+
+\end_inset
+
+.
+ Sendo assim,
+ a computação quântica é uma área de intersecção entre a ciência da computação,
+ física e a engenharia,
+ que promete uma revolução na performance computacional devido ao seu paralelismo intrínseco,
+ apesar de poder ter sido considerada uma utopia durante uma época,
+ hoje em dia é uma realidade,
+ uma vez que computadores quânticos reais podem ser acessados e programados através da internet por qualquer um 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "acampora2019quantum"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Atualmente o interesse por esta área não está mais restrito à academia.
+ Grandes agências e empresas de reconhecimento internacional no setor tecnológico possuem projetos de conhecimento público na área.
+ Como exemplo além da IBM,
+ que disponibiliza dispositivos de hardware quântico para acesso via nuvem,
+ podemos citar a NASA,
+ a Amazon e o Google,
+ sendo que este último desenvolve pesquisas exatamente na área de aprendizado de máquina em computadores quânticos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "moret2015can"
+literal "false"
+
+\end_inset
+
+.
+ É fato que nos dias de hoje já temos um número considerável de algoritmos quânticos bem estabelecidos que apresentam um ganho de velocidade impressionante em comparação com os melhores métodos clássicos conhecidos.
+ A computação quântica já é uma tecnologia emergente,
+ e dentro desse cenário,
+ pesquisas na área de aprendizado de máquina quântica parecem ser um caminho promissor para futuramente oferecer uma revolução nos métodos inteligentes de processamento de dados 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "schuld2015introduction"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Este trabalho encontra-se dividido da seguinte forma:
+ Na próxima seção os objetivos são apresentados,
+ na seção 3 é realizada uma revisão bibliográfica que cobre as teorias clássicas de aprendizado de máquina utilizadas para o desenvolvimento do resto do trabalho,
+ computação e algoritmos quânticos,
+ as adaptações necessárias nos modelos clássicos para serem executados em computadores quânticos e por fim uma rápida revisão sobre trabalhos relacionados.
+ A seção 4 contém os resultados obtidos durante o desenvolvimento deste trabalho com as devidas discussões e o último capítulo trata-se então da conclusão.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\end_layout
+
+\begin_layout Itemize
+Objetivo acadêmico:
+ Este trabalho tem como objetivo possibilitar a revisão e solidificação do conhecimento adquirido ao longo do curso sobre Mecânica Quântica,
+ além de também servir como introdução à computação quântica e às teorias clássicas de aprendizado de máquina.
+ 
+\end_layout
+
+\begin_layout Itemize
+Objetivo geral:
+ O objetivo geral do presente trabalho é propor modelos eficientes de aprendizado de máquina para computadores quânticos e implementá-los tanto quanto possível,
+ tendo em vista o atual acesso limitado à dispositivos quânticos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Objetivos específicos:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementar um modelo de neurônio binário baseado nos modelos de McCulloch-Pitts e Rosenblatt;
+ 
+\end_layout
+
+\begin_layout Itemize
+Propor e implementar um modelo de neurônio contínuo baseado no modelo sigmoide;
+ 
+\end_layout
+
+\begin_layout Itemize
+Propor e implementar um modelo baseado no método kernel de aprendizado de máquina.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+ 
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "referencias"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
