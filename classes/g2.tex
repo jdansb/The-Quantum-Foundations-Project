@@ -1,0 +1,726 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\title{Problem set 2}
+
+\maketitle
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\subsection{Problem 1}
+
+\textbf{1) Suppose a $2\times2$ matrix $X$ (not necessarily Hermitian, nor unitary) is written as $X=a_{0}+\sigma\cdot\boldsymbol{a}$, where $a_{0}$ and $a_{1,2,3}$ are numbers.}
+
+\textbf{a) How are $a_{0}$ and $a_{k}$ ($k=1,2,3$) related to $Tr\left(X\right)$ and $Tr\left(\sigma_{k}X\right)$?}
+
+\textbf{b) Obtain a0 and ak in terms of the matrix elements Xij.}
+
+Tendo então uma matriz $X$ qualquer de dimensão $2\times2$ escrita como:
+
+\[
+X=\left(a_{0}+\overrightarrow{\sigma}\cdot\overrightarrow{a}\right)\sigma_{0}
+\]
+
+Sendo $\overrightarrow{\sigma}=\left(\sigma_{1},\sigma_{2},\sigma_{3}\right)$ onde $\sigma_{k}$ são as matrizes de Pauli e $\sigma_{0}$ a matriz identidade, e $a_{k}$ são números $\left(k=0,1,2,3\right)$ em que $\overrightarrow{a}=\left(a_{1},a_{2},a_{3}\right)$, então:
+
+\begin{align*}
+X= & \left(a_{0}+\sigma_{1}a_{1}+\sigma_{2}a_{2}+\sigma_{3}a_{3}\right)\sigma_{0}\\
+= & a_{0}\sigma_{0}+\sigma_{1}a_{1}\sigma_{0}+\sigma_{2}a_{2}\sigma_{0}+a_{3}\sigma_{3}\sigma_{0}\\
+= & a_{0}\sigma_{0}+\sigma_{1}a_{1}+\sigma_{2}a_{2}+a_{3}\sigma_{3}\\
+= & \sum^{3}_{k=0}a_{k}\sigma_{k}
+\end{align*}
+
+Pela seguinte propriedade do traçoç $Tr\left(A+B\right)=Tr\left(A\right)+Tr\left(B\right)$ e $Tr\left(cA\right)=cTr\left(A\right)$ onde $A,B$ são matrizes e $c$ um número complexo, temos que:
+
+\begin{align*}
+Tr\left(X\right)= & Tr\left(\sum^{3}_{k=0}a_{k}\sigma_{k}\right)\\
+= & \sum^{3}_{k=0}a_{k}Tr\left(\sigma_{k}\right)
+\end{align*}
+
+Lembrando das matrizes de Pauli:
+
+\[
+\sigma_{0}=\left(\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right),\sigma_{1}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right),\sigma_{2}=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right),\sigma_{3}=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)
+\]
+
+Então temos que:
+
+\[
+Tr\left(\sigma_{0}\right)=2\qquad Tr_{k\neq0}\left(\sigma_{k}\right)=0
+\]
+
+Logo:
+
+\[
+Tr\left(X\right)=2a_{0}
+\]
+
+Agora precisamos calcular primeiramente $\left(\sigma_{k}X\right)$. Usando a relação de produto das matrizesde Pauli: $\sigma_{i}\sigma_{j}=\delta_{ij}\sigma_{0}+i\epsilon_{ijk}\sigma_{k}$, obtemos:
+
+\begin{align*}
+\sigma_{i}X= & \sigma_{i}\left(\sum^{3}_{j=0}a_{j}\sigma_{j}\right)\\
+= & \sum^{3}_{j=0}a_{j}\sigma_{i}\sigma_{j}\\
+= & \sum^{3}_{j=0}a_{j}\left(\delta_{ij}\sigma_{0}+i\epsilon_{ijk}\sigma_{k}\right)\\
+= & \sum^{3}_{j=0}\left(\delta_{ij}a_{j}\sigma_{0}+i\epsilon_{ijk}a_{j}\sigma_{k}\right)
+\end{align*}
+
+De acordo com a condições propostas no enunciado temos que $i=1,2,3$, tirando o traço então:
+
+\begin{align*}
+Tr\left(\sigma_{i}X\right)= & \sum^{3}_{j=0}\left(\delta_{ij}a_{j}Tr\left(\sigma_{0}\right)+i\epsilon_{ijk}a_{j}Tr\left(\sigma_{k}\right)\right)\\
+= & \sum^{3}_{j=0}\delta_{ij}2a_{j}\\
+= & 2a_{i}
+\end{align*}
+
+Temos então as seguintes relações:
+
+\[
+Tr\left(X\right)=2a_{0}\qquad Tr\left(\sigma_{k}X\right)=2a_{k}
+\]
+
+\textbf{b)}
+
+Dos resultados anteriores sabemos que:
+
+\[
+a_{0}=\frac{Tr\left(X\right)}{2}\qquad a_{k}=\frac{Tr\left(\sigma_{k}X\right)}{2}
+\]
+
+Escrevendo então $X$ explícitamente de forma genérica como:
+
+\[
+X=\left(\begin{array}{cc}
+X_{11} & X_{12}\\
+X_{21} & X_{22}
+\end{array}\right)
+\]
+
+Pode-se perceber que:
+
+\[
+a_{0}=\frac{Tr\left(X\right)}{2}=\frac{X_{11}+X_{22}}{2}
+\]
+
+E calculando o produto das matrizes:
+
+\begin{alignat}{2}
+\sigma_{1}X= & \left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)\left(\begin{array}{cc}
+X_{11} & X_{12}\\
+X_{21} & X_{22}
+\end{array}\right)= & \left(\begin{array}{cc}
+X_{21} & X_{22}\\
+X_{11} & X_{12}
+\end{array}\right)\\
+\sigma_{2}X= & \left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)\left(\begin{array}{cc}
+X_{11} & X_{12}\\
+X_{21} & X_{22}
+\end{array}\right)= & \left(\begin{array}{cc}
+-iX_{21} & -iX_{22}\\
+iX_{11} & iX_{12}
+\end{array}\right)\\
+\sigma_{1}X= & \left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)\left(\begin{array}{cc}
+X_{11} & X_{12}\\
+X_{21} & X_{22}
+\end{array}\right)= & \left(\begin{array}{cc}
+X_{11} & X_{12}\\
+-X_{21} & -X_{22}
+\end{array}\right)
+\end{alignat}
+Logo, podemos obter quase que diretamente:
+
+\begin{alignat}{2}
+a_{1}= & \frac{1}{2}Tr\left(\sigma_{1}X\right)= & \frac{X_{21}+X_{12}}{2}\\
+a_{2}= & \frac{1}{2}Tr\left(\sigma_{2}X\right)= & i\frac{X_{12}-X_{21}}{2}\\
+a_{3}= & \frac{1}{2}Tr\left(\sigma_{3}X\right)= & \frac{X_{11}-X_{22}}{2}
+\end{alignat}
+
+
+\subsection{Problem 2}
+
+\textbf{The Hamiltonian operator for a two-state system is given by }
+
+\[
+H=a\left(\left|1\right\rangle \left\langle 1\right|-\left|2\right\rangle \left\langle 2\right|+\left|1\right\rangle \left\langle 2\right|+\left|2\right\rangle \left\langle 1\right|\right)
+\]
+
+\textbf{where $a$ is a number with the dimension of energy. Find the energy eigenvalues and the corresponding energy eigenkets (as linear combinations of $\left|1\right\rangle $ and $\left|2\right\rangle $).}
+
+Temos o seguinte hamiltoniano para um sistema de dois estados:
+
+\[
+H=a\left(\left|1\right\rangle \left\langle 1\right|-\left|2\right\rangle \left\langle 2\right|+\left|1\right\rangle \left\langle 2\right|+\left|2\right\rangle \left\langle 1\right|\right)
+\]
+
+Sendo $\left|1\right\rangle =\left(\begin{array}{cc}
+1 & 0\end{array}\right)^{T}$ e $\left|2\right\rangle =\left(\begin{array}{cc}
+0 & 1\end{array}\right)^{T}$, então o hamiltoniano é representado matricialmente como:
+
+\begin{align*}
+H= & a\left[\left(\begin{array}{c}
+1\\
+0
+\end{array}\right)\left(\begin{array}{cc}
+1 & 0\end{array}\right)-\left(\begin{array}{c}
+0\\
+1
+\end{array}\right)\left(\begin{array}{cc}
+0 & 1\end{array}\right)+\left(\begin{array}{c}
+1\\
+0
+\end{array}\right)\left(\begin{array}{cc}
+0 & 1\end{array}\right)+\left(\begin{array}{c}
+0\\
+1
+\end{array}\right)\left(\begin{array}{cc}
+1 & 0\end{array}\right)\right]\\
+= & a\left[\left(\begin{array}{cc}
+1 & 0\\
+0 & 0
+\end{array}\right)-\left(\begin{array}{cc}
+0 & 0\\
+0 & 1
+\end{array}\right)+\left(\begin{array}{cc}
+0 & 1\\
+0 & 0
+\end{array}\right)+\left(\begin{array}{cc}
+0 & 0\\
+1 & 0
+\end{array}\right)\right]\\
+= & a\left(\begin{array}{cc}
+1 & 1\\
+1 & -1
+\end{array}\right)
+\end{align*}
+
+Os autovalores são então dados pela raíz do determinante:
+
+\begin{align*}
+\left|H-\lambda\mathbb{I}\right|= & \left|\begin{array}{cc}
+a-\lambda & a\\
+a & -\left(a+\lambda\right)
+\end{array}\right|=0\\
+0= & -\left(a-\lambda\right)\left(a+\lambda\right)-a^{2}\\
+0= & -\left(a^{2}-\lambda^{2}\right)-a^{2}\\
+0= & -a^{2}+\lambda^{2}-a^{2}\\
+0= & -2a^{2}+\lambda^{2}\\
+\lambda^{2}= & 2a^{2}\\
+\lambda & =\pm a\sqrt{2}
+\end{align*}
+
+Calculando então o autovetor para $\lambda_{+}=a\sqrt{2}$, temos que:
+
+\begin{align*}
+\left(H-\lambda\mathbb{I}\right)\left|\lambda_{+}\right\rangle  & =\boldsymbol{0}\\
+\left(\begin{array}{cc}
+a\left(1-\sqrt{2}\right) & a\\
+a & -a\left(1+\sqrt{2}\right)
+\end{array}\right) & \left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\end{align*}
+
+Como: 
+\[
+-a\left(1+\sqrt{2}\right)\cdot\left(1-\sqrt{2}\right)=-a\left(1-2\right)=a
+\]
+
+As linhas são linearmente dependentes. Então da primeira linha podemos obter que:
+
+\begin{align*}
+0 & =a\left(1-\sqrt{2}\right)x_{1}+ax_{2}\\
+0 & =\left(1-\sqrt{2}\right)x_{1}+x_{2}\\
+x_{2} & =\left(\sqrt{2}-1\right)x_{1}
+\end{align*}
+
+Logo o autovetor normalizado pode ser escrito:
+
+\[
+\left|\lambda_{+}\right\rangle =\frac{\left(x_{1}\left|1\right\rangle +\left(\sqrt{2}-1\right)x_{1}\left|2\right\rangle \right)}{\sqrt{x^{2}_{1}+\left(\sqrt{2}-1\right)^{2}x^{2}_{1}}}
+\]
+
+Escolhendo $x_{1}=1$:
+
+\[
+\left|\lambda_{+}\right\rangle =\frac{\left(\left|1\right\rangle +\left(\sqrt{2}-1\right)\left|2\right\rangle \right)}{\sqrt{1+2-2\sqrt{2}+1}}=\frac{1}{\sqrt{4-2\sqrt{2}}}\left(\left|1\right\rangle +\left(\sqrt{2}-1\right)\left|2\right\rangle \right)
+\]
+
+E para $\lambda_{-}=-a\sqrt{2}$, temos que:
+
+\begin{align*}
+\left(H-\lambda\mathbb{I}\right)\left|\lambda_{+}\right\rangle  & =\boldsymbol{0}\\
+\left(\begin{array}{cc}
+a\left(1+\sqrt{2}\right) & a\\
+a & a\left(\sqrt{2}-1\right)
+\end{array}\right) & \left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\end{align*}
+
+Como: 
+\[
+-a\left(1+\sqrt{2}\right)\cdot\left(1-\sqrt{2}\right)=-a\left(1-2\right)=a
+\]
+
+As linhas novamente são linearmente dependentes. De modo análogo:
+
+\begin{align*}
+0 & =a\left(1+\sqrt{2}\right)x_{1}+ax_{2}\\
+0 & =\left(1+\sqrt{2}\right)x_{1}+x_{2}\\
+x_{2} & =-\left(1+\sqrt{2}\right)x_{1}
+\end{align*}
+
+Logo o autovetor normalizado pode ser escrito:
+
+\[
+\left|\lambda_{-}\right\rangle =\frac{\left(x_{1}\left|1\right\rangle -\left(1+\sqrt{2}\right)x_{1}\left|2\right\rangle \right)}{\sqrt{x^{2}_{1}+\left(\sqrt{2}+1\right)^{2}x^{2}_{1}}}
+\]
+
+Escolhendo $x_{1}=1$:
+
+\[
+\left|\lambda_{-}\right\rangle =\frac{\left(\left|1\right\rangle -\left(\sqrt{2}+1\right)\left|2\right\rangle \right)}{\sqrt{1+2+2\sqrt{2}+1}}=\frac{1}{\sqrt{4+2\sqrt{2}}}\left(\left|1\right\rangle -\left(\sqrt{2}+1\right)\left|2\right\rangle \right)
+\]
+
+Desta forma, reescrevendo os autovetores utilizando um resultado numérico, obtemos que:
+
+\[
+\left|\lambda_{+}\right\rangle =0.92\left|1\right\rangle +0.38\left|2\right\rangle \qquad\left|\lambda_{+}\right\rangle =0.38\left|1\right\rangle -0.92\left|2\right\rangle 
+\]
+
+
+\subsection{Problem 3}
+
+\textbf{A certain observable in quantum mechanics has a $3\times3$ matrix representation as follows:}
+
+\[
+\frac{1}{\sqrt{2}}\left(\begin{array}{ccc}
+0 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 0
+\end{array}\right)
+\]
+
+\textbf{a) Find the normalized eigenvectors of this observable and the corresponding eigenvalues. Is there any degeneracy?}
+
+\textbf{b) Give a physical example where all this is relevant.}
+
+Temos a seguinte matriz:
+
+\[
+\frac{1}{\sqrt{2}}\left(\begin{array}{ccc}
+0 & 1 & 0\\
+1 & 0 & 1\\
+0 & 1 & 0
+\end{array}\right)
+\]
+
+Calculando entao os autovalores:
+
+\[
+\left|\begin{array}{ccc}
+-\lambda & \frac{1}{\sqrt{2}} & 0\\
+\frac{1}{\sqrt{2}} & -\lambda & \frac{1}{\sqrt{2}}\\
+0 & \frac{1}{\sqrt{2}} & -\lambda
+\end{array}\right|=\left(-\lambda^{3}+\frac{\lambda}{4}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+A partir da seguinte equação de segundo grau $-\lambda\left(\lambda^{2}-1\right)=0$, obtemos os autovalores $\lambda_{1}=0$ e $\lambda_{2,3}=\pm1$. Desta forma já podemos concluir que não há autovalores degenerados. Para o primeiro autovalor:
+
+\[
+\left(\begin{array}{ccc}
+0 & \frac{1}{\sqrt{2}} & 0\\
+\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\\
+0 & \frac{1}{\sqrt{2}} & 0
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Da primeira e última linha temos que $x_{2}=0$. E da segunda linha que $x_{1}=-x_{3}$. Então para garantir a normalização escolhendo $x_{1}=\frac{1}{\sqrt{2}}$:
+
+\begin{align*}
+\left|\lambda_{1}\right\rangle  & =\left(\begin{array}{ccc}
+-\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\end{array}\right)^{T}
+\end{align*}
+
+De modo análogo para $\lambda_{2}=1$:
+
+\[
+\left(\begin{array}{ccc}
+-1 & \frac{1}{\sqrt{2}} & 0\\
+\frac{1}{\sqrt{2}} & -1 & \frac{1}{\sqrt{2}}\\
+0 & \frac{1}{\sqrt{2}} & -1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Da primeira linha $-x_{1}+\frac{x_{2}}{\sqrt{2}}=0$ ou $x_{1}=\frac{x_{2}}{\sqrt{2}}$. Fazendo análogo, da terceira linha obtemos que $\frac{x_{2}}{\sqrt{2}}-x_{3}=0$, então $x_{3}=\frac{x_{2}}{\sqrt{2}}$. Subtituindo ambos na segunda linha então:
+
+\begin{align*}
+\frac{1}{\sqrt{2}}\left(\frac{x_{2}}{\sqrt{2}}\right)-x_{2}+\frac{1}{\sqrt{2}}\left(\frac{x_{2}}{\sqrt{2}}\right) & =0\\
+\frac{x_{2}}{2}-x_{2}+\frac{x_{2}}{2} & =0\\
+\left(1-1\right)x_{2} & =0
+\end{align*}
+
+Então $x_{2}$ pode ser qualquer valor. Isto é esperado uma vez que a segunda linha ($L2$) pode ser escrito como uma combinaçaõ linear das outras linhas $\left(L_{2}=-\frac{1}{\sqrt{2}}\left(L_{1}+L_{3}\right)\right)$. Escolhendo $x_{2}=\sqrt{2}$ para facilitar, e normalizando, ficamos com
+
+\begin{align*}
+\left|\lambda_{2}\right\rangle  & \frac{1}{\sqrt{1+2+1}}\left(\begin{array}{ccc}
+1 & \sqrt{2} & 1\end{array}\right)^{T}\\
+\left|\lambda_{2}\right\rangle  & =\frac{1}{2}\left(\begin{array}{ccc}
+1 & \sqrt{2} & 1\end{array}\right)^{T}
+\end{align*}
+
+E por fim $\lambda_{3}=-1$:
+
+\[
+\left(\begin{array}{ccc}
+1 & \frac{1}{\sqrt{2}} & 0\\
+\frac{1}{\sqrt{2}} & 1 & \frac{1}{\sqrt{2}}\\
+0 & \frac{1}{\sqrt{2}} & 1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Então da primeira linha $x_{1}+\frac{x_{2}}{\sqrt{2}}=0$ ou $x_{1}=-\frac{x_{2}}{\sqrt{2}}$. Fazendo análogo, da terceira linha obtemos que $\frac{x_{2}}{\sqrt{2}}+x_{3}=0$, então $x_{3}=-\frac{x_{2}}{\sqrt{2}}$. Subtituindo ambos na segunda linha então:
+
+\begin{align*}
+\frac{1}{\sqrt{2}}\left(-\frac{x_{2}}{\sqrt{2}}\right)+x_{2}+\frac{1}{\sqrt{2}}\left(-\frac{x_{2}}{\sqrt{2}}\right) & =0\\
+-\frac{x_{2}}{2}+x_{2}-\frac{x_{2}}{2} & =0\\
+\left(1-1\right)x_{2} & =0
+\end{align*}
+
+Em situação análoga ao caso anterior, escolhemos: $x_{2}=-\sqrt{2}$ para facilitar, e normalizando, temos:
+
+\begin{align*}
+\left|\lambda_{3}\right\rangle  & \frac{1}{\sqrt{1+2+1}}\left(\begin{array}{ccc}
+1 & -\sqrt{2} & 1\end{array}\right)^{T}\\
+\left|\lambda_{3}\right\rangle  & =\frac{1}{2}\left(\begin{array}{ccc}
+1 & -\sqrt{2} & 1\end{array}\right)^{T}
+\end{align*}
+
+Logo os autovetores são:
+
+\[
+\left|\lambda_{1}\right\rangle =\left(\begin{array}{c}
+-\frac{1}{\sqrt{2}}\\
+0\\
++\frac{1}{\sqrt{2}}
+\end{array}\right)\qquad\left|\lambda_{2}\right\rangle =\frac{1}{2}\left(\begin{array}{c}
+1\\
+\sqrt{2}\\
+1
+\end{array}\right)\qquad\left|\lambda_{3}\right\rangle =\frac{1}{2}\left(\begin{array}{c}
+1\\
+-\sqrt{2}\\
+1
+\end{array}\right)
+\]
+
+b)
+
+Com a diferença de uma constante, esta matriz pode ser usada para representar o momento angular com spin unitário na direção $x$. Isto é possível pois junto com outras 2 ela faz parte de um grupo de objetos que satisfazem as relações de comutação para o momento angular, seja o momento angular orbital $L_{x}$ ou o de spin $S_{x}$, que são as notações normalmente empregas para se referir esta matriz. A constante multiplicativa tem o único efeito de multiplicar os autovalores da matriz, mantendo os mesmos autovetores. Portanto este é um exemplo físico onde tudo desenvolvido nesta questão é relevante.
+
+\subsection{Problem 4}
+
+\textbf{Find the linear combination of $\left|+\right\rangle $ and $\left|-\right\rangle $ kets that maximizes the uncertainty product }
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle 
+\]
+
+\textbf{Verify explicity that for the linear combination you found, the uncertainty relation for $S_{x}$ and $S_{y}$ is not violated.}
+
+Um estado qualquer formado pela combinação dos vetores $\left|+\right\rangle $ e $\left|-\right\rangle $ pode ser representado genericamente por:
+
+\[
+\left|\alpha\right\rangle =a\left|+\right\rangle +be^{i\beta}\left|-\right\rangle 
+\]
+
+Onde $a$ e $b$ são números reais e obedecem a condição de normalização: $a^{2}+b^{2}=1$. Qyeremos maximizar a incerteza do produto:
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle 
+\]
+
+Os operadores $S_{x}$e $S_{y}$ são dados por:
+
+\[
+S_{x}=\frac{\hbar}{2}\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\qquad S_{y}=\frac{i\hbar}{2}\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)
+\]
+
+Lembrando que:
+
+\[
+\left\langle \left(\Delta S_{i}\right)^{2}\right\rangle \equiv\left\langle S^{2}_{i}\right\rangle -\left\langle S_{i}\right\rangle ^{2}\qquad\left\langle S_{i}\right\rangle =\left\langle \alpha\left|S_{i}\right|\alpha\right\rangle 
+\]
+
+Começando então calculando $S^{2}_{i}$, lembrando que $\mathbb{I}=\left|+\right\rangle \left\langle +\right|+\left|-\right\rangle \left\langle -\right|$:
+
+\begin{align*}
+S^{2}_{x} & =\frac{\hbar}{2}\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\frac{\hbar}{2}\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\\
+ & =\frac{\hbar^{2}}{4}\left(\left|+\right\rangle \left\langle -|+\right\rangle \left\langle -\right|+\left|+\right\rangle \left\langle -|-\right\rangle \left\langle +\right|+\left|-\right\rangle \left\langle +|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +|-\right\rangle \left\langle +\right|\right)\\
+ & =\frac{\hbar^{2}}{4}\left(\left|+\right\rangle \left\langle +\right|+\left|-\right\rangle \left\langle -\right|\right)\\
+ & =\frac{\hbar^{2}}{4}
+\end{align*}
+
+E:
+
+\begin{align*}
+S^{2}_{y} & =\frac{i\hbar}{2}\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\frac{i\hbar}{2}\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\\
+ & =-\frac{\hbar^{2}}{4}\left[+\left|+\right\rangle \left\langle -|+\right\rangle \left\langle -\right|-\left|+\right\rangle \left\langle -|-\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle +|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +|-\right\rangle \left\langle +\right|\right]\\
+ & =-\frac{\hbar^{2}}{4}\left[-\left|+\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle -\right|\right]\\
+ & =\frac{\hbar^{2}}{4}\left[\left|+\right\rangle \left\langle +\right|+\left|-\right\rangle \left\langle -\right|\right]\\
+ & =\frac{\hbar^{2}}{4}
+\end{align*}
+
+Logo, temos que $S^{2}_{x}=S^{2}_{y}=\frac{\hbar^{2}}{4}=S^{2}$, sendo que $S=\frac{\hbar^{2}}{4}$ é uma constante. Então para o primeiro termo da relação de dispersão, independentemente se $S_{x}$ ou $S_{y}$, temos:
+
+\begin{align*}
+\left\langle S^{2}\right\rangle  & =\left\langle \alpha\left|S^{2}\right|\alpha\right\rangle =\left\langle \alpha\left|\frac{\hbar^{2}}{4}\right|\alpha\right\rangle =\frac{\hbar^{2}}{4}\left\langle \alpha|\alpha\right\rangle =\frac{\hbar^{2}}{4}
+\end{align*}
+
+E para o segundo termo:
+
+\begin{align*}
+\left\langle \alpha\left|S_{i}\right|\alpha\right\rangle  & =\left(\left\langle +\right|a+\left\langle -\right|be^{-i\beta}\right)S_{i}\left(a\left|+\right\rangle +be^{i\beta}\left|-\right\rangle \right)\\
+ & =a^{2}\left\langle +\right|S_{i}\left|+\right\rangle +abe^{i\beta}\left\langle +\right|S_{i}\left|-\right\rangle +abe^{-i\beta}\left\langle -\right|S_{i}\left|+\right\rangle +b^{2}\left\langle -\right|S_{i}\left|-\right\rangle 
+\end{align*}
+
+Para $S_{x}$:
+
+\begin{align*}
+\left\langle \alpha\left|S_{x}\right|\alpha\right\rangle = & \frac{\hbar}{2}\left(a^{2}\left\langle +\right|\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|+\right\rangle +abe^{i\beta}\left\langle +\right|\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|-\right\rangle +\right.\\
+ & \left.ab\left\langle -\right|\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|+\right\rangle e^{-i\beta}+b^{2}\left\langle -\right|\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|-\right\rangle \right)\\
+= & \frac{\hbar}{2}\left(a^{2}\left(\left\langle +|+\right\rangle \left\langle -|+\right\rangle +\left\langle +|-\right\rangle \left\langle +|+\right\rangle \right)+abe^{i\beta}\left(\left\langle +|+\right\rangle \left\langle -|-\right\rangle +\left\langle +|-\right\rangle \left\langle +|-\right\rangle \right)+\right.\\
+ & \left.ab\left(\left\langle -|+\right\rangle \left\langle -|+\right\rangle +\left\langle -|-\right\rangle \left\langle +|+\right\rangle \right)e^{-i\beta}+b^{2}\left(\left\langle -|+\right\rangle \left\langle -|-\right\rangle +\left\langle -|-\right\rangle \left\langle +|-\right\rangle \right)\right)\\
+= & \frac{\hbar}{2}\left(abe^{i\beta}+abe^{-i\beta}\right)\\
+= & \hbar ab\frac{\left(e^{i\beta}+e^{-i\beta}\right)}{2}\\
+= & \hbar ab\cos\beta
+\end{align*}
+
+Para $S_{y}$:
+
+\begin{align*}
+\left\langle \alpha\left|S_{y}\right|\alpha\right\rangle = & \frac{i\hbar}{2}\left(a^{2}\left\langle +\right|\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|+\right\rangle +abe^{i\beta}\left\langle +\right|\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|-\right\rangle +\right.\\
+ & \left.ab\left\langle -\right|\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|+\right\rangle e^{-i\beta}+b^{2}\left\langle -\right|\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left|-\right\rangle \right)\\
+= & \frac{i\hbar}{2}\left(a^{2}\left(-\left\langle +|+\right\rangle \left\langle -|+\right\rangle +\left\langle +|-\right\rangle \left\langle +|+\right\rangle \right)+abe^{i\beta}\left(-\left\langle +|+\right\rangle \left\langle -|-\right\rangle +\left\langle +|-\right\rangle \left\langle +|-\right\rangle \right)+\right.\\
+ & \left.ab\left(-\left\langle -|+\right\rangle \left\langle -|+\right\rangle +\left\langle -|-\right\rangle \left\langle +|+\right\rangle \right)e^{-i\beta}+b^{2}\left(-\left\langle -|+\right\rangle \left\langle -|-\right\rangle +\left\langle -|-\right\rangle \left\langle +|-\right\rangle \right)\right)\\
+= & \frac{i\hbar}{2}\left(-abe^{i\beta}+abe^{-i\beta}\right)\\
+= & \hbar ab\frac{i\left(-e^{i\beta}+e^{-i\beta}\right)}{2}\\
+= & \hbar ab\frac{\left(e^{i\beta}-e^{-i\beta}\right)}{2i}\\
+ & =\hbar ab\sin\beta
+\end{align*}
+
+Logo temos:
+
+\[
+\left\langle S_{x}\right\rangle =\hbar ab\cos\beta\qquad\left\langle S_{y}\right\rangle =\hbar ab\sin\beta\rightarrow\left\langle S_{x}\right\rangle ^{2}=\left(\hbar ab\cos\beta\right)^{2}\qquad\left\langle S_{y}\right\rangle ^{2}=\left(\hbar ab\sin\beta\right)^{2}
+\]
+
+Substituindo então as relações de dispersão:
+
+\begin{align*}
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle = & \left\langle S^{2}_{x}\right\rangle -\left\langle S_{x}\right\rangle ^{2} & \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle = & \left\langle S^{2}_{y}\right\rangle -\left\langle S_{y}\right\rangle ^{2}\\
+= & \frac{\hbar^{2}}{4}-\left(\hbar ab\cos\beta\right)^{2} & = & \frac{\hbar^{2}}{4}-\left(\hbar ab\sin\beta\right)^{2}
+\end{align*}
+
+Então temos o seguinte produto da incerteza:
+
+\begin{align*}
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle  & =\left(\frac{\hbar^{2}}{4}-\left(\hbar ab\cos\beta\right)^{2}\right)\left(\frac{\hbar^{2}}{4}-\left(\hbar ab\sin\beta\right)^{2}\right)\\
+ & =\hbar^{4}\left[\frac{1}{16}-\frac{\left(ab\sin\beta\right)^{2}}{4}-\frac{\left(ab\cos\beta\right)^{2}}{4}+\left(ab\cos\beta\right)^{2}\left(ab\sin\beta\right)^{2}\right]\\
+ & =\hbar^{4}\left[\frac{1}{16}-\left(\frac{ab}{2}\right)^{2}+\left(ab\right)^{4}\left(\frac{2\cos\beta\sin\beta}{2}\right)^{2}\right]
+\end{align*}
+
+E usando a identidade trigonométrica $\sin\left(2x\right)=2\sin x\cos x$, então a incerteza é:
+
+\begin{align*}
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle  & =\hbar^{4}\left[\frac{1}{16}-\left(\frac{ab}{2}\right)^{2}+\left(ab\right)^{4}\left(\frac{\sin\left(2\beta\right)}{2}\right)^{2}\right]
+\end{align*}
+
+Como os termos $\left(ab\right)^{2}$ são necessariamente positivos, para maximizar a incerteza é necessário que $\sin\left(2\beta\right)=1$. Considerando $-\pi\leq\beta\leq+\pi$:
+
+\[
+2\beta=\pm\frac{\pi}{2}\rightarrow\beta=\frac{\pi}{4}
+\]
+
+Nesta situação temos que:
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle =\frac{\hbar^{4}}{16}+\hbar^{4}\left(\frac{ab}{2}\right)^{2}\left[\left(ab\right)^{2}-1\right]
+\]
+
+Pela condição de normalização temos que $b^{2}=1-a^{2}$, então:
+
+\begin{align*}
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle  & =\frac{\hbar^{4}}{16}\left[1+\left[2a^{2}\left(1-a^{2}\right)\right]^{2}-4a^{2}\left(1-a^{2}\right)\right]\\
+ & =\frac{\hbar^{4}}{16}\left[1-2a^{2}\left(1-a^{2}\right)\right]^{2}
+\end{align*}
+
+Novamente pelas condições de normalização temos que $0\leq a^{2}\leq1$, então $\left(1-a^{2}\right)\geq0$, de forma que $2a^{2}\left(1-a^{2}\right)\geq0$, assim queremos que $a^{2}\left(1-a^{2}\right)=0$. Podemos observar facilmente que isso é obtido com $a=\pm1$ ou $a=0$. Dessa forma temos que o máximo de incerteza dado por:
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle =\frac{\hbar^{4}}{16}
+\]
+
+relembrando nosso estado geral:
+
+\[
+\left|\alpha\right\rangle =a\left|+\right\rangle +be^{i\beta}\left|-\right\rangle 
+\]
+
+Ou ainda:
+
+\[
+\left|\alpha\right\rangle =a\left|+\right\rangle +\sqrt{1-a^{2}}e^{i\beta}\left|-\right\rangle 
+\]
+
+Então o máximo de incerteza ocorre quando $a=0$ e temos que $\beta=\pm\frac{\pi}{4}$:
+
+\[
+\left|\alpha_{1}\right\rangle =\pm e^{\pm\frac{\pi}{4}i}\left|-\right\rangle 
+\]
+
+Ou se $a=\pm1$:
+
+\[
+\left|\alpha_{2}\right\rangle =\pm\left|+\right\rangle 
+\]
+
+Por fim, só nos resta verificar explicitamente que estas combinações lineares que encontramos não violam a relação de incerteza. Isto é, uma vez que a relação de incerteza para $S_{x}$e $S_{y}$ é dada por:
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle \geq\frac{1}{4}\left|\left\langle \left[S_{x},S_{y}\right]\right\rangle \right|^{2}
+\]
+
+Queremos demonstrar que :
+
+\[
+\frac{\hbar^{4}}{16}\geq\frac{1}{4}\left|\left\langle \left[S_{x},S_{y}\right]\right\rangle \right|^{2}
+\]
+
+Calculando então o comutador entre $S_{x}$ e $S_{y}$:
+
+\begin{align*}
+\left[S_{x},S_{y}\right]= & S_{x}S_{y}-S_{y}S_{x}\\
+= & \frac{\hbar}{2}\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\frac{i\hbar}{2}\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)-\frac{\hbar}{2}\frac{i\hbar}{2}\left(-\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\left(\left|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +\right|\right)\\
+= & \frac{i\hbar^{2}}{4}\left(-\left|+\right\rangle \left\langle -|+\right\rangle \left\langle -\right|+\left|+\right\rangle \left\langle -|-\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle +|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +|-\right\rangle \left\langle +\right|\right)-\\
+ & \frac{i\hbar^{2}}{4}\left(-\left|+\right\rangle \left\langle -|+\right\rangle \left\langle -\right|-\left|+\right\rangle \left\langle -|-\right\rangle \left\langle +\right|+\left|-\right\rangle \left\langle +|+\right\rangle \left\langle -\right|+\left|-\right\rangle \left\langle +|-\right\rangle \left\langle +\right|\right)\\
+= & \frac{i\hbar^{2}}{4}\left(2\left|+\right\rangle \left\langle +\right|-2\left|-\right\rangle \left\langle -\right|\right)\\
+= & i\hbar\left[\frac{\hbar}{2}\left(\left|+\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle -\right|\right)\right]\\
+= & i\hbar S_{z}
+\end{align*}
+
+Usando então $\left|\alpha_{1}\right\rangle $ obtemos:
+
+\begin{align*}
+\left\langle \left[S_{x},S_{y}\right]\right\rangle _{1}= & \left\langle \alpha_{1}\left|i\hbar S_{z}\right|\alpha_{1}\right\rangle \\
+= & \frac{i\hbar^{2}}{2}\left[\left\langle -\right|e^{\mp\frac{\pi}{4}i}\left(\left|+\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle -\right|\right)e^{\pm\frac{\pi}{4}i}\left|-\right\rangle \right]\\
+= & \frac{i\hbar^{2}}{2}\left[\left(\left\langle -|+\right\rangle \left\langle +|-\right\rangle -\left\langle -|-\right\rangle \left\langle -|-\right\rangle \right)\right]\\
+= & -\frac{i\hbar^{2}}{2}
+\end{align*}
+
+Usando então $\left|\alpha_{2}\right\rangle $ obtemos:
+
+\begin{align*}
+\left\langle \left[S_{x},S_{y}\right]\right\rangle _{2}= & \left\langle \alpha_{2}\left|i\hbar S_{z}\right|\alpha_{2}\right\rangle \\
+= & \frac{i\hbar^{2}}{2}\left[\left\langle +\right|\pm\left(\left|+\right\rangle \left\langle +\right|-\left|-\right\rangle \left\langle -\right|\right)\pm\left|+\right\rangle \right]\\
+= & \frac{i\hbar^{2}}{2}\left[\left(\left\langle +|+\right\rangle \left\langle +|+\right\rangle -\left\langle +|-\right\rangle \left\langle -|+\right\rangle \right)\right]\\
+= & \frac{i\hbar^{2}}{2}
+\end{align*}
+
+Então independente de qual combinação linear escolhermos, ficamos com:
+
+\[
+\left|\left\langle \left[S_{x},S_{y}\right]\right\rangle \right|=\frac{\hbar^{2}}{2}
+\]
+
+Consequentemente:
+
+\[
+\left|\left\langle \left[S_{x},S_{y}\right]\right\rangle \right|^{2}=\frac{\hbar^{4}}{4}
+\]
+
+Logo a relação de incerteza é:
+
+\[
+\left\langle \left(\Delta S_{x}\right)^{2}\right\rangle \left\langle \left(\Delta S_{y}\right)^{2}\right\rangle \geq\frac{\hbar^{4}}{16}
+\]
+
+Portanto ela não é violada, uma vez que:
+
+\[
+\frac{\hbar^{4}}{16}\geq\frac{\hbar^{4}}{16}
+\]
+
+É uma igualdade válida.
+\end{document}

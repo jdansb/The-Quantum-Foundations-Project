@@ -2,28 +2,56 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{luainputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
 \usepackage{babel}
 \begin{document}
-\title{The Two Slit Experiment }
+\title{Few experiments}
 \author{Jhordan Silveira de Borba}
-
 \maketitle
 
+\subsection{The Double Slite Experiment}
 
-\section{Stern Gerlach experiment}
+We will base this discussion almost entirely on the content provided by Professor David Tong.
 
-cresser
+The double slit set-up is a simple but iconic experiment that vividly demonstrates some of the stranger aspects of quantum mechanics. To set the scene, we first describe two experiments from classical physics. The set-up in both is the same: there is a wall, with two openings in it. These are the eponymous double slits. Behind the wall is a detector. You stand in front of the wall and throw things. The only difference between the two experiments lies in what you throw.
 
-\section{Bohms Teory}
+First, we throw particles. These are boring classical particles, like tennis balls. You throw randomly in the direction of the wall. Some simply bounce off the wall, while others get lucky and go through the slits. Then you measure the distribution of balls seen in the detector.
 
-David Albert
+In this case, things are nice and simple. Suppose that you close the bottom slit, keeping only the top slit open, and then measure the distribution of balls reaching the detector, call this $P_{1}$. Similarly, if you close the top slit, but keep the bottom slit open then you measure the same distribution just shifted downwards, call this $P\left(2\right)$. Now open both slits. What you see is the sum of the previous distributions $P_{12}=P_{1}+P_{2}$, so far, so good.
 
-\section{Desigualdade de bell}
+Our second experiment is the same, but now with waves rather than particles. For our purposes, these can be water waves, sound waves or light waves. For any kind of wave, there is a new ingredient that dramatically changes the outcome: this is interference. Here we give a broad brush description of the physics.
 
-David Albert
+First, we open one slit and not the other. The waves are diffracted at the slit and propagate out radially towards the detector where we can measure their intensity. The end result is very similar to that of a particle: a distribution spread out, peaked around the position of the first slit. 
 
-localidade e realidade
+The real difference comes when we open both slits. The waves pass through along two paths and, when they recombine on the other side, add constructively or destructively. Crucially, at some positions the intensity when both slits are open can be less than when any single slit is open. This happens, for example, at positions where the two waves cancel themselves out completely so the intensity on the screen vanishes. An interference pattern of this kind can be seen vividly using lasers.
+
+With this classical intuition in place, we now turn to the quantum world. We will perform the double slit experiment one last time, now with quantum particles, say electrons. For appropriately sized slits, the result is a combination of the two classical experiments described above. First, when we detect an electron it appears just like a classical particle would appear. That means that each time we play the game, the electron appears as a point on the detector, rather than something continuous and smeared out like a wave. However, after playing the game many times, the probability distribution seen on the screen agrees with that of a classical wave, exhibiting an interference pattern. 
+
+Perhaps the most striking aspect of this result is that there are certain places on the screen where fewer electrons are detected when both slits are open than when any one slit is open. There’s no way to explain this from a classical worldview where the particle follows a trajectory that goes either through the first slit or through the second. It must be that each particle somehow knows about the presence of both slits.
+
+We can understand this behaviour from what little we know about quantum mechanics. First, when one slit is open, the particle is described by a wavefunction $\psi_{1}\left(x\right)$ and the probability distribution that we see on the screen is
+
+$P_{1}\left(x\right)=\left|\psi_{1}\left(x\right)\right|^{2}$.
+
+Similarly, with the second slit open and the first closed, we have $P_{2}\left(x\right)=\left|\psi_{2}\left(x\right)\right|^{2}$. But when both slits are open, the principle of superposition tells us that it is the wavefunctions that add, not the probabilities. This means that we have $\psi_{12}\left(x\right)=\psi_{1}\left(x\right)+\psi_{2}\left(x\right)$ and so the new probability distribution is
+
+\[
+P_{12}\left(x\right)=\left|\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right|^{2}=P_{1}+P_{2}+\psi^{*}_{1}\left(x\right)\psi_{2}\left(x\right)+\psi_{1}\left(x\right)\psi^{*}_{2}\left(x\right)
+\]
+
+We see that the cross-terms mean that $P_{12}\neq P_{1}+P_{2}$. These cross-terms are responsible for the interference pattern.
+
+The conclusion that each electron necessarily passes through both slits is, to say the least, a little surprising. One could try to find a clever way to evade it, perhaps by setting up some ingenious apparatus near one of the slits that will tell us for sure which slit the particle travelled through. It turns out that any attempt to do this will necessarily disturb the state of the particle. For example, if you know for sure that the particle passed through slit 1 (or, equivalently, that it did not pass through slit 2) then the wavefunction collapses to $\psi_{12}\left(x\right)\rightarrow\psi_{1}\left(x\right)$, and the interference pattern disappears. 
+
+Quantum mysteries are often phrased as the question of whether an electron is a particle or a wave. The answer that is usually given is: both. A much better answer is: neither. Electrons, like all quantum objects, exist in a regime where our everyday experience is of little use. The idea that such objects can be described in terms of things that we can find on the beach is, to put it mildly, a little immature. 
+
+A quantum particle is, instead, described by a wavefunction. The right way to proceed is not to search for some classical metaphor that will capture some aspect of the quantum particle, but instead to better understand the rules that govern these wavefunctions.
+
+I would like to emphasize this experiment once again. Notice that, individually, each electron is detected at the screen as a localized event, that is, as a point-like detection. It is not possible to observe the interference pattern from a single electron; the pattern emerges statistically when we repeat the experiment many times, since the distribution of electrons on the screen follows a probability distribution that exhibits characteristic features of wave interference. But notice that the mathematical description in terms of a wave applies to the wave function, which we use to calculate probabilities, such as the probability of finding the electron at a given position, and not as a direct description of the electron itself.
+
+We should also keep clearly in mind that this does not mean that the electron “knows” that it is being observed or responds to a consciousness. What matters is the physical interaction involved in obtaining information about the system. In order to determine which slit the electron passed through, it is necessary to interact with the electron and thereby detect it beforehand. This interaction alters the quantum state of the system and, in a description in terms of wave-function collapse, causes the wave function to collapse.
+
+
 \end{document}

@@ -1,0 +1,594 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Problem set 3}
+
+\maketitle
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\textbf{1)}
+
+Dados do enunciado:
+\begin{itemize}
+\item $V\left(x\right)=-fx$ onde $f>0$
+\end{itemize}
+\textbf{a)}
+
+A encontrar:
+\begin{itemize}
+\item Escrever teorema de Ehrenfest para $\left\langle X\right\rangle $ e $\left\langle P\right\rangle $:
+\item Integrara as equações e comparar com o movimento clássico
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}-fX$ , hamiltoniano do problema;
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $, teorema generalizado de Ehrenfest, onde $O$ é qualquer operador.
+\item $\left[X,O\left(P\right)\right]=i\hbar\frac{\partial O}{\partial P}$
+\item $\left[P,O\left(X\right)\right]=-i\hbar\frac{\partial O}{\partial X}$
+\end{itemize}
+Então para $X$:
+
+\[
+\frac{d\left\langle X\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[X,H\right]\right\rangle +\left\langle \frac{\partial X}{\partial t}\right\rangle 
+\]
+
+Como o operador $X$ não depende explícitamente do tempo, temos:
+
+\begin{align*}
+\frac{d\left\langle X\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle \left[X,H\right]\right\rangle =\left\langle \frac{\partial H}{\partial P}\right\rangle =\frac{\left\langle P\right\rangle }{m}
+\end{align*}
+
+E de modo análogo para $P$:
+
+\[
+\frac{d\left\langle P\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[P,H\right]\right\rangle +\left\langle \frac{\partial P}{\partial t}\right\rangle =-\frac{i}{\hbar}\left\langle \left[P,H\right]\right\rangle =-\left\langle \frac{\partial H}{\partial X}\right\rangle =-\left\langle \frac{\partial V}{\partial X}\right\rangle =f
+\]
+
+Logo obtemos então:
+
+\[
+m\frac{d\left\langle X\right\rangle }{dt}=\left\langle P\right\rangle \qquad\frac{d\left\langle P\right\rangle }{dt}=-\left\langle \frac{\partial V}{\partial X}\right\rangle 
+\]
+
+Uma vez que $\frac{\partial V}{\partial X}=-f\mathbb{I}$, e o valor esperado do operador identidade $\mathbb{I}$ a respeito do estado normalizado é $1$. Integrando então a equação para o momento de $t=0$ a $t$ e denotando $\left\langle P\right\rangle _{0}=\left\langle P\right\rangle _{t=0}$ :
+
+\begin{align*}
+d\left\langle P\right\rangle  & =fdt\\
+\left\langle P\right\rangle -\left\langle P\right\rangle _{0} & =ft\\
+\left\langle P\right\rangle  & =\left\langle P\right\rangle _{0}+ft
+\end{align*}
+
+E resolvendo então para a posição, temos:
+
+\begin{align*}
+d\left\langle X\right\rangle  & =\frac{\left\langle P\right\rangle }{m}dt\\
+d\left\langle X\right\rangle  & =\left(\left\langle P\right\rangle _{0}+ft\right)\frac{1}{m}dt\\
+\left\langle X\right\rangle -\left\langle X\right\rangle _{0} & =\left\langle P\right\rangle _{0}\frac{t}{m}+\frac{ft^{2}}{2m}\\
+\left\langle X\right\rangle  & =\left\langle X\right\rangle _{0}+\left\langle P\right\rangle _{0}\frac{t}{m}+\frac{ft^{2}}{2m}
+\end{align*}
+
+Então os resultados são:
+
+\[
+\left\langle P\right\rangle =\left\langle P\right\rangle _{0}+ft\qquad\left\langle X\right\rangle =\left\langle X\right\rangle _{0}+\left\langle P\right\rangle _{0}\frac{t}{m}+\frac{ft^{2}}{2m}
+\]
+
+Estes resultados tem a forma idêntica quando comparado com o movimento clássico:
+
+\textbf{b)}
+
+A encontrar:
+\begin{itemize}
+\item Mostrar que o desvio padrão $\Delta P$ não varia com o tempo.
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}-fX$ 
+\item $\left(\Delta P\right)^{2}=\left\langle P^{2}\right\rangle -\left\langle P\right\rangle ^{2}$, quadrado do desvio padrão;
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $
+\item Soluções obtidas anteriormente:
+\begin{itemize}
+\item $\frac{d}{dt}\left\langle X\right\rangle =\frac{\left\langle P\right\rangle }{m}$
+\item $\frac{d}{dt}\left\langle P\right\rangle =f$
+\end{itemize}
+\end{itemize}
+Então, a partir do Teorema generalizado de Ehrenfest, tendo $O=H$, e sendo o hamiltoniano independente do tempo, sendo que comuta conigo mesmo, então $\frac{d\left\langle H\right\rangle }{dt}=\left\langle \left[O,H\right]\right\rangle =\left\langle \frac{\partial H}{\partial t}\right\rangle =0$. Dessa forma, utilizando o lado esquerdo da igualdade, o hamiltoniano do problema e o resultado obtido na solução anterior para derivada teporal de $\left\langle X\right\rangle $, temos:
+
+\begin{align*}
+\frac{d\left\langle H\right\rangle }{dt} & =\frac{d}{dt}\left\langle \frac{P^{2}}{2m}-fX\right\rangle \\
+0 & =\frac{1}{2m}\frac{d}{dt}\left\langle P^{2}\right\rangle -f\frac{d}{dt}\left\langle X\right\rangle \\
+0 & =\frac{1}{2m}\frac{d}{dt}\left\langle P^{2}\right\rangle -f\frac{\left\langle P\right\rangle }{m}\\
+\frac{d}{dt}\left\langle P^{2}\right\rangle  & =2f\frac{\left\langle P\right\rangle }{m}
+\end{align*}
+
+E também do resultado anterior obtemos a derivada temporal de $\left\langle P\right\rangle $, então:
+
+\begin{align*}
+\frac{d}{dt}\left\langle P\right\rangle ^{2} & =2\left\langle P\right\rangle \frac{d}{dt}\left\langle P\right\rangle \\
+ & =2f\left\langle P\right\rangle 
+\end{align*}
+
+Temos que o quadrado do desvio padrão é:
+
+\[
+\left(\Delta P\right)^{2}=\left\langle P^{2}\right\rangle -\left\langle P\right\rangle ^{2}
+\]
+
+Derivando e substituindo então os resultados encontrados:
+
+\begin{align*}
+\frac{d}{dt}\left(\Delta P\right)^{2} & =\frac{d}{dt}\left(\left\langle P^{2}\right\rangle -\left\langle P\right\rangle ^{2}\right)\\
+\left(\Delta P\right)\frac{d}{dt}\left(\Delta P\right) & =2f\frac{\left\langle P\right\rangle }{m}-2f\left\langle P\right\rangle \\
+\frac{d}{dt}\left(\Delta P\right) & =0
+\end{align*}
+
+Logo $\Delta P$ não varia no tempo.
+
+\textbf{c)}
+
+A encontrar:
+\begin{itemize}
+\item Escrever a equaçaõ de Schrodinger na representação $\left\{ \left|p\right\rangle \right\} $
+\item Deduzir uma relação entre $\frac{\partial}{\partial t}\left|\left\langle p|\Psi\left(t\right)\right\rangle \right|^{2}$ e $\frac{\partial}{\partial p}\left|\left\langle p|\Psi\left(t\right)\right\rangle \right|^{2}$
+\item Integrar a equação obtida
+\item Obter uma interpretação física
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}-fX$ 
+\item $i\hbar\frac{d}{dt}\left|\Psi\left(t\right)\right\rangle =H\left|\Psi\left(t\right)\right\rangle $, equação de Shcrodinger
+\end{itemize}
+A equação de Schrodinger então, na representação $\left\{ \left|p\right\rangle \right\} $:
+
+\begin{align*}
+i\hbar\frac{\partial}{\partial t}\left\langle p|\Psi\left(t\right)\right\rangle  & =\left\langle p\right|H\left|\Psi\left(t\right)\right\rangle \\
+ & =\left\langle p\right|\left(\frac{P^{2}}{2m}-fX\right)\left|\Psi\left(t\right)\right\rangle \\
+ & =\frac{\left\langle p\left|P^{2}\right|\Psi\left(t\right)\right\rangle }{2m}-f\left\langle p\left|X\right|\Psi\left(t\right)\right\rangle 
+\end{align*}
+
+Sendo então a função de onda na representação $\left\{ \left|p\right\rangle \right\} $ definida como $\psi\left(p,t\right)\equiv\left\langle p|\Psi\left(t\right)\right\rangle $, $P$ auto-adjunto e $P\left|p\right\rangle =p\left|p\right\rangle $, além disso precisamos lembrar que na representação do momento temos $X=i\hbar\frac{\partial}{\partial p}$, então:
+
+\begin{align*}
+i\hbar\frac{d\left\langle p|\Psi\left(t\right)\right\rangle }{dt} & =p^{2}\frac{\left\langle p|\Psi\left(t\right)\right\rangle }{2m}-fi\hbar\frac{\partial}{\partial p}\left\langle p|\Psi\left(t\right)\right\rangle \\
+ & =\left(\frac{p^{2}}{2m}-fi\hbar\frac{\partial}{\partial p}\right)\left\langle p|\Psi\left(t\right)\right\rangle \\
+i\hbar\frac{d\psi\left(p,t\right)}{dt} & =\left(\frac{p^{2}}{2m}-fi\hbar\frac{\partial}{\partial p}\right)\psi\left(p,t\right)
+\end{align*}
+
+Então agora queremos deduzir uma relação entre $\frac{\partial}{\partial t}\left|\psi\left(p,t\right)\right|^{2}$ e $\frac{\partial}{\partial p}\left|\psi\left(p,t\right)\right|^{2}$. Derivandoe usando o resultado obtido interiormente:
+
+\begin{align*}
+\frac{\partial}{\partial t}\left|\psi\left(p,t\right)\right|^{2} & =\frac{\partial}{\partial t}\left(\psi^{*}\left(p,t\right)\psi\left(p,t\right)\right)\\
+ & =\psi^{*}\left(p,t\right)\frac{\partial}{\partial t}\psi\left(p,t\right)+\psi\left(p,t\right)\frac{\partial}{\partial t}\psi^{*}\left(p,t\right)\\
+ & =\psi^{*}\left(p,t\right)\left(-\frac{ip^{2}}{2m\hbar}-f\frac{\partial}{\partial p}\right)\psi\left(p,t\right)+\psi\left(p,t\right)\left(\frac{ip^{2}}{2m\hbar}-f\frac{\partial}{\partial p}\right)\psi^{*}\left(p,t\right)\\
+ & =-f\psi^{*}\left(p,t\right)\frac{\partial}{\partial p}\psi\left(p,t\right)-f\psi\left(p,t\right)\frac{\partial}{\partial p}\psi^{*}\left(p,t\right)\\
+ & =-f\left[\psi^{*}\left(p,t\right)\frac{\partial}{\partial p}\psi\left(p,t\right)+\psi\left(p,t\right)\frac{\partial}{\partial p}\psi^{*}\left(p,t\right)\right]\\
+ & =-f\left[\frac{\partial}{\partial p}\left(\psi^{*}\left(p,t\right)\psi\left(p,t\right)\right)\right]\\
+ & =-f\frac{\partial}{\partial p}\left|\psi\left(p,t\right)\right|^{2}
+\end{align*}
+
+Denotando então $\Phi\left(p,t\right)\equiv\left|\psi\left(p,t\right)\right|^{2}$ para facilitar. Então a relação obtida é:
+
+\begin{equation}
+\frac{\partial\Phi\left(p,t\right)}{\partial t}=-f\frac{\partial\Phi\left(p,t\right)}{\partial p}\label{eq:1}
+\end{equation}
+
+Fazendo as seguintes mudanças de variáveis:
+
+\[
+r\equiv p-ft\qquad s\equiv p+ft
+\]
+
+Então:
+
+\begin{align*}
+\frac{\partial\Phi\left(p,t\right)}{\partial t} & =\frac{\partial\Phi\left(p,t\right)}{\partial r}\frac{\partial r}{\partial t}+\frac{\partial\Phi\left(p,t\right)}{\partial s}\frac{\partial s}{\partial t}\\
+ & =f\left(\frac{\partial\Phi\left(p,t\right)}{\partial s}-\frac{\partial\Phi\left(p,t\right)}{\partial r}\right)
+\end{align*}
+
+E de modo análogo:
+
+\begin{align*}
+\frac{\partial\Phi\left(p,t\right)}{\partial p} & =\frac{\partial\Phi\left(p,t\right)}{\partial r}\frac{\partial r}{\partial p}+\frac{\partial\Phi\left(p,t\right)}{\partial s}\frac{\partial s}{\partial p}\\
+ & =\frac{\partial\Phi\left(p,t\right)}{\partial s}+\frac{\partial\Phi\left(p,t\right)}{\partial r}
+\end{align*}
+
+Substituindo então:
+
+\begin{align*}
+\frac{\partial\Phi\left(p,t\right)}{\partial t} & =-f\frac{\partial\Phi\left(p,t\right)}{\partial p}\\
+f\left(\frac{\partial\Phi\left(p,t\right)}{\partial s}-\frac{\partial\Phi\left(p,t\right)}{\partial r}\right) & =-f\left(\frac{\partial\Phi\left(p,t\right)}{\partial s}+\frac{\partial\Phi\left(p,t\right)}{\partial r}\right)\\
+f\frac{\partial\Phi\left(p,t\right)}{\partial s} & =-f\frac{\partial\Phi\left(p,t\right)}{\partial s}\\
+\frac{\partial\Phi\left(p,t\right)}{\partial s} & =0
+\end{align*}
+
+Logo $\Phi$ é uma função apenas de $r$. Isto é:
+
+\[
+\Phi\left(p,t\right)=g\left(r\right)=g\left(p-ft\right)
+\]
+
+Onde $g\left(r\right)$ é um função qualquer. E como:
+
+\[
+\Phi\left(p-ft,0\right)=g\left(r\right)=g\left(p-ft\right)
+\]
+
+Então:
+
+\[
+\Phi\left(p,t\right)=\Phi\left(p-ft,0\right)
+\]
+
+E uma vez que $\Phi\left(p,t\right)\equiv\left|\psi\left(p,t\right)\right|^{2}$, então singifica que a distribuição de probabilidade e$p$ se move de acordo com a equação clássica do movimento $p=p_{0}+ft$. Isto é um resultado esperado uma vez que a equação \ref{eq:1} é um caso particular de equação de transporte linear\cite{Anu:2013}, ou seja, ela modela o transporte um dado inicial, o que neste caso é a distribuição de probabilidade. Podemos ainda integrar explícitamente a edp de primeira ordem utilizando o método de separação de varáiveis:
+
+\[
+-\frac{\partial\Phi\left(p,t\right)}{\partial t}\frac{1}{f}=\frac{\partial\Phi\left(p,t\right)}{\partial p}
+\]
+
+Supondo uma solução do tipo $\Phi\left(p,t\right)=P\left(p\right)T\left(t\right)$, temos:
+
+\begin{align*}
+-\frac{1}{f}\frac{\partial P\left(p\right)T\left(t\right)}{\partial t} & =\frac{\partial P\left(p\right)T\left(t\right)}{\partial p}\\
+-\frac{1}{fT\left(t\right)}\frac{\partial T\left(t\right)}{\partial t} & =\frac{1}{P\left(p\right)}\frac{\partial P\left(p\right)}{\partial p}
+\end{align*}
+
+Então:
+
+\[
+-\frac{1}{T\left(t\right)}\frac{\partial T\left(t\right)}{\partial t}=\frac{f}{P\left(p\right)}\frac{\partial P\left(p\right)}{\partial p}=\lambda
+\]
+
+Onde $\lambda$ é uma constante. Resolvendo então:
+
+\[
+\frac{\partial T\left(t\right)}{\partial t}=-f\lambda T
+\]
+
+Temos: $T\left(t\right)=Ae^{\left(-\lambda f\right)t}$. E de forma análoga:
+
+\[
+\frac{\partial P\left(p\right)}{\partial p}=\lambda P
+\]
+
+Então $P\left(p\right)=Be^{\lambda p}$ e nossa solução pode ser escrita como:
+
+\[
+\Phi\left(p,t\right)=Ae^{\lambda p}e^{-\lambda ft}=A\exp\left[\lambda\left(p-ft\right)\right]
+\]
+
+Como esperado:
+
+\[
+\Phi\left(p-ft,0\right)=A\exp\left[\lambda\left(p-ft\right)\right]=\Phi\left(p,t\right)
+\]
+
+Para facilitar a compreensão podemos fixar um $p=p'$ e pensar na função no momento e instante $\Phi\left(p'-ft',0\right)$. A densidade de probabilidade em $p=p'-ft'$ no instante $t=0$, vai ser transportada para $p=p'$ no instante $t=t'$, em uma analogia com o caso clássico, isso ocorre com uma ``velocidade'' (entre aspas pois não tem dimensão de velocidade, mas de força) $f$.
+
+\textbf{2)}
+
+\textbf{a)}
+
+A encontrar:
+\begin{itemize}
+\item Através da aplicação do teorema de Ehrenfest mostrar que $\left\langle X\right\rangle $ é uma função linear do tempo e o o valor médio $\left\langle P\right\rangle $é constante.
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}$ , hamiltoniano do problema;
+\begin{itemize}
+\item $\frac{d}{dt}\left\langle X\right\rangle =\left\langle \frac{\partial H}{\partial P}\right\rangle $;
+\item $\frac{d}{dt}\left\langle P\right\rangle =-\left\langle \frac{\partial H}{\partial X}\right\rangle $;
+\end{itemize}
+\end{itemize}
+Temos então que:
+
+\[
+\frac{d}{dt}\left\langle X\right\rangle =\frac{\left\langle P\right\rangle }{m}\qquad\frac{d}{dt}\left\langle P\right\rangle =0
+\]
+
+Dessa forma já mostramos que $\left\langle P\right\rangle $ é constante. E integrando $\left\langle X\right\rangle $, obtemos:
+
+\begin{align*}
+d\left\langle X\right\rangle  & =\frac{\left\langle P\right\rangle }{m}dt\\
+\left\langle X\right\rangle -\left\langle X\right\rangle _{0} & =\frac{\left\langle P\right\rangle }{m}t\\
+\left\langle X\right\rangle  & =\left\langle X\right\rangle _{0}+\frac{\left\langle P\right\rangle _{0}}{m}t
+\end{align*}
+
+Onde denotamos $\left\langle P\right\rangle _{0}=\left\langle P\right\rangle $ uma vez que é constante, dessa forma $\left\langle X\right\rangle $ é uma função linear do tempo.
+
+\textbf{b)}
+
+A encontrar:
+\begin{itemize}
+\item Equações do movimento para os valores médios $\left\langle X^{2}\right\rangle $ e $\left\langle XP+PX\right\rangle $.
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}$ 
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $
+\item $X\left|\psi\right\rangle =x\left|\psi\right\rangle $, operador posição
+\item $\left\langle x\left|P\right|\psi\right\rangle =-i\frac{\partial}{\partial x}\left\langle x|\psi\right\rangle ,$ operador momento
+\end{itemize}
+Do teorema generalizado então, para o operador $O=X^{2}$, uma vez que o operador não depende explícitamente do tempo:
+
+\begin{align*}
+\frac{d\left\langle O\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle \\
+\frac{d\left\langle X^{2}\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle \left[X^{2},\frac{P^{2}}{2m}\right]\right\rangle +\left\langle \frac{\partial X^{2}}{\partial t}\right\rangle \\
+= & -\frac{i}{2m\hbar}\left\langle \left[X^{2},P^{2}\right]\right\rangle +0
+\end{align*}
+
+Sabendo que $\left[X,P\right]=i\hbar$, então
+
+\begin{align*}
+\left[X^{2},P^{2}\right] & =XXP^{2}-P^{2}XX\\
+ & =\left(XXP^{2}-XP^{2}X\right)+\left(XP^{2}X-P^{2}XX\right)\\
+ & =X\left(XP^{2}-P^{2}X\right)+\left(XP^{2}-P^{2}X\right)X\\
+ & =X\left(XP^{2}-P^{2}X\right)+\left(XP^{2}-P^{2}X\right)X\\
+ & =X\left(\left[XPP-PXP\right]+\left[PXP-PPX\right]\right)+\left(\left[XPP-PXP\right]+\left[PXP-PPX\right]\right)X\\
+ & =X\left(\left[XP-PX\right]P+P\left[XP-PX\right]\right)+\left(\left[XP-PX\right]P+P\left[XP-PX\right]\right)X\\
+ & =X\left(\left[X,P\right]P+P\left[X,P\right]\right)+\left(\left[X,P\right]P+P\left[X,P\right]\right)X\\
+ & =i\hbar\left(X\left(P+P\right)+\left(P+P\right)X\right)\\
+ & =2i\hbar\left(XP+PX\right)
+\end{align*}
+
+Então:
+
+\begin{align*}
+\frac{d\left\langle X^{2}\right\rangle }{dt}= & -\frac{i}{2m\hbar}\left\langle \left[X^{2},P^{2}\right]\right\rangle \\
+= & \frac{1}{m}\left\langle XP+PX\right\rangle 
+\end{align*}
+
+E para $\left\langle XP+PX\right\rangle $, temos de modo análogo:
+
+\begin{align*}
+\frac{d\left\langle XP+PX\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle \left[XP+PX,\frac{P^{2}}{2m}\right]\right\rangle \\
+= & -\frac{i}{2m\hbar}\left\langle \left[XP+PX,P^{2}\right]\right\rangle 
+\end{align*}
+
+Então:
+
+\begin{align*}
+\left[XP+PX,P^{2}\right] & =\left(XP+PX\right)P^{2}-P^{2}\left(XP+PX\right)\\
+ & =\left(\left[XP-PX\right]+PX+PX\right)P^{2}-P^{2}\left(\left[XP-XP\right]+XP+PX\right)\\
+ & =\left(\left[X,`P\right]+PX+PX\right)P^{2}-P^{2}\left(\left[X,`P\right]+XP+PX\right)\\
+ & =\left(i\hbar+2PX\right)P^{2}-P^{2}\left(i\hbar+2PX\right)\\
+ & =2\left[PXP^{2}-P^{2}PX\right]\\
+ & =2P\left[XPP-PPX\right]\\
+ & =2P\left[\left(XPP-PXP\right)+\left(PXP-PPX\right)\right]\\
+ & =2P\left[\left(XP-PX\right)P+P\left(XP-PX\right)\right]\\
+ & =2P\left[\left[X,P\right]P+P\left[X,P\right]\right]\\
+ & =2P\left[i\hbar P+i\hbar P\right]\\
+ & =4i\hbar P^{2}
+\end{align*}
+
+Então:
+
+\begin{align*}
+\frac{d\left\langle XP+PX\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle 4i\hbar P^{2}\right\rangle \\
+= & \frac{2}{m}\left\langle P^{2}\right\rangle 
+\end{align*}
+
+Integrando temos então para $\left\langle XP+PX\right\rangle $:
+
+\[
+\left\langle XP+PX\right\rangle =\left\langle XP+PX\right\rangle _{0}+\frac{2t}{m}\left\langle P^{2}\right\rangle 
+\]
+
+E subtituindo o resultado para $\left\langle X^{2}\right\rangle $.
+
+\[
+\frac{d\left\langle X^{2}\right\rangle }{dt}=\frac{1}{m}\left\langle XP+PX\right\rangle _{0}+\frac{2t}{m^{2}}\left\langle P^{2}\right\rangle 
+\]
+
+Logo:
+
+\[
+\left\langle X^{2}\right\rangle =\left\langle X^{2}\right\rangle _{0}+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}+\left\langle P^{2}\right\rangle \frac{t^{2}}{m^{2}}
+\]
+
+Então as equações do movimento são:
+
+\[
+\left\langle XP+PX\right\rangle =\left\langle XP+PX\right\rangle _{0}+\frac{2t}{m}\left\langle P^{2}\right\rangle \qquad\left\langle X^{2}\right\rangle =\left\langle X^{2}\right\rangle _{0}+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}+\left\langle P^{2}\right\rangle \frac{t^{2}}{m^{2}}
+\]
+
+\textbf{c)}
+
+A encontrar:
+\begin{itemize}
+\item Mostrar que escolhendo a origem correta o desvio padrão $\Delta X$ é dado por $\left(\Delta X\right)^{2}=\frac{1}{m^{2}}\left(\Delta P\right)^{2}_{0}t^{2}+\left(\Delta X\right)^{2}_{0}$.
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}$ 
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $
+\item $\left(\Delta X\right)^{2}=\left\langle X^{2}\right\rangle -\left\langle X\right\rangle ^{2}$
+\item Soluções obtidas anteriormente:
+\begin{itemize}
+\item $\left\langle X\right\rangle =\left\langle X\right\rangle _{0}+\frac{\left\langle P\right\rangle _{0}}{m}t$
+\item $\left\langle X^{2}\right\rangle =\left\langle X^{2}\right\rangle _{0}+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}+\left\langle P^{2}\right\rangle \frac{t^{2}}{m^{2}}$
+\end{itemize}
+\end{itemize}
+Lembrando então que o devio padrão obedece:
+
+\begin{align*}
+\left(\Delta X\right)^{2} & =\left\langle X^{2}\right\rangle -\left\langle X\right\rangle ^{2}\\
+ & =\left\langle X^{2}\right\rangle _{0}+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}+\left\langle P^{2}\right\rangle \frac{t^{2}}{m^{2}}-\left(\left\langle X\right\rangle _{0}+\frac{\left\langle P\right\rangle _{0}}{m}t\right)\left(\left\langle X\right\rangle _{0}+\frac{\left\langle P\right\rangle _{0}}{m}t\right)\\
+ & =\left\langle X^{2}\right\rangle _{0}+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}+\left\langle P^{2}\right\rangle \frac{t^{2}}{m^{2}}-\left(\left\langle X\right\rangle ^{2}_{0}+2\frac{\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}}{m}t+\frac{\left\langle P\right\rangle ^{2}_{0}}{m^{2}}t^{2}\right)\\
+ & =\left(\left\langle P^{2}\right\rangle _{0}-\left\langle P\right\rangle ^{2}_{0}\right)\frac{t^{2}}{m^{2}}+\left(\left\langle X^{2}\right\rangle _{0}-\left\langle X\right\rangle ^{2}_{0}\right)+\frac{t}{m}\left\langle XP+PX\right\rangle _{0}-2\frac{\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}}{m}t\\
+ & =\left(\Delta P\right)^{2}_{0}\frac{t^{2}}{m^{2}}+\left(\Delta X\right)^{2}_{0}+\left[\frac{t}{m}\left\langle XP+PX\right\rangle _{0}-\frac{2t}{m}\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}\right]\\
+ & =\left(\Delta P\right)^{2}_{0}\frac{t^{2}}{m^{2}}+\left(\Delta X\right)^{2}_{0}+\frac{t}{m}\left[\left\langle XP+PX\right\rangle _{0}-2\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}\right]
+\end{align*}
+
+Temos que $\left\langle P^{2}\right\rangle _{0}=\left\langle P^{2}\right\rangle =\text{constante}$ pois:
+
+\begin{align*}
+\frac{d\left\langle P^{2}\right\rangle }{dt}= & -\frac{i}{\hbar}\left\langle \left[P^{2},H\right]\right\rangle \\
+= & -\frac{i}{2m\hbar}\left\langle \left[P^{2},P^{2}\right]\right\rangle \\
+= & 0
+\end{align*}
+
+Para o caso de uma partícula livre como estsamos tratando, existe um $t$ em que invariavelmente temos $\left\langle XP+PX\right\rangle _{0}-\frac{1}{2}\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}=0$\cite{Anu:1998}, portanto podemos escolhê-lo como a origem temporal.. 
+
+\textbf{3)}
+
+Dados do enunciado:
+\begin{itemize}
+\item $H=\frac{P^{2}}{2m}+V\left(X\right)$ , hamiltoniano do problema;
+\item $V\left(X\right)=\lambda X^{n}$, potencial
+\end{itemize}
+\textbf{a)}
+
+A encontrar:
+\begin{itemize}
+\item O comutador $\left[H,XP\right]$
+\item Mostrar que se existe estados estacionários $\left|\varphi\right\rangle $ no potencial $V$ então $2\left\langle T\right\rangle =n\left\langle V\right\rangle $
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $
+\item $\left[A,B\right]=-\left[B,A\right]$
+\item $\left[X,O\left(P\right)\right]=i\hbar\frac{\partial O}{\partial P}$
+\item $\left[P,O\left(X\right)\right]=-i\hbar\frac{\partial O}{\partial X}$
+\item $T=\frac{P^{2}}{2m}$ , energia cinética
+\end{itemize}
+Calculando o comutador:
+
+\begin{align*}
+\left[H,XP\right] & =HXP-XPH\\
+ & =\left(\frac{P^{2}}{2m}+\lambda X^{n}\right)XP-XP\left(\frac{P^{2}}{2m}+\lambda X^{n}\right)\\
+ & =\frac{P^{2}XP}{2m}+\lambda X^{n}XP-XP\frac{P^{2}}{2m}+\lambda XPX^{n}\\
+ & =\left[\frac{P^{2}XP}{2m}-\frac{XP^{2}P}{2m}\right]+\left[\lambda X^{n}XP-\lambda XX^{n}P\right]+\left[\frac{XP^{2}P}{2m}-XP\frac{P^{2}}{2m}\right]+\left[\lambda XX^{n}P-\lambda XPX^{n}\right]\\
+ & =\left[P^{2}X-XP^{2}\right]\frac{P}{2m}+\frac{X}{2m}\left[P^{2}P-PP^{2}\right]+\lambda\left[X^{n}X-XX^{n}\right]P+\lambda X\left[X^{n}P-PX^{n}\right]\\
+ & =\left[P^{2},X\right]\frac{P}{2m}+0+0+\lambda X\left[X^{n},P\right]\\
+ & =-\left(\left[X,P^{2}\right]\frac{P}{2m}+\lambda X\left[P,X^{n}\right]\right)\\
+ & =-\left(i\hbar\frac{\partial P^{2}}{\partial P}\frac{P}{2m}-\lambda Xi\hbar\frac{\partial X^{n}}{\partial X}\right)\\
+ & =-\left(2i\hbar\frac{P^{2}}{2m}-\lambda ni\hbar X^{n}\right)\\
+ & =-i\hbar\left(\frac{P^{2}}{m}-n\lambda X^{n}\right)
+\end{align*}
+
+Então o comutador é:
+
+\[
+\left[H,XP\right]=-i\hbar\left(\frac{P^{2}}{m}-n\lambda X^{n}\right)
+\]
+
+E uma vez que os operadores não dependem explicitamente do tempo:
+
+\begin{align*}
+\frac{d\left\langle XP\right\rangle }{dt} & =-\frac{i}{\hbar}\left\langle \left[XP,H\right]\right\rangle +\left\langle \frac{\partial XP}{\partial t}\right\rangle \\
+ & =\frac{i}{\hbar}\left\langle \left[H,XP\right]\right\rangle +0\\
+ & =\frac{i}{\hbar}\left(-i\hbar\right)\left\langle \left(\frac{P^{2}}{m}-n\lambda X^{n}\right)\right\rangle \\
+ & =\left\langle \frac{P^{2}}{m}\right\rangle -n\left\langle \lambda X^{n}\right\rangle \\
+ & =2\left\langle T\right\rangle -n\left\langle V\right\rangle 
+\end{align*}
+
+E uma vez que estamos lidando com um estado estacionário, o valor esperado deve ser constante (também pode ser demonstrado explicitamente que $\frac{d\left\langle XP\right\rangle }{dt}=0$\cite{Anu:2005}), logo:
+
+\begin{align*}
+0 & =2\left\langle T\right\rangle -n\left\langle V\right\rangle \\
+2\left\langle T\right\rangle  & =n\left\langle V\right\rangle 
+\end{align*}
+
+\textbf{b)}
+
+Dados do enunciado:
+\begin{itemize}
+\item $H=\frac{\boldsymbol{P}^{2}}{2m}+V\left(\boldsymbol{R}\right)$ , hamiltoniano do problema;
+\item $V\left(\boldsymbol{R}\right)$ é uma função homogênea de $n$ ordem nas variáveiz $X,Y,Z$.
+\begin{itemize}
+\item $V\left(\alpha x,\alpha y,\alpha z\right)=\alpha^{n}V\left(x,y,z\right)$
+\item $x\frac{\partial V}{\partial x}+y\frac{\partial V}{\partial y}+z\frac{\partial V}{\partial z}=nV\left(x,y,z\right)$
+\end{itemize}
+\end{itemize}
+A encontrar:
+\begin{itemize}
+\item O comutador $\left[H,\boldsymbol{R}\cdot\boldsymbol{P}\right]$
+\item Relação entre a energia cinética média e o potencial médio da partícula no estado estacionário
+\end{itemize}
+Equações:
+\begin{itemize}
+\item $\frac{d\left\langle O\right\rangle }{dt}=-\frac{i}{\hbar}\left\langle \left[O,H\right]\right\rangle +\left\langle \frac{\partial O}{\partial t}\right\rangle $
+\item $\left[A,B\right]=-\left[B,A\right]$
+\item $\left[X,O\left(P\right)\right]=i\hbar\frac{\partial O}{\partial P}$
+\item $\left[P,O\left(X\right)\right]=-i\hbar\frac{\partial O}{\partial X}$
+\item $T=\frac{P^{2}}{2m}$
+\end{itemize}
+Fazendo um cálculo análogo ao caso anterior, temos:
+
+\begin{align*}
+\left[H,\boldsymbol{R}\cdot\boldsymbol{P}\right] & =H\left(\boldsymbol{R}\cdot\boldsymbol{P}\right)-\left(\boldsymbol{R}\cdot\boldsymbol{P}\right)H\\
+ & =\sum^{3}_{i=1}\left[HX_{i}P_{i}-X_{i}P_{i}H\right]\\
+ & =\sum^{3}_{i=1}\left[H,X_{i}P_{i}\right]
+\end{align*}
+
+Então análogo ao caso anterior temos:
+
+\begin{align*}
+\left[H,X_{i}P_{i}\right] & =HX_{i}P_{i}-X_{i}P_{i}H\\
+ & =\left(\frac{\boldsymbol{P}^{2}}{2m}+V\left(\boldsymbol{r}\right)\right)X_{i}P_{i}-X_{i}P_{i}\left(\frac{\boldsymbol{P}^{2}}{2m}+V\left(\boldsymbol{r}\right)\right)\\
+ & =\frac{\boldsymbol{P}^{2}X_{i}P_{i}}{2m}+VX_{i}P_{i}-X_{i}P_{i}\frac{\boldsymbol{P}^{2}}{2m}+X_{i}P_{i}V\\
+ & =\left[\frac{\boldsymbol{P}^{2}X_{i}P_{i}}{2m}-\frac{X_{i}\boldsymbol{P}^{2}P_{i}}{2m}\right]+\left[VX_{i}P_{i}-X_{i}VP_{i}\right]+\left[\frac{X_{i}\boldsymbol{P}^{2}P_{i}}{2m}-X_{i}P_{i}\frac{\boldsymbol{P}^{2}}{2m}\right]+\left[X_{i}VP_{i}-X_{i}P_{i}V\right]\\
+ & =\left[\boldsymbol{P}^{2}X_{i}-X_{i}\boldsymbol{P}^{2}\right]\frac{P_{i}}{2m}+\frac{X_{i}}{2m}\left[\boldsymbol{P}^{2}P_{i}-P_{i}\boldsymbol{P}^{2}\right]+\left[VX_{i}-X_{i}V\right]P_{i}+X_{i}\left[VP_{i}-P_{i}V\right]\\
+ & =\left[\boldsymbol{P}^{2},X_{i}\right]\frac{P_{i}}{2m}+\frac{X_{i}}{2m}\left[\boldsymbol{P}^{2},P_{i}\right]+\left[V,X_{i}\right]P_{i}+X_{i}\left[V,P_{i}\right]\\
+ & =-\left(\left[X_{i},\boldsymbol{P}^{2}\right]\frac{P_{i}}{2m}+\frac{X_{i}}{2m}\left[P_{i},\boldsymbol{P}^{2}\right]+\left[X_{i},V\right]P_{i}+X_{i}\left[P_{i},V\right]\right)\\
+ & =-\left(i\hbar\frac{\partial\boldsymbol{P}^{2}}{\partial P_{i}}\frac{P_{i}}{2m}-\frac{X_{i}}{2m}i\hbar\frac{\partial\boldsymbol{P}^{2}}{\partial X_{i}}+i\hbar\frac{\partial V^{2}}{\partial P_{i}}P_{i}-X_{i}i\hbar\frac{\partial V}{\partial X_{i}}\right)\\
+ & =-\left(2i\hbar\frac{P^{2}_{i}}{2m}-X_{i}i\hbar\frac{\partial V}{\partial X_{i}}\right)
+\end{align*}
+
+Então:
+
+\begin{align*}
+\left[H,\boldsymbol{R}\cdot\boldsymbol{P}\right] & =-\sum^{3}_{i=1}\left(2i\hbar\frac{P^{2}_{i}}{2m}-X_{i}i\hbar\frac{\partial V}{\partial X_{i}}\right)\\
+ & =-i\hbar\left(\frac{\boldsymbol{P}^{2}}{m}-\sum^{3}_{i=1}X_{i}\frac{\partial V}{\partial X_{i}}\right)\\
+ & =-i\hbar\left(\frac{\boldsymbol{P}^{2}}{m}-nV\left(\boldsymbol{r}\right)\right)
+\end{align*}
+
+Ficamos então com o seguinte resultado para o comutador:
+
+\[
+\left[H,\boldsymbol{R}\cdot\boldsymbol{P}\right]=-i\hbar\left(\frac{\boldsymbol{P}^{2}}{m}-nV\left(\boldsymbol{r}\right)\right)
+\]
+
+Resultado análogo ao que obtemos no cenário anterior. Então para obter as relações entre as energias, ficamos com:
+
+\begin{align*}
+\frac{d\left\langle \boldsymbol{R}\cdot\boldsymbol{P}\right\rangle }{dt} & =-\frac{i}{\hbar}\left\langle \left[\boldsymbol{R}\cdot\boldsymbol{P},H\right]\right\rangle +\left\langle \frac{\partial\boldsymbol{R}\cdot\boldsymbol{P}}{\partial t}\right\rangle \\
+ & =\frac{i}{\hbar}\left\langle \left[H,\boldsymbol{R}\cdot\boldsymbol{P}\right]\right\rangle +0\\
+ & =\frac{i}{\hbar}\left(-i\hbar\right)\left\langle \left(\frac{\boldsymbol{P}^{2}}{m}-nV\left(\boldsymbol{r}\right)\right)\right\rangle \\
+ & =\left\langle \frac{\boldsymbol{P}^{2}}{m}\right\rangle -n\left\langle V\left(\boldsymbol{r}\right)\right\rangle \\
+ & =2\left\langle T\right\rangle -n\left\langle V\left(\boldsymbol{r}\right)\right\rangle 
+\end{align*}
+
+De modo análogo então ao caso anterior, obtemos que:
+
+\[
+2\left\langle T\right\rangle =n\left\langle V\left(\boldsymbol{r}\right)\right\rangle 
+\]
+
+Podemos ainda observar que usando a propriedade de função homogênea, obtemos o teorema virial:
+
+\[
+2\left\langle T\right\rangle =\left\langle x\frac{\partial V}{\partial x}+y\frac{\partial V}{\partial y}+z\frac{\partial V}{\partial z}\right\rangle 
+\]
+
+Ou:
+
+\[
+2\left\langle T\right\rangle =\left\langle \boldsymbol{r}\cdot\nabla V\right\rangle 
+\]
+
+ 
+
+\bibliographystyle{abbrv}
+\bibliography{\string"apagar depois/refe3\string"}
+
+\end{document}

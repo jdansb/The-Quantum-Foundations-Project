@@ -19,15 +19,11 @@ project:
     - title: Appendix
       children:
         - file: dupla.tex
-    - title: Expanded Sakurai
-      children:
-        - file: sakurai/onda.tex
-        - title: Equação de Schrödinger independente do tempo
+        - title: Classes Notes
           children:
-          - file: sakurai/estacionarios.tex
-          - file: sakurai/quad_inf.tex
-          - file: sakurai/oscilador.tex
-          - file: sakurai/livre.tex
+          - file: classes/g1.tex
+          - file: classes/g2.tex
+          - file: classes/g3.tex
     - title: Undergrad Thesis
       children:
         - file: nielsen/introducao.tex
@@ -37,8 +33,15 @@ project:
         - file: nielsen/adaptacoes.tex
         - file: nielsen/reacionados.tex
         - file: nielsen/resultados.tex
-    - title: Classes notes
+    - title: Expanded Sakurai
       children:
+        - file: sakurai/onda.tex
+        - title: Equação de Schrödinger independente do tempo
+          children:
+          - file: sakurai/estacionarios.tex
+          - file: sakurai/quad_inf.tex
+          - file: sakurai/oscilador.tex
+          - file: sakurai/livre.tex
     - title: Math
       children:
         - file: mat.tex

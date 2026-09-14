@@ -1,0 +1,1107 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Problem set 1}
+
+\maketitle
+
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\subsection{Problem 1}
+
+\textbf{$\left|\varphi_{n}\right\rangle $ are the eigenstates of a Hermitian operator $H$ ($H$ is, for example, the Hamiltonian of an arbitrary physical system). Assume that the states $\left|\varphi_{n}\right\rangle $ form a discrete orthonormal basis. The operator $U\left(m,n\right)$ is defined by:}
+
+\textbf{
+\[
+U\left(m,n\right)=\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|
+\]
+}
+
+\textbf{a) Calculate the adjoint $U^{\dagger}\left(m,n\right)$ of $U\left(m,n\right)$.}
+
+\textbf{b) Calculate the comutator $\left[H,U\left(m,n\right)\right]$.}
+
+\textbf{c) Prove the relation $U\left(m,n\right)U^{\dagger}\left(p,q\right)=\delta_{nq}U\left(m,p\right)$.}
+
+\textbf{d) Calculate $Tr\left(U\right)$, the trace of the operator $U\left(m,n\right)$.}
+
+\textbf{e) Let $A$ be an operator, with matrix elements $A_{mn}=\left\langle \varphi_{m}\left|A\right|\varphi_{n}\right\rangle $. Prove the relation $A=\sum_{m,n}A_{mn}U\left(m,n\right)$}
+
+\textbf{f) Show that $A_{pq}=Tr\left(AU^{\dagger}\left(p,q\right)\right)$.}
+
+Escrevendo então o operador hermitiano como:
+\[
+H=\sum^{N}_{k}k\left|\varphi_{k}\right\rangle \left\langle \varphi_{k}\right|
+\]
+
+a) Para calcular o adjunto partimos de:
+
+\[
+U\left(m,n\right)=\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|
+\]
+
+Multiplicando por um bra $\left\langle \alpha\right|$ qualquer à esquerda:
+
+\begin{align*}
+U\left(m,n\right) & =\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\\
+\left\langle \alpha\right|U\left(m,n\right) & =\left\langle \alpha|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|
+\end{align*}
+
+Aplicando o adjunto:
+
+\begin{align*}
+U\left(m,n\right) & =\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\\
+\left(\left\langle \alpha\right|U\left(m,n\right)\right)^{\dagger} & =\left(\left\langle \alpha|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\right)^{\dagger}\\
+U^{\dagger}\left(m,n\right)\left|\alpha\right\rangle  & =\left|\varphi_{n}\right\rangle \left\langle \varphi_{m}|\alpha\right\rangle \\
+U^{\dagger}\left(m,n\right) & =\left|\varphi_{n}\right\rangle \left\langle \varphi_{m}\right|
+\end{align*}
+
+Obtemos $U^{\dagger}\left(m,n\right)=U\left(n,m\right)$.
+
+b)
+
+O comutador pode ser escrito:
+
+\begin{align*}
+\left[H,U\left(m,n\right)\right] & =HU\left(m,n\right)-U\left(m,n\right)H\\
+ & =\sum^{N}_{k}k\left|\varphi_{k}\right\rangle \left\langle \varphi_{k}|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|-\sum^{N}_{k}k\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\varphi_{k}\right\rangle \left\langle \varphi_{k}\right|
+\end{align*}
+
+Como $\left\langle \varphi_{i}|\varphi_{j}\right\rangle =\delta_{ij}$
+
+\begin{align*}
+\left[H,U\left(m,n\right)\right] & =m\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|-n\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\\
+ & =\left(m-n\right)\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|
+\end{align*}
+
+Então $\left[H,U\left(m,n\right)\right]=\left(m-n\right)U\left(m,n\right)$.
+
+c)
+
+Este é um cálculo bem direto, utilizando os resultados anteriores:
+
+\begin{align*}
+U\left(m,n\right)U^{\dagger}\left(p,q\right) & =\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\left(\left|\varphi_{p}\right\rangle \left\langle \varphi_{q}\right|\right)^{\dagger}\\
+ & =\left|\varphi_{m}\right\rangle \left\langle \varphi_{n}|\varphi_{q}\right\rangle \left\langle \varphi_{p}\right|\\
+ & =\delta_{nq}\left|\varphi_{m}\right\rangle \left\langle \varphi_{p}\right|
+\end{align*}
+
+Logo $U\left(m,n\right)U^{\dagger}\left(p,q\right)=\delta_{nq}U\left(m,p\right)$.
+
+d)
+
+Sendo que $\left\{ \left|\varphi_{n}\right\rangle \right\} $ forma um conjunto ortonormal, então:
+
+\begin{align*}
+Tr\left(U\left(m,n\right)\right) & =Tr\left(U\right)\\
+ & =\sum^{N}_{k}\left\langle \varphi_{k}\left|U\right|\varphi_{k}\right\rangle \\
+ & =\sum^{N}_{k}\left\langle \varphi_{k}|\varphi_{m}\right\rangle \left\langle \varphi_{n}|\varphi_{k}\right\rangle \\
+ & =\left\langle \varphi_{n}|\varphi_{m}\right\rangle 
+\end{align*}
+
+Obtemos $Tr\left(U\left(m,n\right)\right)=\delta_{nm}$.
+
+e)
+
+Este resultado pode ser obtido de uma maneira bem direta sendo $A_{mn}=\left\langle \varphi_{m}\left|A\right|\varphi_{n}\right\rangle $
+
+\begin{align*}
+A & =\sum_{m,n}A_{mn}U\left(m,n\right)\\
+ & =\sum_{m,n}\left\langle \varphi_{m}\left|A\right|\varphi_{n}\right\rangle \left|\varphi_{m}\right\rangle \left\langle \varphi_{n}\right|\\
+ & =\sum_{m,n}\left|\varphi_{m}\right\rangle \left\langle \varphi_{m}\left|A\right|\varphi_{n}\right\rangle \left\langle \varphi_{n}\right|\\
+ & =\left(\sum_{m}\left|\varphi_{m}\right\rangle \left\langle \varphi_{m}\right|\right)A\left(\sum_{n}\left|\varphi_{n}\right\rangle \left\langle \varphi_{n}\right|\right)\\
+ & =\mathbb{I}A\mathbb{I}\\
+ & =A
+\end{align*}
+
+f)
+
+A partir de pura manipulação dos termos obtemos que:
+
+\begin{align*}
+A_{pq} & =Tr\left(AU^{\dagger}\left(p,q\right)\right)\\
+ & =Tr\left(AU\left(q,p\right)\right)\\
+ & =Tr\left(\sum_{m,n}\left\langle \varphi_{m}\left|A\right|\varphi_{n}\right\rangle \left|\varphi_{m}\right\rangle \left\langle \varphi_{n}|\varphi_{q}\right\rangle \left\langle \varphi_{p}\right|\right)\\
+ & =Tr\left(\sum_{m}\left\langle \varphi_{m}\left|A\right|\varphi_{q}\right\rangle \left|\varphi_{m}\right\rangle \left\langle \varphi_{p}\right|\right)\\
+ & =\sum^{N}_{k}\left\langle \varphi_{k}\left|\sum_{m}\left\langle \varphi_{m}\left|A\right|\varphi_{q}\right\rangle \left|\varphi_{m}\right\rangle \left\langle \varphi_{p}\right|\right|\varphi_{k}\right\rangle \\
+ & =\sum^{N}_{k}\sum_{m}\left\langle \varphi_{m}\left|A\right|\varphi_{q}\right\rangle \left\langle \varphi_{k}|\varphi_{m}\right\rangle \left\langle \varphi_{p}|\varphi_{k}\right\rangle \\
+ & =\sum_{m}\left\langle \varphi_{m}\left|A\right|\varphi_{q}\right\rangle \left\langle \varphi_{p}|\varphi_{m}\right\rangle \\
+ & =\left\langle \varphi_{p}\left|A\right|\varphi_{q}\right\rangle 
+\end{align*}
+
+Logo $A_{pq}=\left\langle \varphi_{p}\left|A\right|\varphi_{q}\right\rangle $ como queríamos demonstrar.
+
+\subsection{Problem 2}
+
+\textbf{In a two-dimensional vector space, consider the operator whose matrix, in an orthonormal basis $\left\{ \left|1\right\rangle ,\left|2\right\rangle \right\} $, is written:}
+
+\textbf{
+\[
+\sigma_{y}=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)
+\]
+}
+
+\textbf{a) Is $\sigma_{y}$ Hermitian? Calculate its eigenvalues and eigenvectors (giving their normalized expansion in terms of the $\left\{ \left|1\right\rangle ,\left|2\right\rangle \right\} $ basis).}
+
+\textbf{b) Calculate the matrices which represent the projectors onto these eigenvectors. Then verify that they satisfy the orthogonality and closure relations.}
+
+\textbf{c) Same questions for the matrices:}
+
+\textbf{
+\[
+M=\left(\begin{array}{cc}
+2 & i\sqrt{2}\\
+-i\sqrt{2} & 3
+\end{array}\right)
+\]
+}
+
+\textbf{and, in a three-dimensional space}
+
+\textbf{
+\[
+L_{y}=\frac{\hbar}{2i}\left(\begin{array}{ccc}
+0 & \sqrt{2} & 0\\
+-\sqrt{2} & 0 & \sqrt{2}\\
+0 & -\sqrt{2} & 0
+\end{array}\right)
+\]
+}
+
+a)
+
+Um operador é hermitiano se $A=\overline{A^{T}}$, então:
+
+\[
+\sigma_{y}=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)
+\]
+
+E:
+
+\[
+\sigma^{\dagger}_{y}=\left(\begin{array}{cc}
+0 & -i\\
+i & 0
+\end{array}\right)=\sigma_{y}
+\]
+
+Logo é hermitiano. Para calcular os autovalores, fazemos:
+
+\[
+\det\left|\begin{array}{cc}
+-\lambda & -i\\
+i & -\lambda
+\end{array}\right|=\lambda-1=0
+\]
+
+Então $\lambda_{\pm}=\pm1$. E o autovetor associado ao autovalor positivo é:
+
+\[
+\left(\begin{array}{cc}
+-1 & -i\\
+i & -1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+Logo $-x_{1}-ix_{2}=0$ ou $x_{1}=-ix_{2}$. De forma que podemos escrever o autovetor como $\left(-i,1\right)$. Escrevendo em temos da base $\left|1\right\rangle =\left(1,0\right)$ e $\left|2\right\rangle =\left(0,1\right)$, e normalzando, temos:
+
+\[
+\left|\lambda_{+}\right\rangle =-\frac{i}{\sqrt{2}}\left|1\right\rangle +\frac{1}{\sqrt{2}}\left|2\right\rangle 
+\]
+
+De modo análogo para o outro autovalor:
+
+\[
+\left(\begin{array}{cc}
+1 & -i\\
+i & -1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+De onde obtemo que $x_{1}=ix_{2}$, então obtemos $\left(i,1\right)$ ou normalizando:
+
+\[
+\left|\lambda_{-}\right\rangle =\frac{i}{\sqrt{2}}\left|1\right\rangle +\frac{1}{\sqrt{2}}\left|2\right\rangle 
+\]
+
+b)
+
+Calcuando então a representação matricial destes projetores:
+
+\begin{align*}
+P_{+} & =\left|\lambda_{+}\right\rangle \left\langle \lambda_{+}\right| & P_{-} & =\left|\lambda_{-}\right\rangle \left\langle \lambda_{-}\right|\\
+ & =\left[\begin{array}{c}
+-\frac{i}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right]\left[\begin{array}{cc}
+\frac{i}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{array}\right] &  & =\left[\begin{array}{c}
+\frac{i}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right]\left[\begin{array}{cc}
+-\frac{i}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{array}\right]\\
+P_{+} & =\frac{1}{2}\left[\begin{array}{cc}
+1 & -i\\
+i & 1
+\end{array}\right] & P_{-} & =\frac{1}{2}\left[\begin{array}{cc}
+1 & i\\
+-i & 1
+\end{array}\right]
+\end{align*}
+
+Temos então os projetores $P_{+}=\frac{1}{2}\left[\begin{array}{cc}
+1 & -i\\
+i & 1
+\end{array}\right]$ e $P_{-}=\frac{1}{2}\left[\begin{array}{cc}
+1 & i\\
+-i & 1
+\end{array}\right]$. Queremos demonstrar a relação de completude
+
+\begin{align*}
+P_{+}+P_{-} & =\frac{1}{2}\left[\begin{array}{cc}
+1 & -i\\
+i & 1
+\end{array}\right]+\frac{1}{2}\left[\begin{array}{cc}
+1 & i\\
+-i & 1
+\end{array}\right]\\
+ & =\frac{1}{2}\left[\begin{array}{cc}
+2 & 0\\
+0 & 2
+\end{array}\right]\\
+ & =\left[\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]E\\
+ & =\mathbb{I}
+\end{align*}
+E a ortogononalidade:
+
+\begin{align*}
+P_{+}\cdot P_{-} & =\frac{1}{2}\left[\begin{array}{cc}
+1 & -i\\
+i & 1
+\end{array}\right]\cdot\frac{1}{2}\left[\begin{array}{cc}
+1 & i\\
+-i & 1
+\end{array}\right]\\
+ & =\frac{1}{4}\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]
+\end{align*}
+
+O mesmo se:
+\begin{align*}
+P_{-}\cdot P_{+} & =\frac{1}{2}\left[\begin{array}{cc}
+1 & i\\
+-i & 1
+\end{array}\right]\cdot\frac{1}{2}\left[\begin{array}{cc}
+1 & -i\\
+i & 1
+\end{array}\right]\\
+ & =\frac{1}{4}\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]
+\end{align*}
+
+c) Repetindo os mesmos passos para outras duas matrizes, primeiro para:
+
+\[
+M=\left(\begin{array}{cc}
+2 & i\sqrt{2}\\
+-i\sqrt{2} & 3
+\end{array}\right)
+\]
+
+Verificando se é hermitiano:
+
+\[
+M^{\dagger}=\left(\begin{array}{cc}
+2 & i\sqrt{2}\\
+-i\sqrt{2} & 3
+\end{array}\right)=M
+\]
+
+Cálculo de autovalores:
+
+\[
+\det\left|\begin{array}{cc}
+2-\lambda & i\sqrt{2}\\
+-i\sqrt{2} & 3-\lambda
+\end{array}\right|=\left(2-\lambda\right)\left(3-\lambda\right)-2=0
+\]
+
+Então temos a seguinte equaçaõ de segundo grau $\lambda^{2}-5\lambda+4=0$. Que pode ser facilmente solucionada e obtemos os seguintes autovalores $\lambda\in\left\{ 4,1\right\} $. Então associado ao auto-valor $\lambda_{1}=4$ temos:
+
+\[
+\left(\begin{array}{cc}
+-2 & i\sqrt{2}\\
+-i\sqrt{2} & -1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+Da primeira linha temos que $-2x_{1}+i\sqrt{2}x_{2}=0$, então $x_{1}=\frac{ix_{2}}{\sqrt{2}}$. Como as linhas são múltimas entre si por $-i\sqrt{2}$, escolhendo $x_{2}=1$ temos, normaliazndo:
+
+\begin{align*}
+\left|\lambda_{1}\right\rangle  & =\frac{1}{\sqrt{\frac{1}{2}+1}}\left(\frac{i}{\sqrt{2}}\left|1\right\rangle +\left|2\right\rangle \right)=\sqrt{\frac{2}{3}}\left(\frac{i}{\sqrt{2}}\left|1\right\rangle +\left|2\right\rangle \right)\\
+\left|\lambda_{1}\right\rangle  & =\frac{i}{\sqrt{3}}\left|1\right\rangle +\sqrt{\frac{2}{3}}\left|2\right\rangle 
+\end{align*}
+
+De modo análogo para o outro autovalor:
+
+\[
+\left(\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+Da primeira linha temos que $x_{1}+i\sqrt{2}x_{2}=0$, então $x_{1}=-i\sqrt{2}x_{2}$. Novamente as linhas são múltiplas entre si, escolhendo $x_{2}=1$ então já normalizando:
+
+\begin{align*}
+\left|\lambda_{2}\right\rangle  & =\frac{1}{\sqrt{2+1}}\left(-i\sqrt{2}\left|1\right\rangle +\left|2\right\rangle \right)=\frac{1}{\sqrt{3}}\left(-i\sqrt{2}\left|1\right\rangle +\left|2\right\rangle \right)\\
+\left|\lambda_{2}\right\rangle  & =-i\sqrt{\frac{2}{3}}\left|1\right\rangle +\sqrt{\frac{1}{3}}\left|2\right\rangle 
+\end{align*}
+
+Calcuando então a representação matricial destes projetores:
+
+\begin{align*}
+P_{1} & =\left|\lambda_{1}\right\rangle \left\langle \lambda_{1}\right| & P_{2} & =\left|\lambda_{2}\right\rangle \left\langle \lambda_{2}\right|\\
+ & =\left[\begin{array}{c}
+\frac{i}{\sqrt{3}}\\
+\sqrt{\frac{2}{3}}
+\end{array}\right]\left[\begin{array}{cc}
+-\frac{i}{\sqrt{3}} & \sqrt{\frac{2}{3}}\end{array}\right] &  & =\left[\begin{array}{c}
+-i\sqrt{\frac{2}{3}}\\
+\sqrt{\frac{1}{3}}
+\end{array}\right]\left[\begin{array}{cc}
+i\sqrt{\frac{2}{3}} & \sqrt{\frac{1}{3}}\end{array}\right]\\
+P_{1} & =\frac{1}{3}\left[\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right] & P_{2} & =\frac{1}{3}\left[\begin{array}{cc}
+2 & -i\sqrt{2}\\
+i\sqrt{2} & 1
+\end{array}\right]
+\end{align*}
+
+Temos então os projetores $P_{+}=\frac{1}{3}\left[\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right]$ e $P_{-}=\frac{1}{3}\left[\begin{array}{cc}
+2 & -i\sqrt{2}\\
+i\sqrt{2} & 1
+\end{array}\right]$. Queremos demonstrar a relação de completude
+
+\begin{align*}
+P_{1}+P_{2} & =\frac{1}{3}\left[\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right]+\frac{1}{3}\left[\begin{array}{cc}
+2 & -i\sqrt{2}\\
+i\sqrt{2} & 1
+\end{array}\right]\\
+ & =\frac{1}{3}\left[\begin{array}{cc}
+3 & 0\\
+0 & 3
+\end{array}\right]\\
+ & =\left[\begin{array}{cc}
+3 & 0\\
+0 & 3
+\end{array}\right]\\
+ & =\mathbb{I}
+\end{align*}
+E a ortogononalidade:
+
+\begin{align*}
+P_{1}\cdot P_{2} & =\frac{1}{3}\left[\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right]\cdot\frac{1}{3}\left[\begin{array}{cc}
+2 & -i\sqrt{2}\\
+i\sqrt{2} & 1
+\end{array}\right]\\
+ & =\frac{1}{9}\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]
+\end{align*}
+
+O mesmo se:
+\begin{align*}
+P_{2}\cdot P_{1} & =\frac{1}{3}\left[\begin{array}{cc}
+2 & -i\sqrt{2}\\
+i\sqrt{2} & 1
+\end{array}\right]\cdot\frac{1}{3}\left[\begin{array}{cc}
+1 & i\sqrt{2}\\
+-i\sqrt{2} & 2
+\end{array}\right]\\
+ & =\frac{1}{9}\left[\begin{array}{cc}
+0 & 0\\
+0 & 0
+\end{array}\right]
+\end{align*}
+
+E por fim, para 
+
+\[
+L_{y}=\frac{\hbar}{2i}\left(\begin{array}{ccc}
+0 & \sqrt{2} & 0\\
+-\sqrt{2} & 0 & \sqrt{2}\\
+0 & -\sqrt{2} & 0
+\end{array}\right)
+\]
+
+Verificando se é hermitiano:
+
+\[
+L^{\dagger}_{y}=-\frac{\hbar}{2i}\left(\begin{array}{ccc}
+0 & -\sqrt{2} & 0\\
+\sqrt{2} & 0 & -\sqrt{2}\\
+0 & \sqrt{2} & 0
+\end{array}\right)=\frac{\hbar}{2i}\left(\begin{array}{ccc}
+0 & \sqrt{2} & 0\\
+-\sqrt{2} & 0 & \sqrt{2}\\
+0 & -\sqrt{2} & 0
+\end{array}\right)=L_{y}
+\]
+
+Cálculo de autovalores:
+
+\[
+\left|\begin{array}{ccc}
+-\lambda & \frac{\hbar}{2i}\sqrt{2} & 0\\
+-\frac{\hbar}{2i}\sqrt{2} & -\lambda & \frac{\hbar}{2i}\sqrt{2}\\
+0 & -\frac{\hbar}{2i}\sqrt{2} & -\lambda
+\end{array}\right|=\left(-\lambda^{3}+\frac{\hbar^{2}}{4}4\lambda\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Então temos a seguinte equaçaõ de segundo grau $-\lambda\left(\lambda^{2}-\hbar^{2}\right)=0$. Então um autovalor é $\lambda_{1}=0$ e os outros dois são $\lambda=\pm\hbar$. Para o primeiro autovalor, temos então:
+
+\[
+\left(\begin{array}{ccc}
+0 & \frac{\hbar}{2i}\sqrt{2} & 0\\
+-\frac{\hbar}{2i}\sqrt{2} & 0 & \frac{\hbar}{2i}\sqrt{2}\\
+0 & -\frac{\hbar}{2i}\sqrt{2} & 0
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Da primeira e últim linha temos que $x_{2}=0$. E da segunda linha que $x_{1}=x_{3}$. Então para garantir a normalização escolhendo $x_{1}=\frac{1}{\sqrt{2}}$, temoa apenas:
+
+\begin{align*}
+\left|\lambda_{1}\right\rangle  & =\frac{1}{\sqrt{2}}\left|1\right\rangle +\frac{1}{\sqrt{2}}\left|3\right\rangle 
+\end{align*}
+
+De modo análogo para $\lambda_{2}=\hbar$:
+
+\[
+\left(\begin{array}{ccc}
+-\hbar & \frac{\hbar}{2i}\sqrt{2} & 0\\
+-\frac{\hbar}{2i}\sqrt{2} & -\hbar & \frac{\hbar}{2i}\sqrt{2}\\
+0 & -\frac{\hbar}{2i}\sqrt{2} & -\hbar
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Então da primeira linha $-\hbar x_{1}+\frac{\hbar}{2i}\sqrt{2}x_{2}=0$ ou $x_{1}=\frac{x_{2}}{\sqrt{2}i}$. Fazendo análogo, da terceira linha obtemos que $-\frac{\hbar}{2i}\sqrt{2}x_{2}-\hbar x_{3}=0$, então $x_{3}=-\frac{x_{2}}{\sqrt{2}i}$. Subtituindo ambos na segunda linha então:
+
+\begin{align*}
+-\frac{\hbar}{2i}\sqrt{2}\left(\frac{x_{2}}{\sqrt{2}i}\right)-\hbar x_{2}+\frac{\hbar}{2i}\sqrt{2}\left(-\frac{x_{2}}{\sqrt{2}i}\right) & =0\\
++\frac{\hbar}{2}x_{2}-\hbar x_{2}+\frac{\hbar}{2}x_{2} & =0\\
+\left(\hbar-\hbar\right)x_{2} & =0
+\end{align*}
+
+Então $x_{2}$ pode ser qualquer valor. Isto é esperado uma vez que a segunda linha ($L2$) pode ser escrito omo uma soma de ambas as outras linhas $\left(L_{2}=\frac{1}{i\sqrt{2}}\left(L_{1}-L_{3}\right)\right)$. Escolhendo $x_{2}=\sqrt{2}i$ para facilitar, e normalizando, temos:
+
+\begin{align*}
+\left|\lambda_{2}\right\rangle  & =\frac{1}{\sqrt{1+2+1}}\left(1\left|1\right\rangle +\sqrt{2}i\left|2\right\rangle -1\left|3\right\rangle \right)\\
+\left|\lambda_{2}\right\rangle  & =\frac{1}{2}\left|1\right\rangle +\frac{i}{\sqrt{2}}\left|2\right\rangle -\frac{1}{2}\left|3\right\rangle 
+\end{align*}
+
+E para o último auto valor $\lambda_{3}=-\hbar$, temos:
+
+\[
+\left(\begin{array}{ccc}
+\hbar & \frac{\hbar}{2i}\sqrt{2} & 0\\
+-\frac{\hbar}{2i}\sqrt{2} & \hbar & \frac{\hbar}{2i}\sqrt{2}\\
+0 & -\frac{\hbar}{2i}\sqrt{2} & \hbar
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Então da primeira linha $\hbar x_{1}+\frac{\hbar}{2i}\sqrt{2}x_{2}=0$ ou $x_{1}=-\frac{x_{2}}{\sqrt{2}i}$. Fazendo análogo, da terceira linha obtemos que $-\frac{\hbar}{2i}\sqrt{2}x_{2}+\hbar x_{3}=0$, então $x_{3}=\frac{x_{2}}{\sqrt{2}i}$. Subtituindo ambos na segunda linha então:
+
+\begin{align*}
+-\frac{\hbar}{2i}\sqrt{2}\left(-\frac{x_{2}}{\sqrt{2}i}\right)+\hbar x_{2}+\frac{\hbar}{2i}\sqrt{2}\left(\frac{x_{2}}{\sqrt{2}i}\right) & =0\\
+-\frac{\hbar}{2}x_{2}+\hbar x_{2}-\frac{\hbar}{2}x_{2} & =0\\
+\left(\hbar-\hbar\right)x_{2} & =0
+\end{align*}
+
+Análogo ao caso anterior, escolhendo $x_{2}=\sqrt{2}i$ para facilitar, e normalizando, temos:
+
+\begin{align*}
+\left|\lambda_{3}\right\rangle  & =\frac{1}{\sqrt{1+2+1}}\left(-\left|1\right\rangle +\sqrt{2}i\left|2\right\rangle +\left|3\right\rangle \right)\\
+\left|\lambda_{3}\right\rangle  & =-\frac{1}{2}\left|1\right\rangle +\frac{i}{\sqrt{2}}\left|2\right\rangle +\frac{1}{2}\left|3\right\rangle 
+\end{align*}
+
+Calcuando então a representação matricial destes projetores:
+
+\begin{align*}
+P_{1} & =\left|\lambda_{1}\right\rangle \left\langle \lambda_{1}\right| & P_{2} & =\left|\lambda_{2}\right\rangle \left\langle \lambda_{2}\right| & P_{3} & =\left|\lambda_{3}\right\rangle \left\langle \lambda_{3}\right|\\
+ & =\left[\begin{array}{c}
+\frac{1}{\sqrt{2}}\\
+0\\
+\frac{1}{\sqrt{2}}
+\end{array}\right]\left[\begin{array}{ccc}
+\frac{1}{\sqrt{2}} & 0 & \frac{1}{\sqrt{2}}\end{array}\right] &  & =\left[\begin{array}{c}
+\frac{1}{2}\\
+\frac{i}{\sqrt{2}}\\
+\frac{-1}{2}
+\end{array}\right]\left[\begin{array}{ccc}
+\frac{1}{2} & \frac{-i}{\sqrt{2}} & \frac{-1}{2}\end{array}\right] &  & =\left[\begin{array}{c}
+\frac{-1}{2}\\
+\frac{i}{\sqrt{2}}\\
+\frac{1}{2}
+\end{array}\right]\left[\begin{array}{ccc}
+\frac{-1}{2} & \frac{-i}{\sqrt{2}} & \frac{1}{2}\end{array}\right]\\
+P_{1} & =\frac{1}{2}\left[\begin{array}{ccc}
+1 & 0 & 1\\
+0 & 0 & 0\\
+1 & 0 & 1
+\end{array}\right] & P_{2} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right] & P_{2} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right]
+\end{align*}
+
+Queremos demonstrar a relação de completude
+
+\begin{align*}
+P_{1}+P_{2}+P_{3} & =\frac{1}{2}\left[\begin{array}{ccc}
+1 & 0 & 1\\
+0 & 0 & 0\\
+1 & 0 & 1
+\end{array}\right]+\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right]+\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right]\\
+ & =\frac{1}{4}\left[\begin{array}{ccc}
+4 & 0 & 0\\
+0 & 4 & 0\\
+0 & 0 & 4
+\end{array}\right]\\
+ & =\left[\begin{array}{ccc}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 2
+\end{array}\right]\\
+ & =\mathbb{I}
+\end{align*}
+E a ortogononalidade:
+
+\begin{align*}
+P_{1}\cdot P_{2} & =\frac{1}{4}\left[\begin{array}{ccc}
+2 & 0 & 2\\
+0 & 0 & 0\\
+2 & 0 & 2
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right] & P_{2}\cdot P_{1} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+2 & 0 & 2\\
+0 & 0 & 0\\
+2 & 0 & 2
+\end{array}\right]\\
+ & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right] &  & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right]
+\end{align*}
+
+\begin{align*}
+P_{1}\cdot P_{3} & =\frac{1}{4}\left[\begin{array}{ccc}
+2 & 0 & 2\\
+0 & 0 & 0\\
+2 & 0 & 2
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right] & P_{3}\cdot P_{1} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+2 & 0 & 2\\
+0 & 0 & 0\\
+2 & 0 & 2
+\end{array}\right]\\
+ & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right] &  & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right]
+\end{align*}
+
+E por fim:
+
+\begin{align*}
+P_{2}\cdot P_{3} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right] & P_{3}\cdot P_{2} & =\frac{1}{4}\left[\begin{array}{ccc}
+1 & \frac{2i}{\sqrt{2}} & -1\\
+-\frac{2i}{\sqrt{2}} & 2 & \frac{2i}{\sqrt{2}}\\
+-1 & \frac{-2i}{\sqrt{2}} & 1
+\end{array}\right]\cdot\frac{1}{4}\left[\begin{array}{ccc}
+1 & -\frac{2i}{\sqrt{2}} & -1\\
+\frac{2i}{\sqrt{2}} & 2 & -\frac{2i}{\sqrt{2}}\\
+-1 & \frac{2i}{\sqrt{2}} & 1
+\end{array}\right]\\
+ & =\frac{1}{16}\left[\begin{array}{ccc}
+1 & -\sqrt{2}i & -1\\
+\sqrt{2}i & 2 & -\sqrt{2}\\
+-1 & \sqrt{2}i & 1
+\end{array}\right]\left[\begin{array}{ccc}
+1 & \sqrt{2}i & -1\\
+-\sqrt{2}i & 2 & \sqrt{2}i\\
+-1 & \sqrt{2}i & 1
+\end{array}\right] &  & =\frac{1}{16}\left[\begin{array}{ccc}
+1 & \sqrt{2}i & -1\\
+-\sqrt{2}i & 2 & \sqrt{2}i\\
+-1 & -\sqrt{2}i & 1
+\end{array}\right]\left[\begin{array}{ccc}
+1 & -\sqrt{2}i & -1\\
+\sqrt{2}i & 2 & -\sqrt{2}i\\
+-1 & \sqrt{2}i & 1
+\end{array}\right]\\
+ & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right] &  & =\frac{1}{16}\left[\begin{array}{ccc}
+0 & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right]
+\end{align*}
+
+
+\subsection{Problem 3}
+
+\textbf{Consider a three-dimensional ket space. If a certain set of orthonormal kets \textminus{} say, $\left\{ \left|1\right\rangle ,\left|2\right\rangle ,\left|3\right\rangle \right\} $ \textminus{} are used as the base kets, the operators $A$ and $B$ are represented by}
+
+\[
+A=\left(\begin{array}{ccc}
+a & 0 & 0\\
+0 & -a & 0\\
+0 & 0 & -a
+\end{array}\right),\quad B=\left(\begin{array}{ccc}
+b & 0 & 0\\
+0 & 0 & -ib\\
+0 & ib & 0
+\end{array}\right)
+\]
+
+\textbf{with $a$ and $b$ both real.}
+
+\textbf{a) Obviouly $A$ exhibits a degenerate spectrum. Does $B$ also exhibit a degenerate spectrum?}
+
+\textbf{b) Show that $A$ and $B$ commute.}
+
+\textbf{c) Find a new set of orthonormal kets which are simultaneous eigenkets of both $A$ and $B$. Specify the eigenvalues of $A$ and $B$ for each of the three eigenkets. Does your specification of eigenvalues completely characterize each eigenket?}
+
+\textbf{3)}
+
+a)
+
+Começamos calculando os autovalores de B:
+
+\[
+\det\left|\begin{array}{ccc}
+b-\lambda & 0 & 0\\
+0 & -\lambda & -ib\\
+0 & ib & -\lambda
+\end{array}\right|=\left(b-\lambda\right)\lambda^{2}-b^{2}\left(b-\lambda\right)=0
+\]
+
+Então:
+
+\[
+\left(b-\lambda\right)\left(\lambda^{2}-b^{2}\right)=0
+\]
+
+Logo os autovalores são $\left(b,b,-b\right)$, pois $\lambda^{2}$ admite $\pm b$, além disso se $\lambda=b$ a igualdade também é satisfeita devido ao primeiro termo. Dessa forma podemos afirmar que B também apresenta autovalores degenerados.
+
+b)
+
+Se comutam, então $\left[A,B\right]=0$. Podemos verificar diretamente:
+
+\begin{align*}
+\left[A,B\right] & =AB-BA\\
+ & =\left(\begin{array}{ccc}
+a & 0 & 0\\
+0 & -a & 0\\
+0 & 0 & -a
+\end{array}\right)\left(\begin{array}{ccc}
+b & 0 & 0\\
+0 & 0 & -ib\\
+0 & ib & 0
+\end{array}\right)-\left(\begin{array}{ccc}
+b & 0 & 0\\
+0 & 0 & -ib\\
+0 & ib & 0
+\end{array}\right)\left(\begin{array}{ccc}
+a & 0 & 0\\
+0 & -a & 0\\
+0 & 0 & -a
+\end{array}\right)\\
+ & =\left(\begin{array}{ccc}
+ab & 0 & 0\\
+0 & 0 & aib\\
+0 & -aib & 0
+\end{array}\right)-\left(\begin{array}{ccc}
+ba & 0 & 0\\
+0 & 0 & iba\\
+0 & -iba & 0
+\end{array}\right)
+\end{align*}
+
+Logo $\left[A,B\right]=0$ como gostaríamos de demonstrar.
+
+c)
+
+Por fim, queremos um conjunto de kets ortonormai que sejam autokets simultaneamente de ambos. Os autovetores de $A$, para $a_{+}=a$
+
+\[
+\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & -2a & 0\\
+0 & 0 & -2a
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+Então $\left|a_{+}\right\rangle =\left(x,0,0\right)$, pois temos $0\cdot x_{1}=0$ então $x_{1}$pode assumir qualquer valor, mas $-2a\cdot x_{2}=0$, então se $a\neq0$, necessariamente $x_{2}=0$, o mesmo vale para $x_{3}$. Situações análogas serão encontradas nos outros cálculos de autovetores. Repetindo então o processo para $a_{-}=a$, obtemos:
+
+\[
+\left(\begin{array}{ccc}
+2a & 0 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+O que nos retorna um autovetor do tipo $\left|a_{-}\right\rangle =\left(0,x_{1},x_{2}\right)$. Para a matriz B, temos para $b_{+}=b$:
+
+\[
+\left(\begin{array}{ccc}
+0 & 0 & 0\\
+0 & -b & -ib\\
+0 & ib & -b
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+De onde obtemos que $-bx_{2}-ibx_{3}=0$ ou $x_{x}=-ix_{3}$. Então $\left|b_{+}\right\rangle =\left(x_{1},-ix_{3},x_{3}\right)$. E para $b_{-}=-b$:
+
+\[
+\left(\begin{array}{ccc}
+2b & 0 & 0\\
+0 & b & -ib\\
+0 & ib & b
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}\\
+x_{3}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0\\
+0
+\end{array}\right)
+\]
+
+De onde obtemos que $bx_{2}-ibx_{3}=0$ ou $x_{x}=ix_{3}$. Então $\left|b_{-}\right\rangle =\left(0,ix_{3},x_{3}\right)$. Sintetizando os autovetore que reunimos até aqui:
+\begin{itemize}
+\item $\left|a_{+}\right\rangle =\left(a_{1},0,0\right)$, relacionado ao autovalor $a_{+}=a$ da matriz $A$. 
+\item $\left|a_{-}\right\rangle =\left(0,a_{2},a_{3}\right)$, relacionado ao autovalor degenerado $a_{-}=-a$ da matriz $A$. 
+\item $\left|b_{+}\right\rangle =\left(b_{1},-ib_{2},b_{2}\right)$, relacionado ao autovalor degenerado $b_{+}=b$ da matriz $b$. 
+\item $\left|b_{-}\right\rangle =\left(0,ib_{3},b_{3}\right)$ relacionado ao autovalor $b_{-}=-b$ da matriz $B$.
+\end{itemize}
+Alteramos as notações de $x_{i}$ pra $a_{i}$ ou $b_{i}$para facilitar a discussão subsequente. Lembrando que precisamos achar 3 autovetores ortonormalizados para ambas matrizes ao mesmo tempo, o primeiro passo óbvio é relaionar $\left|a_{-}\right\rangle $ e $\left|b_{-}\right\rangle $, pois ambos não possuem o primeiro elemento. Escolhendo então $a_{2}=ib_{3}$ e $a_{3}=b_{3}$, temos o seguinte autovetor:
+
+\[
+\left|a_{-},b_{-}\right\rangle =\left(0,ib_{3},b_{3}\right)
+\]
+
+Para garantir a normalização então fazendo $b_{3}=\frac{1}{\sqrt{2}}$:
+
+\[
+\left|a_{-},b_{-}\right\rangle =\left(0,\frac{i}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+\]
+
+Uma vez que $\sqrt{\left\langle a_{-},b_{-}|a_{-},b_{-}\right\rangle }=1$. De maneira análoga agora vamo associar $\left|a_{+}\right\rangle $e $\left|b_{+}\right\rangle $. Para isobasta fazer $a_{1}=b_{1}$ e $b_{2}=0$. Então:
+
+\[
+\left|a_{+},b_{+}\right\rangle =\left(b_{1},0,0\right)
+\]
+
+A normalização neste caso é trivial $b_{1}=1$. Então temos: 
+\[
+\left|a_{+},b_{+}\right\rangle =\left(1,0,0\right)
+\]
+
+Por fim nos resta apenas os autovalores degenerados de cada matriz, ou seja, os autovetores $\left|a_{-}\right\rangle $e $\left|b_{+}\right\rangle $. Aqui basta fazermos $b_{1}=0$, $a_{2}=-ib_{2}$ e $a_{3}=b_{2}$. Isto é:
+
+\[
+\left|a_{-},b_{+}\right\rangle =\left(0,-ib_{2},b_{2}\right)
+\]
+
+Fazendo novamente $b_{2}=\frac{1}{\sqrt{2}}$para garantir a normalização então:
+
+\[
+\left|a_{-},b_{+}\right\rangle =\left(0,\frac{-i}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)
+\]
+
+Assim temos o seguinte conjunto de autovetores associados aos respectivos autovalores:
+
+\[
+\left|a_{-},b_{-}\right\rangle =\frac{1}{\sqrt{2}}\left(0,i,1\right)\qquad\left|a_{+},b_{+}\right\rangle =\left(1,0,0\right)\qquad\left|a_{-},b_{+}\right\rangle =\frac{1}{\sqrt{2}}\left(0,-i,1\right)
+\]
+
+Além de serem normalizados são ortogonais umavez que $\left\langle a_{-},b_{-}|a_{+},b_{+}\right\rangle =\left\langle a_{-},b_{-}|a_{-},b_{+}\right\rangle =\left\langle a_{-},b_{+}|a_{+},b_{+}\right\rangle =0$. E os dois índices nos permitem identificar a quais autovalores estão associados apesar da degenerecência dos autovalores em cada matriz.
+
+\subsection{Problem 4}
+
+\textbf{The $\sigma_{x}$ matrix is defined by:}
+
+\[
+\sigma_{x}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)
+\]
+
+\textbf{Prove the relation:}
+
+\[
+e^{i\alpha\sigma_{x}}=\mathbb{I}\cos\alpha+i\sigma_{x}\sin\alpha
+\]
+
+\textbf{where $\mathbb{I}$ is the $2\times2$ unit matrix.}
+
+Primeir verificaremos se $\sigma_{x}$ é uma matriz hermitiana:
+
+\[
+\sigma^{\dagger}_{x}=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)=\sigma_{x}
+\]
+
+Logo então $f\left(\sigma_{x}\right)=\sum_{i}f\left(\lambda_{i}\right)\left|\lambda_{i}\right\rangle \left\langle \lambda_{i}\right|$. Os autovalores são então $\lambda_{\pm}=\pm1$. E os autovetores associados são: primeiro a $\lambda_{+}=+1$
+
+\[
+\left(\begin{array}{cc}
+-1 & 1\\
+1 & -1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+Temos então $x_{1}=x_{2}$, logo podemo escrever $\left|\lambda_{+}\right\rangle =\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)$. E a $\lambda_{-}=-1$:
+
+\[
+\left(\begin{array}{cc}
+1 & 1\\
+1 & 1
+\end{array}\right)\left(\begin{array}{c}
+x_{1}\\
+x_{2}
+\end{array}\right)=\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\]
+
+Um resultado similar onde $x_{1}=-x_{2}$: $\left|\lambda_{-}\right\rangle =\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right).$ Podemos escrever então o operador como:
+
+\begin{align*}
+\sigma_{x} & =\lambda_{+}\left|\lambda_{+}\right\rangle \left\langle \lambda_{i+}\right|+\lambda_{-}\left|\lambda_{-}\right\rangle \left\langle \lambda_{i-}\right|\\
+ & =\left(+1\right)\left(\begin{array}{c}
+\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right)\left(\begin{array}{cc}
+\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{array}\right)+\left(-1\right)\left(\begin{array}{c}
+-\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right)\left(\begin{array}{cc}
+-\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{array}\right)\\
+ & =\left(+1\right)\left(\begin{array}{cc}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & \frac{1}{2}
+\end{array}\right)+\left(-1\right)\left(\begin{array}{cc}
+\frac{1}{2} & -\frac{1}{2}\\
+-\frac{1}{2} & \frac{1}{2}
+\end{array}\right)
+\end{align*}
+
+Sendo então $f\left(x\right)=e^{i\alpha x}$, aplicando em nosso operador, temos:
+
+\begin{align*}
+e^{i\alpha\sigma_{x}} & =e^{i\alpha}\left(\begin{array}{cc}
+\frac{1}{2} & \frac{1}{2}\\
+\frac{1}{2} & \frac{1}{2}
+\end{array}\right)+e^{-i\alpha}\left(\begin{array}{cc}
+\frac{1}{2} & -\frac{1}{2}\\
+-\frac{1}{2} & \frac{1}{2}
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+\frac{e^{i\alpha}+e^{-i\alpha}}{2} & \frac{e^{i\alpha}-e^{-i\alpha}}{2}\\
+\frac{e^{i\alpha}-e^{-i\alpha}}{2} & \frac{e^{i\alpha}+e^{-i\alpha}}{2}
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+\frac{e^{i\alpha}+e^{-i\alpha}}{2} & 0\\
+0 & \frac{e^{i\alpha}+e^{-i\alpha}}{2}
+\end{array}\right)+\left(\begin{array}{cc}
+0 & \frac{e^{i\alpha}-e^{-i\alpha}}{2}\\
+\frac{e^{i\alpha}-e^{-i\alpha}}{2} & 0
+\end{array}\right)\\
+ & =\frac{e^{i\alpha}+e^{-i\alpha}}{2}\left(\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right)+\frac{e^{i\alpha}-e^{-i\alpha}}{2}\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right)\\
+ & =\frac{e^{i\alpha}+e^{-i\alpha}}{2}\mathbb{I}+\frac{e^{i\alpha}-e^{-i\alpha}}{2}\sigma_{x}
+\end{align*}
+
+Usando então as relações trigonométricas $\cos\left(\alpha\right)=\frac{e^{i\alpha}+e^{-i\alpha}}{2}$ e $\sin\left(\alpha\right)=\frac{e^{i\alpha}-e^{-i\alpha}}{2i}$, obteoms a relação desejada:
+\[
+e^{i\alpha\sigma_{x}}=\mathbb{\cos\alpha I}+i\sigma_{x}\sin\left(\alpha\right)
+\]
+
+\end{document}
