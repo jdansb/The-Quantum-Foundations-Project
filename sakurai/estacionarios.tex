@@ -1,0 +1,417 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Estados estacionários}
+
+\maketitle
+Vamos resolver a equação de Schrödinger para obter a função de onda para diferentes potenciais. Neste capítulo (a não ser que seja dito o contrário), assumiremos que $V=V(x)$ é real e independente do tempo. Dessa forma, podemos usar o método de separação de variáveis para resolver a equação e procurar soluções do tipo:
+
+\begin{equation}
+\Psi\left(x,t\right)=\psi\left(x\right)\varphi\left(t\right)
+\end{equation}
+
+Substituindo na equação de Schrödinger nós temos:
+
+\begin{align}
+i\hbar\frac{\partial\Psi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi\\
+i\hbar\frac{\partial}{\partial t}\left(\psi\varphi\right) & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left(\psi\varphi\right)+V\left(\psi\varphi\right)\\
+i\hbar\psi\frac{\partial\varphi}{\partial t} & =-\frac{\hbar^{2}\varphi}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi\varphi
+\end{align}
+
+Dividindo então por $\psi\varphi$:
+
+\begin{align}
+\frac{i\hbar\psi}{\psi\varphi}\frac{\partial\varphi}{\partial t} & =-\frac{\hbar^{2}\varphi}{\psi\varphi2m}\frac{\partial^{2}\psi}{\partial x^{2}}+\frac{V\psi\varphi}{\psi\varphi}\\
+\frac{i\hbar}{\varphi}\frac{\partial\varphi}{\partial t} & =-\frac{\hbar^{2}}{\psi2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V
+\end{align}
+
+Então, um lado da equação depende apenas do tempo e o outro apenas da posição. A única forma de isso ser válido é se ambos forem iguais a uma constante, pois se temos $f(x)=f(y)$, isso significa que podemos variar $x$ livremente enquanto $y$ permanece fixo; portanto, $f(y)$ deve ser constante. A única forma de a igualdade ser válida para qualquer valor de $x$ e $y$ é se ambos forem iguais a uma constante, ou seja, $f(x)=f(y)=c$. Vamos identificar essa constante, por enquanto, como $E$. Temos então duas equações:
+
+\begin{align}
+i\hbar\frac{1}{\varphi}\frac{\partial\varphi}{\partial t} & =E\\
+\frac{\partial\varphi}{\partial t} & =-\frac{iE}{\hbar}\varphi\label{eq:26}
+\end{align}
+
+E
+
+\begin{align}
+-\frac{\hbar^{2}}{\psi2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V & =E\\
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi & =E\psi
+\end{align}
+
+A equação \ref{eq:26} não depende do potencial:\footnote{Vale lembrar que usamos $\frac{\partial\Psi}{\partial t}$ pois $\Psi(x,t)$ depende de posição e tempo, mas $\varphi(t)$ depende apenas do tempo. Portanto, escrevemos $\frac{\partial\varphi}{\partial t}$ apenas por 'herança'. Poderíamos (e talvez deveríamos) denotar por $\frac{d\varphi}{dt}$.} 
+
+\begin{align}
+\frac{\partial\varphi}{\partial t} & =-\frac{iE}{\hbar}\varphi\\
+\int\frac{d\varphi}{\varphi} & =-\frac{iE}{\hbar}\int dt\\
+\log\left(\varphi\right)+C_{0} & =-\frac{iE}{\hbar}t-\frac{iE}{\hbar}C_{1}
+\end{align}
+
+Onde por exemplo $C_{1}$é uma constante qualquer, então pode absorver os valores constantes $\frac{iE}{\hbar}C_{1}\rightarrow C_{1}$ sem perca de generalidade. A mesma coisa $C_{0}+C_{1}$. Então:
+
+\begin{align}
+\log\left(\varphi\right) & =-\frac{iE}{\hbar}t+C\\
+\exp\left[\log\left(\varphi\right)\right] & =\exp\left[-\frac{iE}{\hbar}t+C\right]\\
+\varphi & =\exp\left[-\frac{iE}{\hbar}t\right]e^{C}
+\end{align}
+
+Da mesma forma $e^{C}$ é uma constante qualquer de forma que podemos reescrever $e^{C}\rightarrow C$. Então: 
+
+\begin{equation}
+\varphi=C\exp\left[-\frac{iE}{\hbar}t\right]
+\end{equation}
+
+A segunda equação é a equação de Schrödinger independente do tempo e depende do potencial especificado. Então no resto do capítulo nos dedicaremos investigar uma variedade potenciais simples. Soluções dessa forma nos interessam por três motivos:
+
+Em primeiro lugar, são estados estacionários. Escrevendo a solução como:
+
+\begin{equation}
+\Psi\left(x,t\right)=\psi\left(x\right)Ce^{-iEt/\hbar}
+\end{equation}
+
+Fazendo $\psi\left(x\right)$ absorver $C$ no fator de normalização a ser descoberto, ficamos apenas com: 
+
+\begin{equation}
+\Psi\left(x,t\right)=\psi\left(x\right)e^{-iEt/\hbar}
+\end{equation}
+
+Consequentemente a probabilidade de densidade é constante no tempo:
+
+\begin{equation}
+\left|\Psi\left(x,t\right)\right|^{2}=\Psi^{*}\Psi=\left(\psi^{*}\left(x\right)e^{iEt/\hbar}\right)\left(\psi\left(x\right)e^{-iEt/\hbar}\right)=\psi^{*}\psi=\left|\psi\left(x\right)\right|^{2}
+\end{equation}
+
+Resultado análogo para os valores esperados:
+
+\begin{align}
+\left\langle Q\left(x,p\right)\right\rangle  & =\int\Psi^{*}\left[Q\left(x,-i\hbar\frac{d}{dx}\right)\right]\Psi dx\\
+ & =\int\psi^{*}\left(x\right)e^{iEt/\hbar}\left[Q\left(x,-i\hbar\frac{d}{dx}\right)\right]\psi\left(x\right)e^{-iEt/\hbar}dx\\
+ & =\int\psi^{*}\left(x\right)\left[Q\left(x,-i\hbar\frac{d}{dx}\right)\right]\psi\left(x\right)dx
+\end{align}
+
+Consequentemente então o valor esperado é constante no tempo. Além disso, como $\left\langle x\right\rangle =\int x\left|\psi\right|^{2}dx$ é uma integral definida na posição, e que depende só da posição, constante no tempo, consequentemente $\left\langle p\right\rangle =md\left\langle x\right\rangle /dt=0$.
+
+Em segundo lugar os estados são estados de energia total definida. Na mecânica clássica, a energia total é a soma da energia cinética mais a potencial, e é chamado de hamiltoniano\footnote{Acredito ter estudado isso no livro ``Mecânica Analítica'' do Nivaldo A. Lemos.}:
+
+\begin{equation}
+H\left(x,p\right)=\frac{p^{2}}{2m}+V\left(x\right)
+\end{equation}
+
+Fazendo então a substituição $p\rightarrow i\hbar\left(\partial/\partial x\right)$ temos:
+
+\begin{equation}
+\widehat{H}=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}+V\left(x\right)
+\end{equation}
+
+Então a equação de Schrödinger independente do tempo pode escrita como:
+
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi & =E\psi\\
+\left(-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}+V\right)\psi & =E\psi\\
+\widehat{H}\psi & =E\psi
+\end{align}
+
+Além disso temos que se aplicarmos $\widehat{H}$ novamente:
+
+\begin{align}
+\widehat{H}^{2}\psi & =\widehat{H}\left(\widehat{H}\psi\right)=\widehat{H}\left(E\psi\right)=E\left(\widehat{H}\psi\right)=E^{2}\psi
+\end{align}
+
+Então temos pro valor esperado:
+
+\begin{equation}
+\left\langle H\right\rangle =\int\psi^{*}\widehat{H}\psi dx=\int\psi^{*}E\psi dx=E\int\psi^{*}\psi dx=E\int\left|\psi\right|^{2}dx=E\int\left|\Psi\right|^{2}dx=E
+\end{equation}
+
+Uma vez que como já vimos $\left|\Psi\right|^{2}=\left|\psi\right|^{2}$, ou seja, a normalização de $\Psi$ está contida em $\psi$. Também temos de forma análoga:
+
+\begin{equation}
+\left\langle H^{2}\right\rangle =\int\psi^{*}\widehat{H}^{2}\psi dx=E^{2}\int\psi^{*}\psi dx=E^{2}\int\left|\Psi\right|^{2}dx=E^{2}
+\end{equation}
+
+E a variância é dada por:
+
+\begin{equation}
+\sigma^{2}_{H}=\left\langle H^{2}\right\rangle -\left\langle H^{2}\right\rangle =E^{2}-E^{2}=0
+\end{equation}
+
+Ou seja, temos zero dispersão. O que nos garante que temos certeza do valor que será retornado, sempre que medimos a energia total, iremos obter $E$.
+
+E o terceiro motivo, matemático, é que a solução geral é uma combinação linear 
+
+E o terceiro motivo, matemático, é que a solução geral é uma combinação linear\footnote{Uma combinação linear é uma expressão construída a partir de um conjunto de funções, multiplicando cada uma por uma constante e somando os resultados. Por exemplo, uma combinação linear de $f_{1}(x)$ e $f_{2}(x)$ é dada por: $f(x)=c_{1}f_{1}(x)+c_{2}f_{2}(x)$.} de soluções separáveis, como veremos. Se denotamos o conjunto de soluções separáveis como $\psi_{1},\psi_{2},\dots,\psi_{n}$ ou apenas $\left\{ \psi_{n}\right\} $, cada uma delas está associada a uma constante $E_{1},E_{2},\dots,E_{n}$ ou $\left\{ E_{n}\right\} $, de forma que temos uma função de onda pra cada energia permitida:
+
+\begin{align}
+\Psi_{1}\left(x,t\right) & =\psi_{1}\left(x\right)e^{-iE_{1}t/\hbar}\\
+\Psi_{2}\left(x,t\right) & =\psi_{2}\left(x\right)e^{-iE_{2}t/\hbar}\\
+\vdots\\
+\Psi_{n}\left(x,t\right) & =\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}
+\end{align}
+
+Então temos uma solução geral dada por:
+
+\begin{equation}
+\Psi\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}
+\end{equation}
+
+Ou ainda:
+
+\begin{equation}
+\Psi\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\Psi_{n}\left(x,t\right)
+\end{equation}
+
+O que faremos no restante do capítulo é encontrar $c_{n}$e $\psi_{n}$ para diferentes situações (e vale ressaltar que as condições iniciais nem sequer precisam ser contínuas). e no próximo capítulo reescrever este resultado de uma forma mais elegante. 
+
+\textbf{Exemplo: Supondo uma partícula que nos é dado o estado inicial}
+
+\begin{equation}
+\Psi\left(x,0\right)=c_{1}\psi_{1}\left(x\right)+c_{2}\psi_{2}\left(x\right)
+\end{equation}
+
+\textbf{Assumindo que as funções e as constantes são reais, queremos saber qual é a função de onda de $\Psi\left(x,t\right)$ nos tempos seguintes, encontrar a densidade de probabilidade e descrever seu movimento.}
+
+Isso é bastante direto, pois é apenas:
+
+\begin{align}
+\Psi\left(x,t\right) & =\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\\
+ & =\sum^{2}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}
+\end{align}
+
+Já que para $n>2$ temos $c_{n}\psi_{n}=0$. Ou então:
+
+\begin{equation}
+\Psi\left(x,t\right)=c_{1}\psi_{1}\left(x\right)e^{-iE_{1}t/\hbar}+c_{2}\psi_{2}\left(x\right)e^{-iE_{2}t/\hbar}
+\end{equation}
+
+A densidade de probabilidade é então:
+
+\begin{align}
+\left|\Psi\left(x,t\right)\right|^{2} & =\left(c_{1}\psi_{1}e^{iE_{1}t/\hbar}+c_{2}\psi_{2}e^{E_{2}t/\hbar}\right)\left(c_{1}\psi_{1}e^{-iE_{1}t/\hbar}+c_{2}\psi_{2}e^{-iE_{2}t/\hbar}\right)\\
+ & =c^{2}_{1}\psi^{2}_{1}+c^{2}_{2}\psi^{2}_{2}+2c_{1}c_{2}\psi_{1}\psi_{2}\exp\left[iE_{1}t/\hbar-iE_{2}t/\hbar\right]\\
+ & =c^{2}_{1}\psi^{2}_{1}+c^{2}_{2}\psi^{2}_{2}+c_{1}c_{2}\psi_{1}\psi_{2}\exp\left[\left(E_{1}-E_{2}\right)t/\hbar\right]+c_{1}c_{2}\psi_{1}\psi_{2}\exp\left[\left(E_{2}-E_{1}\right)t/\hbar\right]\\
+ & =c^{2}_{1}\psi^{2}_{1}+c^{2}_{2}\psi^{2}_{2}+c_{1}c_{2}\psi_{1}\psi_{2}\left(\exp\left[\left(E_{1}-E_{2}\right)t/\hbar\right]+\exp\left[\left(E_{2}-E_{1}\right)t/\hbar\right]\right)
+\end{align}
+
+Sendo a fórmula de Euler:
+
+\begin{align}
+e^{i\theta} & =\cos\theta+i\sin\theta\\
+e^{\left(E_{1}-E_{2}\right)t/\hbar}+e^{\left(E_{2}-E_{1}\right)t/\hbar} & =\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]+i\sin\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]\dots\\
+ & \dots+\cos\left[\frac{\left(E_{2}-E_{1}\right)t}{\hbar}\right]+i\sin\left[\frac{\left(E_{2}-E_{1}\right)t}{\hbar}\right]\\
+ & =\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]+i\sin\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]\dots\\
+ & \dots+\cos\left[-\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]+i\sin\left[-\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]\\
+ & =\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]+i\sin\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]\dots\\
+ & \dots+\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]-i\sin\left[-\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]\\
+ & =2\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]
+\end{align}
+
+Então:
+
+\begin{equation}
+\left|\Psi\left(x,t\right)\right|^{2}=c^{2}_{1}\psi^{2}_{1}+c^{2}_{2}\psi^{2}_{2}+2c_{1}c_{2}\psi_{1}\psi_{2}\cos\left[\frac{\left(E_{1}-E_{2}\right)t}{\hbar}\right]
+\end{equation}
+
+Ou seja, devido ao termo oscilatório, podemos dizer que ela não está em um estado estacionário, mas oscila entre os dois estados. Claro que isto não diz respeito à trajetória no sentido clássico, mas à probabilidade de encontrarmos a partícula em diferentes regiões do espaço. O significado físico do conjunto $\{c_{n}\}$, isto é, o que ele representa fisicamente, é que $\left|c_{n}\right|^{2}$ é a probabilidade de que a medida da energia retorne o valor $E_{n}$. A explicação disso fica para o próximo capítulo. Ainda vale comentar que existe uma tendência errada de dizer que você vai medir a partícula no estado $\psi_{n}$, mas essa é uma linguagem incorreta. O que obtemos quando fazemos uma medida é um observável, um número; obtemos $E_{n}$, e não uma função.
+
+--
+
+Ou seja, uma medida da energia sempre vai retornar um dos valores possíveis, e $\left|c_{n}\right|^{2}$ é a probabilidade de obtermos o valor $E_{n}$ em particular. De forma que é óbvio que:
+
+\begin{equation}
+\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}=1
+\end{equation}
+
+Dessa forma também podemos escrever que:
+
+\begin{equation}
+\left\langle H\right\rangle =\sum^{\infty}_{n=1}E_{n}\left|c_{n}\right|^{2}
+\end{equation}
+
+Uma vez que, como vimos, o valor médio de $j$, se a probabilidade de obtermos $j$ é escrita por $P\left(j\right)$, é dada por $\left\langle j\right\rangle =\sum_{j}jP\left(j\right)$. Vale lembrar que, anteriormente, vimos que uma solução separável $\psi_{n}\left(x\right)$ sempre retorna $E_{n}$ se medirmos a energia. Porém, o que temos agora é que $\Psi\left(x,t\right)$ é uma é uma superposição de várias soluções separáveis, onde temos a probabilidade dada por $\left|c_{n}\right|^{2}$ de medirmos uma energia $E_{n}$ associada à solução separável $\psi_{n}\left(x\right)$.
+
+Também vale destacar que tudo isso é independente do tempo, desde as probabilidades de obter determinada energia até, consequentemente, os valores esperados de $\widehat{H}$. Essas são manifestações da conservação de energia.
+
+\textbf{Exemplo: Prove os seguintes teoremas:}
+
+\textbf{a) Para uma solução normalizável, então $E$ deve ser real. }
+
+\textbf{b) A função de onda independente do tempo $\psi$$\left(x\right)$ sempre pode ser considerado real. Ou seja, sempre podemos expressar $\psi\left(x\right)$ como uma combinação linear de soluções reais.}
+
+\textbf{c) $V\left(x\right)$ é uma função par então $\psi$ pode ser uma função par ou ímpar.}
+
+Vamos escrever $E=E_{0}+i\Gamma$, onde $E_{0}$ e $\Gamma$ são reais, conforme sugerido. Logo:
+
+\begin{equation}
+\Psi\left(x,t\right)=\psi\left(x\right)e^{-iEt/\hbar}=\psi\left(x\right)e^{-i\left(E_{0}+i\Gamma\right)t/\hbar}=\psi\left(x\right)e^{-iE_{0}t/\hbar}e^{\Gamma t/\hbar}
+\end{equation}
+
+Então:
+
+\begin{equation}
+\left|\Psi\left(x,t\right)\right|^{2}=e^{2\Gamma t/\hbar}\left|\psi\left(x\right)\right|^{2}
+\end{equation}
+
+Mas então:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx=\int^{+\infty}_{-\infty}e^{2\Gamma t/\hbar}\left|\psi\left(x\right)\right|^{2}dx=e^{2\Gamma t/\hbar}\int^{+\infty}_{-\infty}\left|\psi\left(x\right)\right|^{2}dx=e^{2\Gamma t/\hbar}
+\end{equation}
+
+Porém se é normalizável, precisamos que $\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx=1$. Colocado dessa forma, isso é válido para $t=0$, mas a única forma então garantirmos que a função de onda permanece normalizada todo o tempo é se $\Gamma=0$. Logo $E$ precisa ser real.
+
+O segundo teorema que queremos provar, é que $\psi$$\left(x\right)$ sempre pode ser considerado real. Vamos partir da equação de Schrödinger inependente do tempo. Se $\psi_{1}$ e $\psi_{2}$ são soluções, qualquer combinação linear $\psi=c_{1}\psi_{1}+c_{2}\psi_{2}$ também é uma solução.
+
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi & =E\psi\\
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\left(c_{1}\psi_{1}+c_{2}\psi_{2}\right)+V\left(c_{1}\psi_{1}+c_{2}\psi_{2}\right) & =\\
+c_{1}\left[-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\psi_{1}+V\psi_{1}\right]+c_{2}\left[-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}\psi_{2}+V\psi_{2}\right] & =\\
+c_{1}E\psi_{1}+c_{2}E\psi_{2} & =\\
+E\left(c_{1}\psi_{1}+c_{2}\psi_{2}\right) & =\\
+E\psi & =
+\end{align}
+Então só precisamos mostrar que uma função de onda qualquer $\psi$ , mesmo que seja complexa, pode ser escrita como uma soma de funções reais $\psi_{1}$ e $\psi_{2}$ multiplicando por constantes $c_{1}$ e $c_{2}$. Primeiro queremos escrever então 
+\begin{equation}
+\psi=c_{1}\psi_{1}+c_{2}\psi_{2}=\textrm{Re}\left(\psi\right)+i\textrm{Im}\left(\psi\right)
+\end{equation}
+
+Então se $c_{1}=1$, $c_{2}=i$ e $\psi_{1}$ e $\psi_{2}$ são a parte real e imaginária de $\psi$, então esta também é uma solução válida pra equação de Schoedinger e podemos escrever $\psi$ como uma combinação linear de funções reais $\psi_{1}$ e $\psi_{2}$. Temos:
+
+\begin{align}
+\psi & =\textrm{Re}\left(\psi\right)+i\textrm{Im}\left(\psi\right)\\
+\psi^{*} & =\textrm{Re}\left(\psi\right)-i\textrm{Im}\left(\psi\right)
+\end{align}
+
+Se somamos então:
+
+\begin{align}
+\psi+\psi^{*} & =\left[\textrm{Re}\left(\psi\right)+i\textrm{Im}\left(\psi\right)\right]+\left[\textrm{Re}\left(\psi\right)-i\textrm{Im}\left(\psi\right)\right]\\
+\psi+\psi^{*} & =2\textrm{Re}\left(\psi\right)\\
+\frac{\psi+\psi^{*}}{2} & =\textrm{Re}\left(\psi\right)
+\end{align}
+
+E subtraindo:
+
+\begin{align}
+\psi-\psi^{*} & =\left[\textrm{Re}\left(\psi\right)+i\textrm{Im}\left(\psi\right)\right]-\left[\textrm{Re}\left(\psi\right)-i\textrm{Im}\left(\psi\right)\right]\\
+\psi-\psi^{*} & =2\textrm{Im}\left(\psi\right)\\
+\frac{\psi-\psi^{*}}{2} & =2\textrm{Im}\left(\psi\right)
+\end{align}
+
+Então:
+
+\begin{align}
+\psi & =\textrm{Re}\left(\psi\right)+i\textrm{Im}\left(\psi\right)\\
+ & =\frac{1}{2}\left(\psi+\psi^{*}\right)+\frac{i}{2}\left(\psi-\psi^{*}\right)
+\end{align}
+
+De certa forma, agora só queremos garantir que $\psi^{*}$ também seja uma solução. Mas se:
+
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi=E\psi
+\end{equation}
+
+Logo se tomamos o complexo conjugado, sendo $V$e $E$ reais: \footnote{Já provamos que $E$ deve ser real, $V\left(x\right)$ deve ser real para garantir que $\widehat{H}$ seja hermitiano, pelo menos quando estamos nessa discussão onde $\psi$ e $V$ dependem apenas da posição e temos uma separação de variáveis de modo que $E$ é a constante de separação.
+
+Em uma representação matricial, a matriz é hermitiana se ela é igual à sua transposta conjugada. Por hora, estamos assumindo implicitamente que o Hamiltoniano é hermitiano para garantir que seus autovalores $E$ sejam reais.}:
+
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi^{*}}{\partial x^{2}}+V\psi^{*}=E\psi^{*}
+\end{equation}
+
+Então, se escrevemos $\psi_{1}=\psi+\psi^{*},$ como $\psi$ e $\psi^{*}$ são soluções, então $\psi_{1}$ também é. Essa é uma função real que representa a parte real de $\psi$. Da mesma forma, $\psi_{2}=\psi-\psi^{*}$ também é uma função real que representa a parte imaginária de $\psi$ e também é solução. Por consequência, $\psi=\frac{1}{2}\psi_{1}+\frac{i}{2}\psi_{2}$ necessariamente também é uma solução, onde escrevemos a função complexa $\psi$ como uma combinação linear das funções reais $\psi_{1}$ e $\psi_{2}$.
+
+E o terceiro teorema diz que se $V\left(x\right)$ é uma função par ($V\left(-x\right)=V\left(x\right)$) então $\psi$ pode ser uma função par $\psi\left(-x\right)=\psi\left(x\right)$ ou ímpar $\psi\left(-x\right)=-\psi\left(x\right)$. Vamos começar construindo uma função par de $\psi\left(x\right)$, isto é, que elimina a parte ímpar:
+
+\begin{equation}
+\psi_{+}\left(x\right)\equiv\psi\left(x\right)+\psi\left(-x\right)
+\end{equation}
+
+Podemos pensar por exemplo se 
+\begin{equation}
+f\left(x\right)=x+x^{2}
+\end{equation}
+
+Então:
+
+\begin{align}
+f_{+}\left(x\right) & =f\left(x\right)+f\left(-x\right)\\
+ & =\left(x+x^{2}\right)+\left(-x+\left(-x\right)^{2}\right)\\
+ & =x+x^{2}-x+x^{2}\\
+ & =2x^{2}
+\end{align}
+
+Ou seja, eliminamos a parte ímpar da função e ficamos com a parte par duplicada, mas a função resultante é simétrica. De forma análoga, podemos remover a parte par com:
+
+\begin{equation}
+\psi_{+}\left(x\right)\equiv\psi\left(x\right)-\psi\left(-x\right)
+\end{equation}
+
+Usando o mesmo exemplo:
+
+\begin{equation}
+f_{+}\left(x\right)=f\left(x\right)-f\left(-x\right)=\left(x+x^{2}\right)-\left(-x+x^{2}\right)=2x
+\end{equation}
+
+Então podemos escrever a função de onda como uma combinação linear de funções pares e ímpares 
+\begin{equation}
+\psi=\frac{1}{2}\left(\psi_{+}\left(x\right)+\psi_{-}\left(x\right)\right)
+\end{equation}
+
+Ou:
+
+\begin{equation}
+\psi=\frac{1}{2}\left(\psi_{+}\left(x\right)+\psi_{-}\left(x\right)\right)
+\end{equation}
+Nós já vimos que uma combinação linear das soluções também é uma solução. Agora só nos resta ver que $\psi\left(-x\right)$ também é solução. temos:
+
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi\left(-x\right)}{\partial x^{2}}+V\left(-x\right)\psi\left(-x\right)=E\psi\left(-x\right)
+\end{equation}
+
+Se é par, temos simplesmente:
+
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi\left(x\right)}{\partial x^{2}}+V\left(x\right)\psi\left(x\right)=E\psi\left(x\right)
+\end{equation}
+
+E se é ímpar:
+
+\begin{equation}
+\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi\left(x\right)}{\partial x^{2}}-V\left(x\right)\psi\left(x\right)=-E\psi\left(x\right)
+\end{equation}
+
+Basta multiplicarmos por $\left(-1\right)$ para retomar a equação original\footnote{Honestamente eu não entendi exatamente o que o enunciado pediu, mas espero estar respondido.}. 
+
+\textbf{Exemplo: Mostre que $E$ deve exceder o valor mínimo de $V\left(x\right)$ pra qualquer solução normalizável da equação de Schrödinger independente do tempo e qual é o análogo clássico desta declaração?}
+
+Partindo da equação de Schrödinger independente do tempo, temos:
+
+\[
+\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi(x)}{\partial x^{2}}=\left(V(x)-E\right)\psi(x)
+\]
+
+Isso implica que o sinal da segunda derivada de $\psi$ deve ser o mesmo do sinal de $\left(V(x)-E\right)\psi(x)$. Para analisar, precisamos lembrar o significado das derivadas:
+\begin{itemize}
+\item A primeira derivada indica se uma função $f(t)$ está aumentando ($f'>0$) ou diminuindo ($f'<0$), ou se está em um ponto crítico ($f'=0$).
+\item A segunda derivada indica se a primeira derivada está aumentando ($f''>0$) ou diminuindo ($f''<0$).
+\end{itemize}
+Uma boa analogia é a de um carro:
+\begin{itemize}
+\item $x(t)$ indica a posição do carro em relação a um ponto de referência (origem).
+\item A primeira derivada $x'(t)=v(t)$ é a velocidade, indicando se o carro se move para a direita ($v>0$) ou para a esquerda ($v<0$).
+\item A segunda derivada $x''(t)=a(t)$ é a aceleração.
+\end{itemize}
+Se $E<V_{\min}$, então $V(x)-E>0$ para todo $x$, e a equação indica que o sinal da segunda derivada da função de onda $\psi(x)$ é o mesmo da função $\psi(x)$ em si. Na analogia, se o carro está em uma posição positiva (à direita da origem), a aceleração será sempre positiva, isto é se $\psi(x)$ é positivo e sua segunda derivada é positiva, isso implica que $\psi(x)$ tende a crescer sem limites, indo para o infinito quando $x\to\infty$.
+
+Analogamente, um carro em uma posição positiva com velocidade positiva e aceleração positiva jamais retornaria à origem, ele aceleraria cada vez mais para longe, o que não é permitido para uma função de onda normalizável, pois ela deve tender a zero no infinito. Se a velocidade for negativa, a aceleração positiva vai forçar uma mudança no sinal da velocidade levando ao mesmo caso anterior onde o carro termina por ir para o infinito. Se antes do sinal da velocidade se inverter, o carro passar pela origem, então agora a aceleração negativa combinado com a velocidade negativa moverá o carro para o infinito pelo sentido negativo.
+
+Portanto, se $E<V_{\min}$, não existem soluções normalizáveis para a equação de Schrödinger, pois a função de onda diverge em algum limite. A analogia clássica deste resultado é que a energia total de uma partícula nunca pode ser menor do que sua energia potencial mínima.
+\end{document}

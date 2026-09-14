@@ -18,13 +18,24 @@ project:
     - title: Appendix
       children:
         - file: dupla.tex
+    - title: Expanded Sakurai
+      children:
+        - file: sakurai/onda.tex
+        - title: Equação de Schrödinger independente do tempo
+          children:
+          - file: sakurai/estacionarios.tex
+          - file: sakurai/quad_inf.tex
+          - file: sakurai/oscilador.tex
+          - file: sakurai/livre.tex
+    - title: Undergrad Thesis
+      children:
+        - file: introducao.tex
+    - title: Classes notes
+      children:
     - title: Math
       children:
         - file: mat.tex
-    
-
-
-    
+        
 site:
   template: book-theme
   # options:

@@ -1,0 +1,810 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage[bookmarks=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=false]
+ {hyperref}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+\makeatother
+
+\begin{document}
+\title{A função de onda}
+\maketitle
+
+\subsection{Equação de Schrödinger}
+
+A equação de Schrödinger desempenha um papel análogo na mecânica quântica ao da segunda lei de Newton na mecânica clássica:
+
+\begin{equation}
+i\hbar\frac{\partial\Psi}{\partial t}=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi\label{eq:Um}
+\end{equation}
+
+Onde $\hbar$ é a constante de Planck dividida por $2\pi$. Ou seja, se temos uma partícula de massa $m$ se movendo ao longo do eixo $x$ e queremos obter informações sobre a partícula em qualquer instante $t$, a partir de uma condição inicial adequada (tipicamente $\Psi\left(x,0\right)$), a equação \ref{eq:Um} determina a função de onda $\Psi\left(x,t\right)$ para todo tempo futuro, de forma análoga a como a segunda lei de Newton determina a posição $x\left(t\right)$ para todo instante futuro.
+
+Vale destacar que a função de onda não é algo que pode ser medido diretamente, o que fazemos é usá-la para obter grandezas que podem ser observadas diretamente. Por exemplo, a interpretação estatística de Born nos fornece a probabilidade de encontrar a partícula entre os pontos $a$ e $b$ no instante $t$:
+
+\begin{equation}
+P=\int^{b}_{a}\left|\Psi\left(x,t\right)\right|^{2}dx
+\end{equation}
+
+Como $\left|\Psi\left(x,t\right)\right|^{2}$ representa uma densidade de probabilidade no espaço, ela deve ter unidade de $m^{-1}$ em uma dimensão. Consequentemente, a função de onda $\Psi\left(\boldsymbol{x},t\right)$ tem unidade de $m^{-1/2}$. De forma mais geral, em $n$ dimensões, a função de onda tem unidade de $m^{-n/2}$. Como a partícula deve estar em algum lugar, então:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx=1\label{eq:2}
+\end{equation}
+
+Retornando à equação de Schrödinger: se $\Psi$ é uma solução, então $A\Psi$ também será uma solução para qualquer constante $A$. Podemos escolher o valor de $A$ de modo que a condição de normalização seja satisfeita. Se a solução da equação de Schrödinger diverge (isto é, tende ao infinito) ou é nula em todo o espaço, ela não é normalizável e, portanto, não representa um estado físico conhecido e deve ser descartada. Vale destacar que, uma vez normalizada, a função de onda $\Psi$ permanecerá normalizada ao longo do tempo. Isso reflete a conservação da probabilidade na mecânica quântica.
+
+\begin{equation}
+\frac{d}{dt}\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx=\int^{+\infty}_{-\infty}\frac{\partial}{\partial t}\left|\Psi\left(x,t\right)\right|^{2}dx
+\end{equation}
+
+Aqui, fizemos a troca de derivada total por derivada parcial dentro da integral porque a integral resulta em uma função que depende apenas do tempo $t$, enquanto o integrando $|\Psi(x,t)|^{2}$ depende tanto de $x$ quanto de $t$.
+
+\begin{equation}
+\frac{\partial}{\partial t}\left|\Psi\right|^{2}=\frac{\partial}{\partial t}\left|\Psi\right|^{2}=\frac{\partial}{\partial t}\left(\sqrt{\Psi^{*}\Psi}\right)^{2}=\frac{\partial}{\partial t}\left(\Psi^{*}\Psi\right)=\Psi^{*}\frac{\partial\Psi}{\partial t}+\frac{\partial\Psi^{*}}{\partial t}\Psi
+\end{equation}
+
+A equação de Schrödinger é:
+
+\begin{equation}
+\frac{\partial\Psi}{\partial t}=\frac{i\hbar}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{i}{\hbar}V\Psi
+\end{equation}
+
+E tomando o complexo conjugado, assumindo $V$ real:
+
+\begin{equation}
+\frac{\partial\Psi^{*}}{\partial t}=-\frac{i\hbar}{2m}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}+\frac{i}{\hbar}V\Psi^{*}
+\end{equation}
+
+Então:
+
+\begin{align}
+\frac{\partial}{\partial t}\left|\Psi\right|^{2} & =\Psi^{*}\frac{\partial\Psi}{\partial t}+\frac{\partial\Psi^{*}}{\partial t}\Psi\\
+ & =\Psi^{*}\left(\frac{i\hbar}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{i}{\hbar}V\Psi\right)+\left(-\frac{i\hbar}{2m}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}+\frac{i}{\hbar}V\Psi^{*}\right)\Psi\\
+ & =\Psi^{*}\frac{i\hbar}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{i\hbar}{2m}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\\
+ & =\frac{i\hbar}{2m}\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)\label{eq:nl}
+\end{align}
+
+Então:
+
+\begin{align}
+\frac{d}{dt}\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =\int^{+\infty}_{-\infty}\frac{\partial}{\partial t}\left|\Psi\left(x,t\right)\right|^{2}dx\\
+ & =\int^{+\infty}_{-\infty}\frac{i\hbar}{2m}\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)dx\\
+ & =\frac{i\hbar}{2m}\int^{+\infty}_{-\infty}\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)dx
+\end{align}
+
+Olhando o primeiro termo, vamos aplicar integral por partes (\href{https://proofwiki.org/wiki/Integration_by_Parts}{prova}):
+
+\begin{equation}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx=\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx
+\end{equation}
+
+Onde também temos que $u=f\left(x\right)$ e $dv=f'\left(x\right)dx$. Então sendo $f=\Psi^{*}$ e $g=\Psi'$
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\Psi\left(x,t\right)^{*}\frac{\partial^{2}\Psi\left(x,t\right)}{\partial x^{2}}dx=\left.\Psi^{*}\Psi'\right|^{+\infty}_{-\infty}-\int^{+\infty}_{-\infty}\Psi'\Psi^{*}{}'dx
+\end{equation}
+
+De modo análogo temos pra segunda integral $f=\Psi$ e $g=\Psi^{*}{}'$
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\Psi\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}dx=\left.\Psi\Psi^{*}{}'\right|^{+\infty}_{-\infty}-\int^{+\infty}_{-\infty}\Psi^{*}{}'\Psi'dx
+\end{equation}
+
+Então:
+
+\begin{align}
+\frac{d}{dt}\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =\frac{i\hbar}{2m}\int^{+\infty}_{-\infty}\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)dx\\
+ & =\frac{i\hbar}{2m}\left[\left.\Psi^{*}\Psi'\right|^{+\infty}_{-\infty}-\int^{+\infty}_{-\infty}\Psi'\Psi^{*}{}'dx-\left.\Psi\Psi^{*}{}'\right|^{+\infty}_{-\infty}+\int^{+\infty}_{-\infty}\Psi^{*}{}'\Psi'dx\right]\\
+ & =\frac{i\hbar}{2m}\left[\left.\Psi^{*}\Psi'\right|^{+\infty}_{-\infty}-\left.\Psi\Psi^{*}{}'\right|^{+\infty}_{-\infty}\right]\\
+ & =\frac{i\hbar}{2m}\left.\left(\Psi^{*}\Psi'-\Psi\Psi^{*}{}'\right)\right|^{+\infty}_{-\infty}
+\end{align}
+
+Para que um resultado seja fisicamente válido, a função de onda e suas derivadas devem tender a zero no infinito.\footnote{Existem construções matemáticas de funções de onda que podem ser normalizadas, mesmo sem tender exatamente a zero no infinito. Contudo, segundo Griffiths, tais funções não aparecem na física, pois uma função de onda física deve refletir a probabilidade de encontrar uma partícula em alguma região finita do espaço. Funções que não decaem no infinito não correspondem a estados físicos observáveis.}, então:
+
+\begin{align}
+\frac{d}{dt}\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =0
+\end{align}
+
+Ou seja, como o valor da integral é constante ao longo do tempo, se a função de onda estiver normalizada no instante $t=0$, ela permanecerá normalizada para todos os instantes seguintes.
+
+\textbf{Exemplo: Considere a função de onda}
+
+\begin{equation}
+\Psi\left(x,t\right)=Ae^{-\lambda\left|x\right|}e^{-i\omega t}
+\end{equation}
+
+\textbf{Onde $A$, $\lambda$ e $\omega$ são constantes reais e positivas. Vamos calcular:}
+
+\textbf{a) Normalização de $\Psi$.}
+
+\textbf{b) Determinar os valores esperados de $x$ e $x^{2}$.}
+
+\textbf{c) Encontrar o desvio padrão de $x$ e calcular a probabilidade da partícula ser encontrada fora do intervalo entre $\left\langle x\right\rangle -\sigma$ e $\left\langle x\right\rangle +\sigma$.}
+
+Sendo $x$ um número real então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\left|\Psi\left(x,t\right)\right|^{2}dx & =1\\
+\int^{+\infty}_{-\infty}\Psi\Psi^{*}dx & =\\
+\int^{+\infty}_{-\infty}\left(Ae^{-\lambda\left|x\right|}e^{-i\omega t}\right)\left(Ae^{-\lambda\left|x\right|}e^{i\omega t}\right)dx & =\\
+A^{2}\int^{+\infty}_{-\infty}e^{-\lambda2\left|x\right|}dx & =\\
+A^{2}\left(\int^{0}_{-\infty}e^{-\lambda2\left(-x\right)}dx+\int^{+\infty}_{0}e^{-\lambda2x}dx\right) & =\\
+A^{2}\left(\frac{1}{2\lambda}\int^{0}_{-\infty}e^{u}du+\frac{1}{-2\lambda}\int^{+\infty}_{0}e^{v}dv\right) & =
+\end{align}
+
+Chamo atenção para a 5ª linha onde dividimos a integral para respeitar o módulo, usando a propriedade de aditividade da integral\footnote{$\int^{c}_{a}f\left(x\right)dx=\int^{b}_{a}f\left(x\right)dx+\int^{c}_{b}f\left(x\right)dx$ onde $a\leq b\leq c$ (\href{https://www.math.ucdavis.edu/~hunter/m125b/ch1.pdf}{prova}).}. Onde no primeiro caso temos $u=2\lambda x$ e no segundo caso $v=-2\lambda x$
+
+\begin{align}
+A^{2}\left(\frac{1}{2\lambda}\left.e^{2\lambda x}\right|^{0}_{-\infty}+\frac{1}{-2\lambda}\left.e^{-2\lambda x}\right|^{+\infty}_{0}\right) & =1\\
+A^{2}\left(\frac{\left(e^{0}-\frac{1}{e^{\infty}}\right)}{2\lambda}+\frac{\left(\frac{1}{e^{\infty}}-e^{0}\right)}{-2\lambda}\right) & =\\
+A^{2}\left(\frac{1}{2\lambda}+\frac{1}{2\lambda}\right) & =\\
+\frac{A^{2}}{\lambda} & =\\
+A & =\sqrt{\lambda}
+\end{align}
+
+O valor esperado para $x$ é então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}x\left|\Psi\left(x,t\right)\right|^{2}dx & =A^{2}\left(\int^{0}_{-\infty}xe^{2\lambda x}dx+\int^{+\infty}_{0}xe^{-2\lambda x}dx\right)\\
+ & =\lambda\left(\int^{0}_{-\infty}\frac{1}{2\lambda}\frac{u}{2\lambda}e^{u}du+\int^{+\infty}_{0}\frac{1}{2\lambda}\frac{u}{2\lambda}e^{-u}du\right)\\
+ & =\frac{1}{4\lambda}\left(\int^{0}_{-\infty}ue^{u}du+\int^{+\infty}_{0}ue^{-u}du\right)\label{eq:5}
+\end{align}
+
+Onde usamos novamente que $u=2\lambda x$. Poderíamos usar apenas o fato de que o integrando ser ímpar e termos limites simétricos\footnote{Funções pares são funções que $f\left(-x\right)=f\left(x\right),$temos então $\int^{a}_{-a}f\left(x\right)dx=2\int^{a}_{0}f\left(x\right)dx$. Funções ímpares são funções que $f\left(-x\right)=-f\left(x\right)$, temos então $\int^{a}_{-a}f\left(x\right)dx=0$ (\href{https://proofwiki.org/wiki/Definite_Integral_of_Odd_Function}{prova}e \href{https://proofwiki.org/wiki/Definite_Integral_of_Even_Function}{prova}).}. Mas queremos resolver por completo. Sendo $f\left(u\right)=u$ e $g\left(u\right)=e^{u}$
+
+\begin{align}
+\int^{b}_{a}f\left(u\right)g'\left(u\right)du & =\left.f\left(u\right)g\left(u\right)\right|^{b}_{a}-\int^{b}_{a}g\left(u\right)f'\left(u\right)du\\
+\int^{0}_{-\infty}ue^{u}du & =\left.ue^{u}\right|^{0}_{-\infty}-\int^{9}_{-\infty}e^{u}du\\
+ & =\lim_{u\rightarrow-\infty}\left(ue^{u}\right)-\int^{9}_{-\infty}e^{u}du\\
+ & =\lim_{u\rightarrow\infty}\left(-\frac{u}{e^{u}}\right)-\left(e^{0}-\frac{1}{e^{\infty}}\right)\\
+ & =\lim_{u\rightarrow\infty}\left(-\frac{u}{e^{u}}\right)-1
+\end{align}
+
+Como temos uma indeterminação do tipo $-\infty/\infty$ podemos aplicar a regra de L'hopital\footnote{$\lim_{x\rightarrow a}\frac{f\left(x\right)}{g\left(x\right)}=\lim_{x\rightarrow a}\frac{f'\left(x\right)}{g'\left(x\right)},$quando temos uma indeterminação do tipo $0/0$ ou $\pm\infty/\pm\infty$ (\href{https://proofwiki.org/wiki/L'H\%5C\%2525C3\%5C\%2525B4pital's_Rule}{prova}).}:
+
+\begin{align}
+\int^{0}_{-\infty}ue^{u}du & =\lim_{u\rightarrow\infty}\left(-\frac{du/dt}{de^{u}/dt}\right)-1\\
+ & =\lim_{u\rightarrow\infty}\left(-\frac{du/dt}{de^{u}/dt}\right)-1\\
+ & =\lim_{u\rightarrow\infty}\left(-\frac{1}{e^{u}}\right)-1\\
+ & =-1
+ \label{eq:9}
+\end{align}
+
+E equivalente:
+
+\begin{align}
+\int^{+\infty}_{0}ue^{-u}du & =\left.-ue^{-u}\right|^{+\infty}_{0}+\int^{+\infty}_{0}e^{-u}du\\
+ & =-\lim_{u\rightarrow\infty}\left(ue^{-u}\right)-\left(\frac{1}{e^{\infty}}-1\right)\\
+ & =-\lim_{u\rightarrow\infty}\left(\frac{u}{e^{u}}\right)+1\\
+ & =1\label{eq:13}
+\end{align}
+
+Este é o mesmo limite que calculamos anteriormente aplicando a L'hopital e temos $\lim_{u\rightarrow\infty}\left(u/e^{u}\right)=0$. Então retomando a equação \ref{eq:5} temos:
+
+\begin{align}
+\int^{+\infty}_{-\infty}x\left|\Psi\left(x,t\right)\right|^{2}dx & =\frac{1}{4\lambda}\left(\int^{0}_{-\infty}ue^{u}du+\int^{+\infty}_{0}ue^{-u}du\right)\\
+ & =\frac{1}{4\lambda}\left(-1+1\right)\\
+ & =0
+\end{align}
+
+Temos algo análogo para o valor de esperado de $x^{2}$ onde vamos usar a mesma substituição $u=2\lambda x$
+
+\begin{align}
+\int^{+\infty}_{-\infty}x^{2}\left|\Psi\left(x,t\right)\right|^{2}dx & =A^{2}\left(\int^{0}_{-\infty}x^{2}e^{2\lambda x}dx+\int^{+\infty}_{0}x^{2}e^{-2\lambda x}dx\right)\\
+ & =\lambda\left(\int^{0}_{-\infty}\frac{1}{2\lambda}\left(\frac{u}{2\lambda}\right)^{2}e^{u}du+\int^{+\infty}_{0}\frac{1}{2\lambda}\left(\frac{u}{2\lambda}\right)^{2}e^{-u}du\right)\\
+ & =\frac{1}{8\lambda^{2}}\left(\int^{0}_{-\infty}u^{2}e^{u}du+\int^{+\infty}_{0}u^{2}e^{-u}du\right)\label{eq:16}
+\end{align}
+
+Aplicando novamente a integração por partes mas sendo agora $f\left(u\right)=u^{2}$e $g\left(u\right)=e^{u}$ para a primeira integral:
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{0}_{-\infty}u^{2}e^{u}du & =\left.u^{2}e^{u}\right|^{0}_{-\infty}-2\int^{0}_{-\infty}ue^{u}du\\
+ & =\lim_{u\rightarrow\infty}\frac{u^{2}}{e^{u}}-2\int^{0}_{-\infty}ue^{u}due^{u}
+\end{align}
+
+O resultado desta integral já foi encontrado na equação \ref{eq:9} e é $-1$. O limite podemos usar duas vezes l'hopital, de forma que obtemos apenas:
+
+\begin{equation}
+\int^{0}_{-\infty}u^{2}e^{u}du=2\label{eq:17}
+\end{equation}
+
+Para a segunda integral temos:
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{+\infty}_{0}u^{2}e^{-u}du & =-\left.u^{2}e^{-u}\right|^{\infty}_{0}+2\int^{+\infty}_{0}ue^{-u}du\\
+ & =-\lim_{u\rightarrow\infty}\frac{u^{2}}{e^{u}}+2\int^{0}_{-\infty}ue^{-u}du
+\end{align}
+
+De forma análoga podemos aplicar duas vezes l'hopital para resolver o limite e o resultado dessa integral foi obtido em \ref{eq:9} e vale $1$. Temos então:
+
+\begin{equation}
+\int^{+\infty}_{0}u^{2}e^{-u}du=2\label{eq:18}
+\end{equation}
+
+Agora combinando os resultados \ref{eq:17} e \ref{eq:18} em \ref{eq:16}:
+
+\begin{align}
+\int^{+\infty}_{-\infty}x^{2}\left|\Psi\left(x,t\right)\right|^{2}dx & =\frac{1}{8\lambda^{2}}\left(\int^{0}_{-\infty}u^{2}e^{u}du+\int^{+\infty}_{0}u^{2}e^{-u}du\right)\\
+ & =\frac{1}{8\lambda^{2}}\left(2+2\right)\\
+ & =\frac{1}{2\lambda^{2}}
+\end{align}
+
+O desvio padrão de $x$ é dado então por:
+
+\begin{align}
+\sigma & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}
+\end{align}
+
+Como $\left\langle x\right\rangle =\int^{+\infty}_{-\infty}x\left|\Psi\left(x,t\right)\right|^{2}=0$ e $\left\langle x^{2}\right\rangle =\int^{+\infty}_{-\infty}x^{2}\left|\Psi\left(x,t\right)\right|^{2}=1/2\lambda^{2}$ então:
+
+\begin{equation}
+\sigma=\sqrt{\frac{1}{2\lambda^{2}}-0}=\frac{1}{\sqrt{2}\lambda}
+\end{equation}
+
+E por fim a probabilidade de não estar no intervalo entre $-\sigma$ e $+\sigma$ é dado por:
+
+\begin{align}
+\int^{--\sigma}_{-\infty}\left|\Psi\right|^{2}dx+\int^{+\infty}_{+\sigma}\left|\Psi\right|^{2}dx & =-\int^{--\infty}_{-\sigma}\left|\Psi\left(x,t\right)\right|^{2}dx+\int^{+\infty}_{+\sigma}\Psi\left(x,t\right)^{2}dx\\
+ & =\int^{+\infty}_{+\sigma}\Psi\left(-u,t\right)^{2}du+\int^{+\infty}_{+\sigma}\Psi\left(x,t\right)^{2}dx
+\end{align}
+
+Onde usamos a propriedade sobre inverter os limites da integral\footnote{$\int^{b}_{a}f\left(x\right)dx=-\int^{a}_{b}f\left(x\right)dx$ (\href{https://proofwiki.org/wiki/Reversal_of_Limits_of_Definite_Integral}{prova}).}, e fizemos a substituição $u=-x,$ de forma que temos $du/dx=-1$ ou $du=-dx$ e os novos limites são 
+\begin{equation}
+\lim_{x\rightarrow-v}u=\lim_{x\rightarrow-v}-x=v
+\end{equation}
+
+No limite inferior $v=\sigma$ e no limite superior $v=-\infty$. No nosso caso como $\Psi\left(x,t\right)$ é uma função par, isto é $\Psi\left(-x,t\right)=\Psi\left(x,t\right)$, pois $x$ sempre aparece em módulo $\left|x\right|$ então:
+
+\begin{align}
+\int^{--\sigma}_{-\infty}\left|\Psi\right|^{2}dx+\int^{+\infty}_{+\sigma}\left|\Psi\right|^{2}dx & =\int^{+\infty}_{+\sigma}\Psi\left(u,t\right)^{2}du+\int^{+\infty}_{+\sigma}\Psi\left(x,t\right)^{2}dx\\
+ & =2\int^{+\infty}_{+\sigma}\Psi\left(x,t\right)^{2}dx
+\end{align}
+
+Onde temos o segundo resultado pois $x$ e $v$ são apenas símbolo para uma variável, que nos dois casos são a mesma variável na função $\Psi$, e temos consequentemente a mesma integral. Resolvendo então, essa é a mesma integral indeterminada resolvida no começo do exemplo, com a vantagem de que $0<\sigma<\infty$, ou seja, os valores dentro dos limites da integral são sempre positivos de forma que dentro dessa faixa de valores podemos escrever que $\left|x\right|=x$.
+
+\begin{align}
+\int^{--\sigma}_{-\infty}\left|\Psi\right|^{2}dx+\int^{+\infty}_{+\sigma}\left|\Psi\right|^{2}dx & =2\int^{+\infty}_{+\sigma}\Psi\left(x,t\right)^{2}dx\\
+ & =2A^{2}\int^{+\infty}_{+\sigma}e^{-\lambda2\left|x\right|}dx\\
+ & =2\lambda\int^{+\infty}_{+\sigma}e^{-\lambda2x}dx\\
+ & =\frac{2\lambda}{-2\lambda}\left[\frac{1}{e^{\lambda2x}}\right]^{+\infty}_{+\sigma}\\
+ & =-\left[\frac{1}{e^{\infty}}-\frac{1}{e^{\lambda2\sigma}}\right]^{+\infty}_{+\sigma}\\
+ & =\exp\left[-\lambda2\sigma\right]\\
+ & =\exp\left[-\frac{2\lambda}{\sqrt{2}\lambda}\right]
+\end{align}
+
+Onde usamos o fato de que calculamos já $A$ e $\sigma.$ Temos então que a probabilidade é e$^{-\sqrt{2}}$ou $0.2431$, ou ainda $24,31\%$.
+
+\subsection{Momentum}
+
+O valor esperado $\left\langle x\right\rangle $ é a média das medidas feitas em uma coleção de sistemas idênticos, e não a média de medidas repetidas em um mesmo sistema. Porém, agora $\left\langle x\right\rangle $ varia com o tempo, e podemos querer saber quão rápido ele se move, de modo análogo ao que fazemos na mecânica clássica, onde a partir de $\ddot{x}$ investigamos outras propriedades do sistema. Temos então:
+
+\begin{align}
+\frac{d\left\langle x\right\rangle }{dt} & =\int x\frac{\partial}{\partial t}\left|\Psi\left(x,t\right)\right|^{2}
+\end{align}
+
+Onde estamos derivando apenas em relação ao que depende explicitamente do tempo, e aqui há algo que talvez nos pareça estranho. Diferentemente da mecânica clássica, em que temos $x(t)$, nesta abordagem matemática da mecânica quântica, $x$ não depende do tempo; não é uma função de posição. Ele é apenas um rótulo para as diferentes posições que uma partícula pode ocupar. Portanto, não há uma evolução temporal de $x$. Os rótulos $x$ para $\Psi(x,0)$ não evoluem para os rótulos de $\Psi(x,1)$, assim como as diferentes posições $x$ para $\Psi(x,0)$ são independentes entre si. Ou seja, para $x=1$, sempre teremos $x=1$; não existe uma função $x(t)$ que evolua tal que $x(0)=0$ e $x(1)=1$.
+
+O que ocorre é que $\Psi(0,0)$, $\Psi(1,0)$, $\Psi(0,1)$ e $\Psi(1,1)$ são todos valores distintos da função $\Psi(x,t)$. É a função de onda que evolui no tempo, e nela podemos obter diferentes probabilidades de medir a partícula tanto em $x=0$ quanto em $x=1$, e tanto em $t=0$ quanto em $t=1$. Então usando o resultado \ref{eq:nl}:
+
+\begin{equation}
+\frac{\partial}{\partial t}\left|\Psi\right|^{2}=\frac{i\hbar}{2m}\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)
+\end{equation}
+
+Temos:
+
+\begin{align}
+\frac{d\left\langle x\right\rangle }{dt} & =\int x\frac{\partial}{\partial t}\left|\Psi\left(x,t\right)\right|^{2}\\
+ & =\frac{i\hbar}{2m}\int x\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi\right)dx
+\end{align}
+
+Onde usando a regra do produto:
+
+\begin{equation}
+\frac{d}{dx}\left(fg\right)=f\frac{dg}{dx}+\frac{df}{dx}g
+\end{equation}
+
+Então:
+
+\begin{align}
+\frac{\partial}{\partial x}\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right) & =\frac{\partial}{\partial x}\left(\Psi^{*}\frac{\partial\Psi}{\partial x}\right)-\frac{\partial}{\partial x}\left(\frac{\partial\Psi^{*}}{\partial x}\Psi\right)\\
+ & =\left[\frac{\partial\Psi^{*}}{\partial x}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}\right]-\left[\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi+\frac{\partial\Psi^{*}}{\partial x}\frac{\partial\Psi}{\partial x}\right]\\
+ & \frac{\partial\Psi^{*}}{\partial x}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\Psi
+\end{align}
+
+Então podemos reescrever a integral como:
+
+\begin{equation}
+\frac{d\left\langle x\right\rangle }{dt}=\frac{i\hbar}{2m}\int x\left[\frac{\partial}{\partial x}\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)\right]dx
+\end{equation}
+
+Por conveniência não estamos escrevendo os limites da integral $\int^{+\infty}_{-\infty}\rightarrow\int$ e nem as dependências da função de onda $\Psi\left(x,t\right)=\Psi$. Usando integral por partes então em cada uma das integrais escolhendo $f\left(x\right)=x$ e $g'\left(x\right)=\frac{\partial}{\partial x}\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)$, para a primeira integral, temos:
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int x\left(\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}\right) & =\left[x\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)\right]^{+\infty}_{-\infty}-\int\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)dx
+\end{align}
+
+Uma demonstração mais robusta matematicamente pode ser necessária futuramente, mas exigimos que $\Psi(x)$ (e suas derivadas) vá a zero quando $x\to\infty$ mais rápido do que o próprio $x$ vai para infinito --- ou seja, mais rápido do que $1/|x|\to0$ quando $x\to\infty$. Essa é uma exigência relacionada também às condições de normalização da função de onda. Apesar de não termos discutido o quão rápido a função de onda deve tender a zero no infinito, já havíamos mencionado essa exigência para que a função de onda consiga descrever um estado fisicamente possível. Aqui, estamos apenas assumindo que isso ocorre mais rápido do que $1/|x|$. Além disso, em sistemas típicos, a derivada de $\Psi$ se comporta de forma semelhante. É importante notar que aqui assumimos várias coisas sobre a função de onda para que esse resultado seja válido, de forma sucinta: 
+\begin{itemize}
+\item $\Psi$ e suas derivadas vão a zero quando $x\to\infty$ mais rápido que $1/|x|$. 
+\end{itemize}
+Podemos dizer que essas exigências são para funções de onda normalizadas no sentido mais tradicional. É possível a existência de sistemas quânticos cuja função de onda não seja normalizável no sentido que estamos discutindo aqui, e que podem ser tratados por outras abordagens. Contudo, essas são exceções e exigem um conhecimento mais avançado. Neste momento, devemos nos ater aos casos que obedecem a essas condições, por serem tanto mais comuns quanto mais simples de trabalhar.
+
+Mas uma vez que o termo entre parênteses vai então mais rápido a $0$ quando $x\rightarrow\infty$, o primeiro termo é $0$ e ficamos com:
+
+\begin{equation}
+\frac{d\left\langle x\right\rangle }{dt}=-\frac{i\hbar}{2m}\int\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)dx
+\end{equation}
+
+Ainda vale comentar que Griffiths define que os estados fisicamente possíveis correspondem a soluções quadrado-integráveis da equação de Schrödinger \footnote{$\int^{+\infty}_{-\infty}\left|f\left(x\right)\right|^{2}dx<\infty$(\href{https://en.wikipedia.org/wiki/Square-integrable_function}{definição})}.Estendendo essa discussão, considerando que o comportamento de $|f(x)|^{2}$ pode ser aproximado por $|x|^{-p}$ no infinito, temos então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\frac{dx}{\left|x\right|^{p}} & =\int^{+\infty}_{-\infty}\frac{dx}{\left|x\right|^{p}}+=\int^{0}_{-\infty}\frac{dx}{\left(-x\right)^{p}}+\int^{+\infty}_{0}\frac{dx}{x^{p}}\\
+ & =-\int^{0}_{+\infty}\frac{du}{u^{p}}+\int^{+\infty}_{0}\frac{dx}{x^{p}}\\
+ & =\int^{+\infty}_{0}\frac{du}{u^{p}}+\int^{+\infty}_{0}\frac{dx}{x^{p}}\\
+ & =2\int^{+\infty}_{0}\frac{dx}{x^{p}}\\
+ & =-\int^{+\infty}_{0}x^{-p}dx\\
+ & =\left.\frac{x^{-p+1}}{p-1}\right|^{+\infty}_{0}\\
+ & =\left(p-1\right)\lim_{x\rightarrow\infty}\frac{1}{x^{p-1}}-0\\
+ & =\left(p-1\right)\lim_{x\rightarrow\infty}\frac{1}{x^{p-1}}
+\end{align}
+
+Para que a integral não diverja, precisamos que$p-1\geq0$, ou seja, $p\geq1,$logo, o menor valor que $p$ pode assumir para a integral convergir é $p=1$. Como consideramos que o comportamento assintótico é $|f(x)|^{2}\sim\frac{1}{|x|^{p}}$, temos $|f(x)|\sim\frac{1}{\sqrt{\left|x\right|^{p}}}$ como Griffiths menciona\footnote{Mais especificamente, se $p$ for real, temos $\left|x^{p}\right|$=$\left|x\right|^{p}$, logo $|f(x)|\sim\frac{1}{|\sqrt{\left|x^{p}\right|}}$.}. Pois:
+
+\begin{equation}
+\left|f\left(x\right)\right|^{2}=\left|\frac{1}{\sqrt{x^{p}}}\right|^{2}=\frac{1}{\left|x^{p}\right|}
+\end{equation}
+
+Como $p$ deve ser maior que 1 para a normalização da função de onda, o valor mínimo que $f(x)$ pode assumir para garantir isso é $f(x)\sim\frac{1}{\sqrt{|x|}}.$ Além disso, podemos notar que, conforme aumentamos $p$, a função $f(x)$ deve decair cada vez mais rápido para zero quando $x\to\infty$. É nesse sentido que se diz que, evidentemente, $\Psi(x,t)$ deve ir a zero mais rápido do que $\frac{1}{\sqrt{|x|}}$ quando $|x|\to\infty$.
+
+Mas este caso, apesar de ser uma aproximação útil e cobrir a maioria dos casos fisicamente válidos, como foi discutido, não cobre necessariamente todos. É possível que uma função de onda fisicamente válida possua outra aproximação assintótica ou mesmo não seja quadrado-integrável. Neste último caso, é necessário usar alguma generalização da condição de normalização. Para a função de onda ser válida fisicamente, é necessário principalmente que ela seja uma solução da equação de Schrödinger e que possua uma interpretação probabilística (que pode ser feita através de uma generalização da normalização), além, evidentemente, de obedecer às condições impostas pelo problema físico.
+
+Por enquanto, trabalharemos com os casos em que essas condições a respeito da normalização da função de onda são válidas, isto é, que a função seja quadrado-integrável e, consequentemente, apresente uma normalização do tipo$\int^{+\infty}_{-\infty}|\Psi(x,t)|^{2}\,dx=1,$ além de possuir um comportamento assintótico no infinito similar a$\frac{1}{|x|^{p}},$ com $p\geq\frac{1}{2}$\footnote{Vale destacar que, neste último cálculo do limite, precisamos apenas que o produto entre a função de onda e sua derivada decaia mais rapidamente que $\frac{1}{x}$ quando $x\to\infty$. Com a imposição adotada de que a função de onda decaia no infinito, no mínimo, como $\frac{1}{\sqrt{x}}$, garantimos essa condição. Por outro lado, se a função de onda decaísse, por exemplo, como $e^{-|x|}$, isso significaria que ela decai ainda mais rapidamente, e também teríamos o mesmo resultado no limite. No entanto, precisaríamos calcular para verificar se, com esse comportamento assintótico, a função de onda é quadrado-integrável.}.
+
+Faremos isso da mesma forma que é assumido por Griffiths, pois assim podemos trabalhar com os casos mais gerais e deixar as exceções para um estudo mais especializado no futuro. Retomando, então, a discussão do limite fazendo uso dessas condições, ou seja, considerando que o comportamento assintótico da função de onda no infinito é similar a $\frac{1}{\sqrt{x}}$, temos: 
+\begin{equation}
+\Psi^{*}\frac{\partial\Psi}{\partial x}\sim\frac{1}{\sqrt{x}}\left(-\frac{1}{2x^{\frac{3}{2}}}\right)=-\frac{1}{2x^{2}}
+\end{equation}
+
+E consequentemente
+
+\begin{equation}
+\lim_{x\rightarrow\infty}x\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)\sim\lim_{x\rightarrow\infty}\left(-\frac{x}{2x^{2}}\right)=\lim_{x\rightarrow\infty}\left(-\frac{1}{2x}\right)=0
+\end{equation}
+
+Então ficamos com:
+
+\begin{equation}
+\frac{d\left\langle x\right\rangle }{dt}=-\frac{i\hbar}{2m}\int\left(\Psi^{*}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\Psi\right)dx
+\end{equation}
+
+Usando novamente a integral por substituição, para a segunda integral fazendo $f=\Psi$ e $g=\Psi^{*}$
+
+\begin{align}
+\int^{b}_{a}f\frac{dg}{dx}dx & =\left[fg\right]^{b}_{a}-\int^{b}_{a}\frac{df}{dx}gdx\\
+\int^{\infty}_{-\infty}\frac{\partial\Psi^{*}}{\partial x}\Psi dx & =\left[\Psi\Psi^{*}\right]^{+\infty}_{-\infty}-\int^{\infty}_{-\infty}\Psi^{*}\frac{\partial\Psi}{\partial x}\\
+ & =-\int^{\infty}_{-\infty}\Psi^{*}\frac{\partial\Psi}{\partial x}
+\end{align}
+
+Onde usamos o fato de que a função de onda vai a 0 no infinito . Temos então:
+
+\begin{equation}
+\frac{d\left\langle x\right\rangle }{dt}=-\frac{i\hbar}{2m}\int\left(\Psi^{*}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial\Psi}{\partial x}\right)dx=-\frac{i\hbar}{m}\int\Psi^{*}\frac{\partial\Psi}{\partial x}dx
+\end{equation}
+
+Vamos postular\footnote{Postulado é uma afirmação fundamental aceita como verdadeira sem necessidade de demonstração, que serve de base para o desenvolvimento de um sistema lógico ou teórico.}: O valor esperado da velocidade é igual a derivada no tempo do valor esperado da posição:
+
+\begin{equation}
+\left\langle v\right\rangle =\frac{d\left\langle x\right\rangle }{dt}
+\end{equation}
+
+Temos então o momento:
+
+\begin{equation}
+\left\langle p\right\rangle =m\frac{d\left\langle x\right\rangle }{dt}=-i\hbar\int\Psi^{*}\frac{\partial\Psi}{\partial x}dx
+\end{equation}
+
+Podemos reescrever as expressões como:
+
+\begin{align}
+\left\langle x\right\rangle  & =\int\Psi^{*}\left[x\right]\Psi dx\\
+\left\langle p\right\rangle  & =\int\Psi^{*}\left[-i\hbar\left(\frac{\partial}{\partial x}\right)\right]\Psi dx
+\end{align}
+
+Dizemos que o operador \footnote{Um operador é uma entidade matemática que atua sobre o espaço de estados físicos de um sistema, isto é, o conjunto de todos os estados possíveis que o sistema pode assumir. Quando aplicado a um estado físico, o operador gera outro estado físico ou uma informação associada a esse estado, dependendo do tipo de operador.} $x$ “representa” a posição e o operador $-i\hbar\frac{\partial}{\partial x}$ “representa” o momento. Para calcular os valores esperados, fazemos um “sanduíche”, colocando o operador entre $\Psi^{*}$ e $\Psi$. Todas as variáveis dinâmicas clássicas podem ser expressas em termos de posição e momento. Por exemplo, a energia cinética é dada por:
+
+\begin{equation}
+T=\frac{1}{2}mv^{2}=\frac{p^{2}}{m}
+\end{equation}
+
+O momento angular é dado por:
+
+\begin{equation}
+\boldsymbol{L}=\boldsymbol{r}\times m\boldsymbol{v}=\boldsymbol{r}\times\boldsymbol{p}
+\end{equation}
+
+Então, para calcular o valor esperado de qualquer quantidade $Q(x,p)$, substituímos $p$ por $-i\hbar\frac{\partial}{\partial x}$ e inserimos o operador resultante entre o conjugado$\Psi^{*}$ e a própria função de onda $\Psi$. De forma geral:
+
+\begin{equation}
+\left\langle Q\left(x,p\right)\right\rangle =\int\Psi^{*}\left[Q\left(x,-i\hbar\frac{\partial}{\partial x}\right)\right]\Psi dx\label{eq:24}
+\end{equation}
+
+Griffiths promete fundamentar essa equação em uma base teórica sólida futuramente, mas por enquanto podemos considerá-la um axioma\footnote{Basicamente, é o mesmo que um postulado. A diferença entre axioma e postulado é mais uma questão de contexto: usa-se mais “axioma” em matemática e lógica, enquanto “postulado” é mais comum em outras ciências. Além disso, axioma costuma ser visto como algo mais universal, enquanto postulado está relacionado a uma ciência ou teoria específica.} . Por exemplo, o valor esperado para a energia cinética pode ser escrito como:
+
+\begin{equation}
+\left\langle T\right\rangle =-\frac{\hbar^{2}}{m}\int\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}dx
+\end{equation}
+
+\textbf{Exemplo: Calcular $d\left\langle p\right\rangle /dt$}
+
+Queremos obter:
+
+\begin{equation}
+\frac{d\left\langle p\right\rangle }{dt}=\left\langle -\frac{\partial V}{\partial x}\right\rangle 
+\end{equation}
+
+Vamos retomar a definição de $\left\langle p\right\rangle $
+
+\begin{align}
+\frac{d\left\langle p\right\rangle }{dt} & =\frac{d}{dt}\left(-i\hbar\int\Psi^{*}\frac{\partial\Psi}{\partial x}dx\right)\\
+ & =-i\hbar\frac{d}{dt}\left(\int\Psi^{*}\frac{\partial\Psi}{\partial x}dx\right)\\
+ & =-\left[\int\left(i\hbar\frac{\partial\Psi^{*}}{\partial t}\frac{\partial\Psi}{\partial x}+i\hbar\Psi^{*}\frac{\partial}{\partial t}\left(\frac{\partial\Psi}{\partial x}\right)\right)dx\right]\\
+ & =\left[\int\left(\left(-i\hbar\frac{\partial\Psi^{*}}{\partial t}\right)\frac{\partial\Psi}{\partial x}-\Psi^{*}\frac{\partial}{\partial x}\left(i\hbar\frac{\partial\Psi}{\partial t}\right)\right)dx\right]
+\end{align}
+
+Onde usamos a simetria das segundas derivadas\footnote{$\frac{\partial}{\partial x}\left(\frac{\partial f}{\partial y}\right)=\frac{\partial}{\partial y}\left(\frac{\partial f}{\partial x}\right)$(\href{https://en.wikipedia.org/wiki/Symmetry_of_second_derivatives}{prova}).} e usando agora a equação de Schrödinger (e o complexo conjugado dela)
+
+\begin{equation}
+i\hbar\frac{\partial\Psi}{\partial t}=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi
+\end{equation}
+
+Temos:
+
+\begin{align}
+\frac{d\left\langle p\right\rangle }{dt} & =-\left[\int\left(i\hbar\frac{\partial\Psi^{*}}{\partial t}\frac{\partial\Psi}{\partial x}+i\hbar\Psi^{*}\frac{\partial}{\partial x}\left(\frac{\partial\Psi}{\partial t}\right)\right)dx\right]\\
+ & =\int\left(\left(-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}+V\Psi^{*}\right)\frac{\partial\Psi}{\partial x}-\Psi^{*}\frac{\partial}{\partial x}\left(-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi\right)\right)dx\\
+ & =\int\left(-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}+V\Psi^{*}\frac{\partial\Psi}{\partial x}+\frac{\hbar^{2}}{2m}\Psi^{*}\frac{\partial^{3}\Psi}{\partial x^{3}}-\Psi^{*}\frac{\partial}{\partial x}\left(V\Psi\right)\right)dx\\
+ & =\int\left[\frac{\hbar^{2}}{2m}\left(-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial^{3}\Psi}{\partial x^{3}}\right)+\left(V\Psi^{*}\frac{\partial\Psi}{\partial x}-\Psi^{*}\frac{\partial}{\partial x}\left(V\Psi\right)\right)\right]dx\\
+ & =\int\left[\frac{\hbar^{2}}{2m}\left(-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial^{3}\Psi}{\partial x^{3}}\right)+\left(V\Psi^{*}\frac{\partial\Psi}{\partial x}-\Psi^{*}\frac{\partial V}{\partial x}\Psi-\Psi^{*}V\frac{\partial}{\partial x}\Psi\right)\right]dx\\
+ & =\frac{\hbar^{2}}{2m}\int\left(-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}+\Psi^{*}\frac{\partial^{3}\Psi}{\partial x^{3}}\right)dx-\int\Psi^{*}\frac{\partial V}{\partial x}\Psi dx
+\end{align}
+
+Na primeira integral precisamos integrar por partes. Pegando a segunda integral fazendo $f=\Psi^{*}$ e $g=\partial^{2}\Psi/\partial x^{2}$ então:
+
+\begin{align}
+\int^{b}_{a}f\frac{dg}{dx}dx & =\left[fg\right]^{b}_{a}-\int^{b}_{a}\frac{df}{dx}gdx\\
+\int\Psi^{*}\frac{\partial^{3}\Psi}{\partial x^{3}}dx & =\left[\Psi^{*}\frac{\partial^{2}\Psi}{\partial x^{2}}\right]^{+\infty}_{-\infty}-\int\frac{\partial\Psi^{*}}{\partial x}\frac{\partial^{2}\Psi}{\partial x^{2}}dx\\
+ & =-\int\frac{\partial\Psi^{*}}{\partial x}\frac{\partial^{2}\Psi}{\partial x^{2}}dx
+\end{align}
+
+Então:
+
+\begin{align}
+\frac{d\left\langle p\right\rangle }{dt} & =\frac{\hbar^{2}}{2m}\int\left(-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}-\frac{\partial\Psi^{*}}{\partial x}\frac{\partial^{2}\Psi}{\partial x^{2}}\right)dx-\int\Psi^{*}\frac{\partial V}{\partial x}\Psi dx
+\end{align}
+
+Vamos aplicar a integral por partes novamente no segundo termo da primeira integral sendo agora $f=\partial\Psi^{*}/\partial x$ e $g=\partial\Psi/\partial x$
+
+\begin{align}
+\int^{b}_{a}f\frac{dg}{dx}dx & =\left[fg\right]^{b}_{a}-\int^{b}_{a}\frac{df}{dx}gdx\\
+\int^{b}_{a}\frac{\partial\Psi^{*}}{\partial x}\frac{\partial\Psi^{2}}{\partial x^{2}}dx & =\left[\frac{\partial\Psi^{*}}{\partial x}\frac{\partial\Psi}{\partial x}\right]^{b}_{a}-\int^{b}_{a}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}dx\\
+ & =-\int^{b}_{a}\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}dx
+\end{align}
+
+Onde como no caso anterior, usamos a condição de que $\Psi$ e suas derivadas vão a zero no infinito. Temos então:
+
+\begin{align}
+\frac{d\left\langle p\right\rangle }{dt} & =\frac{\hbar^{2}}{2m}\int\left(-\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}+\frac{\partial^{2}\Psi^{*}}{\partial x^{2}}\frac{\partial\Psi}{\partial x}dx\right)dx-\int\Psi^{*}\frac{\partial V}{\partial x}\Psi dx\\
+ & =-\int\Psi^{*}\frac{\partial V}{\partial x}\Psi dxdx
+\end{align}
+
+E pela equação \ref{eq:24}, então:
+
+\begin{align}
+\left\langle Q\left(x,p\right)\right\rangle  & =\int\Psi^{*}\left[Q\left(x,-i\hbar\frac{\partial}{\partial x}\right)\right]\Psi dx\\
+\left\langle -\frac{\partial V}{\partial x}\right\rangle  & =\int\Psi^{*}\left[-\frac{\partial V}{\partial x}\right]\Psi dx
+\end{align}
+
+Logo:
+
+\begin{equation}
+\frac{d\left\langle p\right\rangle }{dt}=\left\langle -\frac{\partial V}{\partial x}\right\rangle 
+\end{equation}
+
+Como queríamos demonstrar.
+
+\subsection{A relação da incerteza}
+
+Se pegarmos uma corda, temos duas situações extremas: 
+\begin{itemize}
+\item Se a oscilamos periodicamente, temos claramente um comprimento de onda, mas não podemos determinar onde ela está localizada. 
+\item Se enviamos apenas um pulso, podemos localizar o pulso, mas não podemos falar em comprimento de onda. 
+\end{itemize}
+Casos intermediários apresentam uma situação de troca entre uma condição e outra. Isso se aplica a qualquer fenômeno ondulatório, inclusive à função de onda da mecânica quântica. Embora exista um teorema que pode ser demonstrado rigorosamente por meio da análise de Fourier, vamos nos concentrar aqui no argumento qualitativo. A fórmula de de Broglie\footnote{Muitos autores tomam a fórmula de de Broglie como um axioma, a partir do qual deduzem a associação do momento com o operador $-i\hbar\frac{\partial}{\partial x}$.} relaciona o momento da partícula à função de onda:
+
+\begin{equation}
+p=\frac{h}{\lambda}=\frac{2\pi\hbar}{\lambda}\label{eq:broglie}
+\end{equation}
+
+Temos, portanto, uma relação entre o momento e o comprimento de onda. Como essas grandezas são inversamente proporcionais, pode surgir a tendência de pensar que suas dispersões\footnote{Outro nome que a literatura usa para o desvio padrão $\sigma_{x}$é a dispersão, assim como se usa valor esperado para a média $\langle x\rangle$.} também sejam inversamente proporcionais --- mas isso é falso. A aproximação de primeira ordem para a propagação do erro de uma função $y=f(x)$, com uma única variável, é dada por(\href{https://web.chem.ox.ac.uk/teaching/Physics\%5C\%252520for\%5C\%252520CHemists/Errors/Propagation.html}{prova}):
+
+\begin{equation}
+\sigma_{y}\approx\left|\frac{df}{dx}\right|\sigma_{x}
+\end{equation}
+
+Ou seja:
+
+\begin{equation}
+\sigma_{p}\approx\left|-\frac{h}{\lambda^{2}}\right|\sigma_{\lambda}=\frac{h}{\lambda^{2}}\sigma_{\lambda}
+\end{equation}
+
+Ou ainda:
+
+\begin{equation}
+\frac{\sigma_{p}}{p}\approx\frac{\sigma_{\lambda}}{\lambda}
+\end{equation}
+
+Essa aproximação é suficiente para notarmos que chegamos a uma relação que expressa que a dispersão relativa de $p$é igual à dispersão relativa de $\lambda$. Assim, para um valor fixo de $\lambda$ (e, consequentemente, um valor fixo de \textbackslash ($p=h/\lambda$), um aumento na dispersão $\sigma_{\lambda}$ implica um aumento proporcional na dispersão $\sigma_{p}$, mesmo que os valores de $p$ e $\lambda$ sejam inversamente proporcionais. Quantitativamente o resultado que queremos é:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}\geq\frac{\hbar}{2}
+\end{equation}
+
+Observação: A dispersão aqui se refere aos resultados obtidos em medições realizadas sobre sistemas identicamente preparados. Mesmo com a mesma preparação, os resultados não são necessariamente idênticos, mas se distribuem em torno de um valor médio.
+
+\textbf{Exemplo: Uma partícula de massa $m$ com a seguinte função de onda}
+
+\textbf{ 
+\begin{equation}
+\Psi\left(x,t\right)=A\exp\left[-a\left(\frac{mx^{2}}{\hbar}+it\right)\right]
+\end{equation}
+}
+
+\textbf{Onde $A$ e $a$ são constantes reais positivas.}
+
+\textbf{a) Queremos encontrar $A$}
+
+\textbf{b) Encontrar qual função de energia potencial, $V\left(x\right)$ esta é uma solução para equação de Schrodinger}
+
+\textbf{c) Calcular os valores esperados $x$, $x^{2}$, $p$ e $p^{2}$}
+
+\textbf{d) Encontrar $\sigma_{x}$ e $\sigma_{p}$ e avaliar se o produto entre ambos é consistente com o princípio da incerteza}
+
+Vamos começar calculando $A$, Primeiro:
+
+\begin{align}
+\left|\Psi\left(x,t\right)\right|^{2} & =\Psi^{*}\left(x,t\right)\Psi\left(x,t\right)\\
+ & =\left(A\exp\left[-a\left(\frac{mx^{2}}{\hbar}+it\right)\right]\right)\left(A\exp\left[-a\left(\frac{mx^{2}}{\hbar}+it\right)\right]\right)\\
+ & =A^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]
+\end{align}
+
+Vamos substituir $u=\sqrt{\frac{2am}{\hbar}}x$ e $du=\sqrt{\frac{2am}{\hbar}}dx$ Integrando então:
+
+\begin{align}
+\int\left|\Psi\left(x,t\right)\right|^{2}dx & =\int A^{2}\exp\left[-\frac{2amx^{2}}{\hbar}\right]dx\\
+1 & =A^{2}\sqrt{\frac{\hbar}{2am}}\int e^{-u^{2}}du
+\end{align}
+
+Essa é uma integral gaussiana de resultado bastante conhecido, mas vamos resolver uma vez (\href{https://github.com/jonasmaziero/mecanica_quantica/blob/main/notas_de_aula/02_Probabilidades.ipynb}{solução}) pelo menos. Definimos então uma integral:
+
+\begin{equation}
+G=\int^{+\infty}_{-\infty}e^{-ax^{2}}dx
+\end{equation}
+
+Então:
+
+\begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)
+\end{equation}
+
+Ou como $x$ é a variável de integração em cada uma das integrais, ou seja, apenas um rótulo, podemos substituir $x\rightarrow y$ na segunda, e ficamos então com:
+
+\begin{equation}
+G^{2}=\left(\int^{+\infty}_{-\infty}e^{-ax^{2}}dx\right)\left(\int^{+\infty}_{-\infty}e^{-ay^{2}}dx\right)=\left(\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}e^{-a\left(x^{2}+y^{2}\right)}dxdy\right)
+\end{equation}
+
+Agora podemos fazer uma mudança no sistema de coordenadas, obviamente, mudando também o elemento de área. Usando o sistema de coordenadas polares (\href{https://en.wikipedia.org/wiki/Polar_coordinate_system}{definição}):
+
+\begin{align}
+x & =r\cos\theta\\
+y & =r\sin\theta\\
+da & =rdrd\theta
+\end{align}
+
+Para cobrir todo o espaço, nossos limites são $0\leq r<\infty$ e $0\leq\theta<2\pi$.Substituindo:
+
+\begin{align}
+G^{2} & =\left(\int^{2\pi}_{0}\int^{\infty}_{0}e^{-ar^{2}}rdrd\theta\right)\\
+ & =\left(\int^{2\pi}_{0}d\theta\right)\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)\\
+ & =2\pi\left(\int^{\infty}_{0}e^{-ar^{2}}rdr\right)
+\end{align}
+
+Substituindo $u=-ar^{2}$ então $\frac{du}{dr}=-a2r\rightarrow-\frac{du}{a}=2rdr$ e os limites de integração agora são $u=-a0^{2}=0$ e $u=-ar\infty^{2}=-\infty$
+
+\begin{align}
+G^{2} & =\pi\left(\int^{-\infty}_{0}e^{-ar^{2}}2rdr\right)\\
+ & =-\frac{\pi}{a}\left(\int^{-\infty}_{0}e^{u}du\right)\\
+ & =-\frac{\pi}{a}\left[e^{u}\right]^{-\infty}_{0}\\
+ & =-\frac{\pi}{a}\left[\frac{1}{e^{u}}-e^{0}\right]^{-\infty}_{0}\\
+ & =\frac{\pi}{a}
+\end{align}
+
+Logo se $G^{2}=\pi/a$ então $G=\sqrt{\pi/a}$ e:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=G=\sqrt{\frac{\pi}{a}}
+\end{equation}
+
+Com isso podemos retomar e resolver nossa integral:
+
+\begin{align}
+1 & =A^{2}\sqrt{\frac{\hbar}{2am}}\int e^{-u^{2}}du\\
+1 & =A^{2}\sqrt{\frac{\hbar}{2am}}\sqrt{\pi}\\
+\sqrt{\frac{2am}{\hbar\pi}} & =A^{2}
+\end{align}
+
+Ou então:
+
+\begin{equation}
+A=\left(\frac{2am}{\hbar\pi}\right)^{\frac{1}{4}}
+\end{equation}
+
+Agora queremos saber para qual potencial de energia $V\left(x\right)$ essa é uma solução pra equação de Schrödinger. Partindo da equação de Schrödinger:
+
+\begin{equation}
+i\hbar\frac{\partial\Psi}{\partial t}=-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi
+\end{equation}
+
+E derivando a função de onda:
+
+\begin{align}
+\Psi & =A\exp\left[-a\left(\frac{mx^{2}}{\hbar}+it\right)\right]\\
+\frac{\partial\Psi}{\partial t} & =A\exp\left[-\frac{amx^{2}}{\hbar}\right]\left(-ai\right)\exp\left[-ait\right]=-ai\Psi\\
+\frac{\partial\Psi}{\partial x} & =A\left[\left(-\frac{2amx}{\hbar}\right)\right]\exp\left[-\frac{amx^{2}}{\hbar}\right]\exp\left[-ait\right]=-\frac{2amx}{\hbar}\Psi\\
+\frac{\partial^{2}\Psi}{\partial x^{2}} & =\frac{\partial}{\partial x}\left(-\frac{2amx}{\hbar}\Psi\right)=-\frac{2am}{\hbar}\Psi+\left(\frac{2amx}{\hbar}\right)^{2}\Psi
+\end{align}
+
+Então:
+
+\begin{align}
+i\hbar\frac{\partial\Psi}{\partial t} & =-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+V\Psi\\
+V\Psi & =\frac{\hbar^{2}}{2m}\frac{\partial^{2}\Psi}{\partial x^{2}}+i\hbar\frac{\partial\Psi}{\partial t}\\
+ & =\frac{\hbar^{2}}{2m}\left[-\frac{2am}{\hbar}\Psi+\left(\frac{2amx}{\hbar}\right)^{2}\Psi\right]+i\hbar\left[-ai\Psi\right]\\
+ & =-a\hbar\Psi+2m\left(ax\right)^{2}\Psi+\hbar a\Psi\\
+ & =\left[-a\hbar+2m\left(ax\right)^{2}+\hbar a\right]\Psi\\
+\left[V\right]\Psi & =\left[2m\left(ax\right)^{2}\right]\Psi
+\end{align}
+
+Então:
+
+\begin{equation}
+V=2ma^{2}x^{2}
+\end{equation}
+
+Agora queremos calcular diversos valores esperados, vamos relembrar que já calculamos $\left|\Psi\left(x,t\right)\right|^{2}=A^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]$. Começando com $\left\langle x\right\rangle $:
+
+\begin{equation}
+\left\langle x\right\rangle =\int xA^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]dx
+\end{equation}
+
+Nesse caso, como o integrando é impar, isso é, se $G\left(x\right)=xA^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]$, então 
+\begin{align}
+G\left(-x\right) & =-G\left(x\right)\\
+\left(-x\right)A^{2}\exp\left[-\frac{2am}{\hbar}\left(-x\right)^{2}\right] & =-\left(xA^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]\right)\\
+-xA^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right] & =-xA^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]
+\end{align}
+
+Então simplesmente a integral é zero e temos $\left\langle x\right\rangle =0$. Consequentemente se lembrarmos que $\left\langle p\right\rangle =m\frac{d\left\langle x\right\rangle }{dt}$, então $\left\langle p\right\rangle =0$. Agora vamos calcular $\left\langle x^{2}\right\rangle $:
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =A^{2}\int x^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]dx
+\end{equation}
+
+Escrevendo $\alpha=\frac{2am}{\hbar}$ então queremos resolver a integral:
+
+\begin{equation}
+I=\int x^{2}e^{-\alpha x^{2}}dx
+\end{equation}
+
+Fazendo integral por partes sendo $f=x$ e $g'=xe^{-\alpha x^{2}}$ precisamos resolver essa
+
+\begin{equation}
+g=\int xe^{-\alpha x^{2}}dx
+\end{equation}
+
+Substituindo $u=-\alpha x^{2}$ então $-\frac{du}{2\alpha}=-xdx$
+
+\begin{equation}
+g=-\frac{1}{2\alpha}\int e^{u}du=-\frac{e^{u}}{2\alpha}=-\frac{e^{-\alpha x^{2}}}{2\alpha}
+\end{equation}
+
+Evidentemente temos $f'=1$ Então:
+
+\begin{align}
+\int^{b}_{a}f\frac{dg}{dx}dx & =\left[fg\right]^{b}_{a}-\int^{b}_{a}\frac{df}{dx}gdx\\
+\int x\left(xe^{-\alpha x^{2}}\right)dx & =\left[-\frac{xe^{-\alpha x^{2}}}{2\alpha}\right]^{+\infty}_{-\infty}+\frac{1}{2\alpha}\int e^{-\alpha x^{2}}dx
+\end{align}
+
+O primeiro termo vai a zero pois $e^{-x^{2}}$vai a zero ao infinito mais rapidamente que $\frac{1}{\left|x\right|}$ e a segunda integral é a gaussiana que a pouco vimos o resultado, então, lembrando que $\alpha=\frac{2am}{\hbar}$:
+
+\begin{align}
+\int x\left(xe^{-\alpha x^{2}}\right)dx & =\frac{1}{2\alpha}\sqrt{\frac{\pi}{\alpha}}=\frac{\sqrt{\pi}}{2}\left(\frac{\hbar}{2am}\right)^{\frac{3}{2}}
+\end{align}
+
+E sendo $A=\left(\frac{2am}{\hbar\pi}\right)^{\frac{1}{4}}$ então:
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =A^{2}\int x^{2}\exp\left[-\frac{2am}{\hbar}x^{2}\right]dx=\left(\frac{2am}{\hbar\pi}\right)^{\frac{2}{4}}\frac{\sqrt{\pi}}{2}\left(\frac{\hbar}{2am}\right)^{\frac{3}{2}}
+\end{equation}
+
+Ou apenas:
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =\frac{\hbar}{4am}
+\end{equation}
+
+E por fim para calcular $\left\langle p^{2}\right\rangle $ precisamos do operador $p$ dado por $-i\hbar\frac{\partial}{\partial x}$:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int\Psi^{*}\left(-i\hbar\frac{\partial}{\partial x}\right)^{2}\Psi dx
+\end{align}
+
+Já calculamos anteriormente:
+
+\begin{equation}
+\frac{\partial^{2}\Psi}{\partial x^{2}}=-\frac{2am}{\hbar}\Psi+\left(\frac{2amx}{\hbar}\right)^{2}\Psi
+\end{equation}
+
+Então:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int\Psi^{*}\left(-i\hbar\right)^{2}\left[-\frac{2am}{\hbar}\Psi+\left(\frac{2amx}{\hbar}\right)^{2}\Psi\right]\Psi dx\\
+ & =\int\Psi^{*}\left(-\hbar^{2}\right)\left[-\frac{2am}{\hbar}\Psi+\left(\frac{2amx}{\hbar}\right)^{2}\Psi\right]\Psi dx\\
+ & =\left(-\hbar^{2}\right)\left(-\frac{2am}{\hbar}\int\Psi^{*}\Psi dx+\left(\frac{2am}{\hbar}\right)^{2}\int x^{2}\Psi^{2}\Psi dx\right)\\
+ & =\hbar2am\int\Psi^{*}\Psi dx-\left(2am\right)^{2}\int x^{2}\Psi^{2}\Psi dx
+\end{align}
+
+Pela normalização sabemos que a primeira integral vale $1$ e a segunda $\left\langle x^{2}\right\rangle =\frac{\hbar}{4am}$. Então:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =2\hbar am-\left(2am\right)^{2}\frac{\hbar}{4am}\\
+ & =2\hbar am-\hbar am
+\end{align}
+
+Então $\left\langle p^{2}\right\rangle =\hbar am$. Agora queremos a dispersão da posição e do momento, usando os valores médios calculados anteriormente:
+
+\begin{align}
+\sigma_{x} & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}} & \sigma_{p} & =\sqrt{\left\langle p^{2}\right\rangle -\left\langle p\right\rangle ^{2}}\\
+ & =\sqrt{\frac{\hbar}{4am}-0} &  & =\sqrt{\hbar am-0}\\
+ & =\sqrt{\frac{\hbar}{4am}} &  & =\sqrt{\hbar am}
+\end{align}
+
+Então:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\sqrt{\frac{\hbar}{4am}}\sqrt{\hbar am}=\frac{\hbar}{2}
+\end{equation}
+
+Este resultado é consistente com a relação de incerteza:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}\geq\frac{\hbar}{2}
+\end{equation}
+
+\end{document}

@@ -1,0 +1,1012 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+
+
+\makeatother
+
+\begin{document}
+\title{Poço quadrado infinito}
+
+\maketitle
+Nosso potencial agora é:
+
+\begin{equation}
+V\left(x\right)=\begin{cases}
+0, & 0\leq x\leq a\\
+\infty & \text{outro caso}
+\end{cases}
+\end{equation}
+
+A partícula é livre entre dois extremos onde uma força infinita previne que ela escape. Fora do poço temos $\psi\left(x\right)=0$, e dentro temos $V=0$. Então a equação de Schrödinger é apenas:
+
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi & =E\psi\\
+\frac{\partial^{2}\psi}{\partial x^{2}} & =-\frac{2mE}{\hbar^{2}}\psi\\
+\frac{\partial^{2}\psi}{\partial x^{2}} & =-k^{2}\psi\label{schrog1}
+\end{align}
+
+Essa é uma equação de um oscilador harmônico simples com uma solução geral do tipo:
+
+\begin{equation}
+\psi\left(x\right)=A\sin\left(kx\right)+B\cos k\left(x\right)
+\end{equation}
+
+Pois:
+
+\begin{align}
+\frac{d\psi\left(x\right)}{dx} & =kA\cos\left(kx\right)-kB\sin k\left(x\right)\\
+\frac{d^{2}\psi\left(x\right)}{dx} & =-k^{2}A\sin\left(kx\right)-k^{2}B\cos k\left(x\right)
+\end{align}
+
+Ou então:
+
+\begin{equation}
+\frac{d^{2}\psi\left(x\right)}{dx}=-k^{2}\left(A\sin\left(kx\right)+B\cos k\left(x\right)\right)=-k^{2}\psi\left(x\right)
+\end{equation}
+
+Queremos agora achar $A$ e $B$ através das condições de contorno. Temos que:
+
+\begin{equation}
+\psi\left(0\right)=\psi\left(a\right)=0
+\end{equation}
+
+Tipicamente $\psi$$\left(x\right)$ é contínuo (ainda que $\Psi\left(x,t\right)$ não precise ser), então a continuidade exige que:
+
+\begin{align}
+\psi\left(0\right) & =A\sin\left(0\right)+B\cos k\left(0\right)\\
+0 & =B
+\end{align}
+
+Então temos:
+
+\begin{equation}
+\psi\left(x\right)=A\sin\left(kx\right)
+\end{equation}
+
+A outra condição de contorno é:
+
+\begin{align}
+\psi\left(a\right) & =A\sin\left(ka\right)=0
+\end{align}
+
+Como $A=0$ seria uma solução trivial, não é interessante, assim como $k=\frac{\sqrt{2mE}}{\hbar}=0$ não é interessante também pelo mesmo motivo. Então precisamos que $ka$ seja um múltiplo de $\pi$, ou seja:
+
+\begin{equation}
+ka=n\pi\rightarrow k_{n}=\frac{n\pi}{a}\label{kn}
+\end{equation}
+
+Onde usamos $k_{n}$ pra indicar que na verdade há diferentes valores possíveis de $k$ para cada $n=1,2,3,\dots$ Então: os valores permitidos de $E_{n}$ podem ser:
+
+\begin{alignat}{1}
+k_{n} & =\frac{\sqrt{2mE_{n}}}{\hbar}\\
+k^{2}_{n} & =\frac{2mE_{n}}{\hbar^{2}}\label{k^2}\\
+\frac{\hbar^{2}k^{2}_{n}}{2m} & =E_{n}\\
+E_{n} & =\frac{\hbar^{2}n^{2}\pi^{2}}{2m}\label{energia}
+\end{alignat}
+
+Mas ainda não obtemos $A$. Para obter $A$ normalizamos então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\psi^{*}\psi dx & =\int^{a}_{0}\left(A\sin\left(kx\right)\right)^{*}\left(A\sin\left(kx\right)\right)dx\\
+ & =\left|A\right|^{2}\int^{a}_{0}\sin^{2}\left(kx\right)dx\label{int sin^2(x)}
+\end{align}
+
+Vamos usar a identidade trigonométrica $2\sin^{2}\left(x\right)=1-\cos\left(2x\right)$:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\psi^{*}\psi dx & =\frac{\left|A\right|^{2}}{2}\int^{a}_{0}\left(1-\cos\left(2kx\right)\right)dx\\
+ & =\frac{\left|A\right|^{2}}{2}\left[\int^{a}_{0}dx-\int^{a}_{0}\cos\left(2kx\right)dx\right]
+\end{align}
+
+e substitui $u=2kx$ (Os novos limites são $0$ e $2ka$), e $\frac{du}{dx}=2k$:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\psi^{*}\psi dx & =\frac{\left|A\right|^{2}}{2}\left[a-\frac{1}{2k}\int^{2ka}_{0}\cos\left(u\right)du\right]\\
+ & =\frac{\left|A\right|^{2}}{2}\left[a-\frac{1}{2k}\left[\sin\left(u\right)\right]^{2ka}_{0}\right]\\
+ & =\frac{\left|A\right|^{2}}{2}\left[a-\frac{1}{2k}\left[\sin\left(2ka\right)-\sin\left(0\right)\right]\right]\\
+ & =\frac{\left|A\right|^{2}}{2}\left[a-\frac{\sin\left(2ka\right)}{2k}\right]
+\end{align}
+
+Substituindo $k=\frac{n\pi}{a}$ então o argumento do seno é:
+
+\begin{equation}
+2ka=n\frac{2\pi a}{a}=n2\pi
+\end{equation}
+
+Como independente do $n$ temos sempre o mesmo ângulo $n2\pi\rightarrow2\pi$ e $\sin\left(2\pi\right)=0$ então:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}\psi dx=\frac{a\left|A\right|^{2}}{2}=1
+\end{equation}
+
+Então $\left|A\right|^{2}=2/a$. Só temos a magnitude de $A$, mas o mais fácil é pegar a raiz positiva real, a fase de $A$ não importa, como já vimos), temos então $A=\sqrt{\frac{2}{a}}$, logo as soluções no interior do poço são:
+
+\begin{align}
+\psi_{n}\left(x\right) & =A\sin\left(k_{n}x\right)\\
+ & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\label{solucao_poco_quadrado}
+\end{align}
+
+O conjunto de soluções tem algumas propriedades interessantes. Em primeiro lugar, elas são alternativamente par e ímpar em respeito ao centro. Se o centro é em $\frac{a}{2}$ e .deslocarmos o centro pra origem:
+
+\begin{align}
+\psi_{n}\left(x-\frac{a}{2}\right) & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}\left[x-\frac{a}{2}\right]\right)\\
+ & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x-\frac{n\pi}{2}\right)
+\end{align}
+
+Usando a propriedade trigonométrica $\sin\left(a-b\right)=\sin a\cos b-\cos a\sin b$
+
+\begin{align}
+\psi_{n}\left(x-\frac{a}{2}\right) & =\sqrt{\frac{2}{a}}\left[\sin\left(\frac{n\pi}{a}x\right)\cos\left(\frac{n\pi}{2}\right)-\cos\left(\frac{n\pi}{a}x\right)\sin\left(\frac{n\pi}{2}\right)\right]\\
+ & =
+\end{align}
+
+Sempre que $n$ for par, temos $\sin\left(n\pi/2\right)=0$ e resta apenas o primeiro termo. Sempre que $n$ for ímpar temos $\cos\left(n\pi/2\right)=0$ e resta apenas o segundo termo. Ou seja, sempre que $n$ for par, temos apenas uma função seno e temos uma solução ímpar então em relação ao centro. Quando $n$ for ímpar, temos então apenas uma função cosseno e temos uma função par em relação ao centro.
+
+Em segundo lugar, também temos que pra cada vez que aumentamos o estado de energia, temos mais um nó, ou seja um ponto onde a função de onda atravessa o eixo. Para $n=1$ a função de onda apenas chega em zero nos extremos. Para $n=2$ ela cruza uma vez o eixo, etc... A terceira característica é que as soluções são mutuamente ortogonais. No sentido:
+
+\begin{equation}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx=0
+\end{equation}
+para $m\neq n$. Interessante notar que evidentemente se $m=n$ então temos apenas
+
+\begin{equation}
+\int\psi\left(x\right)^{*}\psi\left(x\right)dx=\int\left|\psi\left(x\right)\right|^{2}dx=1
+\end{equation}
+
+Ou seja:
+
+\begin{equation}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx=\delta_{mn}
+\end{equation}
+
+de forma geral, ou seja, são ortonormais. Onde $\delta_{mn}$ é a delta de Kronecker:
+
+\begin{equation}
+\delta_{mn}=\begin{cases}
+0, & m\neq n\\
+1, & m=n
+\end{cases}
+\end{equation}
+
+\textbf{Exemplo: Prove a ortogonalidade da função de onda $\psi_{n}\left(x\right)$.}
+
+Podemos provar a ortogonalidade:
+
+\begin{align}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx & =\int\left(\sqrt{\frac{2}{a}}\sin\left(\frac{m\pi}{a}x\right)\right)^{*}\left(\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\right)dx\\
+ & =\frac{2}{a}\int\sin\left(\frac{m\pi}{a}x\right)\sin\left(\frac{n\pi}{a}x\right)dx
+\end{align}
+Vamos usar outra propriedade trigonométrica agora:
+
+\begin{align}
+\cos\left(a\pm b\right) & =\cos a\cos b\mp\sin a\sin b
+\end{align}
+
+Então:
+
+\begin{align}
+\cos\left(a-b\right)-\cos\left(a+b\right) & =\left(\cos a\cos b+\sin a\sin b\right)-\left(\cos a\cos b-\sin a\sin b\right)\\
+ & =2\sin a\sin b
+\end{align}
+
+Então:
+
+\begin{align}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx & =\frac{1}{a}\int\left[\cos\left(\frac{m\pi}{a}x-\frac{n\pi}{a}x\right)-\cos\left(\frac{m\pi}{a}x+\frac{n\pi}{a}x\right)\right]dx\\
+ & =\frac{1}{a}\int\left[\cos\left(\left(m-n\right)\frac{\pi x}{a}\right)-\cos\left(\left(m+n\right)\frac{\pi x}{a}\right)\right]dx
+\end{align}
+
+Substituindo $u=\frac{\alpha_{\pm}\pi x}{a}$ onde $\alpha_{-}=m-n$ para a primeira integral e $\alpha_{+}=m+n$ para a segunda, então lembrando que estamos integrando entre $0$ e $a$, então agora os novos limites são $0$ e $\alpha_{\pm}\pi\frac{a}{a}=\alpha_{\pm}\pi$ , além de que $\frac{du}{dx}=\frac{\alpha_{\pm}\pi}{a}$ ou seja $\frac{a}{\alpha_{\pm}\pi}du=dx$
+
+\begin{align}
+\int^{a}_{0}\cos\left(\frac{\alpha_{\pm}\pi x}{a}\right)dx & =\frac{a}{\alpha_{\pm}\pi}\int^{\alpha_{\pm}\pi}_{0}\cos\left(u\right)du\\
+ & =\frac{a}{\alpha_{\pm}\pi}\left[\sin\left(u\right)\right]^{\alpha_{\pm}\pi}_{0}\\
+ & =\frac{a}{\alpha_{\pm}\pi}\left[\sin\left(\alpha_{\pm}\pi\right)-\sin\left(0\right)\right]\\
+ & =\frac{a\sin\left(\alpha_{\pm}\pi\right)}{\alpha_{\pm}\pi}
+\end{align}
+
+Então:
+
+\begin{align}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx & =\frac{1}{a}\int\left[\cos\left(\left(m-n\right)\frac{\pi x}{a}\right)-\cos\left(\left(m+n\right)\frac{\pi x}{a}\right)\right]dx\\
+ & =\frac{1}{a}\left(\frac{a\sin\left(\alpha_{-}\pi\right)}{\alpha_{-}\pi}-\frac{a\sin\left(\alpha_{+}\pi\right)}{\alpha_{+}\pi}\right)\\
+ & =\frac{1}{\pi}\left(\frac{\sin\left(\left(m-n\right)\pi\right)}{\left(m-n\right)}-\frac{\sin\left(\left(m+n\right)\pi\right)}{\left(m+n\right)}\right)
+\end{align}
+
+Como $m$ e $n$ são inteiros e diferentes, então $m\pm n=l$ vai ser inteiro. E qualquer inteiro que seja $\sin\left(l\pi\right)$ para qualquer valor de $l$ inteiro, então $\sin\left(l\pi\right)=0$. De forma que:
+
+\begin{equation}
+\int\psi_{m}\left(x\right)^{*}\psi_{n}\left(x\right)dx=0
+\end{equation}
+
+E a quarta e última característica que queremos destacar é que o conjunto de soluções é dito também completo no sentido de que qualquer outra função $f\left(x\right)$ pode ser expressa como uma combinação linear da seguinte forma:
+
+\begin{equation}
+f\left(x\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)=\sum^{\infty}_{n=1}c_{n}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)=\sum^{\infty}_{n=1}c_{n}\sin\left(\frac{n\pi}{a}x\right)
+\end{equation}
+
+Não vamos provar aqui, mas esta é basicamente a série de Fourier para $f\left(x\right)$, e o fato de qualquer função poder ser expandido dessa forma é chamado de teorema de Dirichlet. Os coeficientes $c_{n}$ podem ser avaliados para uma dada função $f\left(x\right)$ por um método chamado truque de Fourier. Multiplicando ambos os lados por $\psi$$^{*}$ e integrando :
+
+\begin{align}
+f\left(x\right) & =\sum^{\infty}_{n=1}c_{n}\psi_{n}\\
+\int\psi^{*}_{m}f\left(x\right)dx & =\int\psi^{*}_{m}\sum^{\infty}_{n=1}c_{n}\psi_{n}dx\\
+\int\psi^{*}_{m}f\left(x\right)dx & =\sum^{\infty}_{n=1}c_{n}\left(\int\psi^{*}_{m}\psi_{n}dx\right)\\
+\int\psi^{*}_{m}f\left(x\right)dx & =\sum^{\infty}_{n=1}c_{n}\delta_{mn}\\
+\int\psi^{*}_{m}f\left(x\right)dx & =c_{m}
+\end{align}
+
+Ou como são apenas rótulos sem significados , podemos mudar os termos $m\rightarrow n$ e obter na forma mais conhecida:
+
+\begin{equation}
+\int\psi^{*}_{n}f\left(x\right)dx=c_{n}
+\end{equation}
+
+Essas propriedades não se restringem ao problema do poço quadrado infinito. 
+\begin{itemize}
+\item A primeira é verdade sempre que o potencial for uma função simétrica. 
+\item A segunda é verdade independente do formato do potencial. 
+\item Ortogonalidade é uma propriedade geral para qualquer potencial que estamos trabalhando onde o hamiltoniano é hermitiano. 
+\item Completeza , segundo Griffiths vale ``para todos potenciais que provavelmente vamos encontrar'', apesar da sua prova ser chata e trabalhosa, por isso ele supõe que a maioria dos físicos assume isso e torce pelo melhor. Uma vez que o Griffhits não se propôs a demonstrar isso, e é uma questão mais matemática que física, vamos seguir o mesmo procedimento por hora e confiar nos matemáticos. 
+\end{itemize}
+Uma solução então da equação de Schrödinger pode ser dada por:
+
+\begin{align}
+\Psi_{n}\left(t\right) & =\psi_{n}\left(x\right)\varphi_{n}\left(t\right)\\
+ & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)e^{-iE_{n}t/\hbar}\\
+ & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}h^{2}t}{2ma^{2}\hbar}\right]\\
+ & =\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]
+\end{align}
+
+E a solução mais geral é então:
+
+\begin{equation}
+\Psi\left(x.t\right)=\sum^{\infty}_{n=1}c_{n}\Psi_{n}\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)\varphi_{n}\left(t\right)=\sum^{\infty}_{n=1}c_{n}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]
+\end{equation}
+
+Resta então apenas demonstrar que sempre podemos expressar a condição inicial $\Psi\left(x,0\right)$ utilizando uma escolha apropriada de coeficientes $c_{n}$. Então a completude dos $\psi$ (que é confirmado pelo teorema de Dirichlet) é que me garante que podemos fazer isso e a ortonormalidade nos permite usar o truque de Fourier para determinar os coeficiente da seguinte forma:
+
+\begin{equation}
+c_{n}=\int\psi^{*}_{n}f\left(x\right)dx=\int^{a}_{0}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\Psi\left(x,0\right)dx\label{cn}
+\end{equation}
+
+Poderíamos facilmente reescrever tudo de forma que $c_{n}$ absorva $\sqrt{2/a}$, escrevendo por exemplo~$a_{n}=\sqrt{2/a}c_{n}$e consequentemente também $\psi'=\sqrt{a/2}\psi$, mas é apenas uma manipulação matemática.
+
+\textbf{Exemplo: Uma partícula no potencial quadrado infinito possui a seguinte função de onda inicial}
+
+\begin{equation}
+\Psi\left(x,0\right)=Ax\left(a-x\right)
+\end{equation}
+
+\textbf{Queremos achar a $\Psi\left(x,t\right)$. }
+
+Precisamos começar achando a constante de normalização
+
+\begin{align}
+\int^{a}_{0}\left|\Psi\left(x,0\right)\right|^{2}dx & =\int^{a}_{0}A^{2}x^{2}\left(a-x\right)^{2}dx\\
+1 & =A^{2}\int x^{2}\left(a^{2}-2ax+x^{2}\right)dx\\
+ & =A^{2}\left(a^{2}\int^{a}_{0}x^{2}dx-2a\int^{a}_{0}x^{3}dx+\int^{a}_{0}x^{4}dx\right)\\
+ & =A^{2}\left(a^{2}\frac{x^{3}}{3}-2a\frac{x^{4}}{4}+\frac{x^{5}}{5}\right)^{a}_{0}\\
+ & =A^{2}\left(a^{2}\frac{a^{3}}{3}-2a\frac{5a^{4}}{4\cdot5}+\frac{4a^{5}}{4\cdot5}\right)\\
+ & =A^{2}a^{5}\left(\frac{1}{3}+\frac{4-10}{20}\right)\\
+ & =A^{2}a^{5}\left(\frac{20}{3\cdot20}-\frac{3\cdot6}{20\cdot3}\right)\\
+1 & =A^{2}a^{5}\frac{2}{60}
+\end{align}
+
+Então:
+
+\begin{equation}
+A^{2}=\frac{60}{2a^{5}}\rightarrow A=\sqrt{\frac{30}{a^{5}}}
+\end{equation}
+
+E então o coeficiente da equação é dado por:
+
+\begin{align}
+c_{n} & =\int\psi^{*}_{n}f\left(x\right)dx\\
+ & =\int^{a}_{0}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\Psi\left(x,0\right)dx\\
+ & =\sqrt{\frac{30}{a^{5}}}\int^{a}_{0}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)x\left(a-x\right)dx\\
+ & =\sqrt{\frac{60}{a^{6}}}\int^{a}_{0}\sin\left(\frac{n\pi}{a}x\right)\left(xa-x^{2}\right)dx\\
+ & =\sqrt{\frac{60}{a^{6}}}\left(a\int^{a}_{0}x\sin\left(\frac{n\pi}{a}x\right)dx-\int^{a}_{0}x^{2}\sin\left(\frac{n\pi}{a}x\right)dx\right)\\
+ & =\sqrt{\frac{60}{a^{6}}}\left(a\int^{n\pi}_{0}u\left(\frac{a}{n\pi}\right)\sin\left(u\right)\left(\frac{a}{n\pi}\right)du-\int^{n\pi}_{0}u^{2}\left(\frac{a}{n\pi}\right)^{2}\sin\left(u\right)\left(\frac{a}{n\pi}\right)du\right)\\
+ & =\frac{\sqrt{60}}{a^{3}}\left(\frac{a^{3}}{n^{2}\pi^{2}}\int^{n\pi}_{0}u\sin\left(u\right)du-\frac{a^{3}}{n^{3}\pi^{3}}\int^{n\pi}_{0}u^{2}\sin\left(u\right)du\right)\\
+ & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(\int^{n\pi}_{0}u\sin\left(u\right)du-\frac{1}{n\pi}\int^{n\pi}_{0}u^{2}\sin\left(u\right)du\right)
+\end{align}
+
+Primeiro fizemos a substituição $\frac{n\pi}{a}x=u$ então $dx=\frac{a}{n\pi}du$ e $x^{2}=u^{2}(a/n\pi)^{2}$, onde os limites também foram de $0$ a $u=a(n\pi/a)=n\pi$. Vamos aplicar o método da integral por partes onde $f\left(u\right)=u^{2}$ e $g'\left(x\right)=\sin\left(u\right)$
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{n\pi}_{0}u^{2}\sin\left(u\right)du & =\left.-u^{2}\cos\left(u\right)\right|^{n\pi}_{0}+2\int^{n\pi}_{0}\cos\left(u\right)udu\\
+ & =-n^{2}\pi^{2}\cos\left(n\pi\right)+2\int^{n\pi}_{0}u\cos\left(u\right)du
+\end{align}
+Precisamos aplicar novamente na segunda integral agora $f\left(u\right)=u$
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{n\pi}_{0}\cos\left(u\right)udu & =\left.u\sin\left(u\right)\right|^{n\pi}_{0}-\int^{n\pi}_{0}\sin\left(u\right)du\\
+ & =\left[\cos\left(u\right)\right]^{n\pi}_{0}\label{int u cosu}\\
+ & =\left[\cos\left(n\pi\right)-\cos\left(0\right)\right]\\
+ & =\cos\left(n\pi\right)-1
+\end{align}
+
+Então a segunda integral é:
+
+\begin{align}
+\int^{n\pi}_{0}u^{2}\sin\left(u\right)du= & -n^{2}\pi^{2}\cos\left(n\pi\right)+2\left(\cos\left(n\pi\right)-1\right)\\
+ & =-n^{2}\pi^{2}\cos\left(n\pi\right)+2\cos\left(n\pi\right)-2\\
+ & =\left(-n^{2}\pi^{2}+2\right)\cos\left(n\pi\right)-2
+\end{align}
+
+E a primeira integral é dada por, onde $f\left(x\right)=u$:
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{n\pi}_{0}\sin\left(u\right)udu & =\left.-u\cos\left(u\right)\right|^{n\pi}_{0}+\int^{n\pi}_{0}\cos\left(u\right)du\\
+ & =-n\pi\cos\left(n\pi\right)+\left[\sin\left(u\right)\right]^{n\pi}_{0}\\
+ & =-n\pi\cos\left(n\pi\right)\label{int u sin(u)}
+\end{align}
+
+Então o coeficiente pode ser dado por:
+
+\begin{align}
+c_{n} & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(\int^{n\pi}_{0}u\sin\left(u\right)du-\frac{1}{n\pi}\int^{n\pi}_{0}u^{2}\sin\left(u\right)du\right)\\
+ & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(-n\pi\cos\left(n\pi\right)-\frac{1}{n\pi}\left[\left(-n^{2}\pi^{2}+2\right)\cos\left(n\pi\right)-2\right]\right)\\
+ & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(-n\pi\cos\left(n\pi\right)+\frac{\left(n^{2}\pi^{2}-2\right)}{n\pi}\cos\left(n\pi\right)+\frac{2}{n\pi}\right)\\
+ & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(\frac{\left(-n^{2}\pi^{2}+n^{2}\pi^{2}-2\right)}{n\pi}\cos\left(n\pi\right)+\frac{2}{n\pi}\right)\\
+ & =\frac{\sqrt{60}}{n^{2}\pi^{2}}\left(\frac{-2}{n\pi}\cos\left(n\pi\right)+\frac{2}{n\pi}\right)\\
+ & =\frac{2\sqrt{60}}{n^{3}\pi^{3}}\left(1-\cos\left(n\pi\right)\right)\\
+ & =\frac{2\sqrt{60}}{n^{3}\pi^{3}}\left(1-\left(-1\right)^{n}\right)
+\end{align}
+
+Então se $n$ é ímpar temos $\cos\left(n\pi\right)=-1$, se $n$ é par temos $\cos\left(n\pi\right)=1$ temos escrever então $\cos\left(n\pi\right)=\left(-1\right)^{n}$. Mas então:
+
+\begin{equation}
+c_{n}=\begin{cases}
+0 & \text{,se n par}\\
+\frac{4\sqrt{60}}{n^{3}\pi^{3}} & \text{,se n ímpar}
+\end{cases}
+\end{equation}
+
+Então a solução é:
+
+\begin{align}
+\Psi\left(x.t\right) & =\sum^{\infty}_{n=1}c_{n}\Psi_{n}\left(x,t\right)\\
+ & =\sum^{\infty}_{n=1}c_{n}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]\\
+ & =\sum^{\infty}_{n=1,3,5}\frac{4\sqrt{60}}{n^{3}\pi^{3}}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]\\
+ & =\frac{4}{\pi^{3}}\sqrt{\frac{120}{a}}\sum^{\infty}_{n=1,3,5}\frac{1}{n^{3}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]
+\end{align}
+
+Ou se $120=4\cdot30=2^{2}\cdot30$ então $\sqrt{120}=\sqrt{2^{2}\cdot30}=\sqrt{2^{2}}$$\sqrt{30}=2\sqrt{30}$. De forma que podemos reescrever $4\sqrt{120}=8\sqrt{30}$ e $8=2^{3}$. Assim obtemos a solução do livro:
+
+\begin{equation}
+\Psi\left(x,t\right)=\sqrt{\frac{30}{a}}\left(\frac{2}{\pi}\right)^{3}\sum^{\infty}_{n=1,3,5}\frac{1}{n^{3}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-\frac{in^{2}\pi^{2}ht}{2ma^{2}}\right]
+\end{equation}
+
+\textbf{Exemplo: Mostre que $\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}=1$ é satisfeito no exemplo anterior. Se medir a energia de uma partícula neste estado, qual é o resultado mais provável? Qual é o valor esperado de energia?}
+
+Recebemos a sugestão de utilizar as seguintes séries:
+
+\begin{equation}
+\frac{1}{1^{6}}+\frac{1}{3^{6}}+\frac{1}{5^{6}}+\dots=\frac{\pi^{6}}{960}\qquad\frac{1}{1^{4}}+\frac{1}{3^{4}}+\frac{1}{5^{4}}+\dots=\frac{\pi^{4}}{96}
+\end{equation}
+Queremos demonstrar que $\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}=1$ é satisfeito no exemplo anterior. Então:
+
+\begin{align}
+\sum^{\infty}_{n=1}\left|c_{n}\right|^{2} & =\sum^{\infty}_{n=1,3,5\dots}\left(\frac{4\sqrt{60}}{n^{3}\pi^{3}}\right)^{2}=\left(\frac{4\sqrt{60}}{\pi^{3}}\right)^{2}\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{6}}=\frac{16\cdot60}{\pi^{6}}\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{6}}=\frac{960}{\pi^{6}}\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{6}}
+\end{align}
+
+Então usando a série que nos foi fornecida:
+
+\begin{align}
+\sum^{\infty}_{n=1}\left|c_{n}\right|^{2} & =\frac{960}{\pi^{6}}\left(\frac{\pi^{6}}{960}\right)=1
+\end{align}
+
+E o valor esperado da anergia , sendo $E_{n}=\frac{\hbar^{2}n^{2}\pi^{2}}{2m}$
+
+\begin{equation}
+\left\langle H\right\rangle =\sum^{\infty}_{n=1}E_{n}\left|c_{n}\right|^{2}=\sum^{\infty}_{n=1,3,5\dots}\frac{\hbar^{2}n^{2}\pi^{2}}{2m}\left(\frac{4\sqrt{60}}{n^{3}\pi^{3}}\right)^{2}=\frac{\hbar^{2}\pi^{2}}{2m}\frac{960}{\pi^{6}}\sum^{\infty}_{n=1,3,5\dots}\frac{n^{2}}{n^{6}}
+\end{equation}
+
+Usando a série que nos foi fornecida:
+
+\begin{equation}
+\left\langle H\right\rangle =\frac{\hbar^{2}\pi^{2}}{2m}\left(\frac{10}{\pi^{2}}\right)\left(\frac{96}{\pi^{4}}\right)\left(\frac{\pi^{4}}{96}\right)=\frac{\hbar^{2}\pi^{2}}{2m}\left(\frac{10}{\pi^{2}}\right)
+\end{equation}
+
+Isso é muito próximo da energia para $n=1$ que é $E_{1}=\frac{\hbar^{2}\pi^{2}}{2m}$, ou seja:
+
+\begin{equation}
+\left\langle H\right\rangle =\frac{10}{\pi^{2}}E_{1}=1,01E_{1}
+\end{equation}
+
+Isso também pode ser visto fazendo: 
+\begin{equation}
+\left|c_{1}\right|^{2}=\left(\frac{4\sqrt{60}}{\pi^{3}}\right)^{2}=\frac{960}{\pi^{6}}=0.998
+\end{equation}
+
+Ou seja, isso indica que o primeiro termo 'domina' nosso somatório de soluções, já que todos os outros termos farão a diferença para garantir a normalização. Digamos que $c_{n}$ nos diz a ``quantidade'' de $\psi_{n}$em $\Psi$, podemos esperar que $99.8\%$das medições de energia nos retornarão $E_{1}$.
+
+Podemos verificar a normalização do somatório de $\left|c_{n}\right|^{2}$ diretamente, seguindo a orientação do livro vamos fazer a prova pra $t=0$, mas é facilmente generalizável para qualquer $t$ arbitrário. 
+\begin{align}
+1 & =\int\left|\Psi\left(x,0\right)\right|^{2}dx\\
+ & =\int\Psi^{*}\left(x,0\right)\Psi\left(x,0\right)dx\\
+ & =\int\left(\sum^{\infty}_{n=1}c_{n}\psi_{n}\right)^{*}\left(\sum^{\infty}_{m=1}c_{m}\psi_{m}\right)dx\\
+ & =\sum^{\infty}_{n=1}\sum^{\infty}_{m=1}\int c^{*}_{n}\psi^{*}_{n}c_{m}\psi_{m}dx\\
+ & =\sum^{\infty}_{n=1}\sum^{\infty}_{m=1}c^{*}_{n}c_{m}\int\psi^{*}_{n}\psi_{m}dx\\
+ & =\sum^{\infty}_{n,m=1}c^{*}_{n}c_{m}\delta_{nm}\\
+ & =\sum^{\infty}_{n=1}c^{*}_{n}c_{n}
+\end{align}
+
+Então:
+
+\begin{equation}
+\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}=1
+\end{equation}
+
+De modo análogo podemos checar o valor esperado de energia, utilizando equação de Schrödinger independente do tempo $\widehat{H}\psi_{n}=E_{n}\psi_{n}$ então:
+
+\begin{align}
+\left\langle H\right\rangle  & =\int\Psi\widehat{H}\Psi dx\\
+ & =\int\left(\sum^{\infty}_{n=1}c_{n}\psi_{n}\right)^{*}\widehat{H}\left(\sum^{\infty}_{m=1}c_{m}\psi_{m}\right)dx\\
+ & =\sum^{\infty}_{n,m=1}c^{*}_{n}c_{m}\int\psi^{*}_{n}\left(\widehat{H}\psi_{m}\right)dx\\
+ & =\sum^{\infty}_{n,m=1}c^{*}_{n}c_{m}\int\psi^{*}_{n}\left(E_{m}\psi_{m}\right)dx\\
+ & =\sum^{\infty}_{n,m=1}c^{*}_{n}c_{m}E_{m}\int\psi^{*}_{n}\psi_{m}dx\\
+ & =\sum^{\infty}_{n,m=1}c^{*}_{n}c_{m}E_{m}\delta_{nm}
+\end{align}
+
+Então:
+
+\begin{equation}
+\left\langle H\right\rangle =\sum^{\infty}_{n}\left|c_{n}\right|^{2}E_{n}
+\end{equation}
+
+\textbf{Exemplo: Calcule $\left\langle x\right\rangle $, $\left\langle x^{2}\right\rangle $,$\left\langle p\right\rangle $, $\left\langle p\right\rangle ^{2}$, $\sigma_{x}$ e $\sigma_{p}$ para o enésimo estado estacionário para o poço quadrado infinito. Então verifique se o princípio da incerteza é satisfeito e aponte qual é o estado que chega mais perto do limite.}
+
+Primeiro vamos recuperar a solução já conhecida no interior do poço que é \ref{solucao_poco_quadrado}:
+
+\begin{equation}
+\psi_{n}\left(x\right)=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)
+\end{equation}
+
+Então:
+
+\begin{align}
+\left\langle x\right\rangle  & =\int^{a}_{0}x\left|\psi_{n}\right|^{2}dx\\
+ & =\frac{2}{a}\int^{a}_{0}x\sin^{2}\left(\frac{n\pi}{a}x\right)dx\\
+ & =\frac{2}{a}\int^{a}_{0}\left(\frac{a}{n\pi}\right)u\sin^{2}\left(u\right)\left(\frac{a}{n\pi}\right)du\\
+ & =\frac{2a}{n^{2}\pi^{2}}\int^{n\pi}_{0}u\sin^{2}udu
+\end{align}
+
+Onde substituímos $u=\frac{n\pi}{a}x$ então $x=\frac{a}{n\pi}u$ e $dx=\frac{a}{n\pi}du$, além de que os limites vão de $x=0\rightarrow u=0$ até $x=a\rightarrow u=n\pi$. Utilizando então integração por partes sendo $f\left(u\right)=u$, e sendo que já calculamos a integral de $\sin^{2}\left(x\right)$ utilizando a propriedade trigonométrica $2\sin^{2}\left(x\right)=1-\cos\left(2x\right)$ em \ref{int sin^2(x)} sendo $\int\sin^{2}xdx=x/2-\sin\left(2x\right)/4+C$ então:
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{n\pi}_{0}u\sin^{2}udu & =\left.u\left(\frac{u}{2}-\frac{\sin\left(2u\right)}{4}\right)\right|^{n\pi}_{0}-\int^{n\pi}_{0}\left(\frac{u}{2}-\frac{\sin\left(2u\right)}{4}\right)du\\
+ & =\left(\frac{n^{2}\pi^{2}}{2}-\frac{n\pi\sin\left(2n\pi\right)}{4}\right)-\frac{1}{2}\int^{n\pi}_{0}udu+\frac{1}{4}\int^{n\pi}_{0}\sin\left(2u\right)du\\
+ & =\frac{n^{2}\pi^{2}}{2}-\frac{1}{4}\left[u^{2}\right]^{n\pi}_{0}+\frac{1}{4}\int^{2n\pi}_{0}\sin\left(v\right)dv\\
+ & =\frac{2n^{2}\pi^{2}}{4}-\frac{n^{2}\pi^{2}}{4}-\frac{1}{4}\left[\cos v\right]^{2n\pi}_{0}\\
+ & =\frac{n^{2}\pi^{2}}{4}-\frac{1}{4}\left[\cos2\pi-\cos0\right]\\
+ & =\frac{n^{2}\pi^{2}}{4}-\frac{1}{4}\left(1-1\right)\\
+ & =\frac{n^{2}\pi^{2}}{4}\label{int u sin^2}
+\end{align}
+
+Onde na integral foi substituído $v=2u$ então $\frac{dv}{2}=du$ e consequentemente os limites são $0$ e $2n\pi$. Substituindo então:
+
+\begin{align}
+\left\langle x\right\rangle  & =\frac{2a}{n^{2}\pi^{2}}\int^{n\pi}_{0}u\sin^{2}udu=\frac{2a}{n^{2}\pi^{2}}\left(\frac{n^{2}\pi^{2}}{4}\right)=\frac{a}{2}
+\end{align}
+
+Agora para $\left\langle x^{2}\right\rangle $:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\int^{a}_{0}x^{2}\sin^{2}\left(\frac{n\pi}{a}x\right)dx=\frac{2}{a}\int^{a}_{0}\left(\frac{a}{n\pi}\right)^{2}u\sin^{2}\left(u\right)\left(\frac{a}{n\pi}\right)du=\frac{2a^{2}}{n^{3}\pi^{3}}\int^{n\pi}_{0}u^{2}\sin^{2}udu
+\end{align}
+
+Onde fizemos a mesma substituição $u=\frac{n\pi}{a}x$. Fazendo separação de variáveis novamente sendo $f\left(u\right)=u^{2}:$
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left.f\left(x\right)g\left(x\right)\right|^{b}_{a}-\int^{b}_{a}g\left(x\right)f'\left(x\right)dx\\
+\int^{n\pi}_{0}u^{2}\sin^{2}udu & =\left.u^{2}\left(\frac{u}{2}-\frac{\sin\left(2u\right)}{4}\right)\right|^{n\pi}_{0}-\int^{n\pi}_{0}2u\left(\frac{u}{2}-\frac{\sin\left(2u\right)}{4}\right)du\\
+ & =\frac{n^{3}\pi^{3}}{2}-\frac{n^{2}\pi^{2}\sin\left(2n\pi\right)}{4}-\int^{n\pi}_{0}u^{2}du+\frac{1}{2}\int^{n\pi}_{0}u\sin\left(2u\right)du\\
+ & =\frac{n^{3}\pi^{3}}{2}-\left[\frac{u^{3}}{3}\right]^{n\pi}_{0}+\frac{1}{2}\int^{2n\pi}_{0}\frac{v}{2}\sin\left(v\right)\frac{dv}{2}\\
+ & =\frac{3n^{3}\pi^{3}}{6}-\frac{2n^{3}\pi^{3}}{6}+\frac{1}{8}\int^{2n\pi}_{0}v\sin\left(v\right)dv\\
+ & =\frac{n^{3}\pi^{3}}{6}+\frac{1}{8}\int^{2n\pi}_{0}v\sin\left(v\right)dv
+\end{align}
+
+Onde fizemos $v=2u$ e $du=dv/2$, alterando também os limites pra $0$ e $2n\pi$, mas já calculamos a segunda integral $\int^{a}_{0}u\sin\left(u\right)du=-a\cos\left(a\right)$ em \ref{int u sin(u)}, então:
+
+\begin{align}
+\int^{n\pi}_{0}u^{2}\sin^{2}udu & =\frac{n^{3}\pi^{3}}{6}+\frac{1}{8}\left(-2n\pi\cos\left(2n\pi\right)\right)\\
+ & =\frac{n^{3}\pi^{3}}{6}-\frac{n\pi}{4}
+\end{align}
+
+Então:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\frac{2a^{2}}{n^{3}\pi^{3}}\int^{n\pi}_{0}u^{2}\sin^{2}udu=\frac{2a^{2}}{n^{3}\pi^{3}}\left(\frac{n^{3}\pi^{3}}{6}-\frac{n\pi}{4}\right)=a^{2}\left(\frac{1}{3}-\frac{1}{2n^{2}\pi^{2}}\right)
+\end{align}
+
+A forma mais fácil de calcularmos $\left\langle p\right\rangle $ é utilizando:
+
+\begin{equation}
+\left\langle p\right\rangle =m\frac{d\left\langle x\right\rangle }{dt}=m\frac{d}{dt}\left(\frac{a}{2}\right)=0
+\end{equation}
+
+E por fim então:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int\psi^{*}_{n}\left(\frac{\hbar}{i}\frac{d}{dx}\right)^{2}\psi_{n}dx=-\hbar^{2}\int\psi^{*}_{n}\frac{d^{2}\psi_{n}}{dx^{2}}dx
+\end{align}
+E sendo a equação de Schrödinger neste caso dado pela combinação das equações \ref{schrog1} e \ref{kn}:
+
+\begin{equation}
+\frac{\partial^{2}\psi_{n}}{\partial x^{2}}=-k^{2}_{n}\psi_{n}=-\left(\frac{n\pi}{a}\right)^{2}\psi_{n}
+\end{equation}
+
+Então:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =-\hbar^{2}\int\psi^{*}_{n}\frac{d^{2}\psi_{n}}{dx^{2}}dx=-\hbar^{2}\int\psi^{*}_{n}\left(-\left(\frac{n\pi}{a}\right)^{2}\right)\psi_{n}dx=\left(\frac{\hbar n\pi}{a}\right)^{2}\int\psi^{*}_{n}\psi_{n}dx=\left(\frac{\hbar n\pi}{a}\right)^{2}
+\end{align}
+
+Então o desvio padrão da posição é dado por:
+
+\begin{align}
+\sigma_{x} & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}\\
+ & =\sqrt{a^{2}\left(\frac{1}{3}-\frac{1}{2n^{2}\pi^{2}}\right)-\left(\frac{a}{2}\right)^{2}}\\
+ & =a\sqrt{\frac{4}{12}-\frac{2}{4n^{2}\pi^{2}}-\frac{3}{12}}\\
+ & =a\sqrt{\frac{1}{4\cdot3}-\frac{2}{4n^{2}\pi^{2}}}
+\end{align}
+
+Ou seja:
+
+\begin{equation}
+\sigma_{x}=\frac{a}{2}\sqrt{\frac{1}{3}-\frac{2}{n^{2}\pi^{2}}}
+\end{equation}
+
+De modo análogo temos para $\sigma_{p}$:
+
+\begin{align}
+\sigma_{p} & =\sqrt{\left\langle p^{2}\right\rangle -\left\langle p\right\rangle ^{2}}=\sqrt{\left(\frac{\hbar n\pi}{a}\right)^{2}-\left(0\right)^{2}}=\sqrt{\left(\frac{\hbar n\pi}{a}\right)^{2}}=\frac{\hbar n\pi}{a}
+\end{align}
+A relação de incerteza é então:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\frac{a}{2}\sqrt{\frac{1}{3}-\frac{2}{n^{2}\pi^{2}}}\frac{\hbar n\pi}{a}=\frac{\hbar n\pi}{2}\sqrt{\frac{1}{3}-\frac{2}{n^{2}\pi^{2}}}=\frac{\hbar}{2}\sqrt{\left(n\pi\right)^{2}\left(\frac{1}{3}-\frac{2}{n^{2}\pi^{2}}\right)}
+\end{equation}
+
+Então:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\frac{\hbar}{2}\sqrt{\frac{n^{2}\pi^{2}}{3}-2}
+\end{equation}
+
+E podemos ver que quanto maior $n$ maior será o produto dos desvios. Como a relação de incerteza é um limite inferior, então o valor mais próximo do limite é para $n=1$. Neste caso temos:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\frac{\hbar}{2}\sqrt{\frac{\pi^{2}}{3}-2}
+\end{equation}
+
+E como temos $\sqrt{\frac{\pi^{2}}{3}-2}=1.13$ então $\sigma_{x}\sigma_{p}=1.14\frac{\hbar}{2}$, um resultado que obviamente respeita a relação de incerteza dada por $\sigma_{x}\sigma_{p}\geq\frac{\hbar}{2}$.
+
+\textbf{Exemplo: Uma partícula em um poço quadrado infinito tem a seguinte função de onda inicial:}
+
+\begin{equation}
+\psi\left(x,0\right)=A\left[\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right]
+\end{equation}
+
+\textbf{a) Normalize $\psi\left(x,0\right)$.}
+
+\textbf{b) Encontre $\psi$$\left(x,t\right)$ e $\left|\psi\left(x,t\right)\right|^{2}$. Expresse o último como uma função senoidal no tempo e para simplificar use $\omega\equiv\pi^{2}h/2ma^{2}$.}
+
+\textbf{c) Calcule $\left\langle x\right\rangle $. Verifique se oscila no tempo. Qual é a frequência angular da oscilação? Qual é a amplitude de oscilação?}
+
+\textbf{d) Calcular $\left\langle p\right\rangle $.}
+
+\textbf{e) Se você medir a energia dessa partícula, quais valores você espera obter e com qual probabilidade? Encontre o valor esperado de $H$ e como ele se compara a $E_{1}$ e $E_{2}$.}
+
+Pela notação podemos assumir que $\psi_{n}\left(x\right)$ são as soluções estacionárias de $\Psi\left(x,t\right)$. Primeiro queremos normalizar $\Psi\left(x,0\right)$. Então:
+
+\begin{align}
+\left|\Psi\right|^{2} & =\left(A\left[\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right]\right)^{*}\left(A\left[\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right]\right)\\
+ & =A^{*}\left[\psi^{*}_{1}+\psi^{*}_{2}\right]A\left[\psi_{1}+\psi_{2}\right]\\
+ & =A^{*}A\left(\psi^{*}_{1}\psi_{1}+\psi^{*}_{1}\psi_{2}+\psi^{*}_{2}\psi_{1}+\psi^{*}_{2}\psi_{2}\right)\\
+ & =\left|A\right|^{2}\left(\left|\psi_{1}\right|^{2}+\left|\psi\right|^{2}_{2}+\psi^{*}_{1}\psi_{2}+\psi^{*}_{2}\psi_{1}\right)
+\end{align}
+
+Integrando então, pela condição de normalização:
+
+\begin{equation}
+1=\int\left|\Psi\right|^{2}dx=\left|A\right|^{2}\left(\int\left|\psi_{1}\right|^{2}dx+\int\left|\psi\right|^{2}_{2}dx+\int\psi^{*}_{1}\psi_{2}dx+\int\psi^{*}_{2}\psi_{1}dx\right)=\left|A\right|^{2}\left(1+1\right)=2\left|A\right|^{2}
+\end{equation}
+
+Então:
+
+\begin{equation}
+A=\frac{1}{\sqrt{2}}
+\end{equation}
+
+Queremos agora calcular $\Psi\left(x,t\right)$. Uma vez que 
+\begin{equation}
+\Psi\left(x,0\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)
+\end{equation}
+
+temos claramente $c_{1}=c_{2}=1/\sqrt{2}$ e $c_{n}=0$ para $n>2$. E como vimos que:
+
+\begin{equation}
+\Psi\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\Psi_{n}\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}
+\end{equation}
+
+Uma vez que $c_{n}$ são constantes, assim como $\psi_{n}\left(x\right)$ são as soluções espaciais constante no tempo, então não pode haver nenhum $\psi_{n}$ para $n>2$, então a função de onda deve ter a seguinte forma:
+
+\begin{equation}
+\Psi\left(x,t\right)=c_{1}\psi_{1}\left(x\right)e^{-iE_{1}t/\hbar}+c_{2}\psi_{2}\left(x\right)e^{-iE_{2}t/\hbar}
+\end{equation}
+
+Usando os valores de $c_{1}$ calculados e a definição de frequência angular dada pelo enunciado $\omega\equiv\pi^{2}\hbar/2ma^{2}$, uma vez que já vimos que:
+
+\begin{equation}
+E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}=\omega\hbar n^{2}
+\end{equation}
+
+Então:
+
+\begin{align}
+\Psi\left(x,t\right) & =\frac{1}{\sqrt{2}}\psi_{1}\left(x\right)e^{-i\omega\hbar1^{2}t/\hbar}+\frac{1}{\sqrt{2}}\psi_{2}\left(x\right)e^{-i\omega\hbar2^{2}t/\hbar}\\
+ & =\frac{1}{\sqrt{2}}\left(\psi_{1}\left(x\right)e^{-i\omega t}+\psi_{2}\left(x\right)e^{-i4\omega t}\right)\\
+ & =\frac{e^{-i\omega t}}{\sqrt{2}}\left(\psi_{1}\left(x\right)+\psi_{2}\left(x\right)e^{-i3\omega t}\right)
+\end{align}
+
+Também já calculamos que $\psi_{n}\left(x\right)=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi x}{a}\right)$então:
+
+\begin{align}
+\Psi\left(x,t\right) & =\frac{e^{-i\omega t}}{\sqrt{2}}\left(\sqrt{\frac{2}{a}}\sin\left(\frac{\pi x}{a}\right)+\sqrt{\frac{2}{a}}\sin\left(\frac{2\pi x}{a}\right)e^{-i3\omega t}\right)\\
+ & =\frac{e^{-i\omega t}}{\sqrt{a}}\left(\sin\left(\frac{\pi x}{a}\right)+\sin\left(\frac{2\pi x}{a}\right)e^{-i3\omega t}\right)
+\end{align}
+
+Então:
+
+\begin{align}
+\left|\Psi\right|^{2} & =\left[\frac{e^{-i\omega t}}{\sqrt{a}}\left(\sin\left(\frac{\pi x}{a}\right)+\sin\left(\frac{2\pi x}{a}\right)e^{-i3\omega t}\right)\right]^{*}\left[\frac{e^{-i\omega t}}{\sqrt{a}}\left(\sin\left(\frac{\pi x}{a}\right)+\sin\left(\frac{2\pi x}{a}\right)e^{-i3\omega t}\right)\right]\\
+ & =\frac{e^{+i\omega t}}{\sqrt{a}}\left(\sin\left(\frac{\pi x}{a}\right)+\sin\left(\frac{2\pi x}{a}\right)e^{+i3\omega t}\right)\frac{e^{-i\omega t}}{\sqrt{a}}\left(\sin\left(\frac{\pi x}{a}\right)+\sin\left(\frac{2\pi x}{a}\right)e^{-i3\omega t}\right)\\
+ & =\frac{1}{a}\left(\sin^{2}\left(\frac{\pi x}{a}\right)+\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\left(e^{-i3\omega t}+e^{+i3\omega t}\right)+\sin^{2}\left(\frac{2\pi x}{a}\right)\right)
+\end{align}
+
+E sendo $\cos\left(x\right)=\frac{e^{ix}+e^{ix}}{2}$:
+
+\begin{align}
+\left|\Psi\right|^{2} & =\frac{1}{a}\left(\sin^{2}\left(\frac{\pi x}{a}\right)+2\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\cos\left(3\omega t\right)+\sin^{2}\left(\frac{2\pi x}{a}\right)\right)
+\end{align}
+
+Queremos então computar $\left\langle x\right\rangle $:
+
+\begin{align}
+\left\langle x\right\rangle  & =\int x\left|\Psi\right|^{2}dx\\
+ & =\frac{1}{a}\left(\int x\sin^{2}\left(\frac{\pi x}{a}\right)dx+\int2\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\cos\left(3\omega t\right)dx+\int x\sin^{2}\left(\frac{2\pi x}{a}\right)dx\right)\\
+ & =\frac{1}{a}\left(\int x\sin^{2}\left(\frac{\pi x}{a}\right)dx+2\cos\left(3\omega t\right)\int x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)dx+\int x\sin^{2}\left(\frac{2\pi x}{a}\right)dx\right)
+\end{align}
+
+Onde lembramos que a integral é na posição, logo $\cos\left(3\omega t\right)$ pode ser retirado para fora do integrando. Vamos calcular uma integral por vez. Primeiro vamos substituir $u=\frac{\pi x}{a}$ e então os limites $x=0\rightarrow u=0$ e $x=a\rightarrow u=\pi$:
+
+\begin{equation}
+\int^{\pi}_{0}u\left(\frac{a}{\pi}\right)\sin^{2}\left(u\right)\left(\frac{a}{\pi}\right)dx=\frac{a^{2}}{\pi^{2}}\int^{\pi}_{0}u\sin^{2}\left(u\right)dx=\frac{a^{2}}{\pi^{2}}\frac{\pi^{2}}{4}=\left(\frac{a}{2}\right)^{2}
+\end{equation}
+
+Essa é uma integral que já tínhamos calculado \ref{int u sin^2}. A terceira integral fazemos algo análogo substituindo $u=\frac{2\pi x}{a}$, então os limites ficam entre $0$ e $2\pi$:
+
+\begin{equation}
+\int^{2\pi}_{0}u\left(\frac{a}{2\pi}\right)\sin^{2}\left(u\right)\left(\frac{a}{2\pi}\right)du=\frac{a^{2}}{4\pi^{2}}\int^{2\pi}_{0}u\sin^{2}\left(u\right)du=\frac{a^{2}}{4\pi^{2}}\frac{\left(2\pi\right)^{2}}{4}=\left(\frac{a}{2}\right)^{2}
+\end{equation}
+
+Onde obtemos a mesma integral e o mesmo resultado. Agora para a integral do meio, vamos utilizar a seguinte propriedade trigonométrica:
+
+\begin{align}
+\cos\left(A\pm B\right) & =\cos A\cos B\mp\sin A\sin B
+\end{align}
+
+Então:
+
+\begin{align}
+\cos\left(A+B\right)-\cos\left(A-B\right) & =\left[\left(\cos A\cos B-\sin A\sin B\right)+\dots\right.\\
+ & \left.\dots-\left(\cos A\cos B+\sin A\sin B\right)\right]\\
+\cos\left(A+B\right)-\cos\left(A-B\right) & =-2\sin A\sin B\\
+\left(\cos\left(A-B\right)-\cos\left(A+B\right)\right)\frac{1}{2} & =\sin A\sin B\\
+\left(\cos\left(\frac{\pi x}{a}-\frac{2\pi x}{a}\right)-\cos\left(\frac{\pi x}{a}+\frac{2\pi x}{a}\right)\right)\frac{1}{2} & =\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\\
+\left(\cos\left(-\frac{\pi x}{a}\right)-\cos\left(\frac{4\pi x}{a}\right)\right)\frac{1}{2} & =\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)\\
+\left(\cos\left(\frac{\pi x}{a}\right)-\cos\left(\frac{3\pi x}{a}\right)\right)\frac{1}{2} & =\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)
+\end{align}
+
+Então a segunda integral se torna:
+
+\begin{align}
+\int x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)dx & =\frac{1}{2}\left(\int x\cos\left(\frac{\pi x}{a}\right)dx-\int x\cos\left(\frac{3\pi x}{a}\right)dx\right)\\
+2\int x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)d & =\int^{\pi}_{0}u\left(\frac{a}{\pi}\right)\cos\left(u\right)\left(\frac{a}{\pi}\right)dx-\int^{3\pi}_{0}u\left(\frac{a}{3\pi}\right)\cos\left(u\right)\left(\frac{a}{3\pi}\right)du\\
+ & =\frac{a^{2}}{\pi^{2}}\int^{\pi}_{0}u\cos\left(u\right)dx-\frac{a^{2}}{3^{2}\pi^{2}}\int^{3\pi}_{0}u\cos\left(u\right)du
+\end{align}
+
+Onde fizemos a substituição $u=\frac{\pi x}{a}$ (com limites entre $0$e $\pi$) e $u=\frac{4\pi x}{a}$ (com limites entre $0$ e $4\pi$). A solução dessa integral já vimos em \ref{int u cosu}:
+
+\begin{align}
+2\int x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)dx & =\frac{a^{2}}{\pi^{2}}\int^{\pi}_{0}u\cos\left(u\right)dx-\frac{a^{2}}{3^{2}\pi^{2}}\int^{3\pi}_{0}u\cos\left(u\right)du\\
+ & =\frac{a^{2}}{\pi^{2}}\left(\cos\left(\pi\right)-1\right)-\frac{a^{2}}{3^{2}\pi^{2}}\left(\cos\left(3\pi\right)-1\right)\\
+ & =\frac{a^{2}}{\pi^{2}}\left(-1-1\right)-\frac{a^{2}}{3^{2}\pi^{2}}\left(-1-1\right)\\
+ & =-2\left[\frac{9a^{2}}{9\pi^{2}}-\frac{a^{2}}{9\pi^{2}}\right]\\
+ & =-2\frac{8a^{2}}{9\pi^{2}}\\
+ & =-\frac{16a^{2}}{9\pi^{2}}
+\end{align}
+
+Então:
+
+\begin{align}
+\left\langle x\right\rangle  & =\frac{1}{a}\left(\int x\sin^{2}\left(\frac{\pi x}{a}\right)dx+\cos\left(3\omega t\right)\left[2\int x\sin\left(\frac{\pi x}{a}\right)\sin\left(\frac{2\pi x}{a}\right)dx\right]+\int x\sin^{2}\left(\frac{2\pi x}{a}\right)dx\right)\\
+ & =\frac{1}{a}\left(\left(\frac{a}{2}\right)^{2}+\cos\left(3\omega t\right)\left(-\frac{16a^{2}}{9\pi^{2}}\right)+\left(\frac{a}{2}\right)^{2}\right)\\
+ & =\frac{a^{2}}{a}\left(\frac{1}{4}-\cos\left(3\omega t\right)\frac{16}{9\pi^{2}}+\frac{1}{4}\right)\\
+ & =a\left(\frac{2}{4}-\cos\left(3\omega t\right)\frac{16}{9\pi^{2}}\right)\\
+ & =a\left(\frac{1}{2}-\frac{2}{2}\cos\left(3\omega t\right)\frac{16}{9\pi^{2}}\right)\\
+ & =\frac{a}{2}\left(1-\frac{32}{9\pi^{2}}\cos\left(3\omega t\right)\right)
+\end{align}
+
+Sobre a amplitude podemos notar que como calculamos anteriormente, a posição da partícula oscila em torno de $\frac{a}{2}$, o centro da caixa. Evidentemente a amplitude deve ser menor que $\frac{a}{2}$. E ela é $\frac{32}{9\pi^{2}}\frac{a}{2}=0.36\frac{a}{2}<\frac{a}{2}$. Agora a frequência angular é $3\omega=\frac{3\pi^{2}\hbar}{2ma^{2}}$. E $\left\langle p\right\rangle $ é dado por:
+
+\begin{equation}
+\left\langle p\right\rangle =m\frac{d\left\langle x\right\rangle }{dt}=m\frac{d}{dt}\left(\frac{a}{2}\left[1-\frac{32}{9\pi^{2}}\cos\left(3\omega t\right)\right]\right)=ma\frac{3\cdot16}{9\pi^{2}}\omega\sin\left(3\omega t\right)=ma\frac{16}{3\pi^{2}}\omega\sin\left(3\omega t\right)
+\end{equation}
+
+E como$\omega=\frac{\pi^{2}\hbar}{2ma^{2}}$ então:
+
+\begin{equation}
+\left\langle p\right\rangle =ma\frac{16}{3\pi^{2}}\frac{\pi^{2}\hbar}{2ma^{2}}\sin\left(3\omega t\right)=\frac{8\hbar}{3a}\sin\left(3\omega t\right)
+\end{equation}
+
+Relembrando nossa função de onda:
+
+\begin{align}
+\Psi\left(x,t\right) & =\frac{1}{\sqrt{2}}\psi_{1}\left(x\right)e^{-i\omega\hbar1^{2}t/\hbar}+\frac{1}{\sqrt{2}}\psi_{2}\left(x\right)e^{-i\omega\hbar2^{2}t/\hbar}=\frac{1}{\sqrt{2}}\Psi_{1}\left(x,t\right)+\frac{1}{\sqrt{2}}\Psi_{2}\left(x,t\right)
+\end{align}
+
+Evidentemente podemos obter então $E_{1}$e $E_{2}$, e as probabilidades de obtermos cada um dos valores é dado por $\left|c_{1}\right|^{2}=\left|c_{2}\right|^{2}=\left(\frac{1}{\sqrt{2}}\right)^{2}=\frac{1}{2}$.Agora para calcular $\left\langle H\right\rangle $ temos:
+
+\begin{equation}
+\left\langle H\right\rangle =\sum\left|c_{n}\right|^{2}E_{n}=\frac{E_{1}}{2}+\frac{E_{2}}{2}=\frac{1}{2}\left(\frac{1\pi^{2}\hbar^{2}}{2ma^{2}}+\frac{4\pi^{2}\hbar^{2}}{2ma^{2}}\right)=\frac{5\pi^{2}\hbar^{2}}{4ma^{2}}
+\end{equation}
+
+Onde usamos fato de que $E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}$. Isto é a média dos valores $E_{1}$e $E_{2}$.
+
+\textbf{Exemplo: Uma partícula em um poço quadrado infinito tem a seguinte função de onda inicial:}
+
+\begin{equation}
+\Psi\left(x,0\right)=\begin{cases}
+Ax & 0\leq x\leq a/2\\
+A\left(a-x\right) & a/2\leq x\leq a
+\end{cases}
+\end{equation}
+
+\textbf{a) Determine a constante $A$.}
+
+\textbf{b) Encontre $\Psi\left(x,t\right)$}
+
+\textbf{c) Encontre a probabilidade de que a medição de energia retorne o valor $E_{1}$.}
+
+\textbf{d) Qual o valor esperado de energia usando $\left\langle H\right\rangle =\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}E_{n}$. }
+
+Vamos começar novamente determinando a constante $A$.
+
+\begin{align}
+1= & \int^{+\infty}_{-\infty}\left|\Psi\right|^{2}dx\\
+= & \int^{a/2}_{0}A^{2}x^{2}dx+\int^{a}_{a/2}A^{2}\left(a-x\right)^{2}dx\\
+= & A^{2}\left[\frac{x^{3}}{3}\right]^{a/2}_{0}-A^{2}\int^{0}_{a/2}u^{2}du\\
+= & A^{2}\frac{a^{3}}{2^{3}3}-A^{2}\left[\frac{u^{3}}{3}\right]^{0}_{a/2}\\
+= & A^{2}\frac{a^{3}}{2^{3}3}+A^{2}\frac{a^{3}}{2^{3}3}^{0}_{a/2}\\
+= & A^{2}\frac{a^{3}}{12}
+\end{align}
+
+Onde fizemos a substituição $u=a-x$ então os limites vão de $x=a/2\rightarrow u=a/2$ até $x=a\rightarrow u=0$. além de que $du=-dx$. Então sendo $12=2^{2}\cdot3$, temos:
+
+\begin{equation}
+A=\sqrt{\frac{2^{2}3}{a^{3}}}=2\sqrt{\frac{3}{a^{3}}}
+\end{equation}
+
+Queremos agora encontrar $\Psi\left(x,t\right)=\sum c_{n}\Psi_{n}\left(x,t\right)=\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}$. Portanto como já calculamos que a solução no interior do posso é \ref{solucao_poco_quadrado}, ou seja $\psi_{n}\left(x\right)=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)$, então precisamos calcular $c_{n}$, lembrando que também já calculamos $E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}$ anteriormente. Então como vimos\ref{cn}:
+
+\begin{align}
+c_{n} & =\sqrt{\frac{2}{a}}\int^{a}_{0}\sin\left(\frac{n\pi}{a}x\right)\Psi\left(x,0\right)dx\\
+ & =\sqrt{\frac{2}{a}}\left(\int^{a/2}_{0}\sin\left(\frac{n\pi}{a}x\right)Axdx+\int^{a}_{a/2}\sin\left(\frac{n\pi}{a}x\right)A\left(a-x\right)dx\right)\\
+ & =\sqrt{\frac{2}{a}}\left(A\int^{a/2}_{0}x\sin\left(\frac{n\pi}{a}x\right)dx+Aa\int^{a}_{a/2}\sin\left(\frac{n\pi}{a}x\right)dx-A\int^{a}_{a/2}x\sin\left(\frac{n\pi}{a}x\right)dx\right)
+\end{align}
+
+Temos três integrais pra resolver. Primeiro vamos substituir $u=\frac{n\pi}{a}x$:
+
+\begin{equation}
+I_{1}=\int^{n\pi/2}_{0}u\left(\frac{a}{n\pi}\right)\sin\left(u\right)\left(\frac{a}{n\pi}\right)du=\left(\frac{a}{n\pi}\right)^{2}\int^{n\pi/2}_{0}u\sin\left(u\right)du
+\end{equation}
+
+Isso é parecido com o que já calculamos em \ref{int u sin(u)}, o limite aqui é $\frac{n\pi}{2}$ e não $n\pi$ e isso faz diferença. Então vamos retomar algumas linhas antes de substituirmos os limites:
+
+\begin{equation}
+\int^{b}_{a}\sin\left(u\right)udu=\left.\sin\left(u\right)-u\cos\left(u\right)\right|^{b}_{a}
+\end{equation}
+
+Com esse resultado temos:
+
+\begin{equation}
+I_{1}=\left(\frac{a}{n\pi}\right)^{2}\left.\left[\sin\left(u\right)-u\cos\left(u\right)\right]\right|^{n\pi/2}_{0}=\frac{a^{2}}{n^{2}\pi^{2}}\left[\sin\left(\frac{n\pi}{2}\right)-\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)\right]
+\end{equation}
+
+Repetindo a substituição, com a diferença que agora os limites serão entre $x=\frac{a}{2}\rightarrow u=\frac{n\pi}{2}$ e $x=a\rightarrow u=n\pi$, ficamos então com a terceira integral::
+
+\begin{align}
+I_{3} & =\left(\frac{a}{n\pi}\right)^{2}\int^{n\pi}_{n\pi/2}u\sin\left(u\right)du\\
+ & =\left(\frac{a}{n\pi}\right)^{2}\left[-n\pi\cos\left(n\pi\right)+\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)+\sin\left(n\pi\right)-\sin\left(\frac{n\pi}{2}\right)\right]\\
+ & =\left(\frac{a}{n\pi}\right)^{2}\left[-n\pi\cos\left(n\pi\right)+\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)-\sin\left(\frac{n\pi}{2}\right)\right]\\
+ & =\frac{a^{2}}{n\pi}\left[\frac{\cos\left(n\pi/2\right)}{2}-\cos\left(n\pi\right)-\frac{\sin\left(n\pi/2\right)}{n\pi}\right]
+\end{align}
+
+A segunda integral é, com a mesma substituição $u=\frac{n\pi}{a}x$:
+
+\begin{equation}
+I_{2}=\int^{n\pi}_{n\pi/2}\sin\left(u\right)\left(\frac{a}{n\pi}\right)du=\frac{a}{n\pi}\int^{n\pi}_{n\pi/2}\sin\left(u\right)dx=-\frac{a}{n\pi}\left[\cos u\right]^{n\pi}_{n\pi/2}=\frac{a}{n\pi}\left[\cos\left(\frac{n\pi}{2}\right)-\cos n\pi\right]
+\end{equation}
+
+Então:
+
+\begin{align}
+c_{n} & =A\sqrt{\frac{2}{a}}\left(\int^{a/2}_{0}x\sin\left(\frac{n\pi}{a}x\right)dx+a\int^{a}_{a/2}\sin\left(\frac{n\pi}{a}x\right)dx-\int^{a}_{a/2}x\sin\left(\frac{n\pi}{a}x\right)dx\right)\\
+ & =A\sqrt{\frac{2}{a}}\left(\frac{a^{2}}{n^{2}\pi^{2}}\left[\sin\left(\frac{n\pi}{2}\right)-\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)\right]+a\frac{a}{n\pi}\left[\cos\left(\frac{n\pi}{2}\right)-\cos n\pi\right]\dots\right.\\
+ & \left.\dots-\frac{a^{2}}{n\pi}\left[\frac{\cos\left(n\pi/2\right)}{2}-\cos\left(n\pi\right)-\frac{\sin\left(n\pi/2\right)}{n\pi}\right]\right)\\
+ & =A\sqrt{\frac{2}{a}}\frac{a^{2}}{n^{2}\pi^{2}}\left(\sin\left(\frac{n\pi}{2}\right)-\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)+n\pi\cos\left(\frac{n\pi}{2}\right)-n\pi\cos n\pi\dots\right.\\
+ & \left.\dots-\frac{n\pi}{2}\cos\left(\frac{n\pi}{2}\right)+n\pi\cos\left(n\pi\right)+\sin\left(\frac{n\pi}{2}\right)\right)\\
+ & =A\frac{\sqrt{2a^{3}}}{n^{2}\pi^{2}}2\sin\left(\frac{n\pi}{2}\right)
+\end{align}
+
+Substituindo o $A=2\sqrt{\frac{3}{a^{3}}}$ calculado temos:
+
+\begin{align}
+A\frac{2\sqrt{2a^{3}}}{n^{2}\pi^{2}} & =2\sqrt{\frac{3}{a^{3}}}\frac{2\sqrt{2a^{3}}}{n^{2}\pi^{2}}=\frac{4\sqrt{6}}{n^{2}\pi^{2}}
+\end{align}
+
+Agora quando $n$ é par temos por exemplo para $n=0,2,4,\dots$:
+
+\begin{equation}
+\sin\left(0\right)=\sin\left(n\pi\right)=\sin\left(2n\pi\right)=0
+\end{equation}
+
+Então só resta $n$ ímpar. E o sinal se altera, começando em positivo, negativo, positivo, etc, por exemplo para $n=1,3,5,$..
+
+\begin{equation}
+\sin\left(\frac{\pi}{2}\right)=1,\quad\sin\left(\frac{3\pi}{2}\right)=-1,\quad\sin\left(\frac{5\pi}{2}\right)=1
+\end{equation}
+
+Então queremos uma transformação do tipo $1\rightarrow0$, $3\rightarrow1$, $5\rightarrow2\dots n\rightarrow p$ para que possamos escrever o resultado em termos de $\left(-1\right)^{p}$. Podemos notar que sempre temos $n=2p+1$. Dessa forma com o $2p$ garantimos que quando avançamos em $p=0,1,2,3,\dots$ , então $n$ avança sempre em 2 unidades, ou seja, se partirmos do ímpar estamos sempre no ímpar. Mas como $p$ começa em $0$ e $n$ deve começar em $1$ para começar em ímpar, então somamos $1$. Ou seja:
+
+\begin{equation}
+n=2p+1\rightarrow p=\frac{n-1}{2}
+\end{equation}
+
+De forma que temos
+
+\begin{equation}
+\sin\left(\frac{n\pi}{2}\right)=\left(-1\right)^{\frac{n-1}{2}}
+\end{equation}
+
+Então:
+
+\begin{equation}
+c_{n}=\begin{cases}
+0 & ,n\text{ par}\\
+\frac{4\sqrt{6}}{n^{2}\pi^{2}}\left(-1\right)^{\frac{n-1}{2}} & n,\text{ ímpar}
+\end{cases}
+\end{equation}
+
+Como já calculamos que a solução no interior do posso é \ref{solucao_poco_quadrado}, ou seja $\psi_{n}\left(x\right)=\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)$, e lembrando que também já calculamos $E_{n}=\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}$ anteriormente, então:
+
+\begin{align}
+\Psi\left(x,t\right) & =\sum^{\infty}_{n=1}c_{n}\psi_{n}\left(x\right)e^{-iE_{n}t/\hbar}\\
+ & =\sum^{\infty}_{n=1,3,5\dots}\frac{4\sqrt{6}}{n^{2}\pi^{2}}\left(-1\right)^{\frac{n-1}{2}}\sqrt{\frac{2}{a}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-iE_{n}t/\hbar\right]\\
+ & =\frac{4\sqrt{6}}{\pi^{2}}\sqrt{\frac{2}{a}}\sum^{\infty}_{n=1,3,5\dots}\left(-1\right)^{\frac{n-1}{2}}\frac{1}{n^{2}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-iE_{n}t/\hbar\right]\\
+ & =\frac{4}{\pi^{2}}\sqrt{\frac{12}{a}}\sum^{\infty}_{n=1,3,5\dots}\left(-1\right)^{\frac{n-1}{2}}\frac{1}{n^{2}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-iE_{n}t/\hbar\right]
+\end{align}
+
+Ou como $\sqrt{12}=\sqrt{2^{2}3}=2\sqrt{3}$ então:
+
+\begin{equation}
+\Psi\left(x,t\right)=\frac{8}{\pi^{2}}\sqrt{\frac{3}{a}}\sum^{\infty}_{n=1,3,5\dots}\left(-1\right)^{\left(n-1\right)/2}\frac{1}{n^{2}}\sin\left(\frac{n\pi}{a}x\right)\exp\left[-iE_{n}t/\hbar\right]
+\end{equation}
+
+Para obtermos a probabilidade de que a medida da energia seja $E_{1}$, só precisamos calcular $P_{1}=\left|c_{1}\right|^{2}$:
+
+\begin{align}
+P_{1} & =\left|c_{1}\right|^{2}\\
+ & =\left|\frac{4\sqrt{6}}{1^{2}\pi^{2}}\left(-1\right)^{\frac{1-1}{2}}\right|^{2}\\
+ & =\left|\frac{4\sqrt{6}}{\pi^{2}}\right|^{2}\\
+ & =0.9855
+\end{align}
+
+Ou seja $P_{1}=98,55\%$. E agora então calculando o valor esperado usando a equação:
+
+\begin{align}
+\left\langle H\right\rangle  & =\sum^{\infty}_{n=1}\left|c_{n}\right|^{2}E_{n}\\
+ & =\sum^{\infty}_{n=1,2,3\dots}\left|\frac{4\sqrt{6}}{n^{2}\pi^{2}}\left(-1\right)^{\frac{n-1}{2}}\right|^{2}\frac{n^{2}\pi^{2}\hbar^{2}}{2ma^{2}}\\
+ & =\frac{4\sqrt{6}}{\pi^{2}}\frac{\pi^{2}\hbar^{2}}{2ma^{2}}\sum^{\infty}_{n=1,3,5\dots}\left|\frac{\left(-1\right)^{\frac{n-1}{2}}}{n^{2}}\right|^{2}n^{2}\\
+ & =\frac{2\sqrt{6}\hbar^{2}}{ma^{2}}\sum^{\infty}_{n=1,3,5\dots}\frac{\left(-1\right)^{n-1}}{n^{2}}\\
+ & =\frac{2\sqrt{6}\hbar^{2}}{ma^{2}}\left(\frac{\left(-1\right)^{0}}{1^{2}}+\frac{\left(-1\right)^{2}}{3^{2}}+\frac{\left(-1\right)^{4}}{5^{2}}+\dots\right)\\
+ & =\frac{2\sqrt{6}\hbar^{2}}{ma^{2}}\left(\frac{1}{1^{2}}+\frac{1}{3^{2}}+\frac{1}{5^{2}}+\dots\right)
+\end{align}
+
+Onde usamos o valor $c_{n}$ já calculado neste caso em particular e o $E_{n}$ apresentado anteriormente. Além disso como:
+
+\begin{equation}
+\frac{1}{1^{2}}+\frac{1}{3^{2}}+\frac{1}{5^{2}}+\dots=\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{2}}=\frac{\pi^{2}}{8}
+\end{equation}
+
+Então:
+
+\begin{align}
+\left\langle H\right\rangle  & =\frac{2\sqrt{6}\hbar^{2}}{ma^{2}}\frac{\pi^{2}}{8}\\
+ & =\frac{\pi^{2}\sqrt{6}\hbar^{2}}{8ma^{2}}
+\end{align}
+
+Um comentário do livro que acho que vale a pena trazer é que não há restrição sobre o formato da função de onda, ela só precisa ser normalizável. $\Psi\left(x,0\right)$ não precisa sequer ser ter uma derivada contínua. O que surge é que se quisermos calcular $\left\langle H\right\rangle $neste caso, vamos ter dificuldades técnicas porque precisamos da segunda derivada de $\Psi\left(x,0\right)$. Como exercício complementar queremos ver:
+
+\begin{equation}
+S=\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{k}}
+\end{equation}
+
+Começamos com a função Zeta de Riemman dada por:
+
+\begin{equation}
+\zeta\left(k\right)=\sum^{\infty}_{n=1}\frac{1}{n^{k}}
+\end{equation}
+
+Vamos dividir em pares e ímpares:
+
+\begin{equation}
+\zeta\left(k\right)=\sum^{\infty}_{n=2,4,6\dots}\frac{1}{n^{k}}+\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{k}}
+\end{equation}
+
+Vamos reescrever os termos pares como $n=2m$, então:
+
+\begin{equation}
+\sum^{\infty}_{n=2,4,6\dots}\frac{1}{n^{k}}=\sum^{\infty}_{n=1}\frac{1}{\left(2m\right)^{k}}
+\end{equation}
+
+Pois em ambos os casos:
+
+\begin{align}
+\sum^{\infty}_{n=1}\frac{1}{\left(2m\right)^{k}} & =\frac{1}{\left(2\cdot1\right)^{k}}+\frac{1}{\left(2\cdot2\right)^{k}}+\frac{1}{\left(2\cdot3\right)^{k}}+\dots\\
+ & =\frac{1}{2^{k}}+\frac{1}{4^{k}}+\frac{1}{6^{k}}+\dots\\
+ & =\sum^{\infty}_{n=2,4,6\dots}\frac{1}{n^{k}}
+\end{align}
+
+E como:
+
+\begin{equation}
+\sum^{\infty}_{n=1}\frac{1}{\left(2m\right)^{k}}=\sum^{\infty}_{n=1}\frac{1}{2^{k}m^{k}}=\frac{1}{2^{k}}\sum^{\infty}_{n=1}\frac{1}{m^{k}}=\frac{\zeta\left(k\right)}{2^{k}}
+\end{equation}
+
+Então:
+
+\begin{align}
+\zeta\left(k\right) & =\sum^{\infty}_{n=2,4,6\dots}\frac{1}{n^{k}}+\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{k}}\\
+\zeta\left(k\right) & =\frac{\zeta\left(k\right)}{2^{k}}+\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{k}}\\
+\sum^{\infty}_{n=1,3,5\dots}\frac{1}{n^{k}} & =\zeta\left(k\right)-\frac{\zeta\left(k\right)}{2^{k}}\\
+ & =\zeta\left(k\right)\left(1-2^{-k}\right)
+\end{align}
+
+Agora para obtermos os diferentes valores dos somatórios para diferentes valores de $k$, (até aqui já vimos $k=2,4$ e $k=6$) evidentemente precisamos de $\zeta\left(k\right)$ para cada um destes valores. A função $\zeta\left(k\right)$ tem valores tabelados para diferentes valores específicos de $k$,por exemplo, para $k=2$ é conhecido como problema de Basel, vamos considerar por hora ser suficiente saber disto. Se quisermos uma explicação matemática mais profunda, precisamos reconhecer a generalização do método de Euler para obter os valores de $\zeta\left(k\right)$:
+
+\begin{equation}
+\zeta\left(2n\right)=\frac{\left(-1\right)^{n-1}\left(2\pi\right)^{2n}}{2\cdot\left(2n\right)!}B_{2n}
+\end{equation}
+
+Mas novamente para obter essa solução, agora precisaríamos ver que é número de Bernoulli. Como meu foco não é a matemática, eu vou aceitar nos resultados que os matemáticos forneceram, se não sinto que estamos entrando em uma toca de coelho infinita. 
+\end{document}

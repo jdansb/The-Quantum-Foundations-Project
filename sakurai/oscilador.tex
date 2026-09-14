@@ -1,0 +1,1441 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage[]
+ {hyperref}
+\begin{document}
+\title{Oscilador harmônico}
+
+\maketitle
+A ideia do oscilador harmônico clássico é uma massa $m$ precisa em uma mola com uma constate de força $k$, então esse movimento seria governado pela lei de Hooke:
+
+\begin{equation}
+F=-kx=m\frac{d^{2}x}{dt^{2}}
+\end{equation}
+
+Então:
+
+\begin{equation}
+kx=-\frac{m}{k}\frac{d^{2}x}{dt^{2}}=-\omega\frac{d^{2}x}{dt^{2}}
+\end{equation}
+
+A solução então é:
+
+\begin{equation}
+x\left(t\right)=A\sin\left(\omega t\right)+B\cos\left(\omega t\right)
+\end{equation}
+
+onde:
+
+\begin{equation}
+\omega\equiv\sqrt{\frac{m}{k}}
+\end{equation}
+
+Para uma força conservativa $\left(\nabla\times F=0\right)$ associado a um potencia escalar $V\left(x\right)$ a força é dada por $F=-\frac{dV}{dx}$ então:
+
+\begin{equation}
+V\left(x\right)=\frac{1}{2}kx^{2}
+\end{equation}
+
+Se expandirmos o potencial em uma série de Taylor, lembrando que podemos expandir uma função $f\left(x\right)$ como uma série de Taylor fazendo em torno do ponto $a$:
+
+\begin{equation}
+f\left(x\right)=\sum^{\infty}_{n=0}a_{n}\left(x-a\right)^{n},\qquad a_{n}=\frac{f^{\left(n\right)}\left(a\right)}{n!}
+\end{equation}
+
+Expandindo então $V\left(x\right)$ em torno de $x_{0}$:
+
+\begin{align}
+V\left(x\right) & =\frac{V^{\left(0\right)}\left(x_{0}\right)}{0!}\left(x-x_{0}\right)^{0}+\frac{V^{\left(1\right)}\left(x_{0}\right)}{1!}\left(x-x_{0}\right)^{1}+\frac{V^{2}\left(x_{0}\right)}{2!}\left(x-x_{0}\right)^{2}+\dots\\
+ & =V\left(x_{0}\right)+V^{'}\left(x_{0}\right)\left(x-x_{0}\right)+\frac{1}{2}V^{''}\left(x_{0}\right)\left(x-a\right)^{2}+\dots
+\end{align}
+
+Podemos adicionar uma constante a $V\left(x\right)$ sem alterar a força, uma vez que $F$ é a derivada, então se somarmos $-V\left(x_{0}\right)$ podemos remover o primeiro termo. Considerando que $V'\left(x_{0}\right)=0$ pois $x_{0}$ é um mínimo podemos remover o segundo termo. E se considerarmos que $\left(x-x_{0}\right)$ é pequeno, vamos considerar que podemos desconsiderar pra $n>2$, então podemos considerar aproximadamente:
+
+\begin{equation}
+V\left(x\right)\approx\frac{1}{2}V''\left(x_{0}\right)\left(x-x_{0}\right)^{2}
+\end{equation}
+
+Essa aproximação descreve um oscilador harmônico simples em torno do ponto $x_{0}$. Se oscilarmos em torno de $x_{0}=0$:
+
+\begin{equation}
+V\left(x\right)\approx\frac{1}{2}V''\left(0\right)x^{2}
+\end{equation}
+
+Podemos calcular a força:
+
+\begin{equation}
+F=-\frac{dV}{dx}=-\frac{d}{dx}\left(\frac{1}{2}V''\left(0\right)x^{2}\right)=-V''\left(0\right)x
+\end{equation}
+
+Lembrando que começamos o capítulo discutindo a lei de Hooke $F=-kx$ então a constante efetiva é dada por $k=V''\left(x_{0}\right)$. Dessa forma qualquer movimento oscilatório pode ser aproximado como um oscilador harmônico simples, se a amplitude for pequena. Uma exceção é se $V''\left(x_{0}\right)=0$, nesse caso temos um ponto de inflexão e a oscilação não pode ser aproximada a um oscilador harmônico simples. 
+
+O problema quântico é resolver a equação de Schrödinger pro seguinte potencial:
+
+\begin{equation}
+V\left(x\right)=\frac{1}{2}m\omega^{2}x^{2}
+\end{equation}
+
+Onde podemos lembrar que:
+
+\begin{equation}
+\omega=\sqrt{\frac{k}{m}}\rightarrow k=m\omega^{2}
+\end{equation}
+
+A equação de Schrödinger independente do tempo, com a separação de variáveis é então:
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+V\psi & =E\psi\\
+-\frac{\hbar^{2}}{2m}\frac{\partial^{2}\psi}{\partial x^{2}}+\frac{1}{2}m\omega^{2}x^{2}\psi & =E\psi
+\end{align}
+
+Há duas formas de resolver. Uma mais geral e mais difícil e outra mais específica e mais simples, começaremos pela mais simples.
+
+\subsubsection{Método algébrico}
+
+Vamos reescrever:
+
+\begin{align}
+\left(-\frac{\hbar^{2}}{2m}\frac{\partial^{2}}{\partial x^{2}}+\frac{1}{2}m\omega^{2}x^{2}\right)\psi & =E\psi\\
+\frac{1}{2m}\left(-\hbar^{2}\frac{\partial^{2}}{\partial x^{2}}+m^{2}\omega^{2}x^{2}\right)\psi & =\\
+\frac{1}{2m}\left[\left(-i\hbar\frac{\partial}{\partial x}\right)^{2}+\left(m\omega x\right)^{2}\right]\psi & =\\
+\frac{1}{2m}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]\psi
+\end{align}
+
+Onde $\widehat{p}=-i\hbar\frac{\partial}{\partial x}$ é o operador do momento. Para números temos:
+
+\begin{equation}
+u^{2}+v^{2}=\left(iu+v\right)\left(-iu+v\right)
+\end{equation}
+
+Isso só é possível porque $u$ e $v$ comutam, isto é $\left[u,v\right]=uv-vu=0$. Isso não é verdade para $\widehat{p}$ e $x$. Mas isso pode nos motivar pra analisar as quantidades:
+
+\begin{equation}
+\left(-i\widehat{p}+m\omega x\right),\qquad\left(+i\widehat{p}+m\omega x\right)
+\end{equation}
+
+Ou então escrevendo de forma mais sucinta e colocando um fator a frente (que seja justificado posteriormente, apenas para o resultado ficar melhor) e prestando atenção nos sinais:
+
+\begin{equation}
+\widehat{a}_{\pm}\equiv\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)\label{a}
+\end{equation}
+
+Então:
+
+\begin{align}
+\widehat{a}_{-}\widehat{a}_{+} & =\frac{1}{\sqrt{2\hbar m\omega}}\left(i\widehat{p}+m\omega x\right)\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\widehat{p}+m\omega x\right)\\
+ & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}+im\omega\widehat{p}x-im\omega x\widehat{p}+\left(m\omega x\right)^{2}\right]\\
+ & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}-im\omega\left(x\widehat{p}-\widehat{p}x\right)+\left(m\omega x\right)^{2}\right]
+\end{align}
+
+Se $x$ e $\widehat{p}$ comutassem teríamos $\left[x,\widehat{p}\right]=x\widehat{p}-\widehat{p}x=0$. Isso seria verdade se fossem por exemplo, grandezas escalares, mas são operadores que não comutam $\left[x,\widehat{p}\right]\neq0$. Então:
+
+\begin{align}
+\widehat{a}_{-}\widehat{a}_{+} & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}-im\omega\left[x,\widehat{p}\right]+\left(m\omega x\right)^{2}\right]\\
+ & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]-\frac{im\omega}{2\hbar m\omega}\left[x,\widehat{p}\right]\\
+ & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]-\frac{i}{2\hbar}\left[x,\widehat{p}\right]
+\end{align}
+
+Agora queremos então calcular o comutador de $x$\footnote{Estamos usando apenas $x=\widehat{x}$, mas poderíamos usar $\widehat{x}$ para deixar explícito que estamos falando do operador posição.} e $\widehat{p}$. Para isso vamos fazer uso de uma função de ``teste'' $f\left(x\right)$, já que os comutadores atuam sobre uma função. Podemos remover esta função no final se a operação for independente da escolha da função (como veremos que é), ela serve apenas para nos ajudar a não nos perdermos.
+
+\begin{align}
+\left[x,\widehat{p}\right]f\left(x\right) & =\left(x\widehat{p}-\widehat{p}x\right)f\left(x\right)\\
+ & =\left(-xi\hbar\frac{\partial}{\partial x}+i\hbar\frac{\partial}{\partial x}x\right)f\left(x\right)\\
+ & =-xi\hbar\frac{\partial f}{\partial x}+i\hbar\frac{\partial\left(xf\right)}{\partial x}\\
+ & =i\hbar\left(-x\frac{\partial f}{\partial x}+x\frac{\partial f}{\partial x}+f\frac{\partial x}{\partial x}\right)\\
+ & =i\hbar f\left(x\right)\\
+\left[x,\widehat{p}\right] & =i\hbar
+\end{align}
+
+Essa fórmula é conhecida como relação de comutação canônica. Segundo o livro, todos os ``mistérios'' da mecânica quântica podem ser traçados no fato de que posição e momento não comutam.Alguns autores tratam este fato como um axioma da teoria e derivam a partir dele $\widehat{p}=-i\hbar d/dx$. Retomando então:
+
+\begin{align}
+\widehat{a}_{-}\widehat{a}_{+} & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]-\frac{i}{2\hbar}\left[x,\widehat{p}\right]\\
+ & =\frac{1}{2\hbar m\omega}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]-\frac{i}{2\hbar}\left(i\hbar\right)\\
+ & =\frac{1}{\hbar\omega}\left(\frac{1}{2m}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]\right)+\frac{1}{2}
+\end{align}
+
+Lembrando:
+
+\begin{align}
+\frac{1}{2m}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]\psi & =E\psi
+\end{align}
+
+E como vimos que a equação de Schrödinger independente do tempo pode ser escrito como $\widehat{H}\psi=E\psi$, então:
+
+\begin{equation}
+\widehat{H}=\frac{1}{2m}\left[\widehat{p}^{2}+\left(m\omega x\right)^{2}\right]
+\end{equation}
+
+Ou seja:
+
+\begin{align}
+\widehat{a}_{-}\widehat{a}_{+} & =\frac{\widehat{H}}{\hbar\omega}+\frac{1}{2}
+\end{align}
+
+Um cálculo análogo nos leva a:
+
+\begin{equation}
+\widehat{a}_{+}\widehat{a}_{-}=\frac{\widehat{H}}{\hbar\omega}-\frac{1}{2}
+\end{equation}
+
+Então:
+
+\begin{equation}
+\left[\widehat{a}_{-},\widehat{a}_{+}\right]=\widehat{a}_{-}\widehat{a}_{+}-\widehat{a}_{+}\widehat{a}_{-}=\left(\frac{\widehat{H}}{\hbar\omega}+\frac{1}{2}\right)-\left(\frac{\widehat{H}}{\hbar\omega}-\frac{1}{2}\right)=1
+\end{equation}
+
+E o Hamiltoniano pode ser escrito:
+
+\begin{align}
+\widehat{H} & =\left(\widehat{a}_{-}\widehat{a}_{+}-\frac{1}{2}\right)\hbar\omega\\
+\widehat{H} & =\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)\hbar\omega
+\end{align}
+
+Então a equação de Schrödinger se torna\footnote{Conforme o livro, também estou cansado de escrever ``equação de Schrödinger independente do tempo'', então quando ficar claro pelo contexto, será citado apenas ``equação de Schrödinger''.}:
+
+\begin{align}
+\widehat{H}\psi & =E\psi\\
+\hbar\omega\left(\widehat{a}_{-}\widehat{a}_{+}-\frac{1}{2}\right)\psi & =E\psi
+\end{align}
+
+E:
+
+\begin{align}
+\widehat{H}\psi & =E\psi\\
+\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)\psi & =E\psi
+\end{align}
+
+Então de forma mais sucinta podemos escrever então a equação de Schrödinger para o oscilador harmônico como:
+
+\[
+\hbar\omega\left(\widehat{a}_{\pm}\widehat{a}_{\mp}\pm\frac{1}{2}\right)\psi=E\psi
+\]
+
+Então chegamos em uma das primeiras afirmações que precisamos provar: Se a equação de Schrödinger $\widehat{H}\psi=E\psi$ for satisfeita, então: 
+
+\begin{equation}
+\widehat{H}\left(\widehat{a}_{+}\psi\right)=\left(E+\hbar\omega\right)\left(\widehat{a}_{+}\psi\right)
+\end{equation}
+
+\textbf{Exemplo: Prove que $\widehat{H}\left(\widehat{a}_{+}\psi\right)=\left(E+\hbar\omega\right)\left(\widehat{a}_{+}\psi\right)$.}
+
+Vamos provar usando o resultado prévio:
+
+\begin{align}
+\widehat{H}\left(\widehat{a}_{+}\psi\right) & =\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)\left(\widehat{a}_{+}\psi\right)\\
+ & =\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}\widehat{a}_{+}+\frac{\widehat{a}_{+}}{2}\right)\psi\\
+ & =\widehat{a}_{+}\left[\hbar\omega\left(\widehat{a}_{-}\widehat{a}_{+}+\frac{1}{2}\right)\right]\psi
+\end{align}
+
+E sendo:
+
+\begin{equation}
+\left[\widehat{a}_{-},\widehat{a}_{+}\right]=\widehat{a}_{-}\widehat{a}_{+}-\widehat{a}_{+}\widehat{a}_{-}=1\rightarrow\quad\widehat{a}_{-}\widehat{a}_{+}=\widehat{a}_{+}\widehat{a}_{-}+1
+\end{equation}
+
+Então:
+
+\begin{align}
+\widehat{H}\left(\widehat{a}_{+}\psi\right) & =\widehat{a}_{+}\left[\hbar\omega\left(\widehat{a}_{-}\widehat{a}_{+}+\frac{1}{2}\right)\right]\psi\\
+ & =\widehat{a}_{+}\left[\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+1+\frac{1}{2}\right)\right]\psi\\
+ & =\widehat{a}_{+}\left[\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)+\hbar\omega\right]\psi\\
+ & =\widehat{a}_{+}\left[\widehat{H}+\hbar\omega\right]\psi\\
+ & =\widehat{a}_{+}\left[\widehat{H}\psi+\hbar\omega\psi\right]\\
+ & =\widehat{a}_{+}\left[E\psi+\hbar\omega\psi\right]
+\end{align}
+
+Então:
+
+\begin{equation}
+\widehat{H}\left(\widehat{a}_{+}\psi\right)=\left(E+\hbar\omega\right)\left(\widehat{a}_{+}\psi\right)
+\end{equation}
+
+Uma vez que $E$ e $\hbar\omega$ são todas constantes. De forma bastante análoga temos:
+\begin{equation}
+\widehat{H}\left(\widehat{a}_{-}\psi\right)=\left(E-\hbar\omega\right)\left(\widehat{a}_{-}\psi\right)
+\end{equation}
+
+Ou seja:
+
+\begin{equation}
+\widehat{H}\left(\widehat{a}_{\pm}\psi\right)=\left(E\pm\hbar\omega\right)\left(\widehat{a}_{\pm}\psi\right)
+\end{equation}
+
+Ou seja, podemos gerar novas soluções se podemos encontrar apenas uma solução para começar. $\widehat{a}_{\pm}$ são chamados de operadores escadas, onde $\widehat{a}_{+}$ é um operador de incremento e $\widehat{a}_{-}$ é um operador de decremento. Evidentemente não podemos aplicar o operador de decremento até obtermos uma energia menor que 0, o que não existe. Apesar de que o operador de decremento nos fornece uma nova solução pra equação de Schrödinger, não podemos garantir que ela seja normalizável, seja por ser zero ou porque sua integral quadrado ser finita. Na prática o primeiro caso acontece primeiro, chegamos a uma solução $\psi_{0}$ de forma que se aplicarmos o operador de decremento temos:
+
+\begin{equation}
+\widehat{a}_{-}\psi_{0}=0
+\end{equation}
+
+Podemos determinar qual é esta função, usando a definição de $\widehat{a}_{-}$:
+
+\begin{align}
+\widehat{a}_{-} & =\frac{1}{\sqrt{2\hbar m\omega}}\left(i\widehat{p}+m\omega x\right)
+\end{align}
+
+Então:
+
+\begin{align}
+0 & =\widehat{a}_{-}\psi_{0}\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(i\widehat{p}+m\omega x\right)\psi_{0}\\
+ & =i\left(-i\hbar\frac{d\psi_{0}}{dx}\right)+m\omega x\psi_{0}\\
+ & =i\hbar\frac{d\psi_{0}}{dx}+m\omega x\psi_{0}\\
+\frac{d\psi_{0}}{dx} & =-\frac{m\omega}{\hbar}x\psi_{0}\\
+\frac{d\psi_{0}}{\psi_{0}} & =-\frac{m\omega}{\hbar}xdx\\
+\int\frac{d\psi_{0}}{\psi_{0}} & =-\frac{m\omega}{\hbar}\int xdx\\
+\ln\psi_{0} & =-\frac{m\omega}{\hbar}\frac{x^{2}}{2}+c\\
+\exp\left(\ln\psi_{0}\right) & =\exp\left(-\frac{m\omega}{\hbar}\frac{x^{2}}{2}+c\right)\\
+\psi_{0}\left(x\right) & =e^{-\frac{m\omega}{2\hbar}}e^{c}
+\end{align}
+
+Ou então como $e^{c}=A$ é um constante qualquer:
+
+\begin{equation}
+\psi_{0}\left(x\right)=Ae^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{equation}
+
+Podemos determinar a constante normalizando:
+
+\begin{equation}
+1=\int^{+\infty}_{-\infty}\left|\psi_{0}\right|^{2}dx=\int^{+\infty}_{-\infty}\left|Ae^{-\frac{m\omega}{2\hbar}x^{2}}\right|^{2}dx=\left|A\right|^{2}\int^{+\infty}_{-\infty}e^{-\frac{m\omega}{\hbar}x^{2}}dx
+\end{equation}
+
+Lembrando que essa é a integral gaussiana$\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{a}}$:
+
+\begin{equation}
+1=\left|A\right|^{2}\sqrt{\frac{\pi}{\frac{m\omega}{\hbar}}}=\left|A\right|^{2}\sqrt{\frac{\hbar\pi}{m\omega}}
+\end{equation}
+
+Então:
+
+\begin{equation}
+A=\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}
+\end{equation}
+
+Ou seja:
+
+\begin{equation}
+\psi_{0}\left(x\right)=\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{equation}
+
+Agora para determinar a energia vamos retomar a equação de Schrödinger:
+
+\begin{align}
+\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)\psi_{0} & =E_{0}\psi_{0}\\
+\hbar\omega\left(\widehat{a}_{+}\widehat{a}_{-}\psi_{0}+\frac{1}{2}\psi_{0}\right) & =E_{0}\psi_{0}\\
+\frac{\hbar\omega}{2}\psi_{0} & =E_{0}\psi_{0}\\
+\frac{\hbar\omega}{2} & =E_{0}
+\end{align}
+
+Onde usamos o fato de que $\widehat{a}_{-}\psi_{0}=0$. Então tendo o estado fundamental do oscilador quântico, só precisamos aplicar o operador de incremento de forma repetida para gerar estados excitados, aumentando a energia por $\hbar\omega$. Ou seja o estado $\psi_{n}\left(x\right)$ é obtido quando aplicamos o operador $a_{+}$ por $n$ vezes no estado fundamental $\psi_{0}\left(x\right)$:
+
+\begin{equation}
+\psi_{n}\left(x\right)=A_{n}\left(a_{+}\right)^{n}\psi_{0}\left(x\right)
+\end{equation}
+
+E a energia desse estado vai sofrer um incremento de $\hbar\omega$ pra cada $n$ vez que aplicarmos o operador de incremento, partindo da energia fundamental $E_{0}=\hbar\omega/2$:
+
+\begin{equation}
+E_{n}=\left(n+\frac{1}{2}\right)\hbar\omega
+\end{equation}
+
+Com esse método podemos construir todos estados estacionários do oscilador harmônico. 
+
+\textbf{Exemplo: Calcule o primeiro estado excitado do oscilador harmônico.}
+
+Usando a equação \ref{a} e sendo $\widehat{p}=-i\hbar d/dx$:
+
+\begin{align}
+\psi_{1}\left(x\right) & =A_{1}\left(a_{+}\right)^{1}\psi_{0}\left(x\right)\\
+ & =A_{1}a_{+}\psi_{0}\left(x\right)\\
+ & =A_{1}\left(\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\widehat{p}+m\omega x\right)\right)\left(\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\widehat{p}e^{-\frac{m\omega}{2\hbar}x^{2}}+m\omega xe^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\left(-i\left[-i\hbar\frac{d}{dx}\right]e^{-\frac{m\omega}{2\hbar}x^{2}}+m\omega xe^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{1}{\sqrt{2\hbar m\omega}}\left(-\hbar\frac{d}{dx}e^{-\frac{m\omega}{2\hbar}x^{2}}+m\omega xe^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{e^{-\frac{m\omega}{2\hbar}x^{2}}}{\sqrt{2\hbar m\omega}}\left(-\hbar\frac{d}{dx}\left(-\frac{m\omega}{2\hbar}x^{2}\right)+m\omega x\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{e^{-\frac{m\omega}{2\hbar}x^{2}}}{\sqrt{2\hbar m\omega}}\left(\hbar\frac{m\omega}{2\hbar}2x+m\omega x\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{e^{-\frac{m\omega}{2\hbar}x^{2}}}{\sqrt{2\hbar m\omega}}\left(m\omega x+m\omega x\right)\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\frac{2m\omega x}{\sqrt{2\hbar m\omega}}e^{-\frac{m\omega}{2\hbar}x^{2}}\\
+ & =A_{1}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\sqrt{\frac{2m\omega}{\hbar}x}e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{align}
+
+Agora só precisamos normalizar.
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\left|\psi\right|^{2}dx=\left|A_{1}\right|^{2}\left(\frac{m\omega}{\hbar\pi}\right)^{1/2}\left(\frac{2m\omega}{\hbar}\right)\int^{+\infty}_{-\infty}x^{2}e^{-\frac{m\omega}{\hbar}x^{2}}dx
+\end{equation}
+
+Para resolver essa integral, vamos seguir esta \href{https://github.com/jonasmaziero/mecanica_quantica/blob/main/notas_de_aula/02_Probabilidades.ipynb}{Solução}, onde vamos usar então o seguinte truque:
+
+\begin{equation}
+\frac{\partial}{\partial a}e^{-ax^{2}}=e^{-ax^{2}}\frac{\partial}{\partial a}\left(-ax^{2}\right)=-x^{2}e^{-ax^{2}}
+\end{equation}
+
+Então:
+
+\begin{equation}
+I=\int^{+\infty}_{-\infty}x^{2}e^{-\frac{m\omega}{\hbar}x^{2}}dx=-\int^{+\infty}_{-\infty}\frac{\partial}{\partial a}e^{-ax^{2}}dx=-\frac{\partial}{\partial a}\int^{+\infty}_{-\infty}e^{-ax^{2}}dx
+\end{equation}
+
+E como sabemos o resultado esta integral Gaussiana:
+
+\begin{equation}
+I=-\frac{\partial}{\partial a}\sqrt{\frac{\pi}{a}}=-\sqrt{\pi}\frac{\partial a^{-1/2}}{\partial a}=-\sqrt{\pi}\left(-\frac{1}{2}\right)a^{-3/2}=\sqrt{\frac{\pi}{4a^{3}}}
+\end{equation}
+
+Então:
+
+\begin{align}
+1 & =\left|A_{1}\right|^{2}\left(\frac{m\omega}{\hbar\pi}\right)^{1/2}\left(\frac{2m\omega}{\hbar}\right)\frac{1}{2}\sqrt{\frac{\pi}{\left(\frac{m\omega}{\hbar}\right)^{3}}}\\
+ & =\left|A_{1}\right|^{2}\left(\frac{m\omega}{\hbar}\right)^{3/2}\left(\frac{\hbar}{m\omega}\right)^{3/2}\\
+ & =\left|A_{1}\right|^{2}
+\end{align}
+
+Então $A_{1}=1$. A normalização pode ser obtida algebricamente também. Precisamos lembrar que $\widehat{a}_{+}$ é proporcional a $\psi_{n\pm1}$, ou seja:
+
+\begin{equation}
+\widehat{a}_{+}\psi_{n}=c_{n}\psi_{n+1},\quad\widehat{a}_{-}\psi_{n}=d_{n}\psi_{n-1}
+\end{equation}
+
+Agora queremos obter as constantes de proporcionalidades. Vamos começar provando que para quaisquer funções $f\left(x\right)$ e $g\left(x\right)$ temos o resultado discutido no próximo exemplo.
+
+\textbf{Exemplo: Prove que}
+
+\begin{equation}
+\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx=\int^{+\infty}_{-\infty}\left(\widehat{a}_{\mp}f\right)^{*}gdx
+\end{equation}
+
+Então lembrando que $\widehat{a}_{\pm}\equiv\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)$ e $\widehat{p}=-i\hbar d/dx$:
+
+\begin{align}
+\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx & =\int^{+\infty}_{-\infty}f^{*}\left(\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)\right)gdx\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\int^{+\infty}_{-\infty}f^{*}\left(\left(\mp i\left[-i\hbar\frac{d}{dx}\right]+m\omega x\right)g\right)dx\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\int^{+\infty}_{-\infty}f^{*}\left(\mp\hbar\frac{d}{dx}+m\omega x\right)gdx\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp\hbar\int^{+\infty}_{-\infty}f^{*}\frac{dg}{dx}dx+m\omega\int^{+\infty}_{-\infty}f^{*}xgdx\right)
+\end{align}
+
+Aplicando então integral por partes na primeira integral sendo $f\left(x\right)=f^{*}$
+
+\begin{align}
+\int^{b}_{a}f\left(x\right)g'\left(x\right)dx & =\left[f\left(x\right)g\left(x\right)\right]^{b}_{a}-\int^{b}_{a}f'\left(x\right)g\left(x\right)dx\\
+\int^{+\infty}_{-\infty}f^{*}\frac{dg}{dx}dx & =\left[f^{*}g\right]^{+\infty}_{-\infty}-\int^{+\infty}_{-\infty}\frac{df^{*}}{dx}gdx
+\end{align}
+
+Na verdade, $f\left(x\right)$e $g\left(x\right)$ são qualquer função desde que elas vão para zero em $\pm\infty$, e sendo então que a derivada do conjugado da função é o conjugado da derivada\footnote{Vamos considerar uma função complexa $z\left(x\right)=f\left(x\right)+ig\left(x\right)$, então:
+
+$\frac{dz^{*}}{dx}=\frac{d}{dx}\left(f-ig\right)=\frac{df}{dx}-i\frac{dg}{dx}=\left(\frac{df}{dx}+i\frac{dg}{dx}\right)^{*}=\left(\frac{d}{dx}\left[f+ig\right]\right)^{*}=\left(\frac{dz}{dx}\right)^{*}$} então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}f^{*}\frac{dg}{dx}dx & =-\int^{+\infty}_{-\infty}\frac{df^{*}}{dx}gdx
+\end{align}
+
+Então retomando:
+
+\begin{align}
+\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp\hbar\int^{+\infty}_{-\infty}f^{*}\frac{dg}{dx}dx+m\omega\int^{+\infty}_{-\infty}f^{*}xgdx\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\pm\hbar\int^{+\infty}_{-\infty}\frac{df^{*}}{dx}gdx+m\omega\int^{+\infty}_{-\infty}f^{*}xgdx\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\int^{+\infty}_{-\infty}\left[\left(\pm\hbar\frac{d}{dx}+m\omega x\right)f^{*}\right]gdx
+\end{align}
+
+E como:
+
+\begin{align}
+\widehat{a}_{\pm} & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\left(-i\hbar\frac{d}{dx}\right)+m\omega x\right)\\
+ & \frac{1}{\sqrt{2\hbar m\omega}}\left(\mp\hbar\frac{d}{dx}+m\omega x\right)
+\end{align}
+
+Evidentemente então $\widehat{a}_{\pm}=\widehat{a}^{*}_{\pm}$. Então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx & =\int^{+\infty}_{-\infty}\left[\frac{1}{\sqrt{2\hbar m\omega}}\left(\pm\hbar\frac{d}{dx}+m\omega x\right)f^{*}\right]gdx\\
+ & =\int^{+\infty}_{-\infty}\widehat{a}_{\mp}f^{*}gdx\\
+ & =\int^{+\infty}_{-\infty}\widehat{a}^{*}_{\mp}f^{*}gdx\\
+ & \int^{+\infty}_{-\infty}\left(\widehat{a}_{\mp}f\right)^{*}gdx
+\end{align}
+
+Ou seja:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx=\int^{+\infty}_{-\infty}\left(\widehat{a}_{\mp}f\right)^{*}gdx
+\end{equation}
+
+Veremos melhor depois, mas isso significa na linguagem da álgebra linear que $\widehat{a}_{\mp}$ é o conjugado hermitiano (ou adjunto) de $\widehat{a}_{\pm}$. Então, para uma função de onda qualquer obtida através da aplicação dos operadores escada $\psi_{\pm n}=\widehat{a}_{\pm}\psi_{n}$:
+
+\begin{equation}
+I=\int^{+\infty}_{-\infty}\left|\psi_{\pm n}\right|^{2}=\int^{+\infty}_{-\infty}\left|\widehat{a}_{\pm}\psi_{n}\right|^{2}dx=\int^{+\infty}_{-\infty}\left(\widehat{a}_{\pm}\psi_{n}\right)^{*}\left(\widehat{a}_{\pm}\psi_{n}\right)dx=\int^{+\infty}_{-\infty}\left(\widehat{a}_{\mp}\widehat{a}_{\pm}\psi_{n}\right)^{*}\left(\psi_{n}\right)
+\end{equation}
+
+Agora somos apresentado aos resultados:
+
+\begin{equation}
+\widehat{a}_{+}\widehat{a}_{-}\psi_{n}=n\psi_{n},\qquad\widehat{a}_{-}\widehat{a}_{+}\psi_{n}=\left(n+1\right)\psi_{n}\label{a+a-}
+\end{equation}
+Onde é alegado que usamos, $\hbar\omega\left(\widehat{a}_{\pm}\widehat{a}_{\mp}\pm\frac{1}{2}\right)\psi=E\psi$, $\psi_{n}\left(x\right)=A_{n}\left(\widehat{a}_{+}\right)^{n}\psi{}_{0}\left(x\right)$ e $E_{n}=\left(n+\frac{1}{2}\right)\hbar\omega$. Vamos entender:
+
+\begin{align}
+\hbar\omega\left(\widehat{a}_{\pm}\widehat{a}_{\mp}\pm\frac{1}{2}\right)\psi_{n} & =E_{n}\psi_{n}\\
+\hbar\omega\left(\widehat{a}_{\pm}\widehat{a}_{\mp}\pm\frac{1}{2}\right)\psi_{n} & =\hbar\omega\left(n+\frac{1}{2}\right)\psi_{n}\\
+\left(\widehat{a}_{\pm}\widehat{a}_{\mp}\pm\frac{1}{2}\right)\psi_{n} & =\left(n+\frac{1}{2}\right)\psi_{n}
+\end{align}
+
+Então:
+
+\begin{align}
+\left(\widehat{a}_{+}\widehat{a}_{-}+\frac{1}{2}\right)\psi_{n} & =\left(n+\frac{1}{2}\right)\psi_{n} & \rightarrow\widehat{a}_{+}\widehat{a}_{-}\psi_{n} & =n\psi_{n}\\
+\left(\widehat{a}_{-}\widehat{a}_{+}-\frac{1}{2}\right)\psi_{n} & =\left(n+\frac{1}{2}\right)\psi_{n} & \rightarrow\widehat{a}_{-}\widehat{a}_{+}\psi_{n} & =\left(n+1\right)\psi_{n}
+\end{align}
+
+Então retomando a integral:
+
+\begin{equation}
+I=\begin{cases}
+\int^{+\infty}_{-\infty}\left(\widehat{a}_{-}\widehat{a}_{+}\psi_{n}\right)^{*}\left(\psi_{n}\right)dx & =\int^{+\infty}_{-\infty}\left(\left[n+1\right]\psi_{n}\right)^{*}\left(\psi_{n}\right)dx\\
+\int^{+\infty}_{-\infty}\left(\widehat{a}_{+}\widehat{a}_{-}\psi_{n}\right)^{*}\left(\psi_{n}\right)dx & =\int^{+\infty}_{-\infty}\left(n\psi_{n}\right)^{*}\left(\psi_{n}\right)dx
+\end{cases}
+\end{equation}
+
+Ou então apenas:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\left|\psi_{+n}\right|^{2}dx & =\left(n+1\right)\int^{+\infty}_{-\infty}\left(\psi_{n}\right)^{*}\left(\psi_{n}\right)dx & = & \left(n+1\right)\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2}dx\\
+\int^{+\infty}_{-\infty}\left|\psi_{-n}\right|^{2}dx & =n\int^{+\infty}_{-\infty}\left(\psi_{n}\right)^{*}\left(\psi_{n}\right)dx & = & n\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2}dx
+\end{align}
+
+Evidentemente, outra forma de vermos isso é usando nossas definições iniciais $\widehat{a}_{+}\psi_{n}=c_{n}\psi_{n+1}$ e $\widehat{a}_{-}\psi_{n}=d_{n}\psi_{n-1}$. Então:
+\begin{align}
+\int^{+\infty}_{-\infty}\left|\psi_{+n}\right|^{2} & dx=\int^{+\infty}_{-\infty}\left|c_{n}\psi_{n+1}\right|^{2}dx=\left|c_{n}\right|^{2}\int^{+\infty}_{-\infty}\left|\psi_{n+1}\right|^{2}dx\\
+\int^{+\infty}_{-\infty}\left|\psi_{-n}\right|^{2} & dx=\int^{+\infty}_{-\infty}\left|d_{n}\psi_{n-1}\right|^{2}dx=\left|d_{n}\right|^{2}\int^{+\infty}_{-\infty}\left|\psi_{n-1}\right|^{2}dx
+\end{align}
+
+Ou seja:
+
+\begin{align}
+\left(n+1\right)\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2}dx & =\left|c_{n}\right|^{2}\int^{+\infty}_{-\infty}\left|\psi_{n+1}\right|^{2}dx\\
+n\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2} & dx=\left|d_{n}\right|^{2}\int^{+\infty}_{-\infty}\left|\psi_{n+1}\right|^{2}dx
+\end{align}
+
+Mas se todas as funções de onda ($\psi_{n}$,$\psi_{n+1}$ e $\psi_{n-1}$) são normalizadas então todas integrais do seu quadrado devem ser iguais a 1.
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2}dx=\int^{+\infty}_{-\infty}\left|\psi_{n+1}\right|^{2}dx=\int^{+\infty}_{-\infty}\left|\psi_{n-1}\right|^{2}dx=1
+\end{equation}
+
+Ou seja, escolhendo coeficientes de normalização reais:
+
+\begin{align}
+\left(n+1\right) & =\left|c_{n}\right|^{2} & n & =\left|d_{n}\right|^{2}\\
+\sqrt{n+1} & =c_{n} & \sqrt{n} & =d_{n}
+\end{align}
+
+Então, as nossas definições iniciais, temos:
+
+\begin{align}
+\widehat{a}_{+}\psi_{n} & =c_{n}\psi_{n+1} & \widehat{a}_{-}\psi_{n} & =d_{n}\psi_{n-1}\\
+ & =\sqrt{n+1}\psi_{n+1} &  & =\sqrt{n}\psi_{n-1}
+\end{align}
+
+Podemos ainda ir além, isso ficará claro depois de analisarmos os primeiros valores de $n$. Mas lembrando que partirmos de $\psi_{0}$, então estamos mais interessados em obter uma nova função de onda $\psi_{n+1}$ a partir da aplicação do operador de incremento $\widehat{a}_{+}$ em uma função de onda de energia mais baixa. Ou seja:
+
+\begin{equation}
+\psi_{n+1}=\frac{1}{\sqrt{n+1}}\left(\widehat{a}_{+}\psi_{n}\right)
+\end{equation}
+
+Então partindo de $\psi_{0}$:
+
+\begin{align}
+\psi_{0} & =\psi_{0}\\
+\psi_{1} & =\frac{1}{\sqrt{0+1}}\left(\widehat{a}_{+}\psi_{0}\right)=\widehat{a}_{+}\psi_{0}\\
+\psi_{2} & =\frac{1}{\sqrt{1+1}}\left(\widehat{a}_{+}\psi_{1}\right)=\frac{1}{\sqrt{2}}\widehat{a}_{+}\psi_{1}=\frac{1}{\sqrt{2}}\widehat{a}_{+}\left(\widehat{a}_{+}\psi_{0}\right)=\frac{1}{\sqrt{2\cdot1}}\left(\widehat{a}_{+}\right)^{2}\psi_{0}=\frac{1}{\sqrt{2!}}\left(\widehat{a}_{+}\right)^{2}\psi_{0}\\
+\psi_{3} & =\frac{1}{\sqrt{2+1}}\left(\widehat{a}_{+}\psi_{2}\right)=\frac{1}{\sqrt{3}}\widehat{a}_{+}\psi_{2}=\frac{1}{\sqrt{3}}\widehat{a}_{+}\left(\frac{1}{\sqrt{2!}}\left(\widehat{a}_{+}\right)^{2}\psi_{0}\right)=\frac{1}{\sqrt{3!}}\left(\widehat{a}_{+}\right)^{3}\psi_{0}
+\end{align}
+
+Então:
+
+\begin{equation}
+\psi_{n}=\frac{1}{\sqrt{n!}}\left(\widehat{a}_{+}\right)^{n}\psi_{0}
+\end{equation}
+
+Lembrando que $\psi_{0}\left(x\right)=\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^{2}}$ foi calculado, então, de forma mais completa:
+
+\begin{equation}
+\psi_{n}\left(x\right)=\frac{1}{\sqrt{n!}}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\left(\widehat{a}_{+}\right)^{n}e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{equation}
+
+Ou ainda:
+\begin{equation}
+\psi_{n}\left(x\right)=\frac{1}{\sqrt{n!}}\left(\frac{m\omega}{\hbar\pi}\right)^{1/4}\left(\frac{1}{\sqrt{2\hbar m\omega}}\left(-\hbar\frac{d}{dx}+m\omega x\right)\right)^{n}e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{equation}
+
+Temos novamente um caso em que os estados são ortogonais, ou seja:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx=\delta_{mn}
+\end{equation}
+
+Primeiro usando $\widehat{a}_{+}\widehat{a}_{-}\psi_{n}=n\psi_{n}$ então:
+
+\begin{equation}
+\int^{\infty}_{-\infty}\psi^{*}_{m}\left(\widehat{a}_{+}\widehat{a}_{-}\right)\psi_{n}dx=\int^{\infty}_{-\infty}\psi^{*}_{m}\left(\widehat{a}\widehat{a}_{-}\right)\psi_{n}dx=\int^{\infty}_{-\infty}\psi^{*}_{m}n\psi_{n}dx=n\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx\label{ene}
+\end{equation}
+
+Mas usando :$\int^{+\infty}_{-\infty}f^{*}\left(\widehat{a}_{\pm}g\right)dx=\int^{+\infty}_{-\infty}\left(\widehat{a}_{\mp}f\right)^{*}gdx$ :
+
+\begin{align}
+\int^{\infty}_{-\infty}\psi^{*}_{m}\left(\widehat{a}_{+}\widehat{a}_{-}\right)\psi_{n}dx= & \int^{\infty}_{-\infty}\psi^{*}_{m}\left(\widehat{a}_{+}\left[\widehat{a}_{-}\psi_{n}\right]\right)dx\\
+= & \int^{\infty}_{-\infty}\left(\widehat{a}_{-}\psi_{m}\right)^{*}\left(\widehat{a}_{-}\psi_{n}\right)dx\\
+= & \int^{\infty}_{-\infty}\left(\widehat{a}_{+}\widehat{a}_{-}\psi_{m}\right)^{*}\psi_{n}dx
+\end{align}
+
+Ou seja:
+
+\begin{equation}
+\int^{\infty}_{-\infty}\psi^{*}_{m}\left(\widehat{a}_{+}\widehat{a}_{-}\right)\psi_{n}dx=\int^{\infty}_{-\infty}\left(m\psi_{m}\right)^{*}\psi_{n}dx=m\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx\label{eme}
+\end{equation}
+
+Evidentemente como \ref{ene} e \ref{eme} devem ser iguais:
+
+\begin{align}
+n\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx & =m\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx\\
+0 & =\left(m-n\right)\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx
+\end{align}
+
+Então se $m\neq n$ temos $\int^{\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx=0$. Dessa forma provamos a ortogonalidade. E se ortonormal então, quando $m=n,$temos apenas:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}_{m}\psi_{n}dx=\int^{+\infty}_{-\infty}\left|\psi_{n}\right|^{2}dx=1
+\end{equation}
+
+Que é essencialmente o critério de normalização da função de onda já discutido. A ortonormalidade nos permite usar novamente o truque de Fourier para avaliar os coeficientes $c_{n}$ e $\left|c_{n}\right|^{2}$ sempre será a probabilidade que a medição d energia nos retorne um valor $E_{n}$. 
+
+\textbf{Exemplo: Encontre o valor esperado da energia potencial no enésimo estado do oscilador harmônico.}
+
+A anergia potencial\footnote{Lembrando que $F=-\frac{dV}{dx}$ ou ainda $\boldsymbol{F}=-\nabla V$} esperada do oscilador harmônico é dado por:
+
+\begin{equation}
+\left\langle V\right\rangle =\left\langle \frac{1}{2}m\omega^{2}x^{2}\right\rangle =\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\frac{1}{2}m\omega^{2}x^{2}\right)\psi_{n}dx
+\end{equation}
+
+Ou apenas:
+
+\begin{equation}
+\left\langle V\right\rangle =\frac{1}{2}m\omega^{2}\int^{+\infty}_{-\infty}\psi^{*}_{n}x^{2}\psi_{n}dx
+\end{equation}
+
+Mas agora podemos usar um truque lembrando que na equação \ref{a}, temos: $\widehat{a}_{\pm}\equiv\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)$
+
+Então:
+
+\begin{align}
+\widehat{a}_{+}+\widehat{a}_{-} & =\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\widehat{p}+m\omega x\right)+\frac{1}{\sqrt{2\hbar m\omega}}\left(+i\widehat{p}+m\omega x\right)\\
+ & =\frac{2m\omega}{\sqrt{2\hbar m\omega}}x\\
+ & =\sqrt{\frac{2m\omega}{\hbar}}x\\
+\sqrt{\frac{\hbar}{2m\omega}}\left(\widehat{a}_{+}+\widehat{a}_{-}\right) & =x
+\end{align}
+
+De modo análogo poderíamos calcular que:
+
+\begin{equation}
+\widehat{p}=i\sqrt{\frac{\hbar m\omega}{2}}\left(\widehat{a}_{+}-\widehat{a}_{-}\right)
+\end{equation}
+
+Fazendo então:
+
+\begin{align}
+x^{2} & =\left(\sqrt{\frac{\hbar}{2m\omega}}\left[\widehat{a}_{+}+\widehat{a}_{-}\right]\right)\left(\sqrt{\frac{\hbar}{2m\omega}}\left[\widehat{a}_{+}+\widehat{a}_{-}\right]\right)\\
+ & =\frac{\hbar}{2m\omega}\left(\widehat{a}^{2}_{+}+\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}+\widehat{a}^{2}_{-}\right)
+\end{align}
+
+E como:
+
+\begin{align}
+\left(\widehat{a}^{2}_{+}+\widehat{a}^{2}_{-}\right)\psi_{n} & =\widehat{a}_{+}\widehat{a}_{+}\psi_{n}+\widehat{a}_{-}\widehat{a}_{-}\psi_{n}\\
+ & =\widehat{a}_{+}c_{n}\psi_{n+1}+\widehat{a}_{-}d_{n}\psi_{n-1}\\
+ & =c_{n}\widehat{a}_{+}\psi_{n+1}+d_{n}\widehat{a}_{-}\psi_{n-1}\\
+ & =c_{n}c_{n+1}\psi_{n+2}+d_{n}d_{n-1}\psi_{n-2}\\
+ & =A\psi_{n+2}+B\psi_{n-2}
+\end{align}
+
+Pela ortogonalidade temos:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}^{2}_{+}+\widehat{a}^{2}_{-}\right)\psi_{n}dx & =\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(A\psi_{n+2}+B\psi_{n-2}\right)dx\\
+ & =A\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n+2}dx+BA\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n-2}dx\\
+ & =A\delta_{n,n+1}+B\delta_{n,n-2}\\
+ & =0
+\end{align}
+
+Dessa forma ficamos apenas com:
+
+\begin{align}
+\left\langle V\right\rangle  & =\frac{1}{2}m\omega^{2}\int^{+\infty}_{-\infty}\psi^{*}_{n}x^{2}\psi_{n}dx\\
+ & =\frac{1}{2}m\omega^{2}\int^{+\infty}_{-\infty}\psi^{*}_{n}\left[\frac{\hbar}{2m\omega}\left(\widehat{a}^{2}_{+}+\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}+\widehat{a}^{2}_{-}\right)\right]\psi_{n}dx\\
+ & =\frac{\hbar\omega}{4}\left[\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}^{2}_{+}+\widehat{a}^{2}_{-}\right)\psi_{n}dx+\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx\right]\\
+ & =\frac{\hbar\omega}{4}\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx\\
+ & =\frac{\hbar\omega}{4}\left[\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}\right)\psi_{n}dx+\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx\right]
+\end{align}
+
+E como em \ref{a+a-} vimos que $\widehat{a}_{+}\widehat{a}_{-}\psi_{n}=n\psi_{n}$ e $\widehat{a}_{-}\widehat{a}_{+}\psi_{n}=\left(n+1\right)\psi_{n}$, então:
+
+\begin{align}
+\left\langle V\right\rangle  & =\frac{\hbar\omega}{4}\left[\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}\right)\psi_{n}dx+\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx\right]\\
+ & =\frac{\hbar\omega}{4}\left[\int^{+\infty}_{-\infty}\psi^{*}_{n}n\psi_{n}dx+\int^{+\infty}_{-\infty}\psi^{*}_{n}\left(n+1\right)\psi_{n}dx\right]\\
+ & =\frac{\hbar\omega}{4}\left[n\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n}dx+\left(n+1\right)\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n}dx\right]\\
+ & =\frac{\hbar\omega}{4}\left[\left(n+n+1\right)\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n}dx\right]\\
+ & =\frac{\hbar\omega}{4}\left(2n+1\right)\int^{+\infty}_{-\infty}\psi^{*}_{n}\psi_{n}dx
+\end{align}
+
+E pela normalização da função de onda, ficamos então com:
+
+\begin{equation}
+\left\langle V\right\rangle =\frac{\hbar\omega}{4}\left(2n+1\right)=\frac{\hbar\omega}{2}\left(n+\frac{1}{2}\right)
+\end{equation}
+
+Ou seja, o valor esperado da energia potencial é metade da energia total (a outra metade é energia cinética).
+
+\textbf{Exemplo:}
+
+\textbf{a) Construa $\psi_{2}\left(x\right)$.}
+
+\textbf{b) Verifique a ortogonalidade de $\psi_{0}$, $\psi_{1}$ e $\psi_{2}$ por integração explícita.}
+
+Partindo de:
+
+\[
+\widehat{a}_{\pm}=\frac{1}{\sqrt{2\hbar m\omega}}\left(\mp i\widehat{p}+m\omega x\right)\quad\psi_{0}\left(x\right)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)
+\]
+
+E sendo $\widehat{p}=-i\hbar\frac{d}{dx}$, então :
+
+\begin{alignat}{1}
+\widehat{a}_{+}\psi_{0} & =\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\widehat{p}+m\omega x\right)\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(-i\left[-i\hbar\frac{d}{dx}\right]+m\omega x\right)\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar\frac{d}{dx}\left(\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\right)+m\omega x\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\left(-\frac{2m\omega x}{2\hbar}\right)+m\omega x\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)m\omega x+m\omega x\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\right)\\
+ & =\frac{2m\omega}{\sqrt{2\hbar m\omega}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x\\
+ & =\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x
+\end{alignat}
+
+Aplicando o operador escada novamente:
+
+\begin{alignat}{1}
+\left(\widehat{a}_{+}\right)^{2}\psi_{0} & =\widehat{a}_{+}\left(\widehat{a}_{+}\psi_{0}\right)\\
+ & =\widehat{a}_{+}\left(\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x\right)\\
+ & =\frac{1}{\sqrt{2\hbar m\omega}}\left(-\hbar\frac{d}{dx}+m\omega x\right)\left(\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x\right)\\
+ & =\sqrt{\frac{2m\omega}{2\hbar^{2}m\omega}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar\frac{d}{dx}\left[e^{-\frac{m\omega}{2\hbar}x^{2}}x\right]+m\omega xe^{-\frac{m\omega}{2\hbar}x^{2}}x\right)\\
+ & =\frac{1}{\hbar}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar\left[e^{-\frac{m\omega}{2\pi\hbar}x^{2}}\frac{d}{dx}x+x\frac{d}{dx}e^{-\frac{m\omega}{2\hbar}x^{2}}\right]+m\omega x^{2}e^{-\frac{m\omega}{2\pi\hbar}x^{2}}\right)\\
+ & =\frac{1}{\hbar}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar\left[e^{-\frac{m\omega}{2\hbar}x^{2}}+xe^{-\frac{m\omega}{2\hbar}x^{2}}\left(-\frac{2xm\omega}{2\hbar}x\right)\right]+m\omega x^{2}e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =\frac{1}{\hbar}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar e^{-\frac{m\omega}{2\hbar}x^{2}}+e^{-\frac{m\omega}{2\hbar}x^{2}}\left(x^{2}m\omega\right)+m\omega x^{2}e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =\frac{1}{\hbar}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(-\hbar+x^{2}m\omega+m\omega x^{2}\right)e^{-\frac{m\omega}{2\hbar}x^{2}}\\
+ & =\frac{1}{\hbar}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(2m\omega x^{2}-\hbar\right)e^{-\frac{m\omega}{2\hbar}x^{2}}\\
+ & =\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{alignat}
+
+E como vimos que:
+
+\begin{align}
+\psi_{n} & =\frac{1}{\sqrt{n!}}\left(\widehat{a}_{+}\right)^{n}\psi_{0}\\
+\psi_{2} & =\frac{1}{\sqrt{2!}}\left(\widehat{a}_{+}\right)^{2}\psi_{0}\\
+ & =\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{2\hbar}x^{2}}
+\end{align}
+
+Também:
+
+\begin{align}
+\psi_{1} & =\frac{1}{\sqrt{1!}}\left(\widehat{a}_{+}\right)^{1}\psi_{0}\\
+ & =\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x
+\end{align}
+
+Então agora queremos verificar a ortogonalidade. Para $f\left(x\right)=\psi^{*}_{0}\psi_{1}$:
+
+\begin{align}
+\psi^{*}_{0}\psi_{1} & =\left(\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)\right)\left(\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left(-\frac{m\omega}{2\hbar}x^{2}\right)x\right)\\
+f\left(x\right) & =\left[\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\right]\exp\left(-\frac{m\omega}{2\hbar}x^{2}-\frac{m\omega}{2\hbar}x^{2}\right)x\\
+ & =A\exp\left(-\frac{m\omega}{\hbar}x^{2}\right)x
+\end{align}
+
+Podemos ver que é uma função ímpar:
+
+\begin{equation}
+f\left(-x\right)=Ae^{\left(-\frac{m\omega}{\hbar}\left(-x\right)^{2}\right)}\left(-x\right)=-Ae^{\left(-\frac{m\omega}{\hbar}x^{2}\right)}x=-f\left(x\right)
+\end{equation}
+
+Logo:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}_{0}\psi_{1}dx=\int^{+\infty}_{-\infty}f\left(x\right)dx=0
+\end{equation}
+
+Vamos ter um resultado análogo para $\psi^{*}_{2}\psi^{*}_{1}$:
+
+\begin{align}
+\psi^{*}_{2}\psi_{1} & =\left(\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\left(\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^{2}}x\right)\\
+f\left(x\right) & =\left[\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\right]\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{2\hbar}x^{2}-\frac{m\omega}{2\hbar}x^{2}}x\\
+ & =A\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{\hbar}x^{2}}x
+\end{align}
+
+Temos novamente uma função ímpar:
+
+\[
+f\left(-x\right)=A\left(\frac{2m\omega}{\hbar}\left(-x\right)^{2}-1\right)e^{-\frac{m\omega}{\hbar}\left(-x\right)^{2}}\left(-x\right)=-A\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{\hbar}x^{2}}x=-f\left(x\right)
+\]
+
+Logo novamente:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}_{2}\psi_{1}dx=\int^{+\infty}_{-\infty}f\left(x\right)dx=0
+\end{equation}
+
+Isso muda para $\psi^{*}_{2}\psi_{0}$, agora teremos uma função par. Então precisamos calcular explícitamente.
+
+\begin{align}
+\psi^{*}_{2}\psi_{0} & =\left(\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\left(\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}e^{-\frac{m\omega}{2\hbar}x^{2}}\right)\\
+ & =A\left(\frac{2m\omega}{\hbar}x^{2}-1\right)e^{-\frac{m\omega}{\hbar}x^{2}}\\
+ & =A\frac{2m\omega}{\hbar}x^{2}e^{-\frac{m\omega}{\hbar}x^{2}}-Ae^{-\frac{m\omega}{\hbar}x^{2}}\\
+ & =Bx^{2}e^{-ax^{2}}-Ae^{-ax^{2}}
+\end{align}
+
+Integrando temos então:
+
+\begin{equation}
+\int^{+\infty}_{-\infty}\psi^{*}_{2}\psi_{0}dx=B\int^{+\infty}_{-\infty}x^{2}e^{-ax^{2}}dx-A\int^{+\infty}_{-\infty}e^{-ax^{2}}dx
+\end{equation}
+
+Estas duas integrais já foram resolvidas. $\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{a}}$ e $\int^{+\infty}_{-\infty}x^{2}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{4a^{3}}}$, então, e sendo $A=\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}$, $B=A\frac{2m\omega}{\hbar}$ e $a=\frac{m\omega}{\hbar}$ então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\psi^{*}_{2}\psi_{0}dx & =B\int^{+\infty}_{-\infty}x^{2}e^{-\alpha x^{2}}dx-A\int^{+\infty}_{-\infty}e^{-\alpha x^{2}}dx\\
+ & =B\left(\sqrt{\frac{\pi}{4a^{3}}}\right)-A\sqrt{\frac{\pi}{a}}\\
+ & =A\frac{2m\omega}{\hbar}\left(\sqrt{\frac{\pi}{4\left(\frac{m\omega}{\hbar}\right)^{3}}}\right)-\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}\sqrt{\frac{\pi}{\frac{m\omega}{\hbar}}}\\
+ & =\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}\frac{2m\omega}{\hbar}\left(\sqrt{\frac{\hbar^{3}\pi}{4\left(m\omega\right)^{3}}}\right)-\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}\sqrt{\frac{\hbar\pi}{m\omega}}\\
+ & =\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}\left(\sqrt{\frac{2^{2}m^{2}\omega^{2}}{\hbar^{2}}}\left(\sqrt{\frac{\hbar^{3}\pi}{4\left(m\omega\right)^{3}}}\right)-\sqrt{\frac{\hbar\pi}{m\omega}}\right)\\
+ & =\frac{1}{\sqrt{2}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}\left(\sqrt{\frac{\hbar\pi}{m\omega}}-\sqrt{\frac{\hbar\pi}{m\omega}}\right)\\
+ & =0
+\end{align}
+
+\textbf{Exemplo:}
+
+\textbf{a) Calcule $\left\langle x\right\rangle $, $\left\langle p\right\rangle $, $\left\langle x^{2}\right\rangle $ e $\left\langle p^{2}\right\rangle $ para os estados $\psi_{0}$ e $\psi_{1}$ por integração explícita.}
+
+\textbf{b) Verifique o princípio da incerteza para estes estados.}
+
+\textbf{c) Calcule $\left\langle T\right\rangle $ e $\left\langle V\right\rangle $ para estes estado. A soma deles é o esperado?}
+
+Vamos analisar algo primeiro. O produto entre uma função par $g\left(x\right)$ e uma ímpar $f\left(x\right)$ é uma função ímpar. Isto é, se:
+
+\begin{equation}
+g\left(x\right)=f\left(x\right)g\left(x\right)
+\end{equation}
+
+Então:
+
+\begin{equation}
+g\left(-x\right)=f\left(-x\right)g\left(-x\right)=-f\left(x\right)g\left(x\right)=-g\left(x\right)
+\end{equation}
+
+Agora queremos analisar $\left|f\left(x\right)\right|^{2}$. Primeiro vamos mostrar que o conjugado $f^{*}\left(x\right)$ mantem a paridade. Sendo $f\left(x\right)=u\left(x\right)+iv\left(x\right)$ então se é par:
+
+\begin{equation}
+f\left(-x\right)=u\left(-x\right)+iv\left(-x\right)=u\left(x\right)+iv\left(x\right)=f\left(x\right)
+\end{equation}
+
+O conjugado então:
+
+\begin{equation}
+f^{*}\left(-x\right)=u\left(-x\right)-iv\left(-x\right)=u\left(x\right)-iv\left(x\right)=f\left(x\right)
+\end{equation}
+
+Acontece algo análogo se for uma função ímpar, como podemos $i$ não interfere. Já vimos anteriormente que podemos escrever qualquer função complexa como uma combinção de funções reais. Assim sendo $\left|f\left(x\right)\right|^{2}$ é par independente de $f\left(x\right)$ ser par ou ímpar. No caso de ser par é óbvio, mas podemos olhar o que acontece se for ímpar:
+
+\begin{align}
+\left|f\left(-x\right)\right|^{2} & =f^{*}\left(-x\right)f\left(-x\right)=\left[-f^{*}\left(x\right)\right]\left[-f\left(x\right)\right]=f^{*}\left(x\right)f\left(x\right)=\left|f\left(x\right)\right|^{2}
+\end{align}
+
+Usando a propriedade que discutimos de que o conjugado da função conserva a paridade.
+
+Ou seja se temos $f\left(x\right)\left|g\left(x\right)\right|^{2}$, onde $g\left(x\right)$ tem alguma paridade, então a paridade dessa função é definida pela paridade de $f\left(x\right)$. 
+
+Vamos usar isso para calcular $\left\langle x\right\rangle =\int^{+\infty}_{-\infty}x\left|\psi_{n}\right|dx$, pois temos então um integrando ímpar, independente se $n=0$ ou $n=1$ logo $\left\langle x\right\rangle =0$.
+
+Consequentemente $\left\langle p\right\rangle =m\frac{d\left\langle x\right\rangle }{dt}=0$ também. Agora precisamos então calcular $\left\langle x^{2}\right\rangle $ e $\left\langle p^{2}\right\rangle $. Primeiro para $\psi_{0}$, temos $\psi_{0}\left(x\right)=ae^{-\frac{b}{2}x^{2}}$, onde $a=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}$ e $b=\frac{m\omega}{\hbar}$ para facilitar. Então:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\int^{+\infty}_{-\infty}\psi^{*}_{0}x^{2}\psi_{0}dx\\
+ & =\int^{+\infty}_{-\infty}ae^{-\frac{b}{2}x^{2}}x^{2}ae^{-\frac{b}{2}x^{2}}dx\\
+ & =a^{2}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx\\
+ & =a^{2}\sqrt{\frac{\pi}{4b^{3}}}
+\end{align}
+
+Onde usamos novamente o resultado já conhecido que $\int^{+\infty}_{-\infty}x^{2}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{4a^{3}}}$. e substindo:
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =\left[\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\right]^{2}\sqrt{\frac{\pi}{4\left(\frac{m\omega}{\hbar}\right)^{3}}}=\sqrt{\frac{m\omega}{\pi\hbar}}\sqrt{\frac{\pi\hbar^{3}}{4\left(m\omega\right)^{3}}}=\sqrt{\left(\frac{\hbar}{4m\omega}\right)^{2}}=\frac{\hbar}{2m\omega}
+\end{equation}
+
+E para $\left\langle p^{2}\right\rangle $:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int^{+\infty}_{-\infty}\psi^{*}_{0}\left(-i\hbar\frac{d}{dx}\right)^{2}\psi_{0}dx\\
+ & =\int^{+\infty}_{-\infty}ae^{-\frac{b}{2}x^{2}}\left(-\hbar^{2}\frac{d^{2}}{dx^{2}}\right)ae^{-\frac{b}{2}x^{2}}dx\\
+ & =-\left(a\hbar\right)^{2}\int^{+\infty}_{-\infty}e^{-\frac{b}{2}x^{2}}\frac{d}{dx}\left(-bxe^{-\frac{b}{2}x^{2}}\right)dx\\
+ & =\left(a\hbar\right)^{2}b\int^{+\infty}_{-\infty}e^{-\frac{b}{2}x^{2}}\left(e^{-\frac{b}{2}x^{2}}-xe^{-\frac{b}{2}x^{2}}bx\right)dx\\
+ & =\left(a\hbar\right)^{2}b\left(\int^{+\infty}_{-\infty}e^{-bx^{2}}dx-b\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx\right)
+\end{align}
+
+Novamente utilizand os resultados já conhecidos $\int^{+\infty}_{-\infty}x^{2}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{4a^{3}}}$ e $\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{a}}$
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\left(a\hbar\right)^{2}b\left(\sqrt{\frac{\pi}{b}}-b\sqrt{\frac{\pi}{4b^{3}}}\right)\\
+ & =\left(\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\hbar\right)^{2}\frac{m\omega}{\hbar}\left(\sqrt{\frac{\pi}{\frac{m\omega}{\hbar}}}-\frac{m\omega}{\hbar}\sqrt{\frac{\pi}{4\left(\frac{m\omega}{\hbar}\right)^{3}}}\right)\\
+ & =\left(\frac{m\omega}{\pi\hbar}\right)^{1/2}m\hbar\omega\left(\sqrt{\frac{\hbar\pi}{m\omega}}-\frac{1}{2}\sqrt{\left(\frac{2m\omega}{\hbar}\right)^{2}}\sqrt{\frac{\hbar^{3}\pi}{4\left(m\omega\right)^{3}}}\right)\\
+ & =\frac{1}{2}\sqrt{\frac{m\omega}{\pi\hbar}}m\hbar\omega\sqrt{\frac{\hbar\pi}{m\omega}}\\
+ & =\frac{m\hbar\omega}{2}
+\end{align}
+
+Onde $a=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}$ e $b=\frac{m\omega}{\hbar}$ . E agora para $n=1$ sendo 
+\begin{equation}
+\psi_{1}=ae^{-\frac{b}{2}x^{2}}x
+\end{equation}
+
+Onde agora $a=\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}$ e $b=\frac{m\omega}{\hbar}$. Então:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\int^{+\infty}_{-\infty}\psi^{*}_{1}x^{2}\psi_{1}dx\\
+ & =\int^{+\infty}_{-\infty}\left(ae^{-\frac{b}{2}x^{2}}x\right)x^{2}\left(ae^{-\frac{b}{2}x^{2}}x\right)dx\\
+ & =a^{2}\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx
+\end{align}
+
+Usando integral por partes sendo $u=x^{3}$ (logo $\frac{du}{dx}=3x^{2}$) e $\frac{dv}{du}=xe^{-ax^{2}}$ , então se $w=-ax^{2}$ ($\frac{dw}{dx}=-2ax$) temos:
+
+\begin{equation}
+v=\int xe^{-ax^{2}}dx=-\frac{1}{2a}\int e^{w}dw=-\frac{e^{w}}{2a}+C=-\frac{e^{-ax^{2}}}{2a}+C
+\end{equation}
+
+Então:
+
+\begin{align}
+\int udv & =uv-\int vdu\\
+\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx & =\left[-x^{3}\frac{e^{-bx^{2}}}{2b}\right]^{+\infty}_{-\infty}+\int^{+\infty}_{-\infty}\frac{e^{-bx^{2}}}{2b}3x^{2}dx\\
+ & =\frac{3}{2b}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx
+\end{align}
+
+Como temos o resultado dessa integral, então:
+
+\begin{align}
+\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx & =\frac{3}{2b}\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx\\
+ & =\frac{3}{2b}\sqrt{\frac{\pi}{4b^{3}}}\\
+ & =\frac{3}{4}\sqrt{\frac{\pi}{b^{5}}}
+\end{align}
+
+Retomando então o valor esperando de $x^{2}$ temos:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =a^{2}\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx\\
+ & =a^{2}\frac{3}{4}\sqrt{\frac{\pi}{b^{5}}}\\
+ & =\left[\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\right]^{2}\frac{3}{4}\sqrt{\frac{\pi}{\left(\frac{m\omega}{\hbar}\right)^{5}}}\\
+ & =\frac{2m\omega}{\hbar}\sqrt{\frac{m\omega}{\pi\hbar}}\frac{3}{4}\sqrt{\frac{\hbar^{5}\pi}{\left(m\omega\right)^{5}}}\\
+ & =\sqrt{\frac{m\omega}{\pi\hbar}}\frac{3}{2}\sqrt{\frac{\hbar^{3}\pi}{\left(m\omega\right)^{3}}}\\
+ & =\frac{3}{2}\sqrt{\left(\frac{\hbar}{m\omega}\right)^{2}}\\
+ & =\frac{3}{2}\frac{\hbar}{m\omega}
+\end{align}
+
+E para $\left\langle p^{2}\right\rangle $:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int^{+\infty}_{-\infty}\psi^{*}_{1}\left(-i\hbar\frac{d}{dx}\right)^{2}\psi_{1}dx\\
+ & =\int^{+\infty}_{-\infty}\left(ae^{-\frac{b}{2}x^{2}}x\right)\left(-\hbar^{2}\frac{d^{2}}{dx^{2}}\right)\left(ae^{-\frac{b}{2}x^{2}}x\right)dx\\
+ & =-\hbar^{2}a^{2}\int^{+\infty}_{-\infty}e^{-\frac{b}{2}x^{2}}x\left(\frac{d}{dx}\left(e^{-\frac{b}{2}x^{2}}-bxe^{-\frac{b}{2}x^{2}}x\right)\right)dx\\
+ & =-\hbar^{2}a^{2}\int^{+\infty}_{-\infty}e^{-\frac{b}{2}x^{2}}x\left(-bxe^{-\frac{b}{2}x^{2}}-b\left(2xe^{-\frac{b}{2}x^{2}}-bx^{3}e^{-\frac{b}{2}x^{2}}\right)\right)dx\\
+ & =-\hbar^{2}a^{2}\int^{+\infty}_{-\infty}\left(-bx^{2}e^{-bx^{2}}-b2x^{2}e^{-bx^{2}}+b^{2}x^{4}e^{-bx^{2}}\right)dx\\
+ & =-\hbar^{2}a^{2}\left(-3b\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx+b^{2}\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx\right)\\
+ & =-\hbar^{2}a^{2}\left(-3b\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx+b^{2}\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx\right)
+\end{align}
+
+Como já resolvemos essas contas:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =-\hbar^{2}a^{2}\left(-3b\int^{+\infty}_{-\infty}x^{2}e^{-bx^{2}}dx+b^{2}\int^{+\infty}_{-\infty}x^{4}e^{-bx^{2}}dx\right)\\
+ & =-\hbar^{2}a^{2}\left(-3b\left[\sqrt{\frac{\pi}{4b^{3}}}\right]+b^{2}\left[\frac{3}{4}\sqrt{\frac{\pi}{b^{5}}}\right]\right)\\
+ & =-3\hbar^{2}a^{2}\left(\frac{1}{2}\sqrt{\frac{\pi}{b}}+\frac{1}{4}\sqrt{\frac{\pi}{b}}\right)\\
+ & =\frac{3\hbar^{2}a^{2}}{4}\sqrt{\frac{\pi}{b}}\\
+ & =\frac{3\hbar^{2}}{4}\left(\sqrt{\frac{2m\omega}{\hbar}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\right)^{2}\sqrt{\frac{\pi}{\frac{m\omega}{\hbar}}}\\
+ & =\frac{3\hbar^{2}}{4}\frac{2m\omega}{\hbar}\sqrt{\frac{m\omega}{\pi\hbar}}\sqrt{\frac{\hbar\pi}{m\omega}}\\
+ & =\frac{3m\omega\hbar}{2}
+\end{align}
+
+Agora queremos verificar o princípio de incerteza ($\sigma_{x}\sigma_{p}\geq\frac{\hbar}{2}$) para estes estados. Para $n=0$:
+
+\begin{align}
+\sigma_{x} & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}=\sqrt{\frac{\hbar}{2m\omega}-0^{2}}=\sqrt{\frac{\hbar}{2m\omega}}\\
+\sigma_{p} & =\sqrt{\left\langle p^{2}\right\rangle -\left\langle p\right\rangle ^{2}}=\sqrt{\frac{m\hbar\omega}{2}-0^{2}}=\sqrt{\frac{m\hbar\omega}{2}}
+\end{align}
+
+Então:
+
+\[
+\sigma_{x}\sigma_{p}=\sqrt{\frac{\hbar}{2m\omega}}\sqrt{\frac{m\hbar\omega}{2}}=\frac{\hbar}{2}
+\]
+
+Para $n=1:$
+
+\begin{align}
+\sigma_{x} & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}=\sqrt{\frac{3}{2}\frac{\hbar}{m\omega}-0^{2}}=\sqrt{\frac{3}{2}\frac{\hbar}{m\omega}}\\
+\sigma_{p} & =\sqrt{\left\langle p^{2}\right\rangle -\left\langle p\right\rangle ^{2}}=\sqrt{\frac{3m\omega\hbar}{2}-0^{2}}=\sqrt{\frac{3m\omega\hbar}{2}}
+\end{align}
+
+Logo:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\sqrt{\frac{3}{2}\frac{\hbar}{m\omega}}\sqrt{\frac{3m\omega\hbar}{2}}=3\frac{\hbar}{2}
+\end{equation}
+
+Ambos os resultados são válidos e obedecem o princípio. Por último vamos calcular a energia cinética $\left\langle T\right\rangle $, potencial $\left\langle V\right\rangle $ e total $\left\langle H\right\rangle =\left\langle T\right\rangle +\left\langle V\right\rangle $ para cada um dos níveis, lembrando que $E_{n}=\left(n+\frac{1}{2}\right)\hbar\omega$. 
+
+Então para a energia cinética, que temos a fórmula clássica:
+
+\begin{align}
+\left\langle T_{0}\right\rangle = & \frac{\left\langle p^{2}\right\rangle }{2m}=\frac{\frac{m\hbar\omega}{2}}{2m}=\frac{\hbar\omega}{4}\\
+\left\langle T_{1}\right\rangle = & \frac{\left\langle p^{2}\right\rangle }{2m}=\frac{\frac{3m\omega\hbar}{2}}{2m}=\frac{3\omega\hbar}{4}
+\end{align}
+
+E para a potencial esperada, conforme discutido no início do capítulo, para um oscilador simples:
+
+\begin{align}
+\left\langle V_{0}\right\rangle = & \frac{m\omega^{2}}{2}\left\langle x^{2}\right\rangle =\frac{m\omega^{2}}{2}\frac{\hbar}{2m\omega}=\frac{\hbar\omega}{4}\\
+\left\langle V_{1}\right\rangle = & \frac{m\omega^{2}}{2}\left\langle x^{2}\right\rangle =\frac{m\omega^{2}}{2}\frac{3}{2}\frac{\hbar}{m\omega}=\frac{3\omega\hbar}{4}
+\end{align}
+
+Então a energia total é então:
+
+\begin{align}
+\left\langle H_{0}\right\rangle = & \frac{\hbar\omega}{4}+\frac{\hbar\omega}{4}=\frac{1}{2}\hbar\omega=E_{0}\\
+E_{1}= & \frac{3\omega\hbar}{4}+\frac{3\omega\hbar}{4}=\frac{6}{4}\hbar\omega=\frac{3}{2}\hbar\omega=\left(1+\frac{1}{2}\right)\hbar\omega=E_{1}
+\end{align}
+
+\textbf{Exemplo: Encontre $\left\langle x\right\rangle $, $\left\langle p\right\rangle $, $\left\langle x^{2}\right\rangle $ e $\left\langle p^{2}\right\rangle $ para o enésimo estado estacionário usando o método dos operadores escada.Cheque se o princípio da incerteza é satisfeito}
+
+De um dos exemplos que fizemos temos:
+
+\begin{align}
+x & =\sqrt{\frac{\hbar}{2m\omega}}\left(\widehat{a}_{+}+\widehat{a}_{-}\right)\\
+\widehat{p} & =i\sqrt{\frac{\hbar m\omega}{2}}\left(\widehat{a}_{+}-\widehat{a}_{-}\right)\\
+x^{2} & =\frac{\hbar}{2m\omega}\left(\widehat{a}^{2}_{+}+\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}^{2}_{-}\right)
+\end{align}
+
+Vamos calcular $p^{2}$ mais tarde. Primeiro vamos calcular $\left\langle x\right\rangle ,\left\langle p\right\rangle ,\left\langle x^{2}\right\rangle $ com o que temos. Começando com $\left\langle x\right\rangle $ sendo $\widehat{a}_{+}\psi_{n}=\sqrt{n+1}\psi_{n+1}$ e $\widehat{a}_{-}\psi_{n}=\sqrt{n}\psi_{n-1}$ então:
+
+\begin{align}
+\left\langle x\right\rangle  & =\int\psi^{*}_{n}x\psi_{n}dx\\
+ & =\int\psi^{*}_{n}\left(\sqrt{\frac{\hbar}{2m\omega}}\left(\widehat{a}_{+}+\widehat{a}_{-}\right)\right)\psi_{n}dx\\
+ & =\sqrt{\frac{\hbar}{2m\omega}}\int\psi^{*}_{n}\left(\widehat{a}_{+}\psi_{n}+\widehat{a}_{-}\psi_{n}\right)dx\\
+ & =\sqrt{\frac{\hbar}{2m\omega}}\int\psi^{*}_{n}\left(\sqrt{n+1}\psi_{n+1}+\sqrt{n}\psi_{n-1}\right)dx\\
+ & =\sqrt{\frac{\hbar}{2m\omega}}\left(\sqrt{n+1}\int\psi^{*}_{n}\psi_{n+1}dx+\sqrt{n}\int\psi^{*}_{n}\psi_{n-1}dx\right)\\
+ & =\sqrt{\frac{\hbar}{2m\omega}}\left(0+0\right)\\
+ & =0
+\end{align}
+
+Onde usamos os fatos da ortogonalidade para sabermos que o resultado da integral é 0. De forma geral v vimos que devido a ortogonalidade:
+\begin{equation}
+\left\langle \widehat{a}_{\pm}\right\rangle =\int\psi^{*}_{n}\widehat{a}_{\pm}\psi_{n}dx=0
+\end{equation}
+
+Vamos usar estes resultados agora para calcular $\left\langle p\right\rangle $:
+
+\begin{align}
+\left\langle p\right\rangle  & =\int\psi^{*}_{n}p\psi_{n}dx\\
+ & =\int\psi^{*}_{n}\left(i\sqrt{\frac{\hbar m\omega}{2}}\left(\widehat{a}_{+}-\widehat{a}_{-}\right)\right)\psi_{n}dx\\
+ & =i\sqrt{\frac{\hbar m\omega}{2}}\left(\int\psi^{*}_{n}\widehat{a}_{+}\psi_{n}dx-\int\psi^{*}_{n}\widehat{a}_{-}\psi_{n}dx\right)\\
+ & =0
+\end{align}
+
+Agora para $\left\langle x^{2}\right\rangle $:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\int\psi^{*}_{n}x^{2}\psi_{n}dx\\
+ & =\int\psi^{*}_{n}\left(\frac{\hbar}{2m\omega}\left(\widehat{a}^{2}_{+}+\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}+\widehat{a}^{2}_{-}\right)\right)\psi_{n}dx\\
+ & =\frac{\hbar}{2m\omega}\int\psi^{*}_{n}\left(\widehat{a}^{2}_{+}\psi_{n}+\widehat{a}_{+}\widehat{a}_{-}\psi_{n}+\widehat{a}_{-}\widehat{a}_{+}\psi_{n}+\widehat{a}^{2}_{-}\psi_{n}\right)dx
+\end{align}
+
+Precisamos analisar qual a funaçõ de onda depois de cada operação, já tínhamos conferidos para $\widehat{a}_{-}\widehat{a}_{+}\psi_{n}$ e $\widehat{a}_{+}\widehat{a}_{-}$, mas vamos repetir:
+
+\begin{align*}
+\widehat{a}_{+}\widehat{a}_{+}\psi_{n} & =\widehat{a}_{+}\left(\sqrt{n+1}\psi_{n+1}\right) & =\sqrt{n+1}\widehat{a}_{+}\psi_{n+1} & =\sqrt{\left(n+1\right)\left(n+2\right)}\psi_{n+2}\\
+\widehat{a}_{-}\widehat{a}_{+}\psi_{n} & =\widehat{a}_{-}\left(\sqrt{n+1}\psi_{n+1}\right) & =\sqrt{n+1}\widehat{a}_{-}\psi_{n+1} & =\sqrt{\left(n+1\right)\left(n+1\right)}\psi_{n}=\left(n+1\right)\psi_{n}\\
+\widehat{a}_{+}\widehat{a}_{-}\psi_{n} & =\widehat{a}_{+}\left(\sqrt{n}\psi_{n-1}\right) & =\sqrt{n}\widehat{a}_{+}\psi_{n-1} & =\sqrt{nn}\psi_{n}=n\psi_{n}\\
+\widehat{a}_{-}\widehat{a}_{-}\psi_{n} & =\widehat{a}_{-}\left(\sqrt{n}\psi_{n-1}\right) & =\sqrt{n}\widehat{a}_{-}\psi_{n-1} & =\sqrt{\left(n-1\right)n}\psi_{n-2}
+\end{align*}
+
+Então podemos ver que as integrais correspondendo a $\widehat{a}_{\pm}$ vão ser zeros pela ortogonalidade. Generalizando para $\widehat{a}_{\pm}\psi_{n}=c_{a_{\pm}}\psi_{n\pm2}$, as integrais ficam:
+
+\begin{equation}
+\int\psi^{*}_{n}\widehat{a}_{\pm}\psi_{n}dx=c_{a_{\pm}}\int\psi^{*}_{n}\psi_{n\pm2}dx=0
+\end{equation}
+
+Restando então apenas as integrais com $\widehat{a}_{\mp}\widehat{a}_{\pm}$. Ficamos com:
+
+\begin{align}
+\left\langle x^{2}\right\rangle  & =\frac{\hbar}{2m\omega}\int\psi^{*}_{n}\left(\widehat{a}^{2}_{+}\psi_{n}+\widehat{a}_{+}\widehat{a}_{-}\psi_{n}+\widehat{a}_{-}\widehat{a}_{+}\psi_{n}+\widehat{a}^{2}_{-}\psi_{n}\right)dx\\
+ & =\frac{\hbar}{2m\omega}\int\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}\psi_{n}+\widehat{a}_{-}\widehat{a}_{+}\psi_{n}\right)dx\\
+ & =\frac{\hbar}{2m\omega}\int\psi^{*}_{n}\left(n\psi_{n}+\left(n+1\right)\psi_{n}\right)dx\\
+ & =\frac{\hbar}{2m\omega}\int\psi^{*}_{n}\left(n+n+1\right)\psi_{n}dx\\
+ & =\frac{\hbar\left(2n+1\right)}{2m\omega}\int\psi^{*}_{n}\psi_{n}dx\\
+ & =\frac{\hbar\left(2n+1\right)}{2m\omega}
+\end{align}
+
+Ou então:
+
+\begin{equation}
+\left\langle x^{2}\right\rangle =\left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega}
+\end{equation}
+
+Agora para $\left\langle p^{2}\right\rangle $ vamos usar os resultados obtidos até aqui:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\int\psi^{*}_{n}p^{2}\psi_{n}dx\\
+ & =\int\psi^{*}_{n}\left(i\sqrt{\frac{\hbar m\omega}{2}}\left(\widehat{a}_{+}-\widehat{a}_{-}\right)\right)^{2}\psi_{n}dx\\
+ & =-\frac{\hbar m\omega}{2}\int\psi^{*}_{n}\left(\widehat{a}^{2}_{+}-\widehat{a}_{+}\widehat{a}_{-}-\widehat{a}_{-}\widehat{a}_{+}+\widehat{a}^{2}_{-}\right)\psi_{n}dx
+\end{align}
+
+Já vimos que as integrais envolvendo $\widehat{a}_{\pm}$ vão a zero e 
+\[
+\int\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx=\left(2n+1\right)
+\]
+
+Então:
+
+\begin{align}
+\left\langle p^{2}\right\rangle  & =\frac{\hbar m\omega}{2}\int\psi^{*}_{n}\left(\widehat{a}_{+}\widehat{a}_{-}+\widehat{a}_{-}\widehat{a}_{+}\right)\psi_{n}dx\\
+ & =\frac{\hbar m\omega}{2}\left(2n+1\right)
+\end{align}
+
+Ou simplesmente:
+
+\begin{equation}
+\left\langle p^{2}\right\rangle =\hbar m\omega\left(n+\frac{1}{2}\right)
+\end{equation}
+
+Agora é fácil calcularmos $\left\langle T\right\rangle $:
+
+\begin{equation}
+\left\langle T\right\rangle =\frac{\left\langle p^{2}\right\rangle }{2m}=\frac{1}{2}\left(n+\frac{1}{2}\right)\hbar\omega
+\end{equation}
+
+Assim como podemos calcular facilmente também a relação de incerteza:
+
+\begin{align}
+\sigma_{x} & =\sqrt{\left\langle x^{2}\right\rangle -\left\langle x\right\rangle ^{2}}=\sqrt{\left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega}}\\
+ & =\sqrt{\left\langle p^{2}\right\rangle -\left\langle p\right\rangle ^{2}}=\sqrt{\hbar m\omega\left(n+\frac{1}{2}\right)}
+\end{align}
+
+Ou seja:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}=\sqrt{\left(n+\frac{1}{2}\right)\frac{\hbar}{m\omega}}\sqrt{\hbar m\omega\left(n+\frac{1}{2}\right)}=\left(n+\frac{1}{2}\right)\hbar
+\end{equation}
+
+Como $n\geq0$ então:
+
+\begin{equation}
+\sigma_{x}\sigma_{p}\geq\frac{\hbar}{2}
+\end{equation}
+
+
+\subsubsection{Método analítico }
+
+Agora podemos retomar a equação de schroedinger para o oscilador harmônico e resolver usando o método das séries de potências\footnote{Provavelmente eu preciso estudar mais física matemática para lembrar todos os detlhes matemáticos de como obtemos a solução proposta por este método, fica a sugestão de aprofundamento.}. Temos então:
+
+\begin{equation}
+-\frac{\hbar^{2}}{2m}\frac{d^{2}}{dx^{2}}\psi+\frac{1}{2}m\omega^{2}x^{2}\psi=E\psi
+\end{equation}
+
+Introduzindo a variável $\varepsilon\equiv\sqrt{\frac{m\omega}{\hbar}}x$ e a constante $K\eqcirc\frac{2E}{\hbar\omega}$, usando a regra da cadeia temos:
+
+\begin{equation}
+\frac{df}{dx}=\frac{df}{d\varepsilon}\frac{d\varepsilon}{dx}
+\end{equation}
+
+Então a segunda derivada é:
+
+\begin{align}
+\frac{d^{2}f}{dx^{2}} & =\frac{d}{dx}\left(\frac{df}{dx}\right)=\frac{d}{d\varepsilon}\left(\frac{df}{d\varepsilon}\frac{d\varepsilon}{dx}\right)\frac{d\varepsilon}{dx}=\frac{d^{2}f}{d\varepsilon^{2}}\left(\frac{d\varepsilon}{dx}\right)^{2}=\frac{d^{2}f}{d\varepsilon^{2}}\left(\sqrt{\frac{m\omega}{\hbar}}\right)^{2}=\frac{m\omega}{\hbar}\frac{d^{2}f}{d\varepsilon^{2}}
+\end{align}
+
+sendo 
+\begin{equation}
+m\omega^{2}x^{2}=m\omega^{2}\left(\sqrt{\frac{\hbar}{m\omega}}\varepsilon\right)^{2}=m\omega^{2}\left(\frac{\hbar}{m\omega}\right)\varepsilon^{2}=\omega\hbar\varepsilon^{2}
+\end{equation}
+
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{d^{2}}{dx^{2\psi}}+\frac{1}{2}m\omega^{2}x^{2}\psi & =E\psi\\
+-\frac{\hbar^{2}}{2m}\frac{m\omega}{\hbar}\frac{d^{2}\psi}{d\varepsilon^{2}}+\frac{1}{2}\hbar\omega\varepsilon^{2}\psi & =E\psi\\
+-\frac{m\omega}{2}\frac{d^{2}\psi}{d\varepsilon^{2}} & =\left(E-\frac{1}{2}\hbar\omega\varepsilon^{2}\right)\psi\\
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =\left(\varepsilon^{2}-\frac{2E}{\hbar\omega}\right)\psi\\
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =\left(\varepsilon^{2}-K\right)\psi
+\end{align}
+
+Nosso objetivo é resolver esta equação e obter os valores permitidos de $K$. Vamos começar observando valores muito altos de $x$ (e consequentement de $\varepsilon$), neste caso $\varepsilon^{2}\gg K$ e podemos aproximar:
+
+\begin{equation}
+\frac{d^{2}\psi}{d\varepsilon^{2}}\approx\varepsilon^{2}\psi\label{eq_aprox}
+\end{equation}
+
+Onde uma solução é:
+
+\begin{equation}
+\psi\left(\varepsilon\right)\approx Ae^{-\varepsilon^{2}/2}+Be^{+\varepsilon^{2}/2}\label{sol_aprox}
+\end{equation}
+
+Derivando duas vezes a função de onda proposta:
+
+\begin{align}
+\frac{d\psi}{d\varepsilon} & =-\varepsilon Ae^{-\varepsilon^{2}/2}+\varepsilon Be^{+\varepsilon^{2}/2}\\
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =-\left(Ae^{-\varepsilon^{2}/2}-\varepsilon^{2}Ae^{-\varepsilon^{2}/2}\right)+\left(Be^{+\varepsilon^{2}/2}+\varepsilon^{2}Be^{+\varepsilon^{2}/2}\right)\\
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =-\left(1-\varepsilon^{2}\right)Ae^{-\varepsilon^{2}/2}+\left(1+\varepsilon^{2}\right)Be^{+\varepsilon^{2}/2}
+\end{align}
+
+Agora se considerarmos a aproximação onde $\varepsilon\rightarrow\infty$ então $1\ll\varepsilon^{2}$ de forma que podemos aproximar:
+
+\begin{align}
+\frac{d^{2}\psi}{d\varepsilon^{2}} & \approx A\varepsilon^{2}e^{-\varepsilon^{2}/2}+\varepsilon^{2}Be^{+\varepsilon^{2}/2}\\
+ & \approx\varepsilon^{2}\left(Ae^{-\varepsilon^{2}/2}+Be^{+\varepsilon^{2}/2}\right)\\
+ & \approx\varepsilon^{2}\psi
+\end{align}
+
+Então a equação \ref{sol_aprox} é a solução aproximada da equação \ref{eq_aprox} que é uma equação aproximada.O termo $B$ explode (isto é, este termo vai para infinito) quando $\left|x\right|\rightarrow\infty$, de forma que não é normalizável. As soluções fisicamente aceitáveis então devem ter o seguinte comportamento assintótico\footnote{Comportamento assintótico é a maneira como uma função se comporta quando a variável fica muito grande, ajudando a entender quais termos da equação são mais importantes nesse limite.} para valores largos de $\varepsilon$:
+
+\begin{equation}
+\psi\left(\varepsilon\right)\rightarrow\left(\quad\right)e^{-\varepsilon^{2}/2}
+\end{equation}
+
+Isso nos motiva a propor uma solução do tipo:
+
+\begin{equation}
+\psi\left(\varepsilon\right)=h\left(\varepsilon\right)e^{-\varepsilon^{2}/2}
+\end{equation}
+
+Com a esperança de que $h\left(\varepsilon\right)$ seja mais simples do que a própria $\psi\left(\varepsilon\right)$\footnote{Entendo que seja que a ideia é que $h\left(\varepsilon\right)$ não cresce exponencialmente quando $\varepsilon\rightarrow\infty$, ou seja, ele não contribui para o comportamento assintótico da função de onda $\psi\left(\varepsilon\right)$. Esse papel é assumido exclusivamente pelo fator exponencial $e^{-\varepsilon^{2}/2}$. Segundo a nota de rodapé do próprio David J. Griffiths, separar o comportamento assintótico da solução é o primeiro passo padrão no método de séries de potência para resolver equações diferenciais.}. Derivando então temos:
+
+\begin{equation}
+\frac{d\psi}{d\varepsilon}=\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}+h\frac{d}{d\varepsilon}e^{-\varepsilon^{2}/2}=\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}-\varepsilon he^{-\varepsilon^{2}/2}=\left(\frac{dh}{d\varepsilon}-\varepsilon h\right)e^{-\varepsilon^{2}/2}
+\end{equation}
+
+Derivando novamente:
+
+\begin{align}
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =\frac{d}{d\varepsilon}\left[\left(\frac{dh}{d\varepsilon}-\varepsilon h\right)e^{-\varepsilon^{2}/2}\right]\\
+ & =\frac{d}{d\varepsilon}\left[\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}\right]-\frac{d}{d\varepsilon}\left[\left(\varepsilon\right)\left(he^{-\varepsilon^{2}/2}\right)\right]\\
+ & =\left[\frac{d^{2}h}{d\varepsilon^{2}}e^{-\varepsilon^{2}/2}-\varepsilon\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}\right]-\left[he^{-\varepsilon^{2}/2}+\varepsilon\frac{d}{d\varepsilon}\left(he^{-\varepsilon^{2}/2}\right)\right]\\
+ & =\left[\frac{d^{2}h}{d\varepsilon^{2}}e^{-\varepsilon^{2}/2}-\varepsilon\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}\right]-\left[he^{-\varepsilon^{2}/2}+\varepsilon\left(\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}-\varepsilon he^{-\varepsilon^{2}/2}\right)\right]\\
+ & =\frac{d^{2}h}{d\varepsilon^{2}}e^{-\varepsilon^{2}/2}-\varepsilon\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}-he^{-\varepsilon^{2}/2}-\varepsilon\frac{dh}{d\varepsilon}e^{-\varepsilon^{2}/2}+\varepsilon^{2}he^{-\varepsilon^{2}/2}\\
+ & =\left(\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}+\varepsilon^{2}h-h\right)e^{-\varepsilon^{2}/2}\\
+ & =\left(\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}+\left(\varepsilon^{2}-1\right)h\right)e^{-\varepsilon^{2}/2}
+\end{align}
+
+Lembrando que $h=h\left(\varepsilon\right)$. Então a equação de Schroedinger se torna:
+
+\begin{align}
+\frac{d^{2}\psi}{d\varepsilon^{2}} & =\left(\varepsilon^{2}-K\right)\psi\\
+\left(\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}+\left(\varepsilon^{2}-1\right)h\right)e^{-\varepsilon^{2}/2} & =\left(\varepsilon^{2}-K\right)he^{-\varepsilon^{2}/2}\\
+\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}-1h & =-Kh\\
+\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}+\left(K-1\right)h & =0\label{xirodingerH}
+\end{align}
+
+Seguindo então nosso livro base, vamos propor uma solução na forma da série de potências em $\varepsilon$\footnote{Novamente traduzindo a nota de rodapé original, de acordo com o teorema de Taylor, qualquer função razoavelmente bem-comportada pode ser expressa como uma série de potências, daí nosso recurso tão utilizado da aproximação em série de Taylor. Para conhecer as condições de aplicabilidade do método, consulte Boas (nota de rodapé 16) ou George B. Arfken e Hans-Jurgen Weber, Mathematical Methods for Physicists, 7th edn, Academic Press, Orlando (2013), Seção 7.5.}.
+
+\begin{equation}
+h\left(\varepsilon\right)=a_{0}+a_{1}\varepsilon+a_{2}\varepsilon^{2}+\dots=\sum^{\infty}_{j=0}a_{j}\varepsilon^{j}
+\end{equation}
+
+Logo:
+
+\begin{align}
+\frac{dh}{d\varepsilon} & =0+\sum^{\infty}_{j=1}a_{j}\frac{d\varepsilon^{j}}{d\varepsilon}=\sum^{\infty}_{j=1}a_{j}j\varepsilon^{j-1}=\sum^{\infty}_{j=0}a_{j}j\varepsilon^{j-1}\\
+\frac{d^{2}h}{d\varepsilon^{2}} & =0+\sum^{\infty}_{j=2}a_{j}j\frac{d\varepsilon^{j-1}}{d\varepsilon}=\sum^{\infty}_{j=0}a_{j+2}\left(j+2\right)\left(j+1\right)\varepsilon^{j}
+\end{align}
+
+Onde decorre que quando derivamos, sempre zeramos o primeiro termo por ser constante, começando então a derivada do somatório com o índice seguinte. Na primeira derivada podemos começar em $0$ pois todos termos multiplicam $j$, logo $j=0$ anula o termo. Na segunda derivada somamos $+2$ a todos índices $j$ de forma que começar o somatório em $j=0$ não altere o resultado. Reto
+
+Substituindo então em \ref{xirodingerH}:
+
+\begin{align}
+\frac{d^{2}h}{d\varepsilon^{2}}-2\varepsilon\frac{dh}{d\varepsilon}+\left(K-1\right)h & =0\\
+\sum^{\infty}_{j=0}a_{j+2}\left(j+2\right)\left(j+1\right)\varepsilon^{j}-2\varepsilon\sum^{\infty}_{j=0}a_{j}j\varepsilon^{j-1}+\left(K-1\right)\sum^{\infty}_{j=0}a_{j}\varepsilon^{j} & =0\\
+\sum^{\infty}_{j=0}a_{j+2}\left(j+2\right)\left(j+1\right)\varepsilon^{j}-2\sum^{\infty}_{j=0}a_{j}j\varepsilon^{j}+\left(K-1\right)\sum^{\infty}_{j=0}a_{j}\varepsilon^{j} & =0\\
+\sum^{\infty}_{j=0}\left(a_{j+2}\left(j+2\right)\left(j+1\right)-2a_{j}j+\left(K-1\right)a_{j}\right)\varepsilon^{j} & =0
+\end{align}
+
+A única forma disso ser verdade, isto é, deste soma ser zero é se coeficiente de cada potência seja zero\footnote{Segndo Griffhits, isso é devido a unicidade da expansão em série de potÊncias, para mais informações ele recomenda Arfken e Weber (nota de rodapé 33, seção 1.2).}. Podemos pensar por exemplo se $f\left(x\right)=ax^{0}+bx^{1}=0$, ou apenas $a=-bx$ a única forma dessa igualdade ser válida para qualquer valor de $x$ é se $a=b=0$. Então:
+
+\begin{align}
+a_{j+2}\left(j+2\right)\left(j+1\right)-2a_{j}j+\left(K-1\right)a_{j} & =0\\
+a_{j+2}\left(j+2\right)\left(j+1\right)-\left[2j-K+1\right]a_{j} & =0\\
+a_{j+2}\left(j+2\right)\left(j+1\right) & =\left[2j-K+1\right]a_{j}\\
+a_{j+2} & =\frac{\left(2j-K+1\right)}{\left(j+2\right)\left(j+1\right)}a_{j}
+\end{align}
+
+A fórmula de recorrência é equivalente à solução da equação de Schrödinger, no sentido de que qualquer solução obtida da recorrência satisfaz a equação de Schrödinger original. Começando com $a_{0}$ isso gera todos os evenficientes pares:
+
+\begin{equation}
+a_{2}=\frac{1-K}{2}a_{0},\quad a_{4}=\frac{\left(5-K\right)}{12}a_{2},\quad\dots
+\end{equation}
+
+E começando com $a_{1}$ gera os coeficientes ímpares:
+
+\begin{equation}
+a_{3}=\frac{\left(3-K\right)}{6}a_{1},\quad a_{5}=\frac{\left(7-K\right)}{20}a_{3}\quad\dots
+\end{equation}
+
+Então podemos escrever a solução completa como:
+
+\begin{equation}
+h\left(\varepsilon\right)=h_{par}\left(\varepsilon\right)+h_{impar}\left(\varepsilon\right)
+\end{equation}
+
+Onde:
+
+\begin{align*}
+h_{par}\left(\varepsilon\right) & =a_{0}+a_{2}\varepsilon^{2}+a_{4}\varepsilon^{4}+\dots\\
+h_{impar}\left(\varepsilon\right) & =a_{1}+a_{3}\varepsilon^{3}+a_{5}\varepsilon^{5}+\dots
+\end{align*}
+
+Então nossa solução a partir da fórmula de recorrência determina $h\left(\varepsilon\right)$ em termos duas constantes arbitrárias ($a_{0}$ e $a_{1}$), como poderíamos esperar para a solução de uma equação diferencial de segunda ordem. Porém nem todas soluções são normalizáveis. Toda a próxima sessão entendo que seja uma espécie de justificação de porque não podemos deixar que o somatório se extenda para o infinito. Como o livro desenvolve muito mal, eu busquei desenvolver por mim. Para um valor largo de $j$ temos:
+
+\begin{align}
+a_{j+2} & \approx\lim_{j\rightarrow\infty}\frac{\left(2j-K+1\right)}{\left(j+2\right)\left(j+1\right)}a_{j}\\
+ & \approx\lim_{j\rightarrow\infty}\frac{2j-K+1}{j^{2}+3j+2}a_{j}\\
+ & \approx\frac{a_{j}}{j}
+\end{align}
+
+Uma solução aproximada proposta é\footnote{A matemática de toda essa parte parece vaga, eu gostaria de investigar mais profundamente este aspecto e entender como esta solução aproximada foi encontrada. Mas de toda forma, vale ressaltar que já fomos apresentado ao método algébrico para investigar este mesmo potencial e a motivação de toda esta parte consiste em nos convencer que devemos truncar a série para evitar que tenha contribuição significativa no regime assintótico da função de onda $\psi$$\left(\varepsilon\right)$, então talvez não seja necessário neste momento ir tão a fundo nas questões matemáticas.}:
+
+\begin{equation}
+a_{j}\approx\frac{C}{\left(j/2\right)!}
+\end{equation}
+
+Podemos testar essa solução fazendo:
+
+\begin{equation}
+\frac{a_{j+2}}{a_{j}}\approx\frac{\frac{C}{\left(\left[j+2\right]/2\right)!}}{\frac{C}{\left(j/2\right)!}}=\frac{C}{\left(\frac{j+2}{2}\right)!}\frac{\left(\frac{j}{2}\right)!}{C}=\frac{\left(\frac{j}{2}\right)!}{\left(\frac{j}{2}+1\right)!}=\frac{1}{\frac{j}{2}+1}=\frac{2}{j+2}
+\end{equation}
+
+Ou apenas:
+
+\begin{equation}
+a_{j+2}\approx\frac{2}{j+2}a_{j}
+\end{equation}
+
+E como estamos interessados em um regime de grandes valores de $j$, podemos aproximar para:
+
+\begin{equation}
+a_{j+2}\approx\frac{a_{j}}{j}
+\end{equation}
+
+Que era nosso resultado anterior, demonstrando a validade da solução aproximada. Utilizando então nossa aproximação $a_{j}\approx\frac{C}{\left(j/2\right)!}$ e o fato de que separamos $h\left(\varepsilon\right)$ em pares e ímpares, podemos olhar para a solução par\footnote{O livro não especifica que estamos olhando para a solução par, mas pelas manipulações feitas, me parece que isto que fica implícito.}:
+
+\begin{equation}
+h_{par}\left(\varepsilon\right)\approx C\sum^{\infty}_{j=0,2,4}\frac{1}{\left(j/2\right)!}\varepsilon^{j}
+\end{equation}
+
+Fazendo $j=2n$
+
+\begin{equation}
+h_{par}\left(\varepsilon\right)\approx C\sum^{\infty}_{n}\frac{1}{\left(2n/2\right)!}\varepsilon^{2n}=C\sum^{\infty}_{n}\frac{\varepsilon^{2n}}{n!}
+\end{equation}
+
+A expansão em série de taylor de $e^{x^{2}}$em torno da origem é, sendo:
+
+\begin{align}
+f\left(x\right) & =e^{x^{2}} & f\left(0\right) & =1\\
+f'\left(x\right) & =2xe^{x^{2}} & f'\left(0\right) & =0\\
+f''\left(x\right) & =2e^{x^{2}}+4x^{2}e^{x^{2}} & f''\left(0\right) & =2\\
+f'''\left(x\right) & =12xe^{x^{2}}+8x^{3}e^{x^{2}} & f'''\left(0\right) & =0\\
+f''''\left(x\right) & =12e^{x^{2}}+48x^{2}e^{x^{2}}+16x^{4}e^{x^{2}} & f''''\left(0\right) & =12
+\end{align}
+
+Temos então:
+
+\begin{alignat}{1}
+f\left(x\right) & =f\left(0\right)+f'\left(0\right)x+f''\left(0\right)\frac{x^{2}}{2!}+f'''\left(0\right)\frac{x^{3}}{3!}+\dots\\
+e^{x^{2}} & =1+\frac{2x^{2}}{2!}+\frac{12x^{4}}{4!}+\dots\\
+ & =\frac{x^{2\cdot0}}{0!}+\frac{x^{2\cdot1}}{1!}+\frac{x^{2\cdot2}}{2!}+\dots\\
+ & =\sum_{n}\frac{x^{2n}}{n!}
+\end{alignat}
+
+Logo:
+
+\begin{equation}
+h_{par}\left(\varepsilon\right)\approx Ce^{\varepsilon^{2}}
+\end{equation}
+
+Porém substituindo isto em nossa função de onda teríamos:
+
+\begin{equation}
+\psi_{par}\left(\varepsilon\right)=Ce^{\varepsilon^{2}}\cdot e^{-\varepsilon^{2}/2}
+\end{equation}
+
+Porém este é o comportamento assintótico que estávamos tentando evitar, afinal, supomos que o comportamento assintótico fosse dado pelo exponencial $e^{-\varepsilon^{2}/2}$ e que a função $h\left(\varepsilon\right)$ não contribuiria pro comportamento assintótico. Analisamos apenas para os termos pares, mas sou levado a concluir que o comportamento para os termos ímpares é análogo. 
+
+Ou seja, toda esta seção de cálculos é para mostrar que não queremos que o somatório se estenda para $j\rightarrow\infty$ pois não queremos que $h\left(\varepsilon\right)$ tenha influência no regime assintótico de $\psi$$\left(\varepsilon\right)$. A solução é então truncar a série, isto é, propor um valor máximo de $j$ (que vamos chamar de $n$) onde a formula de recursão resulte em $a_{n+2}=0$, isto é, vai truncar a série $h_{par}$ ou $h_{impar}$ e a outra série deve ser zero deste o começo: $a_{1}=0$ se estamos com uma série par, ou $a_{0}=0$ se estamos com uma série impar\footnote{Acredito que a necessidade de zerarmos a outra série desde o começo se deve mais a questões físicas que matemáticas, não que seja necessariamente impossível de uma perspectiva matemática que possamos truncar as séries pares e ímpares em diferentes valores de $j$ para cada uma.}.
+
+Então para $j=n$, uma solução fisicamente aceitável deve ser:
+
+\begin{align}
+a_{n+2} & =\frac{\left(2n-K+1\right)}{\left(n+2\right)\left(n+1\right)}a_{n}\\
+0 & =\frac{\left(2n-K+1\right)}{\left(n+2\right)\left(n+1\right)}a_{n}\\
+0 & =2n-K+1
+\end{align}
+
+Ou então:
+
+\begin{equation}
+K=2n+1
+\end{equation}
+
+Recuperando adefinição de $K\eqcirc\frac{2E}{\hbar\omega},$ temos:
+
+\begin{equation}
+\frac{2E}{\hbar\omega}=2n+1\rightarrow E=\left(n+\frac{1}{2}\right)\hbar\omega
+\end{equation}
+
+Ou seja, recuperamos a condição de quantização fundamental\footnote{E podemos observar que se truncassemos as séries em diferentes valores de $j$ (por exemplo $n_{p}$ e $n_{i}$ para as séries pares e ímpares), teríamos duas condições que $K$ deveria satisfazer.}. Para os valoers permitidos de $K$ temos então agora a seguinte fórmula de recursão:
+
+\begin{equation}
+a_{j+2}=\frac{\left(2j-K+1\right)}{\left(j+2\right)\left(j+1\right)}a_{j}=\frac{\left(2j-\left(2n+1\right)+1\right)}{\left(j+2\right)\left(j+1\right)}a_{j}=\frac{2\left(j-n\right)}{\left(j+2\right)\left(j+1\right)}a_{j}
+\end{equation}
+
+Se $n=0$, então estamos com a série par (devemos definir $a_{1}=0$ para acabar com a série ímpar) e ficamos com apenas um termo na série o próprio $a_{0}$. Por exemplo. para $a_{2}$ sendo $j=n=0$:
+
+\begin{equation}
+a_{2}=\frac{2\left(0-0\right)}{\left(0+2\right)\left(0+1\right)}a_{0}=0
+\end{equation}
+
+Consequente todos os termos pares futuros, assim os ímpares serão $0$, ou seja para qualquer $j>0$, temos $a_{j}=0$. Então se escrevermos $h_{n}\left(\varepsilon\right)$ onde $n$ sendo onde escolhemos truncar a série, então $h_{0}\left(\varepsilon\right)=a_{0}$ e:
+
+\begin{equation}
+\psi_{0}\left(\varepsilon\right)=h_{0}\left(\varepsilon\right)e^{-\varepsilon^{2}/2}=a_{0}e^{-\varepsilon^{2}/2}
+\end{equation}
+
+De forma análoga se escolhermos $n=1$, então $a_{0}=0$ é necessário para zerarmos toda a série par, temos $h_{1}\left(\varepsilon\right)=a_{1}\varepsilon$ e $a_{j}=0$ para todo $j>1$. Assim como a função de onda se torna $\psi_{1}\left(\varepsilon\right)=a_{1}\varepsilon e^{-\varepsilon^{2}/2}$, e assim sucessivamente. De forma geral podemos dizer que $h_{n}\left(\varepsilon\right)$ será um polinômio de gray $n$ em $\varepsilon$ envolvendo somente termos pares se $n$ é um inteiro par, e somente potência ímpar se $n$ é um inteiro ímpar.
+
+Estes polinômios, ignorando o fator geral ($a_{0}$ ou $a_{1}$) são chamados de polinômios de Hermite, $H_{n}\left(\varepsilon\right)$. Por tradição, um termo multiplicativo arbitrário é escolhido para que o coeficiente de ordem mais alta de $\varepsilon$ seja $2^{n}$, com essa convenção, e normalizando os estados estacionários para um oscilador harmônico nós temos\footnote{Griffhits menciona que não vai demonstrar a normalização aqui e passa uma referência para quem estiver interessado (seção 13 do livro Quantum Mechanics, terceira edição do Leonard Schiff). Como este já é o segundo método que estamos vendo para o mesmo potencial, eu vou seguir a didática adotada pelo livro e também não vou demonstrar, estou mais interessado em explorar diferentes potenciais. Além do mais, pela forma com que nos foi apresentado os argumentos desta sessão, pela ausência de exemplos e também falta de problemas propostos (apenas 3 e nehum deles sendo marcado com um asterisco, ou seja, considerado como fundamental pra aprendizagem), acredito que esta sessão é de menor relevância neste momento da aprendizagem.}:
+
+\begin{equation}
+\psi_{n}\left(x\right)=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{2^{n}n!}}H_{n}\left(\varepsilon\right)e^{-\varepsilon^{2}/2}
+\end{equation}
+
+Oh seja:
+
+\begin{equation}
+\psi_{n}\left(x\right)=a_{n}H_{n}\left(\varepsilon\right)e^{-\varepsilon^{2}/2}
+\end{equation}
+
+sendo $a_{n}=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\frac{1}{\sqrt{2^{n}n!}}$ o fator de normalização associado à função de onda $n$ e o polinômio de Hermite de ordem $n$.
+\end{document}

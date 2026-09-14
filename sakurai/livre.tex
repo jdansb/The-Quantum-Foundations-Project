@@ -1,0 +1,334 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage[]
+ {hyperref}
+\begin{document}
+\title{Partícula livre}
+
+\maketitle
+Vamos agora para o caso que deveria ser o mais simples de todo, quando temos $V\left(x\right)=0$ em todo espaço. Classicamente isso levaria a um momento constante, mas na mecânica quântica, o problema é mais sutil. Retomamos a equação de Scrodinger independente do tempo, sendo $k\equiv\sqrt{2mE}/\hbar$:
+
+\begin{align}
+-\frac{\hbar^{2}}{2m}\frac{d^{2}\psi}{dx^{2}}+V\psi & =E\psi\\
+\frac{d^{2}}{dx^{2}} & =-\frac{2mE}{\hbar^{2}}\psi\\
+\frac{d^{2}}{dx^{2}} & =-k^{2}\psi
+\end{align}
+
+Temos um caso parecido com o interior do poço onde o potencial também é zero. Mas escrevendo agora a solução geral como:
+
+\begin{equation}
+\psi\left(x\right)=Ae^{ikx}+Be^{-ikx}
+\end{equation}
+
+Então a silução geral é:
+
+\begin{align}
+\Psi\left(x,t\right) & =\psi\left(x\right)e^{-iEt/\hbar}\\
+ & =\left[Ae^{ikx}+Be^{-ikx}\right]e^{-iEt/\hbar}\\
+ & =Ae^{ik\left(x-\frac{Et}{k\hbar}\right)}+Be^{-ik\left(x+\frac{Et}{k\hbar}\right)}
+\end{align}
+
+Agora como $\frac{Et}{k\hbar}=\frac{\hbar^{2}k^{2}}{2m}\frac{t}{k\hbar}=\frac{\hbar k}{2m}t$, então:
+
+\begin{equation}
+\Psi\left(x,t\right)=Ae^{ik\left(x-\frac{\hbar k}{2m}t\right)}+Be^{-ik\left(x+\frac{\hbar k}{2m}t\right)}\label{eq:livre}
+\end{equation}
+
+Agora qualquer função que dependa de $x$ e $t$ na combinação $x\pm vt$ como por exemplo $f\left(x\right)=\cos\left(x+vt\right)$ representa uma onda (no sentido mínomo) que não muda de formato viajando com velocidade $v$ na direção $\mp x$. Isso também implica que um ponto fixo na onda (um máximo ou mínimo por exemplo), corresponde a um argumento constante $c=x\pm vt$. Por exemplo, o máximo de $f\left(x\right)$ ocorre quando temos $x+vt=0$. 
+
+Então lembrando que em $e^{i\theta}$o argumento é $\theta$, analisando os argumentos em \ref{eq:livre}, o primeiro termo se move para a esquerda ($x'=kx$ e $v'=\frac{\hbar k^{2}}{2m}$), o segundo termo se move para a direita ($x'=-kx$ e $v'=\frac{\hbar k^{2}}{2m})$, como temos $-v'$ então ele se move para $-x'=kx$). Temos então duas ondas:
+
+\begin{alignat}{1}
+\psi_{E}= & e^{ik\left(x-\frac{\hbar k}{2m}t\right)}=e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}\\
+\psi_{D}= & e^{-ik\left(x+\frac{\hbar k}{2m}t\right)}=e^{i\left(-kx-\frac{\hbar k^{2}}{2m}t\right)}
+\end{alignat}
+
+Então aqui podemos ver mais explicitamente que sempre temos $v'=\frac{\hbar k^{2}}{2m}>0$, logo sempre temos também $v'<0$. No primeiro caso como $-x'=-kx$ então viaja no sentido negativo (esquerda) e no segundo caso como $-x'=-\left(-kx\right)$ então viaja no sentido positivo (direita). Se ao invés de utilizarmos $k=\sqrt{2mE}/\hbar>0$ como fizemos originalmente, se agora redefinirmos $k$ como:
+\begin{equation}
+k=\pm\sqrt{2mE}/\hbar\quad\text{com}\quad\begin{cases}
+k>0 & \text{viajando para direita}\\
+k<0 & \text{viajando para esquerda}
+\end{cases}
+\end{equation}
+
+Então dependendo do valor de $k$ podemos ter uma onda indo para a direita ou para a esquerda. Uma solução mais genérica para a equação de Schroedinger com a partícula livre é então:
+
+\begin{equation}
+\Psi_{k}\left(x,t\right)=A_{k}e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}
+\end{equation}
+
+Evidentemente, uma solução geral vai ser uma sobreposição para diferentes valores de $k$ . Algumas observações devem ser feitas. O comprimento de onda é o valor $\lambda=x'$ para quando $2\pi=\left|k\right|x'$, pois isso implica que por exemplo, se temos como ponto de partida um mínimo, após percorrermos uma distância $\lambda$ na dimensão $x$, estaremos em um mínimo novamente. Então se $\left|k\right|x=\left|k\right|\lambda=2\pi$, o comprimento de onda é $\lambda=2\pi/\left|k\right|$. 
+
+A outra observação que deve ser feita, é que se o argumento é constante:
+
+\begin{align}
+kx-\frac{\hbar k^{2}}{2m}t & =c\\
+x & =\frac{c}{k}+\frac{\hbar k}{2m}t\\
+\frac{dx}{dt} & =\frac{\hbar k}{2m}
+\end{align}
+
+Ou seja, a velocidade de fase desta onda é 
+\begin{equation}
+v_{q}=\frac{\hbar k}{2m}=\frac{\hbar}{2m}\frac{\sqrt{2mE}}{\hbar}=\sqrt{\frac{E}{2m}}
+\end{equation}
+
+O que nos leva que a energia é:
+
+\begin{equation}
+E=2mv^{2}_{q}
+\end{equation}
+
+Agora no caso clássico de pura energia cinética (já que $V=0$) temos:
+
+\begin{equation}
+E=\frac{mv^{2}_{c}}{2}
+\end{equation}
+
+Logo, se isolarmos temos:
+
+\begin{equation}
+v_{q}=\frac{1}{\sqrt{2}}\sqrt{\frac{E}{m}},\qquad v_{c}=\sqrt{2}\sqrt{\frac{E}{m}}\rightarrow v_{q}=\frac{v_{c}}{2}
+\end{equation}
+
+Aparentemente, a onda mecânica viaja com metade da velocidade da partícula que ela representa. E pior do que isso, esta função de onda não é normalizável. Vejamos:
+
+\begin{align}
+\int^{+\infty}_{-\infty}\Psi^{*}_{k}\Psi_{k}dx= & \int^{+\infty}_{-\infty}A_{k}e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}A^{*}_{k}e^{-i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dx\\
+= & \int^{+\infty}_{-\infty}\left|A_{k}\right|^{2}e^{0}dx\\
+= & \int^{+\infty}_{-\infty}\left|A_{k}\right|^{2}dx\\
+= & \lim_{a\rightarrow\infty}\int^{a}_{-a}\left|A_{k}\right|^{2}dx\\
+= & \lim_{a\rightarrow\infty}\left|A_{k}\right|^{2}\left(2a\right)\\
+= & \infty
+\end{align}
+
+Ou seja, esta integral não resulta em um valor finito normalizável, mais especificamente, ela diverge\footnote{Chamamos de integral própria aquela com limites finitos. Quando algum limite é infinito, a integral é dita imprópria e é definida por meio de um limite. Ela converge apenas se esse limite for finito (\href{https://www.statisticshowto.com/integral-diverges-converges/}{exemplo}).}. Então não há valor de $A_{k}$ que viabilize a normalização $\int^{+\infty}_{-\infty}\Psi^{*}_{k}\Psi_{k}dx=1$.
+
+Neste caso então, de particulas livres, as soluções separáveis não representam um estado físico realizável. Uma partícula livre não pode existir em um estado estacionário, ou de outra forma, não há partícula livre com um estado definido de energia.
+
+Porém, a solução geral da equação de Schroedinger dependente do tempo ainda é uma combinação linear de soluções. Porém agora, não temos as condições de contorno como no caso do poço quadrado infinito que nos permitiu discretizar a energia $E_{n}$ (e consequentejente $k_{n}$). Assim sendo agora devemos tratar $k$ com uma variável contínua. Logo ao invés de um somatório teremos uma integral:
+
+\begin{align}
+\Psi\left(x,t\right) & =\int^{+\infty}_{-\infty}\Psi_{k}\left(x,t\right)dk\\
+ & =\int^{+\infty}_{-\infty}A_{k}e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk
+\end{align}
+
+Onde reescrevemos $A_{k}=\frac{1}{\sqrt{2\pi}}\phi\left(k\right)$ por questões de conveniência. Agora esta função de ponde pode ser normalizada um $\phi\left(k\right)$ apropriado, esta solução é um pacote de onda\footnote{Ondas senoidais estendem-se por todo o espaço e, portanto, não são normalizáveis. Entretanto, superposições dessas ondas produzem interferência que permite a normalização e a localização, isto é, a propriedade de um estado quântico segundo a qual a densidade de probabilidade é apreciável apenas em uma região finita do espaço.}. 
+
+Problema genéricos nos fornecem $\Psi\left(x,0\right)$ e queremos encontrar $\Psi\left(x,t\right)$. Para isso então precisamos determinar $\phi\left(k\right)$ de forma que a função de onda inicial seja:
+
+\begin{equation}
+\Psi\left(x,0\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{ikx}dk
+\end{equation}
+
+Para isso utilizamos o Teorema de Pancherel\footnote{O problema 2.19 ajuda a demonstrar o teorema. Mas este problema é duas estrelas, então não resolverei. Além disso, esta é uma questão mais matemática que física então me darei o luxo de seguir o procedimento do livro e apenas aceitar o teorema por agora, mas é uma boa sugestão a ser resolvida no futuro.}:
+
+\begin{equation}
+f\left(x\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}F\left(k\right)e^{ikx}\Longleftrightarrow F\left(k\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}f\left(x\right)e^{-ikx}dx
+\end{equation}
+
+Lembrando que $\Longleftrightarrow$ é um símbolo de equivalência. Isto é, $A\Longleftrightarrow B$ significa que A implica B e que B implica A. Onde $F\left(k\right)$ é a transforma de Fourier de $f\left(x\right)$ e $f\left(x\right)$ é a inversa da transforma de Fourier de $F\left(k\right).$Entre as restrições nas funções as inregrais devem exisir, o que é garantido em nosso propósito pelo requisito que $\Psi\left(x,0\right)$ deve ser normalizável. 
+
+Então se $f\left(x\right)=\Psi\left(x,0\right)$ e $F\left(k\right)=\phi\left(k\right)$ temos que:
+
+\begin{equation}
+\Psi\left(x,0\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{ikx}dk\Longleftrightarrow\phi\left(k\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\Psi\left(x,0\right)e^{-ikx}dx
+\end{equation}
+
+\textbf{Exemplo: Uma partícula livre esta inicialmente localizada entre $-a<x<a$ é lançada no instante $t=0$:}
+
+\begin{equation}
+\Psi\left(x,0\right)=\begin{cases}
+A & -a<x<a\\
+0 & \text{outra forma}
+\end{cases}
+\end{equation}
+
+\textbf{Onde $A$ e a são constantes reais positivos. Encontre $\Psi\left(x,t\right)$:}
+
+Primeiro precisamos obter $A$ normalizando:
+
+\begin{equation}
+1=\int^{+\infty}_{-\infty}\left|\Psi\left(x,0\right)\right|^{2}dx=A^{2}\int^{a}_{-a}dx=A^{2}2a\rightarrow A=\frac{1}{\sqrt{2a}}
+\end{equation}
+
+Lembrando que $\Psi\left(x,0\right)=0$ fora da região definida por entre $-a$ e $a$. Agora calculamos $\phi$$\left(k\right)$ usando o Teorma de Pancherel:
+
+\begin{align}
+\phi\left(k\right) & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\Psi\left(x,0\right)e^{-ikx}dx\\
+ & =\frac{A}{\sqrt{2\pi}}\int^{+a}_{-a}e^{-ikx}dx\\
+ & =\frac{A}{\sqrt{2\pi}}\left[\frac{e^{-ikx}}{-ik}\right]^{+a}_{-a}\\
+ & =-\frac{1}{k2i\sqrt{\pi a}}\left(e^{-ika}-e^{ika}\right)\\
+ & =\frac{1}{k\sqrt{\pi a}}\left(\frac{e^{ika}-e^{-ika}}{2i}\right)\\
+ & =\frac{1}{\sqrt{\pi a}}\frac{\sin\left(ka\right)}{k}
+\end{align}
+
+A solução final é então:
+
+\begin{align}
+\Psi\left(x,t\right) & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk\\
+ & =\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\frac{1}{\sqrt{\pi a}}\frac{\sin\left(ka\right)}{k}e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk\\
+ & =\frac{1}{\pi\sqrt{2a}}\int^{+\infty}_{-\infty}\frac{\sin\left(ka\right)}{k}e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk
+\end{align}
+
+Essa integral não pode resolvida em termos de funções elementares, podemos avaliar numericamente\footnote{De fato, Griffhits mostra o resultado da avaliação numérica.}. 
+
+Agora podemos resolver o problema $2v_{q}=v_{c}$ . A ideia essencial é esta: um pacote de ondas é uma superposição de ondas sinoidais que a amplitude é modulada por $\psi$. O que corresponde a velocidade da particula não é a velocidade das ondas individuais (a velocidade de fase), mas a velocidade do pacote (a velocidade de grupo). Esta última, dependendo da natureza das ondas, pode ser maior, menor ou igual a velocidade de fase.
+
+O que queremos demonstrar agora é que para a função de onda de uma particula livre, a velocidade de grupo é o dobro da velocidade de fase, correspondendo a velocidade clássica da particula.
+
+\begin{equation}
+\Psi\left(x,t\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{i\left(kx-\frac{\hbar k^{2}}{2m}t\right)}dk
+\end{equation}
+
+Lembrando que, para $e^{i\theta}$, o argumento é $\theta$. Neste caso, para $\theta=k(x+vt)$, temos que o número de onda é $k=\frac{2\pi}{\lambda}$, pois, se $x'=\lambda$, então $kx'=2\pi$, isto é, ao percorrermos $x'$ distância no espaço, a oscilação se repete. Agora se fixarmos a fase em $\theta=0$, obtemos $0=kx+kvt$, ou seja, $x=-vt,$ e, consequentemente, $\dot{x}=-v$, onde o sinal negativo indica o sentido da propagação da onda. Logo, a velocidade de fase é $v_{\text{fase}}=|v|$. Por fim, podemos analisar a frequência considerando um ponto fixo no espaço, por exemplo $x=0$. Nesse caso, o argumento se torna $\theta(t)=kvt=\frac{2\pi}{\lambda}vt$.
+
+Se $v=\lambda/\text{s}$, o argumento varia de $2\pi$ a cada segundo, e o ciclo se repete uma vez por segundo. Se $v=2\lambda/\text{s}$, o ciclo se repete duas vezes por segundo. Assim, a frequência é $f=\frac{v}{\lambda}$, e a frequência angular será $\omega=kv$.
+
+No nosso caso temos então $\omega\left(k\right)=\frac{\hbar k^{2}}{2m}$. Porém o que discutiremos se aplica pra qualquer pacote de ondas, independente da relação de dispersão (a formula para $\omega$ como uma função de $k$). Vamos reescrever a função de onda como
+
+\begin{equation}
+\Psi\left(x,t\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{i\left(kx-\omega\left(k\right)t\right)}dk
+\end{equation}
+
+Suponhamos que $\phi\left(k\right)$ tenha um pico estreito em torno de $k_{0}$. Como $\phi(k)$ tende rapidamente a zero para valores de $k$ afastados de $k_{0}$, o integrando como um todo torna-se desprezível fora de uma pequena vizinhança desse ponto. Dessa forma, apenas valores de $k$ próximos de $k_{0}$ contribuem de maneira relevante para a integral.
+
+Consequentemente, basta conhecer o comportamento da relação de dispersão $\omega(k)$ nessa vizinhança, o que permite aproximá-la por uma expansão em série de Taylor em torno de $k_{0}$: 
+\begin{align}
+f\left(x\right) & =\sum^{\infty}_{n=0}\frac{f^{\left(n\right)}\left(a\right)}{n!}\left(x-a\right)^{n}\\
+\omega\left(k\right) & =\sum^{\infty}_{n=0}\frac{\omega^{\left(n\right)}\left(k_{0}\right)}{n!}\left(k-k_{0}\right)^{n}\\
+ & =\frac{\omega\left(k_{0}\right)}{0!}\left(k-k_{0}\right)^{0}+\frac{\omega'\left(k_{0}\right)}{1!}\left(k-k_{0}\right)+\sum^{\infty}_{n=2}\frac{\omega^{\left(n\right)}\left(k_{0}\right)}{n!}\left(k-k_{0}\right)^{n}
+\end{align}
+
+Que vamos aproximar apenas para :
+
+\begin{equation}
+\omega\left(k\right)\approx\omega_{0}+\omega_{0}'\left(k-k_{0}\right)
+\end{equation}
+
+Ond $\omega_{0}=\omega\left(k_{0}\right)$. Substituindo então e fazendo $s\equiv k-k_{0}$ ($\frac{ds}{dk}=1$) temos:
+
+\begin{equation}
+\omega\left(k\right)=\omega\left(s+k_{0}\right)\approx\omega_{0}+\omega'_{0}s
+\end{equation}
+
+E:
+
+\begin{align}
+\Psi\left(x,t\right)= & \frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(k\right)e^{i\left(kx-\omega\left(k\right)t\right)}dk\\
+\approx & \frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(s+k_{0}\right)e^{i\left(\left(s+k_{0}\right)x-\left(\omega_{0}+\omega'_{0}s\right)t\right)}ds\\
+\approx & \frac{e^{i\left(k_{0}x-\omega_{0}t\right)}}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(s+k_{0}\right)e^{is\left(x-\omega'_{0}t\right)}ds
+\end{align}
+
+Então primeiro, temos uma onda sinoidal na frente da integral viajando com uma velocidade $\omega_{0}/k_{0}$. Esta é então nossa velocidade de fase, avaliando em $k=k_{0}$ temos:
+
+\begin{equation}
+v_{f}=\frac{\omega}{k}=\frac{\hbar k^{2}}{2m}\frac{1}{k}=\frac{\hbar k}{2m}=v_{q}
+\end{equation}
+Agora essa onda é modulada, isto é, sua amplitude varia de acordo com outra onda. Se pensamos em algo como:
+
+\begin{equation}
+F\left(w\right)\equiv\int^{+\infty}_{-\infty}f\left(w\right)e^{isw}ds
+\end{equation}
+
+Pois como é uma integral definida em $s$, não terá a variável $s$ após integrarmos. Mas podemos sermos ainda mais rigorosos e avaliar a integral. Para isso vamos retomar a integral:
+
+\begin{equation}
+I=\int^{+\infty}_{-\infty}\phi\left(s+k_{0}\right)e^{is\left(x-\omega'_{0}t\right)}ds
+\end{equation}
+
+Se trocarmos $y=\left(x-\omega'_{0}t\right)$:
+
+\begin{equation}
+I=\int^{+\infty}_{-\infty}\phi\left(s+k_{0}\right)e^{isy}ds
+\end{equation}
+
+A transformada de Fourier é (\href{https://en.wikipedia.org/wiki/Fourier_transform}{definicão}):
+
+\begin{equation}
+F\left(y\right)=\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}f\left(x\right)e^{iyx}dx
+\end{equation}
+
+Fazemos então uma mudança de variável em nosso integrando $I$: $x'=s+k_{0}$ ($ds=dx$'):
+
+\begin{align}
+I & =\int^{+\infty}_{-\infty}\phi\left(x'\right)e^{i\left(x'-k_{0}\right)y}dx'\\
+ & =\sqrt{2\pi}e^{-ik_{0}y}\left[\frac{1}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(x'\right)e^{ix'y}dx'\right]\\
+ & =e^{-ik_{0}y}\sqrt{2\pi}F\left(y\right)
+\end{align}
+
+Ou seja, retomando $y=x-\omega'_{0}t$:
+
+\begin{equation}
+I=e^{-ik_{0}\left(x-\omega'_{0}t\right)}\sqrt{2\pi}F\left(x-\omega'_{0}t\right)
+\end{equation}
+
+Onde $F\left(x-\omega'_{0}t\right)$ é a transformada de fourier de $\phi\left(k\right)$, sendo $\phi\left(k\right)$ concentrada em torno de $k_{0}$ (espaço de números de onda, $m^{-1}$), $F\left(x-\omega'_{0}t\right)$ define uma envoltória localizada no espaço real (espaço de posições, $m$). Ou ainda de forma mais geral, vamos escrever apenas $\sqrt{2\pi}G\left(x-\omega'_{0}t\right)=I$, assim ficamos com:
+
+\begin{align}
+\Psi\left(x,t\right) & \approx\frac{e^{i\left(k_{0}x-\omega_{0}t\right)}}{\sqrt{2\pi}}\int^{+\infty}_{-\infty}\phi\left(s+k_{0}\right)e^{is\left(x-\omega'_{0}t\right)}ds\\
+ & \approx\frac{e^{i\left(k_{0}x-\omega_{0}t\right)}}{\sqrt{2\pi}}\sqrt{2\pi}G\left(x-\omega'_{0}t\right)\\
+ & \approx e^{i\left(k_{0}x-\omega_{0}t\right)}G\left(x-\omega'_{0}t\right)
+\end{align}
+
+Onde a exponencial é chamada de onda portadora e $G\left(x-\omega'_{0}t\right)$ de evoltória do pacote. E agora a velocidade de grupo é determinada pela propagação da envoltória $G\left(x-\omega'_{0}t\right)$ onde $v_{g}=\omega'_{0}$ ou avaliando em $k_{0}=k$:
+
+\begin{equation}
+v_{g}=\frac{d\omega}{dk}=\frac{d}{dk}\left(\frac{\hbar k^{2}}{2m}\right)=\frac{\hbar k}{m}=v_{c}
+\end{equation}
+
+Ou seja, esta velocidade de grupo corresponde a velocidade clássica calculada anteriormente e temos:
+
+\begin{equation}
+v_{g}=2v_{f}
+\end{equation}
+
+\textbf{Exemplo: mostre que $\left[Ae^{ikx}+Be^{-ikx}\right]$ e $\left[C\cos kx+D\sin kx\right]$ são formas equivalentes de escrever a mesma função de $x$ e determine as constantes $C$ e $D$ em termos de $A$ e $B$ (e vice versa).}
+
+\begin{align}
+Ae^{ikx}+Be^{-ikx} & =A\left(\cos kx+i\sin kx\right)+B\left(\cos\left(-kx\right)+i\sin\left(-kx\right)\right)\\
+ & =A\left(\cos kx+i\sin kx\right)+B\left(\cos\left(kx\right)-i\sin\left(kx\right)\right)\\
+ & =\left(A+B\right)\cos\left(kx\right)+\left(iA-Bi\right)\sin\left(kx\right)\\
+ & =C\cos\left(kx\right)+D\sin\left(kx\right)
+\end{align}
+
+Evidentemente já temos $C=A+B$ e $D=i\left(A-B\right)$ Se fizermos:
+
+\begin{align}
+C-iD & =A+B-i\left(i\left(A-B\right)\right)\\
+C-iD & =A+B+A-B\\
+\frac{C-iD}{2} & =A
+\end{align}
+
+Ou:
+
+\begin{align}
+C+iD & =A+B+i\left(i\left(A-B\right)\right)\\
+C+iD & =A+B-A+B\\
+\frac{C+iD}{2} & =B
+\end{align}
+
+\textbf{Exemplo: Uma partícula tem a função de onda inicial:}
+
+\[
+\Psi\left(x,0\right)=Ae^{-ax^{2}}
+\]
+
+\textbf{(a) Normalize $\Psi\left(x,0\right)$}
+
+\textbf{(b) Encontre $\Psi\left(x,t\right)$}
+
+\textbf{(c) Encontre $\left|\Psi\left(x,t\right)\right|$ e expresse o resultado em termos da quantidade $\omega\equiv\sqrt{a/\left[1+\left(2\hbar at/m\right)^{2}\right]}$. }
+
+\textbf{(d) Encontre $\left\langle x\right\rangle $, $\left\langle p\right\rangle $, $\left\langle x^{2}\right\rangle $, $\left\langle p^{2}\right\rangle $, $\sigma_{x}$ e $\sigma_{p}$.}
+
+\textbf{(e) O princípio da incerteza se mantém? Em que instante $t$o sistema mais se aproxima do limite?}
+\end{document}
