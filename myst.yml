@@ -16,14 +16,22 @@ project:
     - file: fenda.tex
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
-    - title: Appendix
+    - title: Other
       children:
         - file: dupla.tex
-        - title: Classes Notes
+#    - title: Class notes
+#      children:
+        - title: Quantum Mechanics 3
           children:
           - file: classes/g1.tex
           - file: classes/g2.tex
           - file: classes/g3.tex
+          - file: classes/g4.tex
+          - file: classes/g5.tex
+          - file: classes/g6.tex
+#        - title: Quantum Mechanics 2
+#          children:
+#          - file: classes/mq21.tex
     - title: Undergrad Thesis
       children:
         - file: nielsen/introducao.tex

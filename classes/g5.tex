@@ -1,0 +1,546 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{wasysym}
+\usepackage{babel}
+\begin{document}
+\title{Problem set 5}
+
+\maketitle
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\subsection{Problem 1}
+
+\textbf{The operator $D\left(z\right)=\exp\left[za^{\dagger}-z^{*}a\right]$, for a harmonic oscillator or a single field mode, is a displacement operator in phase space. This is apparent from the relations}
+
+\textbf{
+\begin{align*}
+D\left(q_{0},p_{0}\right)QD^{-1}\left(q_{0},p_{0}\right) & =Q-q_{0}\mathbb{I}\\
+D\left(q_{0},p_{0}\right)PD^{-1}\left(q_{0},p_{0}\right) & =P-p_{0}\mathbb{I}
+\end{align*}
+}
+
+\textbf{where $D\left(z\right)=\exp\left[i\left(p_{0}Q-q_{0}P\right)/\hbar\right]$. Determine the composition law for the product of two successive displacements in phase space, $D\left(z_{1}\right)D\left(z_{1}\right)$. Why is the result not simply equal to $D\left(z_{1}+z_{2}\right)$?}
+
+Temos o operador $D\left(z\right)=\exp\left(za^{\dagger}-z^{*}a\right)$ e queremos calcular $D\left(z_{1}\right)D\left(z_{2}\right)$. Como temos $\left[a,a^{\dagger}\right]=\mathbb{I}$ e de acordo com a fórmula de Zasenhaus (uma fórmula de uma popular série de fórmulas conhecidas pelo nome genérico de fórmulas Baker-Campbell-Hausdorff - BCH): \cite{Anu:2013}:
+
+\[
+e^{t\left(A+B\right)}=e^{tA}e^{tB}e^{-\frac{t^{2}}{2!}\left[A,B\right]}e^{\frac{t^{3}}{3!}\left(2\left[B,\left[A,B\right]\right]+\left[A,\left[A,B\right]\right]\right)}\dots
+\]
+
+Logo:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =\exp\left(\left(z_{1}+z_{2}\right)a^{\dagger}-\left(z_{1}+z_{2}\right)^{*}a\right)\\
+ & =\exp\left(\left(z_{1}+z_{2}\right)a^{\dagger}-\left(z^{*}_{1}+z^{*}_{2}\right)a\right)\\
+ & =\exp\left(\left[z_{1}a^{\dagger}-z^{*}_{1}a\right]+\left[z_{2}a^{\dagger}-z^{*}_{2}a\right]\right)
+\end{align*}
+
+Sendo $A=z_{1}a^{\dagger}-z^{*}_{1}a$ e $B=z_{2}a^{\dagger}-z^{*}_{2}a$ , calculando o comutador:
+
+\begin{align*}
+\left[z_{1}a^{\dagger}-z^{*}_{1}a,z_{2}a^{\dagger}-z^{*}_{2}a\right] & =\left(z_{1}a^{\dagger}-z^{*}_{1}a\right)\left(z_{2}a^{\dagger}-z^{*}_{2}a\right)-\left(z_{2}a^{\dagger}-z^{*}_{2}a\right)\left(z_{1}a^{\dagger}-z^{*}_{1}a\right)\\
+\left[A,B\right] & =\left(z_{2}z_{1}a^{\dagger}a^{\dagger}-z^{*}_{2}z_{1}a^{\dagger}a-z_{2}z^{*}_{1}aa^{\dagger}+z^{*}_{1}az^{*}_{2}a\right)-\left(z_{1}z_{2}a^{\dagger}a^{\dagger}-z^{*}_{1}z_{2}a^{\dagger}a-z^{*}_{2}az_{1}a^{\dagger}+z^{*}_{2}az^{*}_{1}a\right)\\
+ & =-z^{*}_{2}z_{1}a^{\dagger}a-z_{2}z^{*}_{1}aa^{\dagger}+z^{*}_{1}z_{2}a^{\dagger}a+z^{*}_{2}az_{1}a^{\dagger}\\
+ & =\left(z^{*}_{1}z_{2}-z^{*}_{2}z_{1}\right)a^{\dagger}a+\left(z^{*}_{2}z_{1}-z_{2}z^{*}_{1}\right)aa^{\dagger}\\
+ & =\left(z^{*}_{2}z_{1}-z_{2}z^{*}_{1}\right)aa^{\dagger}-\left(z^{*}_{2}z_{1}-z^{*}_{1}z_{2}\right)a^{\dagger}a\\
+ & =\left(z^{*}_{2}z_{1}-z_{2}z^{*}_{1}\right)\left(aa^{\dagger}-a^{\dagger}a\right)\\
+ & =\left(z^{*}_{2}z_{1}-z_{2}z^{*}_{1}\right)\left[a,a^{\dagger}\right]\\
+ & =z^{*}_{2}z_{1}-z_{2}z^{*}_{1}
+\end{align*}
+
+Então $\left[B,\left[A,B\right]\right]=\left[A,\left[A,B\right]\right]=0$, de forma que ficamos apenas com:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =e^{\left(z_{1}a^{\dagger}-z^{*}_{1}a\right)a^{\dagger}}e^{\left(z_{2}a^{\dagger}-z^{*}_{2}a\right)a}e^{-\frac{1}{2}\left(z^{*}_{2}z_{1}-z_{2}z^{*}_{1}\right)}
+\end{align*}
+
+E pela definição$D\left(z\right)=\exp\left(za^{\dagger}-z^{*}a\right)$, logo:
+
+\[
+D\left(z_{1}+z_{2}\right)=e^{\frac{1}{2}\left(z_{2}z^{*}_{1}-z^{*}_{2}z_{1}\right)}D\left(z_{1}\right)D\left(z_{2}\right)
+\]
+
+Abrindo os números imaginários $z_{i}=u_{i}+iv_{i}$, então:
+
+\begin{align*}
+z_{2}z^{*}_{1}-z^{*}_{2}z_{1} & =\left(u_{2}+iv_{2}\right)\left(u_{1}-iv_{1}\right)-\left(u_{2}-iv_{2}\right)\left(u_{1}+iv_{1}\right)\\
+ & =\left(u_{2}u_{1}-iu_{2}v_{1}+iv_{2}u_{1}+v_{2}v_{1}\right)-\left(u_{2}u_{1}+iu_{2}v_{1}-iv_{2}u_{1}+v_{1}v_{2}\right)\\
+ & =2i\left(v_{2}u_{1}-u_{2}v_{1}\right)
+\end{align*}
+
+De orma que:
+
+\[
+D\left(z_{1}+z_{2}\right)=e^{i\left(v_{2}u_{1}-u_{2}v_{1}\right)}D\left(z_{1}\right)D\left(z_{2}\right)
+\]
+
+Logo dois doslocamentos na sequência é quase a mesma coisa que fazer um único deslocamento, a única diferença é uma fase. Outra forma de resolver esta questão é usando a fórmula:
+
+\[
+e^{t\left(A+B\right)}=e^{tA}e^{tB}e^{-\frac{t^{2}}{2!}\left[A,B\right]}e^{\frac{t^{3}}{3!}\left(2\left[B,\left[A,B\right]\right]+\left[A,\left[A,B\right]\right]\right)}\dots
+\]
+
+Então:
+
+\begin{align*}
+D\left(z\right) & =\exp\left(\left[za^{\dagger}\right]+\left[-z^{*}a\right]\right)\\
+ & =e^{za^{\dagger}}e^{-z^{*}a}e^{-\frac{1}{2}\left[za^{\dagger},-z^{*}a\right]}e^{\frac{1}{3!}\left(2\left[-z^{*}a,\left[za^{\dagger},-z^{*}a\right]\right]+\left[za^{\dagger},\left[za^{\dagger},-z^{*}a\right]\right]\right)}\dots
+\end{align*}
+
+E como:
+
+\begin{align*}
+\left[za^{\dagger},-z^{*}a\right] & =za^{\dagger}\left(-z^{*}a\right)-\left(-z^{*}a\right)za^{\dagger}=\left|z\right|^{2}\left[a,a^{\dagger}\right]=\left|z\right|^{2}
+\end{align*}
+
+Ficamos com:
+
+\begin{align*}
+D\left(z\right) & =e^{za^{\dagger}}e^{-z^{*}a}e^{-\frac{1}{2}\left|z\right|^{2}}e^{\frac{1}{3!}\left(2\left[-z^{*}a,\left|z\right|^{2}\right]+\left[za^{\dagger},\left|z\right|^{2}\right]\right)}\dots\\
+ & =e^{za^{\dagger}}e^{-z^{*}a}e^{-\left|z\right|^{2}/2}
+\end{align*}
+
+Ainda podemos fazer:
+
+\begin{align*}
+D\left(z\right) & =\exp\left(\left[-z^{*}a\right]+\left[za^{\dagger}\right]\right)\\
+ & =e^{-z^{*}a}e^{za^{\dagger}}e^{-\frac{1}{2}\left[-z^{*}a,za^{\dagger}\right]}e^{\frac{1}{3}\left(2\left[za^{\dagger},\left[-z^{*}a,za^{\dagger}\right]\right]+\left[-z^{*}a,\left[-z^{*}a,za^{\dagger}\right]\right]\right)}\dots\\
+ & =e^{-z^{*}a}e^{za^{\dagger}}e^{\frac{1}{2}\left|z\right|^{2}}e^{\frac{t^{3}}{3!}\left(2\left[za^{\dagger},-\left|z\right|^{2}\right]+\left[-z^{*}a,-\left|z\right|^{2}\right]\right)}\\
+ & =e^{-z^{*}a}e^{za^{\dagger}}e^{\left|z\right|^{2}/2}
+\end{align*}
+
+Onde usamos o fato de que $\left[A,B\right]=AB-BA=-\left(BA-AB\right)=-\left[B,A\right]$. Temos então que:
+
+\[
+D\left(z\right)=e^{za^{\dagger}}e^{-z^{*}a}e^{-\left|z\right|^{2}/2}=e^{-z^{*}a}e^{za^{\dagger}}e^{\left|z\right|^{2}/2}
+\]
+
+E então:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =\exp\left(\left[\left(z_{1}+z_{2}\right)a^{\dagger}\right]+\left[-\left(z_{1}+z_{2}\right)^{*}a\right]\right)\\
+ & =\exp\left(\left[\left(z_{1}+z_{2}\right)a^{\dagger}\right]+\left[-\left(z^{*}_{1}+z^{*}_{2}\right)a\right]\right)\\
+ & =e^{\left(z_{1}+z_{2}\right)a^{\dagger}}e^{-\left(z^{*}_{1}+z^{*}_{2}\right)a}e^{-\frac{1}{2}\left[\left(z_{1}+z_{2}\right)a^{\dagger},-\left(z^{*}_{1}+z^{*}_{2}\right)a\right]}e^{\frac{t^{3}}{3!}\left(2\left[-\left(z^{*}_{1}+z^{*}_{2}\right)a,\left[\left(z_{1}+z_{2}\right)a^{\dagger},-\left(z^{*}_{1}+z^{*}_{2}\right)a\right]\right]+\left[\left(z_{1}+z_{2}\right)a^{\dagger},\left[\left(z_{1}+z_{2}\right)a^{\dagger},-\left(z^{*}_{1}+z^{*}_{2}\right)a\right]\right]\right)\dots}
+\end{align*}
+
+E então:
+
+\begin{align*}
+\left[\left(z_{1}+z_{2}\right)a^{\dagger},-\left(z^{*}_{1}+z^{*}_{2}\right)a\right] & =-\left(z_{1}+z_{2}\right)a^{\dagger}\left(z^{*}_{1}+z^{*}_{2}\right)a-\left(-\left(z^{*}_{1}+z^{*}_{2}\right)a\left(z_{1}+z_{2}\right)a^{\dagger}\right)\\
+ & =-\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)a^{\dagger}a+\left(z^{*}_{1}+z^{*}_{2}\right)\left(z_{1}+z_{2}\right)aa^{\dagger}\\
+ & =\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)\left(aa^{\dagger}-a^{\dagger}a\right)\\
+ & =\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)\left[a,a^{\dagger}\right]\\
+ & =\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)
+\end{align*}
+
+Dessa forma análogo ao caso anterior temos:
+
+\[
+\left[-\left(z^{*}_{1}+z^{*}_{2}\right)a,\left[\left(z_{1}+z_{2}\right)a^{\dagger},-\left(z^{*}_{1}+z^{*}_{2}\right)a\right]\right]=\left[-\left(z^{*}_{1}+z^{*}_{2}\right)a,\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)\right]=0
+\]
+
+E então:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =e^{\left(z_{1}+z_{2}\right)a^{\dagger}}e^{-\left(z^{*}_{1}+z^{*}_{2}\right)a}e^{-\frac{1}{2}\left(z_{1}+z_{2}\right)\left(z^{*}_{1}+z^{*}_{2}\right)}\\
+ & =e^{\left(z_{1}+z_{2}\right)a^{\dagger}}e^{-\left(z^{*}_{1}+z^{*}_{2}\right)a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}+z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}\\
+ & =e^{-\frac{1}{2}\left(z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}e^{\left(z_{1}+z_{2}\right)a^{\dagger}}e^{-\left(z^{*}_{1}+z^{*}_{2}\right)a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}
+\end{align*}
+
+E abrindo novamente:
+
+\begin{align*}
+e^{\left(z_{1}+z_{2}\right)a} & =e^{z_{1}a}e^{z_{2}a}e^{-\frac{1}{2}\left[z_{1}a,z_{2}a\right]}\dots=e^{z_{1}a}e^{z_{2}a}
+\end{align*}
+
+Então:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =e^{-\frac{1}{2}\left(z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}e^{\left(z_{1}+z_{2}\right)a^{\dagger}}e^{-\left(z^{*}_{1}+z^{*}_{2}\right)a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}\\
+ & =e^{-\frac{1}{2}\left(z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}e^{z_{1}a^{\dagger}}\left[e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}\right]e^{-z^{*}_{2}a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}
+\end{align*}
+
+Queremos agora inverter $e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}\rightarrow e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}$. Usando apenas $e^{\left(A+B\right)}=e^{A}e^{B}e^{-\frac{1}{2}\left[A,B\right]}$ porque jábemos que os outros termo zeram, então:
+
+\begin{align*}
+e^{\left(z_{2}a^{\dagger}-z^{*}_{1}a\right)} & =e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}e^{-\frac{1}{2}\left[z_{2}a^{\dagger},-z^{*}_{1}a\right]}=e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}e^{-\frac{z^{*}_{1}z_{2}}{2}}\\
+e^{\left(-z^{*}_{1}a+z_{2}a^{\dagger}\right)} & =e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{-\frac{1}{2}\left[-z^{*}_{1}a,z_{2}a^{\dagger}\right]}=e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{\frac{z^{*}_{1}z_{2}}{2}}
+\end{align*}
+
+Logo:
+
+\begin{align*}
+e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{\frac{z^{*}_{1}z_{2}}{2}} & =e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}e^{-\frac{z^{*}_{1}z_{2}}{2}}\\
+e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{z^{*}_{1}z_{2}} & =e^{z_{2}a^{\dagger}}e^{-z^{*}_{1}a}
+\end{align*}
+
+Substituindo então:
+
+\begin{align*}
+D\left(z_{1}+z_{2}\right) & =e^{-\frac{1}{2}\left(z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}e^{z_{1}a^{\dagger}}e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{z^{*}_{1}z_{2}}e^{-z^{*}_{2}a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}\\
+ & =e^{-\frac{1}{2}\left(z_{2}z^{*}_{1}-z_{1}z^{*}_{2}\right)}e^{z_{1}a^{\dagger}}e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{-z^{*}_{2}a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}
+\end{align*}
+
+Então o produto vai ser dado por:
+
+\begin{align*}
+D\left(z_{1}\right)D\left(z_{2}\right) & =e^{z_{1}a^{\dagger}}e^{-z^{*}_{1}a}e^{-\frac{1}{2}\left|z_{1}\right|^{2}}e^{z_{2}a^{\dagger}}e^{-z^{*}_{2}a}e^{-\frac{1}{2}\left|z_{2}\right|^{2}}\\
+ & =e^{z_{1}a^{\dagger}}e^{-z^{*}_{1}a}e^{z_{2}a^{\dagger}}e^{-z^{*}_{2}a}e^{-\frac{1}{2}\left(\left|z_{1}\right|^{2}+\left|z_{2}\right|^{2}\right)}\\
+ & =e^{\frac{1}{2}\left(z_{1}z^{*}_{2}+z_{2}z^{*}_{1}\right)}D\left(z_{1}+z_{2}\right)
+\end{align*}
+
+
+\subsection{Problem 2}
+
+\textbf{If the initial state vector of a harmonic oscillator is the coherent state, $\left|\Psi\left(0\right)\right\rangle =\left|z\right\rangle $, show that the state remains coherent, and the time evolution of $\left|\Psi\left(t\right)\right\rangle $ corresponds to a classical orbit in $\left(q_{0},p_{0}\right)$ space.}
+
+A demonstração que um estado coerente permanece coerente, e que sua evolução no tempo corresponde a uma órbita clássica no espaço $\left(q_{0},p_{0}\right)$ foi demonstrado na lista 4, mas repetirei o cálculo a seguir. Sendo então $\left|\alpha\right\rangle $ um estado coerente, é um auto estado do operador $\widehat{a}$, de forma que temos $\widehat{a}\left|\alpha\right\rangle =\alpha\left|\alpha\right\rangle $. O operador $\widehat{a}$ por sua vez é dado por:
+
+\[
+\widehat{a}=\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}
+\]
+
+Então, se $\alpha$ é um autovalor complexo, e por normalização temos $\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle =\alpha$, então os valores quânticos médios da posição e do momento são respectivamente $x_{0}=\left\langle \alpha\left|\widehat{x}\right|\alpha\right\rangle $ e $p_{0}=\left\langle \alpha\left|\widehat{p}\right|\alpha\right\rangle $ onde:
+
+\begin{align}
+\alpha & =\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle \\
+ & =\left\langle \alpha\left|\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}\left\langle \alpha\left|\widehat{x}\right|\alpha\right\rangle +\frac{i}{\sqrt{2\hbar m\omega}}\left\langle \alpha\left|\widehat{p}\right|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{i}{\sqrt{2\hbar m\omega}}p_{0}\label{eq:g5_4}
+\end{align}
+
+Queremos reescrever $\widehat{U}\left|\alpha\right\rangle $, onde $\widehat{U}=\widehat{U}\left(t-t_{0}\right)=\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]$. Calculando então $\widehat{U}^{\dagger}\widehat{a}\widehat{U}$:
+
+\begin{align*}
+\widehat{U}^{\dagger}\widehat{a}\widehat{U} & =\exp\left[\frac{i\left(t-t_{0}\right)}{\hbar}\widehat{H}\right]\widehat{a}\exp\left[-\frac{i\left(t-t_{0}\right)}{\hbar}\widehat{H}\right]\\
+ & =e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}}
+\end{align*}
+
+Onde $\widehat{A}=\widehat{H}$, $\widehat{B}=\widehat{a}$ e $\lambda=\frac{i\left(t-t_{0}\right)}{\hbar}$. Esse produto é dado por outra das fórmulas Baker-Hausdorff, conforme equação:
+
+\[
+e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}}=\widehat{B}+\lambda\left[\widehat{A},\widehat{B}\right]+\frac{\lambda^{2}}{2!}\left[\widehat{A},\left[\widehat{A},\widehat{B}\right]\right]+\frac{\lambda^{3}}{3!}\left[\widehat{A},\left[\widehat{A},\left[\widehat{A},\widehat{B}\right]\right]\right]+\dots
+\]
+
+E como:
+
+\begin{align*}
+\widehat{a}^{\dagger}\widehat{a} & =\left(\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}-\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right)\left(\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right)\\
+ & =\left(\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\widehat{x}\widehat{p}-\frac{i}{2\hbar}\widehat{p}\widehat{x}+\frac{1}{2\hbar m\omega}\widehat{p}^{2}\right)\\
+ & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\left(\widehat{x}\widehat{p}-\widehat{p}\widehat{x}\right)+\frac{1}{2\hbar m\omega}\widehat{p}^{2}\\
+ & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\left[\widehat{x},\widehat{p}\right]+\frac{1}{2\hbar m\omega}\widehat{p}^{2}
+\end{align*}
+
+Lembrando que $\left[\widehat{x},\widehat{p}\right]=i\hbar$:
+
+\begin{align*}
+\widehat{a}^{\dagger}\widehat{a} & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{1}{2\hbar m\omega}\widehat{p}^{2}-\frac{1}{2}\\
+ & =\frac{1}{\hbar\omega}\left(\frac{1}{2m}\widehat{p}^{2}+\frac{m\omega^{2}}{2}\widehat{x}^{2}-\frac{\hbar\omega}{2}\right)
+\end{align*}
+
+O Hamiltoniano para um oscilador harmônico pode ser escrito como:
+
+\begin{align*}
+\widehat{H} & =\frac{1}{2m}\widehat{p}^{2}+\frac{1}{2}m\omega^{2}\widehat{x}^{2}\\
+ & =\hbar\omega\left(\widehat{a}^{\dagger}\widehat{a}+\frac{1}{2}\right)
+\end{align*}
+
+Definindo o operador número $\widehat{N}=\widehat{a}^{\dagger}\widehat{a}$, temos que:
+
+\[
+\widehat{H}=\hbar\omega\left(\widehat{N}+\frac{1}{2}\right)
+\]
+
+E como e $\left[\widehat{N},\widehat{a}\right]=-\widehat{a}$, então, por simplicidade ignorando $\frac{\omega\hbar}{2}$:
+
+\begin{align*}
+e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}} & =\widehat{a}+\lambda\hbar\omega\left[\widehat{N},\widehat{a}\right]+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]+\frac{\left(\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}-\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\left[\widehat{N},\widehat{a}\right]+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\widehat{a}-\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\widehat{a}\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\widehat{a}+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\widehat{a}+\dots\\
+ & =\widehat{a}\left[1+\left(-\lambda\hbar\omega\right)+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}+\dots\right]\\
+ & =\widehat{a}e^{-\lambda\hbar\omega}
+\end{align*}
+
+E como $\lambda=\frac{i\left(t-t_{0}\right)}{\hbar}$, temos então que:
+
+\[
+\widehat{U}^{\dagger}\widehat{a}\widehat{U}=\widehat{a}e^{-i\omega\left(t-t_{0}\right)}
+\]
+
+Aplicando o operador $\widehat{U}$:
+
+\begin{align*}
+\widehat{a} & =\widehat{U}^{\dagger}\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}\\
+\widehat{U}\widehat{a} & =\widehat{U}\widehat{U}^{\dagger}\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}\\
+ & =\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}
+\end{align*}
+
+Mmanipulando $\widehat{a}\left|\alpha\right\rangle =\alpha\left|\alpha\right\rangle $, temos:
+
+\begin{align*}
+\widehat{a}\left|\alpha\right\rangle  & =\alpha\left|\alpha\right\rangle \\
+\widehat{U}\widehat{a}\left|\alpha\right\rangle  & =\alpha\widehat{U}\left|\alpha\right\rangle \\
+\widehat{a}e^{i\omega\left(t-t_{0}\right)}\widehat{U}\left|\alpha\right\rangle  & =\alpha\widehat{U}\left|\alpha\right\rangle \\
+\widehat{a}\left(\widehat{U}\left|\alpha\right\rangle \right) & =\left(\alpha e^{i\omega\left(t-t_{0}\right)}\right)\left(\widehat{U}\left|\alpha\right\rangle \right)\\
+\widehat{a}\left|\alpha\left(t\right)\right\rangle  & =\alpha\left(t\right)\left|\alpha\left(t\right)\right\rangle 
+\end{align*}
+
+Isto significa que o estado coerente permanece um estado coerente durante a evolução do tempo com um autovalor dependente do tempo, que é a primeira coisa demonstração que estávamos buscando. Agora fazendo:
+
+\begin{align}
+\left\langle \alpha\left(t\right)\left|\widehat{a}\right|\alpha\left(t\right)\right\rangle  & =\left\langle \alpha\left|\widehat{U}^{\dagger}\widehat{a}\widehat{U}\right|\alpha\right\rangle \\
+ & =\left\langle \alpha\left|\widehat{a}e^{-i\omega\left(t-t_{0}\right)}\right|\alpha\right\rangle \\
+ & =e^{-i\omega\left(t-t_{0}\right)}\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle \\
+ & =e^{-i\omega\left(t-t_{0}\right)}\alpha\label{eq:g5_1}
+\end{align}
+
+E usando a definição de $\widehat{a}$ temos:
+
+\begin{align}
+\left\langle \alpha\left(t\right)\left|\widehat{a}\right|\alpha\left(t\right)\right\rangle  & =\left\langle \alpha\left(t\right)\left|\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right|\alpha\left(t\right)\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}\left\langle \alpha\left(t\right)\left|\widehat{x}\right|\alpha\left(t\right)\right\rangle +\frac{i}{\sqrt{2\hbar m\omega}}\left\langle \alpha\left(t\right)\left|\widehat{p}\right|\alpha\left(t\right)\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x\left(t\right)+\frac{i}{\sqrt{2\hbar m\omega}}p\left(t\right)\label{2}
+\end{align}
+
+Igualando então \ref{eq:g5_1} e \ref{2}:
+
+\[
+\alpha=e^{i\omega\left(t-t_{0}\right)}\left(\sqrt{\frac{m\omega}{2\hbar}}x\left(t\right)+\frac{i}{\sqrt{2\hbar m\omega}}p\left(t\right)\right)
+\]
+
+Para facilitar, vamos denotar $\tau=t-t_{0}$. Esta equação é então satisfeita por uma solução correspondente à órbita clássica no espaço $\left(x_{0},p_{0}\right)$:
+
+\begin{align*}
+x\left(\tau\right) & \equiv x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{m\omega}\sin\left(\omega\tau\right)\\
+p\left(\tau\right) & \equiv-m\omega x_{0}\sin\left(\omega\tau\right)+p_{0}\cos\left(\omega\tau\right)
+\end{align*}
+
+Pois:
+
+\begin{align*}
+\alpha & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}\left(x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{m\omega}\sin\left(\omega\tau\right)\right)+\frac{i}{\sqrt{2\hbar m\omega}}\left(-m\omega x_{0}\sin\left(\omega\tau\right)+p_{0}\cos\left(\omega\tau\right)\right)\right]\\
+ & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{\sqrt{2 m\omega}}\sin\left(\omega\tau\right)-i\sqrt{\frac{m\omega}{2\hbar}}x_{0}\sin\left(\omega\tau\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\cos\left(\omega\tau\right)\right]\\
+ & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{i\omega\tau}+e^{-i\omega\tau}}{2}\right)+\frac{p_{0}}{\sqrt{2 m\omega}}\left(\frac{e^{i\omega\tau}-e^{-i\omega\tau}}{2i}\right)-i\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{i\omega\tau}-e^{-i\omega\tau}}{2i}\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\left(\frac{e^{i\omega\tau}+e^{-i\omega\tau}}{2}\right)\right]\\
+ & =\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{2i\omega\tau}+1}{2}\right)-\frac{ip_{0}}{\sqrt{2 m\omega}}\left(\frac{e^{2i\omega\tau}-1}{2}\right)-\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{2i\omega\tau}-1}{2}\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\left(\frac{e^{2i\omega\tau}+1}{2}\right)\right]\\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{ip_{0}}{\sqrt{2 m\omega}}
+\end{align*}
+
+Que é o resultado obtido inicialmente na equação \ref{eq:g5_4}, e assim demonstramos a segunda parte do exercício.
+
+\subsection{Problem 3}
+
+\textbf{Consider a harmonic oscillator with frequency $\omega$, mass $m$ and Hamiltonian}
+
+\[
+H=\left(N+\frac{1}{2}\right)\hbar\omega
+\]
+
+\textbf{where }$N\equiv a^{\dagger}a$\textbf{ with }$N\left|n\right\rangle =n\left|n\right\rangle $\textbf{ and we recall that the lowering and raising operators satisfy}
+
+\begin{align*}
+a\left|n\right\rangle  & =\sqrt{n}\left|n-1\right\rangle \\
+a^{\dagger}\left|n\right\rangle  & =\sqrt{n+1}\left|n+1\right\rangle 
+\end{align*}
+
+\textbf{Assuming that at the time$t=0$ the oscillator is in a coherent state $\left|n\right\rangle $ defined by}
+
+\[
+a\left|z\right\rangle =z\left|z\right\rangle 
+\]
+
+\textbf{answer:}
+
+\textbf{a) What is the value of $\left\langle z\left|N\right|z\right\rangle $ for $z=\frac{1}{2}\exp\left(i\pi/4\right)$, assuming that $\left|z\right\rangle $ is normalized?}
+
+\textbf{b) Assuming that at $t=0$ the oscillator is in the ground state $\left|0\right\rangle $, determine the state form}
+
+\textbf{at time $t=1/10s$ for $\omega=5\pi s^{-1}$.}
+
+\textbf{c) What is the value of $c_{n}$ (as a function of $n$ and $z$) so that the coherent state }$\left|z\right\rangle =\sum^{+\infty}_{n=0}c_{n}\left|n\right\rangle $\textbf{ (expanded in the eigenstates $\left|n\right\rangle $ of the number operator $N$) be normalized?}
+
+\textbf{(Remember that $e^{x}=\sum^{+\infty}_{n=0}x^{n}/n!$).}
+
+\textbf{d) Use the result of the previous item and calculate the numerical value of $\left|\left\langle z'|z\right\rangle \right|^{2}$ for $z=\frac{1}{2}\exp\left(i\pi/4\right)$}
+
+\textbf{and $z'=\frac{1}{5}\exp\left(i\pi/4\right)$.}
+
+Temos então o seguinte hamiltoniano de um oscilador harmônico com frequência $\omega$
+
+\[
+H=\left(N+\frac{1}{2}\right)\hbar\omega
+\]
+
+Onde $N\equiv a^{\dagger}a$, $N\left|n\right\rangle =n\left|n\right\rangle $, e os operadores $a$ e $a^{\dagger}$são definidos como:
+
+\begin{align*}
+a\left|n\right\rangle  & =\sqrt{n}\left|n-1\right\rangle \\
+a^{\dagger}\left|n\right\rangle  & =\sqrt{n+1}\left|n+1\right\rangle 
+\end{align*}
+
+Assumimos também que no tempo $t=0$ o oscilador está no estado coerente $\left|z\right\rangle $ definido por:
+
+\[
+a\left|z\right\rangle =z\left|z\right\rangle 
+\]
+
+Queremos então:
+
+\textbf{a) }O valor \textbf{$\left\langle z\left|N\right|z\right\rangle $ }de $z=\frac{1}{2}\exp\left(i\pi/4\right)$ assumindo que $\left|z\right\rangle $ é normalizado. A partir da definições de $N$e da definiçao do estado coerente, podemos escrever então:
+
+\begin{align*}
+\left\langle z\left|N\right|z\right\rangle  & =\left\langle z\left|a^{\dagger}a\right|z\right\rangle \\
+ & =\left(a\left|z\right\rangle \right)^{\dagger}a\left|z\right\rangle \\
+ & =\left(z\left|z\right\rangle \right)^{\dagger}z\left|z\right\rangle \\
+ & =\left\langle z\left|z^{*}z\right|z\right\rangle \\
+ & =\left|z\right|^{2}\left\langle z|z\right\rangle \\
+ & =\left|z\right|^{2}
+\end{align*}
+
+Então sendo $z=\frac{1}{2}\exp\left(i\pi/4\right)$:
+
+\begin{align*}
+\left\langle z\left|N\right|z\right\rangle  & =\frac{1}{2}\exp\left(i\pi/4\right)\frac{1}{2}\exp\left(-i\pi/4\right)
+\end{align*}
+
+Logo temos:
+
+\[
+\left\langle z\left|N\right|z\right\rangle =\frac{1}{4}
+\]
+
+\textbf{b) }Assumindo que em $t=0$ o oscilador está no estado fundamental $\left|0\right\rangle $ queremos determinar o estado no tempo $t=1/10$ para $\omega=5\pi s^{-1}$. Sendo a dinâmica dada por $\widehat{U}=\exp\left[\frac{-iHt}{\hbar}\right]$, temos então:
+
+\begin{align*}
+\left|\psi\left(t\right)\right\rangle  & =\widehat{U}\left|0\right\rangle \\
+ & =\exp\left[\frac{-iHt}{\hbar}\right]\left|0\right\rangle \\
+ & =\exp\left[\frac{-i\left(N+\frac{1}{2}\right)\hbar\omega t}{\hbar}\right]\left|0\right\rangle \\
+ & =\exp\left[-i\frac{1}{2}\omega t\right]\exp\left[\frac{-iN\omega t}{\hbar}\right]\left|0\right\rangle \\
+ & =\exp\left[-i\frac{1}{2}\omega t\right]\exp\left[\frac{-i\omega t}{\hbar}0\right]\left|0\right\rangle \\
+ & =\exp\left[-i\frac{1}{2}\omega t\right]\left|0\right\rangle \\
+ & =\left[\cos\left(-\frac{\omega t}{2}\right)+\sin\left(-\frac{\omega t}{2}\right)\right]\left|0\right\rangle \\
+ & =\left[\cos\left(\frac{\omega t}{2}\right)-\sin\left(\frac{\omega t}{2}\right)\right]\left|0\right\rangle 
+\end{align*}
+
+Onde usamos que $F\left(A\right)\left|a\right\rangle =F\left(a\right)\left|a\right\rangle $. Substituindo os valores dados então:
+
+\begin{align*}
+\left|\psi\left(t\right)\right\rangle  & =\left[\cos\left(\frac{5\pi}{10\cdot2}\right)-i\sin\left(\frac{5\pi}{10\cdot2}\right)\right]\left|0\right\rangle 
+\end{align*}
+
+O estado que buscamos é então:
+
+\begin{align*}
+\left|\psi\left(t\right)\right\rangle  & =\left(\frac{1-i}{\sqrt{2}}\right)\left|0\right\rangle 
+\end{align*}
+
+\textbf{c)} Queremos agora o valor de $c_{n}$(como uma função de $n$ e $z$) de modo que o estado coerente expandido nos autoestados do operador $N$,$\left|z\right\rangle =\sum^{+\infty}_{n=0}c_{n}\left|n\right\rangle $ seja normalizado. Obsevação: $e^{x}=\sum^{+\infty}_{n=0}x^{n}/n!$. Temos então:
+
+\begin{align*}
+\left|z\right\rangle  & =\sum^{+\infty}_{n=0}\left\langle n|z\right\rangle \left|n\right\rangle 
+\end{align*}
+
+E partindo de $a^{\dagger}\left|n\right\rangle =\sqrt{n+1}\left|n+1\right\rangle $, podemos calcular:
+
+\begin{align*}
+a^{\dagger}\left|0\right\rangle  & =\left|1\right\rangle  & \rightarrow\left|1\right\rangle  & =\frac{a^{\dagger}}{\sqrt{1}}\left|0\right\rangle \\
+a^{\dagger}\left|1\right\rangle  & =\sqrt{2}\left|2\right\rangle  & \rightarrow\left|2\right\rangle  & =\frac{a^{\dagger}}{\sqrt{2}}\left|1\right\rangle =\frac{\left(a^{\dagger}\right)^{2}}{\sqrt{2\cdot1}}\left|0\right\rangle \\
+a^{\dagger}\left|2\right\rangle  & =\sqrt{3}\left|3\right\rangle  & \rightarrow\left|3\right\rangle  & =\frac{a^{\dagger}}{\sqrt{3}}\left|2\right\rangle =\frac{\left(a^{\dagger}\right)^{3}}{\sqrt{3\cdot2\cdot1}}\left|0\right\rangle \\
+ &  & \vdots\\
+ &  & \left|n\right\rangle  & =\frac{\left(a^{\dagger}\right)^{n}}{\sqrt{n!}}\left|0\right\rangle 
+\end{align*}
+
+Temos então:
+
+\begin{align*}
+\left|z\right\rangle  & =\sum^{+\infty}_{n=0}\left(\frac{\left(a^{\dagger}\right)^{n}}{\sqrt{n!}}\left|0\right\rangle \right)^{\dagger}\left|z\right\rangle \left|n\right\rangle \\
+ & =\sum^{+\infty}_{n=0}\left\langle 0\right|\frac{\left(a\right)^{n}}{\sqrt{n!}}\left|z\right\rangle \left|n\right\rangle \\
+ & =\sum^{+\infty}_{n=0}\frac{1}{\sqrt{n!}}\left\langle 0\right|a^{n}\left|z\right\rangle \left|n\right\rangle \\
+ & =\sum^{+\infty}_{n=0}\frac{z^{n}}{\sqrt{n!}}\left\langle 0|z\right\rangle \left|n\right\rangle 
+\end{align*}
+
+Onde usamos que $a\left|z\right\rangle =z\left|z\right\rangle $ e $F\left(A\right)\left|a\right\rangle =F\left(a\right)\left|a\right\rangle $ novamente. Então uma vez que temos $c_{n}=\left\langle n|z\right\rangle \rightarrow c_{0}=\left\langle 0|z\right\rangle $, logo:
+
+\[
+c_{n}=\frac{z^{n}}{\sqrt{n!}}c_{0}
+\]
+
+Precisamos então idetnficar $c_{0}$ garantindo a normalização. Dessa forma temos:
+
+\begin{align*}
+\left\langle z|z\right\rangle  & =\left(\sum^{+\infty}_{m=0}\left\langle m\right|c^{*}_{m}\right)\left(\sum^{+\infty}_{n=0}c_{n}\left|n\right\rangle \right)\\
+1 & =\sum^{+\infty}_{m,n=0}c^{*}_{m}c_{n}\left\langle m|n\right\rangle \\
+ & =\sum^{+\infty}_{m,n=0}c^{*}_{m}c_{n}\delta_{mn}\\
+ & =\sum^{+\infty}_{n=0}\left|c_{n}\right|^{2}
+\end{align*}
+
+Substituindo então:
+
+\begin{align*}
+1 & =\sum^{+\infty}_{n=0}\left|\frac{z^{n}}{\sqrt{n!}}c_{0}\right|^{2}\\
+ & =\left|c_{0}\right|^{2}\sum^{+\infty}_{n=0}\frac{\left(\left|z\right|\right)^{n}}{n!}\\
+ & =\left|c_{0}\right|^{2}\sum^{+\infty}_{n=0}\frac{\left(\left|z\right|^{2}\right)^{n}}{n!}\\
+ & =\left|c_{0}\right|^{2}e^{\left|z\right|^{2}}
+\end{align*}
+
+Onde usamos que $e^{x}=\sum^{+\infty}_{n=0}x^{n}/n!$. Temos:
+
+\[
+\left|c_{0}\right|=e^{-\left|z\right|^{2}/2}
+\]
+
+Assim o valor que buscamos para $c_{n}$ é:
+
+\[
+c_{n}=\frac{z^{n}}{\sqrt{n!}}e^{-\left|z\right|^{2}/2}
+\]
+
+Uma vez que $e^{-\left|z\right|^{2}/2}$ é sempre real e maior que 0.
+
+\textbf{d)}
+
+Usando o resultado do item anterior, vamos calcular $\left|\left\langle z'|z\right\rangle \right|^{2}$ onde $z=\frac{1}{2}e^{i\pi/4}$ e $z'=\frac{1}{4}e^{i\pi/4}$ , ete é um cálculo bastante direto:
+
+\begin{align*}
+\left\langle z'|z\right\rangle  & =\left(\sum^{+\infty}_{n'=0}\left\langle n'\right|c_{n'}\right)\left(\sum^{+\infty}_{n=0}c_{n}\left|n\right\rangle \right)\\
+ & =\sum^{+\infty}_{n,n'=0}c^{*}_{n'}c_{n}\left\langle n'n\right\rangle \\
+ & =\sum^{+\infty}_{n,n'=0}\left(\frac{\left(z'^{n'}\right)^{*}}{\sqrt{n'!}}e^{-\left|z'\right|^{2}/2}\right)\left(\frac{z^{n}}{\sqrt{n!}}e^{-\left|z\right|^{2}/2}\right)\delta_{n'n}\\
+ & =e^{-\left(\left|z\right|^{2}+\left|z'\right|^{2}\right)/2}\sum^{+\infty}_{n=0}\left(\frac{\left(z'^{n'}\right)^{*}}{\sqrt{n!}}\right)\left(\frac{z^{n}}{\sqrt{n!}}\right)\\
+ & =e^{-\left(\left|z\right|^{2}+\left|z'\right|^{2}\right)/2}\sum^{+\infty}_{n=0}\left(\frac{\left(z'^{*}z\right){}^{n}}{n!}\right)\\
+ & =e^{-\left(\left|z\right|^{2}+\left|z'\right|^{2}\right)/2}\sum^{+\infty}_{n=0}\left(\frac{\left(\frac{1}{4}e^{-i\pi/4}\frac{1}{2}e^{i\pi/4}\right){}^{n}}{n!}\right)\\
+ & =e^{-\left(\left|z\right|^{2}+\left|z'\right|^{2}\right)/2}\sum^{+\infty}_{n=0}\left(\frac{\left(1/8\right){}^{n}}{n!}\right)
+\end{align*}
+
+Novamente usando $e^{x}=\sum^{+\infty}_{n=0}x^{n}/n!$, e sendo $\left|z\right|^{2}=\frac{1}{4},\left|z'\right|^{2}=\frac{1}{16}$, ficamos com:
+
+\begin{align*}
+\left\langle z'|z\right\rangle  & =\exp\left[-\left(\frac{1}{4}+\frac{1}{16}\right)\frac{1}{2}\right]\exp\left[\frac{1}{8}\right]\\
+ & =\exp\left[-\left(\frac{4}{32}+\frac{1}{32}\right)+\frac{4}{32}\right]\\
+ & =\exp\left[-\frac{1}{16}\right]
+\end{align*}
+
+Logo:
+
+\begin{align*}
+\left\langle z'|z\right\rangle  & =\exp\left[-\left(\frac{1}{4}+\frac{1}{16}\right)\frac{1}{2}\right]\exp\left[\frac{1}{8}\right]\\
+ & =\exp\left[-\left(\frac{4}{32}+\frac{1}{32}\right)+\frac{4}{32}\right]\\
+ & =\exp\left[-\frac{1}{32}\right]
+\end{align*}
+
+Fazendo o quadrado temos 
+\[
+\left|\left\langle z'|z\right\rangle \right|^{2}=\exp\left[-\frac{1}{16}\right]
+\]
+Ou em valores numéricos $\left|\left\langle z'|z\right\rangle \right|^{2}=0.94$.
+
+ \bibliographystyle{abbrv}
+\bibliography{ref}
+
+\end{document}

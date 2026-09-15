@@ -1,0 +1,1008 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cancel}
+\usepackage{stmaryrd}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+
+
+
+
+
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\title{Problem set 6}
+
+\maketitle
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\subsection{Problem 1}
+
+\textbf{Note that if one associates with the coordinates $x^{\mu}$ of a space-time point a matrix}
+
+\[
+X=\left(\begin{array}{cc}
+x^{0}+x^{3} & x^{1}-ix^{2}\\
+x^{1}+ix^{2} & x^{0}-x^{3}
+\end{array}\right)=x^{\mu}\sigma_{\mu}
+\]
+
+\textbf{then }$\det X=D\left(X\right)=g_{\mu\nu}x^{\mu}x^{\nu}$\textbf{ has the value $D\left(X\right)=g_{\mu\nu}x^{\mu}x^{\nu}$ .}
+
+\textbf{a) If the matrix}
+
+\[
+W=\left(\begin{array}{cc}
+\alpha & \beta\\
+\gamma & \delta
+\end{array}\right)
+\]
+
+\textbf{with complex elements $\alpha$, $\beta$, $\gamma$, $\delta$ has determinant 1 and}
+
+\[
+W^{*}=\left(\begin{array}{cc}
+\overline{\alpha} & \overline{\gamma}\\
+\overline{\beta} & \overline{\delta}
+\end{array}\right)
+\]
+
+\textbf{is its Hermitian adjoint, show that}
+
+\[
+X'=WXW^{*}
+\]
+
+\textbf{defines a proper Lorentz transformation }$x^{'\mu}=\Lambda^{\mu}_{\nu}x^{\nu}$\textbf{ , (i.e., show that} $\det\Lambda=+1,\Lambda^{0}_{0}\ge1$\textbf{, and that} $D\left(X\right)=D\left(X'\right)$)
+
+Temos:
+
+\[
+X=\left(\begin{array}{cc}
+x^{0}+x^{3} & x^{1}-ix^{2}\\
+x^{1}+ix^{2} & x^{0}-x^{3}
+\end{array}\right)=x^{\mu}\sigma_{\mu}
+\]
+
+e $\det X=D\left(X\right)=g_{\mu\nu}x^{\mu}x^{\nu}$. Então se temos uma matrix com determinante $1$:
+
+\[
+W=\left(\begin{array}{cc}
+\alpha & \beta\\
+\gamma & \delta
+\end{array}\right)
+\]
+
+E sua adjunta hermitiana é:
+
+\[
+W^{*}=\left(\begin{array}{cc}
+\overline{\alpha} & \overline{\gamma}\\
+\overline{\beta} & \overline{\delta}
+\end{array}\right)
+\]
+
+Então queremos mostrar que:
+
+\[
+X'=WXW^{*}
+\]
+
+determine uma transormação de Lorentz $x^{'\mu}=\Lambda^{\mu}_{\nu}x^{\nu}$. Isto é, mostrar que $\det\Lambda=+1$, $\Lambda^{0}_{0}\ge1$ e $D\left(X\right)=D\left(X'\right)$.
+
+Um vetor de espaço-tempo contravariante de 4 dimensões pode ser dado por $x^{\mu}=\left(ct,\boldsymbol{x}\right)=\left(x^{0},x^{1},x^{2},x^{3}\right)$, lembrando que o vetor contravariante inverte o sinal das componentes epaciais quando comparado com o covariante. Isto é, temo:
+
+\[
+x_{\mu}=g_{\mu\nu}x^{\nu}
+\]
+
+Onde o tensor métrico é responsável por subir ou baixar os índices:
+
+\[
+g_{\mu\nu}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & -1 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & -1
+\end{array}\right)
+\]
+
+O produto interno então é dado entre o vetor covariante e contravariante:
+
+\[
+x_{\mu}x^{\mu}=x^{\mu}x_{\mu}
+\]
+
+Dessa forma temos que $D\left(X\right)=g_{\mu\nu}x^{\mu}x^{\nu}=x_{\nu}x^{\nu}=x^{\nu}x_{\nu}$. Definindo uma transformação linear do vetor:
+
+\[
+x^{'\mu}=\Lambda^{\mu}_{\nu}x^{\nu}
+\]
+
+Temo então o produto escalar
+
+\begin{align*}
+x^{'\mu}g_{\mu\nu}x^{'\nu} & =x^{\beta}\Lambda^{\mu}_{\beta}g_{\alpha\beta}\Lambda^{\mu}_{\alpha}x^{\alpha}\\
+ & =x^{\mu}g_{\alpha\beta}x^{\nu}
+\end{align*}
+
+Se demandamos que seja preservado o produto interno esalar de Minkowski:
+
+\[
+\Lambda^{\mu}_{\alpha}g_{\mu\nu}\Lambda^{\mu}_{\beta}=g_{\alpha\beta}
+\]
+
+Então agora voltando às nossas matrizes, podemos ver que, utilizando o Wolfram Mathematica: 
+\begin{verbatim*}[language=Mathematica]
+Det{[}\{\{x0~+~x3,~x1~-~I~x2\},~\{x1~+~I~x2,~x0~-~x3\}\}{]}
+\end{verbatim*}
+\begin{align*}
+D\left(X\right) & =x_{\nu}x^{\nu}\\
+ & =x_{\nu}g_{\mu\nu}x_{\mu}\\
+ & =\left(x^{0}\right)^{2}-\left(x^{1}\right)^{2}-\left(x^{2}\right)^{2}-\left(x^{3}\right)^{2}
+\end{align*}
+
+E: 
+\begin{verbatim*}[language=Mathematica]
+X~:=~\{\{x0~+~x3,~x1~-~I~x2\},~\{x1~+~I~x2,~x0~-~x3\}\};
+
+W~:=~\{\{a,~b\},~\{g,~d\}\};
+
+WC~:=~\{\{Conjugate{[}a{]},~Conjugate{[}g{]}\},\{Conjugate{[}b{]},~Conjugate{[}d{]}\}\};
+
+Simplify{[}Det{[}W~.~X~.~WC{]}{]}
+\end{verbatim*}
+\begin{align*}
+D\left(X'\right) & =x^{'}_{\nu}x^{'\nu}\\
+D\left(X'\right) & =x'_{\nu}g_{\mu\nu}x'_{\mu}\\
+D\left(WXW^{*}\right) & =x^{\beta}\Lambda^{\mu}_{\beta}g_{\mu\nu}\Lambda^{\mu}_{\alpha}x^{\alpha}\\
+ & =\left(\alpha\delta-\beta\gamma\right)\left[\left(x^{0}\right)^{2}-\left(x^{1}\right)^{2}-\left(x^{2}\right)^{2}-\left(x^{3}\right)^{2}\right]\left(\overline{\alpha}\overline{\delta}-\overline{\beta}\overline{\gamma}\right)
+\end{align*}
+
+Temos então, como queríamos demonstrar, que:
+
+\[
+D\left(X'\right)=\left(x^{0}\right)^{2}-\left(x^{1}\right)^{2}-\left(x^{2}\right)^{2}-\left(x^{3}\right)^{2}=D\left(X\right)
+\]
+
+Tendo então $\mathbb{X}$ representando uma coleção de matrizes hermitianas $2\times2$:
+
+\[
+\mathbb{X}=\left\{ W,\in Mat_{2\times2}\left(\mathbb{C}\right):X=X^{\dagger}\right\} 
+\]
+
+Isso pode ser considerado uma forma alternativa de $\mathbb{R}^{1,3}$ através do mapa que nos foi dado:
+
+\[
+\mathbb{R}^{1,3}\rightarrow\mathbb{X},\quad\left(x^{0},x^{1},x^{2},x^{3}\right)\mapsto X=\left(\begin{array}{cc}
+x^{0}+x^{3} & x^{1}-ix^{2}\\
+x^{1}+ix^{2} & x^{0}-x^{3}
+\end{array}\right)
+\]
+
+Lembrando que $\det X=x_{\nu}x^{\nu}$, e então a base padrão para $\mathbb{R}^{1,3}$ pode ser escrita para $\mathbb{X}$ usando as matrizes de pauli. Com essa base, então um ponto $\left(x^{0},x^{1},x^{2},x^{3}\right)$ no espaço-tempo de Minkowsku corresponde a uma matriz $2\times2$ , $X=x^{\mu}\sigma_{\mu}$. Tendo o produto interno de Frobenius dado por:
+
+\[
+\left\langle A,B\right\rangle =Tr\left(A^{\dagger}B\right)
+\]
+
+E a norma de Frobenius $\left\Vert A\right\Vert =\sqrt{\left\langle A,A\right\rangle }$ Então é fácil checar que a base é ortonormal:
+
+\[
+\left\langle \sigma_{\mu},\sigma_{\nu}\right\rangle =\delta_{\mu\nu}
+\]
+
+Desde que definimos o produto interno como: $\left\langle A,B\right\rangle =\frac{1}{2}Tr\left(A^{\dagger}B\right)$\cite{Anu:2013}. Temos então uma forma simples de escrever o mapa inverso de $\mathbb{X}$ para $\mathbb{R}^{1,3}$.
+
+\[
+X\mapsto\left(\left\langle X,\sigma_{0}\right\rangle ,\left\langle X,\sigma_{1}\right\rangle ,\left\langle X,\sigma_{2}\right\rangle ,\left\langle X,\sigma_{3}\right\rangle \right)
+\]
+
+Calculando para $X=x^{\mu}\sigma_{\mu}$, podemos notar facilmente que:
+
+\[
+X\mapsto\left(x^{0},x^{1},x^{2},x^{3}\right)
+\]
+
+Então temos que:
+
+\begin{align*}
+X' & \mapsto\left(x^{'0},x^{'1},x^{'2},x^{'3}\right)\\
+ & \mapsto\left(\Lambda^{0}_{\nu}x^{\nu},\Lambda^{1}_{\nu}x^{\nu},\Lambda^{2}_{\nu}x^{\nu},\Lambda^{3}_{\nu}x^{\nu}\right)\\
+ & \mapsto\left(\left\langle X',\sigma_{0}\right\rangle ,\left\langle X',\sigma_{1}\right\rangle ,\left\langle X',\sigma_{2}\right\rangle ,\left\langle X',\sigma_{3}\right\rangle \right)\\
+ & \mapsto\left(\left\langle WXW^{*},\sigma_{0}\right\rangle ,\left\langle WXW^{*},\sigma_{1}\right\rangle ,\left\langle WXW^{*},\sigma_{2}\right\rangle ,\left\langle WXW^{*},\sigma_{3}\right\rangle \right)
+\end{align*}
+
+Abrindo então o primero termo:
+
+\begin{align*}
+\Lambda^{0}_{\nu}x^{\nu} & =\left\langle WXW^{*},\sigma_{0}\right\rangle \\
+ & =\left\langle W\sigma_{0}W^{*}x^{0}+W\sigma_{1}W^{*}x^{1}+W\sigma_{2}W^{*}x^{2}+W\sigma_{3}W^{*}x^{3},\sigma_{0}\right\rangle \\
+ & =\left\langle W\sigma_{0}W^{*}x^{0}+W\sigma_{1}W^{*}x^{1}+W\sigma_{2}W^{*}x^{2}+W\sigma_{3}W^{*}x^{3},\sigma_{0}\right\rangle \\
+ & =\left\langle W\sigma_{0}W^{*},\sigma_{0}\right\rangle x^{0}+\left\langle W\sigma_{1}W^{*},\sigma_{0}\right\rangle x^{1}+\left\langle W\sigma_{2}W^{*},\sigma_{0}\right\rangle x^{2}+\left\langle W\sigma_{3}W^{*},\sigma_{0}\right\rangle x^{3}\\
+ & =\left\langle W\sigma_{\nu}W^{*},\sigma_{0}\right\rangle x^{\nu}
+\end{align*}
+
+Temos então que:
+
+\[
+\Lambda^{0}_{\nu}=\left\langle W\sigma_{\nu}W^{*},\sigma_{0}\right\rangle 
+\]
+
+Ou ainda mais geral:
+
+\[
+\Lambda^{\mu}_{\nu}=\left\langle W\sigma_{\nu}W^{*},\sigma_{\mu}\right\rangle 
+\]
+
+Logo:
+
+\[
+\Lambda=\left(\begin{array}{cccc}
+\Lambda^{0}_{0} & \Lambda^{0}_{1} & \Lambda^{0}_{2} & \Lambda^{0}_{3}\\
+\Lambda^{1}_{0} & \Lambda^{1}_{1} & \Lambda^{1}_{2} & \Lambda^{1}_{3}\\
+\Lambda^{2}_{0} & \Lambda^{2}_{1} & \Lambda^{2}_{2} & \Lambda^{2}_{3}\\
+\Lambda^{3}_{0} & \Lambda^{3}_{1} & \Lambda^{3}_{2} & \Lambda^{3}_{3}
+\end{array}\right)=\left(\begin{array}{cccc}
+\left\langle W\sigma_{0}W^{*},\sigma_{0}\right\rangle  & \left\langle W\sigma_{1}W^{*},\sigma_{0}\right\rangle  & \left\langle W\sigma_{2}W^{*},\sigma_{0}\right\rangle  & \left\langle W\sigma_{3}W^{*},\sigma_{0}\right\rangle \\
+\left\langle W\sigma_{0}W^{*},\sigma_{1}\right\rangle  & \left\langle W\sigma_{1}W^{*},\sigma_{1}\right\rangle  & \left\langle W\sigma_{2}W^{*},\sigma_{1}\right\rangle  & \left\langle W\sigma_{3}W^{*},\sigma_{1}\right\rangle \\
+\left\langle W\sigma_{0}W^{*},\sigma_{2}\right\rangle  & \left\langle W\sigma_{1}W^{*},\sigma_{2}\right\rangle  & \left\langle W\sigma_{2}W^{*},\sigma_{2}\right\rangle  & \left\langle W\sigma_{3}W^{*},\sigma_{2}\right\rangle \\
+\left\langle W\sigma_{0}W^{*},\sigma_{3}\right\rangle  & \left\langle W\sigma_{1}W^{*},\sigma_{3}\right\rangle  & \left\langle W\sigma_{2}W^{*},\sigma_{3}\right\rangle  & \left\langle W\sigma_{3}W^{*},\sigma_{3}\right\rangle 
+\end{array}\right)
+\]
+
+Ou como $Tr\left(AB\right)=Tr\left(BA\right)$
+
+\[
+\Lambda=\left(\begin{array}{cccc}
+\left\langle \sigma_{0},W\sigma_{0}W^{*}\right\rangle  & \left\langle \sigma_{0},W\sigma_{1}W^{*}\right\rangle  & \left\langle \sigma_{0},W\sigma_{2}W^{*}\right\rangle  & \left\langle \sigma_{0},W\sigma_{3}W^{*}\right\rangle \\
+\left\langle \sigma_{1},W\sigma_{0}W^{*}\right\rangle  & \left\langle \sigma_{1},W\sigma_{1}W^{*}\right\rangle  & \left\langle \sigma_{1},W\sigma_{2}W^{*}\right\rangle  & \left\langle \sigma_{1},W\sigma_{3}W^{*}\right\rangle \\
+\left\langle \sigma_{2},W\sigma_{0}W^{*}\right\rangle  & \left\langle \sigma_{2},W\sigma_{1}W^{*}\right\rangle  & \left\langle \sigma_{2},W\sigma_{2}W^{*}\right\rangle  & \left\langle \sigma_{2},W\sigma_{3}W^{*}\right\rangle \\
+\left\langle \sigma_{3},W\sigma_{0}W^{*}\right\rangle  & \left\langle \sigma_{3},W\sigma_{1}W^{*}\right\rangle  & \left\langle \sigma_{3},W\sigma_{2}W^{*}\right\rangle  & \left\langle \sigma_{3},W\sigma_{3}W^{*}\right\rangle 
+\end{array}\right)
+\]
+
+Usando o Wolfram Mathematica, podemos calcular o determinante: 
+\begin{verbatim*}[language=Mathematica]
+O0~:=~\{\{1,~0\},~~\{0,~1\}\};~
+
+O1~:=~\{\{0,~1\},~~\{1,~0\}\};~
+
+O2~:=~\{\{0,~-I\},~\{I,~0\}\};~
+
+O3~:=~\{\{1,~0\},~\{0,~-1\}\};
+
+Simplify{[}Det{[}\{
+
+\{Tr{[}O0.W.O0.WC{]}/2,Tr{[}O0.W.O1.WC{]}/2,~Tr{[}O0.W.O2.WC{]}/2,Tr{[}O0.W.O3.WC{]}/2\},
+
+\{Tr{[}O1.W.O0.WC{]}/2,Tr{[}O1.W.O1.WC{]}/2,~Tr{[}O1.W.O2.WC{]}/2,Tr{[}O1.W.O3.WC{]}/2\},~
+
+\{Tr{[}O2.W.O0.WC{]}/2,Tr{[}O2.W.O1.WC{]}/2,~Tr{[}O2.W.O2.WC{]}/2,Tr{[}O2.W.O3.WC{]}/2\},~
+
+\{Tr{[}O3.W.O0.WC{]}/2,Tr{[}O3.W.O1.WC{]}/2,~Tr{[}O3.W.O2.WC{]}/2,Tr{[}O3.W.O3.WC{]}/2\}\}{]}{]}
+\end{verbatim*}
+\[
+\det\left(\Lambda\right)=\left(\alpha\delta-\beta\gamma\right)^{2}\left(\overline{\alpha}\overline{\delta}-\overline{\beta}\overline{\gamma}\right)^{2}=+1
+\]
+
+Como queríamoss demonstrar. Agora calculando o primeiro termo: 
+\begin{verbatim*}[language=Mathematica]
+Tr{[}O0.W.O0.WC{]}/2
+\end{verbatim*}
+\begin{align*}
+\Lambda^{0}_{0} & =,W\sigma_{0}W^{*}\\
+ & =\frac{1}{2}Tr\left(\sigma_{0}W\sigma_{0}W^{*}\right)\\
+ & =\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)\\
+ & =\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)
+\end{align*}
+
+Como vimos em aula 32, as constantes $\Lambda^{\alpha}_{\beta}$ é estrita as condições:
+
+\begin{align*}
+\Lambda^{\alpha}_{\varGamma} & \Lambda^{\beta}_{\gamma}\eta_{\alpha\beta}=\eta_{\varGamma\gamma}\\
+\Lambda^{\alpha}_{0} & \Lambda^{\beta}_{0}\eta_{\alpha\beta}=\eta_{00}\\
+\left(\Lambda^{0}_{0}\right)^{2}+\left(\Lambda^{1}_{0}\right)^{2}+\left(\Lambda^{2}_{0}\right)^{2}+\left(\Lambda^{3}_{0}\right) & =1\\
+\left(\Lambda^{0}_{0}\right)^{2}= & 1+\sum^{3}_{i=1}\left(\Lambda^{i}_{0}\right)^{2}
+\end{align*}
+
+Onde usamos $\gamma=\Gamma=0$ e $\eta_{\alpha\beta}$ é a ``métrica e minkowski''. Calulando então o somatório: 
+\begin{verbatim*}[language=Mathematica]
+FullSimplify{[}Expand{[}(Tr{[}O1.W.O0.WC{]}/2)\textasciicircum 2+(Tr{[}O2.W.O0.WC{]}/2)\textasciicircum 2+(Tr{[}O3.W.O0.WC{]}/2)\textasciicircum 2{]}{]}
+\end{verbatim*}
+\begin{align*}
+\sum^{3}_{i=1}\left(\Lambda^{i}_{0}\right)^{2} & =\frac{1}{4}\left(\left(\left|\alpha\right|^{4}+\left|\beta\right|^{4}+\left|\delta\right|^{4}+\left|\gamma\right|^{4}+2\left(\overline{\alpha}\left(-\overline{\delta}(\alpha\delta-\beta\gamma-\beta\gamma)+\alpha\left|\beta\right|^{2}+\alpha\left|\gamma\right|^{2}\right)+\overline{\beta}\left(\overline{\gamma}(\alpha\delta+\alpha\delta-\beta\gamma)+\beta\left|\delta\right|^{2}\right)+\left|\delta\right|^{2}\left|\gamma\right|^{2}\right)\right)\right)\\
+ & =\frac{1}{4}\left(\left(\left|\alpha\right|^{4}+\left|\beta\right|^{4}+\left|\delta\right|^{4}+\left|\gamma\right|^{4}+2\left(\overline{\alpha}\overline{\delta}\beta\gamma-\left(\overline{\delta}\overline{\alpha}-\overline{\gamma}\overline{\beta}\right)+\alpha\delta\overline{\gamma}\overline{\beta}+\left|\alpha\right|^{2}\left|\gamma\right|^{2}+\left|\alpha\right|^{2}\left|\beta\right|^{2}+\left|\beta\right|^{2}\left|\delta\right|^{2}+\left|\delta\right|^{2}\left|\gamma\right|^{2}\right)\right)\right)\\
+ & =\frac{1}{4}\left(\left(\left|\alpha\right|^{4}+\left|\beta\right|^{4}+\left|\delta\right|^{4}+\left|\gamma\right|^{4}+2\left(\overline{\alpha}\overline{\delta}\beta\gamma+\alpha\delta\overline{\gamma}\overline{\beta}-1+\left|\alpha\right|^{2}\left|\gamma\right|^{2}+\left|\alpha\right|^{2}\left|\beta\right|^{2}+\left|\beta\right|^{2}\left|\delta\right|^{2}+\left|\delta\right|^{2}\left|\gamma\right|^{2}\right)\right)\right)\\
+ & =\frac{1}{4}\left(\left(\left|\alpha\right|^{4}+\left|\beta\right|^{4}+\left|\delta\right|^{4}+\left|\gamma\right|^{4}+2\left(\left|\alpha\right|^{2}\left|\delta\right|^{2}+\left|\beta\right|^{2}\left|\gamma\right|^{2}-2+\left|\alpha\right|^{2}\left|\gamma\right|^{2}+\left|\alpha\right|^{2}\left|\beta\right|^{2}+\left|\beta\right|^{2}\left|\delta\right|^{2}+\left|\delta\right|^{2}\left|\gamma\right|^{2}\right)\right)\right)\\
+ & =-1+\frac{1}{4}\left(\left|\alpha\right|^{4}+2\left|\alpha\right|^{2}\left|\delta\right|^{2}+2\left|\alpha\right|^{2}\left|\beta\right|^{2}+2\left|\alpha\right|^{2}\left|\gamma\right|^{2}+\left|\delta\right|^{4}+2\left|\beta\right|^{2}\left|\delta\right|^{2}+2\left|\delta\right|^{2}\left|\gamma\right|^{2}+\left|\beta\right|^{4}+2\left|\beta\right|^{2}\left|\gamma\right|^{2}+\left|\gamma\right|^{4}\right)\\
+ & =-1+\left[\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)\right]^{2}
+\end{align*}
+
+Onde usamos o fato de que $-1=\left(\alpha\delta-\beta\gamma\right)\left(\overline{\gamma}\overline{\beta}-\overline{\alpha}\overline{\delta}\right)=\overline{\alpha}\overline{\delta}\beta\gamma-\left|\alpha\right|^{2}\left|\delta\right|^{2}-\left|\beta\right|^{2}\left|\gamma\right|^{2}+\alpha\delta\overline{\gamma}\overline{\beta}$. Temos então a seguinte desigualdade:
+
+\[
+\sum^{3}_{i=1}\left(\Lambda^{i}_{0}\right)^{2}\geq0\longrightarrow\left[\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)\right]^{2}\geq1
+\]
+
+Então:
+
+\[
+\left|\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)\right|\geq1
+\]
+
+Uma vez que se $\left|x\right|>1\left(\left|x\right|<1\right),$então $x^{2}>1\left(x^{2}<1\right)$. E lembrando que 
+\begin{verbatim*}[language=Mathematica]
+\[
+\Lambda^{0}_{0}=\frac{1}{2}\left(\left|\alpha\right|^{2}+\left|\delta\right|^{2}+\left|\beta\right|^{2}+\left|\gamma\right|^{2}\right)
+\]
+\end{verbatim*}
+Concluímos então que:
+
+\[
+\left|\Lambda^{0}_{0}\right|\geq1
+\]
+
+
+\subsection{Problem 2}
+
+\textbf{Operate on $\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi=0$ with $\gamma^{\mu}\partial_{\mu}$ and show that each of the four components $\psi_{i}$ satisfies the Klein-Gordon equation $\left(\square^{2}+m^{2}\right)\psi_{i}=0$.}
+
+Primeiro temos que o oprador d'Alembertiano é dado por:
+
+\[
+\square^{2}=\eta^{\alpha\beta}\frac{\partial}{\partial x^{\beta}}\frac{\partial}{\partial x^{\alpha}}=\nabla^{2}-\frac{\partial^{2}}{\partial t^{2}}
+\]
+
+Sendo a função onda $\psi$ uma matriz:
+
+\[
+\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi=0
+\]
+
+Vamos operar $\gamma^{\nu}\partial_{\nu}$. Mas primeiro temos que:
+
+\[
+\partial_{\mu}=\frac{\partial}{\partial x^{\mu}}=\left(\frac{\partial}{\partial t},\boldsymbol{\nabla}\right)
+\]
+
+E como temos 
+\[
+\boldsymbol{p}\rightarrow-i\hbar\nabla,\quad E=i\hbar\frac{\partial}{\partial t},\qquad p_{\mu}=\left(E,-\boldsymbol{p}\right)
+\]
+Então vamos escrever $\gamma^{\nu}i\partial_{\nu}=\gamma^{\nu}p_{\nu}/\hbar$, sendo $\hbar=1$. Temos então:
+
+\begin{align*}
+\left(i\gamma^{\mu}\partial_{\mu}-m\right)\psi & =0\\
+\left(\gamma^{\mu}p_{\mu}-m\right)\psi & =0\\
+\gamma^{\mu}p_{\mu}\psi & =-m\psi
+\end{align*}
+
+E ainda sendo $\gamma^{\mu}p_{\mu}=\cancel{p}$:
+
+\begin{equation}
+\cancel{p}\psi=-m\psi\label{eq:g6_um}
+\end{equation}
+
+Operando então: $-i\cancel{p}$:
+
+\begin{align*}
+i\cancel{p}\cancel{p} & \psi=-i\cancel{p}m\psi
+\end{align*}
+
+E uma vez que na aula 37, na equação 159 vimos que $\gamma^{\mu}\gamma^{\eta}+\gamma^{\eta}\gamma^{\mu}=\mathbb{I}2g^{\mu\eta}$:
+
+\begin{align*}
+\cancel{p}\cancel{p} & =\gamma^{\mu}p_{\mu}\gamma^{\nu}p_{\nu}\\
+ & =\gamma^{\mu}\gamma^{\nu}p_{\mu}p_{\nu}\\
+ & =\frac{1}{2}\left(\gamma^{\mu}\gamma^{\nu}+\gamma^{\nu}\gamma^{\mu}\right)p_{\mu}p_{\nu}\\
+ & =\mathbb{I}\frac{1}{2}2g^{\mu\eta}p_{\mu}p_{\nu}\\
+ & =\mathbb{I}p^{\mu}p_{\nu}\\
+ & =\mathbb{I}p^{2}
+\end{align*}
+
+Lembando que $\left[p_{i},p_{j}\right]=0$, o que nos permite escrever que $\gamma^{\mu}\gamma^{\nu}p_{\mu}p_{\nu}=\gamma^{\nu}\gamma^{\mu}p_{\nu}p_{\mu}=\gamma^{\nu}\gamma^{\mu}p_{\mu}p_{\nu}$.Também usamos o fato de que as matrizes $\gamma^{\nu}$ são constantes. E usando o próprio resultado obtido em \ref{eq:g6_um}, então:
+
+\begin{align*}
+p^{2}\psi & =m^{2}\psi\\
+p^{\mu}p_{\mu}\psi & =m^{2}\psi\\
+\left(i\partial^{\mu}\right)\left(i\partial_{\mu}\right)\psi & =m^{2}\psi\\
+-\left(\frac{\partial^{2}}{\partial t^{2}}-\nabla^{2}\right)\psi & =m^{2}\psi\\
+-\square^{2}\psi & =m^{2}\psi
+\end{align*}
+
+Ou então, como queríamos mostrar:
+
+\[
+\left(\square^{2}+m^{2}\right)\psi=0
+\]
+
+Ou para cada uma das componentes de $\psi$:
+
+\[
+\left(\square^{2}+m^{2}\right)\psi_{i}=0
+\]
+
+
+\subsection{Problem 3}
+
+\textbf{Show that the helicity operator}
+
+\[
+\widehat{h}=\widehat{\sum}\cdot\widehat{\boldsymbol{p}}\equiv\left(\begin{array}{cc}
+\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}} & 0\\
+0 & \boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}
+\end{array}\right)
+\]
+
+\textbf{commutes with the Dirac Hamiltonian $\widehat{H}=\alpha\cdot\boldsymbol{p}+\beta m$. Here $\widehat{\boldsymbol{p}}$ is the unit vector pointing in the direction of the momentum, $\boldsymbol{p}/\left|\boldsymbol{p}\right|$. The ``spin'' component in the direction of motion, $\frac{1}{2}\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}$, , is therefore a ``good'' quantum number.}
+
+O operador de helicidade é dado por:
+
+\[
+\widehat{h}=\widehat{\sum}\cdot\widehat{\boldsymbol{p}}\equiv\left(\begin{array}{cc}
+\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}} & 0\\
+0 & \boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}
+\end{array}\right)
+\]
+
+Onde $\widehat{\boldsymbol{p}}=\boldsymbol{p}/\left|\boldsymbol{p}\right|$. Queremos mostrar que $\widehat{h}$ comuat com o Hamiltoniano de Dirac $\widehat{H}=\alpha\cdot\boldsymbol{p}+\beta m$.
+
+Temos da aula 35 e equações 101 e 102 que:
+
+\[
+\alpha_{i}=\left(\begin{array}{cc}
+0 & \sigma_{i}\\
+\sigma_{i} & 0
+\end{array}\right),\qquad\beta=\left(\begin{array}{cc}
+\boldsymbol{1} & 0\\
+0 & -\boldsymbol{1}
+\end{array}\right)
+\]
+
+Então:
+
+\begin{align*}
+\widehat{H} & =\alpha\cdot\boldsymbol{p}+\beta m=\left(\begin{array}{cc}
+0 & \boldsymbol{\sigma}\cdot\boldsymbol{p}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p} & 0
+\end{array}\right)+\left(\begin{array}{cc}
+m\boldsymbol{1} & 0\\
+0 & -m\boldsymbol{1}
+\end{array}\right)=\left(\begin{array}{cc}
+\boldsymbol{m} & \boldsymbol{\sigma}\cdot\boldsymbol{p}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p} & \boldsymbol{m}
+\end{array}\right)
+\end{align*}
+
+Então podemos verificar explicitamente que:
+
+\begin{align*}
+\left[\widehat{H},\widehat{h}\right] & =\left(\begin{array}{cc}
+\boldsymbol{m} & \boldsymbol{\sigma}\cdot\boldsymbol{p}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p} & \boldsymbol{m}
+\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}} & 0\\
+0 & \boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}
+\end{array}\right)-\left(\begin{array}{cc}
+\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}} & 0\\
+0 & \boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}
+\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{m} & \boldsymbol{\sigma}\cdot\boldsymbol{p}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p} & \boldsymbol{m}
+\end{array}\right)\\
+ & =\left(\begin{array}{cc}
+\boldsymbol{m}\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right) & \left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)\\
+\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right) & \boldsymbol{m}\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)
+\end{array}\right)-\left(\begin{array}{cc}
+\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)\boldsymbol{m} & \left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)\\
+\left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right) & \left(\boldsymbol{\sigma}\cdot\widehat{\boldsymbol{p}}\right)\boldsymbol{m}
+\end{array}\right)
+\end{align*}
+
+E como queríamos demonstrar:
+
+\[
+\left[\widehat{H},\widehat{h}\right]=0
+\]
+
+
+\subsection{Problem 4}
+
+\textbf{We have already seen that the equation $Hu=\left(\boldsymbol{\alpha}\cdot\boldsymbol{p}+\beta m\right)u=Eu$ reduces, for $\boldsymbol{p}\neq0$, to}
+
+\begin{align*}
+\boldsymbol{\sigma}\cdot\boldsymbol{p}u_{B} & =\left(\frac{E}{c}-mc\right)u_{A}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p}u_{A} & =\left(\frac{E}{c}+mc\right)u_{B}
+\end{align*}
+
+\textbf{where $u$ has been divided into two two-components spinors, $u_{A}$ and $u_{B}$.}
+
+\textbf{a) For a nonrelativistic electron of velocity $v$, use (1) to show that $u_{A}$ is larger than $u_{B}$ by a factor of the order $v/c$. In nonrelativistic problems, $\psi_{A}$ and $\psi_{B}$ are referred to as the ``large'' and ``small'' components of the electron wavefunction $\psi$.}
+
+\textbf{b) In the nonrelativistic limit, show that the Dirac equation for a electron (charge $-e$) in an electromagnetic field $A^{\mu}=\left(A^{0},\boldsymbol{A}\right)$ reduces to the Schrodinger-Pauli equation}
+
+\[
+\left(\frac{1}{2m}\left(\boldsymbol{P}+e\boldsymbol{A}\right)^{2}+\frac{e}{2m}\boldsymbol{\sigma}\cdot\boldsymbol{B}-eA^{0}\right)\psi_{A}=E_{NR}\psi_{A}
+\]
+
+\textbf{where the magnetic field $\boldsymbol{B}=\nabla\times\boldsymbol{A}$ and $E_{NR}=E-m$. Assume $\left|eA^{0}\right|\ll m$.}
+
+\textbf{Hint: Make the substitution $P^{\mu}\rightarrow P^{\mu}+eA^{\mu}$ in eqs. (1) written in terms of $\psi_{A,B}$, eliminate $\psi_{B}$, and use $\boldsymbol{P}\times\boldsymbol{A}+\boldsymbol{A}\times\boldsymbol{P}=i\nabla\times\boldsymbol{A}$ where $\boldsymbol{P}=-i\nabla$.}
+
+Não usando unidades naturais pois queremos a razão $v/c$, temos então:
+
+\begin{align}
+\boldsymbol{\sigma}\cdot\boldsymbol{p}u_{B} & =\left(\frac{E}{c}-mc\right)u_{A}\label{eq:23}\\
+\boldsymbol{\sigma}\cdot\boldsymbol{p}u_{A} & =\left(\frac{E}{c}+mc\right)u_{B}\label{eq:24}
+\end{align}
+
+Ou manipulando:
+
+\begin{align}
+u_{A} & =\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{\left(\frac{E}{c}-mc\right)}u_{B}\label{eq:g6_4}\\
+u_{B} & =\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{\left(\frac{E}{c}+mc\right)}u_{A}
+\end{align}
+
+Pegando então a segunda equação, e calculando o módulo de $u_{B}$:
+
+\[
+\left|u_{B}\right|=\frac{1}{\left(\frac{E}{c}+mc\right)}\left|\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)u_{A}\right|
+\]
+
+E abrindo:
+
+\[
+\boldsymbol{\sigma}\cdot\boldsymbol{p}=p_{k}\sigma_{k}\rightarrow\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)\cdot\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)=p_{k}\sigma_{k}p_{j}\sigma_{j}=p_{k}p_{j}\left(\sigma_{k}\sigma_{j}\right)=p_{j}p_{j}=\left|p\right|^{2}
+\]
+
+E como $\left|\boldsymbol{v}\right|=\sqrt{\boldsymbol{v}\cdot\boldsymbol{v}}$, então temos que $\left|\boldsymbol{\sigma}\cdot\boldsymbol{p}\right|=\sqrt{p_{j}p_{j}}=\left|\boldsymbol{p}\right|$. E devido a multiplicidade do módulo:
+
+\[
+\left|\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)u_{A}\right|=\left|\boldsymbol{p}\right|\left|u_{A}\right|
+\]
+
+Então sendo $E\approx mc^{2}$ e $p=mv$
+
+\[
+\left|u_{B}\right|\approx\frac{mv}{\left(\frac{mc^{2}}{c}+mc\right)}\left|u_{A}\right|
+\]
+
+Ou como queríamos demonstrar:
+
+\[
+\left|u_{B}\right|\approx\frac{1}{2}\frac{v}{c}\left|u_{A}\right|
+\]
+
+Alguma observações é que encontrei na literatura a razão entre a componentes após substituir $p^{\mu}\rightarrow p^{\mu}+eA^{\mu}$, mas optei por ir por outro caminho para ver se encontrava a mesma solução, uma vez que acabam desprezando os termos $eA^{\mu}$ durante o desenvolvimento. Independentemente da nota, eu também fiquei um pouco pensativo pois sempre substituem $E$ na segunda equação em \ref{eq:24} e não em \ref{eq:23}. Na formulação em \ref{eq:g6_4} levaria a uma indeterminação e em \ref{eq:23} ficamos com $\boldsymbol{\sigma}\cdot\boldsymbol{p}u_{B}\approx0$ então assumindo que $\boldsymbol{\sigma}\cdot\boldsymbol{p}\neq0$ temos que $u_{B}\approx0$. Eu acredito que isso decorre do fato que fizemos uma aproximação na energia e como pudemoz constatar, $u_{B}$ é a componente menor por $v/c$ e como estamos em um caso não relativístico $v/c\approx0$. Mas se estou errado, gostaria de um retorno.
+
+\textbf{b)}
+
+Agora voltando a equação 99 da aula 35, temos que:
+
+\[
+H=\boldsymbol{\alpha}\cdot\boldsymbol{p}+\beta m
+\]
+
+\[
+\left(i\gamma^{\mu}\partial_{\mu}-\boldsymbol{I}m\right)\psi=0
+\]
+
+Lembrando que $\gamma^{\mu}\equiv\left(\beta,\beta\boldsymbol{\alpha}\right)$ e
+
+\[
+\alpha_{i}=\left(\begin{array}{cc}
+0 & \sigma_{i}\\
+\sigma_{i} & 0
+\end{array}\right),\qquad\beta=\left(\begin{array}{cc}
+\boldsymbol{1} & 0\\
+0 & -\boldsymbol{1}
+\end{array}\right)
+\]
+
+Reescrevendo:
+
+\[
+\left(i\gamma^{\mu}p_{\mu}-\boldsymbol{I}m\right)\psi=0
+\]
+
+Fazendo a substituição $p^{\mu}\rightarrow p^{u}+eA^{\mu}$, onde $A^{\mu}=\left(A^{0},\boldsymbol{A}\right)$
+
+\begin{align*}
+\left(i\gamma^{\mu}\left(\partial_{\mu}+eA_{\mu}\right)-\boldsymbol{I}m\right)\psi & =0\\
+\left(\gamma^{\mu}i\partial_{\mu}+e\gamma^{\mu}A_{\mu}-\boldsymbol{I}m\right)\psi & =0\\
+\left(\gamma^{\nu}\left(i\partial_{\nu}+eA_{\nu}\right)-\boldsymbol{I}m\right)\psi & =-\gamma^{0}\left(i\partial_{0}+eA_{0}\right)\psi
+\end{align*}
+
+Onde $\mu=0,1,2,3$ e $\nu=1,2,3$. Além disso temos que $p_{\mu}=i\partial_{\mu}$e $E=i\partial_{0}$. Então:
+
+\begin{align*}
+\left(\beta\boldsymbol{\alpha}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)-\boldsymbol{I}m\right)\psi & =-\left(E+eA_{0}\right)\beta\psi\\
+\left(\left(\begin{array}{cc}
+0 & \boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\\
+-\boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right) & 0
+\end{array}\right)-\left(\begin{array}{cc}
+m & 0\\
+0 & m
+\end{array}\right)\right)\left(\begin{array}{c}
+u_{A}\\
+u_{B}
+\end{array}\right) & =-\left(E+eA_{0}\right)\left(\begin{array}{cc}
+\boldsymbol{1} & 0\\
+0 & -\boldsymbol{1}
+\end{array}\right)\left(\begin{array}{c}
+u_{A}\\
+u_{B}
+\end{array}\right)\\
+\left(\begin{array}{cc}
+-m & \boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\\
+-\boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right) & -m
+\end{array}\right)\left(\begin{array}{c}
+u_{A}\\
+u_{B}
+\end{array}\right) & =\left(E+eA_{0}\right)\left(\begin{array}{c}
+-u_{A}\\
+u_{B}
+\end{array}\right)\\
+\left(\begin{array}{cc}
+\left(E+eA_{0}-m\right) & \boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\\
+-\boldsymbol{\sigma}_{i}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right) & -\left(E+eA_{0}+m\right)
+\end{array}\right)\left(\begin{array}{c}
+u_{A}\\
+u_{B}
+\end{array}\right) & =\left(\begin{array}{c}
+0\\
+0
+\end{array}\right)
+\end{align*}
+
+O que nos leva a um novo conjunto de equações:
+
+\begin{align*}
+\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)u_{B} & =\left(E+eA^{0}-m\right)u_{A}\\
+\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)u_{A} & =\left(E+eA^{0}+m\right)u_{B}
+\end{align*}
+
+Substituindo $u_{B}$ na segunda equação na primeira:
+
+\begin{align*}
+\left(E+eA^{0}-m\right)u_{A} & =\frac{\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2}}{\left(E+eA^{0}+m\right)}u_{A}
+\end{align*}
+
+Então reescrevendo $E_{NR}=E-m$:
+
+\begin{align*}
+\left(E_{NR}+eA^{0}\right)u_{A} & =\frac{\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2}}{\left(E_{NR}+eA^{0}+2m\right)}u_{A}
+\end{align*}
+
+E usando $eA^{0}\ll m$:
+
+\begin{align*}
+\frac{1}{\left(E_{NR}+eA^{0}+2m\right)} & =\frac{1}{2m}\left[\frac{1}{\left(\frac{E_{NR}}{2m}+\frac{eA^{0}}{2m}+1\right)}\right]\approx\frac{1}{2m}\left[\frac{1}{\left(\frac{E_{NR}}{2m}\right)+1}\right]
+\end{align*}
+
+E fazendo expansão em série de taylor com $\frac{E_{NR}}{2m}=x$, uma vez que se $E\approx m$ em unidades naturais, então $E_{NR}\approx0$:
+
+\[
+\frac{1}{\left(E_{NR}+eA^{0}+2m\right)}\approx\frac{1}{2m}\left[1-\frac{E_{NR}}{2m}+\left(\frac{E_{NR}}{2m}\right)^{2}+\dots\right]
+\]
+
+Pegando só o primeiro termo da expansão:
+
+:
+
+\[
+\frac{1}{\left(E_{NR}+eA^{0}+2m\right)}\approx\frac{1}{2m}
+\]
+
+E voltando:
+
+\begin{align*}
+\left(E_{NR}+eA^{0}\right)u_{A} & =\frac{1}{2m}\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2}u_{A}
+\end{align*}
+
+Abrindo então o termo ao quadrado, e lembrando que $p_{\mu}=-i\hbar\partial_{\mu}$, $\sigma_{\mu}$ é costante e as componentes do vetor potencial $\boldsymbol{A}$ são escalares:
+
+\begin{align*}
+\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2} & =\left[\sigma_{i}p_{i}+e\sigma_{i}A_{i}\right]^{2}\\
+ & =\left[\sigma_{j}p_{j}\sigma_{i}p_{i}+e\sigma_{j}p_{j}\sigma_{i}A_{i}+e\sigma_{j}A_{j}\sigma_{i}p_{i}+e^{2}\sigma_{j}A_{j}\sigma_{i}A_{i}\right]\\
+ & =\sigma_{j}\sigma_{i}\left[p_{j}p_{i}+ep_{j}A_{i}+eA_{j}p_{i}+e^{2}A_{j}A_{i}\right]\\
+ & =\sigma_{j}\sigma_{i}\left[p_{j}p_{i}+e^{2}A_{j}A_{i}\right]+\sigma_{j}\sigma_{i}\left[ep_{j}A_{i}+eA_{j}p_{i}\right]\\
+ & =\frac{1}{2}\left(\sigma_{j}\sigma_{i}+\sigma_{i}\sigma_{j}\right)\left[p_{j}p_{i}+e^{2}A_{j}A_{i}\right]+\sigma_{j}\sigma_{i}e\left[p_{j}A_{i}+A_{j}p_{i}\right]
+\end{align*}
+
+Como $\left\{ \sigma_{i},\sigma_{j}\right\} =2\delta_{ij}$ e $\sigma_{i}\sigma_{j}=\delta_{ij}+i\varepsilon_{ijk}\sigma_{k}$:
+
+\begin{align*}
+\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2} & =\delta_{ij}\left[p_{j}p_{i}+e^{2}A_{j}A_{i}\right]+\sigma_{j}\sigma_{i}e\left[p_{j}A_{i}+A_{j}p_{i}\right]\\
+ & =\boldsymbol{p}^{2}+e^{2}\boldsymbol{A}^{2}+\left(\delta_{ij}+i\varepsilon_{ijk}\sigma_{k}\right)e\left[p_{j}A_{i}+A_{j}p_{i}\right]
+\end{align*}
+
+Abrindo então último termo e sendo $\boldsymbol{p}=-i\nabla$, lembrando que tudo opera sobre $u_{A}$:
+
+\begin{align*}
+\left(\delta_{ij}+i\varepsilon_{ijk}\sigma_{k}\right)\left(p_{j}A_{i}+A_{j}p_{i}\right)u_{A} & =\left[\delta_{ij}p_{j}A_{i}+\delta_{ij}A_{j}p_{i}+i\varepsilon_{jik}\sigma_{k}p_{j}A_{i}+i\varepsilon_{jik}\sigma_{k}A_{j}p_{i}\right]u_{A}\\
+ & =\left(\boldsymbol{p}\cdot\boldsymbol{A}+\boldsymbol{A}\cdot\boldsymbol{p}\right)u_{A}+\varepsilon_{jik}\sigma_{k}\partial_{j}\left(A_{i}u_{A}\right)+\varepsilon_{jik}\sigma_{k}A_{j}\partial_{i}\left(u_{A}\right)\\
+ & =\left(\boldsymbol{p}\cdot\boldsymbol{A}+\boldsymbol{A}\cdot\boldsymbol{p}\right)u_{A}+\varepsilon_{jik}\sigma_{k}\partial_{j}\left(A_{i}\right)u_{A}+\left[\varepsilon_{jik}\sigma_{k}A_{i}\partial_{j}\left(u_{A}\right)+\varepsilon_{jik}\sigma_{k}A_{j}\partial_{i}\left(u_{A}\right)\right]
+\end{align*}
+
+Importante pestar atenção nos últimos dois termos. Por exemplo, mantendo $3=1$ fixo:
+
+\begin{align*}
+\varepsilon_{ji3}A_{i}\partial_{j}\left(u_{A}\right)+\varepsilon_{ji3}A_{j}\partial_{i}\left(u_{A}\right) & =\varepsilon_{123}A_{2}\partial_{1}\left(u_{A}\right)+\varepsilon_{123}A_{1}\partial_{2}\left(u_{A}\right)+\varepsilon_{213}A_{1}\partial_{2}\left(u_{A}\right)+\varepsilon_{213}A_{2}\partial_{1}\left(u_{A}\right)\\
+ & =\left(\varepsilon_{123}+\varepsilon_{213}\right)A_{2}\partial_{1}\left(u_{A}\right)+\left(\varepsilon_{123}+\varepsilon_{213}\right)A_{1}\partial_{2}\left(u_{A}\right)\\
+ & =0
+\end{align*}
+
+É análogo para outras componentes. Então ficamos com:
+
+\begin{align*}
+\left(\delta_{ij}+i\varepsilon_{ijk}\sigma_{k}\right)\left(p_{j}A_{i}+A_{j}p_{i}\right)u_{A} & =\left(\boldsymbol{p}\cdot\boldsymbol{A}+\boldsymbol{A}\cdot\boldsymbol{p}\right)u_{A}+\varepsilon_{jik}\sigma_{k}\partial_{j}\left(A_{i}\right)u_{A}\\
+ & =\left[\left(\boldsymbol{p}\cdot\boldsymbol{A}+\boldsymbol{A}\cdot\boldsymbol{p}\right)+\boldsymbol{\sigma}\cdot\left(\nabla\times\boldsymbol{A}\right)\right]u_{A}\\
+ & =\left[\left(\boldsymbol{p}\cdot\boldsymbol{A}+\boldsymbol{A}\cdot\boldsymbol{p}\right)+\boldsymbol{\sigma}\cdot\boldsymbol{B}\right]
+\end{align*}
+
+E então:
+
+\begin{align*}
+\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2} & =\boldsymbol{p}^{2}+e^{2}\boldsymbol{A}^{2}+\left(\delta_{ij}+i\varepsilon_{ijk}\sigma_{k}\right)e\left[p_{j}A_{i}+A_{j}p_{i}\right]\\
+ & =\boldsymbol{p}^{2}+e^{2}\boldsymbol{A}^{2}+e\boldsymbol{p}\cdot\boldsymbol{A}+e\boldsymbol{A}\cdot\boldsymbol{p}+e\boldsymbol{\sigma}\cdot\boldsymbol{B}\\
+ & =
+\end{align*}
+
+E finalmente:
+
+\begin{align*}
+\left(E_{NR}+eA^{0}\right)u_{A} & =\frac{1}{2m}\left[\boldsymbol{\sigma}\cdot\left(\boldsymbol{p}+e\boldsymbol{A}\right)\right]^{2}u_{A}\\
+\left(E_{NR}+eA^{0}\right)u_{A} & =\frac{\left(\boldsymbol{p}+e\boldsymbol{A}\right)^{2}+e\boldsymbol{\sigma}\cdot\boldsymbol{B}}{2m}u_{A}
+\end{align*}
+
+Ou na formulação que o exercício pediu:
+
+\[
+E_{NR}u_{A}=\left(\frac{1}{2m}\left(\boldsymbol{p}+e\boldsymbol{A}\right)^{2}+\frac{e}{2m}\boldsymbol{\sigma}\cdot\boldsymbol{B}-eA^{0}\right)u_{A}
+\]
+
+
+\subsection{Problem 5}
+
+\textbf{Derive the completeness relations}
+
+\begin{align*}
+\sum_{s=1,2} & u^{\left(s\right)}\left(p\right)\overline{u}^{\left(s\right)}\left(p\right)=\cancel{p}+m\\
+\sum_{s=1,2} & v^{\left(s\right)}\left(p\right)\overline{v}^{\left(s\right)}\left(p\right)=\cancel{p}-m
+\end{align*}
+
+Queremos desenvolver:
+
+\begin{align*}
+\sum_{s=1,2} & u^{\left(s\right)}\left(p\right)\overline{u}^{\left(s\right)}\left(p\right)=\cancel{p}+m\\
+\sum_{s=1,2} & v^{\left(s\right)}\left(p\right)\overline{v}^{\left(s\right)}\left(p\right)=\cancel{p}-m
+\end{align*}
+
+Temos então da equaçao 177 da aula 37:
+
+\[
+\chi^{\left(1\right)}=\left(\begin{array}{c}
+1\\
+0
+\end{array}\right),\qquad\chi^{\left(2\right)}=\left(\begin{array}{c}
+0\\
+1
+\end{array}\right)
+\]
+
+E da 179 e 181, sendo $u^{\left(s\right)}=u^{\left(s\right)}$ e $u^{\left(s+2\right)}=v^{\left(s\right)}$ :
+
+\begin{align*}
+u^{\left(1\right)} & =N\left(\begin{array}{c}
+\chi^{\left(1\right)}\\
+\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{E+m}\chi^{\left(1\right)}
+\end{array}\right) & =N\left(\begin{array}{c}
+\begin{array}{c}
+1\\
+0
+\end{array}\\
+\frac{p_{3}}{E+m}\\
+\frac{ip_{2}+p_{1}}{E+m}
+\end{array}\right)
+\end{align*}
+
+Pois:
+
+\[
+\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)\chi^{\left(1\right)}=\left(\sigma_{1}p_{1}+\sigma_{2}p_{2}+\sigma_{3}p_{3}\right)\chi^{\left(1\right)}=\left(\begin{array}{cc}
+p_{3} & p_{1}-ip_{2}\\
+ip_{2}+p_{1} & -p_{3}
+\end{array}\right)\left(\begin{array}{c}
+1\\
+0
+\end{array}\right)=\left(\begin{array}{c}
+p_{3}\\
+ip_{2}+p_{1}
+\end{array}\right)
+\]
+
+De maneira análoga:
+
+\begin{align*}
+u^{\left(2\right)} & =N\left(\begin{array}{c}
+\chi^{\left(2\right)}\\
+\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{E+m}\chi^{\left(2\right)}
+\end{array}\right) & =N\left(\begin{array}{c}
+\begin{array}{c}
+0\\
+1
+\end{array}\\
+\frac{p_{1}-ip_{2}}{E+m}\\
+\frac{-p_{3}}{E+m}
+\end{array}\right)\\
+v^{\left(1\right)} & =N\left(\begin{array}{c}
+-\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{E+m}\chi^{\left(1\right)}\\
+\chi^{\left(1\right)}
+\end{array}\right) & =N\left(\begin{array}{c}
+\begin{array}{c}
+\frac{-p_{3}}{E+m}\\
+\frac{-ip_{2}-p_{1}}{E+m}
+\end{array}\\
+1\\
+0
+\end{array}\right)\\
+v^{\left(2\right)} & =N\left(\begin{array}{c}
+-\frac{\boldsymbol{\sigma}\cdot\boldsymbol{p}}{E+m}\chi^{\left(2\right)}\\
+\chi^{\left(2\right)}
+\end{array}\right) & =N\left(\begin{array}{c}
+\begin{array}{c}
+\frac{ip_{2}-p_{1}}{E+m}\\
+\frac{p_{3}}{E+m}
+\end{array}\\
+0\\
+1
+\end{array}\right)
+\end{align*}
+
+Podemos definir no Wolfram Mathematica: 
+\begin{verbatim*}[language=Mathematica]
+u1:=\{\{1\},\{0\},\{p3/(e+M)\},\{(I{*}p2+p1)/(e+M)\}\};~
+
+u2:=\{\{0\},\{1\},\{(p1-I{*}p2)/(E+M)\},\{-p3/(e+M)\}\};~
+
+v1:=\{\{-p3/(e+M)\},\{(-I{*}p2-p1)/(e+M)\},\{1\},\{0\}\};~
+
+v2:=\{\{(I{*}p2-p1)/(e+M)\},\{p3/(e+M)\},\{0\},\{1\}\};
+
+\end{verbatim*}
+E agora $\overline{u}=u^{\dagger}\gamma^{0}$, calculando $\overline{u}^{\left(1\right)}$:
+
+\begin{align*}
+\overline{u}^{\left(1\right)} & =N\left(\begin{array}{cc}
+\chi^{\left(1\right)} & \frac{\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)^{\dagger}}{E+m}\chi^{\left(1\right)}\end{array}\right)\left(\begin{array}{cc}
+\boldsymbol{1} & 0\\
+0 & \boldsymbol{-1}
+\end{array}\right) & =N\left(\begin{array}{cc}
+\chi^{\left(1\right)} & -\frac{\left(\boldsymbol{\sigma}\cdot\boldsymbol{p}\right)^{\dagger}}{E+m}\chi^{\left(1\right)}\end{array}\right) & =\left(\begin{array}{cccc}
+1 & 0 & \frac{-p_{3}}{E+m} & \frac{ip_{2}-p_{1}}{E+m}\end{array}\right)
+\end{align*}
+
+Checando no Wolfram Mathematica: 
+\begin{verbatim*}[language=Mathematica]
+b:=\{\{1,0,0,0\},\{0,1,0,0\},\{0,0,-1,0\},\{0,0,0,-1\}\}
+
+lu1:=Conjugate{[}Transpose{[}u1{]}{]}.b
+
+MatrixForm{[}v2{]}
+\end{verbatim*}
+Uma vez que está certo, declaramos o resto da mesma maneira:
+
+\[
+\overline{u}^{\left(2\right)}=\left(u^{\left(2\right)}\right)^{\dagger}\gamma^{0},\quad\overline{v}^{\left(1\right)}=\left(v^{\left(1\right)}\right)^{\dagger}\gamma^{0},\quad\overline{v}^{\left(2\right)}=\left(v^{\left(2\right)}\right)^{\dagger}\gamma^{0}
+\]
+
+O que retorna:
+
+\[
+\overline{u}^{\left(2\right)}=N\left(\begin{array}{cccc}
+0 & 1 & \frac{p_{1}+ip_{2}}{E+m} & \frac{p_{3}}{E+m}\end{array}\right),\quad\overline{v}^{\left(1\right)}=N\left(\begin{array}{cccc}
+\frac{-p_{3}}{E+m} & \frac{-p_{1}+ip_{2}}{E+m} & -1 & 0\end{array}\right),\quad\overline{v}^{\left(1\right)}=N\left(\begin{array}{cccc}
+\frac{-p_{1}-ip_{2}}{E+m} & \frac{p_{3}}{E+m} & -1 & 0\end{array}\right)
+\]
+
+Fazendo então primeiro: 
+\begin{verbatim*}[language=Mathematica]
+MatrixForm{[}u1.lu1+u2.lu2{]}
+\end{verbatim*}
+\begin{align*}
+\sum_{s=1,2} & u^{\left(s\right)}\left(p\right)\overline{u}^{\left(s\right)}\left(p\right)=\left(\begin{array}{cccc}
+E+m & 0 & -p_{3} & -p_{1}+p_{2}\\
+0 & E+m & -p_{1}-ip_{2} & p_{3}\\
+p_{3} & p_{1}-ip_{2} & -\frac{\left(p^{2}_{1}+p^{2}_{2}+p^{2}_{3}\right)}{E+m} & 0\\
+p_{1}+ip_{2} & -p_{3} & 0 & -\frac{\left(p^{2}_{1}+p^{2}_{2}+p^{2}_{3}\right)}{E+m}
+\end{array}\right)
+\end{align*}
+
+Uma vez que $N=\sqrt{E+M}$. Além disso temos que $E^{2}=\left(mc^{2}\right)^{2}+\left(pc\right)^{2}$, sendo $c=1$ então $p^{2}=E^{2}-m^{2}$. E como:
+
+\[
+\frac{E^{2}-m^{2}}{E+m}=\frac{\left(E-m\right)\left(E+m\right)}{E+m}=E-m
+\]
+Temos apenas:
+
+\[
+\sum_{s=1,2}u^{\left(s\right)}\left(p\right)\overline{u}^{\left(s\right)}\left(p\right)=\left(\begin{array}{cccc}
+E+m & 0 & -p_{3} & -p_{1}+p_{2}\\
+0 & E+m & -p_{1}-ip_{2} & p_{3}\\
+p_{3} & p_{1}-ip_{2} & -\left(E-m\right) & 0\\
+p_{1}+ip_{2} & -p_{3} & 0 & -\left(E-m\right)
+\end{array}\right)
+\]
+
+Agora lembrando que:
+
+\begin{align*}
+\gamma^{0}=\left(\begin{array}{cccc}
+1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0\\
+0 & 0 & -1 & 0\\
+0 & 0 & 0 & -1
+\end{array}\right) & \gamma^{1}=\left(\begin{array}{cccc}
+0 & 0 & 0 & 1\\
+0 & 0 & 1 & 0\\
+0 & -1 & 0 & 0\\
+-1 & 0 & 0 & 0
+\end{array}\right)\\
+\gamma^{1}=\left(\begin{array}{cccc}
+0 & 0 & 0 & i\\
+0 & 0 & i & 0\\
+0 & i & 0 & 0\\
+-i & 0 & 0 & 0
+\end{array}\right) & \gamma^{1}=\left(\begin{array}{cccc}
+0 & 0 & 1 & 0\\
+0 & 0 & 0 & 1\\
+-1 & 0 & 0 & 0\\
+0 & 1 & 0 & 0
+\end{array}\right)
+\end{align*}
+
+Neste ponto, uma observação é importante de ser eita. Até aqui estávamos usando $p_{i}$ apenas para indicar a componente $i$ do momento como estamos acostumados a trabalhar com vetores. Mas utilizando a notação de variante e covarianete, estavámos lidando com $p^{\mu}=\left(E,\boldsymbol{p}\right)$, é necessário mudar o sinal das componentes espaciais do momento $p^{i}$ para obtermos as componentes $p_{i}=\left(E,-\boldsymbol{p}\right)$ a fim de calcularmos $\gamma^{\mu}p_{\mu}=\cancel{p}$. Desta forma podemos ver que é exatamente:
+
+\[
+\sum_{s=1,2}u^{\left(s\right)}\left(p\right)\overline{u}^{\left(s\right)}\left(p\right)=\gamma^{\mu}p_{\mu}+\mathbb{I}m
+\]
+
+Como queríamos demonstrar. Fazendo um processo análogo: 
+\begin{verbatim*}[language=Mathematica]
+MatrixForm{[}v1.lv1+v2.lv2{]}
+\end{verbatim*}
+E já sabendo que $\left(p^{2}_{1}+p^{2}_{2}+p^{2}_{3}\right)/(E+m)=E-m$
+
+\begin{align*}
+\sum_{s=1,2} & v^{\left(s\right)}\left(p\right)\overline{v}^{\left(s\right)}\left(p\right)=\left(\begin{array}{cccc}
+E-m & 0 & -p_{3} & -p_{1}+p_{2}\\
+0 & E-m & -p_{1}-ip_{2} & p_{3}\\
+p_{3} & p_{1}-ip_{2} & -E-m & 0\\
+p_{1}+ip_{2} & -p_{3} & 0 & -E-m
+\end{array}\right)
+\end{align*}
+
+Que de maneira análoga, nos leva a :
+
+\[
+\sum_{s=1,2}v^{\left(s\right)}\left(p\right)\overline{v}^{\left(s\right)}\left(p\right)=\gamma^{\mu}p_{\mu}-\mathbb{I}m
+\]
+
+ \bibliographystyle{abbrv}
+\bibliography{ref}
+
+\end{document}

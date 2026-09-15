@@ -1,0 +1,524 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+\usepackage{babel}
+
+
+\makeatother
+
+
+\begin{document}
+\title{Problem set 4}
+
+\maketitle
+These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
+
+\subsection{Problem 1}
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t-t_{0}\right)}}\exp\left[\frac{im\left(x''-x'\right)^{2}}{2\hbar\left(t-t_{0}\right)}\right]
+\]
+
+\textbf{Show that the propagator of a one-dimensional free particle is given by}
+
+Queremos mostrar que o propagador de uma partícula livre unidimensional é dado por:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t-t_{0}\right)}}\exp\left[\frac{im\left(x''-x'\right)^{2}}{2\hbar\left(t-t_{0}\right)}\right]
+\]
+
+O propagador pode ser escrito elegantemente como:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\left\langle x''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|x'\right\rangle 
+\]
+
+Sendo então o hamiltoniano de uma partícula livre dado por $H=\frac{p^{2}}{2m}$ Uma vez que $\left|p'\right\rangle $ é um autoket do operador $p$ e $H$, logo $p\left|p'\right\rangle =p'\left|p'\right\rangle $ e $H\left|p'\right\rangle =\frac{p'^{2}}{2m}\left|p'\right\rangle $. A autofunção do momento é somente a função transformação:
+
+\[
+\left\langle x'|p'\right\rangle =\sqrt{\frac{1}{2\pi\hbar}}\exp\left(\frac{ip'x'}{\hbar}\right)
+\]
+
+E como $\left(H\left|p'\right\rangle \right)^{\dagger}=\left\langle p\right|H=\left\langle p\right|\frac{p'^{2}}{2m}$ Então:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\left\langle x''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|x'\right\rangle \\
+ & =\int dp'\left\langle x''|p'\right\rangle \left\langle p'\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|x'\right\rangle \\
+ & =\int dp'\sqrt{\frac{1}{2\pi\hbar}}\exp\left(\frac{ip'x''}{\hbar}\right)\left\langle p'\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|x'\right\rangle \\
+ & =\sqrt{\frac{1}{2\pi\hbar}}\int dp'\exp\left(\frac{ip'x''}{\hbar}\right)\left\langle p'|x'\right\rangle \exp\left(\frac{-ip'^{2}\left(t-t_{0}\right)}{2\hbar m}\right)\\
+ & =\frac{1}{2\pi\hbar}\int dp'\exp\left(\frac{ip'\left(x''-x'\right)}{\hbar}\right)\exp\left(\frac{-ip'^{2}\left(t-t_{0}\right)}{2\hbar m}\right)\\
+ & =\frac{1}{2\pi\hbar}\int dp'\exp\left(\frac{ip'\left(x''-x'\right)}{\hbar}-\frac{ip'^{2}\left(t-t_{0}\right)}{2\hbar m}\right)
+\end{align*}
+
+Sendo $-2\alpha\beta=\frac{i\left(x''-x'\right)}{\hbar}$e $\beta^{2}=\frac{i\left(t'-t_{0}\right)}{2m\hbar}$. Completando quadrado:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\frac{1}{2\pi\hbar}\int dp'\exp\left(-\left[2\alpha\beta p'+\left(\beta p'\right)^{2}\right]\right)\\
+ & =\frac{1}{2\pi\hbar}\int dp'\exp\left[-\left(2\alpha\beta+\beta p'\right)^{2}+\alpha^{2}\right]\\
+ & =\frac{1}{2\pi\hbar}e^{-\alpha^{2}}\int dp'\exp\left[-\left(\alpha+\beta p'\right)^{2}\right]\\
+ & =\frac{1}{2\pi\hbar}\frac{e^{\alpha^{2}}}{\beta}\int e^{-u^{2}}du
+\end{align*}
+
+Onde foi feito $u=\left(\alpha+\beta p'\right)$ e $\frac{du}{dp'}=-\beta$. Uma vez que $\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{a}}$, então:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\frac{1}{2\sqrt{\pi}\hbar}\frac{e^{\alpha^{2}}}{\beta}
+\end{align*}
+
+Agora como:
+
+\begin{align*}
+-2\alpha\beta & =\frac{i\left(x''-x'\right)}{\hbar}\\
+\alpha & =-\frac{i\left(x''-x'\right)}{2\hbar\beta}\\
+\alpha^{2} & =\frac{\left(x''-x'\right)^{2}}{2^{2}\hbar^{2}}\frac{1}{\beta^{2}}\\
+ & =\frac{\left(x''-x'\right)^{2}}{2^{2}\hbar^{2}}\left(\frac{2im\hbar}{\left(t'-t_{0}\right)}\right)\\
+ & =\frac{im\left(x''-x'\right)^{2}}{2\hbar\left(t'-t_{0}\right)}
+\end{align*}
+
+Então:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\frac{1}{2\sqrt{\pi}\hbar}\frac{e^{\alpha^{2}}}{\beta}\\
+ & =\frac{1}{2\sqrt{\pi}\hbar}\sqrt{\frac{2m\hbar}{i\left(t'-t_{0}\right)}}\exp\left[\frac{im\left(x''-x'\right)^{2}}{2\hbar\left(t-t_{0}\right)}\right]
+\end{align*}
+
+Então obtemos:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m}{2\pi i\hbar\left(t-t_{0}\right)}}\exp\left[\frac{im\left(x''-x'\right)^{2}}{2\hbar\left(t-t_{0}\right)}\right]
+\]
+
+Que é o que queríamos demonstrar desde o começo.
+
+\subsection{Problem 2}
+
+\textbf{Show, using the $a,a^{\dagger}$ operator method, that the propagator of a one-dimensional simple harmonic oscillator is given by}
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m\omega}{2\pi i\hbar\sin\left[\omega t\left(t-t_{0}\right)\right]}}\exp\left[\frac{im\omega}{2\hbar\sin\left[\omega\left(t-t_{0}\right)\right]}\left(\left(x''^{2}+x'^{2}\right)\cos\left[\omega\left(t-t_{0}\right)\right]-2x''x'\right)\right]
+\]
+
+Usando o método do operador $a,a^{\dagger}$ queremo msotrar que o propagador unidimensional de um oscilador harmônico simples é dado por:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m\omega}{2\pi i\hbar\sin\left[\omega t\left(t-t_{0}\right)\right]}}\exp\left[\frac{im\omega}{2\hbar\sin\left[\omega\left(t-t_{0}\right)\right]}\left(\left(x''^{2}+x'^{2}\right)\cos\left[\omega\left(t-t_{0}\right)\right]-2x''x'\right)\right]
+\]
+
+Partindodo propagador escrito como:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\left\langle x''\left|\exp\left[\frac{-i\widehat{H}\left(t-t_{0}\right)}{\hbar}\right]\right|x'\right\rangle 
+\]
+
+E sendo $\widehat{U}=\widehat{U}\left(t-t_{0}\right)=\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]$, então podemos escrever simplesmente:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\left\langle x''\left|\widehat{U}\right|x'\right\rangle 
+\]
+
+Sendo então $\left|\alpha\right\rangle $ um estado coerente, é um auto estado do operador $\widehat{a}$, de forma que temos $\widehat{a}\left|\alpha\right\rangle =\alpha\left|\alpha\right\rangle $. E o operador $\widehat{a}$ é dado por:
+
+\[
+\widehat{a}=\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}
+\]
+
+Então, se $\alpha$ é um autovalor complexo, e por normalização $\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle =\alpha$, então os valores quântios médios da posição e do momento são respectivamente $x_{0}=\left\langle \alpha\left|\widehat{x}\right|\alpha\right\rangle $ e $p_{0}=\left\langle \alpha\left|\widehat{p}\right|\alpha\right\rangle $ onde:
+
+\begin{align}
+\alpha & =\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle \\
+ & =\left\langle \alpha\left|\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}\left\langle \alpha\left|\widehat{x}\right|\alpha\right\rangle +\frac{i}{\sqrt{2\hbar m\omega}}\left\langle \alpha\left|\widehat{p}\right|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{i}{\sqrt{2\hbar m\omega}}p_{0}\label{eq:4}
+\end{align}
+
+Vamos utilizar o seguinte operador identidade\cite{doi:10.1119/1.4960479,doi:https://doi.org/10.1002/9783527628285.ch1}:
+
+\[
+\frac{1}{2\pi\hbar}\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}dx_{0}dp_{0}\left|\alpha\right\rangle \left\langle \alpha\right|=\mathbb{I}
+\]
+
+Inserindo esta identidade no propagador, temos que:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\frac{1}{2\pi\hbar}\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}dx_{0}dp_{0}\left\langle x''\right|\widehat{U}\left|\alpha\right\rangle \left\langle \alpha|x'\right\rangle 
+\]
+
+Agora queremos reescrever $\widehat{U}\left|\alpha\right\rangle $. Calculando então $\widehat{U}^{\dagger}\widehat{a}\widehat{U}$. Então:
+
+\begin{align*}
+\widehat{U}^{\dagger}\widehat{a}\widehat{U} & =\exp\left[\frac{i\left(t-t_{0}\right)}{\hbar}\widehat{H}\right]\widehat{a}\exp\left[-\frac{i\left(t-t_{0}\right)}{\hbar}\widehat{H}\right]\\
+ & =e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}}
+\end{align*}
+
+Onde $\widehat{A}=\widehat{H}$, $\widehat{B}=\widehat{a}$ e $\lambda=\frac{i\left(t-t_{0}\right)}{\hbar}$. Esse produto é dado pelo lema de Baker-Hausdorff, conforme equação\cite{doi:10.1119/1.4960479,joninha,sakurai2011modern}:
+
+\[
+e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}}=\widehat{B}+\lambda\left[\widehat{A},\widehat{B}\right]+\frac{\lambda^{2}}{2!}\left[\widehat{A},\left[\widehat{A},\widehat{B}\right]\right]+\frac{\lambda^{3}}{3!}\left[\widehat{A},\left[\widehat{A},\left[\widehat{A},\widehat{B}\right]\right]\right]+\dots
+\]
+
+E como:
+
+\begin{align*}
+\widehat{a}^{\dagger}\widehat{a} & =\left(\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}-\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right)\left(\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right)\\
+ & =\left(\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\widehat{x}\widehat{p}-\frac{i}{2\hbar}\widehat{p}\widehat{x}+\frac{1}{2\hbar m\omega}\widehat{p}^{2}\right)\\
+ & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\left(\widehat{x}\widehat{p}-\widehat{p}\widehat{x}\right)+\frac{1}{2\hbar m\omega}\widehat{p}^{2}\\
+ & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{i}{2\hbar}\left[\widehat{x},\widehat{p}\right]+\frac{1}{2\hbar m\omega}\widehat{p}^{2}
+\end{align*}
+
+Lembrando que $\left[\widehat{x},\widehat{p}\right]=i\hbar$:
+
+\begin{align*}
+\widehat{a}^{\dagger}\widehat{a} & =\frac{m\omega}{2\hbar}\widehat{x}^{2}+\frac{1}{2\hbar m\omega}\widehat{p}^{2}-\frac{1}{2}\\
+ & =\frac{1}{\hbar\omega}\left(\frac{1}{2m}\widehat{p}^{2}+\frac{m\omega^{2}}{2}\widehat{x}^{2}-\frac{\hbar\omega}{2}\right)
+\end{align*}
+
+Então o Hamiltoniano para um oscilador harmônico pode ser escrito como:
+
+\begin{align*}
+\widehat{H} & =\frac{1}{2m}\widehat{p}^{2}+\frac{1}{2}m\omega^{2}\widehat{x}^{2}\\
+ & =\hbar\omega\left(\widehat{a}^{\dagger}\widehat{a}+\frac{1}{2}\right)
+\end{align*}
+
+Definindo o operador número $\widehat{N}=\widehat{a}^{\dagger}\widehat{a}$, temos que:
+
+\[
+\widehat{H}=\hbar\omega\left(\widehat{N}+\frac{1}{2}\right)
+\]
+
+E como e $\left[\widehat{N},\widehat{a}\right]=-\widehat{a}$ \cite{nmro}, então, por simplicidade ignorando $\frac{\omega\hbar}{2}$:
+
+\begin{align*}
+e^{\lambda\widehat{A}}\widehat{B}e^{-\lambda\widehat{A}} & =\widehat{a}+\lambda\hbar\omega\left[\widehat{N},\widehat{a}\right]+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]+\frac{\left(\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}-\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\left[\widehat{N},\widehat{a}\right]+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\left[\widehat{N},\widehat{a}\right]\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\widehat{a}-\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\left[\widehat{N},\widehat{a}\right]+\dots\\
+ & =\widehat{a}+\left(-\lambda\hbar\omega\right)\widehat{a}+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}\widehat{a}+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}\widehat{a}+\dots\\
+ & =\widehat{a}\left[1+\left(-\lambda\hbar\omega\right)+\frac{\left(\lambda\hbar\omega\right)^{2}}{2!}+\frac{\left(-\lambda\hbar\omega\right)^{3}}{3!}+\dots\right]\\
+ & =\widehat{a}e^{-\lambda\hbar\omega}
+\end{align*}
+
+E como $\lambda=\frac{i\left(t-t_{0}\right)}{\hbar}$, temos então que:
+
+\[
+\widehat{U}^{\dagger}\widehat{a}\widehat{U}=\widehat{a}e^{-i\omega\left(t-t_{0}\right)}
+\]
+
+Ou então, aplicando o operador $\widehat{U}$:
+
+\begin{align*}
+\widehat{a} & =\widehat{U}^{\dagger}\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}\\
+\widehat{U}\widehat{a} & =\widehat{U}\widehat{U}^{\dagger}\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}\\
+ & =\widehat{a}\widehat{U}e^{i\omega\left(t-t_{0}\right)}
+\end{align*}
+
+Então manipulando $\widehat{a}\left|\alpha\right\rangle =\alpha\left|\alpha\right\rangle $, temos:
+
+\begin{align*}
+\widehat{a}\left|\alpha\right\rangle  & =\alpha\left|\alpha\right\rangle \\
+\widehat{U}\widehat{a}\left|\alpha\right\rangle  & =\alpha\widehat{U}\left|\alpha\right\rangle \\
+\widehat{a}e^{i\omega\left(t-t_{0}\right)}\widehat{U}\left|\alpha\right\rangle  & =\alpha\widehat{U}\left|\alpha\right\rangle \\
+\widehat{a}\left(\widehat{U}\left|\alpha\right\rangle \right) & =\left(\alpha e^{i\omega\left(t-t_{0}\right)}\right)\left(\widehat{U}\left|\alpha\right\rangle \right)\\
+\widehat{a}\left|\alpha\left(t\right)\right\rangle  & =\alpha\left(t\right)\left|\alpha\left(t\right)\right\rangle 
+\end{align*}
+
+Isto significa que o estado coerente permanece um estado coerente durante a evolução do tempo com um autovalor dependente do tempo. Voltando então ao propagador, podemos reescrever como:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\frac{1}{2\pi\hbar}\int^{+\infty}_{-\infty}\int^{+\infty}_{-\infty}dx_{0}dp_{0}\left\langle x''|\alpha\left(t\right)\right\rangle \left\langle \alpha|x'\right\rangle 
+\]
+
+Agora queremos manipular o termo $\left\langle \alpha|x'\right\rangle $. Na configuração de espaço temos:
+
+\begin{align*}
+\left\langle x\left|\widehat{a}\right|\alpha\right\rangle  & =\left\langle x\left|\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right|\alpha\right\rangle \\
+\alpha\left\langle x|\alpha\right\rangle  & =\sqrt{\frac{m\omega}{2\hbar}}\left\langle x\left|\widehat{x}\right|\alpha\right\rangle +\frac{i}{\sqrt{2\hbar m\omega}}\left\langle x\left|\widehat{p}\right|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x\left\langle x|\alpha\right\rangle +\sqrt{\frac{\hbar}{2m\omega}}\frac{\partial}{\partial x}\left\langle x|\alpha\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x\left\langle x|\alpha\right\rangle +\sqrt{\frac{\hbar}{2m\omega}}\frac{\partial}{\partial x}\left\langle x|\alpha\right\rangle 
+\end{align*}
+
+Onde usamos o resultado obtido na aula 8 $\left\langle x\left|p\right|a\right\rangle =-i\hbar\frac{\partial}{\partial x}\left\langle x|a\right\rangle $ Temos então uma equação diferencial de primeira ordem:
+
+\begin{align*}
+\sqrt{\frac{\hbar}{2m\omega}}\frac{\partial}{\partial x}\left\langle x|\alpha\right\rangle  & =-\left(\sqrt{\frac{m\omega}{2\hbar}}x-\alpha\right)\left\langle x|\alpha\right\rangle 
+\end{align*}
+
+Em que a solução é:
+
+\begin{align*}
+\left\langle x|\alpha\right\rangle  & =C\exp\left[-\left(\sqrt{\frac{m\omega}{2\hbar}}x-\alpha\right)^{2}\right]
+\end{align*}
+
+Confore pode ser verificado facilmente substituindo na equação diferencial. Abrindo mais temos:
+
+\[
+\left\langle x|\alpha\right\rangle =C\exp\left[-\left(\frac{m\omega}{2\hbar}x^{2}+\alpha^{2}-\sqrt{\frac{2m\omega}{\hbar}}x\alpha\right)\right]
+\]
+
+Usando o obtido na equação \ref{eq:4}:
+
+\begin{align*}
+\alpha^{2} & =\left(\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{i}{\sqrt{2\hbar m\omega}}p_{0}\right)^{2}\\
+ & =\frac{m\omega}{2\hbar}x^{2}_{0}-\frac{1}{2\hbar m\omega}p^{2}_{0}+i\frac{x_{0}p_{0}}{2\hbar}
+\end{align*}
+
+Então:
+
+\begin{align*}
+\left\langle x|\alpha\right\rangle  & =C\exp\left[-\frac{m\omega}{2\hbar}x^{2}+\sqrt{\frac{2m\omega}{\hbar}}x\alpha-\left(\frac{m\omega}{2\hbar}x^{2}_{0}-\frac{1}{2\hbar m\omega}p^{2}_{0}-i\frac{x_{0}p_{0}}{2\hbar}\right)\right]\\
+ & =C\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+x^{2}_{0}\right)+\sqrt{\frac{2m\omega}{\hbar}}x\alpha+\frac{1}{2\hbar m\omega}p^{2}_{0}-i\frac{x_{0}p_{0}}{2\hbar}\right]\\
+ & =C\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+x^{2}_{0}\right)+\sqrt{\frac{2m\omega}{\hbar}}x\left(\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{i}{\sqrt{2\hbar m\omega}}p_{0}\right)+\frac{1}{2\hbar m\omega}p^{2}_{0}-i\frac{x_{0}p_{0}}{2\hbar}\right]\\
+ & =C\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}+x^{2}_{0}\right)+\frac{2m\omega}{2\hbar}xx_{0}+\frac{i}{\hbar}xp_{0}+\frac{1}{2\hbar m\omega}p^{2}_{0}-i\frac{x_{0}p_{0}}{2\hbar}\right]=\\
+ & =C\exp\left[-\frac{m\omega}{2\hbar}\left(x^{2}-2xx_{0}+x^{2}_{0}\right)+\frac{i}{\hbar}xp_{0}+\frac{1}{2\hbar m\omega}p^{2}_{0}-i\frac{x_{0}p_{0}}{2\hbar}\right]\\
+ & =C\exp\left[-\frac{m\omega}{2\hbar}\left(x-x_{0}\right)^{2}+\frac{p^{2}_{0}}{2\hbar m\omega}+i\left(\frac{xp_{0}}{\hbar}-\frac{x_{0}p_{0}}{2\hbar}\right)\right]
+\end{align*}
+
+Para a condição de normalização da função de onda, então temos que:
+
+\begin{align*}
+1 & =\int^{+\infty}_{-\infty}\left|\left\langle x|\alpha\right\rangle \right|^{2}dx\\
+1 & =\left|C\right|^{2}\int^{+\infty}_{-\infty}\exp\left[-\frac{m\omega}{2\hbar}\left(x-x_{0}\right)^{2}+\frac{p^{2}_{0}}{\hbar m\omega}\right]dx\\
+\exp\left[-\frac{p^{2}_{0}}{\hbar m\omega}\right] & =\left|C\right|^{2}\int^{+\infty}_{-\infty}\exp\left[-\frac{m\omega}{2\hbar}\left(x-x_{0}\right)^{2}\right]dx
+\end{align*}
+
+Fazendo $u=\sqrt{\frac{m\omega}{2\hbar}}x-\alpha$, então $\frac{du}{dx}=\sqrt{\frac{m\omega}{2\hbar}}$:
+
+\begin{align*}
+\sqrt{\frac{m\omega}{2\hbar}}\exp\left[-\frac{p^{2}_{0}}{\hbar m\omega}\right] & =\left|C\right|^{2}\int^{+\infty}_{-\infty}e^{-2u^{2}}du\\
+\sqrt{\frac{m\omega}{2\hbar}}\exp\left[-\frac{p^{2}_{0}}{\hbar m\omega}\right] & =\left|C\right|^{2}\sqrt{\frac{\pi}{2}}\\
+\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left[-\frac{p^{2}_{0}}{2\hbar m\omega}\right] & =C
+\end{align*}
+
+Onde usamos a integral de gauss $\int^{+\infty}_{-\infty}e^{-ax^{2}}dx=\sqrt{\frac{\pi}{a}}$. Então:
+
+\begin{align*}
+\left\langle x|\alpha\right\rangle  & =\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left[-\frac{p^{2}_{0}}{2\hbar m\omega}\right]\exp\left[-\frac{m\omega}{2\hbar}\left(x-x_{0}\right)^{2}+\frac{p^{2}_{0}}{2\hbar m\omega}+i\left(\frac{xp_{0}}{\hbar}-\frac{x_{0}p_{0}}{2\hbar}\right)\right]\\
+\left\langle x|\alpha\right\rangle  & =\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}\exp\left[-\frac{m\omega}{2\hbar}\left(x-x_{0}\right)^{2}+i\left(\frac{xp_{0}}{\hbar}-\frac{x_{0}p_{0}}{2\hbar}\right)\right]
+\end{align*}
+
+Para $\left\langle x|\alpha\left(t\right)\right\rangle $ temos um resultado análogo, substituindo $p_{0}$ e $q_{0}$ respectivamente por $p\left(t\right)=\left\langle \alpha\left(t\right)\left|\widehat{p}\right|\alpha\left(t\right)\right\rangle $ e $q\left(t\right)=\left\langle \alpha\left(t\right)\left|\widehat{q}\right|\alpha\left(t\right)\right\rangle $. Para encontrarmos estamos funções, fazendo então:
+
+\begin{align*}
+\left\langle \alpha\left(t\right)\left|\widehat{a}\right|\alpha\left(t\right)\right\rangle  & =\left\langle \alpha\left|\widehat{U}^{\dagger}\widehat{a}\widehat{U}\right|\alpha\right\rangle \\
+ & =\left\langle \alpha\left|\widehat{a}e^{-i\omega\left(t-t_{0}\right)}\right|\alpha\right\rangle \\
+ & =e^{-i\omega\left(t-t_{0}\right)}\left\langle \alpha\left|\widehat{a}\right|\alpha\right\rangle \\
+ & =e^{-i\omega\left(t-t_{0}\right)}\alpha
+\end{align*}
+
+E usando a definição de $\widehat{a}$ temos:
+
+\begin{align*}
+\left\langle \alpha\left(t\right)\left|\widehat{a}\right|\alpha\left(t\right)\right\rangle  & =\left\langle \alpha\left(t\right)\left|\sqrt{\frac{m\omega}{2\hbar}}\widehat{x}+\frac{i}{\sqrt{2\hbar m\omega}}\widehat{p}\right|\alpha\left(t\right)\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}\left\langle \alpha\left(t\right)\left|\widehat{x}\right|\alpha\left(t\right)\right\rangle +\frac{i}{\sqrt{2\hbar m\omega}}\left\langle \alpha\left(t\right)\left|\widehat{p}\right|\alpha\left(t\right)\right\rangle \\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x\left(t\right)+\frac{i}{\sqrt{2\hbar m\omega}}p\left(t\right)
+\end{align*}
+
+Então:
+
+\[
+\alpha=e^{i\omega\left(t-t_{0}\right)}\left(\sqrt{\frac{m\omega}{2\hbar}}x\left(t\right)+\frac{i}{\sqrt{2\hbar m\omega}}p\left(t\right)\right)
+\]
+
+Para facilitar, vamos denotar $\tau=t-t_{0}$. Então podemos escrever:
+
+\begin{align*}
+x\left(\tau\right) & \equiv x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{m\omega}\sin\left(\omega\tau\right)\\
+p\left(\tau\right) & \equiv-m\omega x_{0}\sin\left(\omega\tau\right)+p_{0}\cos\left(\omega\tau\right)
+\end{align*}
+
+Pois:
+
+\begin{align}
+\alpha & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}\left(x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{m\omega}\sin\left(\omega\tau\right)\right)+\frac{i}{\sqrt{2\hbar m\omega}}\left(-m\omega x_{0}\sin\left(\omega\tau\right)+p_{0}\cos\left(\omega\tau\right)\right)\right]\\
+ & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\cos\left(\omega\tau\right)+\frac{p_{0}}{\sqrt{2m\omega}}\sin\left(\omega\tau\right)-i\sqrt{\frac{m\omega}{2\hbar}}x_{0}\sin\left(\omega\tau\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\cos\left(\omega\tau\right)\right]\\
+ & =e^{i\omega\tau}\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{i\omega\tau}+e^{-i\omega\tau}}{2}\right)+\frac{p_{0}}{\sqrt{2m\omega}}\left(\frac{e^{i\omega\tau}-e^{-i\omega\tau}}{2i}\right)-i\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{i\omega\tau}-e^{-i\omega\tau}}{2i}\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\left(\frac{e^{i\omega\tau}+e^{-i\omega\tau}}{2}\right)\right]\\
+ & =\left[\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{2i\omega\tau}+1}{2}\right)-\frac{ip_{0}}{\sqrt{2m\omega}}\left(\frac{e^{2i\omega\tau}-1}{2}\right)-\sqrt{\frac{m\omega}{2\hbar}}x_{0}\left(\frac{e^{2i\omega\tau}-1}{2}\right)+\frac{p_{0}}{\sqrt{2\hbar m\omega}}\left(\frac{e^{2i\omega\tau}+1}{2}\right)\right]\\
+ & =\sqrt{\frac{m\omega}{2\hbar}}x_{0}+\frac{ip_{0}}{\sqrt{2m\omega}}
+\end{align}
+
+Que é o resultado obtido na equação \ref{eq:4}. Substituindo $x\left(\tau\right)$ e $p\left(\tau\right)$ em $\left\langle x''|\alpha\left(t\right)\right\rangle \left\langle \alpha|x'\right\rangle =\left\langle x''|\alpha\left(t\right)\right\rangle \left\langle x'|\alpha\right\rangle ^{\dagger}$ , Com o auxílio do matemática, e escrevendo $x'=x_{1}$ e $x''=x_{2}$: 
+
+\begin{verbatim*}[language=Mathematica]
+Subscript[Q,11]:=((m*w)/(Pi*h))^(1/4)*Exp[-(m*w)/(2*h)*(Subscript[x,1]-Subscript[x,0])^2
++I*Subscript[x,1]*Subscript[p,0]/h-I*Subscript[x,0]*Subscript[p,0]/(2*h)]
+Subscript[Q,12]:=((m*w)/(Pi*h))^(1/4)*Exp[-(m*w)/(2*h)*(Subscript[x,1]-Subscript[x,0])^2
+-I*Subscript[x,1]*Subscript[p,0]/h+I*Subscript[x,0]*Subscript[p,0]/(2*h)]
+Subscript[Q,21]:=((m*w)/(Pi*h))^(1/4)*Exp[-(m*w)/(2*h)*(Subscript[x,2]-Subscript[x,t])^2
++I*Subscript[x,2]*Subscript[p,t]/h-I*Subscript[x,t]*Subscript[p,t]/(2*h)]
+Subscript[Q,22]:=Subscript[Q,21]/.{Subscript[x,t]->Subscript[x,0]*Cos[w*t]+
+Subscript[p,0]*Sin[w*t]/(m*w),
+Subscript[p,t]->-m*w*Subscript[x,0]*Sin[w*t]+Subscript[p,0]*Cos[w*t]}
+Subscript[Q,12]*Subscript[Q,22]/(2*Pi*h)
+\end{verbatim*}
+
+Obtemos:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\frac{\sqrt{\frac{m\omega}{\hbar}}}{2\pi^{3/2}\hbar}\exp\left(\frac{ix''\left(p_{0}\cos(\omega\tau)-m\omega x_{0}\sin(\omega\tau)\right)}{\hbar}-\frac{m\omega\left(-\frac{p_{0}\sin(\omega\tau)}{m\omega}-x_{0}\cos(\omega\tau)+x''\right){}^{2}}{2h}\right)\\
+ & \times\exp\left(-\frac{i\left(\frac{p_{0}\sin(\omega\tau)}{m\omega}+x_{0}\cos(\tau\omega)\right)\left(p_{0}\cos(\omega\tau)-m\omega x_{0}\sin(\omega\tau)\right)}{2\hbar}-\frac{m\omega\left(x'-x_{0}\right){}^{2}}{2\hbar}+\frac{ip_{0}x_{0}}{2\hbar}-\frac{ip_{0}x'}{\hbar}\right)
+\end{align*}
+
+Utilizando novamente o mathematica para simplificar o expoente com a função 'TrigToExp', obtemos que: 
+\begin{align*}
+\beta & =\frac{p^{2}_{0}e^{-2i\omega\tau}}{4\hbar m\omega}-\frac{p^{2}_{0}}{4\hbar m\omega}+\frac{m\omega x_{0}x_{2}e^{-i\omega\tau}}{\hbar}-\frac{m\omega x^{2}_{0}e^{-2i\omega\tau}}{4\hbar}+\frac{m\omega x_{0}x'}{\hbar}-\frac{m\omega x'^{2}}{2\hbar}\\
+ & -\frac{m\omega x''^{2}}{2\hbar}-\frac{3m\omega x^{2}_{0}}{4\hbar}+\frac{ip_{0}x''e^{-i\omega\tau}}{\hbar}-\frac{ip_{0}x_{0}e^{-2i\omega\tau}}{2\hbar}+\frac{ip_{0}x_{0}}{2\hbar}-\frac{ip_{0}x'}{\hbar}
+\end{align*}
+
+Abrindo os termos e multiplicando o termo que aompanha $p^{2}_{0}$ por $\frac{i}{i}$:
+
+\begin{align*}
+\beta & =-\frac{m\omega}{2\hbar}\left(x'^{2}+x''^{2}\right)-\frac{m\omega}{2\hbar}\left(\frac{e^{-2i\omega\tau}}{2}+\frac{1}{2}+1\right)x^{2}_{0}-\frac{i}{2\hbar m\omega}\left(\frac{1-e^{-2i\omega\tau}}{2i}\right)p^{2}_{0}\\
+ & +\frac{m\omega}{\hbar}\left(x''e^{-i\omega\tau}+x'\right)x_{0}+\frac{i}{\hbar}\left(x''e^{-i\omega\tau}-x'\right)p_{0}-\frac{i}{\hbar}\left(\frac{e^{-2i\omega\tau}}{2}-\frac{1}{2}\right)p_{0}x_{0}
+\end{align*}
+
+Agora como 
+\[
+cos\left(\omega t\right)e^{-i\omega t}=\left(\frac{e^{i\omega t}+e^{-i\omega t}}{2}\right)e^{-i\omega t}=\left(\frac{1}{2}+e^{-2i\omega t}\right)=\left(\frac{1}{2}+e^{-2i\omega t}\right)
+\]
+
+\[
+\sin\left(\omega t\right)e^{-\omega it}=\left(\frac{e^{i\omega t}-e^{-i\omega t}}{2i}\right)e^{-\omega it}=\left(\frac{1-e^{-2\omega it}}{2i}\right)e^{-\omega it}=i\left(\frac{e^{-2\omega it}}{2}-\frac{1}{2}\right)e^{-i\omega t}
+\]
+
+Ajustando os sinais e manipulando: 
+\begin{align*}
+\beta & =-\frac{m\omega}{2\hbar}\left(x'^{2}+x''^{2}\right)-\left[\frac{m\omega}{2\hbar}\left(1+cos\left(\omega\tau\right)e^{-i\omega\tau}\right)\right]x^{2}_{0}-\left[\frac{i}{2\hbar m\omega}\left(\sin\left(\omega\tau\right)e^{-i\omega\tau}\right)\right]p^{2}_{0}\\
+ & -\left[\frac{1}{\hbar}\sin\left(\omega\tau\right)e^{-i\omega\tau}\right]p_{0}x_{0}-\left[-\frac{m\omega}{\hbar}\left(x''e^{-i\omega\tau}+x'\right)\right]x_{0}-\left[-\frac{i}{\hbar}\left(x''e^{-i\omega\tau}-x'\right)\right]p_{0}
+\end{align*}
+
+Aqui precisamos notar que o term o $c_{22}$ possui um fator multiplicativo $\frac{1}{2}$ em comparação com a equação \textbf{(37)} do artigo, possívelmente um erro de digitação. Além disso na equação \textbf{(34}) foi negligenciado o termo que acompanha a exponencial, talvez intencionlmente. E rearranjando:
+
+\begin{align*}
+\beta & =-\frac{m\omega}{\pi\hbar}\left(x^{2}_{1}+x^{2}_{2}\right)-c_{11}x^{2}_{0}-c_{22}p^{2}_{0}-c_{1}x_{0}-c_{12}p_{0}x_{0}-c_{1}p_{0}
+\end{align*}
+
+Substituindo no propagador e integrando primeiro em $p_{0}$temos então:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\frac{\sqrt{\frac{m\omega}{\pi\hbar}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]\right]}{2\pi\hbar}\int^{+\infty}_{-\infty}\exp\left[-c_{11}x^{2}_{0}-c_{1}x_{0}\right]\int^{+\infty}_{-\infty}\exp\left[-c_{22}p^{2}_{0}+\left(-c_{12}x_{0}-c_{2}\right)p_{0}\right]dp_{0}dx_{0}
+\]
+
+Evidentemente poderíamos completar quadrado para realizar uma integração de gauss, mas usando uma forma alternativa generalizada como $\int^{+\infty}_{-\infty}e^{-ax^{2}+bx+c}=\sqrt{\frac{\pi}{a}}e^{\frac{b^{2}}{4a}+c}$, tendo $a=c_{22}$, $b=\left(c_{12}x_{0}+c_{2}\right)$ e $c=0$:
+
+\begin{align*}
+K\left(x'',t;x',t_{0}\right) & =\sqrt{\frac{m\omega}{\pi\hbar}}\frac{\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]\right]}{2\pi\hbar}\sqrt{\frac{\pi}{c_{22}}}\int^{+\infty}_{-\infty}\exp\left[-c_{11}x^{2}_{0}-c_{1}x_{0}+\frac{\left(c_{12}x_{0}+c_{2}\right)^{2}}{4c_{22}}\right]dx_{0}\\
+ & =\sqrt{\frac{m\omega}{\hbar c_{22}}}\frac{1}{2\pi\hbar}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]\right]\int^{+\infty}_{-\infty}\exp\left[-c_{11}x^{2}_{0}-c_{1}x_{0}+\frac{c^{2}_{12}x^{2}_{0}+c^{2}_{2}+2c_{12}c_{2}x_{0}}{4c_{22}}\right]dx_{0}\\
+ & =\sqrt{\frac{m\omega}{\hbar c_{22}}}\frac{1}{2\pi\hbar}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]\right]\int^{+\infty}_{-\infty}\exp\left[-\left(c_{11}-\frac{c^{2}_{12}}{4c_{22}}\right)x^{2}_{0}+\left(\frac{c_{12}c_{2}}{2c_{22}}-c_{1}\right)x_{0}+\left(\frac{c^{2}_{2}}{4c_{22}}\right)\right]dx_{0}\\
+ & =\sqrt{\frac{m\omega}{\hbar c_{22}}}\frac{1}{2\pi\hbar}\sqrt{\frac{\pi}{\left(c_{11}-\frac{1}{4}\frac{c^{2}_{12}}{c_{22}}\right)}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]+\frac{1}{4}\frac{\left(\frac{c_{12}c_{2}}{2c_{22}}-c_{1}\right)^{2}}{\left(c_{11}-\frac{c^{2}_{12}}{4c_{22}}\right)}+\frac{1}{4}\frac{c^{2}_{2}}{c_{22}}\right]\\
+ & =\sqrt{\frac{m\omega}{\hbar c_{22}}}\frac{1}{2\pi\hbar}\frac{1}{\sqrt{\frac{1}{4c_{22}}}}\sqrt{\frac{\pi}{\left(4c_{22}c_{11}-c^{2}_{12}\right)}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]+\frac{1}{4}\frac{\left(c_{12}c_{2}-2c_{22}c_{1}\right)^{2}\frac{1}{4c^{2}_{22}}}{\left(4c_{22}c_{11}-c^{2}_{12}\right)\frac{1}{4c_{22}}}+\frac{1}{4}\frac{c^{2}_{2}}{c_{22}}\right]\\
+ & =\sqrt{\frac{m\omega}{\hbar}}\frac{1}{\pi\hbar}\sqrt{\frac{\pi}{\left(4c_{22}c_{11}-c^{2}_{12}\right)}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]+\frac{1}{4}\frac{\left(c_{12}c_{2}-2c_{22}c_{1}\right)^{2}}{\left(4c_{22}c_{11}-c^{2}_{12}\right)c_{22}}+\frac{1}{4}\frac{c^{2}_{2}}{c_{22}}\right]\\
+ & =\sqrt{\frac{m\omega}{\pi\hbar}}\frac{1}{\hbar}\frac{1}{\sqrt{4c_{22}c_{11}-c^{2}_{12}}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]+\frac{1}{4}\frac{c^{2}_{12}c^{2}_{2}+4c^{2}_{22}c^{2}_{1}-4c_{12}c_{2}c_{22}c_{1}+4c^{2}_{2}c_{22}c_{11}-c^{2}_{2}c^{2}_{12}}{\left(4c_{22}c_{11}-c^{2}_{12}\right)c_{22}}\right]\\
+ & =\sqrt{\frac{m\omega}{\pi\hbar}}\frac{1}{\hbar}\frac{1}{\sqrt{4c_{22}c_{11}-c^{2}_{12}}}\exp\left[-\frac{m\omega}{2\hbar}\left[\left(x^{2}+x'^{2}\right)\right]+\frac{c^{2}_{2}c_{11}-c_{12}c_{2}c_{1}+c^{2}_{22}c^{2}_{1}}{4c_{22}c_{11}-c^{2}_{12}}\right]
+\end{align*}
+
+Manipulando então:
+
+\begin{align}
+\sqrt{4c_{22}c_{11}-c^{2}_{12}} & =4\frac{m\omega}{2\hbar}\left(1+\cos\left(\omega\tau\right)e^{-i\omega\tau}\right)i\frac{\sin\left(\omega\tau\right)e^{-i\omega\tau}}{2\hbar m\omega}-\left(\frac{1}{\hbar}\sin\left(\omega\tau\right)e^{-i\omega\tau}\right)^{2}\\
+ & =\frac{1}{\hbar^{2}}\left[i\sin\left(\omega\tau\right)e^{-i\omega\tau}i\cos\left(\omega\tau\right)\sin\left(\omega\tau\right)e^{-i2\omega\tau}-\sin^{2}\left(\omega\tau\right)e^{-i2\omega\tau}\right]\\
+ & =\frac{1}{\hbar^{2}}\left[i\sin\left(\omega\tau\right)e^{-i\omega\tau}+\left(i\cos\left(\omega\tau\right)-\sin\left(\omega\tau\right)\right)\sin\left(\omega\tau\right)e^{-i2\omega\tau}\right]\\
+ & =\frac{1}{\hbar^{2}}\left[\sin\left(\omega\tau\right)e^{-i\omega\tau}+\left(\cos\left(\omega\tau\right)+i\sin\left(\omega\tau\right)\right)\sin\left(\omega\tau\right)e^{-i2\omega\tau}\right]\\
+ & =\frac{1}{\hbar^{2}}\left[\sin\left(\omega\tau\right)e^{-i\omega\tau}+e^{-i\omega t}\sin\left(\omega\tau\right)e^{-i2\omega\tau}\right]\\
+ & =-\frac{i\sin\left(\omega\tau\right)}{h^{2}}\left[e^{-i\omega\tau}+e^{-i\omega\tau}\right]\\
+ & =2\frac{i\sin\left(\omega t\right)}{\hbar^{2}}e^{-i\omega\tau}
+\end{align}
+
+Substituindo então
+
+\begin{align*}
+\sqrt{\frac{m\omega}{\pi\hbar}}\frac{1}{\hbar}\frac{1}{\sqrt{4c_{22}c_{11}-c^{2}_{12}}} & =\sqrt{\frac{m\omega}{\pi\hbar}}\frac{1}{\hbar}\frac{1}{\sqrt{2\frac{i\sin\left(\omega\tau\right)}{h^{2}}e^{-i\omega\tau}}}\\
+ & =\sqrt{\frac{m\omega}{2\pi\hbar i\sin\left(\omega\tau\right)e^{-\omega\tau}}}
+\end{align*}
+
+Que é o resultado que estávamos buscando, o termo $e^{\omega\tau/2}$ é uma fase global que pode ser ignorando\cite{doi:10.1119/1.4960479}. Podemos obter o expoente através do Mathematica: 
+
+\begin{verbatim*}[language=Mathematica]
+(\!\(\*SubsuperscriptBox[\(c\),\(2\),\(2\)]\ \*SubscriptBox[\(c\),\(11\)]\)- 
+Subscript[c,1]Subscript[c,2]Subscript[c,12]+\!\( \*SubsuperscriptBox[\(c\),\(1\),
+\(2\)]\ \*SubscriptBox[\(c\),\(22\)]\))/(\!\( \*SubsuperscriptBox[\(c\),\(12\),
+\(2\)]-\(4\ \*SubscriptBox[\(c\),\(11\)]\ \*SubscriptBox[\(c\),\(22\)]\)\))/.{Subscript[c,11]
+-> m*w*(1+Cos[w*t]*Exp[-I*w*t])/(2*h), Subscript[c,22]->I*Sin[w*t]*Exp[-I*w*t]/(2*h*m*w), 
+Subscript[c,12]->Sin[w*t]*Exp[-I*w*t]/(h), Subscript[c,1]->-m*w*(Subscript[x,2]*Exp[-I*w*t]
++Subscript[x,1])/(h), Subscript[c,2]->-I*(Subscript[x,2]*Exp[-I*w*t]-Subscript[x,1])/(h)}
+\end{verbatim*}
+
+E então usar o comando 'Simplify' , onde obtemos:
+
+\begin{align*}
+\beta & =-\frac{m\omega}{2\hbar}\left[\left(x^{2}_{2}+x^{2}_{1}\right)\right]+\frac{m\omega\left(-2x''x'e^{i\omega\tau}+x'^{2}+x''^{2}\right)}{\hbar\left(-1+e^{2itw}\right)}\\
+ & =-\frac{m\omega}{2\hbar}\left[\left(x^{2}_{2}+x^{2}_{1}\right)\right]+\frac{m\omega\left(x'^{2}+x''^{2}-e^{i\omega\tau}2x''x'\right)}{e^{i\omega\tau}\hbar\left(e^{i\omega\tau}-e^{-itw}\right)}\\
+ & =-\frac{m\omega}{2\hbar}\left[\left(x^{2}_{2}+x^{2}_{1}\right)\right]+\frac{im\omega\left(x'^{2}+x''^{2}-e^{i\omega\tau}2x''x'\right)}{\hbar e^{i\omega\tau}2\sin\left(\omega\tau\right)}\\
+ & =\frac{im\omega}{2\hbar\sin\left(\omega\tau\right)}\left[i\sin\left(\omega\tau\right)\left[\left(x''^{2}+x'^{2}\right)\right]+e^{-i\omega\tau}\left(x'^{2}+x''^{2}-e^{i\omega\tau}2x''x'\right)\right]\\
+ & =\frac{im\omega}{2\hbar\sin\left(\omega\tau\right)}\left[i\sin\left(\omega\tau\right)\left[\left(x''^{2}+x'^{2}\right)\right]+e^{-i\omega\tau}\left(x''^{2}+x'^{2}\right)-2x''x'\right]\\
+ & =\frac{im\omega}{2\hbar\sin\left(\omega\tau\right)}\left[\frac{\left(e^{i\omega\tau}-e^{-i\omega\tau}\right)}{2}\left[\left(x''^{2}+x'^{2}\right)\right]+e^{-i\omega\tau}\left(x''^{2}+x'^{2}\right)-2x''x'\right]\\
+ & =\frac{im\omega}{2\hbar\sin\left(\omega\tau\right)}\left[\frac{\left(e^{i\omega\tau}+e^{-i\omega\tau}\right)}{2}\left[\left(x''^{2}+x'^{2}\right)\right]-2x''x'\right]\\
+ & =\frac{im\omega}{2\hbar\sin\left(\omega\tau\right)}\left[\cos\left(\omega\tau\right)\left[\left(x''^{2}+x'^{2}\right)\right]-2x''x'\right]
+\end{align*}
+
+Lembrando que $\tau=t-t_{0}$, então o propagador é, como queríamos demonstrar:
+
+\[
+K\left(x'',t;x',t_{0}\right)=\sqrt{\frac{m\omega}{2\pi i\hbar\sin\left[\omega t\left(t-t_{0}\right)\right]}}\exp\left[\frac{im\omega}{2\hbar\sin\left[\omega\left(t-t_{0}\right)\right]}\left(\left(x''^{2}+x'^{2}\right)\cos\left[\omega\left(t-t_{0}\right)\right]-2x''x'\right)\right]
+\]
+
+
+\subsection{Problem 3}
+
+\textbf{The propagator can also be written as}
+
+\[
+K\left(x'',t;x',t_{0}\right)=\left\langle x'',t|x',t_{9}\right\rangle 
+\]
+
+\textbf{where $\left|x',t_{0}\right\rangle $ and $\left\langle x'',t\right|$ are to be understood as an eigenket and an eigenbra of the position operator in the Heisenberg picture. The propagator in momentum space analogous to $(1)$ is given by $\left\langle p'',t|p',t_{0}\right\rangle $. Derive an explicit expression for $\left\langle p'',t|p',t_{0}\right\rangle $ for the free-particle case.}
+
+Análogo ao que foi feito em aula, podemos fazer então:
+
+\begin{align*}
+\left\langle p''|\alpha,t_{0};t\right\rangle  & =\left\langle p''\left|e^{-H\left(t-t_{0}\right)/\hbar}\right|\alpha,t_{0}\right\rangle \\
+ & =\sum_{a'}\left\langle p''|a'\right\rangle \left\langle a'|\alpha,t_{0}\right\rangle e^{-E_{a'}\left(t-t_{0}\right)/\hbar}\\
+ & =\sum_{a'}\left\langle p''|a'\right\rangle \left\langle a'|\alpha,t_{0}\right\rangle e^{-E_{a'}\left(t-t_{0}\right)/\hbar}\\
+ & =\int d^{3}p'\sum_{a'}\left\langle p''|a'\right\rangle \left\langle a'|p'\right\rangle \left\langle p'|\alpha,t_{0}\right\rangle e^{-E_{a'}\left(t-t_{0}\right)/\hbar}\\
+ & =\int d^{3}p'\left[\sum_{a'}\left\langle p''|a'\right\rangle \left\langle a'|p'\right\rangle e^{-E_{a'}\left(t-t_{0}\right)/\hbar}\right]\left\langle p'|\alpha,t_{0}\right\rangle \\
+ & =\int d^{3}p'K\left(p'',t;p',t_{0}\right)\left\langle p'|\alpha,t_{0}\right\rangle 
+\end{align*}
+
+Temos então o propagador:
+
+\[
+K\left(p'',t;p',t_{0}\right)=\sum_{a'}\left\langle p''|a'\right\rangle \left\langle a'|p'\right\rangle e^{-E_{a'}\left(t-t_{0}\right)/\hbar}
+\]
+
+Para derivar uma expressão explícita para o caso da partícula livre, podemos escrever então mais elegantemente como:
+
+\[
+K\left(p'',t;p',t_{0}\right)=\left\langle p''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|p'\right\rangle 
+\]
+
+Fazendo análogo à primeira questão, onde o hamiltoniano de uma partícula livre é dado por $H=\frac{p^{2}}{2m}$ Uma vez que $\left|p'\right\rangle $ é um autoket do operador $p$ e $H$, logo $p\left|p'\right\rangle =p'\left|p'\right\rangle $ e $H\left|p'\right\rangle =\left(\frac{p'^{2}}{2m}\right)\left|p'\right\rangle $. Logo
+
+\begin{align*}
+K\left(p'',t;p',t_{0}\right) & =\left\langle p''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|p'\right\rangle \\
+ & =\int dp'''\left\langle p''|p'''\right\rangle \left\langle p'''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|p'\right\rangle \\
+ & =\int dp'''\delta\left(p''-p'''\right)\left\langle p''''\left|\exp\left[\frac{-iH\left(t-t_{0}\right)}{\hbar}\right]\right|p'\right\rangle \\
+ & =\int\left\langle p'''|p'\right\rangle \delta\left(p''-p'''\right)dp'''\exp\left(\frac{-ip'^{2}\left(t-t_{0}\right)}{\hbar2m}\right)\\
+ & =\int\delta\left(p'''-p''\right)\delta\left(p'''-p'\right)dp'''\exp\left(\frac{-ip'^{2}\left(t-t_{0}\right)}{\hbar2m}\right)
+\end{align*}
+
+Agora sendo $f\left(p'''\right)=\delta\left(p'''-p''\right)$ e $\int f\left(p'''\right)\delta\left(p'''-p'\right)dp'''=f\left(p'\right)=\delta\left(p'-p''\right)$. Ficamos então com:
+
+\[
+K\left(p'',t;p',t_{0}\right)=\delta\left(p'-p''\right)\exp\left(\frac{-ip'^{2}\left(t-t_{0}\right)}{2m\hbar}\right)
+\]
+
+ \bibliographystyle{abbrv}
+\bibliography{ref}
+
+\end{document}

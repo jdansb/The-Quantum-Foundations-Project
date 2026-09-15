@@ -2,7 +2,7 @@
 %% Do not edit unless you really know what you are doing.
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[utf8]{luainputenc}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{geometry}
@@ -14,7 +14,15 @@
 \maketitle
 These are my solutions to the problem sets assigned to me during the graduate-level quantum mechanics course.
 
-\textbf{1)}
+\subsection{Problem 1}
+
+\textbf{1. In a one-dimensional problem, consider a particle of potential energy $V\left(X\right)=-fX$, where $f$ is a positive constant.}
+
+\textbf{a) Write Ehrenfest’s theorem for the mean values of the position $X$ and the momentum $P$ of the particle. Integrate these equations; compare with the classical motion.}
+
+\textbf{b) Show that the root-mean-square deviation $\Delta P$ does not vary over time.}
+
+\textbf{c) Write the Schrodinger equation in the $\left|p\right\rangle $ representation. Deduce from it a relation between $\frac{\partial}{\partial t}\left|\left\langle p|\Psi\left(t\right)\right\rangle \right|^{2}$ and $\frac{\partial}{\partial p}\left|\left\langle p|\Psi\left(t\right)\right\rangle \right|^{2}$. Integrate the equation thus obtained; give a physical interpretation.}
 
 Dados do enunciado:
 \begin{itemize}
@@ -177,7 +185,7 @@ Então agora queremos deduzir uma relação entre $\frac{\partial}{\partial t}\l
 Denotando então $\Phi\left(p,t\right)\equiv\left|\psi\left(p,t\right)\right|^{2}$ para facilitar. Então a relação obtida é:
 
 \begin{equation}
-\frac{\partial\Phi\left(p,t\right)}{\partial t}=-f\frac{\partial\Phi\left(p,t\right)}{\partial p}\label{eq:1}
+\frac{\partial\Phi\left(p,t\right)}{\partial t}=-f\frac{\partial\Phi\left(p,t\right)}{\partial p}\label{eq:g3_1}
 \end{equation}
 
 Fazendo as seguintes mudanças de variáveis:
@@ -227,7 +235,7 @@ Então:
 \Phi\left(p,t\right)=\Phi\left(p-ft,0\right)
 \]
 
-E uma vez que $\Phi\left(p,t\right)\equiv\left|\psi\left(p,t\right)\right|^{2}$, então singifica que a distribuição de probabilidade e$p$ se move de acordo com a equação clássica do movimento $p=p_{0}+ft$. Isto é um resultado esperado uma vez que a equação \ref{eq:1} é um caso particular de equação de transporte linear\cite{Anu:2013}, ou seja, ela modela o transporte um dado inicial, o que neste caso é a distribuição de probabilidade. Podemos ainda integrar explícitamente a edp de primeira ordem utilizando o método de separação de varáiveis:
+E uma vez que $\Phi\left(p,t\right)\equiv\left|\psi\left(p,t\right)\right|^{2}$, então singifica que a distribuição de probabilidade e$p$ se move de acordo com a equação clássica do movimento $p=p_{0}+ft$. Isto é um resultado esperado uma vez que a equação \ref{eq:g3_1} é um caso particular de equação de transporte linear\cite{Anu:2013}, ou seja, ela modela o transporte um dado inicial, o que neste caso é a distribuição de probabilidade. Podemos ainda integrar explícitamente a edp de primeira ordem utilizando o método de separação de varáiveis:
 
 \[
 -\frac{\partial\Phi\left(p,t\right)}{\partial t}\frac{1}{f}=\frac{\partial\Phi\left(p,t\right)}{\partial p}
@@ -272,7 +280,21 @@ Como esperado:
 
 Para facilitar a compreensão podemos fixar um $p=p'$ e pensar na função no momento e instante $\Phi\left(p'-ft',0\right)$. A densidade de probabilidade em $p=p'-ft'$ no instante $t=0$, vai ser transportada para $p=p'$ no instante $t=t'$, em uma analogia com o caso clássico, isso ocorre com uma ``velocidade'' (entre aspas pois não tem dimensão de velocidade, mas de força) $f$.
 
-\textbf{2)}
+\subsection{Problem 2}
+
+\textbf{Consider a free particle.}
+
+\textbf{a) Show, applying Ehrenfest’s theorem, that $\left\langle X\right\rangle $ is a linear function of time, the mean value $\left\langle P\right\rangle $ remaining constant.}
+
+\textbf{b) Write the equations of motion for the mean values $\left\langle X^{2}\right\rangle $ and $\left\langle XP+PX\right\rangle $. Integrate these equations.}
+
+\textbf{c) Show that, with a suitable choice of the time origin, the root-mean-square deviation $\Delta X$ is given by:}
+
+\[
+\left(\Delta X\right)^{2}=\frac{1}{m^{2}}\left(\Delta P\right)^{2}_{0}t^{2}+\left(\Delta X\right)^{2}_{0}
+\]
+
+\textbf{where $\left(\Delta X\right)_{0}$ and $\left(\Delta P\right)_{0}$ are the root-mean-square deviations at the initial time}
 
 \textbf{a)}
 
@@ -438,7 +460,37 @@ Temos que $\left\langle P^{2}\right\rangle _{0}=\left\langle P^{2}\right\rangle 
 
 Para o caso de uma partícula livre como estsamos tratando, existe um $t$ em que invariavelmente temos $\left\langle XP+PX\right\rangle _{0}-\frac{1}{2}\left\langle X\right\rangle _{0}\left\langle P\right\rangle _{0}=0$\cite{Anu:1998}, portanto podemos escolhê-lo como a origem temporal.. 
 
-\textbf{3)}
+
+\subsection{Problem 3}
+
+\textbf{In a one-dimensional problem, consider a particle with the Hamiltonian}
+
+\[
+H=\frac{P^{2}}{2m}+V\left(X\right)
+\]
+
+\textbf{where $V\left(X\right)=\lambda X^{n}$.}
+
+\textbf{a) Calculate the commutator $\left[H,XP\right]$. If there exists one or several stationary states }$\left|\varphi\right\rangle $\textbf{ in the potential $V$ , show that the mean values $\left\langle T\right\rangle $ and $\left\langle V\right\rangle $ of the kinetic and potential energies in these states satisfy the relation: $2\left\langle T\right\rangle =n\left\langle V\right\rangle $.}
+
+\textbf{b) In a three-dimensional problem, H is written:}
+
+\[
+H=\frac{P^{2}}{2m}+V\left(R\right)
+\]
+
+\textbf{Calculate the commutator $\left[H,R\cdot P\right]$. Assume that $V\left(R\right)$ is a homogeneous function of $n$th order in the variables $X$, $Y$ , and $Z$. What relation necessarily exists between the mean kinetic energy and the mean potential energy of the particle in a stationary state?}
+\begin{itemize}
+\item \textbf{Recall that a homogeneous function $V$ of $n$th degree in the variables $x$, $y$, and $z$ by definition satifies the relation:}
+\[
+V\left(\alpha x,\alpha y,\alpha z\right)=\alpha^{n}V\left(x,y,z\right)
+\]
+\end{itemize}
+\textbf{and satisfies Euler’s identity:}
+
+\[
+x\frac{\partial V}{\partial x}+y\frac{\partial V}{\partial y}+z\frac{\partial V}{\partial z}=nV\left(x,y,z\right)
+\]
 
 Dados do enunciado:
 \begin{itemize}
