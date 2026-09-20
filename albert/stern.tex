@@ -1,0 +1,108 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Fake Stern-Gerlach Experiment}
+
+\maketitle
+Let us now examine the Stern-Gerlach experiment; however, for our purposes, we do not need to incorporate the full physics behind the actual experiment involving particle spin. Instead, we will follow David Alberto’s (\cite{McCullochQuantumMechanics101}) approach and consider two \textquotedbl arbitrary\textquotedbl{} properties, while introducing some mathematics. For those interested in an engaging interactive simulation, Professor McCulloch’s \cite{Albert1992} materials are worth checking out. 
+
+Here's an unsettling story about something that can happen to electrons\footnote{As the reader shall see, the identities of the particles will turn out to be completely irrelevant to our concerns here.}. The story is true. The experiments I will describe have all actually been performed. The story concerns two particular physical properties of electrons which it happens to be possible to measure with very great accuracy. The precise physical definitions of those two properties don't matter. Let's call one of them the \textquotedbl color\textquotedbl{} of the electron, and let's call the other one its \textquotedbl hardness.\textquotedbl{} 
+
+Let us identify these observables by the following operators:
+
+\[
+C=\left(\begin{array}{cc}
+0 & 1\\
+1 & 0
+\end{array}\right),\quad H=\left(\begin{array}{cc}
+1 & 0\\
+0 & -1
+\end{array}\right)
+\]
+
+It happens to be an empirical fact that the color property of electrons can assume one of only two possible values. Every electron which has thus far been encountered in the world has been either a black electron or a white electron. None have ever been found to be blue or green. Let us associate the eigenvalues $+1$ and $-1$ with the colors black and white, respectively.
+
+The same goes for hardness. All electrons are either soft ones or hard ones. No one has ever seen an electron whose hardness value was anything other than one of those two. And analogously, we will associate soft and hard electrons with the eigenvalues $+1$ and $-1$, respectively.
+
+With the following eigenvectors associated with the eigenvalue of each operator:
+
+\[
+\left|C_{+1}\right\rangle =\left(\begin{array}{c}
+\frac{1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right),\left|C_{-1}\right\rangle =\left(\begin{array}{c}
+\frac{-1}{\sqrt{2}}\\
+\frac{1}{\sqrt{2}}
+\end{array}\right),\left|H_{+1}\right\rangle =\left(\begin{array}{c}
+1\\
+0
+\end{array}\right),\left|H_{-1}\right\rangle =\left(\begin{array}{c}
+0\\
+1
+\end{array}\right)
+\]
+
+So, we have $C\left|C_{\pm1}\right\rangle =\pm1\left|C_{\pm1}\right\rangle $ and $H\left|H_{\pm1}\right\rangle =\pm1\left|H_{\pm1}\right\rangle $. We can then perform the spectral decomposition of the vectors:
+
+\begin{align*}
+C & =\left|C_{+1}\right\rangle \left\langle C_{+1}\right|-\left|C_{-1}\right\rangle \left\langle C_{-1}\right|\\
+H & =\left|H_{+1}\right\rangle \left\langle H_{+1}\right|-\left|H_{-1}\right\rangle \left\langle H_{-1}\right|
+\end{align*}
+
+We can write the eigenvectors of an operator in terms of the others:
+
+\begin{align*}
+\left|C_{+1}\right\rangle  & =\frac{1}{\sqrt{2}}\left(\left|H_{+1}\right\rangle +\left|H_{-1}\right\rangle \right)\\
+\left|C_{-1}\right\rangle  & =\frac{1}{\sqrt{2}}\left(\left|H_{+1}\right\rangle -\left|H_{-1}\right\rangle \right)\\
+\left|H_{+1}\right\rangle  & =\frac{1}{\sqrt{2}}\left(\left|C_{+1}\right\rangle -\left|C_{-1}\right\rangle \right)\\
+\left|H_{-1}\right\rangle  & =\frac{1}{\sqrt{2}}\left(\left|C_{+1}\right\rangle +\left|C_{-1}\right\rangle \right)
+\end{align*}
+
+It's possible to build something called a \textquotedbl color box,\textquotedbl{} which is a device for measuring the color of an electron. It's possible to build \textquotedbl hardness boxes\textquotedbl{} too, and they work in just the same way. That is, if the electron's state vector is $\left|e\right\rangle $, Thus, the probability of the electron being measured as black ($+1$) or white ($-1$) is given by $\left|\left\langle C_{\pm1}|e\right\rangle \right|^{2}$. The same applies to hardness $\left|\left\langle H_{\pm1}|e\right\rangle \right|^{2}$.
+
+Measurements with hardness and color boxes are repeatable, which is something we've grown accustomed to requiring, by definition, of a \textquotedbl good\textquotedbl{} measurement of a bona fide physical variable. If, say, a certain electron is measured with a color box to be black, and if that electron (without having been tampered with in the meantime) is subsequently fed into another color box, then that electron will with certainty emerge from that second color box measured as black again. Mathematically, this means that after the first measurement, the electron's state is $\left|e\right\rangle =\left|C_{+1}\right\rangle $; consequently, at the second color box, the probability of it being measured as black again is 
+\[
+P=\left|\left\langle e|C_{+1}\right\rangle \right|^{2}=\left|\left\langle C_{+1}|C_{+1}\right\rangle \right|^{2}=1
+\]
+
+To simplify, let's change the notation of the eigenvectors by renaming the letters to indicate color and hardness, rather than the eigenvalues: $\left|C_{+1}\right\rangle =\left|c_{b}\right\rangle $,$\left|C_{-1}\right\rangle =\left|c_{w}\right\rangle $,$\left|H_{+1}\right\rangle =\left|h_{s}\right\rangle $ and $\left|C_{+1}\right\rangle =\left|h_{h}\right\rangle $.
+
+Now, suppose that it occurs to us to be curious about the possibility that the color and hardness properties of electrons might somehow be related to one another. One way to look for such a relation might be to check for correlations between the \textbf{values} of the hardness and color properties of electrons. It's easy to check for correlations like that with our boxes; and it turns out (once the checking is done) that no such correlations exist. 
+
+Of any large collection of, say, white electrons, all of which are fed into the hardness box, precisely half is measured as hard and half as soft. The same goes for black electrons fed into the hardness box, and the same for hard or soft ones fed into the color boxes. The color (hardness) of an electron apparently entails nothing whatever about its hardness (color). We can see this explicitly. If we are going to measure the hardness of a black electron:
+\[
+\left|e\right\rangle =\left|c_{b}\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h_{s}\right\rangle +\left|h_{h}\right\rangle \right)
+\]
+the probability of each electron being measured as soft is therefore:
+
+\begin{align*}
+P_{s}\left(\left\langle h_{s}|e\right\rangle \right) & =\left|\left\langle h_{s}\right|\left(\frac{1}{\sqrt{2}}\left(\left|h_{s}\right\rangle +\left|h_{h}\right\rangle \right)\right)\right|^{2}\\
+ & =\frac{1}{2}\left|\left\langle h_{s}|h_{s}\right\rangle +\left\langle h_{s}|h_{h}\right\rangle \right|^{2}\\
+ & =\frac{1}{2}
+\end{align*}
+
+And the same goes for hard $P_{h}\left(\left\langle h_{h}|e\right\rangle \right)=\frac{1}{2}$. 
+\begin{quotation}
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{quotation}
+
+\subsection{Delayed-choice quantum eraser}
+
+\subsection{Experimento da bomba de Elitzur--Vaidman}
+\begin{quotation}
+Delayed-choice quantum eraser
+
+Experimento da bomba de Elitzur--Vaidman
+
+https://ocw.nthu.edu.tw/chapter/351/8347?utm\_source=chatgpt.com
+\end{quotation}
+
+\end{document}

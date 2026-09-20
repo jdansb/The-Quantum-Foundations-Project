@@ -2,8 +2,6 @@
 version: 1
 project:
   id: 78003ac3-4082-4d65-adb1-6df2d7e3dbd1
-  resources:
-    - EUF.pdf
   # title:
   # description:
   # keywords: []
@@ -14,16 +12,16 @@ project:
     - file: home.tex
     - file: interpretacao.tex
     - title: Blog
-      url: https://angpisiko1.substack.com/
-    - file: fenda.tex
+      url: https://angpisiko1.substack.com/    
     - file: exemplo_incompatibilidade.ipynb
       hidden: true
+    - title: Expanded Albert
+      children:
+        - file: albert/stern.tex
     - title: Other
       children:
         - file: dupla.tex
-        - file: euf.md
-#    - title: Class notes
-#      children:
+        - file: fenda.tex
         - title: Quantum Mechanics 3
           children:
           - file: classes/g1.tex
@@ -32,9 +30,6 @@ project:
           - file: classes/g4.tex
           - file: classes/g5.tex
           - file: classes/g6.tex
-#        - title: Quantum Mechanics 2
-#          children:
-#          - file: classes/mq21.tex
     - title: Undergrad Thesis
       children:
         - file: nielsen/introducao.tex

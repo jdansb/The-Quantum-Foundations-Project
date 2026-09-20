@@ -3,17 +3,16 @@
 \documentclass[brazil]{article}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage{amsmath}
 \usepackage{geometry}
 \geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
 \usepackage{babel}
 \begin{document}
-\title{Few experiments}
+\title{The Double-Slit Experiment}
 \author{Jhordan Silveira de Borba}
+
 \maketitle
-
-\subsection{The Double Slite Experiment}
-
-We will base this discussion almost entirely on the content provided by Professor David Tong.
+We will base this discussion almost entirely on the content provided by Professor David Tong (\cite{TongQuantumMechanics}).
 
 The double slit set-up is a simple but iconic experiment that vividly demonstrates some of the stranger aspects of quantum mechanics. To set the scene, we first describe two experiments from classical physics. The set-up in both is the same: there is a wall, with two openings in it. These are the eponymous double slits. Behind the wall is a detector. You stand in front of the wall and throw things. The only difference between the two experiments lies in what you throw.
 
@@ -49,9 +48,86 @@ Quantum mysteries are often phrased as the question of whether an electron is a 
 
 A quantum particle is, instead, described by a wavefunction. The right way to proceed is not to search for some classical metaphor that will capture some aspect of the quantum particle, but instead to better understand the rules that govern these wavefunctions.
 
-I would like to emphasize this experiment once again. Notice that, individually, each electron is detected at the screen as a localized event, that is, as a point-like detection. It is not possible to observe the interference pattern from a single electron; the pattern emerges statistically when we repeat the experiment many times, since the distribution of electrons on the screen follows a probability distribution that exhibits characteristic features of wave interference. But notice that the mathematical description in terms of a wave applies to the wave function, which we use to calculate probabilities, such as the probability of finding the electron at a given position, and not as a direct description of the electron itself.
+I would like to emphasize this experiment once again. Notice that, individually, each electron is detected on the screen as a localized event, that is, as a point-like detection. This is its particle-like characteristics. It is not possible to observe the interference pattern from a single electron. 
 
-We should also keep clearly in mind that this does not mean that the electron “knows” that it is being observed or responds to a consciousness. What matters is the physical interaction involved in obtaining information about the system. In order to determine which slit the electron passed through, it is necessary to interact with the electron and thereby detect it beforehand. This interaction alters the quantum state of the system and, in a description in terms of wave-function collapse, causes the wave function to collapse.
+The pattern emerges statistically when we repeat the experiment many times, since the distribution of electrons on the screen follows a probability distribution that exhibits the characteristic features of wave interference. This is its wave-like characteristic.
 
+But notice that the mathematical description in terms of a wave applies to the wave function, which we use to calculate probabilities, such as the probability of finding the electron at a given position, rather than as a direct description of the motion of the electron itself.
+
+We should also keep clearly in mind that this does not mean that the electron “knows” that it is being observed or responds to a consciousness. What matters is the physical interaction involved in obtaining information about the system. In order to determine which slit the electron passed through, it is necessary to interact with the electron in a way that provides information about its path. When we obtain such information, we can determine its position with respect to the measurement being performed. Mathematically, this interaction changes the quantum state of the system. In terms of wave-function collapse, it is as if we are starting the experiment again: the state is no longer the same as it was before the measurement. The change does not occur because we are “observing” the electron, but because we are physically interacting with it.
+
+\subsubsection{The underlying mathematics}
+
+Let us now resume the discussion, drawing on the work of Professor Cresser (\cite{cresser2001quantum}) to discuss the topic with a bit more mathematics.
+
+The argument to be presented here is not meant to be rigorous, but more to suggest a way of thinking about quantum mechanics that can be made more precise, and very general in that it can be applied to any physical system. The experimental set up will be as before. Particles, which have all passed through exactly the same preparation procedure and hence are presumably all in the same state, are produced at a source $S$ . These particles are then incident on a screen in which there are two narrow slits, $1$ and $2$, and beyond this screen is a further screen which the particles will ultimately strike, the point at which they hit this screen being registered in some way.
+
+Since the particles are all prepared in the same way, they will presumably all be associated with the same wave function. The detailed form of the wave function will depend on many things, not the least of which is that the particles are all produced at the source S . We will introduce the notation for the wave function $\Psi_{s}\left(x\right)$ as the probability amplitude of finding the particle at $x$ given that it originated at the source \textbf{$S$}\footnote{Remembering that the probability density is given by $P=\left|\Psi_{s}\left(x\right)\right|^{2}$.} . Let us move the discussion forward and denote $\Psi_{s}\left(x\right)=\left\langle x|s\right\rangle $.
+
+We will not be concerning ourselves with the possible time dependence of the wave function here -- in effect we are assuming some kind of steady state. This wave function will propagate through space and at the positions of the two slits will have values $\Psi_{s}\left(n\right)=\left\langle n|s\right\rangle $, $n=1,2$. These waves will then pass through these slits on their way towards the observation screen.
+
+The task then is to determine the amplitude of the waves at a point $x$ on the observation screen due to waves that originated at each of the slits. To do that we will first of all suppose that, if the amplitude of the wave incident on slit $1$ is unity\footnote{That is, slit 2 is closed, $\Psi_{s}\left(1\right)=1$ and $\Psi_{s}\left(2\right)=0$.}, then the resulting wave amplitude at a position $x$ on the screen is $\Psi_{1}\left(x\right)=\left\langle x|1\right\rangle $.
+
+But since the amplitude of the wave at slit $1$ is $\Psi_{s}\left(1\right)=\left\langle 1|s\right\rangle $ then it appears reasonable to suppose that we scale up the amplitude of the wave from slit $1$ incident on the observation screen at $x$ by the same factor, i.e. $\Psi_{s}\left(1\right)$, so that the amplitude of the wave incident on the screen at $x$ that emerged from the slit $1$ will be $\Psi_{s}\left(1\right)\Psi_{1}\left(x\right)$. Of course, this is an assumption, but it is what is observed for, say, light waves passing through a slit -- if the amplitude of a light wave incident on a slit is doubled, then the amplitude of the wave that emerges from the slit is also doubled. Light waves are linear. Probability amplitudes are hence also assumed to be linear.
+
+We have a similar case for the second slit. Consequently, the total amplitude of the wave at x will be
+
+\begin{align*}
+\Psi_{s}\left(x\right) & =\Psi_{s}\left(1\right)\Psi_{1}\left(x\right)+\Psi_{s}\left(2\right)\Psi_{2}\left(x\right)\\
+\left\langle x|s\right\rangle  & =\left\langle 1|s\right\rangle \left\langle x|1\right\rangle +\left\langle 2|s\right\rangle \left\langle x|2\right\rangle 
+\end{align*}
+
+where $\Psi_{s}\left(x\right)$ is the amplitude of waves at $x$ that originated from the source $S$ . This then is the probability amplitude of observing a particle at $x$ given that it originated from the source S , i.e. by the Born interpretation $\left|\Psi_{s}\left(x\right)\right|^{2}dx$ is the probability density of observing a particle in the region $x$ to $x+dx$. This result is the same as the one presented before, but here we have expressed this total probability amplitude as a sum of two contributions of the form:
+\begin{quotation}
+Probability amplitude for the particle to pass from the source $S$ to point $x$ through slit $n$ $=$ Probability amplitude of observing the particle at slit $n$ given that it originated from the source S $\times$ Probability amplitude of observing the particle at slit $n$ given that it originated from the source $S$\footnote{We can recognize here a structure analogous to the rule of conditional probability.}.
+\end{quotation}
+Remembering what we had:
+\[
+P_{12}\left(x\right)=\left|\psi_{1}\left(x\right)+\psi_{2}\left(x\right)\right|^{2}=P_{1}+P_{2}+\psi^{*}_{1}\left(x\right)\psi_{2}\left(x\right)+\psi_{1}\left(x\right)\psi^{*}_{2}\left(x\right)
+\]
+
+So, evidently: $\psi_{n}=\Psi_{s}\left(n\right)\Psi_{n}\left(x\right)$. We can now better understand the adopted vector notation:
+\begin{itemize}
+\item $\left|s\right\rangle \equiv$ state of the particle when at the position of the source $S$;
+\item $\left|n\right\rangle \equiv$ state of the particle when at the position of slit $n$;
+\item $\left|z\right\rangle \equiv$ state of the particle when at the position $x$;
+\end{itemize}
+So $\Psi_{s}\left(x\right)\left\langle x|s\right\rangle $is the probability amplitude of finding the particle at $x$, i.e. in the state $\left|x\right\rangle $, given that it was initially at the source $S$ , i.e. in the state $\left|s\right\rangle $. Since $\left\langle \cdot|\cdot\right\rangle $ is a scalar, we can rearrange:
+
+\begin{align*}
+\left\langle x|s\right\rangle  & =\left\langle x|1\right\rangle \left\langle 1|s\right\rangle +\left\langle x|2\right\rangle \left\langle 2|s\right\rangle \\
+\left|s\right\rangle  & =\left|1\right\rangle \left\langle 1|s\right\rangle +\left|2\right\rangle \left\langle 2|s\right\rangle 
+\end{align*}
+
+We can do something radical, which is to 'cancel' the $\left\langle x\right|$ because the expression above will be true for all values of the variable $x$, i.e. it does not hold true for just one value of $x$. If we denote the coefficients by $c_{n}=\left\langle n|s\right\rangle $, we can also write:
+
+\[
+\left|\psi\right\rangle =c_{1}\left|1\right\rangle +c_{2}\left|2\right\rangle 
+\]
+
+That is, we have a state vector $\left|\psi\right\rangle \equiv\left|s\right\rangle $, written in the vectors $\left\{ \left|1\right\rangle ,\left|2\right\rangle \right\} $. If they form a complete orthonormal basis, note that the probability of finding the particle at slit $n$ is $\left|\left\langle n|\psi\right\rangle \right|^{2}=\left|c_{n}\right|^{2}$. But after a which-slit measurement, if the particle is found at slit $n$, the wave function becomes $\left|\psi\right\rangle =\left|n\right\rangle $, such that the probability of finding the particle at $x$ is 
+\[
+\left|\left\langle x|\psi\right\rangle \right|^{2}=\left|\left\langle x|1\right\rangle \right|^{2}=\left|\left\langle x|1\right\rangle \right|^{2}=\left|\Psi_{1}\left(x\right)\right|^{2}
+\]
+
+This is significantly different from what we would observe if we considered only the probability of the particle being identified at $x$, without the intermediate measurement:
+
+\begin{align*}
+\left|\left\langle x|\psi\right\rangle \right|^{2} & =\left|c_{1}\left\langle x|1\right\rangle +c_{2}\left\langle x|2\right\rangle \right|^{2}\\
+ & =\left|c_{1}\right|^{2}\left|\left\langle x|1\right\rangle \right|^{2}+\left|c_{2}\right|^{2}\left|\left\langle x|2\right\rangle \right|^{2}+c_{1}c^{*}_{2}\left\langle x|1\right\rangle \left\langle x|2\right\rangle ^{*}+c^{*}_{1}c_{2}\left\langle x|1\right\rangle ^{*}\left\langle x|2\right\rangle \\
+ & =\left|c_{1}\right|^{2}\left|\Psi_{1}\left(x\right)\right|^{2}+\left|c_{2}\right|^{2}\left|\Psi_{2}\left(x\right)\right|^{2}+c_{1}c^{*}_{2}\left\langle x|1\right\rangle \left\langle x|2\right\rangle ^{*}+c^{*}_{1}c_{2}\left\langle x|1\right\rangle ^{*}\left\langle x|2\right\rangle 
+\end{align*}
+
+The new description is a very potent one, and constitutes the central feature of quantum mechanics, the idea that a system, in some sense, can be described simultaneously in a number of different physical states, otherwise known as a ‘superposition of states’.
+
+It is this sort of result that lies at the heart of quantum mechanics -- the idea that a system in a certain state can behave as if it is in oa number of other states, and to do so in a way that is probabilistic in nature. 
+
+We will show now that the result which we have ‘derived’ in the case of the two slit experiment can also be shown (and much more rigorously) to be an intrinsic part of the Stern-Gerlach experiment. 
+
+It is interesting to note that, in fact, $\left\langle x|s\right\rangle =\left\langle x|1\right\rangle \left\langle 1|s\right\rangle +\left\langle x|2\right\rangle \left\langle 2|s\right\rangle $ , corresponds to a statistical description of the behavior of nature through the wave function (or state vector), which is supported by circumstantial evidence, though neither the wave function itself nor the probability amplitudes are directly observed.
+\begin{quotation}
+\bibliographystyle{plain}
+\bibliography{ref}
+\end{quotation}
 
 \end{document}
