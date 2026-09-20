@@ -67,12 +67,16 @@ We can write the eigenvectors of an operator in terms of the others:
 
 It's possible to build something called a \textquotedbl color box,\textquotedbl{} which is a device for measuring the color of an electron. It's possible to build \textquotedbl hardness boxes\textquotedbl{} too, and they work in just the same way. That is, if the electron's state vector is $\left|e\right\rangle $, Thus, the probability of the electron being measured as black ($+1$) or white ($-1$) is given by $\left|\left\langle C_{\pm1}|e\right\rangle \right|^{2}$. The same applies to hardness $\left|\left\langle H_{\pm1}|e\right\rangle \right|^{2}$.
 
+\textbf{Experiment 1}
+
 Measurements with hardness and color boxes are repeatable, which is something we've grown accustomed to requiring, by definition, of a \textquotedbl good\textquotedbl{} measurement of a bona fide physical variable. If, say, a certain electron is measured with a color box to be black, and if that electron (without having been tampered with in the meantime) is subsequently fed into another color box, then that electron will with certainty emerge from that second color box measured as black again. Mathematically, this means that after the first measurement, the electron's state is $\left|e\right\rangle =\left|C_{+1}\right\rangle $; consequently, at the second color box, the probability of it being measured as black again is 
 \[
 P=\left|\left\langle e|C_{+1}\right\rangle \right|^{2}=\left|\left\langle C_{+1}|C_{+1}\right\rangle \right|^{2}=1
 \]
 
 To simplify, let's change the notation of the eigenvectors by renaming the letters to indicate color and hardness, rather than the eigenvalues: $\left|C_{+1}\right\rangle =\left|c_{b}\right\rangle $,$\left|C_{-1}\right\rangle =\left|c_{w}\right\rangle $,$\left|H_{+1}\right\rangle =\left|h_{s}\right\rangle $ and $\left|C_{+1}\right\rangle =\left|h_{h}\right\rangle $.
+
+\textbf{Experiment 2}
 
 Now, suppose that it occurs to us to be curious about the possibility that the color and hardness properties of electrons might somehow be related to one another. One way to look for such a relation might be to check for correlations between the \textbf{values} of the hardness and color properties of electrons. It's easy to check for correlations like that with our boxes; and it turns out (once the checking is done) that no such correlations exist. 
 
@@ -89,20 +93,110 @@ P_{s}\left(\left\langle h_{s}|e\right\rangle \right) & =\left|\left\langle h_{s}
 \end{align*}
 
 And the same goes for hard $P_{h}\left(\left\langle h_{h}|e\right\rangle \right)=\frac{1}{2}$. 
+
+\textbf{Experiment 3}
+
+Suppose we set up a sequence of three boxes. First a color box, say, then a hardness box, and then another color box. Consider an electron which emerges through the white aperture of the first color box, and thereafter (without having been tampered with) is fed into the hardness box, and which happens to emerge from that box through the soft aperture (as half of such electrons will), and thereafter (once again with no tampering) is fed into the left aperture of the second color box. That electron, as it enters that third box, is presumably known to be both white and soft. As there has been no tampering between boxes here, we should expect that the electron will emerge from this third box through the white aperture, confirming the result of the first measurement. As a matter of fact, that isn't what happens. 
+
+Precisely half of such electrons emerge from the white aperture of that third box, and the other half (the other half, that is, of those electrons which have been measured to be white and soft by the previous two boxes) emerge from the black aperture. Let's turn to the math again. From the first box we obtained a white electron $\left|c_{w},1\right\rangle $, from experiment 2, we have already seen that when this electron passes through the second box, there is a 50\% chance of it being measured as soft,$P\left(\left\langle h_{s}|c_{w}\right\rangle \right)=0.5$, and the same chance of it being measured as hard $P\left(\left\langle h_{h}|c_{w}\right\rangle \right)=0.5$. But for example, if the electron was measured as \textquotedbl hard,\textquotedbl{} we have the following state vector for the electron:
+
+\[
+\left|e\right\rangle =\left|h_{h}\right\rangle =\frac{1}{\sqrt{2}}\left(\left|c_{w}\right\rangle +\left|c_{b}\right\rangle \right)
+\]
+
+Our electron no longer has a defined color. The same goes for any other pair of results in the first two boxes, and the same goes if the color boxes in the above example are replaced with hardness boxes and the hardness box with a color one. Apparently (in the example we considered) the presence of the hardness box between the two color boxes itselfconstitutes some sort of color tampering. Indeed, that hardness box must be what's to blame for changing half of those white electrons to black ones, since we already know that two color measurements, without tampering between the boxes and without an intervening hardness measurement, will invariably produce identical results
+
+If we perform the test with $2N$ electrons, although all are measured as white in the first box, in the final box $N$ will again be measured as white and another $N$ as black. What is it that determines precisely which electrons have their colors changed and which don't?
+
+The right way to discover precisely what it is that determines which electrons change color in passing through that intermediate hardness box and which don't would seem to be to monitor very carefully all of the measurable properties of all of the electrons which are fed into that first color box in the course of some particular experiment and which are at that point found to be, say, white; and to make very certain that the physical states of those three boxes are held perfectly and constantly fixed throughout that experiment; and to look for correlations between the measurable physical properties of those incoming electrons and their final positions as they emerge from the second color box.
+
+Well, it turns out that, in so far as we are presently able to tell, absolutely no such correlations exist. As a matter of fact, when we take whatever pains we know how to take to insure that all of the electrons in some particular experiment are fed into that first color box with precisely identical sets of physical properties, and to insure that the physical states of those boxes are indeed held precisely and constantly fixed throughout that experiment, the statistics of final outcomes remain precisely as they were described above. In so far as we are now able to determine, then, this question has no answer. That is, in so far as we are now able to determine, those electrons whose color is changed by passage through a hardness box and those electrons whose color isn't changed by passage through a hardness box need not initially differ from one another in any way whatever.
+
+We could try to imagine a box that measures color and hardness at the same time, but as far as we know, we haven't been able to assemble any similar experiment; it's always necessary to measure one or the other first. So the task of putting ourselves in a position to say \textquotedbl the color of this electron is now such-and-such and the hardness of this electron is now such-and-such\textquotedbl{} seems to be fundamentally beyond our means.
+
+That fact is an example of the uncertainty princitple. Measurable physical properties like color and hardness are said to be \textquotedbl incompatible\textquotedbl{} with one another, since measurements of one will (so far as we know) always necessarily disrupt the other
+
+\textbf{Experiment 4}
+
+Let's get in deeper. Consider a rather complex experiment. We begin with a hardness box that splits the incident electron beam into two beams: the hard ones follow path $h$ and the soft ones follow path $s$. Subsequently, using reflectors (which alter only the beams' directions), the beams are recombined into a single beam within a \textquotedbl black box,\textquotedbl{} from which they emerge traveling along path $hs$.
+
+Let's do some experiments with this device.
+
+\textbf{1. }Suppose, first, that we feed a white electron into the hardness box, and then, once it has passed all through the setup, along path $hs$, we measure its hardness. What will we expect to find? Well, 50 percent of such electrons will take route $h$ out of the hardness box, and 50 percent will take route $s$. And so 50 percent will end up at $hs$ as hard electrons, and 50 percent will end up there as soft ones. On repeating the experiment many times, we find that that is precisely what happens.
+
+\textbf{2.} Suppose that we feed a hard electron into the hardness box and then measure its color at $hs$. Well, every electron like that will take route $h$ through the apparatus and will emerge at $hs$ as a hard electron, and, as we know, 50 percent of such electrons will be found to be black by a color measurement, and 50 percent will be found to be white. If a soft electron were fed into the hardness box at the beginning, it would take route s and still be soft at $hs$, and so the final color-measurement statistics of electrons like that ought to be fifty-fifty too. And all that, as before, is indeed jus what happens when we actually carry out a large number of such experiments.
+
+\textbf{3. }Let's try one more. This one is the surprise. Suppose that we feed a white electron into the hardness box at the beginning, and measure color at the end. What should we expect then? Well,just as above, 50 percent of such electrons will turn out to be hard and will take $h$ through the apparatus; and 50 percent will turn out to be soft and will take $s$. Consider the first half. They will all emerge at $hs$ as hard electrons, and consequently 50 percent will turn out to be black, on a color measurement, and 50 percent will turn out to be white. The second half, on the other hand, will all emerge as soft electrons, but of course their color statistics will be precisely the same. 
+
+Putting all that together, it follows that of any large set of white electrons fed (one at a time) into this apparatus, it turns out that exactly 100 percent of white electrons fed into this apparatus come out white at the end. That's very odd. It's hard to imagine what can possibly be going on. 
+
+Maybe another experiment will help clear things up. Let's try this: Rig up a small, movable, electron-stopping wall that can be slid, at will, in and out of, say, route $s$. When the wall is \textquotedbl out,\textquotedbl{} we have precisely our earlier apparatus; but when the wall is \textquotedbl in,\textquotedbl{} all electrons moving along s get stopped and only those moving along h get through to $hs$.
+
+What should we expect to happen when we slide the wall in? Well, to begin with, the overall output of electrons at $hs$ ought to go down by 50 percent, since the input white electrons ought to be half hard and half soft, and the latter shouldn't now be getting through. What about the color statistics of that remaining 50 percent? Well, when the wall is out, 100 percent of white electrons fed in end up white. That means that all the electrons that take s end up white and all the electrons that take h end up white; and since we can easily verify that whether the wall is in or out of $s$ can have no effect on the colors of electrons traveling along $h$, that implies that those remaining 50 percent should all be white. What actually happens when we do the experiment? Well, the output is down by 50 percent, as we expect. But the remaining 50 percent is not all white. It's half white and half black. The same thing happens, similarly contrary to our expectations, if we insert a wall in the hard path instead. 
+
+Now we're in real trouble.
+
+Consider an electron which passes through our apparatus when the wall is out. Consider the possibilities as to which route that electron can have taken. Can it have taken $h$? Apparently not, because electrons which take $h$ are known to have the property that their color statistics are fifty-fifty, whereas an electron passing through our device with the wall out is known to have the property of being white at hands! Can it have taken $s$, then? No, for the same reasons. Can it somehow have taken both routes? Well, suppose that when a certain electron is in the midst of passing through this apparatus, we stop the experiment and look to see where it is. It turns out that half the time we find it on $h$, and half the time we find it on $s$. We never find two electrons in there, or two halves of a single, split electron, one on each route, or anything like that. There isn't any sense in which the electron seems to be taking both routes. Can it have taken neither route?
+
+Certainly not. If we wall up both routes, nothing gets through at all. So what we're faced with is this: Electrons passing through this apparatus, in so far as we are able to fathom the matter, do not take rute $h$ and do not take route $s$ and do not take both of those routes and do not take neither of those routes; and the trouble is that those four possihllities are simply all of the logical possibilities that we have any notion whatever of how to entertain!
+
+What can such electrons be doing? It seems they must be doing something which has simply never been dreamt of before. Electrons seem to have modes of being, or modes of moving, available to them which are quite unlike what we know how to think about. The name of that new mode (is just a name for something we don't understand) is superposition. What we say about an initially white electron which is now passing through our apparatus with the wall out is that it's not on $h$ and not on $s$ and not on both and not on neither, but rathe that it's in a superpoisition of being on $h$ and being on $s$ And what that means (none of the above) we don't know. 
+
+Here it seems that we need to refine the idea somewhat. In fact, each box does not perform a measurement by itself; rather, it allows us to determine the electron’s hardness or color if we make the appropriate observation. In the previous experiments, this was straightforward:
+\begin{itemize}
+\item \textbf{Experiment 1}: we repeatedly pass the electron through the color box and measure its color. 
+\item \textbf{Experiment 2}: we start with electrons whose hardness we already know and, after passing them through the color box, measure their color. 
+\item \textbf{Experiment 3}: the situation is somewhat more complex, but still quite straightforward, since we are only interested in the statistics of the final output.
+\end{itemize}
+The difference in experiment 4 is that we now need to consider the two components produced by the hardness box and what happens when they are subsequently recombined. 
+
+Mathematically, we can write the state of an electron in terms of the eigenvectors of the color operator as $\left|e\right\rangle =a\left|c_{w}\right\rangle +b\left|c_{b}\right\rangle $. At this point, the boxes should not be understood as devices that directly perform a measurement. Rather, they physically separate the incident beam into sub-beams associated with the different eigenvalues of the quantity being considered, so that the “hard” and “soft” hardness states correspond to the different beams (and routes) $h$ and $s$\footnote{A real physical example that can help us understand the operation of such a box is the real Stern--Gerlach experiment. In this experiment, a non-uniform magnetic field can spatially separate a beam of particles into components associated with different values of a component of the magnetic moment, which are related to spin. The interaction with the magnetic field produces the spatial separation of the components of the beam, but this need not, by itself, be identified with obtaining a definite spin measurement result. Rather, the field creates a correlation between the particle’s internal state and its trajectory: particles associated with different spin values follow different paths. If we subsequently detect which beam a given particle is recorded in, we can infer the corresponding result of the spin measurement.}. The routes are, therefore, physical locations where we know that measuring the hardness will yield a specific value, and what the boxes do is produce these routes.
+
+For example, in Experiment 3, we initially have a white electron,
+
+\[
+\left|e\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h_{h}\right\rangle -\left|h_{s}\right\rangle \right)
+\]
+ 
+
+The hardness box physically separates these two components, giving us the beams corresponding to $h$ and $s$. Since $\left|H_{\pm1}\right\rangle =\frac{1}{\sqrt{2}}\left(\left|C_{+1}\right\rangle \mp\left|C_{-1}\right\rangle \right)$, each of these components, considered separately, has a probability of 50\% of producing either color outcome. Therefore, if we measured the color before recombination, we would find half of the electrons to be black and half to be white, which is Experiment 3.
+
+In Experiment 4, however, we do not make this measurement before recombination. Instead, the two components are recombined in the black box, and the $hs$ route is produced, so that the final state becomes $\left|e\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h_{h}\right\rangle -\left|h_{s}\right\rangle \right)=c_{w}$. Inserting a barrier in one of the paths changes precisely this situation: it prevents the two components from being recombined, and we therefore find ourselves back at Experiment 3.
+
+All of this concerns the mathematical description of the experiment. The physical meaning of this description---in particular, what it means for the electron to be in a superposition of states corresponding to the two paths---is an open question. The main point is that superpositions are extraordinarily mysterious situations.
+
+This is similar to the double-slit experiment. There, we have two openings, and if we close one of them (that is, if we place a barrier in one of the paths in our experiment), whichever opening we close, we obtain one result. However, if we leave both openings open (that is, if we remove the barrier from both paths), we obtain a result that is not simply the sum of the previous results. Instead, the two alternatives combine to produce a mathematically different result, which we describe in terms of a superposition of the electron states associated with the two possible paths.
+
+\textbf{Experiment 5}
+
+It's possible to construct boxes which I'd like to call \textquotedbl total-of-nothing\textquotedbl{} boxes. A total-of-nothing box is a box with two apertures. An electron which is fed into one aperture emerges from the other with all of its measurable properties (color, hardness, velocity, whatever) unchanged. 
+
+Now, recall the two-path apparatus. White electrons fed into that apparatus always come out white. It turns out to be possible to build a total-of-nothing box which, when inserted into either one of those two paths, will make all of those outgoing electrons black instead of white. If the box is removed from the path, the outgoing electrons will all go back to being white.
+
+So, inserting such a box into one of those paths will change the color of an electron passing through this two-paths apparatus. But total of-nothing boxes, by definition, change none of the properties of electrons which pass through them; and, of course, total-of-nothing boxes change none of the properties of electrons which don't pass through them! 
+
+In fact, the trick is that the box does not change any measurable property of the electron passing through it. What it can change is the phase of the component of the state associated with that path. As discussed above, a global phase of a state vector is not measurable. However, when we consider the electron as a superposition of components associated with different paths, the relative phase between these components can affect the result of their subsequent recombination.
+
+To see this mathematically, we can write the state in the basis formed by the eigenvectors of the hardness operator. For the white electron, we have
+
+\[
+\left|e\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h_{h}\right\rangle -\left|h_{s}\right\rangle \right)
+\]
+
+Equivalently, considering only the spatial component associated with the two paths, we can write$\left|e\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h\right\rangle +\left|s\right\rangle \right)$, where $\left|h\right\rangle $ and $\left|s\right\rangle $ denote the electron states associated with the two paths. Suppose that a total-of-nothing box is inserted into the $s$)path. The box does not change any measurable property of the electron in that path; instead, it changes only the phase of its state component: $\left|s\right\rangle \rightarrow-\left|s\right\rangle $ . The relative phase between the two components is therefore reversed, and the state becomes:
+
+\[
+\left|e\right\rangle =\frac{1}{\sqrt{2}}\left(\left|h_{h}\right\rangle +\left|h_{s}\right\rangle \right)=\left|c_{b}\right\rangle 
+\]
+
+Although this phase change cannot be detected by measuring either path separately, it becomes observable when the two paths are recombined. The change in relative phase changes the interference produced by the recombination, so that the final color changes from white to black.
+
+\textbf{Conclusion}
+
+An electron being white must be the same as its being in a superposition of being hard and soft. We are unable to simultaneously know the color and the hardness of a given electron. An electron’s having a definite color apparently entails that it is neither hard nor soft, nor both, nor neither; likewise, an electron’s having a definite hardness apparently entails that it is neither black nor white, nor both, nor neither.
 \begin{quotation}
 \bibliographystyle{plain}
-\bibliography{ref}
-\end{quotation}
-
-\subsection{Delayed-choice quantum eraser}
-
-\subsection{Experimento da bomba de Elitzur--Vaidman}
-\begin{quotation}
-Delayed-choice quantum eraser
-
-Experimento da bomba de Elitzur--Vaidman
-
-https://ocw.nthu.edu.tw/chapter/351/8347?utm\_source=chatgpt.com
+\bibliography{../ref}
 \end{quotation}
 
 \end{document}
