@@ -18,10 +18,12 @@ project:
     - title: Expanded Albert
       children:
         - file: albert/stern.tex
+        - file: albert/standard.tex
     - title: Other
       children:
         - file: dupla.tex
         - file: fenda.tex
+        - file: materialismo.tex
         - title: Quantum Mechanics 3
           children:
           - file: classes/g1.tex
