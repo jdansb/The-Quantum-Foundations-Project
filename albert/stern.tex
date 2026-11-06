@@ -236,7 +236,7 @@ Therefore, if we take a measurement, we obtain $0$ for a hard qubit and $1$ for 
 Given that the initial state of the qubit is known to be white\footnote{The initial state is $\left|0\right\rangle $; that is, if we perform a measurement, we obtain 0.}, We can observe that whenever we perform a measurement, we obtain the result that the qubit remains white ($0$).
 
 
-\begin{lstlisting}[language=Python,numbers=left]
+\begin{verbatim}[language=Python,numbers=left]
 from qiskit import QuantumCircuit
 from qiskit_aer import AerSimulator
 qc = QuantumCircuit(1, 1)
@@ -246,7 +246,7 @@ job = simulator.run(qc, shots=1000)
 result = job.result()
 counts = result.get_counts()
 print(counts)
-\end{lstlisting}
+\end{verbatim}
 
 
 \textbf{Experiment 2:}
