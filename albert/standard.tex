@@ -1,0 +1,49 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[brazil]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{luainputenc}
+\usepackage{amsmath}
+\usepackage{geometry}
+\geometry{verbose,tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=2.5cm}
+\usepackage{babel}
+\begin{document}
+\title{Mathematics and standard interpretation}
+
+\maketitle
+Let's now explore the second chapter of Alber's book (\cite{Albert1992}).However, since I am not particularly interested in reviewing the entire mathematical framework of quantum mechanics at the moment, let us focus on the standard interpretation---and perhaps highlight a few useful mathematical properties that may arise---to serve as a reference for the future. This interpretation is known as the Copenhagen interpretation.
+
+\section{Mathematical preliminary}
+
+Vectors, in quantum mechanics, are going to represent physical states of affairs.
+
+\textbf{Vector space}: Think of a coordinate system with a specified origin point. Every distinct geometrical point in the space mapped out by such a coordinate system can be associated with some particular (and distinct) vector. The infinite collection of vectors associated with all the points in such a space is referred to as a vector space.
+
+Furthermore, orthogonal simply means perpendicular ($\left\langle A|B\right\rangle =0$). The dimension of a space is equal to the number of mutually perpendicular directions in which vectors can point within that space. If we have a set of vectors $\left|A_{1}\right\rangle ,\dots,\left|A_{N}\right\rangle $ that form a basis for an N-dimensional space, then any vector in this space can be expressed as:
+
+\[
+\left|B\right\rangle =\sum^{N}_{i=1}b_{i}\left|A_{i}\right\rangle 
+\]
+
+where $b_{i}=\left\langle A_{i}|B\right\rangle $. In general, for two vectors $\left|B\right\rangle $ and $\left|C\right\rangle $, we can write:
+
+\begin{align*}
+\left\langle B|C\right\rangle  & =\sum^{N}_{i=1}b^{*}_{i}c_{i} & \left|B\right\rangle +\left|c\right\rangle  & =\sum^{N}_{i=1}\left(b_{i}+c_{i}\right)\left|A_{i}\right\rangle 
+\end{align*}
+
+We can also represent a vector as a column vector by writing $\left|B\right\rangle =\left[\begin{array}{ccc}
+b_{1} & \dots & b_{N}\end{array}\right]^{T}$. Let's now discuss operators.
+
+32/100
+
+Operators are mechanisms for making new vectors out of old
+
+ones. An operator on a vector space,
+
+\section{Mecânica Quântica}
+\begin{quotation}
+\bibliographystyle{plain}
+\bibliography{../ref}
+\end{quotation}
+
+\end{document}
